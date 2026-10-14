@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Benchmate · Refined interface review</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f3f1;color:#182d37;font:16px/1.6 system-ui,sans-serif}main{max-width:1450px;margin:auto;padding:40px 28px 60px}h1{font-size:clamp(26px,4vw,38px);line-height:1.18;letter-spacing:-1px;margin:12px 0}h2{font-size:23px;margin:38px 0 8px}p{max-width:850px;margin:10px 0 20px}.status{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#52656c}a{color:#006583;text-underline-offset:4px}nav{display:flex;gap:22px;flex-wrap:wrap;margin:25px 0 30px}nav a{padding:8px 0}figure{margin:18px 0 25px}img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid #c7d2d4}figcaption{font-size:13px;color:#4e636b;margin-top:10px}.note{border-left:3px solid #007b94;padding:6px 18px;background:#fff9}.details-board{max-width:1100px}details{max-width:950px;background:#fff9;border:1px solid #d4dfe1;border-radius:12px;padding:14px 18px;margin-top:20px}summary{cursor:pointer;font-weight:600}li{margin:8px 0}footer{margin-top:40px;padding-top:20px;border-top:1px solid #ccd6d9;font-size:13px}@media(max-width:600px){main{padding:24px 16px}nav{gap:14px}h1{letter-spacing:-.5px}}
+</style>
+</head>
+<body><main>
+<div class="status">Benchmate / design review / 14 October 2026</div>
+<h1>A quieter interface, with detail when you need it.</h1>
+<p>Pocket Quest progression refined with smaller type and the two latest glass UI references. These are generated app concepts; the running prototype has not been changed.</p>
+<nav aria-label="Review navigation"><a href="#guidance">Task and detail</a><a href="#photo">Photo help</a><a href="REVIEW.md">Design notes</a><a href="http://127.0.0.1:5173/">Existing prototype</a></nav>
+<section id="guidance">
+<h2>01 / One task, optional depth</h2>
+<p>A compact project header, a clear task and one main action. The second screen shows the detailed description expanded in context.</p>
+<figure class="details-board"><a href="references/images/img-01-expandable-guidance.png"><img src="references/images/img-01-expandable-guidance.png" width="1312" height="1199" alt="Two generated Benchmate iPhone screens: Check your plate task with concise guidance, and the same screen with More detail expanded"></a><figcaption>Actual generated output · 1312 × 1199. Click for the original size. <a href="prompt-01-details.txt">Exact prompt</a>.</figcaption></figure>
+</section>
+<section id="photo">
+<h2>02 / Show the problem → review → next step</h2>
+<p>Take a photo, see what the app is processing, then review a possible finding with an optional explanation. The photo and project context persist through all three screens.</p>
+<figure><a href="references/images/img-02-photo-assistance.png"><img src="references/images/img-02-photo-assistance.png" width="1474" height="1067" alt="Three generated iPhone mockups showing photo capture of loose print material, a processing state with received and reviewing indicators, and a possible first-layer lifting result with expandable explanation"></a><figcaption>Actual generated output · 1474 × 1067. Synthetic printer photo; static processing and result mockups. <a href="prompt-02-photo-help.txt">Exact prompt</a>.</figcaption></figure>
+</section>
+<p class="note"><strong>For visual review:</strong> smaller typography, matte layered glass, readable ink and a distinct teal action. Optional detail stays out of the main decision path. No live photo analysis is implemented.</p>
+<details><summary>Corrections to carry into implementation</summary><ul>
+<li>Keep the existing four phases and explicit checkpoints; fix generated labels and remove the unnecessary filament-loading implication.</li>
+<li>Replace the extra Demo play button with a quiet label. Keep one dominant action.</li>
+<li>Rebuild the same original cat in live 3D and verify text contrast and touch targets in actual components.</li>
+<li>Omit camera zoom controls unless supported. Keep findings uncertain and retain the full end-job, cool, clean and reviewed-restart flow.</li>
+</ul></details>
+<footer><p>Generated through the built-in image tool after Weave GPT-model lookup failed. Exact model version and cost were not exposed. Two successful image calls; no additional Weave spend. No app code edits.</p><p><a href="BRIEF.md">Brief</a> · <a href="provenance.json">Provenance</a> · <a href="source-integrity.json">Source verification</a> · <a href="../benchmate-20261013-focus-r4/review.html">Earlier A/B concepts</a> · <a href="../../../design-board.html">Implementation gallery</a></p></footer>
+</main></body></html>

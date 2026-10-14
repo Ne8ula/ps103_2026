@@ -1,0 +1,58 @@
+{
+  "passId": "benchmate-20261014-interface-r5",
+  "date": "2026-10-14",
+  "route": "built-in image_gen.imagegen",
+  "modelVersion": null,
+  "modelVersionNote": "The built-in tool does not expose its exact model/version. No highest-quality ranking is asserted.",
+  "cost": null,
+  "costNote": "Built-in generation cost is not exposed. No new Weave run or Weave credit spend occurred.",
+  "authorization": "User requested a higher-quality generator, reduced typography, expandable descriptions, a photo/processing/diagnosis mockup and application-interface composition based on two new references. Review before code remains requested.",
+  "priorDirection": "B / Pocket Quest was selected by the user, then refined by later requests before implementation.",
+  "weaveLookupFailures": [
+    {"query": "GPT Image", "error": "INVALID_ARGUMENT", "debugId": "0541e7eb-213b-4187-a0f1-a08eeada5749"},
+    {"query": "GPT Image 2", "error": "INVALID_ARGUMENT", "debugId": "1277603e-cdb6-4f1d-b63f-de0385b5558c"}
+  ],
+  "referenceRoles": [
+    {"number": 1, "reference": "Lavender 3D office", "use": "Spatial clarity and prominent 3D object", "avoid": "Room dashboard and camera feeds", "input": "Text description"},
+    {"number": 2, "reference": "Gray/yellow valve desktop", "use": "Technical precision and selective accents", "avoid": "Telemetry and dashboard grid", "input": "Text description"},
+    {"number": 3, "reference": "Mobile valve", "use": "Phone proportions and contextual task surface", "avoid": "Oversized heading and unrelated issue numbers", "input": "Text description"},
+    {"number": 4, "reference": "Exploded keyboard switch", "use": "Studio lighting and contrasting material", "avoid": "Branding and exploded cat anatomy", "input": "Text description"},
+    {"number": 5, "reference": "Cobalt/orange fluted glass", "use": "Restrained fluted edges and facets", "avoid": "Loud blobs and poster framing", "input": "Text description"},
+    {"number": 6, "reference": "Matte green tile study", "use": "Milky glass boundaries and fine grain", "avoid": "Tiled dashboard", "input": "Text description"},
+    {"number": 7, "reference": "Peach/blue and mint/coral frosted squares", "use": "Softly diffused warm/cool pigment", "avoid": "Decorative tile composition", "input": "Text description"},
+    {"number": 8, "reference": "Upright amber/blue glass slabs", "use": "Thickness and quiet illuminated edges", "avoid": "Floating slab advertisement", "input": "Text description"},
+    {"number": 9, "reference": "Frosted wayfinding plaques", "use": "Dense frosted material and readable type", "avoid": "Signage text and plaque composition", "input": "Text description"},
+    {"number": 10, "reference": "Nextly UI", "use": "Primary layout: compact translucent controls and blurred color", "avoid": "Branding, marketing copy and iris image", "input": "Inline image reference"},
+    {"number": 11, "reference": "Memories UI", "use": "Primary layout: layered frosted cards and compact chrome", "avoid": "Journal categories, flowers, social counts and dashboard", "input": "Inline image reference"}
+  ],
+  "runs": [
+    {
+      "name": "Expandable guidance",
+      "promptFile": "prompt-01-details.txt",
+      "inputMechanism": {"num_last_images_to_include": 2, "transparent_background": false},
+      "inputRoles": "Latest two user UI references, not edit targets; earlier nine carried as text roles.",
+      "status": "completed",
+      "originalPath": "C:/Users/alexx/.codex/generated_images/01a137d1-c5ee-74f2-a068-0e73d2564999/exec-e3d1c0ba-9beb-4a3f-9dee-b8fd4083ac3b.png",
+      "output": {"path": "references/images/img-01-expandable-guidance.png", "width": 1312, "height": 1199, "sha256": "5CE80D5EA6BC7F7EC5F6D516F15F3788DD5FEBDBF9F23A99DF6BC045828E15BC"},
+      "inspection": "Actual output inspected: compact heading and project header, collapsed/expanded description, teal primary action. Reject generated progress labels, mandatory reload implication and extra Demo play button."
+    },
+    {
+      "name": "Photo assistance",
+      "promptFile": "prompt-02-photo-help.txt",
+      "inputMechanism": {"num_last_images_to_include": 3, "transparent_background": false},
+      "inputRoles": "New guidance board for visual continuity plus the latest two user UI references; no actual printer photo input.",
+      "status": "completed",
+      "originalPath": "C:/Users/alexx/.codex/generated_images/01a137d1-c5ee-74f2-a068-0e73d2564999/exec-bea95862-5353-45d7-a783-5ff146344b58.png",
+      "output": {"path": "references/images/img-02-photo-assistance.png", "width": 1474, "height": 1067, "sha256": "DA2B9D6622A47C391D31D58051305DB3B600CDC8BB711B536581FFA55EB33980"},
+      "inspection": "Actual output inspected: capture, received/reviewing status with cancellation, possible lifting finding, optional explanation and next step. Synthetic machine photo. Zoom controls depend on real capabilities; result is uncertain and recovery wording needs full contextual procedure."
+    }
+  ],
+  "submissions": 2,
+  "reruns": 0,
+  "priorWeaveTotal": {"completedRuns": 5, "reportedCredits": 25},
+  "sourceIntegrityFile": "source-integrity.json",
+  "applicationCodeChanged": false,
+  "motion": "Static loading-state storyboard only; no animation or video implemented.",
+  "implementationStatus": "Review only. App remains r2. No live camera or diagnostic backend.",
+  "ownerAcceptance": "Pending review of these refined images. Earlier B direction was approved."
+}

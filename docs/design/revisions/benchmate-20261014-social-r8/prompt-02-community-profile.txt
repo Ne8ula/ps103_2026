@@ -1,0 +1,34 @@
+Use case: ui-mockup. Extend the supplied Benchmate mobile app direction that the user LIKES: cool pearl, purple/violet, graphite, soft physical glass, a sculptural pearl cat and solid-to-character-matrix artwork. Preserve its recognizable design. Add a SECONDARY COLOR and extend the matrix language INTO UI COMPONENTS, plus four primary destinations. These are functional application mockups, not promotional posters.
+
+OUTPUT GEOMETRY: wide composite about 1340x1170, wider than tall. Exactly TWO flat iPhone screen canvases side by side, each about503x1090, corresponding to393x852 logical pixels. One realistic visible viewport per screen. Never elongate screens into full-page scroll captures. Match supplied board proportions. Native status bar and home indicator, subtle screen rim, no thick phone hardware and no words outside the screens.
+
+COLOR: Purple #7146AE remains primary. Add refined CITRON #CCDE72 / pale citron glass #E4ECC3 as clear secondary accent, around10–15% of the colored material. Cool pearl #ECEEF3 canvas, charcoal #26232D ink/actions, orchid glass. Citron appears in button end-caps, selected component markers, avatar/glass edge lighting and progress details. It should visibly complement purple, not become a neon-green toy app. NO ivory/cream/orange/brown/blue/cyan styling. Use normal-to-wide modern sans throughout, no serif or condensed letters. Modest 23–25px headings,16px body,12px metadata at logical phone scale. Keep dark readable typography, generous counters and spacing.
+
+VISIBLE GLASS: clouded translucent glass overlaps objects and material fields, with blurred silhouettes transmitted behind it, soft refraction, delicate doubled edges and tactile thickness. Not merely white opaque cards. Purple and citron blur THROUGH glass at appropriate edges. No heavy rim bloom.
+VISIBLE DITHER/MATRIX IN UI, not only images:
+- On the main frosted card or panel, its lower-right glass edge dissolves into a crisp variable-density field of tiny square dots, plus signs and colon pairs. This is a deliberate 20–35px edge treatment on the component, not random floating particles or a dotted border.
+- The selected bottom tab has a small purple-to-citron ordered-dither inset UNDER its icon, with a crisp label below. No pattern over labels. Inactive tabs plain.
+- Use a short 2D character-grid divider or a small dot-matrix progress indicator between sections, away from text. These details must be visible at phone size, not microscopic or almost transparent. Do not texture every surface.
+Retain a partial character-field transition across the 3D cat/image art too. Coherent grid scale/density. NEVER dither text, navigation labels, body copy or full background; avoid cyberpunk raining-code, fake numerical sensing data, sparks, confetti and glitch artifacts. Give controls shape and labels independent of color.
+
+Persistent bottom frosted dock: exactly FOUR evenly spaced labeled tabs, in this order: Home, Collection, Community, Profile. Simple recognizable outlined house, grid, people, person icons. Active tab purple with restrained citron/dither marker. Other tabs muted charcoal. Dock logicaly744–813, home indicator832. Four touch zones at least60px wide. No top-right duplicate profile shortcut now that Profile is a tab. Keep task screens and browsing screens uncluttered. No badges with fake notification counts.
+
+Same original-looking seated pearl/orchid 3D cat as supplied boards: pointed ears, rounded head, calm closed-eye expression, curved tail, fine print-layer surface. Cat retains identity. No real printer scan or printable mesh is claimed. Ripple tray and Cable pebble are concept previews; no fabricated prices, print durations, device telemetry or manufacturer partnership. All community stories/profile details are illustrative sample content, not real user data.
+
+Use the supplied NEW purple/citron Home/Collection board as the exact current style reference for material, typography, cat identity, component-level dither and four-tab dock. This is an extension, not another redesign.
+
+LEFT — COMMUNITY, Community tab active.
+Compact benchmate header. Title 'Community' at24px logical, small copy 'Small makes. Shared discoveries.'
+A quiet segmented control 'Makes' / 'Questions', Makes selected with purple/citron dither underline.
+One featured maker story, not a dashboard: translucent frosted post card. Header small abstract non-photographic avatar, fictional name 'Jules', small project label 'Little cat'. Main media: same pearl/orchid cat placed on a cool gray desk surface, obvious but restrained character-field transition confined to a narrow side of this project artwork. Foreground frosted story-caption strip shows 'A little company for my desk.' Two quiet text actions 'Appreciate' and 'Discuss', no fabricated social counts. The card's right glass edge is itself stippled/dithered in violet and citron, clearly visible OUTSIDE the image.
+Below, one compact frosted row with small two-person icon: 'First project?' / 'Ask the community' and chevron. A 2D matrix divider precedes the row. No safety/procedural advice in feed copy, no claims of verified fixes.
+One primary charcoal pill 'Share a make', with small citron plus end-cap. Four-tab dock Community selected. No gamified leaderboard or noisy endless feed; show one calm story and one useful question entry.
+
+RIGHT — PROFILE, Profile tab active.
+Compact benchmate header. Title 'Your profile', small copy 'A space for your making.'
+A frosted identity panel: abstract purple avatar with a citron-to-purple dither halo, solid profile silhouette; editable row 'Add your name' with pencil. Do not invent the user's name, actual photo, location, followers or completed history.
+A compact section 'Your equipment', one row 'Bambu X1 Carbon' with small schematic device icon and chevron.
+A beautiful compact glass 'Your journey' card with small pearl cat thumbnail, 'Little cat', 'Ready to begin'. Four small labeled stages 'Prepare', 'At printer', 'Print', 'Finish' using ordered-dot/matrix nodes and a citron accent for the CURRENT uncompleted first stage. No completed checks, badges, XP, numerical statistics, or unsupported achievements. Keep semantic text crisp. Card trailing edge uses the same short matrix dissolution as other screens.
+Below a restrained settings group with exactly three navigation rows 'Preferences', 'Notifications', 'Privacy', each icon and chevron; simple small dividers, no huge tiled buttons. End before bottom dock.
+Four-tab dock Profile selected with same purple/citron ordered-dither underlay.
+SCREEN FIT: header/title byy165; community post y210–570, ask-row y590–645, share buttony675–720. Profile identityy200–320, equipmenty348–420, journeyy445–585, settingsy610–722. Docky744–813. Keep realistic proportions and every screen within one852pxlogical viewport. Use modest type and avoid extra labels.

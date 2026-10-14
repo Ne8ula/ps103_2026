@@ -1,0 +1,21 @@
+/* Bounded static refinement from inspected Weave board b36e46c3. */
+.visual-stage{border-radius:8px}
+.phase.active>span:nth-child(2){text-decoration:underline;text-decoration-color:#75846b;text-decoration-thickness:2px;text-underline-offset:6px}
+.task-description{font-size:15px}
+.task-panel h1{overflow-wrap:anywhere}
+.task-tools button{font-size:12px}
+.task-eyebrow,.art-topline{font-size:10px}
+.button-note{font-size:11px}
+.recovery-stage{background:#eee5d6}
+.task-panel>.notice{box-shadow:inset 3px 0 0 #b17d55}
+.finished .task-panel h1{font-size:46px}
+.object-caption div>span{color:#5b6650}
+.workspace-footer>span{color:#626d58}
+.handoff p,.mini-history{color:#5e6c51}
+.observation div>span{color:#58664c}
+.studio-toolbar{color:#5d6b50}
+.source-links small{color:#5b684f}
+.back-button{min-height:44px;color:#5e6c51}
+.input-label>span{color:#5e6c51}
+@media(max-width:780px){.task-description{font-size:14px}.task-eyebrow{font-size:10px}.art-topline{font-size:8px}.finished .task-panel h1{font-size:42px}.workspace:not(.entry) .visual-stage{aspect-ratio:1.55}.workspace:not(.entry) .visual-stage>.cat-art{padding-top:3px;padding-bottom:22px}.task-tools button{min-height:44px}}
+@media(max-width:390px){.finished .task-panel h1{font-size:38px}.task-description{font-size:13px}}

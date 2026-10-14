@@ -1,0 +1,208 @@
+/* PANDA Design System — Tokens
+ * Glassmorphism / visionOS-inspired AR card system.
+ * Substitution flag: SF Pro → Inter (CDN). SF Symbols → Lucide (CDN).
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* ---------- Color: foundation (neutrals, oklch, slightly cool) ---------- */
+  --fg-primary:    oklch(18% 0.01 260);
+  --fg-secondary:  oklch(40% 0.01 260);
+  --fg-tertiary:   oklch(58% 0.012 260);
+  --fg-quaternary: oklch(72% 0.012 260);
+  --fg-on-glass-dark: oklch(98% 0 0);
+
+  /* Glass surfaces — light scene */
+  --glass-bg:        rgba(255, 255, 255, 0.55);
+  --glass-bg-hi:     rgba(255, 255, 255, 0.72);
+  --glass-bg-lo:     rgba(255, 255, 255, 0.38);
+  --glass-border:    rgba(255, 255, 255, 0.55);
+  --glass-edge:      rgba(0, 0, 0, 0.06);
+  --glass-highlight: rgba(255, 255, 255, 0.45);
+
+  /* Glass surfaces — dark scene variant */
+  --glass-dark-bg:        rgba(20, 20, 24, 0.55);
+  --glass-dark-bg-hi:     rgba(40, 40, 46, 0.72);
+  --glass-dark-border:    rgba(255, 255, 255, 0.18);
+  --glass-dark-highlight: rgba(255, 255, 255, 0.10);
+
+  /* ---------- Color: accents (visionOS / Apple-system palette) ---------- */
+  --blue:    #0A84FF;
+  --green:   #30D158;
+  --orange:  #FF9F0A;
+  --red:     #FF453A;
+  --purple:  #BF5AF2;
+  --teal:    #64D2FF;
+  --yellow:  #FFD60A;
+
+  /* Tinted glass surfaces — for status cards */
+  --tint-blue:   rgba(10, 132, 255, 0.14);
+  --tint-green:  rgba(48, 209, 88, 0.14);
+  --tint-orange: rgba(255, 159, 10, 0.14);
+  --tint-red:    rgba(255, 69, 58, 0.14);
+  --tint-purple: rgba(191, 90, 242, 0.14);
+
+  --tint-blue-border:   rgba(10, 132, 255, 0.30);
+  --tint-green-border:  rgba(48, 209, 88, 0.30);
+  --tint-orange-border: rgba(255, 159, 10, 0.30);
+  --tint-red-border:    rgba(255, 69, 58, 0.30);
+  --tint-purple-border: rgba(191, 90, 242, 0.30);
+
+  --on-blue:   #0055b3;
+  --on-green:  #1a7a3c;
+  --on-orange: #7c5000;
+  --on-red:    #c0392b;
+  --on-purple: #6b21a8;
+
+  /* ---------- Type ---------- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, monospace;
+
+  /* type scale — bumped for AR legibility (cards float at ~0.6m) */
+  --t-display: 36px;  --lh-display: 42px;
+  --t-title:   24px;  --lh-title:   30px;
+  --t-body:    17px;  --lh-body:    24px;
+  --t-caption: 15px;  --lh-caption: 20px;
+  --t-micro:   12px;  --lh-micro:   16px;
+
+  /* ---------- Radii ---------- */
+  --r-card:    28px;
+  --r-nest:    20px;
+  --r-inner:   14px;
+  --r-chip:    10px;
+  --r-pill:    999px;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --s-1: 4px; --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 20px; --s-6: 24px; --s-7: 32px; --s-8: 40px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-1: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-2: 0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-3: 0 16px 48px rgba(0, 0, 0, 0.22);
+
+  /* glass-specific composite (outer shadow + inner highlight + inner edge) */
+  --glass-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+
+  --glass-shadow-hover:
+    0 12px 40px rgba(0, 0, 0, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+
+  /* ---------- Blur ---------- */
+  --blur-sm: blur(12px) saturate(160%);
+  --blur-md: blur(24px) saturate(170%);
+  --blur-lg: blur(32px) saturate(180%);
+  --blur-xl: blur(48px) saturate(180%);
+
+  /* ---------- Motion ---------- */
+  --ease-vision: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-fast:  160ms;
+  --dur-base:  240ms;
+  --dur-slow:  320ms;
+  --dur-card:  480ms;
+}
+
+/* ---------- Semantic typography ---------- */
+.t-display { font: 600 var(--t-display)/var(--lh-display) var(--font-sans); letter-spacing: -0.01em; color: var(--fg-primary); }
+.t-title   { font: 600 var(--t-title)/var(--lh-title)   var(--font-sans); letter-spacing: -0.005em; color: var(--fg-primary); }
+.t-body    { font: 400 var(--t-body)/var(--lh-body)     var(--font-sans); color: var(--fg-secondary); }
+.t-caption { font: 400 var(--t-caption)/var(--lh-caption) var(--font-sans); color: var(--fg-tertiary); }
+.t-micro   { font: 600 var(--t-micro)/var(--lh-micro)   var(--font-sans); color: var(--fg-tertiary); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---------- Reusable glass surface ---------- */
+.glass {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  backdrop-filter: var(--blur-lg);
+  border-radius: var(--r-card);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.glass-dark {
+  background: var(--glass-dark-bg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  backdrop-filter: var(--blur-lg);
+  border-radius: var(--r-card);
+  box-shadow: var(--glass-shadow);
+  border: 1px solid var(--glass-dark-border);
+  color: var(--fg-on-glass-dark);
+}
+
+/* ===== Custom cursor ===== */
+html, * { cursor: none !important; }
+.cursor-fx {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #64D2FF;
+  box-shadow: 0 0 0 3px rgba(100,210,255,0.18), 0 0 18px 7px rgba(100,210,255,0.42);
+  transform: translate(-50%, -50%);
+  transition: width 110ms ease, height 110ms ease, box-shadow 110ms ease, opacity 80ms ease;
+}
+.cursor-fx.cursor-hover {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 0 4px rgba(100,210,255,0.2), 0 0 26px 10px rgba(100,210,255,0.55);
+}
+
+/* ===== Pinch gesture feedback ===== */
+.pinch-fx {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 68px;
+  height: 68px;
+  transform: translate(-50%, -50%);
+}
+.pfx-dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #64D2FF;
+  box-shadow: 0 0 0 4px rgba(100,210,255,0.22), 0 0 18px 6px rgba(100,210,255,0.5);
+}
+.pfx-dot.pfx-a {
+  top: 0; left: 0;
+  animation: pfx-a 0.55s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.pfx-dot.pfx-b {
+  bottom: 0; right: 0;
+  animation: pfx-b 0.55s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.pfx-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid #64D2FF;
+  opacity: 0;
+  animation: pfx-ring 0.45s ease-out 0.22s forwards;
+}
+@keyframes pfx-a {
+  0%   { transform: translate(0,0);        opacity: 1; }
+  42%  { transform: translate(15px,15px);  opacity: 1; }
+  62%  { transform: translate(15px,15px);  opacity: 0.6; }
+  100% { transform: translate(15px,15px);  opacity: 0; }
+}
+@keyframes pfx-b {
+  0%   { transform: translate(0,0);           opacity: 1; }
+  42%  { transform: translate(-15px,-15px);   opacity: 1; }
+  62%  { transform: translate(-15px,-15px);   opacity: 0.6; }
+  100% { transform: translate(-15px,-15px);   opacity: 0; }
+}
+@keyframes pfx-ring {
+  0%   { transform: translate(-50%,-50%) scale(0.4); opacity: 0.9; }
+  55%  { transform: translate(-50%,-50%) scale(2.4); opacity: 0.35; }
+  100% { transform: translate(-50%,-50%) scale(3.2); opacity: 0; }
+}

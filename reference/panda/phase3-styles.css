@@ -1,0 +1,341 @@
+/* phase3-styles.css — additions on top of phase2-styles.css */
+
+/* ============ SD Card insertion diagram (Step 9) ============ */
+.sd-diagram{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  padding:18px 12px; margin-top:10px;
+  border-radius:14px;
+  background: linear-gradient(180deg, rgba(10,132,255,0.06), rgba(10,132,255,0.02));
+  border:1px solid rgba(10,132,255,0.18);
+  transition: background .2s, border-color .2s;
+}
+.sd-diagram.wrong{
+  background: linear-gradient(180deg, rgba(255,59,48,0.08), rgba(255,59,48,0.02));
+  border-color: rgba(255,59,48,0.32);
+}
+
+.sd-card-vis{
+  position:relative;
+  width:96px; height:64px;
+  border-radius: 4px 12px 4px 4px;
+  background: linear-gradient(135deg, #f3f3f6, #d8d9df);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.6);
+  border:1px solid rgba(0,0,0,0.18);
+  transition: transform .25s ease;
+}
+.sd-diagram.wrong .sd-card-vis{ transform: rotate(180deg); }
+
+.sd-card-vis .sd-corner{
+  position:absolute; top:0; right:0;
+  width:16px; height:16px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.18) 50%);
+  border-top-right-radius:12px;
+}
+.sd-card-vis .sd-label-line{
+  position:absolute; left:10px; top:18px;
+  width:60px; height:4px; border-radius:2px;
+  background: rgba(0,0,0,0.32);
+}
+.sd-card-vis .sd-label-line.short{
+  top:30px; width:42px; height:3px;
+  background: rgba(0,0,0,0.22);
+}
+.sd-card-vis .sd-pins{
+  position:absolute; left:8px; bottom:6px;
+  width:80px; height:8px;
+  background: repeating-linear-gradient(
+    90deg, #b88a3a 0 6px, #d8a955 6px 10px
+  );
+  border-radius:1px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.sd-arrow{
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px;
+  border-radius:50%;
+  background: #1a1d24;
+  color:#4a4f5e;
+  border:1px solid rgba(0,0,0,0.5);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  animation: sd-bounce 1.6s ease-in-out infinite;
+}
+.sd-diagram.wrong .sd-arrow{
+  background: rgba(255,59,48,0.18);
+  color:#ff3b30;
+  border-color: rgba(255,59,48,0.4);
+  animation: sd-shake 0.6s ease-in-out infinite;
+}
+@keyframes sd-bounce{
+  0%, 100%{ transform: translateY(-3px); }
+  50%{ transform: translateY(3px); }
+}
+@keyframes sd-shake{
+  0%, 100%{ transform: translateX(0); }
+  25%{ transform: translateX(-3px); }
+  75%{ transform: translateX(3px); }
+}
+
+.sd-slot-vis{
+  position:relative;
+  width:84px; height:64px;
+  border-radius:8px;
+  background: rgba(0,0,0,0.16);
+  border:1px solid rgba(255,255,255,0.18);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  transition: box-shadow .2s, border-color .2s;
+}
+.sd-slot-vis.ready{
+  box-shadow: 0 0 0 2px rgba(48,209,88,0.45), 0 0 18px rgba(48,209,88,0.35);
+  border-color: rgba(48,209,88,0.7);
+}
+.sd-slot-vis.rejected{
+  box-shadow: 0 0 0 2px rgba(255,59,48,0.55), 0 0 18px rgba(255,59,48,0.4);
+  border-color: rgba(255,59,48,0.7);
+}
+.sd-slot-vis .slot-mouth{
+  width:60px; height:10px;
+  border-radius:2px;
+  background: linear-gradient(180deg, #1a1a1f, #0a0a0d);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+.sd-slot-vis .slot-label{
+  margin-top:8px;
+  font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.sd-slot-vis.ready .slot-label{ color: rgba(48,209,88,0.95); }
+.sd-slot-vis.rejected .slot-label{ color: rgba(255,59,48,0.95); }
+
+/* ============ Orientation pill toggle ============ */
+.orient-toggle{
+  display:flex; align-items:center; gap:6px;
+  margin-top:10px;
+  padding:6px;
+  background: rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  flex-wrap:wrap;
+}
+.orient-toggle .lbl{
+  font-size:11px; font-weight:600; letter-spacing:0.04em;
+  color: rgba(255,255,255,0.65);
+  margin: 0 6px;
+}
+.orient-toggle .pill{
+  display:inline-flex; align-items:center; gap:5px;
+  padding: 5px 10px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.85);
+  font-size: 12px; font-weight: 500;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.orient-toggle .pill:hover{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.22);
+}
+.orient-toggle .pill.on{
+  background: rgba(10,132,255,0.22);
+  border-color: rgba(10,132,255,0.55);
+  color:#fff;
+}
+.orient-toggle .pill:nth-child(3).on{
+  background: rgba(255,59,48,0.22);
+  border-color: rgba(255,59,48,0.55);
+}
+
+/* ============ SD Reject FX overlay ============ */
+.sd-reject-fx{
+  position: absolute;
+  /* Pin near the SD slot region of the printer scene */
+  right: 10%; bottom: 22%;
+  z-index: 18;
+  pointer-events: none;
+}
+.sd-reject-ring{
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,59,48,0.85);
+  box-shadow: 0 0 0 6px rgba(255,59,48,0.18), 0 0 28px rgba(255,59,48,0.5);
+  animation: sd-reject-pulse 1.2s ease-out infinite;
+  position: relative;
+}
+.sd-reject-ring::before{
+  content:""; position:absolute; inset:18%;
+  border-radius:50%;
+  background: rgba(255,59,48,0.16);
+}
+.sd-reject-ring::after{
+  content:"✕";
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; font-weight: 700;
+  color: #ff3b30;
+  text-shadow: 0 2px 8px rgba(255,59,48,0.6);
+}
+.sd-reject-label{
+  margin-top: 8px;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255,59,48,0.92);
+  color: #fff;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(255,59,48,0.4);
+  white-space: nowrap;
+}
+@keyframes sd-reject-pulse{
+  0%{ transform: scale(1); opacity: 1; }
+  60%{ transform: scale(1.08); opacity: 0.85; }
+  100%{ transform: scale(1); opacity: 1; }
+}
+
+/* ============ Substep progress (Step 13) ============ */
+.substep-progress{
+  margin-top: 10px;
+  margin-bottom: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.ssp-bar{
+  position: relative;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.ssp-fill{
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, #0a84ff, #30d158);
+  border-radius: 999px;
+  transition: width .35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ssp-meta{
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 7px;
+  font-size: 11px; font-weight: 500;
+  color: rgba(255,255,255,0.65);
+}
+.ssp-meta span:first-child{
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+}
+
+/* Step list — tighter for unload procedure */
+.step-list-tight li{
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.step-list-tight li:hover{
+  background: rgba(255,255,255,0.04);
+}
+.step-list-tight li.active{
+  background: rgba(10,132,255,0.12);
+  border-left: 2px solid #0a84ff;
+}
+.step-list-tight li.done{
+  opacity: 0.7;
+}
+
+/* Voice hint row */
+.voice-hint{
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ============ Filament feed animation (Step 13 · load-new substep) ============ */
+
+/* Spool: pop-in then sustained orange glow while feeding */
+.spool.new.feeding {
+  animation:
+    spoolPop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    spoolFeedGlow 1.4s ease-in-out 600ms infinite;
+}
+@keyframes spoolFeedGlow {
+  0%, 100% {
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,0.3),
+      0 3px 10px rgba(0,0,0,0.6),
+      0 0 0 2px rgba(255,149,0,0.3),
+      0 0 10px rgba(255,149,0,0.4);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,0.3),
+      0 3px 10px rgba(0,0,0,0.6),
+      0 0 0 5px rgba(255,149,0,0.5),
+      0 0 20px rgba(255,149,0,0.7);
+  }
+}
+
+/* Spinning ring overlay on the spool — shows filament unwinding */
+.spool-spin-anim {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: rgba(255,149,0,0.85);
+  border-right-color: rgba(255,149,0,0.4);
+  animation: spoolSpinRing 0.9s linear infinite;
+}
+@keyframes spoolSpinRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Filament-feed tube: orange/white striped strands flow downward */
+.filament-feed.active {
+  width: 3px;
+  height: 24px;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255,149,0,0.95) 0px,
+    rgba(255,149,0,0.95) 4px,
+    rgba(255,255,255,0.9) 4px,
+    rgba(255,255,255,0.9) 8px
+  );
+  box-shadow: 0 0 6px 2px rgba(255,149,0,0.7), 0 0 14px 4px rgba(255,149,0,0.35);
+  opacity: 1;
+  animation: feedStripe 0.4s linear infinite;
+}
+@keyframes feedStripe {
+  from { background-position: 0 0; }
+  to   { background-position: 0 8px; }
+}
+
+/* Nozzle purge drip — filament strand dripping from nozzle */
+.ph-purge-drip {
+  position: absolute;
+  left: 50%; bottom: -13px;
+  transform: translateX(-50%);
+  width: 4px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(180deg, #ffffff 0%, #ff9500 100%);
+  box-shadow: 0 0 4px rgba(255,149,0,0.8), 0 0 8px rgba(255,149,0,0.4);
+  animation: purgeDrip 1s ease-in-out infinite;
+}
+@keyframes purgeDrip {
+  0%   { height: 2px;  opacity: 0.4; }
+  50%  { height: 9px;  opacity: 1;   }
+  80%  { height: 11px; opacity: 0.7; }
+  100% { height: 2px;  opacity: 0;   }
+}
+
+/* ============ Phase 3 chip (red tint when wrong orientation) ============ */
+.phase-chip.warn{
+  background: rgba(255,149,0,0.18);
+  border-color: rgba(255,149,0,0.45);
+  color: #ffb558;
+}
+.phase-chip.warn .dot{
+  background: #ff9500;
+}

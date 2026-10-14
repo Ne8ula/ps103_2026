@@ -1,0 +1,320 @@
+﻿Project Companion Product Vision and Feasibility
+Working decision brief
+Recommendation: pursue a narrowly scoped project companion for a finished product that people use repeatedly to make things. Start with one 3D printer model, a few reviewed projects, and a hosted experience that a manufacturer could distribute to its customers.
+This brief consolidates the product direction, delivery options, operating model, financial assumptions, documentation rights, and comparisons with the earlier concepts. It is a decision aid, not evidence of paid demand or permission to reuse a manufacturer’s content.
+The current vision
+A manufacturer buys software that helps its customers set up equipment, choose a project, work through it, recover from common problems, and return later to finish or start another project. The customer’s saved context turns an instruction manual into an ongoing project workspace.
+The initial boundary is finished products that enable creation: 3D printers, craft or photo printers, and potentially ovens. A generic office printer may offer less project depth; an oven introduces different food and appliance safety requirements. These categories should be evaluated separately.
+What the product must know
+* Equipment knowledge: reviewed setup, maintenance, operating limits, warnings, and model-specific instructions.
+* Project knowledge: tested templates covering materials, workflow, checkpoints, and the expected result. Equipment manuals alone do not teach every possible project.
+* User context: the selected device, material and settings, choices already made, progress, observations, and optional photos.
+Why this direction is promising
+It gives the manufacturer a concrete reason to distribute the product and gives users a reason to return after setup. Both are hypotheses to test. The strongest initial promise is helping a novice finish a supported project with fewer avoidable interruptions.
+Evidence labels throughout: cited statements describe published sources; recommendations are our judgment; financial figures and pilot targets are illustrative assumptions.
+________________
+
+
+1 Feasibility and the first user experience
+A constrained version is technically feasible with existing language models, document retrieval, ordinary application state, and reviewed decision flows. Reliable guidance across arbitrary projects and equipment is a substantially larger problem.
+Capability
+	Initial feasibility
+	Scope decision
+	Model-specific answers
+	High with reviewed sources
+	Show source and applicable model; say when evidence is missing.
+	Setup and saved project progress
+	High
+	Use explicit steps, checkpoints, and persistent state.
+	Adapt a known project
+	Moderate
+	Constrain materials, dimensions, and supported alternatives.
+	Interpret a user photo
+	Moderate for observations
+	Treat findings as hypotheses; request checks before declaring success.
+	Any project on any device
+	Low for an initial product
+	Defer open-ended generation and unreviewed settings.
+	Direct device operation
+	Integration dependent
+	Use official tools for execution in the first demo.
+	
+
+A credible vertical slice
+A user chooses the supported printer, selects a simple desk organizer project, confirms available material, and follows a reviewed preparation flow. The app explains relevant choices, links to the official equipment instructions, and sends the user to the normal slicer or manufacturer app for execution.
+The user records a checkpoint, receives bounded troubleshooting guidance, saves the project, resumes later, and records the result. The demo should demonstrate this complete loop rather than only a question-answer chat.
+Reliability and learning
+Store source versions and model applicability with each step. Keep warnings and approved limits in reviewed content. Test known failure cases and provide a route to official support when evidence is insufficient. NIST identifies confabulation as a generative AI risk; retrieval is a mitigation, not a guarantee. [1]
+If learning remains part of the vision, explain why a step matters, reduce hints over time, and test an independent attempt. Earlier research on minimal manuals supports action-oriented learning and error recovery, but does not establish demand or effectiveness for this product. [2]
+________________
+
+
+2 Business model and distribution
+B2B2C fits this direction when the manufacturer pays and its customers use the experience. An internal employee training product would instead be B2B; a military buyer often introduces a government procurement model. These are different sales and delivery motions.
+Option
+	What it means
+	Main tradeoff
+	Embedded manufacturer experience
+	The manufacturer puts our interface or API into its product UI or app.
+	Brand continuity and distribution; more integration, security review, and release coordination.
+	Code activated hosted app
+	The manufacturer issues an entitlement code or link; users activate a workspace we host.
+	Faster pilot and one update path; another account or app may add friction.
+	Manufacturer operated deployment
+	The manufacturer runs the service or uses its own model account.
+	More control of data and inference spend; harder installation, upgrades, and support.
+	
+
+An activation code proves entitlement to the software. It does not grant device control, pair a printer, or provide authorization to use the manufacturer’s APIs.
+Who pays for AI inference
+Embedding the UI does not transfer infrastructure responsibility. If requests run through our backend, we still operate and pay for that backend unless the contract provides reimbursement. Separate the choices of branding, hosting, model provider account, usage billing, data handling, and support ownership.
+A practical first contract is a paid setup fee plus an annual license with a defined usage allowance and overage terms. Additional product families, custom integrations, and unusually large content revisions should have explicit prices or scope limits.
+Recommended sequence
+Begin with a hosted, manufacturer-branded pilot using a single engine. Add embedded delivery after proving demand and understanding the buyer’s actual integration requirements. Do not maintain two deployment stacks before the core experience is validated.
+The Stripe analogy and competitive reality
+Stripe’s hosted and embedded checkout options are a useful distribution analogy, not proof that instructional software has equivalent economics. [3] BILT already offers interactive instructions and advertises embedded delivery and AI-assisted authoring; Documoto supports digital parts content. “AI manuals” or “embedding” alone is weak differentiation. [4–6]
+The proposed distinction is persistent, project-specific guidance for repeated creation. Validate that it improves outcomes beyond a manual, a video, a general chatbot, or the manufacturer’s existing app.
+________________
+
+
+3 Operational feasibility
+The main scaling constraint is likely to be reviewing and maintaining reliable content across models and revisions. Low model-call costs cannot compensate for a service that requires extensive expert labor for every customer.
+Stage
+	Our responsibility
+	Manufacturer responsibility
+	Onboard
+	Structure the approved source set and model mapping.
+	Supply current documentation, rights, and a technical owner.
+	Author
+	Draft flows, checkpoints, and source links.
+	Resolve technical ambiguity and unsupported cases.
+	Approve
+	Check completeness, interaction quality, and traceability.
+	Approve technical applicability and warnings.
+	Publish
+	Operate the app, releases, and version history.
+	Distribute access and identify supported customers.
+	Maintain
+	Flag affected flows and prepare changes.
+	Communicate product changes and approve revisions.
+	Support
+	Resolve account, app, and workflow defects.
+	Handle device faults and authoritative technical escalation.
+	
+
+What a manageable launch requires
+* One product family and explicit model and firmware applicability, with a named manufacturer reviewer.
+* A source register linking each instruction to a revision, approval state, and content owner.
+* A defined change process, rollback capability, and escalation path for uncertain or outdated guidance.
+* A clear policy for user photos and project data, retention, access, and whether model providers may use it.
+Reduce integration work at the start
+Use approved file uploads, explicit model selection, and a hosted link or QR code before attempting product information management, support CRM, or device telemetry integrations. Documoto’s integration guidance illustrates that customer systems and service endpoints still require customer-side implementation work. [7]
+Test whether the operation scales
+Time every onboarding, review, revision, and support activity, including founder effort. Have the manufacturer attempt a routine content edit. Run one real revision exercise during the pilot. If routine changes repeatedly need our engineers or bespoke production, price the work as a service until the process is repeatable.
+________________
+
+
+4 Financial feasibility and unit economics
+The following is an illustrative manufacturer account model from the manual-oriented concept. It is not a market quote, validated willingness to pay, or a forecast for unlimited AI project use. All figures are USD.
+First year item
+	Assumption
+	Amount
+	Setup revenue
+	One time
+	$6,000
+	Subscription revenue
+	$1,500 × 12 months
+	$18,000
+	Total revenue
+	Setup plus subscription
+	$24,000
+	Onboarding cost
+	60 hours × $60
+	$3,600
+	Support and content QA
+	4 hours/month × 12 × $60
+	$2,880
+	Technology allowance
+	$100/month × 12
+	$1,200
+	Total direct cost
+	Before acquisition and fixed costs
+	$7,680
+	Contribution
+	Revenue less direct cost
+	$16,320   68%
+	Customer acquisition
+	Illustrative incremental cost
+	$3,000
+	After acquisition
+	Before company fixed costs
+	$13,320
+	
+
+Renewal economics and company break even
+With no repeat onboarding charge or cost, annual revenue is $18,000 and direct cost is $4,080. Renewal contribution is $13,920, or about 77%. At illustrative fixed annual costs of $300,000, roughly 22 retained accounts cover those fixed costs. Twenty-five accounts would leave about $48,000 before tax, replacement acquisition, and any extra staffing.
+The fixed-cost assumption is $170,000 of loaded engineering cost, $90,000 of founder or product cost, and $40,000 of overhead. Delivery labor must be accounted for consistently so the same labor is not counted again in fixed payroll. Six months of fixed operating cost alone would require $150,000.
+What changes with the project companion
+The $100 monthly technology allowance must be replaced by measured usage. A project session may involve retrieval, images, multiple inference calls, storage, and retries. Price active use, not only the number of manuals. A manufacturer paying its own model bill removes one expense from our books but does not remove QA, support, or integration costs.
+Account contribution equals license and usage revenue less content and support labor, variable project costs, and other direct infrastructure. Include onboarding in year one. Measure cost per completed project and per active user before offering large allowances.
+________________
+
+
+5 Financial sensitivity and buyer value
+The prior model is highly sensitive to ongoing service labor. This table holds annual subscription revenue at $18,000, labor at $60/hour, technology at $1,200/year, and fixed company cost at $300,000. It excludes acquisition and initial onboarding.
+Ongoing hours per month
+	Renewal contribution
+	Accounts to cover fixed cost
+	4
+	$13,920   77%
+	22
+	10
+	$9,600   53%
+	32
+	20
+	$2,400   13%
+	125
+	
+
+Why the manufacturer would buy
+Possible benefits are fewer avoidable support contacts, fewer preventable returns, faster first successful use, and more sustained use of the equipment. These are hypotheses; different buyers may value them differently. Increased use does not automatically produce increased manufacturer revenue.
+For illustration, if an avoidable support contact costs $12, a $24,000 first-year price requires 2,000 avoided contacts to justify itself on support alone. The $18,000 renewal requires 1,500. Released support capacity may not become cash savings, and benefits from returns or retention must not be double counted.
+Commercial questions to resolve
+* Who owns the budget: support, customer experience, product, education, or marketing? Who can approve a paid pilot?
+* How many owners activate, complete a project, and return? What fraction require expensive human intervention?
+* What is the baseline failure rate, support burden, and time to first successful outcome?
+* Will the manufacturer supply expert review and current content, or expect us to produce everything?
+* Does a code include perpetual basic access, a fixed term, or a limited number of projects? Who funds continued usage?
+Recommended financial guardrails
+Use a paid pilot with bounded content, named reviewers, and a clear active-user or project allowance. Separate recurring license revenue from custom services. Track gross contribution after all delivery labor, and test margins at the observed high-use end of the user distribution.
+Do not scale sales based only on a low average token bill. The decision to expand should follow evidence of buyer value, repeatable onboarding, manageable updates, and acceptable support effort.
+________________
+
+
+6 Comparison with our previous ideas
+The current direction offers a clearer product boundary and potential distribution partner. It also combines two difficult jobs: maintaining equipment-specific truth and guiding variable user projects. The comparison below is a strategic assessment, not measured market demand.
+Earlier direction
+	What it solves
+	Assessment against current vision
+	Broad consumer project assistant
+	Helps anyone with many hands-on tasks.
+	Wider appeal, but weak boundaries and costly user acquisition. Retain saved progress and checkpoints.
+	Kit and guide offering
+	Bundles supplies with a guided result.
+	Controlled materials help reliability; inventory and fulfillment add a separate operation.
+	Expert authored lessons
+	Turns demonstrations into interactive learning.
+	Expert review is valuable; creator supply and publishing workflows become another business to build.
+	Workplace and vehicle safety training
+	Standardizes employee procedures and training.
+	Clear employer buyer; requires domain validation and competes with established training systems.
+	Military training and maintenance
+	Supports equipment procedures and readiness.
+	Potential value, but procurement, deployment, data, and assurance requirements need dedicated discovery.
+	OEM component integration
+	Helps engineers combine a component with a system.
+	Real engineering workflow, but user expertise and system variation make generic guidance less useful.
+	Finished product manuals
+	Improves setup, operation, and troubleshooting.
+	Natural manufacturer-to-user distribution; may have limited use after onboarding.
+	Current project companion
+	Helps owners repeatedly create with equipment.
+	Stronger repeat-use hypothesis; needs tested project knowledge beyond the manual.
+	
+
+Component integration is a common engineering activity: suppliers such as Texas Instruments provide design and development resources. [8] That does not imply an unmet need for our product. Engineers may already have application notes, CAD, reference designs, or supplier support.
+Workforce and military opportunities also have existing solutions: DeepHow advertises SOP adherence tools, and Taqtile has received an Army SBIR award for maintenance guidance. [9–10] These signals establish adjacent activity, not an accessible buyer or validated demand for us.
+Recommendation: keep these markets as future options. Focus current discovery on manufacturers of creative equipment whose novice customers struggle between setup and a successful project.
+________________
+
+
+7 Using public proprietary documentation
+A proof of concept about a Bambu Lab printer is possible. Public availability of Bambu Lab documentation does not, by itself, authorize copying its text, illustrations, or entire knowledge base into our product. No blanket reuse license was confirmed in this research.
+What copyright does and does not cover
+Under US copyright principles, facts, ideas, systems, and methods are distinct from the protected expression used to explain them. We can independently describe factual operating information, but manuals, photos, diagrams, and substantial expressive text may be protected. Closely paraphrasing an entire manual is not a reliable workaround. [11]
+Uploading or indexing documentation for retrieval augmented generation may involve copying. It is not automatically exempt because the content is retrieved rather than used to train a model. Website terms and any specific license are separate considerations.
+Why a student demo is not automatic permission
+US fair use considers purpose, the nature of the work, the amount used, and market effect. Educational or noncommercial intent may matter, but neither it nor attribution gives blanket permission. A private experiment and a public commercial demonstration can present different facts. Legal treatment also varies by jurisdiction. [12–13]
+What we could verify about Bambu Lab
+Indexed Bambu wiki material displayed a copyright notice, and an indexed About Us result contained restrictions on automated collection. The full terms page could not be retrieved, so its current scope could not be confirmed. Treat substantial scraping or ingestion as unresolved rather than permitted. [14]
+A Bambu Studio workflow page references a Creative Commons licensed project asset. That does not establish a Creative Commons license for the surrounding article or the whole wiki. Apply the license for the exact asset, including attribution and any share-alike or other conditions. [15–16]
+A practical route for the demo
+* Use one available printer, our own original instructions and visuals, and an original or appropriately licensed project model.
+* Link to official documentation and record the sources used to verify factual statements. Do not reproduce the whole manual.
+* Label the experience as an independent prototype without implying Bambu endorsement or partnership.
+* If copying is necessary, request written permission covering the exact content, AI processing, display, and public demonstration.
+Before substantial unlicensed reuse or a public commercial launch, obtain advice from qualified counsel or the university’s legal resources. This section is general US information, not a legal clearance.
+________________
+
+
+8 Pilot plan and decision criteria
+Build a complete, narrow experience that can test both customer benefit and the operating model. One printer model and a few validated projects are sufficient to evaluate the core idea.
+Proposed pilot scope
+* Support setup, one first project, and one common troubleshooting scenario, with a saved session that can be resumed.
+* Add two further project templates only after the first workflow succeeds, to test whether users return for another outcome.
+* Use original or permission-cleared content, visible source links, and reviewed technical limits.
+* Keep execution in the normal manufacturer app or slicer; make device control a separate integration decision.
+Bambu’s published integration update describes Bambu Connect and developer-oriented routes in a specific historical context. It is evidence that integration policy matters, not a guarantee of current access for every model or firmware. Verify the current official route before implementation. [17]
+What to measure
+Question
+	Evidence to collect
+	Does it help the user?
+	Completion, time to outcome, errors, requests for help, and comparison with the current manual or tutorial.
+	Do users return?
+	A second project or resumed session; distinguish reminders from voluntary reuse.
+	Can we operate it?
+	Onboarding hours, reviewer hours, update effort, escalation rate, and one completed revision exercise.
+	Can it earn money?
+	Paid pilot intent, identified budget owner, contribution per account, and cost per completed project.
+	
+
+Conditions for expanding
+Agree on success criteria with the pilot manufacturer before testing. Expand only when users show a meaningful improvement, the content workflow is repeatable, and the buyer accepts a price that covers observed delivery and usage costs. A demonstration alone does not establish these conditions.
+Open decisions
+Choose the first manufacturer category and accessible device, the first supported project, the content owner, the distribution channel, and the pilot budget. Confirm whether the primary outcome is support reduction, successful creation, or learning; that choice determines what to measure and who should buy.
+The recommended next commitment is a scoped pilot and buyer discovery, followed by a decision on embedded delivery. Avoid promising unlimited projects or broad hardware compatibility before the evidence supports them.
+________________
+
+
+9 Sources and research notes
+Primary sources support the factual statements marked with bracketed numbers. Vendor pages describe vendor claims and capabilities, not independent evidence of effectiveness. Financial figures, product recommendations, and pilot design are assumptions or analysis.
+1 NIST Generative AI Profile
+Risk framework including confabulation; published 2024.
+2 IBM Research The Minimal Manual
+Carroll and colleagues, 1987; action-oriented learning and error recovery in a different product context.
+3 Stripe Checkout quickstarts
+Hosted and embedded payment interface options; used only as a distribution analogy.
+4 BILT platform
+Interactive instructions, embedded experiences, and platform capabilities.
+5 BILT frequently asked questions
+Brand-sponsored model, review process, and setup plus subscription approach.
+6 Documoto digital parts catalogs
+Parts content, diagrams, and integration capabilities.
+7 Documoto integration implementation guide
+Customer-side web services and integration responsibilities.
+8 Texas Instruments design and development
+Example of established component integration resources.
+9 DeepHow SOP adherence
+Vendor claims about workforce procedure guidance and verification.
+10 Taqtile Army SBIR award
+Historical evidence of funded maintenance-guidance work, not a current procurement opportunity.
+________________
+
+
+Sources continued
+11 US Copyright Office Circular 33
+Works not protected by copyright; distinctions among facts, ideas, methods, and expression.
+12 US Copyright Office Fair Use Index
+The four-factor framework and case-specific character of fair use.
+13 US Copyright Office fair use FAQ
+Permission and fair-use guidance; no universal safe copying percentage.
+14 Bambu Lab wiki About Us
+Indexed copyright and collection restrictions. Full terms could not be retrieved; no blanket permission confirmed.
+15 Bambu Studio project based workflow
+Reference to a licensed project asset; not evidence of a license for the entire wiki.
+16 Creative Commons license overview
+License-specific permissions and conditions.
+17 Bambu Connect and third party integration update
+Published 2025; historical integration context that must be rechecked against the chosen device and firmware.
+Limits of this brief
+The research establishes relevant capabilities, adjacent competitors, and legal considerations. It does not verify manufacturer willingness to pay, customer demand, technical performance, or a license to reuse Bambu content. No affiliation with any named company is implied.

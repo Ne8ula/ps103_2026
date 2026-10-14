@@ -1,0 +1,26 @@
+BENCHMATE · PROJECT RECORD
+Miso · A Gift
+Independent guided demo, not evidence of a physical print.
+
+Equipment: Bambu Lab X1 Carbon / assumed 0.4 mm / Bambu PLA Basic / X1 Textured PEI / external spool
+Checkpoint: A project to be proud of
+Completed checkpoints: personalize, studio, plate, filament, start, firstLayer, printing, cooling, quality
+Unresolved issue: None
+Recovery stage: None
+Photo: None
+Demo restarts: 0
+
+History:
+personalize
+studio
+plate
+filament
+start
+firstLayer
+printing
+cooling
+quality
+
+Note: A little gift for my desk
+
+Saved locally; no printer data or sensor readings.

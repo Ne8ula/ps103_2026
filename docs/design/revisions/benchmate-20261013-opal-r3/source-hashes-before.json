@@ -1,0 +1,18 @@
+﻿[
+    {
+        "path":  "src/scene/createScene.js",
+        "sha256":  "BE71E07672ECF664ADAE98F95D3A51AFDF9E5BF2D99084A3941202F0F9FBFA37"
+    },
+    {
+        "path":  "src/components/ProductScene.jsx",
+        "sha256":  "BA203B049E5C13F18EC48E3B55FEB78E50DB4B97BF621049C47254F8616B5ECB"
+    },
+    {
+        "path":  "src/mobile.css",
+        "sha256":  "7424A116507233671B69123F496CA523D6711834EBEAF100B90399673BA91747"
+    },
+    {
+        "path":  "src/MobileApp.jsx",
+        "sha256":  "40DCB360BBDC9D103019BB95E5CC4F67ECB0B0E99170496ECDA0541D26B68DC0"
+    }
+]

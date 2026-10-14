@@ -1,0 +1,74 @@
+﻿{
+    "passId":  "benchmate-20261013-ios-r2",
+    "date":  "2026-10-13",
+    "route":  "direct-model",
+    "workflowGuide":  "C:/Users/alexx/Documents/ClaudeAgent/GenUI_Agent/docs/design/FIGMA_WEAVE.md",
+    "sourceRevision":  "Uncommitted previous delivered app; source snapshots and SHA256 before this pass retained",
+    "model":  {
+                  "id":  "bebebed5-50c1-4701-98b3-86929db21585",
+                  "label":  "Nano Banana 2.1",
+                  "modelId":  "fal-ai/nano-banana-2/edit"
+              },
+    "inputFile":  "prompt.json",
+    "predictionId":  "1e3a139b-a00b-4574-ba21-e7a4114ed914",
+    "quotedCredits":  5,
+    "approval":  "User explicitly approved one 5-credit iPhone board, then supplied six references and material direction. Revised prompt requoted at same 5-credit cost; approval reused for the same single run.",
+    "reportedCost":  5,
+    "submissions":  1,
+    "status":  "COMPLETED",
+    "output":  {
+                   "path":  "references/images/img-01-ios-material-board.png",
+                   "width":  2752,
+                   "height":  1536,
+                   "url":  "https://media.weavy.ai/image/upload/v1791940743/uploads/RjA4KfH9v0eVz56zC2LruMUpYXG2/gzkrpxmbgvokgotp7duj.png"
+               },
+    "inspection":  {
+                       "method":  "Actual output viewed before frontend edits; all six user attachments viewed inline and described explicitly in prompt",
+                       "selected":  true,
+                       "ownerAcceptance":  "Pending",
+                       "adopt":  [
+                                     "Full-height iPhone composition and large object field",
+                                     "Pale celadon sculptural cat with fine layer texture",
+                                     "Charcoal action with a small lime end-cap",
+                                     "Dense matte glass lower sheet and restrained blurred green field",
+                                     "Thin segmented progress; large sans-serif title"
+                                 ],
+                       "reject":  [
+                                      "Inconsistent cat identity across generated screens",
+                                      "Unsupported saved slicer-settings claim",
+                                      "Simplified technical recovery text and implied literal cat silhouette first layer",
+                                      "Black plate used generically despite selected gold textured PEI",
+                                      "Text contrast in transparent regions and missing secondary help controls"
+                                  ]
+                   },
+    "ownedFiles":  [
+                       "src/main.jsx",
+                       "src/mobile.css",
+                       "src/components/ProductScene.jsx",
+                       "src/scene/createScene.js",
+                       "src/components/Dialog.jsx",
+                       "src/components/ProjectSheets.jsx",
+                       "src/data/project.js",
+                       "index.html",
+                       "package.json",
+                       "package-lock.json",
+                       "public/material-grain.svg",
+                       "src/MobileApp.jsx"
+                   ],
+    "motion":  "Static pass. Discrete view presets, no animated camera, continuous orbit, autoplay or new screen transitions. No video run.",
+    "limitations":  [
+                        "User references described in prompt; none uploaded as image inputs.",
+                        "Browser iOS mockup, not compiled SwiftUI or physical iPhone proof.",
+                        "Original visualization meshes are not manifold print-ready assets.",
+                        "No Figma frame sync or native design file."
+                    ],
+    "implementationStatus":  "Implemented; owner acceptance pending. Later material references proposed separately as r3.",
+    "verification":  [
+                         "Seven state tests passed",
+                         "Production build passed with renderer chunk-size warning",
+                         "Chrome actual 3D and discrete views",
+                         "393x852, 320x740, 1440x1000 browser checks",
+                         "Happy path, recovery, unknown issue, help focus, Back, reload, reset, real text download",
+                         "No physical iOS, printer, screen-reader or forced GPU failure test"
+                     ]
+}

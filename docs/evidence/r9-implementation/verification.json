@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-14",
+  "url": "http://127.0.0.1:4174",
+  "checks": [
+    "Dialog Escape returns focus to opener",
+    "Back never completes a checkpoint; detail expands in place",
+    "Complete main path, gated checks, local record opening, actual text download and private share preview",
+    "Profile preferences, fictional community interactions and local drafts survive reload",
+    "Demo photo continuity, cancellation, pause/reload/resume and gated recovery through repeated preparation",
+    "File selection retains photo without diagnosis; unresolved support survives reload and downloads summary",
+    "Unsupported file and camera permission errors preserve the selected image",
+    "Synthetic camera stream capture/cancel and media-track cleanup verified; physical camera not tested",
+    "320, 393, 430 and desktop captures; long text, keyboard and reduced-motion checks",
+    "Forced non-WebGL fallback remains navigable"
+  ],
+  "appErrors": []
+}

@@ -1,0 +1,11 @@
+import {writeFile} from 'node:fs/promises';
+const [candidate,source]=process.argv.slice(2);
+if(!['a','b'].includes(candidate))throw new Error('Candidate must be a or b');
+const url=new URL(source);
+if(url.protocol!=='https:'||url.hostname!=='media.weavy.ai'||!url.pathname.startsWith('/image/upload/'))throw new Error('Unexpected reference origin');
+const response=await fetch(url);
+if(!response.ok)throw new Error(`Reference download HTTP ${response.status}`);
+const bytes=Buffer.from(await response.arrayBuffer());
+const file=candidate==='a'?'img-01-guided-studio.png':'img-02-pocket-quest.png';
+await writeFile(new URL(`../docs/design/revisions/benchmate-20261013-focus-r4/references/images/${file}`,import.meta.url),bytes);
+console.log(`Downloaded ${file}: ${bytes.length} bytes`);

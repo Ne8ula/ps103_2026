@@ -1,0 +1,34 @@
+[
+    {
+        "path":  "src/main.jsx",
+        "sha256":  "636271DD160037E90FBF5D5B6737D6756B7D418871F07FAE0E268C030730B01B"
+    },
+    {
+        "path":  "src/styles.css",
+        "sha256":  "885B31047F13D27C3C5EB75C3B023A16ABF7E51FEC8DF0D0038354FD399E461E"
+    },
+    {
+        "path":  "src/refinement.css",
+        "sha256":  "77541D77B1801CC8183548F6CE933CF4C32CD7AD6F0A5E7E5A28DB7541CA30A9"
+    },
+    {
+        "path":  "src/components/Illustrations.jsx",
+        "sha256":  "E9626E51967C9A89D8EFB3DDE9A40F510C68F3BE482CD34F5B0230AF07FE215E"
+    },
+    {
+        "path":  "src/components/Dialog.jsx",
+        "sha256":  "1A4DD45E286E65D90C2B33D82D1C6207B06A14B29B1FD76EEC692B432A8BF851"
+    },
+    {
+        "path":  "src/data/project.js",
+        "sha256":  "AD9DC94444A60E5985993CB1B4BAAE5DC3D98969C95E6DA69D2BC5F005274D74"
+    },
+    {
+        "path":  "index.html",
+        "sha256":  "BA041D097526242C952D55AB2502F88CAF9ECEB486DEAFD406B0F3E81550C93C"
+    },
+    {
+        "path":  "package.json",
+        "sha256":  "93309EBE57E5CF9A94E464302380CE178CC09B87ADF2DCC19805F69D7EF0CA4A"
+    }
+]

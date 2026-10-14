@@ -1,0 +1,50 @@
+﻿[
+    {
+        "path":  "src/main.jsx",
+        "sha256":  "BBE41342C3E636D4CCBA8876165356F1E4B25FA99C8EFD03E2A8CD74C608A7BB"
+    },
+    {
+        "path":  "src/mobile.css",
+        "sha256":  "7424A116507233671B69123F496CA523D6711834EBEAF100B90399673BA91747"
+    },
+    {
+        "path":  "src/components/ProductScene.jsx",
+        "sha256":  "BA203B049E5C13F18EC48E3B55FEB78E50DB4B97BF621049C47254F8616B5ECB"
+    },
+    {
+        "path":  "src/scene/createScene.js",
+        "sha256":  "BE71E07672ECF664ADAE98F95D3A51AFDF9E5BF2D99084A3941202F0F9FBFA37"
+    },
+    {
+        "path":  "src/components/Dialog.jsx",
+        "sha256":  "30A7414BE2F17B650811C889E7303A502F9ED7BB0B1C75BAE67848E3C92C8CC1"
+    },
+    {
+        "path":  "src/components/ProjectSheets.jsx",
+        "sha256":  "4D2F85C943F48C8186D211482B8C35EDD79812B865AC7BE58AA4272F3467AD2D"
+    },
+    {
+        "path":  "src/data/project.js",
+        "sha256":  "BC728647187AF687CBA099F16CAD463F026B92121FEC6F1D15BB292EFEF6922F"
+    },
+    {
+        "path":  "index.html",
+        "sha256":  "CFF9758D003D463A2E435126E01B9B40EA2C97A70EBF8F95C9F618804D415C88"
+    },
+    {
+        "path":  "package.json",
+        "sha256":  "7D8C65CAE588711A4B214B7C69AD4194CF32C6978B442948B801A062A9A3CF8E"
+    },
+    {
+        "path":  "package-lock.json",
+        "sha256":  "F916012A7329B422995076A3CB1FF00905C9E71C6518616ACE94A1141F44C51F"
+    },
+    {
+        "path":  "public/material-grain.svg",
+        "sha256":  "43A5D62C3EC3ACA6DD2DAE9669C02FDC841233714909D6763E356CB569781B48"
+    },
+    {
+        "path":  "src/MobileApp.jsx",
+        "sha256":  "40DCB360BBDC9D103019BB95E5CC4F67ECB0B0E99170496ECDA0541D26B68DC0"
+    }
+]

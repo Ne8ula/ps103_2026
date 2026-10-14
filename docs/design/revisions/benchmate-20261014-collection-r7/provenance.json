@@ -1,0 +1,87 @@
+﻿{
+    "passId":  "benchmate-20261014-collection-r7",
+    "date":  "2026-10-14",
+    "route":  "built-in image_gen.imagegen",
+    "modelVersion":  null,
+    "cost":  null,
+    "toolLimitations":  "Exact model version and price are not exposed.",
+    "authorization":  "User requested more Home, Collection and Bambu navigation mockups, different palette and clearer glass/dither effects. Visual review before app implementation remains in effect.",
+    "palette":  "Cool pearl, graphite, violet; normal-width sans",
+    "runs":  [
+                 {
+                     "name":  "Home/Bambu initial",
+                     "promptFile":  "prompt-01-home-bambu.txt",
+                     "inputPaths":  [
+                                        "../benchmate-20261014-dither-r6/references/video-contact-sheet.png"
+                                    ],
+                     "originalFile":  "exec-e2aff153-9994-4f10-bce3-311b64264e50.png",
+                     "output":  "images/01a-home-bambu-tall-study.png",
+                     "status":  "completed",
+                     "selection":  "Discarded layout: screens too elongated; retained material study."
+                 },
+                 {
+                     "name":  "Home/Bambu proportion correction",
+                     "promptFile":  "prompt-01b-proportions.txt",
+                     "inputPaths":  [
+                                        "images/01a-home-bambu-tall-study.png"
+                                    ],
+                     "originalFile":  "exec-792bf658-de46-4625-a676-615dc0d4c003.png",
+                     "output":  "images/01-home-bambu.png",
+                     "status":  "completed",
+                     "selection":  "Delivered; corrected phone proportions, removed duplicate collection card."
+                 },
+                 {
+                     "name":  "Project detail / Collection",
+                     "promptFile":  "prompt-02-project-collection.txt",
+                     "inputPaths":  [
+                                        "images/01-home-bambu.png",
+                                        "../benchmate-20261014-dither-r6/references/video-contact-sheet.png"
+                                    ],
+                     "originalFile":  "exec-dca26b93-6fa1-47aa-83b9-05e149c808a1.png",
+                     "output":  "images/02-project-collection.png",
+                     "status":  "completed",
+                     "selection":  "Delivered; visually consistent detail and saved collection."
+                 }
+             ],
+    "originalDirectory":  "C:/Users/alexx/.codex/generated_images/01a137d1-c5ee-74f2-a068-0e73d2564999",
+    "imageMetadata":  [
+                          {
+                              "name":  "01-home-bambu.png",
+                              "width":  1341,
+                              "height":  1173,
+                              "sha256":  "73d114bfe6c445f56da89758caa9de32369078ba51abd5bb087f9f4585a28dc0"
+                          },
+                          {
+                              "name":  "01a-home-bambu-tall-study.png",
+                              "width":  852,
+                              "height":  1846,
+                              "sha256":  "797743c1577479c1077ac431586cd23f41699e82cf124c9f3fcbcd48391884ee"
+                          },
+                          {
+                              "name":  "02-project-collection.png",
+                              "width":  1342,
+                              "height":  1172,
+                              "sha256":  "bd48cc572c7743ccb6c28d700a3cdba053ecbcd7629883a279f1dec7cfd18f51"
+                          }
+                      ],
+    "submissions":  3,
+    "targetedCorrections":  1,
+    "finalBoards":  2,
+    "finalScreens":  4,
+    "referenceRoles":  "Video contact sheet used as direct technique reference; prior two flower images described as text roles only. Exclude video colors/typography. No r6 or earlier app board as input; corrected r7 board establishes continuity.",
+    "inspection":  "All three actual outputs inspected. Final boards make glass overlap and object-character fields clearly visible. Headings still more prominent than nominal prompt target; real typography and accessibility validation remains for implementation.",
+    "applicationCodeChanged":  false,
+    "sourceIntegrityFile":  "source-integrity.json",
+    "priorWeaveTotal":  {
+                            "completedRuns":  5,
+                            "reportedCredits":  25
+                        },
+    "limitations":  [
+                        "Static mockups, not implemented navigation or saved-project collection",
+                        "Made tab shown but its separate page not generated",
+                        "Extra projects labeled Preview are conceptual only",
+                        "Generated printer/cat images are not new 3D meshes or validated hardware assets",
+                        "No actual scanning or sensing"
+                    ],
+    "ownerAcceptance":  "User likes the purple direction. Requested citron/secondary-color exploration, Profile, Community and component matrix effects; see r8 review before implementation."
+}

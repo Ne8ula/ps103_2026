@@ -1,0 +1,47 @@
+# Source register
+
+Access date: **2026-10-13, America/New_York**. Official pages were read in full in the connected Chrome browser. The separate web fetch tool returned HTTP 402 for the supplied wiki URLs; search snippets were used only to find an official plate page, never as verification of a procedure. No manufacturer images or complete manuals are bundled in the runtime.
+
+## Source authority
+
+| ID | Page / material | URL or local path | What it supports | Verification / limits |
+|---|---|---|---|---|
+| P1 | Benchmate Value Creation Analysis and Product Mockups | https://docs.google.com/document/d/1MlFYdx6BnDHWLtPpfbylJ8nDJC2myUmwPBikmnAP3Q8 | Manufacturer-funded hosted companion, bounded projects, resumable state, reviewed equipment content, unresolved demand hypothesis | Full text retrieved through connected Google Drive; local text evidence in `docs/evidence/product-value-analysis.txt`. Its reported mockup validation is historical, not validation of this app. Embedded visuals were not independently inspected. |
+| P2 | Project Companion Product Vision and Feasibility | https://docs.google.com/document/d/1io-KpTpRBQfNR-hlaYrN1Pf2lz3BsYL_QEGLxlGWVxU/edit | Equipment knowledge / project knowledge / personal state; official execution path; content ownership and project validation boundaries | Full text retrieved through Google Drive; `docs/evidence/product-vision.txt`. Product direction, not equipment-procedure authority. |
+| R1 | PANDA prototype ZIP | `C:\Users\alexx\Downloads\PANDA-prototype.zip` | Prior interaction design and actual four-phase code | Extracted unchanged under `reference/panda/`; all 22 files inspected by inventory and hash-matched to the ZIP, relevant application/component code read. No research documents and no `.3mf`/`.stl` model in archive. |
+| R2 | PANDA hosted prototype | https://aesthetic-sherbet-40e83a.netlify.app/phase%201%20prototype | Optional hosted reference | Web tool could not access it. An existing Chrome tab was inventoried, but hosted flows were not separately exercised; source-code inspection is the evidence used. |
+| E1 | X1 series Manuals | https://wiki.bambulab.com/en/x1/manual | X1-specific procedure index, not A1 mini instructions | Read in Chrome. Displayed last edit 2026-04-12. |
+| E2 | X1 Series Printers Screen Operation Guide | https://wiki.bambulab.com/en/x1/manual/screen-operation | External-spool settings; configuration text does not prove filament is loaded; device control stays outside Benchmate | Read in Chrome. Last edit 2026-02-09. No sensor information is consumed by Benchmate. Some page wording references other hardware; no destructive formatting, maintenance or AMS procedure copied. |
+| E3 | Bambu Studio Quick Start Guide | https://wiki.bambulab.com/en/software/bambu-studio/studio-quick-start | Import a model; select matching printer/nozzle, filament and process; slice and review; print/send sequence; network plug-in prerequisite and SD-card alternative | Read in Chrome. Page displayed a relative last-edited date; no fixed revision is claimed. Its PIN-binding example is explicitly P/A-only and is not applied to X1. |
+| E4 | Printing from Bambu Studio | https://wiki.bambulab.com/en/x1/manual/print-from-bambu-studio | X1 Wi-Fi route: Slice → Print → select printer/calibrations → Send starts job; local/cloud transfer distinction | Read in Chrome. Last edit 2025-12-24. Chosen route, performed only in the real official app with a reviewed model. |
+| E5 | Replacing the filament from spool holder (without AMS) | https://wiki.bambulab.com/en/x1/manual/replacing-filament | Optional X1 non-AMS replacement procedure | Read in Chrome. Last edit 2025-07-02. Linked only when replacement is needed. No temperatures, cutting steps or forced swap imported into core demo. |
+| E6 | Bambu Lab Textured PEI Plate Cleaning Guide | https://wiki.bambulab.com/en/filament-acc/acc/pei-plate-clean-guide | Water + detergent without oils/moisturizers + sponge; rinse/dry; handle edges; no acetone; oils may reduce adhesion | Read in Chrome. Last edit 2026-07-03. Applies to selected gold textured PEI plate. Other suggested tuning/sanding interventions are excluded from the novice slice. |
+| E7 | First Layer Not Sticking: Causes and Solutions | https://wiki.bambulab.com/en/knowledge-sharing/first-layer-not-sticking | Possible causes include incorrect plate preset, contamination and leveling; check correct plate and keep bed leveling enabled for next job | Read in Chrome. Last edit 2026-08-16. Supports checks, not a diagnosis. Does not establish cat printability or a recovery success rate. |
+| E8 | Bambu Textured PEI Plate | https://us.store.bambulab.com/products/bambu-textured-pei-plate | X1 Series variant; PLA compatibility; no glue for PLA; upper glass cover removed for PLA; align plate, let it cool to room temperature, gently flex for removal | Full current product page read in Chrome. The X1/P1/A1/P2S/X2D installation section was distinguished from the separate A1 mini section. Only X1-sized plate is selected. No safety countdown/threshold displayed in app. |
+| E9 | Remote Control & Monitoring | https://wiki.bambulab.com/en/software/bambu-studio/remote-control | Bambu Studio has distinct pause, resume and permanent-stop job controls; network plug-in and configured connection needed | Followed link from E3 and read in Chrome. Last edit 2026-03-03. General Studio controls only; page's P1S PIN-pairing example expressly excluded. |
+| E10 | Bambu support ticket destination | https://bambulab.com/en/my/support/tickets/create | Official user-initiated support destination | URL observed in E6. No ticket submitted; login requirements and response times not asserted. |
+
+## Selected configuration and claim limits
+
+- **Printer:** Bambu Lab X1 Carbon, with an assumed installed 0.4 mm nozzle. Studio must match the actual nozzle; Benchmate does not inspect it.
+- **Material:** Bambu PLA Basic, on the external spool holder, already loaded. No AMS in the sequence. The user checks the spool; screen metadata is not a material sensor.
+- **Plate:** Bambu gold Textured PEI, X1 Series 256 × 256 mm variant. E8 establishes X1/PLA compatibility; other plate types are out of scope.
+- **Transfer:** Bambu Studio via Wi-Fi. E4 is X1-specific. Unlike PANDA's fixed SD route, this does not add media handling to the core. SD remains an on-demand official alternative. Real Studio may use Bambu's cloud when not in LAN-only mode; Benchmate itself transmits nothing.
+- **No recipe:** no temperature, speed, support, layer-height or time estimate is authored for this illustrative cat. A real model and expert-reviewed profile are still needed.
+- **Cooling:** room-temperature cooling and gentle flexing come from E8. There is no timer, temperature feed, touch certification or exact physical removal mechanism invented for the X1.
+- **Recovery:** E6/E7 supply cleaning/preset/leveling checks; E9 establishes stop versus pause/resume. Returning to setup for a fresh job after a detached first layer is an authored conservative project branch, not a manufacturer-certified repair or physically tested procedure. Cleaning is never instructed while a job is active.
+- **Original visuals:** cat, plate, spool, printer, first-layer paths and cleaning props are authored procedural 3D geometry. Original SVGs remain as fallback. All are schematic, not mechanical drawings, validated manufacturing meshes or part-placement references. Shader colors are visualization styling, not a promise of multicolor output from one spool.
+
+## Rendering references
+
+Read during the iPhone redesign: the official [Three.js MeshPhysicalMaterial API](https://threejs.org/docs/pages/MeshPhysicalMaterial.html) for roughness, clearcoat, iridescence and environment controls, and [rendering on demand](https://threejs.org/manual/pages/rendering-on-demand.html) for event-driven rendering. These support implementation choices only, not equipment guidance. The user's nine inline design references support layout, palette and material direction; no manufacturer artwork or reference-image file is bundled in the application.
+
+## Research evidence versus hypotheses
+
+P1 reports excerpts attributed to R01, R03, R05 and R06 in Team 103 Crit #1. Those are **secondary reports in the supplied product document**; the original deck, recordings and transcripts were not provided in the ZIP or empty workspace, and were not retrieved here. They motivate plain terminology and contextual assistance but do not validate novice-printer outcomes or manufacturer willingness to pay. No new research findings, user tests, cost savings or completion improvements are claimed.
+
+The exact cat project, four-phase compression, calm object-led layout, scripted help and restart path are **design hypotheses / implemented prototype behavior**. Functional browser checks verify software behavior only.
+
+## R9 Implementation Note — 14 October 2026
+
+The R9 implementation retains these equipment references and their original access dates. No new physical procedure, temperature, duration, printable model or profile was introduced. New camera/file handling is local browser functionality: selected photographs are not analyzed, and the built-in first-layer image is an original synthetic demonstration. Printer and plate illustrations remain schematic; the plate now rests on a platform with alignment stops. See [the implementation evidence](evidence/r9-implementation/REVIEW.md) for software verification and explicit physical-testing limits.

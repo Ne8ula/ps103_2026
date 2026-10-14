@@ -1,0 +1,14 @@
+// Layer 1: equipment facts and their provenance, independent of the project template.
+export const equipment = Object.freeze({ manufacturer: 'Bambu Lab', model: 'X1 Carbon', nozzle: '0.4 mm', material: 'Bambu PLA Basic', plate: 'Bambu Textured PEI Plate', plateSize: '256 × 256 mm (X1 Series)', feed: 'External spool · no AMS', transfer: 'Bambu Studio → Wi-Fi → X1 Carbon', checked: '2026-10-13' });
+export const sources = {
+  remote: { title: 'Remote Control & Monitoring', url: 'https://wiki.bambulab.com/en/software/bambu-studio/remote-control', status: 'Read in Chrome', supports: 'Studio has separate pause, resume and permanently stop controls. Only these general controls apply here; its P1S PIN-pairing example is excluded.' },
+  manual: { title: 'X1 series Manuals', url: 'https://wiki.bambulab.com/en/x1/manual', status: 'Read in Chrome', supports: 'X1-specific manual index and procedure scope.' },
+  studio: { title: 'Bambu Studio Quick Start Guide', url: 'https://wiki.bambulab.com/en/software/bambu-studio/studio-quick-start', status: 'Read in Chrome', supports: 'Import, printer/nozzle and filament presets, slicing, preview, transfer prerequisites.' },
+  send: { title: 'Printing from Bambu Studio', url: 'https://wiki.bambulab.com/en/x1/manual/print-from-bambu-studio', status: 'Read in Chrome', supports: 'Slice → Print → select printer → Send starts the job; network/cloud boundary.' },
+  screen: { title: 'X1 Series Printers Screen Operation Guide', url: 'https://wiki.bambulab.com/en/x1/manual/screen-operation', status: 'Read in Chrome', supports: 'External spool settings are not evidence of loaded material; equipment controls stay on the device.' },
+  filament: { title: 'Replacing the filament from spool holder (without AMS)', url: 'https://wiki.bambulab.com/en/x1/manual/replacing-filament', status: 'Read in Chrome', supports: 'Optional X1 external-spool loading/replacement reference; not a required swap.' },
+  clean: { title: 'Bambu Lab Textured PEI Plate Cleaning Guide', url: 'https://wiki.bambulab.com/en/filament-acc/acc/pei-plate-clean-guide', status: 'Read in Chrome', supports: 'Detergent without oils/moisturizers, sponge, water rinse, dry; avoid acetone and touching the print surface.' },
+  adhesion: { title: 'First Layer Not Sticking: Causes and Solutions', url: 'https://wiki.bambulab.com/en/knowledge-sharing/first-layer-not-sticking', status: 'Read in Chrome', supports: 'Check plate selection, cleanliness and bed leveling; keep bed leveling on for the next attempt.' },
+  plate: { title: 'Bambu Textured PEI Plate', url: 'https://us.store.bambulab.com/products/bambu-textured-pei-plate', status: 'Read in Chrome', supports: 'X1 Series plate variant, PLA compatibility, no glue for PLA, upper cover removed, cooling to room temperature and gentle flexing, plate alignment.' }
+};
+export const supportUrl = 'https://bambulab.com/en/my/support/tickets/create';

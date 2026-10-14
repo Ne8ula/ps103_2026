@@ -1,0 +1,178 @@
+[
+  {
+    "file": "01-discover",
+    "title": "Discover The Project",
+    "kind": "main",
+    "screens": [
+      [
+        "Home",
+        "Make Something",
+        "A Little Guidance For Your Next Creation"
+      ],
+      [
+        "Bambu",
+        "Bambu Projects",
+        "For Your X1 Carbon"
+      ],
+      [
+        "Detail",
+        "Little Cat",
+        "A Small Companion Made By You"
+      ]
+    ]
+  },
+  {
+    "file": "02-prepare",
+    "title": "Personalize And Prepare",
+    "kind": "main",
+    "screens": [
+      [
+        "Personalize",
+        "Make It Yours",
+        "Give Your Little Cat A Name"
+      ],
+      [
+        "Studio",
+        "Review Your Setup",
+        "A Good Print Starts With A Good Setup"
+      ],
+      [
+        "Plate",
+        "Check Your Plate",
+        "Clean Dry And Seated Flat"
+      ]
+    ]
+  },
+  {
+    "file": "03-start-print",
+    "title": "Material And First Layer",
+    "kind": "main",
+    "screens": [
+      [
+        "Material",
+        "Check Your Material",
+        "Keep The Loaded Spool If It Matches"
+      ],
+      [
+        "Handoff",
+        "Continue In Bambu Studio",
+        "Use Your Printer Controls To Start"
+      ],
+      [
+        "FirstLayer",
+        "Watch The First Layer",
+        "Connected Lines With No Lifting Edges"
+      ]
+    ]
+  },
+  {
+    "file": "04-photo-help",
+    "title": "Photograph And Review",
+    "kind": "branch",
+    "screens": [
+      [
+        "Capture",
+        "Show The Problem",
+        "Keep The Plate And Loose Lines In View"
+      ],
+      [
+        "Processing",
+        "Looking More Closely",
+        "Reviewing The Visible Details"
+      ],
+      [
+        "Finding",
+        "An Edge May Be Lifting",
+        "A Photo Cannot Confirm The Cause"
+      ]
+    ]
+  },
+  {
+    "file": "05-recovery",
+    "title": "Recover Or Get Help",
+    "kind": "branch",
+    "screens": [
+      [
+        "EndCool",
+        "End And Cool",
+        "Use The Actual Printer Controls"
+      ],
+      [
+        "CleanReview",
+        "Clean And Review",
+        "Prepare For A New Attempt"
+      ],
+      [
+        "Support",
+        "Get More Help",
+        "The Cause Is Still Unclear"
+      ]
+    ]
+  },
+  {
+    "file": "06-finish-checks",
+    "title": "Print And Finish Carefully",
+    "kind": "main",
+    "screens": [
+      [
+        "Printing",
+        "Let It Take Shape",
+        "Follow Progress On Your Printer"
+      ],
+      [
+        "Cooling",
+        "Cool And Release",
+        "Wait For The Plate To Cool"
+      ],
+      [
+        "Quality",
+        "One Last Look",
+        "Check The Object And Clear Your Space"
+      ]
+    ]
+  },
+  {
+    "file": "07-complete-share",
+    "title": "Keep The Result And Share",
+    "kind": "main",
+    "screens": [
+      [
+        "Complete",
+        "Meet Miso",
+        "Your Guided Project Is Complete"
+      ],
+      [
+        "Made",
+        "Your Collection",
+        "A Record Of What You Have Made"
+      ],
+      [
+        "Share",
+        "Share Your Make",
+        "Choose What To Share"
+      ]
+    ]
+  },
+  {
+    "file": "08-community-profile-pause",
+    "title": "Community Profile And Continuity",
+    "kind": "supporting",
+    "screens": [
+      [
+        "Community",
+        "Community",
+        "Small Makes And Shared Discoveries"
+      ],
+      [
+        "Profile",
+        "Your Profile",
+        "A Space For Your Making"
+      ],
+      [
+        "Pause",
+        "Guide Paused",
+        "Your Checkpoint Is Saved On This Device"
+      ]
+    ]
+  }
+]

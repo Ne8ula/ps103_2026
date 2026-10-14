@@ -1,0 +1,65 @@
+[
+  {
+    "chapter": "04-photo-help",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen Benchmate photo-help board. Preserve phone proportions, all UI placement, purple/citron palette, frosted glass, and main Title Case titles/subtitles with no periods. Apply ONLY these corrections:\n1. In ALL THREE photographic panels, REMOVE the entire finished 3D CAT. A first-layer problem must show ONLY a SMALL THIN FLAT PATCH of first-layer filament lines on the seated GOLD textured plate, with a loose strand and a slightly lifted CORNER. No completed figurine, no head, body, ears, toy, raised solid object or large completed model. The same synthetic close-up photo geometry must appear unchanged in all three screens. Keep raw evidence sharp; all matrix dots stay at image perimeter, not covering the loose lines. In the result screen, citron brackets surround the SMALL lifted corner. Realistic thin first-layer evidence, not a full print.\n2. Middle screen added helper subtitle 'Image is ready' must be exactly 'Image Is Ready'. Added subtitle 'Checking for possible issues' must be exactly 'Checking For Possible Issues'. All titles, headings, subtitles and supporting captions use Title Case, no periods. On the right change the explanatory clause to exactly 'Review The Plate And Setup Before Another Attempt' for consistency. Preserve other exact text.\n3. Left screen shutter must have a readable label 'Take Photo' immediately under or within its control. Reduce its circle size slightly if needed; keep safe area. Preserve warning 'Keep Clear Of Hot Or Moving Parts'.\n4. The right expanded 'Less Detail' disclosure must have an UP chevron, not a down chevron.\nDo not add/remove other UI. Same three-screen wide landscape board and actual iPhone aspect ratios, not elongated screenshots. No outside headings or copy. This is only a targeted correction, not a redesign.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/04-photo-help-initial.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "chapter": "05-recovery",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen purple/citron recovery board. Preserve layout, art, glass, typography, every main Title Case title/subtitle and all actions. Correct only inconsistent progress/status and subtitle casing:\nLEFT 'End And Cool': replace the four-phase Prepare/At Printer/Print/Finish rail with a RECOVERY rail labeled exactly 'End Job' / 'Cool' / 'Clean' / 'Review'. End Job is current (citron ring), all others uncompleted hollow nodes. Do not show completed checkmarks, because the two confirmation checkboxes below are still unchecked. Add small quiet text 'Miso / Issue Open' above the title. Keep the confirmation button disabled.\nMIDDLE 'Clean And Review': same RECOVERY rail End Job / Cool / Clean / Review. End Job and Cool completed, Clean current, Review hollow. Add 'Miso / Issue Open'. This is a new attempt preparation, not physical fix verification.\nRIGHT 'Get More Help': REMOVE the progress rail entirely because this is an ALTERNATIVE unresolved-support branch. In its place use a small status line 'Miso / First-Layer Concern' and small 'Issue Open' badge. No completed phase symbols.\nChange the left checkbox helper captions to exactly 'End The Failed Job Using The Printer Controls' and 'Wait For The Plate To Cool Before Handling'. All headers, subtitles and supporting card captions have initial capitals for Every Word and NO periods. Preserve actual body instructions and the official guide/source link. Leave all remaining design and dimensions unchanged. No new claims or extra cards.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/05-recovery-initial.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "chapter": "06-finish-checks",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen Benchmate finishing board, retaining purple/citron glass style, phone proportions, all current imagery, main Title Case headings/subtitles without periods, and action layout. Apply only these specific correctness/copy fixes:\nLEFT 'Let It Take Shape': the task is STILL PRINTING. On its four-phase rail mark Prepare and At Printer complete, Print CURRENT using a citron ring, and Finish uncompleted hollow. Remove the existing incorrect Print completion check and Finish-current ring. Do not claim printing is already complete.\nMIDDLE 'Cool And Release': retain Prepare / At Printer / Print complete and Finish current. Its detail disclosure is shown expanded, so label the link 'Less Detail' and use an UP chevron.\nRIGHT 'One Last Look': keep three prior phases complete and Finish current. Change the two checkbox supporting subtitles to exactly 'Base Flat And Ears Intact' and 'Loose Scraps Cleared And Plate Reseated'. Preserve the checkboxes checked and Finish My Project action.\nEnsure ALL titles, subtitles, section labels and helper card captions use initial capitals for Every Word and no periods. Keep body instruction paragraphs as they are. No new content, altered cat or increased viewport height. This is a targeted correction, not a redesign.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/06-finish-checks-initial.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "chapter": "07-complete-share",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen Benchmate board with one small correction only. On the LEFT 'Meet Miso' completed-project screen, the four phase nodes for Prepare / At Printer / Print / Finish must ALL show clear completed CHECKMARKS, matching the completed-node treatment on other screens: violet or citron solid node with a crisp contrasting check. They must NOT all appear as hollow/current rings. Keep every word, title/subtitle capitalization, all period-free copy, cat, glass/matrix effects, palette, all other screens, exact layout and image dimensions unchanged. Do not add any text or objects. This is only a progress-indicator correction.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/07-complete-share-initial.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "chapter": "08-community-profile-pause",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen Community / Profile / Guide Paused board with ONE correction only. The RIGHT paused screen's saved checkpoint is 'First-Layer Check', which belongs to PRINT. Its phase rail must show Prepare COMPLETE and At Printer COMPLETE with checkmarks, Print CURRENT with a citron ring, and Finish UNCOMPLETED hollow. The initial render incorrectly marks At Printer current. Preserve the 'Issue Open' badge and the fact that pausing the guide does not pause the printer. Keep every other element, all wording, Title Case/no-period titles/subtitles, colors, images, geometry and phone proportions completely unchanged. Do not change the fully completed profile in the middle, which represents a different branch. No extra copy or objects.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/08-community-profile-pause-initial.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "chapter": "02-prepare",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen Benchmate board with ONE small change only. On the RIGHT screen titled 'Check Your Plate', its progress rail must show Prepare COMPLETE with a crisp checkmark in a solid purple node, At Printer CURRENT with the existing citron ring, and Print and Finish UNCOMPLETED hollow. Prepare has already been reviewed in the preceding screen. Preserve both left and middle screens completely, including their Prepare-current rails. Preserve all words, Title Case/no-period headings and subtitles, imagery, colors, glass and matrix textures, phone proportions and positions. Do not introduce any other copy or change any image. This is a targeted progress-state correction.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/02-prepare-initial.png"
+    ],
+    "transparent_background": false
+  },
+  {
+    "chapter": "03-start-print",
+    "stage": "correction",
+    "prompt": "Edit this exact three-screen Benchmate board with ONLY these progress-indicator corrections. LEFT 'Check Your Material': Prepare COMPLETE with checkmark in solid purple node; At Printer CURRENT with existing citron ring; Print and Finish UNCOMPLETED hollow. MIDDLE 'Continue In Bambu Studio': Prepare and At Printer COMPLETE with checkmarks in solid purple nodes; Print CURRENT with existing citron ring; Finish UNCOMPLETED hollow. RIGHT 'Watch The First Layer': Prepare and At Printer COMPLETE with checkmarks in solid purple nodes; Print CURRENT with existing citron ring; Finish UNCOMPLETED hollow. Preserve every other detail: all words, Title Case/no-period titles/subtitles, imagery, colors, glass/matrix textures, proportions, positions and actions. Do not change the main instruction content or image. This is a targeted phase-state correction.",
+    "referenced_image_paths": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-workflow-r9/images/03-start-print-initial.png"
+    ],
+    "transparent_background": false
+  }
+]

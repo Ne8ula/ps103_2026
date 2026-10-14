@@ -1,0 +1,325 @@
+{
+  "passId": "benchmate-20261014-workflow-r9",
+  "date": "2026-10-14",
+  "route": "built-in image_gen.imagegen",
+  "modelVersion": null,
+  "cost": null,
+  "toolLimitations": "Exact model version and price are not exposed",
+  "authorization": "User requested Title Case headers, period-free titles/subtitles and a complete concept-image workflow based on the purple/citron r8 boards",
+  "submissions": 15,
+  "initialGenerations": 8,
+  "targetedCorrections": 7,
+  "selectedBoards": 8,
+  "selectedScreens": 24,
+  "copyRules": {
+    "headingCase": "Initial capital for Every Word",
+    "titleSubtitlePeriods": false,
+    "wordmark": "Benchmate"
+  },
+  "references": {
+    "role": "Style and components, not an editing base or verbatim text template",
+    "files": [
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+      "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+    ]
+  },
+  "runs": [
+    {
+      "chapter": "01-discover",
+      "stage": "initial",
+      "promptFile": "01-discover-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/01-discover.png",
+      "originalFile": "exec-443eae23-7d92-49b9-bc96-36898349e56e.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "02-prepare",
+      "stage": "initial",
+      "promptFile": "02-prepare-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/02-prepare-initial.png",
+      "originalFile": "exec-bc7f02e5-b266-43ba-8ea5-70850bceb7ef.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "03-start-print",
+      "stage": "initial",
+      "promptFile": "03-start-print-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/03-start-print-initial.png",
+      "originalFile": "exec-f802a076-f5a5-4cfe-8b3f-58534fcd58f6.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "04-photo-help",
+      "stage": "initial",
+      "promptFile": "04-photo-help-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/04-photo-help-initial.png",
+      "originalFile": "exec-7f1f4bec-c671-4125-8837-3361c2692d72.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "05-recovery",
+      "stage": "initial",
+      "promptFile": "05-recovery-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/05-recovery-initial.png",
+      "originalFile": "exec-0df8eb22-89c6-489b-83a8-c0a3ae056986.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "06-finish-checks",
+      "stage": "initial",
+      "promptFile": "06-finish-checks-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/06-finish-checks-initial.png",
+      "originalFile": "exec-be7c1af7-caba-4b6f-a72d-c6853188ea8c.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "07-complete-share",
+      "stage": "initial",
+      "promptFile": "07-complete-share-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/07-complete-share-initial.png",
+      "originalFile": "exec-e3cc5a04-5090-47eb-b8a2-6b42c9c493e9.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "08-community-profile-pause",
+      "stage": "initial",
+      "promptFile": "08-community-profile-pause-prompt.txt",
+      "inputs": [
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/01-home-collection.png",
+        "C:/Users/alexx/Documents/ClaudeAgent/ps103_2026/docs/design/revisions/benchmate-20261014-social-r8/images/02-community-profile.png"
+      ],
+      "output": "images/08-community-profile-pause-initial.png",
+      "originalFile": "exec-a2a39b8c-2203-4f1e-813c-708a46812de7.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "04-photo-help",
+      "stage": "correction",
+      "promptFile": "04-photo-help-correction-prompt.txt",
+      "inputs": [
+        "images/04-photo-help-initial.png"
+      ],
+      "output": "images/04-photo-help.png",
+      "originalFile": "exec-09fd3481-9759-4bc9-b757-44078c378969.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "05-recovery",
+      "stage": "correction",
+      "promptFile": "05-recovery-correction-prompt.txt",
+      "inputs": [
+        "images/05-recovery-initial.png"
+      ],
+      "output": "images/05-recovery.png",
+      "originalFile": "exec-785bc817-c6e8-445f-9620-3b67fc06005e.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "06-finish-checks",
+      "stage": "correction",
+      "promptFile": "06-finish-checks-correction-prompt.txt",
+      "inputs": [
+        "images/06-finish-checks-initial.png"
+      ],
+      "output": "images/06-finish-checks.png",
+      "originalFile": "exec-6a7eb7ca-792b-4bbd-946e-37ab20b4f974.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "07-complete-share",
+      "stage": "correction",
+      "promptFile": "07-complete-share-correction-prompt.txt",
+      "inputs": [
+        "images/07-complete-share-initial.png"
+      ],
+      "output": "images/07-complete-share.png",
+      "originalFile": "exec-898766eb-1450-4a81-a50f-9e24cb634f65.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "08-community-profile-pause",
+      "stage": "correction",
+      "promptFile": "08-community-profile-pause-correction-prompt.txt",
+      "inputs": [
+        "images/08-community-profile-pause-initial.png"
+      ],
+      "output": "images/08-community-profile-pause.png",
+      "originalFile": "exec-45739960-5848-4bb4-9872-1cee1fd156fc.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "02-prepare",
+      "stage": "correction",
+      "promptFile": "02-prepare-correction-prompt.txt",
+      "inputs": [
+        "images/02-prepare-initial.png"
+      ],
+      "output": "images/02-prepare.png",
+      "originalFile": "exec-0f5a9bd4-6d65-4e31-8174-bb1cafa5adb8.png",
+      "status": "completed"
+    },
+    {
+      "chapter": "03-start-print",
+      "stage": "correction",
+      "promptFile": "03-start-print-correction-prompt.txt",
+      "inputs": [
+        "images/03-start-print-initial.png"
+      ],
+      "output": "images/03-start-print.png",
+      "originalFile": "exec-7cf4a7fc-f952-4737-b79b-c682eb769931.png",
+      "status": "completed"
+    }
+  ],
+  "selectedOutputs": [
+    "images/01-discover.png",
+    "images/02-prepare.png",
+    "images/03-start-print.png",
+    "images/04-photo-help.png",
+    "images/05-recovery.png",
+    "images/06-finish-checks.png",
+    "images/07-complete-share.png",
+    "images/08-community-profile-pause.png"
+  ],
+  "exactInputs": "generation-inputs.json",
+  "correctionInputs": "correction-inputs.json",
+  "screenMap": "screen-map.json",
+  "imageMetadata": [
+    {
+      "name": "01-discover.png",
+      "width": 1564,
+      "height": 1006,
+      "sha256": "5eabf16b1839079b21e97fac0ba7785334d3ae58cec9d49139ac7cb12b0d23b8"
+    },
+    {
+      "name": "02-prepare-initial.png",
+      "width": 1564,
+      "height": 1006,
+      "sha256": "57be034016b4982435a223e9d10c59e784832841c42f4b5f6148e7c7c5dd2757"
+    },
+    {
+      "name": "02-prepare.png",
+      "width": 1564,
+      "height": 1006,
+      "sha256": "0ecb65446d1f357be2f5e124e6e4864810d28b6ebaa3cc2b029b13167e69ece1"
+    },
+    {
+      "name": "03-start-print-initial.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "d88350929aeff5042ad1330302ac16c9f1eca0ae91c496634e39a4ee4b53eebf"
+    },
+    {
+      "name": "03-start-print.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "3d7c511f1aac170ae58f81424a70b5cfc40ffd14ae85ebad526a51d26896a00d"
+    },
+    {
+      "name": "04-photo-help-initial.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "8f343ace78b93208f9f7d89b999d0d675821d8a1a424f3c99808fc2a5d738138"
+    },
+    {
+      "name": "04-photo-help.png",
+      "width": 1564,
+      "height": 1006,
+      "sha256": "e26195a31969bf4674ff4b3f8b46e941503b2deaf19f1c4d8573e5a7664aca0e"
+    },
+    {
+      "name": "05-recovery-initial.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "0998f723ade44e311333505b5c3aa6842402b525a10fe5f1c8cc3f4f489cea88"
+    },
+    {
+      "name": "05-recovery.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "ce409084732d045d183e26668bbe6e91d1ab8b95683ad79f2850e5fbba3c2e1f"
+    },
+    {
+      "name": "06-finish-checks-initial.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "b32b118f04425cc9cfcd61b47b8ee96c0b216c4f10c417f6faada2d400270acf"
+    },
+    {
+      "name": "06-finish-checks.png",
+      "width": 1564,
+      "height": 1006,
+      "sha256": "f5060d859b9d6bf8a19f004055974f22c8948fe095c868f0941d450f6bca8754"
+    },
+    {
+      "name": "07-complete-share-initial.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "cc1f04ee75937a23cde87859eef403a68ca7fb863f41c15ff5b1c80e94ee569e"
+    },
+    {
+      "name": "07-complete-share.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "2eaba2602b2472c626a2ef5cb14eead9a5e394a60fb0d7f612420f577e36f420"
+    },
+    {
+      "name": "08-community-profile-pause-initial.png",
+      "width": 1563,
+      "height": 1006,
+      "sha256": "7b8bd5489d2b4216f6a35a57dcc60fc6b3cff5812538ed91204b8764827f2145"
+    },
+    {
+      "name": "08-community-profile-pause.png",
+      "width": 1564,
+      "height": 1006,
+      "sha256": "8250468a9325277c1498bb175c0ac0de729f469158bc2916facb4103fb50c354"
+    }
+  ],
+  "originalDirectory": "C:/Users/alexx/.codex/generated_images/01a137d1-c5ee-74f2-a068-0e73d2564999",
+  "inspection": "All eight selected boards visually inspected. Title Case/period-free titles and subtitles, matching first-layer photo, phase-state indicators, open-issue preservation and expanded-detail cues reviewed. Static HTML links checked; browser layout and accessibility not tested in this pass.",
+  "applicationCodeChanged": false,
+  "sourceIntegrityFile": "source-integrity.json",
+  "priorWeaveTotal": {
+    "completedRuns": 5,
+    "reportedCredits": 25
+  },
+  "additionalWeaveRuns": 0,
+  "limitations": [
+    "Static raster concepts only",
+    "Generated hardware and first-layer illustrations are not validated equipment instructions",
+    "Board 02 plate is shown as an object rather than seated in the printer",
+    "Typography scale and layout details need unification and accessibility checks in native components",
+    "Photo analysis, accounts and community are conceptual",
+    "Community example is fictional; no post or message sent",
+    "Settings, discussions and final post preview/publish view are not rendered"
+  ],
+  "ownerAcceptance": "Complete workflow under owner review before app implementation"
+}

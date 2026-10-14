@@ -1,0 +1,23 @@
+BENCHMATE · PROJECT RECORD
+Miso · For My Desk
+Independent guided demo, not evidence of a physical print.
+
+Equipment: Bambu Lab X1 Carbon / assumed 0.4 mm / Bambu PLA Basic / X1 Textured PEI / external spool
+Checkpoint: Print · First-layer check
+Completed checkpoints: personalize, studio, plate, filament, start
+Unresolved issue: User-selected photo; not analyzed; cause unconfirmed
+Recovery stage: support
+Photo: 01-home-393.png (not analyzed; image not included in text export)
+Demo restarts: 1
+
+History:
+personalize
+studio
+plate
+filament
+start
+Failed first layer: ended attempt; reviewed cleaning; returned to Studio
+
+Note: No note added.
+
+Saved locally; no printer data or sensor readings.

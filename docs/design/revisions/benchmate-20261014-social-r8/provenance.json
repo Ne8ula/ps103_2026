@@ -1,0 +1,69 @@
+{
+  "passId": "benchmate-20261014-social-r8",
+  "date": "2026-10-14",
+  "route": "built-in image_gen.imagegen",
+  "modelVersion": null,
+  "cost": null,
+  "toolLimitations": "Exact model version and price are not exposed.",
+  "authorization": "User liked purple, requested a secondary color, Profile, Community and matrix effects within UI components.",
+  "direction": {
+    "accepted": "Purple direction from r7",
+    "proposed": "Citron accent, four-tab navigation and component-level matrix treatment"
+  },
+  "submissions": 2,
+  "reruns": 0,
+  "boards": 2,
+  "screens": 4,
+  "runs": [
+    {
+      "promptFile": "prompt-01-home-collection.txt",
+      "inputs": [
+        "../benchmate-20261014-collection-r7/images/01-home-bambu.png",
+        "../benchmate-20261014-collection-r7/images/02-project-collection.png"
+      ],
+      "output": "images/01-home-collection.png",
+      "originalFile": "exec-28ae15fc-dbff-4d69-afc6-babeb4d6deb7.png",
+      "status": "completed"
+    },
+    {
+      "promptFile": "prompt-02-community-profile.txt",
+      "inputs": [
+        "images/01-home-collection.png"
+      ],
+      "output": "images/02-community-profile.png",
+      "originalFile": "exec-7203e8d7-08e6-48fc-aa18-24c45231d766.png",
+      "status": "completed"
+    }
+  ],
+  "exactInputs": "generation-inputs.json",
+  "originalDirectory": "C:/Users/alexx/.codex/generated_images/01a137d1-c5ee-74f2-a068-0e73d2564999",
+  "imageMetadata": [
+    {
+      "name": "01-home-collection.png",
+      "width": 1341,
+      "height": 1173,
+      "sha256": "84043826512b1bdaba91d8e3818c0164645bbd2963f3199140e79a80cf8c76e1"
+    },
+    {
+      "name": "02-community-profile.png",
+      "width": 1341,
+      "height": 1173,
+      "sha256": "e072b804d058edec5471a19dd338edbcc59deb17a811fbe81bcabf3e0ade49f3"
+    }
+  ],
+  "inspection": "Both actual outputs inspected. Citron accent and component-level patterns present; four dock selections correct across the four views. Heading scale remains to be tuned in native components.",
+  "applicationCodeChanged": false,
+  "sourceIntegrityFile": "source-integrity.json",
+  "priorWeaveTotal": {
+    "completedRuns": 5,
+    "reportedCredits": 25
+  },
+  "limitations": [
+    "Static concepts, not implemented navigation, social actions or accounts",
+    "Community story is fictional sample content",
+    "Profile is unnamed and unstarted, not actual stored user state",
+    "Questions, Made, composer, discussion and settings detail pages not rendered",
+    "No new physical assets or verified printer scanning"
+  ],
+  "ownerAcceptance": "Purple direction liked; expanded r8 additions pending visual review before implementation."
+}

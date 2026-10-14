@@ -1,0 +1,93 @@
+﻿{
+    "passId":  "benchmate-20261013-focus-r4",
+    "date":  "2026-10-13",
+    "route":  "direct-model",
+    "workflowGuide":  "C:/Users/alexx/Documents/ClaudeAgent/GenUI_Agent/docs/design/FIGMA_WEAVE.md",
+    "model":  {
+                  "id":  "bebebed5-50c1-4701-98b3-86929db21585",
+                  "label":  "Nano Banana 2.1",
+                  "modelId":  "fal-ai/nano-banana-2/edit"
+              },
+    "approval":  "User explicitly approved both design-only runs, 5 credits each / 10 total, in structured reply. No uploads or automatic reruns. Show candidates for review before UI code edits.",
+    "runs":  [
+                 {
+                     "candidate":  "A — Guided studio",
+                     "inputFile":  "prompt-a.json",
+                     "seed":  106,
+                     "predictionId":  "ded239ec-5e3a-416e-a57c-beaf846ccc9b",
+                     "quotedCredits":  5,
+                     "reportedCost":  5,
+                     "status":  "COMPLETED",
+                     "output":  {
+                                    "path":  "references/images/img-01-guided-studio.png",
+                                    "width":  2752,
+                                    "height":  1536,
+                                    "url":  "https://media.weavy.ai/image/upload/v1791950210/uploads/RjA4KfH9v0eVz56zC2LruMUpYXG2/p8aio1e0yoah3nycfqed.png"
+                                }
+                 },
+                 {
+                     "candidate":  "B — Pocket quest",
+                     "inputFile":  "prompt-b.json",
+                     "seed":  107,
+                     "predictionId":  "dac96d85-2171-48b8-ab9e-2f1c5e9f506d",
+                     "quotedCredits":  5,
+                     "reportedCost":  5,
+                     "status":  "COMPLETED",
+                     "output":  {
+                                    "path":  "references/images/img-02-pocket-quest.png",
+                                    "width":  2752,
+                                    "height":  1536,
+                                    "url":  "https://media.weavy.ai/image/upload/v1791950319/uploads/RjA4KfH9v0eVz56zC2LruMUpYXG2/aypwnavi2gcbf6lwach1.png"
+                                }
+                 }
+             ],
+    "submissions":  2,
+    "reportedCostTotal":  10,
+    "inspection":  {
+                       "status":  "Both actual downloaded outputs visually inspected",
+                       "selected":  "B / Pocket Quest",
+                       "recommendation":  "B — Pocket quest, with correct progress semantics and restrained glass edges",
+                       "ownerAcceptance":  "Direction selected, then revised by later user feedback. r6 fresh direction supersedes r4/r5 for current review.",
+                       "candidateA":  {
+                                          "strengths":  [
+                                                            "Single dominant action",
+                                                            "Dark type hierarchy",
+                                                            "Quiet lower frosted task sheet",
+                                                            "Restrained milestone path"
+                                                        ],
+                                          "concerns":  [
+                                                           "Chapter heading competes with task heading",
+                                                           "Earned token disproportionately large",
+                                                           "Unsupported completion wording",
+                                                           "Generic literal orange recovery frame"
+                                                       ]
+                                      },
+                       "candidateB":  {
+                                          "strengths":  [
+                                                            "Bold task hierarchy",
+                                                            "Clear teal primary action",
+                                                            "Smaller earned check token",
+                                                            "Warm recovery cue and visible frosted depth",
+                                                            "Object and reward feel like a focused creative activity"
+                                                        ],
+                                          "concerns":  [
+                                                           "Progress dots inconsistent with chapter/completion labels",
+                                                           "Floating exploded plate conflicts with seated-flat instruction",
+                                                           "Some rim glow and button gloss should be quieter",
+                                                           "Completion copy needs accurate demo boundary",
+                                                           "Generic detergent prop is not equipment authority"
+                                                       ]
+                                      }
+                   },
+    "implementationStatus":  "Design review only. No application code edits.",
+    "ownedFiles":  [
+
+                   ],
+    "motion":  "Static concept boards only; no motion generated or implemented.",
+    "limitations":  [
+                        "All nine user references described in prompts; no image files uploaded",
+                        "Generated copy is illustrative, not equipment authority",
+                        "No physical print or native iOS claim"
+                    ],
+    "reviewGate":  "Current r6 visual review precedes implementation at user request."
+}

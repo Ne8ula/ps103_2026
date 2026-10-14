@@ -1,0 +1,52 @@
+﻿[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "5BDC58310A71BD40E27B269781C703DEDC3F99C15B2E5F421200312955A64E81",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\MobileApp.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "8A0AA1D2E5283F52D0B4E7FEA17E8F153F41B87213F47379E6D53CDC61794047",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\mobile.css"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "211CF85343B662C9A11F87F4257C1BD18894332C051C301D8B84D0380F8563B9",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\state.js"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "923F2FC682351AD969F81712D5B08590724EEAD6B14650F307AA41462526F5D5",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\components\\UI.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "38FC7758889DA5D1E9A18BD9A98140DA69C7DFF4D21B389D072192837D6281D7",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\components\\Browse.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "7D9D443CEF4331132FE11D641F0E8C1C1FF88DFBAA2BBB79B3E8A19037CA1702",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\components\\GuideContent.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "0D59C56C6482552681614233B56C60E260953E7CC1D419A3E3B618B14B922576",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\components\\PhotoHelp.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "E16D7F8817F4D4E133C733A287009A62818889942287F415D95548E6565987C8",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\components\\Sheets.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "5FA58D9A0F1271A320F7C434A1647C0470FBF534F928C1D5A152B5746E826832",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\components\\ProductScene.jsx"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "CACF9505F79FD5EFAB68350C9CCE301E6A5E63BBB13DBFEA8D3BF9E54906E83B",
+        "Path":  "C:\\Users\\alexx\\Documents\\ClaudeAgent\\ps103_2026\\src\\scene\\createScene.js"
+    }
+]

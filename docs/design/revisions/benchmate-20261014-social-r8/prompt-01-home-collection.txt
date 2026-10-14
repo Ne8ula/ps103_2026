@@ -1,0 +1,31 @@
+Use case: ui-mockup. Extend the supplied Benchmate mobile app direction that the user LIKES: cool pearl, purple/violet, graphite, soft physical glass, a sculptural pearl cat and solid-to-character-matrix artwork. Preserve its recognizable design. Add a SECONDARY COLOR and extend the matrix language INTO UI COMPONENTS, plus four primary destinations. These are functional application mockups, not promotional posters.
+
+OUTPUT GEOMETRY: wide composite about 1340x1170, wider than tall. Exactly TWO flat iPhone screen canvases side by side, each about503x1090, corresponding to393x852 logical pixels. One realistic visible viewport per screen. Never elongate screens into full-page scroll captures. Match supplied board proportions. Native status bar and home indicator, subtle screen rim, no thick phone hardware and no words outside the screens.
+
+COLOR: Purple #7146AE remains primary. Add refined CITRON #CCDE72 / pale citron glass #E4ECC3 as clear secondary accent, around10–15% of the colored material. Cool pearl #ECEEF3 canvas, charcoal #26232D ink/actions, orchid glass. Citron appears in button end-caps, selected component markers, avatar/glass edge lighting and progress details. It should visibly complement purple, not become a neon-green toy app. NO ivory/cream/orange/brown/blue/cyan styling. Use normal-to-wide modern sans throughout, no serif or condensed letters. Modest 23–25px headings,16px body,12px metadata at logical phone scale. Keep dark readable typography, generous counters and spacing.
+
+VISIBLE GLASS: clouded translucent glass overlaps objects and material fields, with blurred silhouettes transmitted behind it, soft refraction, delicate doubled edges and tactile thickness. Not merely white opaque cards. Purple and citron blur THROUGH glass at appropriate edges. No heavy rim bloom.
+VISIBLE DITHER/MATRIX IN UI, not only images:
+- On the main frosted card or panel, its lower-right glass edge dissolves into a crisp variable-density field of tiny square dots, plus signs and colon pairs. This is a deliberate 20–35px edge treatment on the component, not random floating particles or a dotted border.
+- The selected bottom tab has a small purple-to-citron ordered-dither inset UNDER its icon, with a crisp label below. No pattern over labels. Inactive tabs plain.
+- Use a short 2D character-grid divider or a small dot-matrix progress indicator between sections, away from text. These details must be visible at phone size, not microscopic or almost transparent. Do not texture every surface.
+Retain a partial character-field transition across the 3D cat/image art too. Coherent grid scale/density. NEVER dither text, navigation labels, body copy or full background; avoid cyberpunk raining-code, fake numerical sensing data, sparks, confetti and glitch artifacts. Give controls shape and labels independent of color.
+
+Persistent bottom frosted dock: exactly FOUR evenly spaced labeled tabs, in this order: Home, Collection, Community, Profile. Simple recognizable outlined house, grid, people, person icons. Active tab purple with restrained citron/dither marker. Other tabs muted charcoal. Dock logicaly744–813, home indicator832. Four touch zones at least60px wide. No top-right duplicate profile shortcut now that Profile is a tab. Keep task screens and browsing screens uncluttered. No badges with fake notification counts.
+
+Same original-looking seated pearl/orchid 3D cat as supplied boards: pointed ears, rounded head, calm closed-eye expression, curved tail, fine print-layer surface. Cat retains identity. No real printer scan or printable mesh is claimed. Ripple tray and Cable pebble are concept previews; no fabricated prices, print durations, device telemetry or manufacturer partnership. All community stories/profile details are illustrative sample content, not real user data.
+
+Reference role: image1 is the liked Home/Bambu board, image2 is the liked project/Collection board. Reuse the HOME from image1 and COLLECTION from image2 as visual bases. Keep their palette, material depth, readable hierarchy and cat identity; update only the requested secondary accent, component effects and navigation. Do not include project-detail or Bambu-library screens in this output.
+
+LEFT — HOME, Home tab active.
+Compact benchmate wordmark, page title 'Make something.' One short line 'A little guidance. A thing of your own.'
+Section 'Your equipment'. One central Bambu card, TOTAL height about340 logical pixels: graphite schematic X1-like printer and same cat, partial character-field transition. Foreground purple/citron frosted glass overlapping bottom: 'Bambu Lab', 'Projects for your X1 Carbon'. One dominant charcoal pill 'View projects' with a small citron arrow end-cap. Make the glass panel's right trailing edge itself resolve into a tiny variable-density ASCII/dither field; not just the cat.
+Below: one compact70px row 'Your collection' / 'Saved ideas and finished projects' with tiny cat thumbnail and chevron. A short citron/purple matrix divider occupies the unused right side between card and row. NO large duplicate collection image, extra feed or second main CTA. Four-tab dock with active Home has a visible tiny dither inset.
+
+RIGHT — COLLECTION, Collection tab active.
+Small benchmate header. Title 'Your collection'. Subtitle 'Keep an idea. Make it yours.'
+Compact 'Saved' / 'Made' selector, Saved active with a purple underline dissolving into a short citron dot-matrix tail; labels solid.
+One featured saved Little cat card with same clear 3D/dither art and clouded glass nameplate reading 'Little cat' / 'Bambu Lab' / 'Guided project'. Small bookmark in a citron glass capsule, not another main CTA. Glass nameplate edge has visible ordered-dither dissolution but remains structurally legible.
+Below two compact preview tiles 'Ripple tray' / 'Preview' and 'Cable pebble' / 'Preview'. Restrained citron material accent on one tiny object, predominant purple identity maintained.
+No fake completed items, no reward metrics. Four-tab dock, Collection selected with purple/citron dither inset.
+SCREEN FIT: header/title byy180; main card y215–575; compact row/preview tiles y600–716; dock y744–813. Reduce artwork height if needed, never stretch viewport.

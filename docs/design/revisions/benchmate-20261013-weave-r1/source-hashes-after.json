@@ -1,0 +1,18 @@
+[
+    {
+        "path":  "src/styles.css",
+        "sha256":  "885B31047F13D27C3C5EB75C3B023A16ABF7E51FEC8DF0D0038354FD399E461E"
+    },
+    {
+        "path":  "src/refinement.css",
+        "sha256":  "77541D77B1801CC8183548F6CE933CF4C32CD7AD6F0A5E7E5A28DB7541CA30A9"
+    },
+    {
+        "path":  "src/main.jsx",
+        "sha256":  "636271DD160037E90FBF5D5B6737D6756B7D418871F07FAE0E268C030730B01B"
+    },
+    {
+        "path":  "src/components/Illustrations.jsx",
+        "sha256":  "E9626E51967C9A89D8EFB3DDE9A40F510C68F3BE482CD34F5B0230AF07FE215E"
+    }
+]

@@ -1,0 +1,14 @@
+﻿[
+    {
+        "sha256":  "885B31047F13D27C3C5EB75C3B023A16ABF7E51FEC8DF0D0038354FD399E461E",
+        "path":  "src\\styles.css"
+    },
+    {
+        "sha256":  "40C9034482288D73ED9A9E44BAFD4EB7D9F503130CE94A56AE4375129E02E50A",
+        "path":  "src\\components\\Illustrations.jsx"
+    },
+    {
+        "sha256":  "A74ED21D198FB4EF065B0F7C4EAE80BC4629BCE4D2E06D66BCBACA9A1A99079B",
+        "path":  "src\\main.jsx"
+    }
+]

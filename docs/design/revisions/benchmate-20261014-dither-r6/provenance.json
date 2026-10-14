@@ -1,0 +1,66 @@
+{
+  "passId": "benchmate-20261014-dither-r6",
+  "date": "2026-10-14",
+  "route": "built-in image_gen.imagegen",
+  "intent": "Fresh generation; only latest two user images and supplied video, previous visual references excluded.",
+  "modelVersion": null,
+  "cost": null,
+  "toolLimitations": "Exact model version and price not exposed; no specific GPT version or quality ranking asserted.",
+  "promptFile": "prompt.txt",
+  "inputs": {
+    "num_last_images_to_include": 3,
+    "transparent_background": false,
+    "roles": [
+      "Latest Claryx character-dot flower",
+      "Latest ASCII flower",
+      "Latest video's sampled contact sheet"
+    ],
+    "previousGeneratedImagesIncluded": false,
+    "previousVisualReferencesIncluded": false
+  },
+  "video": {
+    "path": "C:/Users/alexx/Downloads/fbb5fafd6c1d8f5b45b7ad9a55298a18_720w.mp4",
+    "sha256": "2B2F3278E93855089290BC49AF0590407377D83539897F4FE7DEC8CF6E7D6172",
+    "durationSeconds": 12.12,
+    "width": 720,
+    "height": 960,
+    "fps": 25,
+    "sampleTimesSeconds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "contactSheet": "references/video-contact-sheet.png",
+    "extractionFilter": "select='not(mod(n,25))',scale=240:-1,tile=4x3:padding=8:margin=8:color=0xeeeeee",
+    "inspection": "Sampled frames inspected; no audio or full motion timing assessment."
+  },
+  "submissions": 1,
+  "reruns": 0,
+  "status": "completed",
+  "originalPath": "C:/Users/alexx/.codex/generated_images/01a137d1-c5ee-74f2-a068-0e73d2564999/exec-0c16c119-6704-400d-acc0-3a1d356a20dc.png",
+  "output": {
+    "path": "images/benchmate-warm-glass-inspection.png",
+    "width": 1474,
+    "height": 1067,
+    "sha256": "7AF1AADAE6BB84878B4CEB4AFD4A61CA3F5FBF64E11F1FEAB4FC63E128AB8CD0"
+  },
+  "inspection": "Actual image inspected: warm glass, charcoal controls, wider headings and localized matrix present. Headings more prominent than target; expanded disclosure label and project dropdown need refinement.",
+  "applicationCodeChanged": false,
+  "sourceIntegrityFile": "source-integrity.json",
+  "motion": "Static mockup only; no animation generated or implemented.",
+  "diagnosis": "Synthetic photo and proposed finding only; no user photo or live inference.",
+  "priorWeaveTotal": {
+    "completedRuns": 5,
+    "reportedCredits": 25
+  },
+  "ownerAcceptance": "Pending visual review before implementation; r5 superseded."
+}

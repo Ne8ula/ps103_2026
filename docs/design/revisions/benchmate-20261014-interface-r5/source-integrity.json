@@ -1,0 +1,26 @@
+﻿[
+    {
+        "path":  "src/scene/createScene.js",
+        "unchanged":  true
+    },
+    {
+        "path":  "src/components/ProductScene.jsx",
+        "unchanged":  true
+    },
+    {
+        "path":  "src/mobile.css",
+        "unchanged":  true
+    },
+    {
+        "path":  "src/MobileApp.jsx",
+        "unchanged":  true
+    },
+    {
+        "path":  "src/state.js",
+        "unchanged":  true
+    },
+    {
+        "path":  "src/data/project.js",
+        "unchanged":  true
+    }
+]

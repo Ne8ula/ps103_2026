@@ -1,0 +1,90 @@
+﻿[
+    {
+        "path":  "assets\\panda-logo.svg",
+        "identical":  true
+    },
+    {
+        "path":  "colors_and_type.css",
+        "identical":  true
+    },
+    {
+        "path":  "index.html",
+        "identical":  true
+    },
+    {
+        "path":  "Phase 1 Prototype.html",
+        "identical":  true
+    },
+    {
+        "path":  "Phase 2 Prototype.html",
+        "identical":  true
+    },
+    {
+        "path":  "Phase 3 Prototype.html",
+        "identical":  true
+    },
+    {
+        "path":  "Phase 4 Prototype.html",
+        "identical":  true
+    },
+    {
+        "path":  "phase1-app.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase1-bits.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase1-laptop.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase1-styles.css",
+        "identical":  true
+    },
+    {
+        "path":  "phase2-bits.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase2-corridor.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase2-printer.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase2-styles.css",
+        "identical":  true
+    },
+    {
+        "path":  "phase3-app.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase3-styles.css",
+        "identical":  true
+    },
+    {
+        "path":  "phase4-app.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase4-bits.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase4-styles.css",
+        "identical":  true
+    },
+    {
+        "path":  "phase5-app.jsx",
+        "identical":  true
+    },
+    {
+        "path":  "phase5-styles.css",
+        "identical":  true
+    }
+]
