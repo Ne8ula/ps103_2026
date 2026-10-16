@@ -1,0 +1,50 @@
+{
+  "template": "C:\\Users\\alexx\\Downloads\\AdobeStock_570926833.psdt",
+  "templateSize": [
+    5000,
+    3335
+  ],
+  "artworkSize": [
+    4114,
+    780
+  ],
+  "mockupSize": [
+    2000,
+    1334
+  ],
+  "perspectiveCorners": [
+    [
+      873.6838785807291,
+      1414.8143310546875
+    ],
+    [
+      3929.1801557657213,
+      842.8548990885416
+    ],
+    [
+      4054.9715576171875,
+      1585.362070682809
+    ],
+    [
+      1004.898102703678,
+      1911.9359537760417
+    ]
+  ],
+  "mask": "PSDT stored combined layer mask",
+  "textures": [
+    {
+      "name": "White",
+      "blend": "BlendMode.LINEAR_BURN",
+      "opacity": 255
+    },
+    {
+      "name": "Black",
+      "blend": "BlendMode.SCREEN",
+      "opacity": 255
+    }
+  ],
+  "fps": 30,
+  "durationSeconds": 8,
+  "copy": "Guided projects. From idea to made.",
+  "motion": "Original guide vector geometry and construction sequence at 2x speed; thicker and darker blueprint strokes for subway visibility. Solid marks complete at 3.9s; copy reveals at 4.05-4.5s; final hold through 7.6s, then 0.4s loop fade."
+}

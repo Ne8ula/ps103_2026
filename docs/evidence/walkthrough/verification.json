@@ -1,0 +1,28 @@
+{
+  "browser": {
+    "duration": 38,
+    "width": 1600,
+    "height": 1000,
+    "plays": true
+  },
+  "chapterNavigation": true,
+  "decode": "Full ffmpeg decode completed without errors",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1600,
+        "height": 1000,
+        "r_frame_rate": "30/1"
+      }
+    ],
+    "format": {
+      "duration": "38.000000",
+      "size": "1462062"
+    }
+  },
+  "errors": [],
+  "pdfSHA256": "5405bfbab63cb09ad869cde94a6747405804f4a7498bc8a6e15a5ce62fa3f8c7"
+}

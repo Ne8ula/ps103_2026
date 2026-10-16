@@ -1,18 +1,20 @@
 # Benchmate — Weave refinement review
 
+> Capture update, 16 October 2026: superseded app screenshots were deleted at the user's request. This report describes the historical run. [View the current branded demo and new captures](../../../evidence/brand-refresh/review.html).
+
 **Status: implementation ready; selected reference implemented and browser-checked. Owner acceptance remains pending.**
 
 - [Contact sheet: one actual candidate, selected](references/contact-sheet.png)
 - [Actual generated state board](references/images/img-01-benchmate-state-board.png)
 - [Provenance, approval and run ID](provenance.json)
 - [Exact input and settings](prompt.json)
-- [Before: working desktop entry](implementation/before/desktop-entry.jpg)
-- [After: final desktop entry](implementation/after/desktop-entry.jpg)
+- Before: working desktop entry (historical capture removed)
+- After: final desktop entry (historical capture removed)
 - Video: none; this pass changed static presentation only.
 
 | Before | After |
 |---|---|
-| ![Before](implementation/before/desktop-entry.jpg) | ![After](implementation/after/desktop-entry.jpg) |
+| Before (historical capture removed) | After (historical capture removed) |
 
 Matching entry state in the same Chrome browser, both with a 1440 × 1000 viewport override; full-page captures. No browser zoom or OS display-scale change was made. Physical DPI was not independently measured.
 
@@ -34,10 +36,10 @@ Final edits are scoped to `src/styles.css`, `src/refinement.css`, `src/main.jsx`
 
 The interface preserves the board's object/action balance and restrained color treatment, but retains the original smiling cat and evidence-backed native copy. Compare the large object stage, underlined active phase, olive primary action and named finish. The recovery graphic is an original detergent/plate illustration, not a traced manufacturer image.
 
-- [Mobile entry](../../../evidence/mobile-final.jpg)
-- [Mobile recovery](../../../evidence/mobile-recovery-final.jpg)
-- [Desktop recovery](../../../evidence/recovery-final.jpg)
-- [Named completion after one recovery](../../../evidence/completion-final.jpg)
+- Mobile entry (historical capture removed)
+- Mobile recovery (historical capture removed)
+- Desktop recovery (historical capture removed)
+- Named completion after one recovery (historical capture removed)
 - [Source hashes after implementation](source-hashes-after.json)
 
 Seven state tests and production build passed. Final browser checks repeated personalization, Enter activation, recovery, refresh at the unresolved restart checkpoint, completion gating and the named gift finish. Desktop and narrow layouts were visually inspected; no horizontal overflow was observed. Rendered contrast failures in several muted text styles were corrected within this pass. No app-origin error appeared in the sampled final console log. Complete verification and untested areas are in [planning.md](../../../../planning.md).

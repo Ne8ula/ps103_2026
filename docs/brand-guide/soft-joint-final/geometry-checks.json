@@ -1,0 +1,22 @@
+{
+  "bounds": {
+    "x": 48,
+    "y": 48,
+    "width": 160,
+    "height": 160
+  },
+  "boundsCorrect": true,
+  "anchorsOnGrid": true,
+  "circleCentresAndRadiiOnGrid": true,
+  "exactSymmetryByConstruction": true,
+  "rotationCentre": [
+    128,
+    128
+  ],
+  "rasterSymmetry": {
+    "maximumAlphaDifference": 81,
+    "antialiasedEdgeDifferences": 542,
+    "opaqueVsTransparentMismatches": 0,
+    "note": "Chromium may antialias rotated circular edges differently; exact vector symmetry is guaranteed by the rotation transform."
+  }
+}

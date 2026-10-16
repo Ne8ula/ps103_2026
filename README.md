@@ -1,8 +1,8 @@
 ﻿# Benchmate
 
-A polished, runnable **iPhone browser mockup** implementing the approved R9 journey in the existing React 19, Vite and Three.js app. Purple and citron accents, cool pearl glass, controlled matrix textures and a reusable pearl/orchid 3D cat connect discovery, preparation, recovery and completion.
+A polished, runnable **iPhone browser mockup** implementing the approved R9 journey in the existing React 19, Vite and Three.js app. Electric Blue and Acid Lime accents, Cloud and White glass, controlled matrix textures and a reusable cloud-blue 3D cat connect discovery, preparation, recovery and completion.
 
-![Implemented Benchmate Home](docs/evidence/r9-implementation/01-home-393.png)
+![Implemented Benchmate Home](docs/evidence/brand-refresh/01-home-393.png)
 
 Independent prototype. Bambu Lab is the equipment manufacturer, not a sponsor or partner. This is a browser app, not a native iOS build. No printer connection, printable cat model or physical validation is implied.
 
@@ -43,16 +43,17 @@ The production browser suite passed the complete main path, both issue branches,
 
 Camera capture and cancellation were tested with a **synthetic browser media stream**, including released tracks; permission rejection was simulated. A physical camera, real iPhone/Safari, virtual keyboard and screen reader were not tested.
 
-- [Implementation Gallery — All Eight R9 Chapters](docs/evidence/r9-implementation/review.html)
-- [Desktop](docs/evidence/r9-implementation/home-1440.png) · [393px Home](docs/evidence/r9-implementation/01-home-393.png) · [320px Home](docs/evidence/r9-implementation/home-320.png)
-- [Photo Help](docs/evidence/r9-implementation/board-4.png) · [Recovery](docs/evidence/r9-implementation/board-5.png) · [Completion And Sharing](docs/evidence/r9-implementation/board-7.png)
-- [Machine-Readable Browser Results](docs/evidence/r9-implementation/verification.json) · [Detailed Verification And Reference Comparison](docs/evidence/r9-implementation/REVIEW.md)
+- [Implementation Gallery — All Eight R9 Chapters](docs/evidence/brand-refresh/review.html)
+- [Desktop](docs/evidence/brand-refresh/showcase-home-1440.png) · [393px Home](docs/evidence/brand-refresh/01-home-393.png) · [320px Home](docs/evidence/brand-refresh/showcase-home-320.png)
+- [Photo Help](docs/evidence/brand-refresh/board-4.png) · [Recovery](docs/evidence/brand-refresh/board-5.png) · [Completion And Sharing](docs/evidence/brand-refresh/board-7.png)
+- [Machine-Readable Browser Results](docs/evidence/brand-refresh/verification.json) · [Brand Refresh And Verification](docs/evidence/brand-refresh/REVIEW.md)
 
 To repeat the browser checks, install Playwright's Chromium once, build and start the production preview above, then run:
 
 ```powershell
 npx playwright install chromium
 npm run test:browser
+node scripts/verify-brand.mjs
 npm run evidence:gallery
 ```
 
@@ -91,11 +92,14 @@ src/components/ProductScene.jsx  Lazy 3D mount and accessible SVG fallback
 src/scene/createScene.js          Original procedural geometry and materials
 src/state.js                     Versioned reducer, migration, records and exports
 src/data/                        Equipment authority and authored presentation
-src/mobile.css                   R9 tokens, glass, matrix, responsive layout
+src/mobile.css                   Glass, matrix and responsive layout
+src/brand.css                    Final brand tokens and three local font families
+public/brand/                    Supplied logo, wordmark and asset provenance
+public/fonts/                    Space Grotesk, Space Mono and Silkscreen
 public/demo-first-layer.svg      Original synthetic first-layer example
 scripts/verify-r9.mjs            Isolated production-browser verification
 scripts/evidence-gallery.mjs     Gallery of actual implementation captures
 ```
 
-The original PANDA archive and all R1–R9 concept packets remain intact. R9 **reference** images stay in [the original concept packet](docs/design/revisions/benchmate-20261014-workflow-r9/review.html); new implementation evidence is separate. Historical R2 source/document snapshots are in [the implementation baseline](docs/evidence/r9-implementation/baseline/). See [design.md](design.md) and [planning.md](planning.md) for current decisions and validation boundaries.
+The original PANDA archive and all R1–R9 concept packets remain intact. R9 **reference** images stay in [the original concept packet](docs/design/revisions/benchmate-20261014-workflow-r9/review.html); current implementation evidence is separate. Historical R2 source/document snapshots are in [the implementation baseline](docs/evidence/r9-implementation/baseline/). See [design.md](design.md) and [planning.md](planning.md) for current decisions and validation boundaries.
 

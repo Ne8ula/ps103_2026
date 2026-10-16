@@ -1,0 +1,59 @@
+{
+  "duration": 38,
+  "fps": 30,
+  "width": 1600,
+  "height": 1000,
+  "source": "C:/Users/alexx/Downloads/M4 Value Creation Analysis.pdf",
+  "chapters": [
+    {
+      "title": "Choose a project",
+      "duration": 6,
+      "sentence": "Choose a project matched to your printer, avoiding tutorials that do not fit your equipment.",
+      "source": "VCA pp. 1, 4: VP1; Hauke and Yura on equipment-specific guidance.",
+      "start": 0,
+      "end": 6
+    },
+    {
+      "title": "Prepare the project",
+      "duration": 6,
+      "sentence": "Personalize your project and review the setup, bringing scattered printer and material details together.",
+      "source": "VCA pp. 4, 6: Yura on combining printer, slicer and filament settings.",
+      "start": 6,
+      "end": 12
+    },
+    {
+      "title": "Check the printer",
+      "duration": 7,
+      "sentence": "Check the plate and filament with visual guidance, making each preparation step easier to follow.",
+      "source": "VCA pp. 4, 6: Heki on visual steps and exact details; Yura on setup matching.",
+      "start": 12,
+      "end": 19
+    },
+    {
+      "title": "Inspect the print",
+      "duration": 6,
+      "sentence": "Inspect the first layer with a visual checklist, reducing guesswork about whether the print looks right.",
+      "source": "VCA pp. 6, 8: time lost to late failures; visible checkpoints. Intended benefit, not measured prevention.",
+      "start": 19,
+      "end": 25
+    },
+    {
+      "title": "Finish the product",
+      "duration": 8,
+      "sentence": "Follow cooling, removal, and final checks, so you know how to finish after printing ends.",
+      "source": "VCA pp. 1, 8–9: task-specific steps and visible checkpoints; applied here to the prototype finishing flow.",
+      "start": 25,
+      "end": 33
+    },
+    {
+      "title": "Keep what you learned",
+      "duration": 5,
+      "sentence": "Save your project and notes, keeping what you learned ready for your next attempt.",
+      "source": "VCA pp. 4, 7, 9: Kevin on repeated practice; saved progress and later reuse remain hypotheses to test.",
+      "start": 33,
+      "end": 38
+    }
+  ],
+  "errors": [],
+  "method": "Isolated browser, real UI actions, capture-only side captions and pointer; held frames edited to 38 seconds. No audio, no simulated print timing."
+}

@@ -1,0 +1,45 @@
+{
+  "round": 2,
+  "parents": [
+    "01-workbench",
+    "02-join"
+  ],
+  "method": "Original SVG variations, rendered with Chromium.",
+  "concepts": [
+    {
+      "id": "01-soft-workbench",
+      "name": "Soft Workbench",
+      "idea": "The familiar bench, a little warmer.",
+      "description": "Keeps the original silhouette and floating project block. Small corner radii soften the sturdy pixel construction.",
+      "shapes": "<path d=\"M56 104H200Q208 104 208 112V144H192V200Q192 208 184 208H152V152Q152 144 144 144H112Q104 144 104 152V208H72Q64 208 64 200V144H48V112Q48 104 56 104Z\"/><rect x=\"104\" y=\"48\" width=\"48\" height=\"40\" rx=\"8\"/>"
+    },
+    {
+      "id": "02-piece-in-place",
+      "name": "Piece in Place",
+      "idea": "One piece away from making it yours.",
+      "description": "An offset block lines up with a recess in the worktop. The bench becomes a little project being assembled.",
+      "shapes": "<rect x=\"136\" y=\"48\" width=\"48\" height=\"40\"/><path d=\"M48 112H136V136H184V112H208V152H192V208H152V168H104V208H64V152H48Z\"/>"
+    },
+    {
+      "id": "03-soft-joint",
+      "name": "Soft Joint",
+      "idea": "Two parts, one partnership.",
+      "description": "The original interlocking rhythm with rounded outer corners and softened notches. Closest to the rounded reference marks.",
+      "shapes": "<path d=\"M64 48H136Q144 48 144 56V88H96Q88 88 88 96V104Q88 112 96 112H112V144Q112 152 104 152H48V64Q48 48 64 48Z\"/><path d=\"M192 208H120Q112 208 112 200V168H160Q168 168 168 160V152Q168 144 160 144H144V112Q144 104 152 104H208V192Q208 208 192 208Z\"/>"
+    },
+    {
+      "id": "04-close-fit",
+      "name": "Close Fit",
+      "idea": "A satisfying fit.",
+      "description": "Two complementary pieces form a compact square. A stepped seam keeps the join visible in a single colour.",
+      "shapes": "<path d=\"M64 48H120V96H160V128H120V160H48V64Q48 48 64 48Z\"/><path d=\"M136 48H192Q208 48 208 64V192Q208 208 192 208H64Q48 208 48 192V176H136V144H176V80H136Z\"/>"
+    },
+    {
+      "id": "05-joined-workbench",
+      "name": "Joined Workbench",
+      "idea": "A bench built from two parts.",
+      "description": "Combines the workbench silhouette with a stepped joint. The seam makes collaboration part of the structure itself.",
+      "shapes": "<rect x=\"104\" y=\"48\" width=\"48\" height=\"40\" rx=\"4\"/><path d=\"M56 104H112V120H136V136H112V152H104V208H72Q64 208 64 200V144H48V112Q48 104 56 104Z\"/><path d=\"M128 104H200Q208 104 208 112V144H192V200Q192 208 184 208H152V152H128V148H148V108H128Z\"/>"
+    }
+  ]
+}

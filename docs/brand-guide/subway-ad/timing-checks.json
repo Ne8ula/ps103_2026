@@ -1,0 +1,38 @@
+[
+  {
+    "t": 2.5,
+    "copyOpacity": 0,
+    "marksOpacity": 1,
+    "stage": "Details"
+  },
+  {
+    "t": 3.9,
+    "copyOpacity": 0,
+    "marksOpacity": 1,
+    "stage": "Complete"
+  },
+  {
+    "t": 4.04,
+    "copyOpacity": 0,
+    "marksOpacity": 1,
+    "stage": "Complete"
+  },
+  {
+    "t": 4.5,
+    "copyOpacity": 1,
+    "marksOpacity": 1,
+    "stage": "Complete"
+  },
+  {
+    "t": 7.6,
+    "copyOpacity": 1,
+    "marksOpacity": 1,
+    "stage": "Complete"
+  },
+  {
+    "t": 8,
+    "copyOpacity": 0,
+    "marksOpacity": 0,
+    "stage": "Complete"
+  }
+]

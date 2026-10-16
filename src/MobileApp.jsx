@@ -8,6 +8,7 @@ import {GuideContent} from './components/GuideContent.jsx';
 import {Sheets} from './components/Sheets.jsx';
 import {Primary,PhaseRail,Tabs,titleCase} from './components/UI.jsx';
 import './mobile.css';
+import './brand.css';
 function bootProject(){try{return loadStoredProject(localStorage);}catch{return {state:freshState(),notice:'Browser storage is unavailable. Download a record before closing.',writeAllowed:false};}}
 const modalTitles={help:'A Little Help',setup:'What You Need',identity:'Your Local Profile',preferences:'Preferences',notifications:'Notifications',privacy:'Privacy',discussion:'Local Discussion',support:'Project Summary',withdraw:'Withdraw Issue Report',reset:'Reset Current Guide',tray:'Ripple Tray',pebble:'Cable Pebble'};
 export default function MobileApp(){
@@ -37,11 +38,11 @@ export default function MobileApp(){
  const activeTab=['catalog','detail'].includes(state.route)?'home':['share','preview','record'].includes(state.route)?'collection':state.route;
  const phaseVisible=guide&&!['capture','question','processing','finding','support','paused'].includes(screen);
  return <div className={`preview-shell ${state.profile.reducedMotion?'reduce-motion':''}`}>
-  <aside className="preview-caption"><span className="edition">BENCHMATE / R9</span><h2>A Little<br/>Guidance<br/>Goes A Long Way</h2><p>From a small idea to<br/>something of your own</p><div className="matrix-divider"/><small>Interactive iPhone Mockup<br/>React · Three.js · On This Device</small></aside>
+  <aside className="preview-caption"><img className="brand-wordmark" src="/brand/benchmate-wordmark.svg" alt="BenchMate"/><span className="edition">MAKE WITH CONFIDENCE</span><h2><span>A Little</span>{' '}<span>Guidance Goes</span>{' '}<span>A Long Way</span></h2><p>From a small idea to something of your own</p></aside>
   <section className="device" aria-label="Benchmate App">
    <div className="device-status" aria-hidden="true"><strong>9:41</strong><span className="device-island"/><div><Signal size={14}/><Wifi size={14}/><BatteryFull size={20}/></div></div>
    <a className="skip-link" href="#main-content">Skip To Content</a>
-   <header className="app-bar">{guide||['catalog','detail','share','preview','record'].includes(state.route)?<button className="back-button" onClick={back}><ChevronLeft size={22}/><span>{guide?'Back':state.route==='detail'?'Bambu Projects':['share','record','preview'].includes(state.route)?'Collection':'Home'}</span></button>:<span className="wordmark">Benchmate<span className="brand-dots" aria-hidden="true"/></span>}{guide?<span className="badge guided-badge">Guided Demo</span>:null}{guide||['share','preview','detail'].includes(state.route)?<button className="icon-button" aria-label="Help" onClick={()=>open(guide?'help':'setup')}><HelpCircle size={22}/></button>:<button className="icon-button" aria-label="About This Demo" onClick={()=>open('setup')}><BookOpen size={20}/></button>}</header>
+   <header className="app-bar">{guide||['catalog','detail','share','preview','record'].includes(state.route)?<button className="back-button" onClick={back}><ChevronLeft size={22}/><span>{guide?'Back':state.route==='detail'?'Bambu Projects':['share','record','preview'].includes(state.route)?'Collection':'Home'}</span></button>:<span className="wordmark" aria-label="BenchMate"><img className="brand-logo" src="/brand/benchmate-logo.svg" alt=""/><img className="brand-wordmark" src="/brand/benchmate-wordmark.svg" alt="BenchMate"/></span>}{guide?<span className="badge guided-badge">Guided Demo</span>:null}{guide||['share','preview','detail'].includes(state.route)?<button className="icon-button" aria-label="Help" onClick={()=>open(guide?'help':'setup')}><HelpCircle size={22}/></button>:<button className="icon-button" aria-label="About This Demo" onClick={()=>open('setup')}><BookOpen size={20}/></button>}</header>
    <main id="main-content" className="app-scroll" ref={scroll} tabIndex={-1}>
     {boot.notice&&<div className="notice" role="alert">{boot.notice}</div>}
     {!saved&&!boot.notice&&<div className="notice" role="alert">Local saving is unavailable or full. Keep this tab open and download a project record before closing.</div>}
@@ -55,6 +56,6 @@ export default function MobileApp(){
    {toast&&<div className="toast" role="status"><Check size={17}/>{toast}</div>}
    {modal&&<Dialog title={modalTitles[modal]} onClose={close}><Sheets key={modal} {...{modal,state,dispatch,close,open,download}}/></Dialog>}
   </section>
-  <aside className="preview-detail"><span className="material-orb"/><span className="edition">PEARL / ORCHID / CITRON</span><p>Small Makes<br/>Thoughtfully Guided</p><small>One project<br/>One step at a time</small></aside>
+  <aside className="preview-detail"><img className="brand-logo" src="/brand/benchmate-logo.svg" alt="BenchMate Soft Joint Logo"/></aside>
  </div>;
 }

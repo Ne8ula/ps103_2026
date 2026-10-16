@@ -1,6 +1,6 @@
 ﻿# Benchmate — R9 Implementation
 
-Implemented 14 October 2026 in the existing React/Vite/Three.js project, following the user's explicit approval to move from concepts to working UI. This document describes the current app. The [previous R2 design document](docs/evidence/r9-implementation/baseline/design.md) is retained as history, including prior reference roles and generation provenance.
+Implemented 14 October 2026 in the existing React/Vite/Three.js project, following the user's explicit approval to move from concepts to working UI. Branding refreshed on 16 October 2026 against [the supplied guide](BenchMate_Brand_Guide.html). This document describes the current app. The [previous R2 design document](docs/evidence/r9-implementation/baseline/design.md) is retained as history, including prior reference roles and generation provenance.
 
 ## Reference And Appearance
 
@@ -10,9 +10,9 @@ All eight **selected final** R9 boards were opened and inspected, along with REV
 |---|---|
 | Purple | `#7146AE` — navigation, current state, links and focus |
 | Citron | `#CCDE72` — action end-caps and selected phase rings |
-| Canvas / Ink | `#ECEEF3` / `#26232D` |
+| Cloud / White / Graphite | `#F3F4F8` / `#FFFFFF` / `#292733` |
 | Typography | Locally hosted DM Sans, 24px page headings, 15–16px body/controls, approximately 12px metadata |
-| Glass | Translucent pearl/orchid layers, visible art beneath captions, soft double highlights, backdrop blur and restrained edge fluting |
+| Glass | Translucent Cloud/White/Blue layers, visible art beneath captions, soft double highlights, backdrop blur and restrained edge fluting |
 | Matrix | Ordered dot fields and small ASCII glyph patches on art; dot dividers, panel-edge gutters and selected navigation markers |
 | Touch | At least 44px control/label targets; primary actions 54px |
 
@@ -28,7 +28,7 @@ Small milestones use a restrained check token. There are no streaks, points, fak
 
 ## Original 3D Representation
 
-The original reusable cat retains its rounded head, pointed ears, paws and curved tail, with closed-eye details and a pearl/orchid physical material. Fine layer banding, local studio lighting and a contact shadow provide depth. It is original visualization geometry, not a validated printable model.
+The original reusable cat retains its rounded head, pointed ears, paws and curved tail, with closed-eye details and a cloud-blue physical material. Fine layer banding, local studio lighting and a contact shadow provide depth. It is original visualization geometry, not a validated printable model.
 
 Task views include a procedural spool, schematic printer, seated gold plate with alignment stops, thin first-layer lines, cleaning props and a cat on the plate. The printer has a dark enclosure, gantry and illustrative toolhead; these are not dimensionally accurate X1 parts. The plate is shown **seated**, correcting the reference's floating placement. Ripple Tray and Cable Pebble use original preview geometry and explicitly have no working guides.
 
@@ -44,6 +44,6 @@ Photo selection normalizes browser-decodable JPEG/PNG/WebP files into a bounded 
 
 ## Verification And Scope
 
-[Actual Implementation Gallery](docs/evidence/r9-implementation/review.html) · [Reference Comparison And Test Results](docs/evidence/r9-implementation/REVIEW.md)
+[Actual Implementation Gallery](docs/evidence/brand-refresh/review.html) · [Brand Refresh And Test Results](docs/evidence/brand-refresh/REVIEW.md)
 
 The implementation was inspected against each of the eight R9 boards. State tests, a production build and real headless-Chromium renders verify software behavior. Camera media tests use a synthetic stream, not physical camera evidence. No native iOS, real printer, physical print, remote community, automatic vision or validated print profile is claimed. The equipment source register remains authoritative; generated hardware and copy are not procedure authority.

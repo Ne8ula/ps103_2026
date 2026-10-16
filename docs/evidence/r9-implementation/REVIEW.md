@@ -1,5 +1,7 @@
 ﻿# R9 Implementation Evidence
 
+> Capture update, 16 October 2026: superseded app screenshots were deleted at the user's request. This report describes the historical run. [View the current branded demo and new captures](../brand-refresh/review.html).
+
 14 October 2026 · Actual React/Vite/Three.js browser implementation
 
 [Open The Screenshot Gallery](review.html) · [Browser Results](verification.json) · [Original R9 Reference Gallery](../../design/revisions/benchmate-20261014-workflow-r9/review.html)
@@ -41,14 +43,14 @@ Browser automation uses an isolated headless Chromium profile and software WebGL
 
 | Reference | Implementation Evidence | Comparison And Corrections |
 |---|---|---|
-| 01 Discover | [Board 1](board-1.png) | Three connected browsing destinations; pearl/orchid cat, dark studio stage, glass art captions, citron actions and four tabs. Preview projects have explicit unavailable-guide labels and working save controls. |
-| 02 Prepare | [Board 2](board-2.png) | Editable name/purpose, setup facts, plate detail and true phase completion. The plate sits on a platform against rear stops rather than floating as an installation instruction. Long detail scrolls. |
-| 03 Start Print | [Board 3](board-3.png) | Procedural spool, official-control handoff, first-layer-only illustration. No material sensor, print timer or actual start control. Print remains current until explicitly completed. |
-| 04 Photo Help | [Board 4](board-4.png) | The same selected synthetic first-layer image appears in capture, processing and finding. Pattern overlays stay out of evidence. Selected photographs get a distinct Unanalyzed Photo review, never the scripted finding. |
-| 05 Recovery | [Board 5](board-5.png) | Independent recovery rail, unchecked end/cooling confirmations, cleaning, unresolved support summary. No false success marks or claim that a physical job was stopped. |
-| 06 Finish | [Board 6](board-6.png) | Printing remains in Print; cooling and quality are in Finish; both object/workspace checks gate completion. Expanded More Detail changes to Less Detail with an upward chevron. |
-| 07 Complete/Share | [Board 7](board-7.png) | All four phases complete only after explicit checks. A local record opens and downloads. Share composer fits Preview Post at 393px and leads to an additional [private preview](22-post-preview-393.png). |
-| 08 Supporting | [Board 8](board-8.png) | Clearly fictional Community; editable local Profile; paused first-layer issue with Prepare and At Printer complete, Print current. Pausing explicitly does not pause the printer. |
+| 01 Discover | Board 1 (historical capture removed) | Three connected browsing destinations; pearl/orchid cat, dark studio stage, glass art captions, citron actions and four tabs. Preview projects have explicit unavailable-guide labels and working save controls. |
+| 02 Prepare | Board 2 (historical capture removed) | Editable name/purpose, setup facts, plate detail and true phase completion. The plate sits on a platform against rear stops rather than floating as an installation instruction. Long detail scrolls. |
+| 03 Start Print | Board 3 (historical capture removed) | Procedural spool, official-control handoff, first-layer-only illustration. No material sensor, print timer or actual start control. Print remains current until explicitly completed. |
+| 04 Photo Help | Board 4 (historical capture removed) | The same selected synthetic first-layer image appears in capture, processing and finding. Pattern overlays stay out of evidence. Selected photographs get a distinct Unanalyzed Photo review, never the scripted finding. |
+| 05 Recovery | Board 5 (historical capture removed) | Independent recovery rail, unchecked end/cooling confirmations, cleaning, unresolved support summary. No false success marks or claim that a physical job was stopped. |
+| 06 Finish | Board 6 (historical capture removed) | Printing remains in Print; cooling and quality are in Finish; both object/workspace checks gate completion. Expanded More Detail changes to Less Detail with an upward chevron. |
+| 07 Complete/Share | Board 7 (historical capture removed) | All four phases complete only after explicit checks. A local record opens and downloads. Share composer fits Preview Post at 393px and leads to an additional private preview (historical capture removed). |
+| 08 Supporting | Board 8 (historical capture removed) | Clearly fictional Community; editable local Profile; paused first-layer issue with Prepare and At Printer complete, Print current. Pausing explicitly does not pause the printer. |
 
 The implementation intentionally uses a coherent original procedural cat instead of generated photorealistic cat variations. The printer and task props are readable schematic geometry, not manufacturer CAD. A consistent 24px title/15–16px body system replaces the variable generated typography. The original synthetic first-layer illustration is clearly labeled. Text, fields, sources, progress and actions are all real DOM components.
 

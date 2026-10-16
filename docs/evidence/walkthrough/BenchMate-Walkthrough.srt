@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:06,000
+Choose a project matched to your printer, avoiding tutorials that do not fit your equipment.
+
+2
+00:00:06,000 --> 00:00:12,000
+Personalize your project and review the setup, bringing scattered printer and material details together.
+
+3
+00:00:12,000 --> 00:00:19,000
+Check the plate and filament with visual guidance, making each preparation step easier to follow.
+
+4
+00:00:19,000 --> 00:00:25,000
+Inspect the first layer with a visual checklist, reducing guesswork about whether the print looks right.
+
+5
+00:00:25,000 --> 00:00:33,000
+Follow cooling, removal, and final checks, so you know how to finish after printing ends.
+
+6
+00:00:33,000 --> 00:00:38,000
+Save your project and notes, keeping what you learned ready for your next attempt.

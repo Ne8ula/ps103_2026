@@ -1,4 +1,8 @@
-# Design evidence
+# Current Visual Demo
+
+[Updated branding and screenshot gallery](../evidence/brand-refresh/review.html) ? 16 October 2026. The supplied brand guide now governs typography, palette and identity. Historical generated design references below remain available; old actual app captures were removed at the user's request.
+
+# Historical Design References
 
 | Revision | Status | Scope |
 |---|---|---|

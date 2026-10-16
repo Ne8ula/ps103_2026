@@ -1,0 +1,52 @@
+{
+  "source": "BenchMate_Brand_Guide.html, Branding Guide 0.5",
+  "method": "Original SVG geometry, rendered to PNG with Chromium. No generative-image model used.",
+  "colors": {
+    "blue": "#3155D9",
+    "lime": "#D6E879",
+    "cloud": "#F3F4F8",
+    "ink": "#292733"
+  },
+  "concepts": [
+    {
+      "id": "01-workbench",
+      "name": "The Workbench",
+      "idea": "A place to make.",
+      "description": "A block above a sturdy bench. The open centre gives the mark a welcoming, workshop-like silhouette.",
+      "note": "The clearest link to BenchMate.",
+      "shapes": "<path d=\"M48 104H208V144H184V208H144V144H104V208H64V144H48Z\"/><rect x=\"104\" y=\"48\" width=\"48\" height=\"40\" rx=\"4\"/>"
+    },
+    {
+      "id": "02-join",
+      "name": "The Joint",
+      "idea": "Parts become a project.",
+      "description": "Two stepped pieces fit around a shared opening. A small nod to joinery, assembly and a companion working with you.",
+      "note": "The closest to your abstract references.",
+      "shapes": "<path d=\"M48 48H144V88H88V112H112V152H48Z\"/><path d=\"M208 208H112V168H168V144H144V104H208Z\"/>"
+    },
+    {
+      "id": "03-helping-hand",
+      "name": "The Helping Hand",
+      "idea": "Learn with your hands.",
+      "description": "A pixel palm supports one square piece. It turns “Your Ideas, A Helping Hand” into a compact symbol.",
+      "note": "The strongest expression of the promise.",
+      "shapes": "<rect x=\"120\" y=\"48\" width=\"48\" height=\"48\" rx=\"4\"/><path d=\"M48 112H80V144H176V112H208V160H184V184H160V208H96V184H72V160H48Z\"/>"
+    },
+    {
+      "id": "04-built-b",
+      "name": "The Built B",
+      "idea": "An initial, assembled.",
+      "description": "A stepped B with two open bays and an offset building block. Echoes the pixel B already in the wordmark.",
+      "note": "The strongest typographic family resemblance.",
+      "shapes": "<path fill-rule=\"evenodd\" d=\"M56 48H144V88H184V112H208V184H184V208H56Z M96 88V112H144V88Z M96 152V176H168V152Z\"/><rect x=\"160\" y=\"40\" width=\"48\" height=\"32\"/>"
+    },
+    {
+      "id": "05-maker-m",
+      "name": "The Maker M",
+      "idea": "Build your own way.",
+      "description": "Two upright supports and a stepped centre create an M. A small bridge between making, structure and BenchMate.",
+      "note": "The boldest compact monogram.",
+      "shapes": "<path d=\"M48 208V48H88V88H112V112H144V88H168V48H208V208H168V144H144V168H112V144H88V208Z\"/>"
+    }
+  ]
+}

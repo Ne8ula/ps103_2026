@@ -1,0 +1,25 @@
+0–6s | Choose a project
+Choose a project matched to your printer, avoiding tutorials that do not fit your equipment.
+Evidence: VCA pp. 1, 4: VP1; Hauke and Yura on equipment-specific guidance.
+
+6–12s | Prepare the project
+Personalize your project and review the setup, bringing scattered printer and material details together.
+Evidence: VCA pp. 4, 6: Yura on combining printer, slicer and filament settings.
+
+12–19s | Check the printer
+Check the plate and filament with visual guidance, making each preparation step easier to follow.
+Evidence: VCA pp. 4, 6: Heki on visual steps and exact details; Yura on setup matching.
+
+19–25s | Inspect the print
+Inspect the first layer with a visual checklist, reducing guesswork about whether the print looks right.
+Evidence: VCA pp. 6, 8: time lost to late failures; visible checkpoints. Intended benefit, not measured prevention.
+
+25–33s | Finish the product
+Follow cooling, removal, and final checks, so you know how to finish after printing ends.
+Evidence: VCA pp. 1, 8–9: task-specific steps and visible checkpoints; applied here to the prototype finishing flow.
+
+33–38s | Keep what you learned
+Save your project and notes, keeping what you learned ready for your next attempt.
+Evidence: VCA pp. 4, 7, 9: Kevin on repeated practice; saved progress and later reuse remain hypotheses to test.
+
+Benefits are design intentions based on interview accounts, not measured product outcomes. The finishing sentence applies the VCA's broader step-guidance need to this prototype. This browser demo does not operate a printer or represent elapsed printing/cooling time.

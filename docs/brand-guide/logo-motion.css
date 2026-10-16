@@ -1,0 +1,23 @@
+.logo-motion .motion-intro{height:120px;padding:22px 32px;display:flex;align-items:center;border-bottom:1px solid var(--rule)}
+.motion-intro h1{font:700 60px/1.3 var(--heading);letter-spacing:-2px;margin:0}
+.construction-layout{height:548px;display:grid;grid-template-columns:minmax(0,1fr) 356px;gap:26px;align-items:center;padding:28px 32px}
+.construction-box{position:relative;border:1px solid #CCD3E4;background:#FCFDFF;overflow:hidden}
+.wordmark-box{height:426px}
+.logo-box{height:356px}
+.construction-box h2{position:absolute;z-index:2;top:20px;left:23px;margin:0;font:500 20px/1.3 var(--heading);letter-spacing:-.4px}
+.construction-art{position:absolute;inset:57px 24px 24px;display:grid;place-items:center}
+.construction-art>svg{width:100%;height:100%;overflow:visible;display:block}
+.logo-box .construction-art{inset:52px 24px 16px}
+.construction-static{display:none}
+.construction-controls{height:70px;display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:0 32px}
+.construction-controls button{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--rule);background:white;color:var(--blue);border-radius:4px;cursor:pointer}
+.construction-controls button:active{background:var(--cloud)}
+.construction-controls button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square;stroke-linejoin:miter}
+.construction-controls input{appearance:none;width:250px;height:42px;margin:0 18px 0 0;background:transparent;cursor:ew-resize;accent-color:var(--blue)}
+.construction-controls input::-webkit-slider-runnable-track{height:2px;background:#CCD3E4}
+.construction-controls input::-webkit-slider-thumb{appearance:none;width:8px;height:12px;background:var(--blue);margin-top:-5px;border:0;border-radius:0}
+.construction-controls input::-moz-range-track{height:2px;background:#CCD3E4}
+.construction-controls input::-moz-range-thumb{width:8px;height:12px;background:var(--blue);border:0;border-radius:0}
+.construction-controls button:focus-visible,.construction-controls input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.logo-motion .foot{height:30px}
+@media print{.construction-art,.construction-controls{display:none}.construction-static{position:absolute;inset:57px 24px 24px;width:calc(100% - 48px);height:calc(100% - 81px);object-fit:contain;display:block}.construction-layout{height:618px}}

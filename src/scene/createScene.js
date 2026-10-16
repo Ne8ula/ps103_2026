@@ -4,7 +4,7 @@ import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
 
 // Original visualization geometry, deliberately not a manufacturing mesh or print profile.
 export function makeLayerMaterial() {
-  const material = new THREE.MeshPhysicalMaterial({color:'#d7c4e7',roughness:.48,metalness:.025,clearcoat:.28,clearcoatRoughness:.5,iridescence:.12,iridescenceIOR:1.22,envMapIntensity:.38});
+  const material = new THREE.MeshPhysicalMaterial({color:'#a8b8f3',roughness:.48,metalness:.025,clearcoat:.28,clearcoatRoughness:.5,iridescence:.12,iridescenceIOR:1.22,envMapIntensity:.38});
   material.onBeforeCompile = shader => {
     shader.vertexShader = 'varying vec3 vBenchPosition;\n' + shader.vertexShader;
     shader.vertexShader = shader.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\nvBenchPosition = (modelMatrix * vec4(position, 1.0)).xyz;');
@@ -31,8 +31,8 @@ function tube(group, points, radius, material, segments=48) {
 export function createCat() {
   const cat=new THREE.Group();cat.name='Benchmate original little cat';
   const satin=makeLayerMaterial();
-  const dark=new THREE.MeshStandardMaterial({color:'#766083',roughness:.7});
-  const inner=new THREE.MeshPhysicalMaterial({color:'#b39bc5',roughness:.65,clearcoat:.12});
+  const dark=new THREE.MeshStandardMaterial({color:'#514d63',roughness:.7});
+  const inner=new THREE.MeshPhysicalMaterial({color:'#6b86e8',roughness:.65,clearcoat:.12});
   const profile=new THREE.CatmullRomCurve3([[0,.08],[.32,.07],[.52,.12],[.60,.28],[.60,.48],[.56,.72],[.47,1.02],[.38,1.32],[.36,1.52],[.0,1.61]].map(([x,y])=>new THREE.Vector3(x,y,0))).getPoints(64).map(p=>new THREE.Vector2(Math.max(0,p.x),p.y));
   piece(cat,new THREE.LatheGeometry(profile,64),satin,[0,0,0],[1,1,.8]);
   piece(cat,sphere,satin,[0,1.82,.025],[.70,.59,.53]);
@@ -67,14 +67,14 @@ function createPlate(type,lifting) {
   };
   const steel=new THREE.MeshStandardMaterial({color:'#77807a',roughness:.5,metalness:.7});
   // Seated on a magnetic platform, with rear stops; no floating placement instruction.
-  const platform=new THREE.MeshStandardMaterial({color:'#35313f',roughness:.7,metalness:.2});
+  const platform=new THREE.MeshStandardMaterial({color:'#292733',roughness:.7,metalness:.2});
   piece(group,new RoundedBoxGeometry(2.96,.14,2.72,3,.05),platform,[0,.005,0]);
   for(const x of [-1.19,1.19])piece(group,new RoundedBoxGeometry(.14,.19,.12,2,.02),platform,[x,.15,-1.29]);
   piece(group,new RoundedBoxGeometry(2.8,.075,2.55,3,.065),steel,[0,.1,0]);
   piece(group,new RoundedBoxGeometry(2.78,.026,2.53,3,.035),gold,[0,.15,0]);
   const edge=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(2.64,.01,2.4)),new THREE.LineBasicMaterial({color:'#e5d8b2',transparent:true,opacity:.55}));edge.position.y=.172;group.add(edge);
   if(type==='layer') {
-    const filament=new THREE.MeshStandardMaterial({color:'#e0d2ec',roughness:.56});
+    const filament=new THREE.MeshStandardMaterial({color:'#e0e6fc',roughness:.56});
     const points=[];
     for(let i=0;i<20;i++) {const z=-.58+i*.06;const width=.65*Math.sqrt(1-(z/.78)**2);points.push([-width,.198,z],[width,.198,z]);if(i<19)points.push([width,.198,z+.03]);}
     // A deliberately schematic joined line example, not a sliced cat toolpath.
@@ -83,7 +83,7 @@ function createPlate(type,lifting) {
     tube(group,snake,.018,filament,160);
   }
   if(type==='clean') {
-    const bottle=new THREE.MeshPhysicalMaterial({color:'#d6cce1',roughness:.56});
+    const bottle=new THREE.MeshPhysicalMaterial({color:'#e0e6fc',roughness:.56});
     piece(group,new RoundedBoxGeometry(.40,.72,.32,4,.10),bottle,[-.9,.57,-.74]);
     piece(group,new THREE.CylinderGeometry(.10,.10,.16,24),new THREE.MeshStandardMaterial({color:'#314b38'}),[-.9,1.01,-.74]);
     piece(group,new RoundedBoxGeometry(.6,.16,.40,3,.07),new THREE.MeshStandardMaterial({color:'#e6ca7f',roughness:1}),[.83,.26,-.56]);
@@ -94,8 +94,8 @@ function createPlate(type,lifting) {
 
 function createEquipment(type,showCat=false) {
   const group=new THREE.Group();
-  const pale=new THREE.MeshPhysicalMaterial({color:'#65606d',roughness:.5,clearcoat:.18});
-  const dark=new THREE.MeshStandardMaterial({color:'#302d37',roughness:.55,metalness:.25});
+  const pale=new THREE.MeshPhysicalMaterial({color:'#5e6270',roughness:.5,clearcoat:.18});
+  const dark=new THREE.MeshStandardMaterial({color:'#292733',roughness:.55,metalness:.25});
   if(type==='spool') {
     const filament=piece(group,new THREE.CylinderGeometry(.7,.7,.60,64),makeLayerMaterial(),[0,1,0]);filament.rotation.x=Math.PI/2;
     for(const z of [-.34,.34]) {
@@ -103,7 +103,7 @@ function createEquipment(type,showCat=false) {
       piece(group,new THREE.TorusGeometry(.24,.06,16,48),dark,[0,1,z]);
       for(let i=0;i<6;i++){const angle=i*Math.PI/3;const spoke=piece(group,new RoundedBoxGeometry(.10,.63,.055,2,.025),dark,[Math.sin(angle)*.52,1+Math.cos(angle)*.52,z]);spoke.rotation.z=-angle;}
     }
-    const label=piece(group,new THREE.CylinderGeometry(.35,.35,.015,48),new THREE.MeshStandardMaterial({color:'#ccde72',roughness:.7}),[0,1,.392]);label.rotation.x=Math.PI/2;
+    const label=piece(group,new THREE.CylinderGeometry(.35,.35,.015,48),new THREE.MeshStandardMaterial({color:'#d6e879',roughness:.7}),[0,1,.392]);label.rotation.x=Math.PI/2;
     const hole=piece(group,new THREE.CylinderGeometry(.14,.14,.025,40),dark,[0,1,.41]);hole.rotation.x=Math.PI/2;
     piece(group,new RoundedBoxGeometry(.95,.15,.8,3,.08),dark,[0,.13,0]);
   }else{
@@ -113,7 +113,7 @@ function createEquipment(type,showCat=false) {
     piece(group,new RoundedBoxGeometry(1.65,1.98,.065,2,.02),dark,[0,1.35,-.74]);
     piece(group,new RoundedBoxGeometry(.08,1.99,1.38,2,.02),pale,[-.89,1.35,0]);
     piece(group,new RoundedBoxGeometry(1.65,.3,.14,2,.025),pale,[0,2.22,.72]);
-    const rail=new THREE.MeshStandardMaterial({color:'#a6a1ac',metalness:.75,roughness:.35});
+    const rail=new THREE.MeshStandardMaterial({color:'#a7acbf',metalness:.75,roughness:.35});
     for(const x of [-.69,.69])piece(group,new THREE.CylinderGeometry(.025,.025,1.65,16),rail,[x,1.35,-.45]);
     piece(group,new THREE.BoxGeometry(1.42,.065,.07),rail,[0,1.88,.05]);
     piece(group,new RoundedBoxGeometry(.36,.3,.33,2,.03),dark,[.1,1.76,.08]);
@@ -123,7 +123,7 @@ function createEquipment(type,showCat=false) {
     piece(group,new RoundedBoxGeometry(1.52,.07,1.34,2,.04),new THREE.MeshStandardMaterial({color:'#b4a16e',roughness:.8}),[0,.50,0]);
     if(showCat){const cat=createCat();cat.scale.setScalar(.38);cat.position.y=.55;group.add(cat);}
     piece(group,new RoundedBoxGeometry(.45,.25,.08,2,.02),dark,[-.48,2.39,.85]);
-    piece(group,new THREE.PlaneGeometry(.34,.16),new THREE.MeshStandardMaterial({color:'#201b2d',roughness:.3}),[-.48,2.4,.896]);
+    piece(group,new THREE.PlaneGeometry(.34,.16),new THREE.MeshStandardMaterial({color:'#191820',roughness:.3}),[-.48,2.4,.896]);
   }
   return group;
 }
@@ -144,7 +144,7 @@ function createPreview(type){
     geo.computeVertexNormals();piece(group,geo,material);
   }else{
     const pebble=piece(group,new THREE.TorusGeometry(.62,.25,32,80,Math.PI*1.82),material,[0,.9,0],[1,1,.8]);pebble.rotation.set(Math.PI/2,0,.35);
-    tube(group,[[-1.3,.72,.3],[-.5,.72,.3],[0,.72,0],[.6,.72,-.2],[1.3,.72,-.2]],.045,new THREE.MeshStandardMaterial({color:'#3b3345',roughness:.8}));
+    tube(group,[[-1.3,.72,.3],[-.5,.72,.3],[0,.72,0],[.6,.72,-.2],[1.3,.72,-.2]],.045,new THREE.MeshStandardMaterial({color:'#292733',roughness:.8}));
   }
   return group;
 }
@@ -162,8 +162,8 @@ export function mountProductScene(host,{type='cat',lifting=false,view=0,onReady,
     scene=new THREE.Scene();
     const studio=new RoomEnvironment();pmrem=new THREE.PMREMGenerator(renderer);environment=pmrem.fromScene(studio,.04);scene.environment=environment.texture;studio.dispose();
     const camera=new THREE.PerspectiveCamera(32,1,.1,30);
-    const key=new THREE.DirectionalLight('#faf5ff',1.9);key.position.set(-3,7,5);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-3;key.shadow.camera.right=3;key.shadow.camera.top=4;key.shadow.camera.bottom=-3;key.shadow.normalBias=.025;key.shadow.bias=-.0002;key.shadow.radius=5;scene.add(key);
-    const rim=new THREE.DirectionalLight('#d8c4f5',1.4);rim.position.set(3,3,-3);scene.add(rim);scene.add(new THREE.HemisphereLight('#faf4ff','#827089',.55));
+    const key=new THREE.DirectionalLight('#fcfcfe',1.9);key.position.set(-3,7,5);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-3;key.shadow.camera.right=3;key.shadow.camera.top=4;key.shadow.camera.bottom=-3;key.shadow.normalBias=.025;key.shadow.bias=-.0002;key.shadow.radius=5;scene.add(key);
+    const rim=new THREE.DirectionalLight('#e0e6fc',1.4);rim.position.set(3,3,-3);scene.add(rim);scene.add(new THREE.HemisphereLight('#fcfcfe','#777f9a',.55));
     model=isPlate?createPlate(type==='studio'?'release':type,lifting):type==='workshop'?createWorkshop():['tray','pebble'].includes(type)?createPreview(type):['spool','printer','printing'].includes(type)?createEquipment(type==='printing'?'printer':type,type==='printing'):createCat();scene.add(model);
     const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:.055}));floor.rotation.x=-Math.PI/2;floor.position.y=-.008;floor.receiveShadow=true;scene.add(floor);
     const contact=new THREE.Mesh(new THREE.PlaneGeometry(2.4,1.8),new THREE.ShaderMaterial({transparent:true,depthWrite:false,vertexShader:'varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',fragmentShader:'varying vec2 vUv; void main(){vec2 p=(vUv-0.5)*2.0;float a=exp(-dot(p,p)*4.5)*0.22;gl_FragColor=vec4(0.24,0.32,0.24,a);}'}));contact.rotation.x=-Math.PI/2;contact.position.set(.1,.001,0);scene.add(contact);

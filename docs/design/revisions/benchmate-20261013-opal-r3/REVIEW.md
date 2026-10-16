@@ -1,10 +1,12 @@
 # Opal frost — generated material reference
 
+> Capture update, 16 October 2026: superseded app screenshots were deleted at the user's request. This report describes the historical run. [View the current branded demo and new captures](../../../evidence/brand-refresh/review.html).
+
 **Actual output inspected; no UI implementation. Owner acceptance pending.**
 
 - [Generated board](references/images/img-01-opal-frost-board.png)
 - [Exact prompt](prompt.json) · [Provenance](provenance.json) · [Initial brief](BRIEF.md)
-- [Existing entry before this pass](implementation/before/entry-393.jpg)
+- Existing entry before this pass (historical capture removed)
 - No video was generated; no motion or code changes were made.
 
 One explicitly approved Nano Banana 2.1 run completed for 5 credits: seed 105, 2K, 16:9, PNG, High thinking, web search off, no image inputs or reruns. All nine user reference descriptions were included.

@@ -4,7 +4,7 @@
 
 The user authorized implementation of the reviewed R9 concepts on 14 October 2026. All 24 concept destinations and their connecting flows are now represented in the React browser mockup, with additional reviewed-setup, private post-preview, settings and local discussion states.
 
-The [historical planning record](docs/evidence/r9-implementation/baseline/planning.md) preserves the PANDA adaptation matrix, original product evidence, earlier verification and generation history. The PANDA archive and R9 reference packet are unchanged. Current evidence lives separately in `docs/evidence/r9-implementation/`.
+The [historical planning record](docs/evidence/r9-implementation/baseline/planning.md) preserves the PANDA adaptation matrix, original product evidence, earlier verification and generation history. The PANDA archive and R9 reference packet are unchanged. Branding was refreshed from `BenchMate_Brand_Guide.html` on 16 October 2026. Current evidence lives in `docs/evidence/brand-refresh/`; old actual app captures were removed, while generated design references remain.
 
 ## Completed Work
 
@@ -34,7 +34,7 @@ Navigation never adds completion. Both finish checks gate completion; both recov
 
 The production browser suite verifies main and branch journeys, backward navigation, disclosures/help and focus return, file selection and invalid-file errors, demo processing/cancel, selected-image continuity without diagnosis, recovery gates, support summary download, pause/reload/resume, independent records and text download, profile/preferences, fictional local discussion, sharing preview and local persistence. It checks four viewport sizes, long text, reduced motion and forced WebGL unavailability. Synthetic camera stream tests cover capture, cancellation and released media tracks; camera-permission rejection is simulated. No app-origin JavaScript exception was observed.
 
-[Detailed Evidence And Reference Comparison](docs/evidence/r9-implementation/REVIEW.md) · [Browser Results](docs/evidence/r9-implementation/verification.json) · [Screenshot Gallery](docs/evidence/r9-implementation/review.html)
+[Brand Refresh Evidence](docs/evidence/brand-refresh/REVIEW.md) · [Browser Results](docs/evidence/brand-refresh/verification.json) · [Screenshot Gallery](docs/evidence/brand-refresh/review.html)
 
 ## Remaining Boundaries
 

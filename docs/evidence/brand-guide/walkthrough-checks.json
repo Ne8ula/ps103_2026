@@ -1,0 +1,13 @@
+{
+  "width": 1600,
+  "height": 1000,
+  "duration": 38,
+  "rate": 1,
+  "controls": true,
+  "fit": "contain",
+  "embedded": true,
+  "errors": [],
+  "navigation": true,
+  "hiddenPause": true,
+  "referenceRemoved": true
+}

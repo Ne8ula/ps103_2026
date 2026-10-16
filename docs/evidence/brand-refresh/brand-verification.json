@@ -1,0 +1,225 @@
+{
+  "date": "2026-10-16",
+  "checks": [
+    {
+      "width": 320,
+      "height": 740,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace",
+      "technical": "Silkscreen, monospace",
+      "action": "rgb(49, 85, 217)",
+      "fonts": [
+        {
+          "family": "Space Grotesk",
+          "weight": 500,
+          "loaded": true
+        },
+        {
+          "family": "Space Grotesk",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 400,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Silkscreen",
+          "weight": 400,
+          "loaded": true
+        }
+      ],
+      "images": [
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "failures": []
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace",
+      "technical": "Silkscreen, monospace",
+      "action": "rgb(49, 85, 217)",
+      "fonts": [
+        {
+          "family": "Space Grotesk",
+          "weight": 500,
+          "loaded": true
+        },
+        {
+          "family": "Space Grotesk",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 400,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Silkscreen",
+          "weight": 400,
+          "loaded": true
+        }
+      ],
+      "images": [
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "failures": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace",
+      "technical": "Silkscreen, monospace",
+      "action": "rgb(49, 85, 217)",
+      "fonts": [
+        {
+          "family": "Space Grotesk",
+          "weight": 500,
+          "loaded": true
+        },
+        {
+          "family": "Space Grotesk",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 400,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Silkscreen",
+          "weight": 400,
+          "loaded": true
+        }
+      ],
+      "images": [
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "failures": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace",
+      "technical": "Silkscreen, monospace",
+      "action": "rgb(49, 85, 217)",
+      "fonts": [
+        {
+          "family": "Space Grotesk",
+          "weight": 500,
+          "loaded": true
+        },
+        {
+          "family": "Space Grotesk",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 400,
+          "loaded": true
+        },
+        {
+          "family": "Space Mono",
+          "weight": 700,
+          "loaded": true
+        },
+        {
+          "family": "Silkscreen",
+          "weight": 400,
+          "loaded": true
+        }
+      ],
+      "images": [
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-wordmark.svg",
+          "loaded": true
+        },
+        {
+          "src": "/brand/benchmate-logo.svg",
+          "loaded": true
+        }
+      ],
+      "overflow": false,
+      "failures": []
+    }
+  ]
+}

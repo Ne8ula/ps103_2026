@@ -1,0 +1,32 @@
+{
+  "url": "https://benchmate-maker-day-2.sunsetreed.chatgpt.site",
+  "anonymous": true,
+  "videos": [
+    {
+      "slide": 7,
+      "id": "mockup-video",
+      "duration": 8,
+      "width": 2000,
+      "height": 1334,
+      "currentTime": 0.357017,
+      "playing": true,
+      "error": null,
+      "controls": false,
+      "seekAndResume": true,
+      "errors": []
+    },
+    {
+      "slide": 8,
+      "id": "walkthrough-video",
+      "duration": 38,
+      "width": 1600,
+      "height": 1000,
+      "currentTime": 0.210971,
+      "playing": true,
+      "error": null,
+      "controls": true,
+      "seekAndResume": true,
+      "errors": []
+    }
+  ]
+}

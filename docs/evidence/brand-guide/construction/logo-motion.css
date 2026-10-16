@@ -1,0 +1,25 @@
+.logo-motion .motion-intro{height:120px;padding:22px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule)}
+.motion-intro h1{font:700 49px/1.25 var(--heading);letter-spacing:-1.8px;margin:0}
+.motion-intro p{font:400 15px/1.6 var(--body);max-width:400px;margin:0;text-wrap:balance}
+.motion-stage{height:510px;position:relative;overflow:hidden;background:rgba(255,255,255,.6)}
+.motion-stage canvas{display:block;width:100%;height:100%}
+.motion-caption{position:absolute;top:20px;left:32px;font:400 12px var(--technical);color:var(--blue);pointer-events:none}
+.motion-caption-right{left:auto;right:32px;color:var(--secondary);font-family:var(--body);font-size:11px}
+.motion-static{display:none}
+.motion-toolbar{height:108px;border-top:1px solid var(--rule);display:grid;grid-template-columns:300px 1fr 300px;align-items:center;gap:36px;padding:16px 32px;background:rgba(255,255,255,.85)}
+.motion-note b{display:block;font:500 20px var(--heading);margin-bottom:5px}
+.motion-note span{font:400 12px/1.5 var(--body);color:var(--secondary)}
+.motion-range-label{display:flex;justify-content:space-between;font:500 15px var(--heading);margin-bottom:4px}
+.motion-range-label output{font:400 12px var(--technical);color:var(--blue)}
+.motion-scrub{display:block;appearance:none;width:100%;height:40px;margin:0;background:transparent;cursor:ew-resize;accent-color:var(--blue)}
+.motion-scrub::-webkit-slider-runnable-track{height:4px;background:#D9DFEF;border-radius:4px}
+.motion-scrub::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border:3px solid white;border-radius:50%;background:var(--blue);margin-top:-7px;box-shadow:0 0 0 1px var(--blue)}
+.motion-scrub::-moz-range-track{height:4px;background:#D9DFEF;border-radius:4px}
+.motion-scrub::-moz-range-thumb{width:14px;height:14px;border:3px solid white;border-radius:50%;background:var(--blue)}
+.motion-buttons{display:flex;gap:8px;justify-content:flex-end}
+.motion-buttons button{min-height:42px;padding:10px 15px;border:1px solid var(--rule);border-radius:6px;background:white;color:var(--ink);font:500 14px var(--heading);cursor:pointer;transition:transform 140ms ease-out}
+.motion-buttons button:first-child{background:var(--blue);color:white;border-color:var(--blue);min-width:70px}
+.motion-buttons button:active{transform:scale(.96)}
+.motion-buttons button:focus-visible,.motion-scrub:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
+.logo-motion .foot{height:30px}
+@media print{.motion-stage canvas,.motion-caption,.motion-toolbar{display:none}.motion-static{display:block;position:absolute;inset:90px 45px;width:calc(100% - 90px);height:300px;object-fit:contain}.motion-stage{height:618px}}

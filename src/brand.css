@@ -1,0 +1,67 @@
+/* Final supplied identity: BenchMate_Brand_Guide.html, 16 October 2026. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url('/fonts/SpaceGrotesk.ttf') format('truetype')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/SpaceMono-Regular.ttf') format('truetype')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/SpaceMono-Bold.ttf') format('truetype')}
+@font-face{font-family:'Silkscreen';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/Silkscreen-Regular.ttf') format('truetype')}
+:root{
+  --heading:'Space Grotesk',sans-serif;
+  --body:'Space Mono',monospace;
+  --technical:'Silkscreen',monospace;
+  --blue:#3155D9;
+  --blue-light:#E0E6FC;
+  --blue-dark:#2542B1;
+  --lime:#D6E879;
+  --canvas:#F3F4F8;
+  --ink:#292733;
+  --muted:#5E6270;
+  --line:#D9DBE2;
+  --glass:linear-gradient(120deg,#ffffffed,#f3f4f8d9 68%,#e0e6fcc7);
+  --shadow:inset 0 1px 1px #fff,inset 0 0 0 1px #ffffffa6,0 4px 15px #182c7a0b,0 1px 2px #29273314;
+  font-family:var(--body);color:var(--ink);background:var(--canvas);
+}
+body{font-family:var(--body)}
+h1,h2,h3,button,summary,legend,.input-label,.subtitle,.row strong,.card-open strong,.check-row strong,.post-author strong,.preview-detail p{font-family:var(--heading)}
+h1{font-size:26px;font-weight:700;letter-spacing:-.8px;line-height:1.2}
+h2,h3{font-weight:500}
+button,summary,legend,.input-label,.row strong,.check-row strong{font-weight:500}
+.subtitle{font-weight:500;font-size:16px;line-height:1.45}
+p{line-height:1.65}
+button small,.row small,.card-open small,.check-row small,.post-author small{font-family:var(--body);font-weight:400;line-height:1.55}
+.edition,.scene-caption,.phase-rail li,.eyebrow{font-family:var(--technical);font-weight:400;letter-spacing:0}
+.edition{font-size:11px;line-height:1.8}
+.scene-caption{font-size:10px;line-height:1.5}
+.idea-wrap .scene-caption{right:68px}
+.phase-rail li{font-size:10px}
+.phase-rail .current{font-weight:400}
+.eyebrow{font-size:10px;line-height:1.6}
+.scene-matrix::after{font-family:var(--technical);letter-spacing:1px}
+.primary{background:var(--blue);font-weight:500}
+.primary .action-arrow{background:var(--lime);color:var(--ink)}
+.wordmark{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-logo{display:block;width:28px;height:28px;margin:6px;flex-shrink:0}
+.brand-wordmark{display:block;width:156px;height:26px;object-fit:contain}
+.preview-caption>.brand-wordmark{width:230px;height:auto;margin-bottom:24px}
+.preview-caption h2{font-weight:700;font-size:34px}
+.preview-caption h2>span{display:block;white-space:nowrap}
+@media(max-width:1100px){.preview-caption h2{font-size:30px}}
+.preview-detail>.brand-logo{width:72px;height:72px;margin:15px}
+.preview-detail .edition{font-size:10px;line-height:1.8}
+.preview-shell{background:radial-gradient(ellipse at 76% 75%,#e6f1ac88,transparent 34%),radial-gradient(ellipse at 30% 34%,#a8b8f363,transparent 40%),var(--canvas)}
+.setup-list>div{font-size:13px;line-height:1.6}
+.setup-list dt{flex-shrink:0}
+.source-links a{overflow-wrap:anywhere}
+.tab-dock>button{font-size:12px}
+.device-status{font-family:var(--heading);font-variant-numeric:tabular-nums}
+.photo-frame figcaption{line-height:1.6}
+/* Dialog.jsx aligns sheets with the device; override the browser's inset cap. */
+dialog{max-width:100vw}
+@media(max-width:360px){
+  .brand-wordmark{width:144px;height:24px}
+  .wordmark{gap:8px}
+  .scene-caption{font-size:9px}
+  .phase-rail li{font-size:9px}
+  .setup-list>div{font-size:12px;gap:7px}
+  .photo-actions{flex-wrap:wrap}
+  .photo-actions>button{flex-basis:100%}
+}
+@media(prefers-reduced-transparency:reduce){.glass,.action-dock,dialog{background:var(--canvas);backdrop-filter:none}}

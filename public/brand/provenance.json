@@ -1,0 +1,55 @@
+{
+  "guide": "BenchMate_Brand_Guide.html",
+  "assets": [
+    {
+      "source": "docs/brand-guide/assets/SpaceGrotesk.ttf",
+      "target": "public/fonts/SpaceGrotesk.ttf",
+      "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+    },
+    {
+      "source": "docs/brand-guide/assets/SpaceMono-Regular.ttf",
+      "target": "public/fonts/SpaceMono-Regular.ttf",
+      "sha256": "95837e182baeeada83368f7748db28357f0a1b75c6b84ff7065b5edf933c8e18"
+    },
+    {
+      "source": "docs/brand-guide/assets/SpaceMono-Bold.ttf",
+      "target": "public/fonts/SpaceMono-Bold.ttf",
+      "sha256": "405e73d41afb7e5906efce206a326af5c956f38e255f35421c260e861e599c59"
+    },
+    {
+      "source": "docs/brand-guide/assets/Silkscreen-Regular.ttf",
+      "target": "public/fonts/Silkscreen-Regular.ttf",
+      "sha256": "c845473330b94c2079ce9af01c51ac8ba2d99c24f4d14c039843bbb8e642ebd8"
+    },
+    {
+      "source": "docs/brand-guide/assets/SpaceGrotesk-OFL.txt",
+      "target": "public/licenses/SpaceGrotesk-OFL.txt",
+      "sha256": "564ce565c371c5e5bbf286006565a7c9aa55a9f56e7ca58d56e05d649dd61a72"
+    },
+    {
+      "source": "docs/brand-guide/assets/SpaceMono-OFL.txt",
+      "target": "public/licenses/SpaceMono-OFL.txt",
+      "sha256": "8e4ee42b2553e1e01504e61cb0d46d148cd8c9e5eacaa3622a7df2d4f2955b9f"
+    },
+    {
+      "source": "docs/brand-guide/assets/Silkscreen-OFL.txt",
+      "target": "public/licenses/Silkscreen-OFL.txt",
+      "sha256": "86c5e9c9382cdcc5948704fdfe60f2aa164a719746931219a42736ecd9cefbd3"
+    },
+    {
+      "source": "docs/brand-guide/assets/benchmate-wordmark.svg",
+      "target": "public/brand/benchmate-wordmark.svg",
+      "sha256": "4033ac5ecea4f4f36428921030b3abd80be16ff310a3dfeee5be851a8344b5e0"
+    },
+    {
+      "source": "docs/brand-guide/soft-joint-final/benchmate-soft-joint-tight.svg",
+      "target": "public/brand/benchmate-logo.svg",
+      "sha256": "1d5873ed08f277975cbbf002919162be8b8d2ef80f50a87cf66e9f0d94400407"
+    },
+    {
+      "source": "docs/brand-guide/soft-joint-final/benchmate-soft-joint-blue.svg",
+      "target": "public/favicon.svg",
+      "sha256": "494a5f7fc20dc4e3f4c13e00c7a5684defa452030f8457913aa436a18ecacb12"
+    }
+  ]
+}

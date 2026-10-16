@@ -1,5 +1,7 @@
 ﻿# iPhone material redesign — r2
 
+> Capture update, 16 October 2026: superseded app screenshots were deleted at the user's request. This report describes the historical run. [View the current branded demo and new captures](../../../evidence/brand-refresh/review.html).
+
 **Implemented and checked. Reference selected by agent; owner acceptance pending.** The three later peach/blue references are recorded separately in the [r3 proposal](../benchmate-20261013-opal-r3/BRIEF.md).
 
 - [Labeled contact sheet](references/contact-sheet.png)
@@ -11,10 +13,10 @@
 
 | Before | Implemented r2 |
 |---|---|
-| [Earlier mobile entry](implementation/before/entry-393.jpg) | [iPhone entry](implementation/after/entry-393.jpg) |
+| Earlier mobile entry (historical capture removed) | iPhone entry (historical capture removed) |
 | Previous document layout, captured in a 393 × 852 viewport as a full-page image | New viewport-height app, captured at 393 × 852; capture extent therefore differs |
 
-[Desktop phone preview](implementation/after/desktop-phone.jpg) · [3D material detail](implementation/after/material-detail.jpg) · [First layer](implementation/after/first-layer-393.jpg) · [Recovery](implementation/after/recovery-393.jpg) · [Completion](implementation/after/completion-393.jpg) · [Help sheet](implementation/after/help-sheet.jpg)
+Desktop phone preview (historical capture removed) · 3D material detail (historical capture removed) · First layer (historical capture removed) · Recovery (historical capture removed) · Completion (historical capture removed) · Help sheet (historical capture removed)
 
 The actual generated board was viewed before UI edits. Selected: iPhone proportions, large celadon object, matte lower sheet, charcoal/lime action, sparse sans-serif hierarchy and compact phase rail. All six then-available references informed the prompt; the main material reference was the matte green tile study. Fine fluting is limited to decorative edges.
 

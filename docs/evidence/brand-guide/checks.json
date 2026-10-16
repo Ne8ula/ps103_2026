@@ -1,0 +1,79 @@
+{
+  "slides": [
+    {
+      "id": "slide-0",
+      "overflow": [],
+      "images": true,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace"
+    },
+    {
+      "id": "slide-logo",
+      "overflow": [],
+      "images": true,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": null
+    },
+    {
+      "id": "slide-1",
+      "overflow": [],
+      "images": true,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace"
+    },
+    {
+      "id": "slide-2",
+      "overflow": [],
+      "images": true,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": "\"Space Mono\", monospace"
+    },
+    {
+      "id": "slide-walkthrough",
+      "overflow": [],
+      "images": true,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": null
+    },
+    {
+      "id": "slide-mockups",
+      "overflow": [],
+      "images": true,
+      "heading": "\"Space Grotesk\", sans-serif",
+      "body": null
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Space Grotesk",
+      "weight": "300 700",
+      "status": "loaded"
+    },
+    {
+      "family": "Space Mono",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Space Mono",
+      "weight": "700",
+      "status": "loaded"
+    },
+    {
+      "family": "Silkscreen",
+      "weight": "400",
+      "status": "loaded"
+    }
+  ],
+  "identicalBBowls": true,
+  "nextDisabled": true,
+  "homeNavigation": true,
+  "endNavigation": true,
+  "hashRestored": true,
+  "phone": {
+    "width": 393,
+    "documentWidth": 393
+  },
+  "printSlideCount": 6,
+  "errors": []
+}

@@ -1,0 +1,48 @@
+{
+  "initial": {
+    "time": 0.148529,
+    "rate": 1.75,
+    "defaultRate": 1.75,
+    "paused": false,
+    "loop": true,
+    "muted": true,
+    "width": 2000,
+    "height": 1334
+  },
+  "text": "Branding Mockups",
+  "enforcedSpeed": {
+    "time": 2,
+    "rate": 1.75,
+    "defaultRate": 1.75,
+    "paused": false,
+    "loop": true,
+    "muted": true,
+    "width": 2000,
+    "height": 1334
+  },
+  "playbackAdvance": 1.7243620000000002,
+  "looped": {
+    "time": 0.010475,
+    "rate": 1.75,
+    "defaultRate": 1.75,
+    "paused": false,
+    "loop": true,
+    "muted": true,
+    "width": 2000,
+    "height": 1334
+  },
+  "hiddenPaused": true,
+  "resumed": {
+    "time": 0.027392,
+    "rate": 1.75,
+    "defaultRate": 1.75,
+    "paused": false,
+    "loop": true,
+    "muted": true,
+    "width": 2000,
+    "height": 1334
+  },
+  "images": true,
+  "printPoster": true,
+  "errors": []
+}

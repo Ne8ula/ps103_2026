@@ -1,5 +1,7 @@
 # Focused progression — choose the visual direction
 
+> Capture update, 16 October 2026: superseded app screenshots were deleted at the user's request. This report describes the historical run. [View the current branded demo and new captures](../../../evidence/brand-refresh/review.html).
+
 **Both actual candidates generated and inspected. User selected B / Pocket Quest. No app code changed.** Later feedback requested smaller type, expandable descriptions and photo help using two new glass UI references. See the [refined r5 interface review](../benchmate-20261014-interface-r5/review.html); its visual review remains open before implementation.
 
 - [Comparison contact sheet](references/contact-sheet.png)
@@ -45,4 +47,4 @@ Nano Banana 2.1 through the official Figma Weave direct-model route. Each board:
 
 All nine user references were inspected inline and given individual use/avoid roles in both prompts. Both generated files were downloaded and visually inspected. A source-hash baseline is retained; [integrity verification](source-integrity.json) confirms the renderer, presentation, state and task sources remain unchanged. Application changes are held pending the user's review request. Tests/build were not repeated because no application code changed.
 
-Existing app captures: [entry](implementation/before/entry-393.jpg), [recovery](implementation/before/recovery-393.jpg), [completion](implementation/before/completion-393.jpg), all from the r2 Chrome pass at 393 × 852. They are before-state evidence, not implementations of these new concepts.
+Existing app captures: entry (historical capture removed), recovery (historical capture removed), completion (historical capture removed), all from the r2 Chrome pass at 393 × 852. They are before-state evidence, not implementations of these new concepts.

@@ -1,0 +1,24 @@
+{
+  "artworkSize": [
+    3600,
+    3600
+  ],
+  "layoutSize": [
+    1800,
+    1800
+  ],
+  "screenshot": "home-screen-original.png",
+  "screenshotSourceSize": [
+    461,
+    905
+  ],
+  "phoneWindow": {
+    "left": 21,
+    "top": 10,
+    "width": 417,
+    "height": 880,
+    "cornerRadius": 58
+  },
+  "screenTreatment": "Original screenshot embedded unchanged and clipped by native HTML layout to the phone silhouette. Generated cutout not used because it altered screen details.",
+  "pageErrors": []
+}

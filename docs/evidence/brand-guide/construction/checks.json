@@ -1,0 +1,31 @@
+{
+  "reduced": {
+    "position": 1,
+    "playing": false,
+    "active": false,
+    "renderCount": 1,
+    "reducedMotion": true,
+    "stage": "Complete"
+  },
+  "phases": [
+    "Blueprint",
+    "Wireframe",
+    "Details",
+    "Colors",
+    "Complete"
+  ],
+  "boxes": [
+    {
+      "w": 1090,
+      "h": 424
+    },
+    {
+      "w": 354,
+      "h": 354
+    }
+  ],
+  "exactSourcePaths": true,
+  "controls": "Pause, replay, range keyboard control, and hidden-slide suspension passed",
+  "print": "Both source vectors replace animated layers in print",
+  "errors": []
+}
