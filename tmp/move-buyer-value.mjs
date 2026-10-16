@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const file='BenchMate_Maker_Day_2.html';
+let html=fs.readFileSync(file,'utf8');
+const matches=[...html.matchAll(/<article\b[\s\S]*?<\/article>/g)];
+assert.equal(matches.length,14);
+const original=matches.map(m=>m[0]);
+const slides=[...original];
+const index=slides.findIndex(s=>s.includes('id="slide-manufacturer-roi"'));
+assert.equal(index,8);
+const [buyer]=slides.splice(index,1);
+const workflow=slides.findIndex(s=>s.includes('id="slide-how-it-works"'));
+slides.splice(workflow+1,0,buyer);
+const normalized=s=>s.replace(/(<span>)\d{2}( \/ )/g,'$1##$2');
+let slot=0;
+html=html.replace(/<article\b[\s\S]*?<\/article>/g,()=>{
+ const s=slides[slot].replace(/(<span>)\d{2}( \/ )/g,(_,a,b)=>a+String(slot+1).padStart(2,'0')+b);
+ assert.equal(normalized(s),normalized(slides[slot]));
+ slot++;return s;
+});
+fs.writeFileSync(file,html);fs.copyFileSync(file,'sites/benchmate-maker-day-2/dist/index.html');
+const names=[...html.matchAll(/<article\b[^>]*data-title="([^"]+)"[^>]*>/g)].map((m,i)=>`${i+1}: ${m[1]}`);
+console.log(names.join('\n'));

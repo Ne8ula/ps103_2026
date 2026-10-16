@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const file='BenchMate_Maker_Day_2.html';
+let html=fs.readFileSync(file,'utf8');
+const slides=[...html.matchAll(/<article\b[\s\S]*?<\/article>/g)];
+const a=slides[3], b=slides[4];
+assert.ok(a[0].includes('id="slide-differentiation"'));
+assert.ok(b[0].includes('id="slide-how-it-works"'));
+const between=html.slice(a.index+a[0].length,b.index);
+html=html.slice(0,a.index)+b[0].replace('05 / HOW IT WORKS','04 / HOW IT WORKS')+between+a[0].replace('04 / DIFFERENTIATION','05 / DIFFERENTIATION')+html.slice(b.index+b[0].length);
+const updated=[...html.matchAll(/<article\b[\s\S]*?<\/article>/g)];
+assert.equal(updated.length,14);
+for(let i=0;i<14;i++)if(i!==3&&i!==4)assert.equal(updated[i][0],slides[i][0]);
+fs.writeFileSync(file,html);
+fs.copyFileSync(file,'sites/benchmate-maker-day-2/dist/index.html');
+console.log('Slide 4: How It Works. Slide 5: Differentiation. Footer numbering updated; all other slides unchanged.');

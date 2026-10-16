@@ -7,13 +7,13 @@ const browser = await chromium.launch({ channel: 'msedge' });
 try {
   const context = await browser.newContext({ viewport: { width: 1600, height: 1000 } });
   const results = { url, anonymous: true, videos: [] };
-  for (const [slide, id] of [[7, 'mockup-video'], [8, 'walkthrough-video']]) {
+  for (const [slide, id] of [[8, 'mockup-video'], [9, 'walkthrough-video']]) {
     const page = await context.newPage();
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     const response = await page.goto(`${url}/#${slide}`, { waitUntil: 'load', timeout: 60000 });
     assert.equal(response.status(), 200);
-    assert.equal(await page.locator('.slide').count(), 12);
+    assert.equal(await page.locator('.slide').count(), 14);
     await page.waitForFunction(id => {
       const video = document.getElementById(id);
       return video && video.currentTime > 0.2 && !video.paused && video.readyState >= 2;

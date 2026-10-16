@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const p='BenchMate_Maker_Day_2.html';
+let h=fs.readFileSync(p,'utf8');
+const note='<p class="feasibility-source">Source: BenchMate Value Creation, p. 2 · $6K categories clarify the assumption; no itemized allocation is provided in the PDF.</p>';
+assert.ok(h.includes(note));
+h=h.replace(note,'');
+assert.ok(!h.includes('$6K categories clarify the assumption'));
+fs.writeFileSync(p,h);
+fs.copyFileSync(p,'sites/benchmate-maker-day-2/dist/index.html');
+console.log('Removed the requested slide 11 note.');
