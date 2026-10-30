@@ -78,8 +78,18 @@ def step_facets(step: Step, procedure: str | None = None, weights: dict[str, flo
     return [f for f in out if w.get(f.name, 0) > 0 and f.query.strip()]
 
 
+_CITATION_MARK = re.compile(r"\b(?:pp?\.\s*\d|Vol\.?\s*\d|No\.\s*\d|(?:19|20)\d{2}[a-z]?[.;,)])")
+
+
+def looks_like_references(text: str) -> bool:
+    """A bibliography / reference-list chunk (many 'pp. 12', 'Vol. 3', '1991.' marks per word): it
+    matches topic words but never states a requirement."""
+    marks = len(_CITATION_MARK.findall(text))
+    return marks >= 6 and marks * 25 >= len(text.split())
+
+
 class HybridRetriever:
-    def __init__(self, index: Index, embedder: Embedder, rrf_k: int = 60, pool: int = 50):
+    def __init__(self, index: Index, embedder: Embedder, rrf_k: int = 60, pool: int = 50, skip_references: bool = False):
         self.index = index
         self.embedder = embedder
         self.rrf_k = rrf_k
@@ -87,6 +97,7 @@ class HybridRetriever:
         corpus = [tokenize(embed_text(c)) for c in index.chunks]
         self.bm25 = BM25Okapi(corpus) if corpus and any(corpus) else None
         self._qcache: dict[str, np.ndarray] = {}
+        self.skipped = {i for i, c in enumerate(index.chunks) if looks_like_references(c.text)} if skip_references else set()
 
     def search(self, queries: list[str], top_k: int) -> list[list[Hit]]:
         """One plain query per result list (BM25 + dense, RRF)."""
@@ -123,6 +134,8 @@ class HybridRetriever:
         seen_in: dict[int, list[str]] = {}
         for facet in facets:
             for which, order in enumerate(self._orders(facet.query)):
+                if self.skipped:
+                    order = [i for i in order if int(i) not in self.skipped]
                 for rank, i in enumerate(order, start=1):
                     i = int(i)
                     fused[i] = fused.get(i, 0.0) + facet.weight / (self.rrf_k + rank)
@@ -151,7 +164,7 @@ def expand_neighbours(hits: list[Hit], chunks: list[DocChunk], top: int = 2, lim
             if added >= limit or not 0 <= m < len(chunks):
                 continue
             nb = chunks[m]
-            if nb.id in have or nb.doc_id != h.chunk.doc_id or not nb.section or nb.section != h.chunk.section:
+            if nb.id in have or looks_like_references(nb.text) or nb.doc_id != h.chunk.doc_id or not nb.section or nb.section != h.chunk.section:
                 continue
             if not _continues(chunks[min(n, m)], chunks[max(n, m)]):
                 continue
