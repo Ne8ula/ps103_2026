@@ -19,6 +19,14 @@ Usage (from pipeline/):
 if its manifest does not match the current chunking it is rebuilt (and ``--save-index`` keeps it).
 The default LLM is the deterministic fake provider, so retrieval numbers are exact and note numbers
 measure the plumbing; ``--llm gemini`` measures a live model (respect the free-tier quota).
+
+Measured 30 Oct 2026 (bge-small index, fake LLM), rank of d01:78 for steps s01..s06 / control s07:
+
+    plain query (legacy, 200-deep pools)    8, 35, 1, 4, 11, 16 / 55   mean 12.5  in top_k 2/6
+    + facets + procedure context (RRF)      5, 24, 1, 2,  7,  8 / 18   mean  7.8  in top_k 3/6
+    + cross-encoder re-rank (MiniLM-L-6)    3, 18, 2, 2,  7,  2 / 15   mean  5.7  in top_k 4/6
+    + skip bibliography chunks              3, 14, 2, 2,  6,  2 / 16   mean  4.8  in top_k 4/6
+    + extracted document procedure in every step prompt:          in LLM context 6/6
 """
 
 from __future__ import annotations
