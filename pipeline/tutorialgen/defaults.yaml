@@ -4,8 +4,10 @@
 device: cpu              # cpu | cuda — heavy stages (perception, transcribe, render) read this
 
 llm:
-  provider: auto         # auto (openai if OPENAI_API_KEY is set, else fake) | openai | fake
-  model: gpt-5.4-mini
+  provider: auto         # auto: openai if OPENAI_API_KEY, else gemini if GEMINI_API_KEY, else fake
+                         # | openai | gemini | ollama | chat (any OpenAI-compatible base_url) | fake
+  model: null            # null = provider default: gpt-5.4-mini (openai), gemini-3.8-flash (gemini)
+  replay: false          # true = answer only from llm_cache, never call a model (demos)
   max_images_per_call: 6
   timeout_s: 120
 

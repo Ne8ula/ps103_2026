@@ -18,27 +18,57 @@ log = logging.getLogger(__name__)
 __all__ = ["CachedLLM", "LLMError", "LLMProvider", "LLMRequest", "fake_handler", "make_provider"]
 
 
+OPENAI_DEFAULT_MODEL = "gpt-5.4-mini"
+
+
 class LLMSettings(BaseModel):
     provider: str = "auto"
-    model: str = "gpt-5.4-mini"
+    model: str | None = None            # None = the provider's default
     max_images_per_call: int = 6
     timeout_s: float = 120
+    replay: bool = False                # answer only from llm_cache; a miss is an error
+    base_url: str | None = None         # "chat" provider: any OpenAI-compatible endpoint
+    api_key_env: str = "OPENAI_API_KEY"
+    min_interval_s: float | None = None  # spacing between requests (free-tier RPM limits)
+
+
+def _resolve(s: LLMSettings) -> str:
+    if s.provider != "auto":
+        return s.provider
+    for env, name in (("OPENAI_API_KEY", "openai"), ("GEMINI_API_KEY", "gemini")):
+        if os.environ.get(env):
+            return name
+    log.warning("no OPENAI_API_KEY or GEMINI_API_KEY: using the fake LLM provider (deterministic placeholder text)")
+    return "fake"
 
 
 def make_provider(config: Config) -> LLMProvider:
+    from .chat_provider import PRESETS, ChatProvider, ReplayProvider
+
     s = config.section("llm", LLMSettings)
-    provider = s.provider
-    if provider == "auto":
-        provider = "openai" if os.environ.get("OPENAI_API_KEY") else "fake"
-        if provider == "fake":
-            log.warning("OPENAI_API_KEY not set: using the fake LLM provider (deterministic placeholder text)")
+    provider = _resolve(s)
+    if provider == "fake":
+        return FakeProvider("fake")
+    if provider == "openai":
+        model = s.model or OPENAI_DEFAULT_MODEL
+    elif provider in PRESETS:
+        base_url, key_env, default_model = PRESETS[provider]
+        model = s.model or default_model
+    elif provider == "chat":
+        if not (s.base_url and s.model):
+            raise ValueError("llm.provider 'chat' needs llm.base_url and llm.model")
+        base_url, key_env, model = s.base_url, s.api_key_env, s.model
+    else:
+        raise ValueError(f"unknown llm provider '{provider}'")
+
+    if s.replay:
+        return ReplayProvider(provider, model)
     if provider == "openai":
         from .openai_provider import OpenAIProvider
 
-        return OpenAIProvider(s.model, s.timeout_s)
-    if provider == "fake":
-        return FakeProvider("fake")
-    raise ValueError(f"unknown llm provider '{provider}'")
+        return OpenAIProvider(model, s.timeout_s)
+    interval = s.min_interval_s if s.min_interval_s is not None else (6.0 if provider == "gemini" else 0.0)
+    return ChatProvider(provider, model, base_url, key_env, s.timeout_s, interval)
 
 
 class CachedLLM:

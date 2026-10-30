@@ -10,7 +10,30 @@ python3 -m venv ../.venv && ../.venv/bin/pip install -e '.[dev]'
 ../.venv/bin/python -m pytest -q               # fast tests; -m slow runs media/model tests
 ```
 
-`OPENAI_API_KEY` switches the LLM stages from the deterministic fake provider to GPT-5.4 mini. Without it, every stage still runs and produces clearly placeholder text.
+## LLM Providers
+
+`llm.provider: auto` (the default) uses GPT-5.4 mini if `OPENAI_API_KEY` is set, else Gemini if `GEMINI_API_KEY` is set, else the deterministic fake provider, whose text is clearly marked `[fake LLM]`.
+
+| Provider | Set | Notes |
+|---|---|---|
+| `openai` | `OPENAI_API_KEY` | Responses API; default model `gpt-5.4-mini` |
+| `gemini` | `GEMINI_API_KEY` (free key from Google AI Studio) | OpenAI-compatible endpoint; default `gemini-3.8-flash`; requests spaced 6 s apart for free-tier limits. The free tier's content is used to improve Google's products, so use it only with public material |
+| `ollama` | a local Ollama server | Offline and private; default `qwen2.5vl:3b` |
+| `chat` | `llm.base_url`, `llm.model`, `llm.api_key_env` | Any other OpenAI-compatible endpoint |
+
+Chat providers try strict JSON-schema output and fall back to JSON mode with local validation if the endpoint rejects the schema.
+
+## Demos Without Paying Per Run
+
+Every LLM answer is cached in `<project>/llm_cache/`. Run a project once with a real provider, then demo it with replay, which never contacts a model and fails on any request that was not recorded:
+
+```bash
+GEMINI_API_KEY=... $tg run <project>                     # records answers (free tier)
+printf 'llm:\n  provider: gemini\n  replay: true\n' > projects/<project>/config.yaml
+$tg run <project>                                        # all stages skipped; no key needed
+```
+
+Answering a new question in a replayed project needs a live run, since that answer has not been recorded.
 
 ## Use
 
