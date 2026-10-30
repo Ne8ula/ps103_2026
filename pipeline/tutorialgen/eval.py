@@ -33,6 +33,7 @@ class Labels(BaseModel):
     facts: list[list[str]] = []
     expected_questions: list[dict] = []
     expected_citations: list[dict] = []
+    expected_notes: list[dict] = []     # {about, any: [keywords]} matched against compliance note text
 
 
 def boundary_scores(predicted: list[float], labels: Labels) -> dict:
@@ -98,6 +99,11 @@ def evaluate(project: Project, labels: Labels) -> dict:
             "expected_citations_found": f"{sum(e['page'] in pages for e in labels.expected_citations)}/{len(labels.expected_citations)}",
             "dropped_by_validation": len(report.dropped),
         }
+        if labels.expected_notes:
+            texts = [n.text.lower() for n in notes]
+            hits = [any(any(k in t for k in e["any"]) for t in texts) for e in labels.expected_notes]
+            result["compliance"]["expected_notes_found"] = f"{sum(hits)}/{len(hits)}"
+            result["compliance"]["expected_notes_missing"] = [e["about"] for e, ok in zip(labels.expected_notes, hits) if not ok]
     providers = {json.loads(p.read_text()).get("provider") for p in project.path("llm_cache").glob("*.json")}
     result["llm"] = sorted(p for p in providers if p)
     return result

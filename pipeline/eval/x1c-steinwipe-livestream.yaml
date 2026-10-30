@@ -1,0 +1,33 @@
+# Hand labels for the uncut livestream excerpt (Leckiestein, "Bambu Lab X1 Carbon Mod Install LIVE",
+# source 49:00–62:30, so t=0 here is 49:00 in the stream). Labelled from the Whisper transcript and frames.
+# No narrated step markers, no edits: boundaries come from what the hands do.
+video: 7787-1g8l4Y (excerpt 2940–3750 s)
+tolerance_s: 5.0
+content: [105.0, 810.0]       # before 105 s he adjusts the camera and tripod
+boundaries: [137.0, 291.0, 349.0, 436.0, 670.0]
+optional_boundaries: [192.0, 543.0]   # 192: pilot holes -> widen to 1/8" (same drilling task); 543: talk-only stretch begins
+steps:
+  - {start: 105, end: 137, label: position the printed drilling template on the frame}
+  - {start: 137, end: 291, label: drill pilot holes (1/16") through the template, then open them to 1/8"}
+  - {start: 291, end: 349, label: deburr the holes and vacuum filament debris from the rails}
+  - {start: 349, end: 436, label: install backing plate - center M3x6 loose, align outer holes, tighten snug (do not over-tighten)}
+  - {start: 436, end: 670, label: mount the wiper with M3x8 outer screws, check it is centred with slight side play; explains the new wipe cycle}
+  - {start: 670, end: 810, label: test wiper position from the touchscreen console with G-code (G28 X, move to X/Y)}
+# Facts a correct tutorial must state somewhere (case-insensitive, any alternative).
+facts:
+  - ["1/16", "one-sixteenth", "1/16\""]
+  - ["1/8", "one-eighth"]
+  - ["M3x6", "M3 x 6", "M3 by 6", "6 mm", "6mm"]
+  - ["M3x8", "M3 x 8", "M3 by 8", "8 mm", "8mm"]
+  - ["over-tighten", "overtighten", "over tighten", "snug"]
+  - ["deburr"]
+  - ["G28"]
+# Gaps a good question set should raise.
+expected_questions:
+  - {about: whether the printer is powered off (the SOP requires it before working inside), any: ["power"]}
+  - {about: wiper calibration or XY offsets after install, any: ["calibrat", "offset", "position"]}
+# The compliance stage should catch these against the Bambu wiper SOP (keywords in note text).
+expected_citations: []
+expected_notes:
+  - {about: power off before working inside the printer, any: ["power"]}
+  - {about: verify the wiper and screws are properly seated, any: ["seated", "verify", "check"]}
