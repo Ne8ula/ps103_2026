@@ -123,7 +123,8 @@ def test_overloaded_model_falls_back_to_next(monkeypatch, tmp_path):
     assert p.served_by == "gemini-3.5-flash" and p.label == "gemini:gemini-3.6-flash"
 
     bodies.clear()
-    p.queue.extend([httpx.Response(503, json={})] * 4)
+    p.queue.extend([httpx.Response(503, json={}), httpx.Response(429, json={}),
+                    httpx.Response(503, json={}), httpx.Response(429, json={})])
     with pytest.raises(LLMError, match="all models unavailable"):
         p.generate(request(tmp_path))
     assert len(bodies) == 4

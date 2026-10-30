@@ -15,4 +15,8 @@ embeddings:
   provider: local        # local (fastembed) | openai | hash (tests only, no download)
   model: BAAI/bge-small-en-v1.5
 
+segment:
+  window_s: 300          # one window covers short videos: fewer LLM calls (free tiers allow ~20/day/model)
+  max_candidates_per_window: 40
+
 use_gesture_text: true   # false = segment/draft prompts omit gesture text (ablation for M9)

@@ -18,7 +18,7 @@ from .base import LLMError, LLMProvider, LLMRequest, T
 
 log = logging.getLogger(__name__)
 
-# Tried in order when the primary model stays overloaded (503/timeout) after retries.
+# Tried in order when the primary model stays overloaded (503/timeout) or out of quota (429) after retries.
 FALLBACKS: dict[str, tuple[str, ...]] = {
     "gemini": ("gemini-3.5-flash", "gemini-3-flash-preview", "gemini-3.1-flash-lite"),
 }
@@ -64,7 +64,7 @@ class ChatProvider(LLMProvider):
         return [{"role": "system", "content": request.system + system_extra}, {"role": "user", "content": content}]
 
     def generate(self, request: LLMRequest[T]) -> T:
-        from openai import APIConnectionError, APITimeoutError, InternalServerError, OpenAIError
+        from openai import APIConnectionError, APITimeoutError, InternalServerError, OpenAIError, RateLimitError
 
         models = (self.model, *self.fallback_models)
         for i, model in enumerate(models):
@@ -72,7 +72,8 @@ class ChatProvider(LLMProvider):
                 result = self._generate_with(request, model)
                 self.served_by = model
                 return result
-            except (InternalServerError, APITimeoutError, APIConnectionError) as exc:
+            # Free-tier quotas are per model, so a 429 that outlasts the SDK's retries also moves on.
+            except (InternalServerError, APITimeoutError, APIConnectionError, RateLimitError) as exc:
                 if i + 1 < len(models):
                     log.warning("%s:%s unavailable for %s (%s); falling back to %s",
                                 self.name, model, request.task, type(exc).__name__, models[i + 1])
