@@ -35,7 +35,7 @@ def cmd_run(args):
     project = _project(args)
     force = True if args.force_all else (args.force or False)
     try:
-        results = runner.run(project, stages=args.stage, until=args.until, force=force)
+        results = runner.run(project, stages=args.stage or args.only, until=args.until, force=force, exact=bool(args.only))
     except runner.StageFailed as exc:
         print(exc, file=sys.stderr)
         sys.exit(1)
@@ -107,6 +107,8 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("run", help="run stages (skips unchanged ones)")
     s.add_argument("project")
     s.add_argument("--stage", action="append", choices=list(STAGES), help="run this stage and its requirements")
+    s.add_argument("--only", action="append", choices=list(STAGES),
+                   help="run exactly this stage, requirements must already be done (remote workers)")
     s.add_argument("--until", choices=list(STAGES))
     s.add_argument("--force", action="append", choices=list(STAGES), help="re-run even if unchanged")
     s.add_argument("--force-all", action="store_true")

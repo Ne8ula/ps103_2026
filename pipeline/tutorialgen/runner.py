@@ -52,7 +52,9 @@ def closure(targets: list[str]) -> list[str]:
     return [n for n in ORDER if n in needed]
 
 
-def plan(until: str | None = None, only: list[str] | None = None) -> list[str]:
+def plan(until: str | None = None, only: list[str] | None = None, exact: bool = False) -> list[str]:
+    if only and exact:
+        return [n for n in ORDER if n in only]
     if only:
         return closure(only)
     if until:
@@ -61,15 +63,27 @@ def plan(until: str | None = None, only: list[str] | None = None) -> list[str]:
 
 
 def run(project: Project, stages: list[str] | None = None, until: str | None = None,
-        force: bool | list[str] = False, config_overrides: dict | None = None) -> dict[str, str]:
-    """Run the plan; returns {stage: 'ran' | 'skipped'}. Raises StageFailed on the first failure."""
+        force: bool | list[str] = False, config_overrides: dict | None = None, exact: bool = False) -> dict[str, str]:
+    """Run the plan; returns {stage: 'ran' | 'skipped'}. Raises StageFailed on the first failure.
+
+    exact=True runs only ``stages`` (no requirements); each requirement must already be done. This is
+    how a remote GPU worker runs just the heavy stages on a copied project folder.
+    """
     config = project.config(config_overrides)
     provider = make_provider(config)
     llm = CachedLLM(provider, project.path("llm_cache"), config.section("llm", LLMSettings).max_images_per_call)
     forced = set(ORDER) if force is True else set(force or [])
     results: dict[str, str] = {}
 
-    for name in plan(until, stages):
+    steps = plan(until, stages, exact)
+    if exact:
+        for name in steps:
+            missing = [r for r in STAGES[name].requires
+                       if r not in steps and project.manifest.stages.get(r, StageStatus()).status != "done"]
+            if missing:
+                raise StageFailed(f"stage {name} needs {', '.join(missing)} done first")
+
+    for name in steps:
         spec = STAGES[name]
         fp = _fingerprint(project, name, config, provider.label)
         status = project.manifest.stages.get(name, StageStatus())

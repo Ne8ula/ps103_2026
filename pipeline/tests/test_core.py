@@ -118,6 +118,14 @@ def test_runner_skips_unchanged_and_reruns_downstream(toy_stages):
     assert toy_stages == {"a": 3, "b": 3}
 
 
+def test_runner_exact_requires_upstream_done(toy_stages):
+    p = Project.create("exact")
+    with pytest.raises(runner.StageFailed, match="needs a"):
+        runner.run(p, stages=["b"], exact=True)
+    runner.run(p, stages=["a"], exact=True)
+    assert runner.run(p, stages=["b"], exact=True) == {"b": "ran"}
+
+
 def test_runner_records_failure():
     p = Project.create("fail")
     with pytest.raises(runner.StageFailed):
