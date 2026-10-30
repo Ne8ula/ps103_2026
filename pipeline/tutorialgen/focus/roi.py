@@ -49,6 +49,7 @@ class FocusConfig(BaseModel):
     min_crop_frac: float = Field(0.4, description="render: crop width at least this fraction of the frame")
     pan_s: float = Field(0.6, description="render: eased pan between sub-steps within a shot")
     contain_pad: float = Field(0.03, description="render: per-frame safety margin keeping every drawn hand inside the crop")
+    contain_ramp_s: float = Field(0.4, description="render: when a hand nears the crop edge, open the crop over this long before (and close after)")
 
 
 @dataclass
@@ -200,20 +201,26 @@ def draw_boxes(img: np.ndarray, boxes: list[FocusBox], t: float) -> list[str]:
 
     h, w = img.shape[:2]
     s = max(h / 360.0, 1.0)
-    drawn = []
-    for fb in boxes:
-        b = box_at(fb, t)
-        if b is None:
-            continue
+    drawn, labels = [], []
+    present = [(fb, box_at(fb, t)) for fb in boxes]
+    present = [(fb, b) for fb, b in present if b is not None]
+    for fb, b in present:  # all frames first, so no label is drawn over by a later box
         color = BOX_COLORS.get(fb.id, (255, 255, 255))
         p0 = (int(b[0] * (w - 1)), int(b[1] * (h - 1)))
         p1 = (int(b[2] * (w - 1)), int(b[3] * (h - 1)))
         cv2.rectangle(img, p0, p1, (0, 0, 0), int(4 * s))
         cv2.rectangle(img, p0, p1, color, int(2 * s))
+    for fb, b in present:
+        color = BOX_COLORS.get(fb.id, (255, 255, 255))
         text = f"{fb.id} {fb.label}"
         fs, th = 0.5 * s, max(int(s), 1)
         (tw, tht), _ = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, fs, th)
-        x, y = p0[0] + 2, min(max(p0[1] + tht + 6, tht + 4), h - 4)  # inside the top-left corner
+        x = min(int(b[0] * (w - 1)) + 2, max(w - tw - 4, 0))
+        y = min(max(int(b[1] * (h - 1)) + tht + 6, tht + 4), h - 4)  # inside the top-left corner
+        # Move down past any label it would overlap (boxes with nearby corners).
+        while any(x < lx1 and x + tw > lx0 and y - tht - 4 < ly1 and y + 4 > ly0 for lx0, ly0, lx1, ly1 in labels) and y < h - 4:
+            y += tht + 10
+        labels.append((x - 2, y - tht - 4, x + tw + 2, y + 4))
         cv2.rectangle(img, (x - 2, y - tht - 4), (x + tw + 2, y + 4), (0, 0, 0), -1)
         cv2.putText(img, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, fs, color, th, cv2.LINE_AA)
         drawn.append(fb.id)

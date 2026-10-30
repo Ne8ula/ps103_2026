@@ -262,10 +262,12 @@ def run(ctx: StageContext) -> None:
                         clip_wav = write_wav(tmp / f"{step.id}.wav", audio_slice(
                             src_audio, samples_at(piece.src_start), samples_at(piece.frames)), rate)
                     clip_enc = Encoder(tmp / f"{step.id}.mp4", W, H, fps, clip_wav, **enc_args)
+                rects = _crop_rects(piece, track, fps, focus.contain_ramp_s)
                 try:
                     for i in range(piece.frames):
                         src_index = piece.src_start + i
-                        frame = _clip_frame(reader.read(src_index), src_index / fps, piece, track, cfg, total, W, H)
+                        frame = _clip_frame(reader.read(src_index), src_index / fps, piece, track, cfg, total, W, H,
+                                            rects[i] if rects else None)
                         main.write(frame)
                         if clip_enc is not None:
                             clip_enc.write(frame)
@@ -332,18 +334,27 @@ def _overlay(c: Callout, notes: list[ComplianceNote], W: int, H: int) -> _Overla
     return _Overlay(c, cards.chip(H, c.text, c.kind, max_width=W * 0.5), "left")
 
 
+def _crop_rects(piece: _Piece, track: HandTrack | None, fps: float, ramp_s: float) -> list[list[float]] | None:
+    """Per-frame crop rects of a clip (containment eased over ``ramp_s``), or None without a crop."""
+    if piece.crop is None:
+        return None
+    times = [(piece.src_start + i) / fps for i in range(piece.frames)]
+    points = []
+    for t in times:
+        hands = track.hands_at(t) if track is not None else []
+        points.append(np.vstack([h.landmarks[:, :2] for h in hands]) if hands else None)
+    return piece.crop.rects(times, points, int(round(ramp_s * fps)))
+
+
 def _clip_frame(src: np.ndarray | None, t: float, piece: _Piece, track: HandTrack | None, cfg: RenderConfig, total: int,
-                W: int, H: int) -> np.ndarray:
+                W: int, H: int, rect: list[float] | None = None) -> np.ndarray:
     """One output frame of a step clip: focus crop, hand overlay, progress bar, callouts, caption."""
     hands = track.hands_at(t) if track is not None else []
+    rect = rect or [0.0, 0.0, 1.0, 1.0]
     if src is None:
         frame = np.zeros((H, W, 3), np.uint8)
         rect = [0.0, 0.0, 1.0, 1.0]
     else:
-        rect = [0.0, 0.0, 1.0, 1.0]
-        if piece.crop is not None:
-            pts = np.vstack([h.landmarks[:, :2] for h in hands]) if hands else None
-            rect = piece.crop.rect_at(t, pts)
         frame = apply_crop(src, rect, W, H)
         if frame is src:
             frame = frame.copy()
@@ -413,6 +424,14 @@ def to_markdown(t: Tutorial, meta: VideoMeta, have_questions: bool = True) -> st
         for d in s.details:
             out.append(f"- {d}")
         if s.details:
+            out.append("")
+        if len(s.substeps) > 1 or any(x.emphasis for x in s.substeps):
+            labels = {b.id: b.label for b in s.focus_boxes}
+            out.append("**Phases:**")
+            for x in s.substeps:
+                where = labels.get(x.focus, "full frame" if x.focus == "full" else x.focus)
+                out.append(f"- `{cards.fmt_time(x.start)}` {x.caption} _(focus: {where})_"
+                           + (f" · watch: **{x.emphasis}**" if x.emphasis else ""))
             out.append("")
         if s.tools or s.materials:
             if s.tools:

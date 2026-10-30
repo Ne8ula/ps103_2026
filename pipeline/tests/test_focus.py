@@ -135,6 +135,22 @@ def test_contain_never_crops_a_hand_out():
     assert to_crop(lm, rect)[0, :2] == pytest.approx([0.5, 0.5])
 
 
+def test_containment_is_eased_but_never_violated():
+    seg = CropSegment(start=0, end=2, rect=[0.3, 0.3, 0.7, 0.7], focus="B1", reason="", cut_before=True)
+    track = CropTrack([seg], FocusConfig())
+    times = [k / 25 for k in range(50)]
+    spike = np.array([[0.9, 0.5], [0.95, 0.55]])  # a hand near the right edge for one frame only
+    points = [spike if k == 25 else None for k in range(50)]
+    raw = [track.rect_at(t, p) for t, p in zip(times, points)]
+    eased = track.rects(times, points, ramp_frames=10)
+    r = eased[25]  # the spike frame holds the hand
+    assert r[0] <= 0.9 and r[2] >= 0.95 and r[1] <= 0.5 and r[3] >= 0.55
+    jump = lambda rs: max(abs(b[2] - a[2]) for a, b in zip(rs, rs[1:]))  # noqa: E731
+    assert jump(raw) > 0.2 and jump(eased) < 0.06  # one-frame pop vs. a ramp
+    assert eased[0] == seg.rect and eased[49] == seg.rect  # far from the spike: the planned crop
+    assert all(abs((r[2] - r[0]) - (r[3] - r[1])) < 1e-9 for r in eased)  # aspect kept throughout
+
+
 def test_plan_uses_requested_box_falls_back_and_respects_cuts():
     samples = frames(0, 6, lambda t: [open_hand(0.3, 0.5)] if t < 4 else [])
     tl = make_timeline(samples)
@@ -191,6 +207,33 @@ def test_llm_schemas_are_strict_output_friendly():
         assert set(schema["required"]) == set(schema["properties"]), model.__name__
         assert schema.get("additionalProperties") is False
         assert not any("default" in p for p in schema["properties"].values())
+    from openai.lib._pydantic import to_strict_json_schema  # what the OpenAI and Gemini adapters send
+
+    strict = to_strict_json_schema(DraftStepOutput)
+    sub = strict["$defs"]["SubStepOutput"]
+    assert sub["additionalProperties"] is False and set(sub["required"]) == set(sub["properties"])
+
+
+def test_draft_with_substeps_round_trips_through_gemini_adapter(monkeypatch, tmp_path):
+    """Mocked HTTP: the strict schema with sub-steps is sent, and a reply with sub-steps parses."""
+    import json
+
+    import httpx
+    from test_llm_providers import completion, provider_with
+
+    from tutorialgen.llm import LLMRequest
+
+    reply = {"title": "Scrub hands", "instruction": "Scrub all surfaces.", "details": [], "tools": [], "materials": ["soap"],
+             "expected_result": None, "cautions": [], "confidence": 0.8, "missing_info": [],
+             "substeps": [{"start_s": 14.4, "caption": "Scrub palms", "focus_box": "B2", "emphasis": None, "emphasis_s": None},
+                          {"start_s": 18.3, "caption": "Scrub between fingers", "focus_box": "B1",
+                           "emphasis": "between fingers", "emphasis_s": 19.0}]}
+    bodies: list[dict] = []
+    p = provider_with(monkeypatch, [httpx.Response(200, json=completion(json.dumps(reply)))], bodies)
+    out = p.generate(LLMRequest(task="draft_step", system="S", user="U", schema=DraftStepOutput))
+    assert [s.focus_box for s in out.substeps] == ["B2", "B1"] and out.substeps[1].emphasis == "between fingers"
+    sent = bodies[0]["response_format"]["json_schema"]
+    assert sent["strict"] is True and "SubStepOutput" in sent["schema"]["$defs"]
 
 
 # ---- compact gesture summaries ------------------------------------------------------------------

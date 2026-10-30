@@ -116,6 +116,42 @@ class CropTrack:
             rect = contain(rect, hand_points, self.cfg.contain_pad)
         return rect
 
+    def shot_index(self, t: float) -> int:
+        """Index of the shot (run of segments with no cut between them) containing ``t``."""
+        i = max(bisect.bisect_right(self.starts, t) - 1, 0)
+        return sum(1 for s in self.segments[1:i + 1] if s.cut_before)
+
+    def rects(self, times: list[float], points: list[np.ndarray | None], ramp_frames: int) -> list[list[float]]:
+        """Per-frame rects for a run of frames, with hand containment eased in and out.
+
+        Each frame's required growth (how far each side must move out to hold its hands) is spread to
+        the neighbouring frames of the same shot with a triangular falloff over ``ramp_frames``, taking the
+        maximum: the crop opens gradually before a hand reaches the edge and closes gradually afterwards.
+        A frame's own growth always counts in full, so no hand is ever outside its frame's crop.
+        """
+        base = [self.rect_at(t) for t in times]
+        need = [self.rect_at(t, p) for t, p in zip(times, points)]
+        grow = np.array([[b[0] - n[0], b[1] - n[1], n[2] - b[2], n[3] - b[3]] for b, n in zip(base, need)]).clip(min=0)
+        if ramp_frames <= 0 or not grow.any():
+            return need
+        shot = [self.shot_index(t) for t in times]
+        smooth = grow.copy()
+        for j in np.nonzero(grow.any(axis=1))[0]:
+            for i in range(max(0, j - ramp_frames), min(len(times), j + ramp_frames + 1)):
+                if shot[i] == shot[j]:
+                    smooth[i] = np.maximum(smooth[i], grow[j] * (1 - abs(i - j) / (ramp_frames + 1)))
+        out = []
+        for b, n, g in zip(base, need, smooth):
+            if not g.any() or is_full(b):
+                out.append(n)
+                continue
+            box = np.array([[b[0] - g[0], b[1] - g[1]], [b[2] + g[2], b[3] + g[3]]])
+            # Square it up again (contain keeps aspect and stays inside the frame), then make sure the
+            # frame's own requirement is still met.
+            r = contain(b, box, 0.0)
+            out.append(contain(r, np.array([[n[0], n[1]], [n[2], n[3]]]), 0.0))
+        return out
+
 
 def is_full(rect: list[float]) -> bool:
     return rect[0] <= 1e-4 and rect[1] <= 1e-4 and rect[2] >= 1 - 1e-4 and rect[3] >= 1 - 1e-4
