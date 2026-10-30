@@ -571,3 +571,151 @@ def reading_seconds(texts: list[str], minimum: float, maximum: float, wps: float
     """Card duration that scales with the amount of text, clamped to [minimum, maximum]."""
     words = sum(len(str(t).split()) for t in texts)
     return float(min(max(base + words / wps, minimum), maximum))
+
+
+# ---- structured clip overlays (sub-step captions, chips, callouts, progress) -----------------
+
+SEVERITY_COLORS = {"critical": (236, 92, 92), "warning": (246, 190, 80), "info": (140, 180, 235)}  # RGB
+
+
+def _bgra(img: Image.Image) -> np.ndarray:
+    arr = np.asarray(img)
+    return np.ascontiguousarray(arr[:, :, [2, 1, 0, 3]])
+
+
+def substep_caption(width: int, height: int, number: int, total: int, step_title: str, caption: str,
+                    needs_info: bool = False, phase: tuple[int, int] | None = None) -> tuple[int, np.ndarray]:
+    """Lower-third for a sub-step as (y0, BGRA band): the sub-step caption large, the step above it small.
+
+    ``phase`` = (k, n) adds "k/n" phase dots so the learner sees the step's structure.
+    """
+    u = height / 720.0
+    mx = max(width * 0.04, 20 * u)
+    pad = 16 * u
+    cf = sans(30 * u, "Bold")
+    sf = sans(18 * u, "Medium")
+    pf = mono(17 * u, bold=True)
+    pill_text = f"{number}/{total}"
+    pill_w = _text_w(pf, pill_text) + 2 * 12 * u
+    text_x = pad + pill_w + 14 * u
+    max_text_w = width - 2 * mx - text_x - pad
+    head = ("Needs info  ·  " if needs_info else "") + step_title
+    line1 = ellipsize(head, sf, max_text_w)
+    line2 = ellipsize(caption or step_title, cf, max_text_w)
+    dots_w = (phase[1] * 14 * u + 6 * u) if phase and phase[1] > 1 else 0
+    content_h = _line_h(sf) + 2 * u + _line_h(cf)
+    panel_w = text_x + max(_text_w(sf, line1) + dots_w, _text_w(cf, line2)) + pad
+    panel_h = content_h + 2 * pad
+    band_h = int(np.ceil(panel_h + 28 * u))
+    img = Image.new("RGBA", (width, band_h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    px0 = mx
+    d.rounded_rectangle((px0, 0, px0 + panel_w, panel_h), radius=10 * u, fill=(*BG, 230))
+    ph = _line_h(pf) + 8 * u
+    py = pad + _line_h(sf) + 2 * u + (_line_h(cf) - ph) / 2
+    d.rounded_rectangle((px0 + pad, py, px0 + pad + pill_w, py + ph), radius=ph / 2, fill=(*ACCENT, 255))
+    d.text((px0 + pad + 12 * u, py + 4 * u), pill_text, font=pf, fill=(*ON_ACCENT, 255))
+    if needs_info:
+        d.text((px0 + text_x, pad), "Needs info", font=sf, fill=(*ACCENT, 255))
+        rest = line1[len("Needs info"):]
+        d.text((px0 + text_x + _text_w(sf, "Needs info"), pad), rest, font=sf, fill=(*MUTED, 255))
+    else:
+        d.text((px0 + text_x, pad), line1, font=sf, fill=(*MUTED, 255))
+    if dots_w:
+        k, n = phase
+        x = px0 + text_x + _text_w(sf, line1) + 10 * u
+        cy = pad + _line_h(sf) / 2 + 1 * u
+        for i in range(n):
+            r = 4 * u
+            fill = (*ACCENT, 255) if i == k else ((*SOFT, 200) if i < k else (*RULE, 255))
+            d.ellipse((x + i * 14 * u, cy - r, x + i * 14 * u + 2 * r, cy + r), fill=fill)
+    d.text((px0 + text_x, pad + _line_h(sf) + 2 * u), line2, font=cf, fill=(*TEXT, 255))
+    return height - band_h, _bgra(img)
+
+
+def chip(height: int, text: str, kind: str = "emphasis", max_width: float | None = None) -> np.ndarray:
+    """A pill-shaped BGRA chip: 'emphasis' (accent, with a pointer mark) or 'items' (dark, muted)."""
+    u = height / 720.0
+    f = sans(22 * u, "Bold") if kind == "emphasis" else sans(18 * u, "Medium")
+    pad = 12 * u
+    mark = 16 * u if kind == "emphasis" else 0
+    if max_width:
+        text = ellipsize(text, f, max_width - 2 * pad - mark)
+    w = int(np.ceil(_text_w(f, text) + 2 * pad + mark))
+    h = int(np.ceil(_line_h(f) + pad))
+    img = Image.new("RGBA", (w + 2, h + 2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    fill, ink = ((*ACCENT, 245), (*ON_ACCENT, 255)) if kind == "emphasis" else ((*BG, 215), (*SOFT, 255))
+    d.rounded_rectangle((0, 0, w, h), radius=h / 2, fill=fill)
+    if mark:  # a small right-pointing triangle: "look here"
+        cy = h / 2
+        d.polygon([(pad, cy - 6 * u), (pad, cy + 6 * u), (pad + 10 * u, cy)], fill=ink)
+    d.text((pad + mark, pad / 2), text, font=f, fill=ink)
+    return _bgra(img)
+
+
+def callout_card(height: int, header: str, text: str, severity: str = "warning", max_width: float = 400) -> np.ndarray:
+    """Safety/compliance callout: severity bar, small header (kind + source), text in at most two lines."""
+    u = height / 720.0
+    hf = mono(14 * u, bold=True)
+    tf = sans(19 * u, "Medium")
+    pad = 12 * u
+    bar = 6 * u
+    inner = max_width - 2 * pad - bar
+    lines = _clip_lines(wrap(text, tf, inner), 2, tf, inner)
+    header = ellipsize(header.upper(), hf, inner)
+    w = int(np.ceil(bar + 2 * pad + max([_text_w(hf, header), *(_text_w(tf, ln) for ln in lines)])))
+    h = int(np.ceil(2 * pad + _line_h(hf) + 4 * u + len(lines) * (_line_h(tf) + 2 * u)))
+    color = SEVERITY_COLORS.get(severity, SEVERITY_COLORS["info"])
+    img = Image.new("RGBA", (w + 2, h + 2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((0, 0, w, h), radius=8 * u, fill=(*BG, 232))
+    d.rounded_rectangle((0, 0, bar + 4 * u, h), radius=4 * u, fill=(*color, 255))
+    d.rectangle((bar, 0, bar + 4 * u, h), fill=(*BG, 232))
+    y = pad
+    d.text((bar + pad, y), header, font=hf, fill=(*color, 255))
+    y += _line_h(hf) + 4 * u
+    for ln in lines:
+        d.text((bar + pad, y), ln, font=tf, fill=(*TEXT, 255))
+        y += _line_h(tf) + 2 * u
+    return _bgra(img)
+
+
+def blend_at(frame: np.ndarray, x: int, y: int, overlay: np.ndarray) -> np.ndarray:
+    """Alpha-blend a BGRA overlay onto a BGR frame with its top-left corner at (x, y), clipped (in place)."""
+    H, W = frame.shape[:2]
+    oh, ow = overlay.shape[:2]
+    x0, y0 = max(x, 0), max(y, 0)
+    x1, y1 = min(x + ow, W), min(y + oh, H)
+    if x1 <= x0 or y1 <= y0:
+        return frame
+    sub = overlay[y0 - y:y1 - y, x0 - x:x1 - x]
+    region = frame[y0:y1, x0:x1].astype(np.float32)
+    alpha = sub[:, :, 3:4].astype(np.float32) / 255.0
+    frame[y0:y1, x0:x1] = (region * (1 - alpha) + sub[:, :, :3].astype(np.float32) * alpha).astype(np.uint8)
+    return frame
+
+
+def draw_progress(frame: np.ndarray, number: int, total: int, step_frac: float, ticks: list[float] | None = None) -> np.ndarray:
+    """Thin segmented progress bar across the top of a clip frame (in place): done steps muted, the current
+    step filling with the accent colour, sub-step boundaries as ticks inside the current segment."""
+    import cv2
+
+    H, W = frame.shape[:2]
+    u = H / 720.0
+    bar_h = max(int(round(6 * u)), 3)
+    gap = max(int(round(4 * u)), 2)
+    seg = (W - gap * (total - 1)) / max(total, 1)
+    accent, muted, rule = ACCENT[::-1], MUTED[::-1], BG[::-1]
+    for k in range(total):
+        x0 = int(round(k * (seg + gap)))
+        x1 = int(round(x0 + seg))
+        cv2.rectangle(frame, (x0, 0), (x1, bar_h), rule, -1)
+        if k + 1 < number:
+            cv2.rectangle(frame, (x0, 0), (x1, bar_h), muted, -1)
+        elif k + 1 == number:
+            cv2.rectangle(frame, (x0, 0), (x0 + int(round(seg * min(max(step_frac, 0.0), 1.0))), bar_h), accent, -1)
+            for t in ticks or []:
+                xt = x0 + int(round(seg * t))
+                cv2.line(frame, (xt, 0), (xt, bar_h + max(int(2 * u), 1)), (255, 255, 255), max(int(round(2 * u)), 1))
+    return frame
