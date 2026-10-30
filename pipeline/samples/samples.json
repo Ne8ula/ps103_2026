@@ -1,0 +1,26 @@
+[
+  {
+    "file": "sfdph-wash-hands-en.webm",
+    "role": "primary demo video",
+    "title": "SFDPH Wash Hands (English)",
+    "license": "CC BY 3.0, San Francisco Government Television",
+    "page": "https://commons.wikimedia.org/wiki/File:20200303_-_SFGovTV_-_SFDPH_WASH_HANDS_ENGLISH.webm",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/20200303_-_SFGovTV_-_SFDPH_WASH_HANDS_ENGLISH.webm"
+  },
+  {
+    "file": "cdc-ppe-hand-hygiene.webm",
+    "role": "secondary demo video (short, no narration expected)",
+    "title": "Donning PPE: Perform Hand Hygiene (CDC05)",
+    "license": "CC BY-SA 4.0, CDC",
+    "page": "https://commons.wikimedia.org/wiki/File:Donning_PPE-_Perform_Hand_Hygiene_CDC05.webm",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Donning_PPE-_Perform_Hand_Hygiene_CDC05.webm"
+  },
+  {
+    "file": "fda-food-code-2022.pdf",
+    "role": "SOP / compliance document (handwashing procedure in 2-301.12)",
+    "title": "FDA Food Code 2022",
+    "license": "US federal government work, public domain",
+    "page": "https://www.fda.gov/food/fda-food-code/food-code-2022",
+    "url": "https://www.fda.gov/media/164194/download"
+  }
+]

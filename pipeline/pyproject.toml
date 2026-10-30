@@ -1,0 +1,45 @@
+[project]
+name = "tutorialgen"
+version = "0.1.0"
+description = "Turn unstructured demo videos plus SOPs into stepwise, hand-pose-annotated tutorials"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.8",
+  "pyyaml",
+  "numpy",
+  "opencv-python-headless",
+  "mediapipe>=0.10.14",
+  "imageio-ffmpeg",
+  "yt-dlp",
+  "faster-whisper",
+  "openai>=1.60",
+  "pypdf",
+  "python-docx",
+  "rank-bm25",
+  "fastembed",
+  "fastapi",
+  "uvicorn[standard]",
+  "python-multipart",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[project.scripts]
+tutorialgen = "tutorialgen.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["tutorialgen*"]
+
+[tool.setuptools.package-data]
+tutorialgen = ["prompts/*.md", "*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "slow: needs model downloads or real media (deselect with -m 'not slow')",
+]
