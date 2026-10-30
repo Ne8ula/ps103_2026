@@ -51,6 +51,9 @@ class HandsSummary(Artifact):
     frames_with_hands: int
     smoothing: str
     device: str
+    mirror_handedness: bool | None = Field(default=None, description="True if Left/Right labels were flipped")
+    frames_with_two_hands: int | None = None
+    elapsed_s: float | None = None
 
 
 class SceneCut(Artifact):

@@ -40,6 +40,7 @@ tutorialgen = ["prompts/*.md", "*.yaml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-m 'not slow'"
 markers = [
   "slow: needs model downloads or real media (deselect with -m 'not slow')",
 ]

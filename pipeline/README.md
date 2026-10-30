@@ -7,7 +7,7 @@ Turns an unstructured demo video plus optional SOPs/compliance manuals into a st
 ```bash
 python3 -m venv ../.venv && ../.venv/bin/pip install -e '.[dev]'
 ../.venv/bin/python samples/fetch.py          # development video + SOP
-../.venv/bin/python -m pytest -q               # fast tests; add -m slow for media/model tests
+../.venv/bin/python -m pytest -q               # fast tests; -m slow runs media/model tests
 ```
 
 `OPENAI_API_KEY` switches the LLM stages from the deterministic fake provider to GPT-5.4 mini. Without it, every stage still runs and produces clearly placeholder text.
