@@ -20,8 +20,8 @@ The common pattern: let the LLM make **small, typed, verifiable choices**, and l
 |---|---|---|
 | **Action primitives**: a small state machine maps feature sequences to a fixed verb vocabulary (rub, press, pinch-and-place, twist, pour, wipe), each with time span and confidence | The LLM gets semantic tokens instead of low-level finger geometry | |
 | **Per-video normalization**: speed and size thresholds relative to the video's own distribution | Thresholds tuned on one camera distance fail on another | |
-| **Interval summaries** instead of raw keyframe lines; keyframes mapped to numbered images | Prompt bloat; text not linked to images | B |
-| **Set-of-mark prompting**: numbered hand/interaction boxes drawn on frames, referenced in text | The LLM can point at regions by id | B |
+| **Interval summaries** instead of raw keyframe lines; keyframes mapped to numbered images | Prompt bloat; text not linked to images | done |
+| **Set-of-mark prompting**: numbered hand/interaction boxes drawn on frames, referenced in text | The LLM can point at regions by id | done |
 
 ## Segmentation
 
@@ -40,7 +40,7 @@ The common pattern: let the LLM make **small, typed, verifiable choices**, and l
 | **Chain-of-verification**: a second, cheap call lists checkable claims from the draft and answers each against the evidence only; failing claims are removed | Plausible but unsupported details | |
 | **Controlled vocabulary**: tools and materials canonicalized against a glossary built from the SOP index | "paper towel" vs. "towel" vs. "single-use towel" drift; better compliance matching | |
 | **One worked example in the prompt** (from a labelled video other than the one being processed) | Inconsistent granularity and tone | |
-| **Sub-steps with time ranges, focus box, callouts** for layout | Unstructured video formatting | B |
+| **Sub-steps with time ranges, focus box, callouts** for layout | Unstructured video formatting | done |
 
 ## RAG And Compliance
 
