@@ -35,6 +35,7 @@ class Trajectory(Artifact):
 class HandDescription(Artifact):
     handedness: Literal["Left", "Right"]
     visibility: Literal["visible", "low_confidence", "not_visible"]
+    visibility_reason: str | None = Field(default=None, description="why low_confidence: low_score, out_of_frame, too_small, implausible_shape, jitter, jump")
     fingers: list[FingerState] = []
     groups: list[list[FingerName]] = Field(default=[], description="fingers whose tips are close together")
     grip: Literal["open", "pinch", "power_grip", "point", "fist", "relaxed", "unknown"] = "unknown"
