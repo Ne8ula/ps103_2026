@@ -22,6 +22,7 @@ class DocChunk(Artifact):
     doc_id: str
     doc_name: str
     page: int | None = None
+    page_end: int | None = Field(default=None, description="last page when the chunk spans pages")
     section: str | None = None
     text: str
 
@@ -48,6 +49,8 @@ class ComplianceNote(Artifact):
     severity: Literal["info", "warning", "critical"]
     text: str
     citations: list[Citation] = Field(min_length=1)
+    after_step_id: str | None = Field(default=None, description="missing_step only: where the step belongs")
+    llm_call: str | None = Field(default=None, description="LLM cache key that produced the note")
 
 
 class StepCompliance(Artifact):
@@ -55,6 +58,7 @@ class StepCompliance(Artifact):
     notes: list[ComplianceNote] = []
     no_relevant_guidance: bool
     retrieved_chunk_ids: list[str] = []
+    query: str | None = Field(default=None, description="retrieval query built from the step")
 
 
 class ComplianceReport(Artifact):
@@ -63,3 +67,5 @@ class ComplianceReport(Artifact):
     documents: list[DocumentInfo]
     steps: list[StepCompliance]
     global_notes: list[ComplianceNote] = []
+    embedding_model: str | None = None
+    dropped: list[str] = Field(default=[], description="LLM notes/citations rejected by validation, and why")
