@@ -32,7 +32,7 @@ KEYFRAMES = "segment/keyframes"
 class SegmentConfig(BaseModel):
     window_s: float = 90.0             # max seconds of video per LLM call
     window_overlap_s: float = 15.0     # neighbouring windows share about this much
-    max_candidates_per_window: int = 40  # compact hand summaries keep 40 intervals small: one call for short videos
+    max_candidates_per_window: int = 12  # defaults.yaml raises this to 40 (one window for short videos)
     min_step_s: float = 2.0            # shorter steps are merged into a neighbour
     snap_s: float = 1.5                # LLM times within this of a boundary snap to it
     idle_motion: float = 0.02          # activity motion_energy at or below this counts as idle
