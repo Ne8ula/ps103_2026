@@ -61,6 +61,15 @@ $tg serve --port 8000             # HTTP data endpoints; OpenAPI docs at /docs
 | `tutorialgen/prompts/` | Versioned prompt templates (`# system` / `# user`) |
 | `tutorialgen/defaults.yaml` | Default config; per-project `config.yaml` and `TUTORIALGEN_*` env vars override |
 
+## Structured Steps And Hand-Driven Focus
+
+The LLM makes small choices from options that code generated; code does the bookkeeping.
+
+- **Gesture text as summaries** (`segment.gesture_format`, `draft.gesture_format`: `summary` | `keyframes` | `both`): one computed line per interval from every landmark sample (share of time each hand is visible, dominant grip, hand contact, active share, back-and-forth vs. net motion, position) plus hand-state change events. Each interval names the image, or the panel of a labelled 2x2 contact sheet, that shows it (`segment.sheet_panels`).
+- **Focus boxes** (`tutorialgen/focus/`, config section `focus`): per step and shot, B1 both hands, B2 work zone (where the hands touch or a pinch/power grip is held), B3/B4 single hands when they work apart. They are drawn and labelled on the draft keyframes (`draft/keyframes/<step>/k<n>_boxes.jpg`) and described per image; the model picks an id or `full`, and unknown ids fall back deterministically.
+- **Sub-steps** (`Step.substeps`): action phases with starts snapped to anchors (step start, narration starts, hand-state changes), bounded captions (`draft.caption_max_chars`), a focus id and an optional emphasis callout. The number guard covers them.
+- **Render**: per sub-step and shot, an aspect-preserving crop of the chosen box (`focus.max_zoom`, `focus.min_zoom_gain`, `focus.min_crop_frac`), eased pans within a shot (`focus.pan_s`), hard switches at cuts, kept off letterbox bars, grown when needed so no drawn hand is ever cropped out (eased over `focus.contain_ramp_s`). Sub-step captions, a step progress bar, a tools/materials chip, emphasis chips and safety callouts (compliance notes by id, verbatim) are added; no extra LLM call. `focus.enabled: false` or `render.substep_captions / progress_bar / callouts: false` switch parts off. `tutorial.json` records `crop_plan` and `callouts` per step.
+
 ## Stages
 
 `ingest → perception → transcribe → gestures → candidates → segment → draft → refine → compliance → questions → render`
