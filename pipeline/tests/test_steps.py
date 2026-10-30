@@ -115,7 +115,9 @@ def test_segment_covers_content_and_extracts_keyframes():
     assert len(frames) == len(BOUNDARIES) + 1
     assert cv2.imread(str(frames[0])).shape[1] == 640  # downscaled from 720
     call = cached(p, "segment_steps")[0]
-    assert len(call["images"]) == 6  # llm.max_images_per_call
+    assert len(call["images"]) == 6  # llm.max_images_per_call: 5 single frames + one 2-panel sheet
+    assert call["user"].count(" panel ") == 2 and "image 6 (frame at" in call["user"]
+    assert all(f"i0{k}: " in call["user"] and "image" in call["user"].split(f"i0{k}: ")[1].split("\n")[0] for k in range(1, 8))
     assert "hands g0" in call["user"] and "wet your hands" in call["user"]
 
 

@@ -35,6 +35,37 @@ class MissingInfo(Artifact):
     key: str | None = Field(default=None, description="stable gap key, e.g. s03:missing:duration; questions map it to a stable question id")
 
 
+class FocusRegion(Artifact):
+    """Where one focus box sits during one shot (scene-cut-free stretch) of a step."""
+
+    start: float
+    end: float
+    box: list[float] = Field(description="[x0, y0, x1, y1], normalized to the source frame")
+    coverage: float = Field(ge=0, le=1, description="fraction of hand samples in [start, end) that support the box")
+
+
+class FocusBox(Artifact):
+    """A deterministic region-of-interest candidate computed from hand landmarks (never by the LLM)."""
+
+    id: str = Field(description="B1 both hands, B2 work zone, B3 right hand, B4 left hand")
+    kind: Literal["hands", "work_zone", "right_hand", "left_hand"]
+    label: str
+    regions: list[FocusRegion] = []
+
+
+class SubStep(Artifact):
+    """An action phase inside a step: its own time range, on-screen caption and focus choice."""
+
+    start: float
+    end: float
+    caption: str = Field(description="short on-screen caption, bounded length")
+    focus: str = Field(default="full", description="FocusBox id chosen for this phase, or 'full'")
+    focus_source: Literal["llm", "fallback"] = "llm"
+    emphasis: str | None = Field(default=None, description="short callout, e.g. 'between fingers'")
+    emphasis_t: float | None = Field(default=None, description="when the callout appears, seconds")
+    gesture_keyframe_ids: list[str] = []
+
+
 class Step(Artifact):
     id: str
     index: int
@@ -52,6 +83,8 @@ class Step(Artifact):
     user_supplied: list[str] = Field(default=[], description="facts that came from uploader answers")
     keyframe_paths: list[str] = Field(default=[], description="images relative to project root")
     provenance: Provenance = Provenance()
+    substeps: list[SubStep] = Field(default=[], description="action phases covering [start, end] contiguously; empty = whole step")
+    focus_boxes: list[FocusBox] = Field(default=[], description="ROI candidates offered to the LLM (from hand landmarks)")
 
 
 class ProcedureNote(Artifact):

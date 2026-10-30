@@ -7,9 +7,15 @@ The window strategy and the cross-window merge are documented in ``tutorialgen.s
 
 from __future__ import annotations
 
+import shutil
+from typing import Literal
+
 from pydantic import BaseModel
 
 from ..llm import LLMRequest, LLMSettings
+from ..focus import load_timeline
+from ..focus.roi import Timeline
+from ..gesture.summary import summarize
 from ..prompts import load_prompt
 from ..schemas import Segmentation, StepSegment
 from ..steps import fakes  # noqa: F401  (registers the fake handlers)
@@ -26,12 +32,17 @@ KEYFRAMES = "segment/keyframes"
 class SegmentConfig(BaseModel):
     window_s: float = 90.0             # max seconds of video per LLM call
     window_overlap_s: float = 15.0     # neighbouring windows share about this much
-    max_candidates_per_window: int = 12
+    max_candidates_per_window: int = 40  # compact hand summaries keep 40 intervals small: one call for short videos
     min_step_s: float = 2.0            # shorter steps are merged into a neighbour
     snap_s: float = 1.5                # LLM times within this of a boundary snap to it
     idle_motion: float = 0.02          # activity motion_energy at or below this counts as idle
     min_idle_trim_s: float = 1.5       # leading/trailing idle shorter than this is kept
     max_gestures_per_interval: int = 4
+    # summary: one computed line per interval (grip, hands visible, contact, motion) plus the hand-state
+    # change events; keyframes: the raw keyframe text lines (the original format); both: summary + lines.
+    # Without hands/frames.jsonl the keyframe lines are used.
+    gesture_format: Literal["summary", "keyframes", "both"] = "summary"
+    sheet_panels: int = 4              # >1: tile interval frames into labelled 2x2 sheets when they exceed the image cap
     keyframe_width: int = 640
 
 
@@ -46,6 +57,7 @@ def run(ctx: StageContext) -> None:
     project = ctx.project
     up = load_upstream(project)
     start, end = content_range(up, cfg.idle_motion, cfg.min_idle_trim_s)
+    timeline = load_timeline(project, ctx.config) if with_gestures and cfg.gesture_format != "keyframes" else None
 
     intervals = build_intervals(up.candidates.boundaries, start, end)
     images = _interval_keyframes(ctx, up.meta.video_path, intervals, cfg.keyframe_width)
@@ -58,7 +70,7 @@ def run(ctx: StageContext) -> None:
     if not up.transcript.available:
         notes.append("no transcript: segmentation used hands and images only")
     for w in windows:
-        request = _window_request(prompt, w, len(windows), up, images, cfg, max_images, with_gestures)
+        request = _window_request(prompt, w, len(windows), up, images, cfg, max_images, with_gestures, timeline, ctx)
         out, key = ctx.llm.call(request)
         props = []
         for s in out.steps:
@@ -95,6 +107,7 @@ def _interval_keyframes(ctx: StageContext, video_rel: str, intervals, width: int
     out_dir = ctx.project.stage_dir(KEYFRAMES)
     for old in out_dir.glob("*.jpg"):
         old.unlink()
+    shutil.rmtree(out_dir / "sheets", ignore_errors=True)
     paths = [out_dir / f"{iv.id}_{iv.mid:07.2f}s.jpg" for iv in intervals]
     written = extract_frames(ctx.project.path(video_rel), [iv.mid for iv in intervals], paths, width)
     return {iv.id: str(p) for iv, p in zip(intervals, written) if p is not None}
@@ -108,9 +121,88 @@ def _pick_images(w: Window, images: dict[str, str], max_images: int) -> dict[str
     return {iv.id: n + 1 for n, iv in enumerate(have)}
 
 
+PANELS = "ABCD"
+
+
+def sheet_groups(n: int, max_images: int, panels: int) -> list[tuple[int, int]]:
+    """Split n consecutive frames into at most ``max_images`` runs of at most ``panels``: frames stay single
+    images as long as possible; the smallest neighbouring runs are merged first."""
+    groups = [[k, k + 1] for k in range(n)]
+    while len(groups) > max(max_images, 1):
+        sizes = [(groups[k][1] - groups[k][0]) + (groups[k + 1][1] - groups[k + 1][0]) for k in range(len(groups) - 1)]
+        k = min((k for k in range(len(sizes)) if sizes[k] <= panels), key=lambda k: sizes[k], default=None)
+        if k is None:
+            break
+        groups[k] = [groups[k][0], groups[k + 1][1]]
+        del groups[k + 1]
+    return [(a, b) for a, b in groups]
+
+
+def _contact_sheets(ctx: StageContext, w: Window, images: dict[str, str], max_images: int, panels: int
+                    ) -> tuple[list[str], dict[str, str]]:
+    """When a window has more interval frames than images allowed, tile consecutive frames into labelled
+    2x2 sheets so every interval is still seen. Returns (image paths, interval id -> 'image N panel X')."""
+    import cv2
+    import numpy as np
+
+    have = [iv for iv in w.intervals if iv.id in images]
+    cap = max(max_images, 1) * panels
+    if len(have) > cap:
+        have = [have[int(k * len(have) / cap)] for k in range(cap)]
+    groups = sheet_groups(len(have), max_images, panels)
+    paths, where = [], {}
+    for lo, hi in groups:
+        group = have[lo:hi]
+        number = len(paths) + 1
+        if len(group) == 1:
+            paths.append(images[group[0].id])
+            where[group[0].id] = f"image {number}"
+            continue
+        tiles = []
+        for k, iv in enumerate(group):
+            img = cv2.imread(images[iv.id])
+            img = cv2.resize(img, (img.shape[1] // 2, img.shape[0] // 2), interpolation=cv2.INTER_AREA)
+            label = f"{PANELS[k]}  {iv.mid:.1f}s"
+            cv2.rectangle(img, (0, 0), (12 + 13 * len(label), 26), (0, 0, 0), -1)
+            cv2.putText(img, label, (6, 19), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv2.LINE_AA)
+            tiles.append(img)
+            where[iv.id] = f"image {number} panel {PANELS[k]}"
+        while len(tiles) < 4:
+            tiles.append(np.zeros_like(tiles[0]))
+        sheet = np.vstack([np.hstack(tiles[:2]), np.hstack(tiles[2:4])])
+        out = ctx.project.stage_dir(f"{KEYFRAMES}/sheets") / f"w{w.index:02d}_{number}.jpg"
+        cv2.imwrite(str(out), sheet, [cv2.IMWRITE_JPEG_QUALITY, 85])
+        paths.append(str(out))
+    return paths, where
+
+
+def event_line(g) -> str:
+    reasons = [r.replace("_", " ") for r in g.reasons if r != "interval"]
+    return f"{g.t:.1f}s {'/'.join(reasons) or 'sample'} ({g.id})"
+
+
+def hand_lines(gestures, start: float, end: float, timeline: Timeline | None, fmt: str) -> list[str]:
+    """Gesture evidence for one time range: a computed summary line and change events, or raw keyframe lines."""
+    lines = []
+    if timeline is not None and fmt in ("summary", "both"):
+        lines.append(f"  hands: {summarize(timeline.between(start, end)).text()}")
+        events = [g for g in gestures if any(r != "interval" for r in g.reasons)]
+        if events:
+            lines.append("  hand changes: " + ", ".join(event_line(g) for g in events))
+    if timeline is None or fmt in ("keyframes", "both"):
+        lines += [f"  hands {gesture_line(g)}" for g in gestures] or ["  hands: (no gesture keyframes)"]
+    return lines
+
+
 def _window_request(prompt, w: Window, window_count: int, up, images: dict[str, str], cfg: SegmentConfig,
-                    max_images: int, with_gestures: bool) -> LLMRequest:
-    chosen = _pick_images(w, images, max_images)
+                    max_images: int, with_gestures: bool, timeline: Timeline | None = None,
+                    ctx: StageContext | None = None) -> LLMRequest:
+    if cfg.sheet_panels > 1 and ctx is not None:
+        image_paths, where = _contact_sheets(ctx, w, images, max_images, cfg.sheet_panels)
+    else:
+        chosen = _pick_images(w, images, max_images)
+        image_paths = [images[iid] for iid, _ in sorted(chosen.items(), key=lambda kv: kv[1])]
+        where = {iid: f"image {n}" for iid, n in chosen.items()}
     boundary_lines, interval_lines, ctx_intervals = [], [], []
     for p in w.points:
         detail = f"score {p.score:.2f} ({', '.join(p.reasons)})" if p.score is not None else "window edge"
@@ -120,24 +212,30 @@ def _window_request(prompt, w: Window, window_count: int, up, images: dict[str, 
         speech = speech_starting_in(up.transcript, iv.start.t, iv.end.t, include_running=n == 0)
         gestures = gestures_in(up.gestures, iv.start.t, iv.end.t, cfg.max_gestures_per_interval) if with_gestures else []
         head = f"{iv.id}: {iv.start.t:.1f}-{iv.end.t:.1f}s (from {iv.start.id} to {iv.end.id})"
-        if iv.id in chosen:
-            head += f", image {chosen[iv.id]}"
+        if iv.id in where:
+            head += f", {where[iv.id]} (frame at {iv.mid:.1f}s)"
         lines = [head]
         lines += [f"  speech {speech_line(s)}" for s in speech] or (["  speech: (none)"] if up.transcript.available else [])
         if with_gestures:
-            lines += [f"  hands {gesture_line(g)}" for g in gestures] or ["  hands: (no gesture keyframes)"]
+            lines += hand_lines(gestures, iv.start.t, iv.end.t, timeline, cfg.gesture_format)
         interval_lines.append("\n".join(lines))
         ctx_intervals.append({
             "id": iv.id, "start": iv.start.t, "end": iv.end.t,
             "start_boundary": {"id": iv.start.id, "t": iv.start.t, "score": iv.start.score, "reasons": iv.start.reasons},
             "speech": [s.text.strip() for s in speech],
             "gestures": [{"id": g.id, "t": g.t, "activity": g.activity, "text": g.text} for g in gestures],
-            "image": chosen.get(iv.id),
+            "image": where.get(iv.id),
         })
-    evidence = "the narration spoken in it (if any), " + (
-        "a text description of the hand poses at gesture keyframes (finger states, grip, movement; derived from hand "
-        "landmarks, so it can be wrong when hands are occluded), " if with_gestures else "") + (
-        "and a representative frame (attached images, numbered as listed)")
+    if timeline is not None and cfg.gesture_format != "keyframes":
+        hands = ("a one-line summary of the hands over the interval (share of time each hand is visible, dominant grip, "
+                 "contact between the hands, motion such as back-and-forth scrubbing, position) and the times where the "
+                 "hand state changes; derived from hand landmarks, so it can be wrong when hands are occluded, ")
+    else:
+        hands = ("a text description of the hand poses at gesture keyframes (finger states, grip, movement; derived from hand "
+                 "landmarks, so it can be wrong when hands are occluded), ")
+    evidence = "the narration spoken in it (if any), " + (hands if with_gestures else "") + (
+        "and, for intervals marked 'image N' (or 'image N panel X': panel X of a 2x2 sheet, labelled with its letter "
+        "and time), a representative frame taken at the listed time")
     narration = "" if up.transcript.available else "There is no narration for this video: rely on the images" + (
         " and hand descriptions." if with_gestures else ".")
     system = prompt.system.format(evidence_kinds=evidence, min_step_s=cfg.min_step_s)
@@ -145,10 +243,9 @@ def _window_request(prompt, w: Window, window_count: int, up, images: dict[str, 
         duration=up.duration, window_index=w.index + 1, window_count=window_count, window_start=w.start, window_end=w.end,
         narration_note=narration, boundaries="\n".join(boundary_lines), intervals="\n\n".join(interval_lines),
     )
-    by_number = sorted(chosen.items(), key=lambda kv: kv[1])
     return LLMRequest(
         task=TASK, system=system, user=user, schema=SegmentWindowOutput, prompt_version=prompt.version,
-        images=[images[iid] for iid, _ in by_number],
+        images=image_paths,
         context={"window": {"index": w.index, "start": w.start, "end": w.end}, "duration": up.duration,
                  "min_step_s": cfg.min_step_s, "use_gesture_text": with_gestures, "intervals": ctx_intervals},
     )
