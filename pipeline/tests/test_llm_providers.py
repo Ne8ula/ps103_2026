@@ -29,7 +29,7 @@ def completion(content: str) -> dict:
 def provider_with(monkeypatch, responses: list[httpx.Response], bodies: list[dict]) -> ChatProvider:
     monkeypatch.setenv("GEMINI_API_KEY", "test-key")
     p = make_provider(Config.load(overrides={"llm": {"provider": "gemini", "min_interval_s": 0}}))
-    assert isinstance(p, ChatProvider) and p.label == "gemini:gemini-3.8-flash"
+    assert isinstance(p, ChatProvider) and p.label == "gemini:gemini-3.6-flash"
     queue = list(responses)
 
     def handler(request: httpx.Request) -> httpx.Response:
@@ -59,7 +59,7 @@ def test_structured_output_request_and_parse(monkeypatch, tmp_path):
     out = p.generate(request(tmp_path))
     assert out == Answer(title="Rinse", seconds=None)
     body = bodies[0]
-    assert body["model"] == "gemini-3.8-flash"
+    assert body["model"] == "gemini-3.6-flash"
     assert body["response_format"]["type"] == "json_schema" and body["response_format"]["json_schema"]["strict"] is True
     user = body["messages"][1]["content"]
     assert user[0] == {"type": "text", "text": "USER"} and user[1]["image_url"]["url"].startswith("data:image/jpeg;base64,")
@@ -92,13 +92,13 @@ def test_missing_key_is_a_clear_error(monkeypatch):
 def test_auto_picks_gemini_when_only_its_key_is_set(monkeypatch):
     monkeypatch.setenv("GEMINI_API_KEY", "k")
     p = make_provider(Config.load(overrides={"llm": {"provider": "auto"}}))
-    assert p.label == "gemini:gemini-3.8-flash"
+    assert p.label == "gemini:gemini-3.6-flash"
 
 
 def test_replay_serves_cache_and_refuses_misses(monkeypatch, tmp_path):
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)  # replay never needs a key
     replay = make_provider(Config.load(overrides={"llm": {"provider": "gemini", "replay": True}}))
-    assert isinstance(replay, ReplayProvider) and replay.label == "gemini:gemini-3.8-flash"
+    assert isinstance(replay, ReplayProvider) and replay.label == "gemini:gemini-3.6-flash"
     req = LLMRequest(task="t", system="S", user="U", schema=Answer)
     with pytest.raises(LLMError, match="replay mode"):
         CachedLLM(replay, tmp_path).call(req)
@@ -107,6 +107,23 @@ def test_replay_serves_cache_and_refuses_misses(monkeypatch, tmp_path):
         def generate(self, request):
             return Answer(title="live", seconds=1)
 
-    recorded, key = CachedLLM(Live("gemini", "gemini-3.8-flash"), tmp_path).call(req)
+    recorded, key = CachedLLM(Live("gemini", "gemini-3.6-flash"), tmp_path).call(req)
     replayed, key2 = CachedLLM(replay, tmp_path).call(req)
     assert key2 == key and replayed == recorded
+
+
+def test_overloaded_model_falls_back_to_next(monkeypatch, tmp_path):
+    bodies: list[dict] = []
+    p = provider_with(monkeypatch, [
+        httpx.Response(503, json={"error": {"message": "overloaded"}}),
+        httpx.Response(200, json=completion('{"title": "Rinse", "seconds": null}')),
+    ], bodies)
+    assert p.generate(request(tmp_path)).title == "Rinse"
+    assert [b["model"] for b in bodies] == ["gemini-3.6-flash", "gemini-3.5-flash"]
+    assert p.served_by == "gemini-3.5-flash" and p.label == "gemini:gemini-3.6-flash"
+
+    bodies.clear()
+    p.queue.extend([httpx.Response(503, json={})] * 4)
+    with pytest.raises(LLMError, match="all models unavailable"):
+        p.generate(request(tmp_path))
+    assert len(bodies) == 4

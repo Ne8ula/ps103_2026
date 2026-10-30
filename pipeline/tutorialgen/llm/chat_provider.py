@@ -18,18 +18,26 @@ from .base import LLMError, LLMProvider, LLMRequest, T
 
 log = logging.getLogger(__name__)
 
+# Tried in order when the primary model stays overloaded (503/timeout) after retries.
+FALLBACKS: dict[str, tuple[str, ...]] = {
+    "gemini": ("gemini-3.5-flash", "gemini-3-flash-preview", "gemini-3.1-flash-lite"),
+}
+
 # name -> (base_url, api key env var, default model)
 PRESETS: dict[str, tuple[str, str, str]] = {
-    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai/", "GEMINI_API_KEY", "gemini-3.8-flash"),
+    "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai/", "GEMINI_API_KEY", "gemini-3.6-flash"),
     "ollama": ("http://localhost:11434/v1/", "OLLAMA_API_KEY", "qwen2.5vl:3b"),
 }
 
 
 class ChatProvider(LLMProvider):
     def __init__(self, name: str, model: str, base_url: str, api_key_env: str,
-                 timeout_s: float = 120, min_interval_s: float = 0.0, max_retries: int = 6):
+                 timeout_s: float = 120, min_interval_s: float = 0.0, max_retries: int = 3,
+                 fallback_models: tuple[str, ...] = ()):
         super().__init__(model)
         self.name = name
+        self.fallback_models = tuple(m for m in fallback_models if m != model)
+        self.served_by: str | None = None  # model that answered the last request (cache provenance)
         from openai import OpenAI
 
         key = os.environ.get(api_key_env) or ("ollama" if name == "ollama" else None)
@@ -56,43 +64,55 @@ class ChatProvider(LLMProvider):
         return [{"role": "system", "content": request.system + system_extra}, {"role": "user", "content": content}]
 
     def generate(self, request: LLMRequest[T]) -> T:
-        from openai import BadRequestError, OpenAIError
+        from openai import APIConnectionError, APITimeoutError, InternalServerError, OpenAIError
+
+        models = (self.model, *self.fallback_models)
+        for i, model in enumerate(models):
+            try:
+                result = self._generate_with(request, model)
+                self.served_by = model
+                return result
+            except (InternalServerError, APITimeoutError, APIConnectionError) as exc:
+                if i + 1 < len(models):
+                    log.warning("%s:%s unavailable for %s (%s); falling back to %s",
+                                self.name, model, request.task, type(exc).__name__, models[i + 1])
+                    continue
+                raise LLMError(f"{self.label} failed on {request.task} (all models unavailable): {exc}") from exc
+            except OpenAIError as exc:
+                raise LLMError(f"{self.name}:{model} failed on {request.task}: {exc}") from exc
+        raise AssertionError("unreachable")
+
+    def _generate_with(self, request: LLMRequest[T], model: str) -> T:
+        from openai import BadRequestError
 
         if not self._json_mode_only:
             self._throttle()
             try:
                 completion = self.client.chat.completions.parse(
-                    model=self.model, messages=self._messages(request), response_format=request.schema)
+                    model=model, messages=self._messages(request), response_format=request.schema)
                 parsed = completion.choices[0].message.parsed
                 if parsed is not None:
                     return parsed
-                log.warning("%s returned no parsed output for %s; retrying in JSON mode", self.label, request.task)
+                log.warning("%s:%s returned no parsed output for %s; retrying in JSON mode", self.name, model, request.task)
             except BadRequestError as exc:
-                log.warning("%s rejected the JSON schema for %s (%s); switching to JSON mode", self.label, request.task, exc)
+                log.warning("%s:%s rejected the JSON schema for %s (%s); switching to JSON mode", self.name, model, request.task, exc)
                 self._json_mode_only = True
-            except OpenAIError as exc:
-                raise LLMError(f"{self.label} failed on {request.task}: {exc}") from exc
-        return self._generate_json_mode(request)
+        return self._generate_json_mode(request, model)
 
-    def _generate_json_mode(self, request: LLMRequest[T]) -> T:
-        from openai import OpenAIError
-
+    def _generate_json_mode(self, request: LLMRequest[T], model: str) -> T:
         schema = json.dumps(request.schema.model_json_schema())
         extra = ("\n\nReply with a single JSON object only, no prose or code fences, matching this JSON schema:\n" + schema)
         messages = self._messages(request, extra)
         for attempt in range(2):
             self._throttle()
-            try:
-                completion = self.client.chat.completions.create(
-                    model=self.model, messages=messages, response_format={"type": "json_object"})
-            except OpenAIError as exc:
-                raise LLMError(f"{self.label} failed on {request.task}: {exc}") from exc
+            completion = self.client.chat.completions.create(
+                model=model, messages=messages, response_format={"type": "json_object"})
             text = (completion.choices[0].message.content or "").strip().removeprefix("```json").removesuffix("```")
             try:
                 return request.schema.model_validate_json(text)
             except ValidationError as exc:
                 if attempt:
-                    raise LLMError(f"{self.label} returned invalid JSON for {request.task}: {exc}") from exc
+                    raise LLMError(f"{self.name}:{model} returned invalid JSON for {request.task}: {exc}") from exc
                 messages = messages + [{"role": "assistant", "content": text},
                                        {"role": "user", "content": f"That JSON did not match the schema: {exc}. Reply with corrected JSON only."}]
         raise AssertionError("unreachable")

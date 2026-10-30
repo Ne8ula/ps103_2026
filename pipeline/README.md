@@ -17,7 +17,7 @@ python3 -m venv ../.venv && ../.venv/bin/pip install -e '.[dev]'
 | Provider | Set | Notes |
 |---|---|---|
 | `openai` | `OPENAI_API_KEY` | Responses API; default model `gpt-5.4-mini` |
-| `gemini` | `GEMINI_API_KEY` (free key from Google AI Studio) | OpenAI-compatible endpoint; default `gemini-3.8-flash`; requests spaced 6 s apart for free-tier limits. The free tier's content is used to improve Google's products, so use it only with public material |
+| `gemini` | `GEMINI_API_KEY` (free key from Google AI Studio) | OpenAI-compatible endpoint; default `gemini-3.6-flash`; requests spaced 6 s apart for free-tier limits. The free tier's content is used to improve Google's products, so use it only with public material |
 | `ollama` | a local Ollama server | Offline and private; default `qwen2.5vl:3b` |
 | `chat` | `llm.base_url`, `llm.model`, `llm.api_key_env` | Any other OpenAI-compatible endpoint |
 

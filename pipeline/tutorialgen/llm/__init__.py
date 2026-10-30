@@ -30,6 +30,7 @@ class LLMSettings(BaseModel):
     base_url: str | None = None         # "chat" provider: any OpenAI-compatible endpoint
     api_key_env: str = "OPENAI_API_KEY"
     min_interval_s: float | None = None  # spacing between requests (free-tier RPM limits)
+    fallback_models: list[str] | None = None  # None = preset fallbacks (gemini); [] disables
 
 
 def _resolve(s: LLMSettings) -> str:
@@ -43,7 +44,7 @@ def _resolve(s: LLMSettings) -> str:
 
 
 def make_provider(config: Config) -> LLMProvider:
-    from .chat_provider import PRESETS, ChatProvider, ReplayProvider
+    from .chat_provider import FALLBACKS, PRESETS, ChatProvider, ReplayProvider
 
     s = config.section("llm", LLMSettings)
     provider = _resolve(s)
@@ -68,7 +69,8 @@ def make_provider(config: Config) -> LLMProvider:
 
         return OpenAIProvider(model, s.timeout_s)
     interval = s.min_interval_s if s.min_interval_s is not None else (6.0 if provider == "gemini" else 0.0)
-    return ChatProvider(provider, model, base_url, key_env, s.timeout_s, interval)
+    fallbacks = tuple(s.fallback_models) if s.fallback_models is not None else FALLBACKS.get(provider, ())
+    return ChatProvider(provider, model, base_url, key_env, s.timeout_s, interval, fallback_models=fallbacks)
 
 
 class CachedLLM:
@@ -99,6 +101,7 @@ class CachedLLM:
                     "task": request.task,
                     "provider": self.provider.label,
                     "prompt_version": request.prompt_version,
+                    "served_by": getattr(self.provider, "served_by", None) or self.provider.model,
                     "system": request.system,
                     "user": request.user,
                     "images": [str(p) for p in request.images],
