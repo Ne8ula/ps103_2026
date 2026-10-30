@@ -35,8 +35,25 @@ def _square(cx: float, cy: float, s: float) -> list[float]:
     return [round(x0, 5), round(y0, 5), round(x0 + s, 5), round(y0 + s, 5)]
 
 
-def plan(step: Step, tl: Timeline | None, cuts: list[float], cfg: FocusConfig) -> list[CropSegment]:
-    """One CropSegment per (sub-step x shot) piece of the step, in time order, covering [start, end]."""
+def inside_content(rect: list[float], content: list[float] | None) -> list[float]:
+    """Shift a zoomed crop into the picture area (off letterbox bars) on each axis where it fits."""
+    if content is None or is_full(rect):
+        return rect
+    s = rect[2] - rect[0]
+    x0, y0 = rect[0], rect[1]
+    if s <= content[2] - content[0]:
+        x0 = min(max(x0, content[0]), content[2] - s)
+    if s <= content[3] - content[1]:
+        y0 = min(max(y0, content[1]), content[3] - s)
+    return [round(x0, 5), round(y0, 5), round(x0 + s, 5), round(y0 + s, 5)]
+
+
+def plan(step: Step, tl: Timeline | None, cuts: list[float], cfg: FocusConfig,
+         content: list[float] | None = None) -> list[CropSegment]:
+    """One CropSegment per (sub-step x shot) piece of the step, in time order, covering [start, end].
+
+    ``content``: the picture area inside letterbox bars; zoomed crops are shifted into it when they fit.
+    """
     # Steps without sub-steps (drafted before sub-steps existed) keep the full frame: no focus was chosen.
     phases = step.substeps or [SubStep(start=step.start, end=step.end, caption=step.title, focus=FULL, focus_source="fallback")]
     out: list[CropSegment] = []
@@ -60,7 +77,7 @@ def plan(step: Step, tl: Timeline | None, cuts: list[float], cfg: FocusConfig) -
                     if fitted is None:
                         reason += f"{bid} fills the frame; "
                         break
-                    rect, reason = fitted, reason + f"{bid} (coverage {r.coverage:.2f})"
+                    rect, reason = inside_content(fitted, content), reason + f"{bid} (coverage {r.coverage:.2f})"
                     break
                 if rect is FULL_RECT:
                     reason += "full frame"

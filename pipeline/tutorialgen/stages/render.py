@@ -27,7 +27,7 @@ from typing import Literal
 import numpy as np
 from pydantic import BaseModel
 
-from ..focus import FocusConfig, load_cuts, load_timeline
+from ..focus import FocusConfig, content_box, load_cuts, load_timeline
 from ..focus.crop import CropTrack, apply_crop, is_full, plan, to_crop
 from ..project import Project, now_iso
 from ..render import cards
@@ -159,6 +159,7 @@ def run(ctx: StageContext) -> None:
     track = HandTrack(hand_frames, tolerance=cfg.hand_tolerance_s) if (cfg.overlay or zoom) and hand_frames else None
     timeline = load_timeline(p, ctx.config, hand_frames) if zoom else None
     cuts = load_cuts(p)
+    content = content_box(p.path(meta.video_path)) if zoom and focus.avoid_letterbox else None
     codec = pick_encoder(ctx.config.device, cfg.encoder)
     log.info("render %d steps at %dx%d %.3g fps with %s%s%s", total, W, H, fps, codec,
              f", {len(hand_frames)} hand samples" if track else "", ", focus crop" if zoom else "")
@@ -201,7 +202,7 @@ def run(ctx: StageContext) -> None:
                                                     max_safety=cfg.max_safety_callouts)
             piece.overlays = [_overlay(c, notes, W, H) for c in step_callouts[step.id]]
         if zoom:
-            crop_plans[step.id] = plan(step, timeline, cuts, focus)
+            crop_plans[step.id] = plan(step, timeline, cuts, focus, content)
             piece.crop = CropTrack(crop_plans[step.id], focus)
         pieces.append(piece)
     if cfg.include_cards:

@@ -49,6 +49,7 @@ class FocusConfig(BaseModel):
     min_crop_frac: float = Field(0.4, description="render: crop width at least this fraction of the frame")
     pan_s: float = Field(0.6, description="render: eased pan between sub-steps within a shot")
     contain_pad: float = Field(0.03, description="render: per-frame safety margin keeping every drawn hand inside the crop")
+    avoid_letterbox: bool = Field(True, description="render: shift zoomed crops off black letterbox/pillarbox bars when they fit")
     contain_ramp_s: float = Field(0.4, description="render: when a hand nears the crop edge, open the crop over this long before (and close after)")
 
 

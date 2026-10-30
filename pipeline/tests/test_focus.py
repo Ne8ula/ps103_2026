@@ -135,6 +135,27 @@ def test_contain_never_crops_a_hand_out():
     assert to_crop(lm, rect)[0, :2] == pytest.approx([0.5, 0.5])
 
 
+def test_letterbox_is_detected_and_zoomed_crops_avoid_it(tmp_path):
+    import cv2
+
+    from tutorialgen.focus import content_box
+    from tutorialgen.focus.crop import inside_content
+
+    path = tmp_path / "lb.mp4"
+    out = cv2.VideoWriter(str(path), cv2.VideoWriter_fourcc(*"mp4v"), 10, (160, 120))
+    for k in range(20):
+        f = np.zeros((120, 160, 3), np.uint8)
+        f[15:105] = 60 + 5 * k  # picture rows 15..104: bars of 15 px top and bottom
+        out.write(f)
+    out.release()
+    box = content_box(path)
+    assert box[0] == 0 and box[2] == 1 and box[1] == pytest.approx(15 / 120, abs=0.02) and box[3] == pytest.approx(105 / 120, abs=0.02)
+    content = [0.0, 0.125, 1.0, 0.875]
+    assert inside_content([0.1, 0.0, 0.6, 0.5], content) == [0.1, 0.125, 0.6, 0.625]  # moved off the top bar
+    assert inside_content([0.1, 0.05, 0.9, 0.85], content)[1] == pytest.approx(0.05)  # taller than the picture: left as is
+    assert inside_content([0.0, 0.0, 1.0, 1.0], content) == [0.0, 0.0, 1.0, 1.0]  # full frame untouched
+
+
 def test_containment_is_eased_but_never_violated():
     seg = CropSegment(start=0, end=2, rect=[0.3, 0.3, 0.7, 0.7], focus="B1", reason="", cut_before=True)
     track = CropTrack([seg], FocusConfig())
