@@ -12,3 +12,4 @@ __pycache__/
 *.egg-info/
 pipeline/models/
 .env
+.claude/worktrees/

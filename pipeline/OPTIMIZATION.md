@@ -1,6 +1,6 @@
 # Structured AI Engineering Plan
 
-Techniques to improve each stage, beyond what is built today. Status: **A** = in progress by the RAG agent, **B** = in progress by the steps/render agent, blank = not started. Every technique is measured with `tutorialgen.eval` before it is kept.
+Techniques to improve each stage, beyond what is built today. Status: **done** = merged, **A** = in progress by the RAG agent, **B** = in progress by the steps/render agent, blank = not started. Every technique is measured with `tutorialgen.eval` before it is kept.
 
 The common pattern: let the LLM make **small, typed, verifiable choices**, and let code do the bookkeeping. Wherever possible the model picks from options code generated (ids, enums, boxes), cites evidence by id, and has its output checked before it is used.
 
@@ -46,8 +46,8 @@ The common pattern: let the LLM make **small, typed, verifiable choices**, and l
 
 | Technique | What it fixes | Status |
 |---|---|---|
-| Faceted sub-queries, sentence-id citations, neighbour expansion, typed claims, extracted SOP procedure | Retrieval misses; quote-mismatch drops | A |
-| **Cross-encoder reranking** of the fused top 30 (`BAAI/bge-reranker-base` via fastembed, local and free) | Weak dense ranks (§2-301.12 is rank 21 for "rinse" today) | |
+| Faceted sub-queries, sentence-id citations, neighbour expansion, typed claims, extracted SOP procedure | Retrieval misses; quote-mismatch drops (§2-301.12 mean rank 12.5 → 4.8) | done |
+| **Cross-encoder reranking** of the fused top 30 (`BAAI/bge-reranker-base` via fastembed, local and free) | Weak dense ranks | done (ms-marco-MiniLM-L-6-v2) |
 | **Contextual chunk headers**: prepend document > chapter > section path to each chunk before embedding | Chunks that are meaningless without their heading | |
 | **Obligation table at index time**: extract atomic requirements (modality shall/must/should, action, object, parameter + unit, conditions, exceptions, citation) once per document; match steps to requirements, not raw chunks | Compliance becomes a structured comparison, with conflicts computed in code where values are numeric | |
 | **Entailment check per note** (supports / contradicts / not addressed), separate from generation | Notes that cite real text but misstate it | |
