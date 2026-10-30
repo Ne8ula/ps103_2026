@@ -109,14 +109,18 @@ def run(args) -> dict:
 
     rankings = _rankings(ctx, p)
     calls = [json.loads(f.read_text()) for f in sorted(p.path("llm_cache").glob("*.json"))] if p.exists("llm_cache") else []
-    proposed = sum(_count_citations(c["response"]) for c in calls if c["task"].startswith("compliance"))
-    cite_drops = sum(bool(_CITE_DROP.search(d)) for d in report.dropped)
+    stats = getattr(report, "citation_stats", None) or {}
+    if stats:
+        proposed, cite_drops = stats["proposed_citations"], stats["invalid_citations"]
+    else:  # legacy report: count from the recorded responses and the drop messages
+        proposed = sum(_count_citations(c["response"]) for c in calls if c["task"].startswith("compliance"))
+        cite_drops = sum(bool(_CITE_DROP.search(d)) for d in report.dropped)
 
     steps_out = []
     for sc in report.steps:
         ranking = rankings.get(sc.step_id, [])
         rank = next((i + 1 for i, cid in enumerate(ranking) if cid in target_ids), None)
-        pinned = set(getattr(sc, "sop_chunk_ids", None) or [])
+        pinned = set(getattr(sc, "context_chunk_ids", None) or [])
         steps_out.append({
             "step_id": sc.step_id,
             "target_rank": rank,
@@ -148,6 +152,8 @@ def run(args) -> dict:
         "steps_citing_target": sum(s["cites_target"] for s in steps_out if s["step_id"] != CONTROL_STEP),
         "mean_target_rank": _mean([s["target_rank"] for s in steps_out if s["step_id"] != CONTROL_STEP]),
         "missing_step_notes": [n.text for n in report.global_notes],
+        "sop_procedure": [f"{p.id} [{p.status}: {', '.join(p.video_step_ids)}] {p.action}"
+                          for p in getattr(report, "sop_procedure", [])],
     }
     if args.save_index and not args.index:
         shutil.copytree(p.path(compliance_stage.INDEX_DIR), args.save_index, dirs_exist_ok=True)

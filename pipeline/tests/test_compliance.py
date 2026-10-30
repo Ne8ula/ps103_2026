@@ -11,9 +11,9 @@ from tutorialgen.config import Config
 from tutorialgen.llm import CachedLLM, make_provider
 from tutorialgen.project import Project
 from tutorialgen.rag import (
-    DocSource, EmbeddingSettings, HybridRetriever, MissingStepDraft, MissingStepsOutput, QuoteRef, StepNoteDraft,
-    StepNotesOutput, chunk_blocks, load_document, load_or_build_index, make_embedder, quote_in_text, step_query,
-    validate_notes,
+    DocSource, EmbeddingSettings, Hit, HybridRetriever, ProcedureCoverageOutput, SentenceRef, Shown, SopProcedureOutput,
+    StepFinding, StepFindingsOutput, chunk_blocks, chunk_sentences, expand_neighbours, format_chunk, load_document,
+    load_or_build_index, make_embedder, quote_in_text, step_facets, step_query, validate_findings,
 )
 from tutorialgen.rag.embeddings import HashEmbedder
 from tutorialgen.rag.loaders import heading_of, load_text, pages_to_blocks
@@ -169,50 +169,110 @@ def test_chunker_sections_sizes_overlap():
 # ---- citation guardrail -------------------------------------------------------------------------
 
 
-def test_quote_matching_and_validation():
-    chunk = DocChunk(id="d01:3", doc_id="d01", doc_name="SOP", page=4, section="3. Handwashing",
-                     text="(3) Rub hands together vigorously for at least 20 seconds,\nincluding the backs of the hands;")
-    assert quote_in_text("rub hands together  VIGOROUSLY for at least 20 seconds", chunk.text)
-    assert quote_in_text("“Rub hands together vigorously”", chunk.text)
-    assert not quote_in_text("rub hands for 30 seconds", chunk.text)
-    assert not quote_in_text("hands", chunk.text)  # too short to count
+def test_quote_matching():
+    text = "(3) Rub hands together vigorously for at least 20 seconds,\nincluding the backs of the hands;"
+    assert quote_in_text("rub hands together  VIGOROUSLY for at least 20 seconds", text)
+    assert quote_in_text("“Rub hands together vigorously”", text)
+    assert not quote_in_text("rub hands for 30 seconds", text)
+    assert not quote_in_text("hands", text)  # too short to count
 
-    drafts = [
-        StepNoteDraft(kind="requirement", severity="warning", text="Rub for at least 20 seconds.",
-                      citations=[QuoteRef(chunk_id="d01:3", quote="for at least 20 seconds, including the backs")]),
-        StepNoteDraft(kind="caution", severity="info", text="Made up.",
-                      citations=[QuoteRef(chunk_id="d09:1", quote="for at least 20 seconds")]),
-        StepNoteDraft(kind="caution", severity="info", text="Paraphrase.",
-                      citations=[QuoteRef(chunk_id="d01:3", quote="scrub for twenty seconds")]),
-        StepNoteDraft(kind="requirement", severity="critical", text="Use water at 38 C.",
-                      citations=[QuoteRef(chunk_id="d01:3", quote="including the backs of the hands")]),
-        StepNoteDraft(kind="conflict", severity="critical", text="The step shows 5 seconds; at least 20 are required.",
-                      citations=[QuoteRef(chunk_id="[d01:3]", quote="vigorously for at least 20 seconds"),
-                                 QuoteRef(chunk_id="d01:7", quote="anything")]),
-    ]
-    res = validate_notes(drafts, [chunk], "s03", "c-s03", "Rub hands for 5 seconds", llm_call="k")
+
+HAND_CHUNK = DocChunk(id="d01:3", doc_id="d01", doc_name="SOP", page=4, section="3. Handwashing",
+                      text="3. Handwashing\nEmployees shall follow these steps: (1) Rinse under running warm water; "
+                           "(2) Apply soap; (3) Rub hands together vigorously for at least 20 seconds, including the "
+                           "backs of the hands; (4) Rinse thoroughly.")
+OTHER_CHUNK = DocChunk(id="d01:9", doc_id="d01", doc_name="SOP", page=9, text="Gloves are changed every 4 hours. Aprons are washed daily.")
+
+
+def finding(kind="requirement", cites=(("d01:3", [5]),), text="Rub vigorously.", sop=None, video=None) -> StepFinding:
+    return StepFinding(citations=[SentenceRef(chunk_id=c, sentence_ids=ids) for c, ids in cites], kind=kind,
+                       requirement_type="duration", step_field="duration", sop_value=sop, video_value=video,
+                       severity="warning", text=text)
+
+
+def test_structured_context_numbers_sentences():
+    sents = chunk_sentences(HAND_CHUNK)
+    assert sents[0] == "3. Handwashing" and sents[2] == "(1) Rinse under running warm water;"
+    assert sents[4].startswith("(3) Rub hands together")
+    record = format_chunk(HAND_CHUNK)
+    assert record.startswith('<chunk id="d01:3" document="SOP" pages="4" section="3. Handwashing">')
+    assert "[S5] (3) Rub hands together" in record and record.endswith("</chunk>")
+    assert format_chunk(HAND_CHUNK, only={3}).count("[S") == 1
+
+
+def test_sentence_citations_are_checked_and_quotes_derived():
+    shown = Shown()
+    shown.add(HAND_CHUNK)
+    shown.add(OTHER_CHUNK, only={1})  # e.g. a document procedure step: only its sentence was shown
+    step = "Rub hands for 5 seconds"
+    res = validate_findings([
+        finding(cites=(("d01:3", [5, 6]),)),                                  # ok: one run -> one citation
+        finding(cites=(("d09:1", [1]),), text="Made up."),                    # chunk not shown
+        finding(cites=(("d01:3", [42]),), text="Bad id."),                    # sentence does not exist
+        finding(cites=(("d01:9", [2]),), text="Aprons."),                     # sentence not shown
+        finding(cites=(("d01:3", [4]),), text="Use water at 38 C."),          # invented number
+        finding("conflict", (("[d01:3]", [5]), ("d01:9", [1])), "The step shows 5 seconds; at least 20 are required.",
+                sop="at least 20 seconds", video="5 seconds"),
+        finding("conflict", (("d01:3", [5]),), "Too short.", sop="at least 30 seconds", video="5 seconds"),
+        finding("conflict", (("d01:3", [5]),), "Too short.", sop="at least 20 seconds", video="10 seconds"),
+    ], shown, "s03", step, llm_call="k")
     assert [(n.id, n.kind) for n in res.notes] == [("c-s03-1", "requirement"), ("c-s03-2", "conflict")]
-    assert res.notes[1].citations[0].chunk_id == "d01:3" and len(res.notes[1].citations) == 1
-    assert res.notes[0].citations[0].page == 4 and res.notes[0].llm_call == "k"
-    assert len(res.dropped) == 6  # 3 bad citations + 3 dropped notes (no citations x2, invented number)
+    first, conflict = res.notes
+    assert [(c.chunk_id, c.sentence_ids) for c in first.citations] == [("d01:3", [5, 6])]
+    assert first.citations[0].quote.startswith("(3) Rub hands") and first.citations[0].quote.endswith("Rinse thoroughly.")
+    assert all(quote_in_text(c.quote, HAND_CHUNK.text) for c in first.citations)
+    assert first.citations[0].page == 4 and first.llm_call == "k" and first.requirement_type == "duration"
+    assert [c.chunk_id for c in conflict.citations] == ["d01:3", "d01:9"]
+    assert conflict.sop_value == "at least 20 seconds" and conflict.video_value == "5 seconds"
+    assert res.proposed_citations == 9 and res.invalid_citations == 3
     assert any("['38']" in d for d in res.dropped)
-
-    missing = validate_notes([MissingStepDraft(after_step_id="s04", severity="warning", text="Dry hands.",
-                                               citations=[QuoteRef(chunk_id="d01:3", quote="including the backs of the hands")])],
-                             [chunk], None, "c-global", "")
-    assert missing.notes[0].kind == "missing_step" and missing.notes[0].after_step_id == "s04"
+    assert any("sop_value numbers ['30']" in d for d in res.dropped)
+    assert any("video_value numbers ['10']" in d for d in res.dropped)
 
 
 def test_llm_output_schemas_are_openai_strict_compatible():
     pytest.importorskip("openai")
     from openai.lib._pydantic import to_strict_json_schema
 
-    for model in (StepNotesOutput, MissingStepsOutput):
+    for model in (StepFindingsOutput, SopProcedureOutput, ProcedureCoverageOutput):
         schema = to_strict_json_schema(model)
         for d in [schema, *schema.get("$defs", {}).values()]:
             if d.get("type") == "object":
                 assert d["additionalProperties"] is False
                 assert set(d["required"]) == set(d["properties"])
+                for prop in d["properties"].values():
+                    assert "default" not in prop
+                    assert "anyOf" not in prop or all("$ref" not in a for a in prop["anyOf"])  # no unions of objects
+
+
+def test_facets_and_neighbour_expansion():
+    st = Step(id="s03", index=2, start=0, end=4, title="Scrub hands", instruction="Rub hands together for 5 seconds.",
+              tools=["nail brush"], materials=["soap"], cautions=["Do not use hot water."], confidence=0.9)
+    facets = {f.name: f for f in step_facets(st, "Wet. Scrub. Rinse.")}
+    assert list(facets) == ["action", "objects", "quantities", "safety", "procedure"]
+    assert facets["objects"].query == "Scrub hands: nail brush, soap" and "5 seconds" in facets["quantities"].query
+    assert facets["procedure"].weight < facets["action"].weight
+    assert "procedure" not in {f.name for f in step_facets(st, None, {"procedure": 0})}
+
+    def chunk(n, section, text="Body text."):
+        return DocChunk(id=f"d01:{n}", doc_id="d01", doc_name="SOP", section=section, text=text)
+
+    chunks = [chunk(0, "A"), chunk(1, "B", "(1) Rinse; (2) Apply soap;"), chunk(2, "B", "(3) Rub; (4) Rinse."),
+              chunk(3, "C"), chunk(4, "B", "2-4 Other Heading\nText.")]
+    hits = expand_neighbours([Hit(chunks[1], 1.0, 1, 1), Hit(chunks[3], 0.5, 2, 2)], chunks)
+    assert [(h.chunk.id, h.neighbour_of) for h in hits] == [("d01:1", None), ("d01:2", "d01:1"), ("d01:3", None)]
+    assert len(expand_neighbours([Hit(chunks[1], 1.0, 1, 1)], chunks, limit=0)) == 1
+
+
+def test_reference_lists_are_recognised():
+    from tutorialgen.rag.retrieve import looks_like_references
+
+    refs = ("9. De Witt, J.C. 1985. The importance of hand hygiene. Antonie von Leeuwenhoek, Vol. 51, pp. 523-527. "
+            "10. Eckert, D.G., 1989. Indications for alcohol or bland soap. Infect. Control, Vol. 10, pp. 306-311. "
+            "11. Ansari, S.A., 1991. Comparison of cloth, paper and air drying. Am. J. Infect. Cont., Vol.19. No. 5.")
+    assert looks_like_references(refs)
+    assert not looks_like_references(HAND_CHUNK.text)
+    assert not looks_like_references(SOP)
 
 
 # ---- index + retrieval --------------------------------------------------------------------------
@@ -275,11 +335,24 @@ def test_stage_end_to_end_with_conflict_and_missing_step(tmp_path):
     assert "5 seconds" in conflict.text and "at least 20 seconds" in conflict.text
     assert conflict.id.startswith("c-s03-") and conflict.llm_call.startswith("compliance_step-")
 
-    # Every citation points at a retrieved chunk and quotes it verbatim.
+    # Every citation points at a chunk shown for that step and quotes it verbatim, by sentence ids.
     for s in report.steps:
+        assert set(s.retrieved_chunk_ids) <= set(s.context_chunk_ids)
         for n in s.notes:
             for c in n.citations:
-                assert c.chunk_id in s.retrieved_chunk_ids and quote_in_text(c.quote, chunks[c.chunk_id].text)
+                assert c.chunk_id in s.context_chunk_ids and quote_in_text(c.quote, chunks[c.chunk_id].text)
+                assert c.sentence_ids
+    assert report.citation_stats["invalid_citations"] == 0 and report.citation_stats["proposed_citations"] > 0
+
+    # The document procedure was extracted in order, and the video steps were mapped onto it.
+    sop = report.sop_procedure
+    assert report.sop_procedure_title == "3. Handwashing Procedure"
+    assert [p.id for p in sop] == ["P1", "P2", "P3", "P4", "P5", "P6"] and all(p.mandatory for p in sop)
+    assert sop[2].action.startswith("Rub hands together vigorously") and "s03" in sop[2].video_step_ids
+    assert sop[4].status == "missing" and sop[4].action.startswith("Dry hands")
+    assert "P3" in by_step["s03"].sop_step_ids and set(report.procedure_chunk_ids)
+    assert conflict.sop_value == "at least 20 seconds" and conflict.video_value == "5 seconds"
+    assert conflict.requirement_type == "duration"
     # "Wave goodbye" (s06 once drying is skipped) still retrieves chunks, but nothing relevant is said.
     assert by_step["s06"].retrieved_chunk_ids
     assert by_step["s06"].no_relevant_guidance and not by_step["s06"].notes
@@ -323,5 +396,10 @@ def test_food_code_retrieval_with_local_model(tmp_path, sample, monkeypatch):
     assert target, "2-301.12 Cleaning Procedure chunk not found"
     assert target & set(by_step["s03"].retrieved_chunk_ids[:3]), by_step["s03"].retrieved_chunk_ids  # scrub
     assert target & set(by_step["s04"].retrieved_chunk_ids), by_step["s04"].retrieved_chunk_ids  # rinse: in top_k
+    assert target & set(by_step["s06"].retrieved_chunk_ids), by_step["s06"].retrieved_chunk_ids  # tap: re-ranker
+    # The Cleaning Procedure is extracted as the document procedure, so every hand-washing step sees it.
+    assert {c.chunk_id for p in report.sop_procedure for c in p.citations} & target
+    for sid in ("s01", "s02", "s03", "s04", "s05", "s06"):
+        assert target & set(by_step[sid].context_chunk_ids), sid
     assert any(n.kind == "conflict" for n in by_step["s03"].notes)
     print(f"food code: {len(index.chunks)} chunks, stage {elapsed:.0f}s")
