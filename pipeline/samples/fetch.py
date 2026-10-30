@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 import urllib.request
 from pathlib import Path
@@ -22,6 +23,10 @@ def main() -> int:
         req = urllib.request.Request(item["url"], headers={"User-Agent": "tutorialgen-dev/0.1 (research prototype)"})
         with urllib.request.urlopen(req, timeout=120) as resp, open(dest, "wb") as f:
             f.write(resp.read())
+        if md := item.get("markdown"):
+            # Isolated interpreter: the converter reads downloaded HTML.
+            subprocess.run([sys.executable, "-I", str(Path(__file__).with_name("html2md.py")), str(dest),
+                            str(DATA / md), item["url"], item["title"]], check=True)
     return 0
 
 

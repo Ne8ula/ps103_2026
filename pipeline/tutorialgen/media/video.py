@@ -81,21 +81,26 @@ def probe(path: str | Path, count_frames: bool = False) -> ProbeInfo:
         return ProbeInfo(duration, fps, vs.codec_context.width, vs.codec_context.height, frames, True, has_audio, title)
 
 
+def _range(start: float | None, end: float | None) -> list[str]:
+    """Input options selecting one continuous excerpt [start, end) of the source, in seconds."""
+    return (["-ss", f"{start:.3f}"] if start else []) + (["-to", f"{end:.3f}"] if end else [])
+
+
 def normalize(src: Path, dest: Path, fps: float, max_height: int, crf: int = 20, preset: str = "veryfast",
-              keep_audio: bool = True, threads: int = 0) -> None:
+              keep_audio: bool = True, threads: int = 0, start: float | None = None, end: float | None = None) -> None:
     """H.264/yuv420p, constant ``fps``, height <= ``max_height`` (even dims), +faststart; AAC audio if present."""
     vf = f"scale=-2:'min({max_height},trunc(ih/2)*2)':flags=bicubic,fps={fps:.6g},format=yuv420p"
-    args = ["-i", str(src), "-map", "0:v:0", "-vf", vf, "-c:v", "libx264", "-preset", preset, "-crf", str(crf),
+    args = [*_range(start, end), "-i", str(src), "-map", "0:v:0", "-vf", vf, "-c:v", "libx264", "-preset", preset, "-crf", str(crf),
             "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-threads", str(threads)]
     args += ["-map", "0:a:0?", "-c:a", "aac", "-b:a", "128k"] if keep_audio else ["-an"]
     dest.parent.mkdir(parents=True, exist_ok=True)
     run_ffmpeg([*args, str(dest)])
 
 
-def extract_audio(src: Path, dest: Path, rate: int = 16000) -> None:
+def extract_audio(src: Path, dest: Path, rate: int = 16000, start: float | None = None, end: float | None = None) -> None:
     """Mono 16-bit PCM wav at ``rate``."""
     dest.parent.mkdir(parents=True, exist_ok=True)
-    run_ffmpeg(["-i", str(src), "-map", "0:a:0", "-vn", "-ac", "1", "-ar", str(rate), "-c:a", "pcm_s16le", str(dest)])
+    run_ffmpeg([*_range(start, end), "-i", str(src), "-map", "0:a:0", "-vn", "-ac", "1", "-ar", str(rate), "-c:a", "pcm_s16le", str(dest)])
 
 
 def sample_indices(n_frames: int, fps: float, sample_fps: float | None) -> list[int]:

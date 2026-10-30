@@ -25,6 +25,8 @@ class VideoMeta(Artifact):
     has_audio: bool
     video_path: str = Field(description="normalized video, relative to project root")
     audio_path: str | None = Field(default=None, description="16 kHz mono wav, relative to project root")
+    excerpt_start: float | None = Field(default=None, description="source time (s) where the processed excerpt starts; all other times are relative to it")
+    excerpt_end: float | None = None
 
 
 class Hand(Artifact):

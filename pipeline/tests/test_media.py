@@ -72,6 +72,24 @@ def test_ingest_caps_fps_and_height_and_extracts_audio(tmp_path):
         assert w.getnframes() == pytest.approx(16000, rel=0.05)
 
 
+def test_ingest_excerpt_of_long_source(tmp_path):
+    src = tmp_path / "long.mkv"
+    video.run_ffmpeg(["-f", "lavfi", "-i", "testsrc=size=160x120:rate=10:duration=6",
+                      "-f", "lavfi", "-i", "sine=frequency=440:sample_rate=16000:duration=6",
+                      "-c:v", "mjpeg", "-c:a", "pcm_s16le", "-shortest", str(src)])
+    p = project_with_video(src)
+    (p.root / "config.yaml").write_text("ingest:\n  start_s: 2\n  end_s: 4.5\n")
+    runner.run(p, stages=["ingest"])
+    meta = p.read("ingest/meta.json", VideoMeta)
+    assert meta.duration == pytest.approx(2.5, abs=0.15) and (meta.excerpt_start, meta.excerpt_end) == (2.0, 4.5)
+    with wave.open(str(p.path(meta.audio_path))) as w:
+        assert w.getnframes() / w.getframerate() == pytest.approx(2.5, abs=0.15)
+
+    (p.root / "config.yaml").write_text("ingest:\n  start_s: 4\n  end_s: 3\n")
+    with pytest.raises(runner.StageFailed):
+        runner.run(p, stages=["ingest"])
+
+
 def test_ingest_rejects_unknown_settings(tmp_path):
     p = project_with_video(make_video(tmp_path / "clip.avi"))
     (p.root / "config.yaml").write_text("ingest:\n  max_hieght: 480\n")

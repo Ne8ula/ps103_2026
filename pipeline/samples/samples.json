@@ -22,5 +22,14 @@
     "license": "US federal government work, public domain",
     "page": "https://www.fda.gov/food/fda-food-code/food-code-2022",
     "url": "https://www.fda.gov/media/164194/download"
+  },
+  {
+    "file": "bambu-x1-replace-nozzle-wiper.html",
+    "role": "SOP for the X1C wiper-mod livestream (converted to .md by fetch.py)",
+    "title": "Bambu Lab X1 Series: Replace Nozzle Wiper",
+    "license": "Bambu Lab wiki, copyright Bambu Lab; local testing only, not redistributed",
+    "page": "https://wiki.bambulab.com/en/x1/maintenance/replace-nozzle-wiper",
+    "url": "https://wiki.bambulab.com/en/x1/maintenance/replace-nozzle-wiper",
+    "markdown": "bambu-x1-replace-nozzle-wiper.md"
   }
 ]
