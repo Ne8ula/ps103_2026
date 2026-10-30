@@ -22,6 +22,7 @@ $tg questions <project>           # what the system needs from the uploader
 $tg answer <project> q001 "Use warm water"
 $tg run <project>                 # refine -> compliance -> questions -> render re-run; earlier stages are skipped
 $tg status <project>
+$tg serve --port 8000             # HTTP data endpoints; OpenAPI docs at /docs
 ```
 
 `--video` accepts a YouTube (or any yt-dlp) URL or a local file. Projects live in `projects/` (override with `TUTORIALGEN_HOME`).

@@ -112,7 +112,7 @@ class Project:
         return self.manifest.id
 
     def save_manifest(self) -> None:
-        tmp = self.root / "project.json.tmp"
+        tmp = self.root / f"project.json.{uuid.uuid4().hex[:8]}.tmp"
         tmp.write_text(self.manifest.model_dump_json(indent=2))
         tmp.replace(self.root / "project.json")
 
@@ -123,6 +123,9 @@ class Project:
 
     def set_video(self, source: str) -> None:
         """Accept a URL or a local file. Local files are copied into inputs/ so the project is self-contained."""
+        for old in (self.root / "inputs").glob("video.*"):
+            if Path(source).resolve() != old.resolve():
+                old.unlink()
         if re.match(r"^https?://", source):
             self.manifest.video = VideoInput(source=source, kind="url")
         else:

@@ -79,6 +79,14 @@ def cmd_show(args):
     print(json.dumps(json.loads(project.path(args.artifact).read_text()), indent=2))
 
 
+def cmd_serve(args):
+    import uvicorn
+
+    from .api import create_app
+
+    uvicorn.run(create_app(), host=args.host, port=args.port, log_level="debug" if args.verbose else "info")
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="tutorialgen", description=__doc__)
     p.add_argument("-v", "--verbose", action="store_true")
@@ -123,6 +131,11 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("project")
     s.add_argument("artifact", help="e.g. refine/steps.json")
     s.set_defaults(fn=cmd_show)
+
+    s = sub.add_parser("serve", help="run the HTTP data endpoints (OpenAPI docs at /docs)")
+    s.add_argument("--host", default="127.0.0.1")
+    s.add_argument("--port", type=int, default=8000)
+    s.set_defaults(fn=cmd_serve)
     return p
 
 
