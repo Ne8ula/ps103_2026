@@ -6,7 +6,7 @@ from pydantic import Field
 
 from .common import Artifact
 from .compliance import ComplianceNote
-from .steps import Question, Step
+from .steps import ProcedureNote, Question, Step
 
 
 class TutorialStep(Artifact):
@@ -28,4 +28,5 @@ class Tutorial(Artifact):
     steps: list[TutorialStep]
     global_notes: list[ComplianceNote] = []
     open_questions: list[Question] = []
+    procedure_notes: list[ProcedureNote] = Field(default=[], description="whole-procedure facts from uploader answers (refine)")
     artifacts: dict[str, str] = Field(default={}, description="name -> path relative to project root (video, landmarks, gestures, transcript, ...)")
