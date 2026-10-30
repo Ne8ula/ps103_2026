@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import uuid
+
 from .project import Project, now_iso
 from .schemas import Answer, AnswerSet, QuestionSet
 
@@ -24,7 +26,7 @@ def add_answer(project: Project, question_id: str, text: str) -> Answer:
     answers = load_answers(project)
     # A newer answer to the same question replaces the older one.
     answers.answers = [a for a in answers.answers if a.question_id != question_id]
-    answer = Answer(id=f"a-{question_id}-{len(answers.answers) + 1}", question_id=question_id, text=text.strip(), created_at=now_iso())
+    answer = Answer(id=f"a-{question_id}-{uuid.uuid4().hex[:6]}", question_id=question_id, text=text.strip(), created_at=now_iso())
     answers.answers.append(answer)
     project.write(ANSWERS, answers)
     return answer

@@ -16,6 +16,7 @@ class StepSegment(Artifact):
     summary: str
     rationale: str
     confidence: float = Field(ge=0, le=1)
+    llm_calls: list[str] = Field(default=[], description="LLM cache keys of the window call(s) that proposed this segment")
 
 
 class Segmentation(Artifact):
@@ -23,12 +24,15 @@ class Segmentation(Artifact):
 
     segments: list[StepSegment]
     notes: list[str] = []
+    content_start: float | None = Field(default=None, description="start of the covered range (after leading idle)")
+    content_end: float | None = Field(default=None, description="end of the covered range (before trailing idle)")
 
 
 class MissingInfo(Artifact):
     field: Literal["tool", "material", "quantity", "setting", "duration", "purpose", "safety", "order", "outcome", "other"]
     description: str
     blocking: bool
+    key: str | None = Field(default=None, description="stable gap key, e.g. s03:missing:duration; questions map it to a stable question id")
 
 
 class Step(Artifact):
@@ -50,12 +54,33 @@ class Step(Artifact):
     provenance: Provenance = Provenance()
 
 
+class ProcedureNote(Artifact):
+    """A whole-procedure fact from an uploader answer that no single step could absorb."""
+
+    text: str
+    question_id: str | None = None
+    answer_ids: list[str] = []
+
+
+class AppliedAnswer(Artifact):
+    """Record of one answer merged by refine; (answer_id, text) detects a replaced answer."""
+
+    answer_id: str
+    question_id: str
+    text: str
+    step_id: str | None = Field(description="step it was merged into; None = recorded as a procedure note")
+    revision: int
+
+
 class StepList(Artifact):
     """draft/steps.json (revision 0) and refine/steps.json (revision >= 0)"""
 
     revision: int
     steps: list[Step]
     applied_answer_ids: list[str] = []
+    notes: list[ProcedureNote] = []
+    answer_log: list[AppliedAnswer] = []
+    base_hash: str | None = Field(default=None, description="refine only: hash of the draft it was built on")
 
 
 class Question(Artifact):

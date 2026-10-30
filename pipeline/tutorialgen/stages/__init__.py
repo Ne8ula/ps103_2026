@@ -59,7 +59,7 @@ STAGES: dict[str, StageSpec] = {
                   ("candidates",), description="heuristic step-boundary candidates"),
         StageSpec("segment", "segment", ("ingest", "transcribe", "gestures", "candidates"), ("segment/segments.json", "segment/keyframes"),
                   ("segment", "llm", "use_gesture_text"), uses_llm=True, description="LLM groups the video into steps"),
-        StageSpec("draft", "draft", ("segment",), ("draft/steps.json",),
+        StageSpec("draft", "draft", ("segment", "transcribe", "gestures"), ("draft/steps.json",),
                   ("draft", "llm", "use_gesture_text"), uses_llm=True, description="LLM drafts each step with missing-info flags"),
         StageSpec("refine", "refine", ("draft",), ("refine/steps.json",),
                   ("refine", "llm"), inputs=("inputs/answers.json",), uses_llm=True,
