@@ -109,6 +109,7 @@ Integration (wiring A→B→D→C→E end-to-end on the sample video) is done se
 
 - M3–M5 are verified with the deterministic fake LLM, so structure, provenance, the number guard and the question loop work end to end; the *quality* of segmentation, drafted text and questions is unmeasured until GPT-5.4 mini runs.
 - End to end on the SFDPH sample (CPU): ~100 s ingest→refine, ~5 min for the first compliance run (one-time index of the 668-page Food Code), ~45 s for a re-run from segment; answering a question re-runs only refine→render.
+- First live run (30 Oct 2026, Gemini free tier, gemini-3.6-flash with fallback to gemini-3-flash-preview; ~18 calls): 4 steps, boundary F1 0.75 (precision 1.0, recall 0.6; fake LLM: 0.46), 6/6 key facts stated, both expected gaps (water temperature, soap amount) raised, Food Code §2-301.12 cited, 18 compliance notes with 2 dropped by quote validation. Weak spots: SOP missing-step questions ask the uploader for facts the SOP already states; "alternative" advice (door, home towel) merged into rinse/dry. The gesture-text comparison is still pending: the free tier allows 20 requests per model per day.
 - Hands are detected in 54% of sampled frames on the sample; interlocked soapy hands mostly return no detection (reported as not visible, not guessed).
 
 ## Environment Gaps Found (29 Oct 2026)
