@@ -3,11 +3,12 @@
 # No narrated step markers, no edits: boundaries come from what the hands do.
 video: 7787-1g8l4Y (excerpt 2940–3750 s)
 tolerance_s: 5.0
-content: [105.0, 810.0]       # before 105 s he adjusts the camera and tripod
-boundaries: [137.0, 291.0, 349.0, 436.0, 670.0]
+content: [35.0, 810.0]        # before 35 s he only adjusts the camera and tripod
+boundaries: [110.0, 137.0, 291.0, 349.0, 436.0, 670.0]
 optional_boundaries: [192.0, 543.0]   # 192: pilot holes -> widen to 1/8" (same drilling task); 543: talk-only stretch begins
 steps:
-  - {start: 105, end: 137, label: position the printed drilling template on the frame}
+  - {start: 35, end: 110, label: remove the top glass cover and push the toolhead aside}
+  - {start: 110, end: 137, label: position the printed drilling template on the frame}
   - {start: 137, end: 291, label: drill pilot holes (1/16") through the template, then open them to 1/8"}
   - {start: 291, end: 349, label: deburr the holes and vacuum filament debris from the rails}
   - {start: 349, end: 436, label: install backing plate - center M3x6 loose, align outer holes, tighten snug (do not over-tighten)}

@@ -353,3 +353,13 @@ def test_questions_without_compliance_and_low_confidence():
     lc = next(q for q in qs.questions if q.kind == "low_confidence")
     assert lc.answer_type == "choice" and lc.choices
     assert len(qs.questions) <= 8
+
+
+def test_number_guard_names_and_spoken_fractions():
+    from tutorialgen.steps.guards import ungrounded
+
+    assert ungrounded(["Open the 3D printer and fit an M3 screw, then send G28."], "no digits here") == []
+    assert ungrounded(["Use a 1/8 inch bit, then a 1/16 inch bit."], "open them to one-eighth after one-sixteenth") == []
+    assert ungrounded(["Rub for 20s."], "for twenty seconds") == []
+    assert ungrounded(["Rub for 30s."], "for twenty seconds") == ["30"]
+    assert ungrounded(["Use a 1/4 inch bit."], "open them to one-eighth") == ["4 inch"]
