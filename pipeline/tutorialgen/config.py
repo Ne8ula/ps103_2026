@@ -17,6 +17,25 @@ import yaml
 from pydantic import BaseModel
 
 DEFAULTS_PATH = Path(__file__).with_name("defaults.yaml")
+ENV_FILES = (Path(__file__).resolve().parents[2] / ".env", Path(__file__).resolve().parents[1] / ".env")
+
+
+def load_env_files() -> None:
+    """Load KEY=value lines from the repo-root and pipeline/ .env files (gitignored) without overriding
+    variables already set. Entry points call this; tests opt out with TUTORIALGEN_NO_DOTENV."""
+    if os.environ.get("TUTORIALGEN_NO_DOTENV"):
+        return
+    for path in ENV_FILES:
+        if not path.is_file():
+            continue
+        for line in path.read_text().splitlines():
+            line = line.strip().removeprefix("export ").strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip("'\""))
+
+
 M = TypeVar("M", bound=BaseModel)
 
 

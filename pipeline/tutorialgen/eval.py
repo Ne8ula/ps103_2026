@@ -18,6 +18,7 @@ import yaml
 from pydantic import BaseModel
 
 from . import runner
+from .config import load_env_files
 from .project import Project
 from .schemas import ComplianceReport, QuestionSet, StepList
 
@@ -123,6 +124,7 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("labels")
     ap.add_argument("--ablation", action="store_true", help="also score a copy run without gesture text")
     args = ap.parse_args(argv)
+    load_env_files()
     project = Project.load(args.project)
     labels = Labels.model_validate(yaml.safe_load(Path(args.labels).read_text()))
     out = {"with_gesture_text": evaluate(project, labels)}

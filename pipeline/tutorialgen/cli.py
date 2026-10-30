@@ -8,6 +8,7 @@ import logging
 import sys
 
 from . import runner
+from .config import load_env_files
 from .answers import add_answer, load_questions
 from .project import Project
 from .stages import ORDER, STAGES
@@ -143,6 +144,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None):
     args = build_parser().parse_args(argv)
+    load_env_files()
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(levelname)s %(name)s: %(message)s")
     logging.getLogger("httpx").setLevel(logging.WARNING)
     args.fn(args)

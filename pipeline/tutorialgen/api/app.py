@@ -21,6 +21,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, ValidationError
 from starlette.datastructures import UploadFile as StarletteUploadFile
 
+from ..config import load_env_files
 from .. import __version__, runner
 from ..answers import QUESTIONS, add_answer, load_answers
 from ..project import DocumentInput, Project, projects_home
@@ -177,6 +178,7 @@ VIDEO_BODY = {"requestBody": {"required": True, "content": {
 
 
 def create_app(settings: ApiSettings | None = None, jobs: JobManager | None = None) -> FastAPI:
+    load_env_files()
     settings = settings or ApiSettings.from_env()
 
     @asynccontextmanager
