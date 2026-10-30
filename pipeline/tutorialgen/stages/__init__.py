@@ -57,10 +57,10 @@ STAGES: dict[str, StageSpec] = {
                   ("gestures",), description="GestLLM-style landmark -> gesture text at keyframes"),
         StageSpec("candidates", "candidates", ("perception", "transcribe", "gestures"), ("candidates/candidates.json",),
                   ("candidates",), description="heuristic step-boundary candidates"),
-        StageSpec("segment", "segment", ("ingest", "transcribe", "gestures", "candidates"), ("segment/segments.json", "segment/keyframes"),
-                  ("segment", "llm", "use_gesture_text"), uses_llm=True, description="LLM groups the video into steps"),
-        StageSpec("draft", "draft", ("segment", "transcribe", "gestures"), ("draft/steps.json",),
-                  ("draft", "llm", "use_gesture_text"), uses_llm=True, description="LLM drafts each step with missing-info flags"),
+        StageSpec("segment", "segment", ("ingest", "perception", "transcribe", "gestures", "candidates"),
+                  ("segment/segments.json", "segment/keyframes"), ("segment", "llm", "use_gesture_text", "gestures"), uses_llm=True, description="LLM groups the video into steps"),
+        StageSpec("draft", "draft", ("segment", "perception", "transcribe", "gestures"), ("draft/steps.json",),
+                  ("draft", "llm", "use_gesture_text", "gestures", "focus"), uses_llm=True, description="LLM drafts each step with missing-info flags"),
         StageSpec("refine", "refine", ("draft",), ("refine/steps.json",),
                   ("refine", "llm"), inputs=("inputs/answers.json",), uses_llm=True,
                   description="merge uploader answers into affected steps"),
@@ -72,7 +72,7 @@ STAGES: dict[str, StageSpec] = {
                   description="turn gaps into prioritized questions for the uploader"),
         StageSpec("render", "render", ("refine", "compliance", "questions", "perception", "gestures"),
                   ("render/tutorial.json", "render/tutorial.mp4", "render/tutorial.md"),
-                  ("render", "device"), gpu=True, description="tutorial video with hand overlays + text cards, tutorial.json"),
+                  ("render", "device", "focus", "gestures"), gpu=True, description="tutorial video with hand overlays + text cards, tutorial.json"),
     ]
 }
 

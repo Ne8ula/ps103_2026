@@ -10,7 +10,7 @@ import re
 
 from ..llm import LLMRequest, fake_handler
 from .llm_schemas import (DraftStepOutput, MissingItem, PhrasedQuestion, ProposedStep, QuestionsOutput,
-                          RefineStepOutput, SegmentWindowOutput)
+                          RefineStepOutput, SegmentWindowOutput, SubStepOutput)
 
 FAKE = "[fake LLM]"
 CUE_WORDS = {"now", "next", "then", "first", "finally", "after", "start", "begin", "lastly", "second", "third"}
@@ -73,6 +73,32 @@ def fake_segment(req: LLMRequest) -> SegmentWindowOutput:
     return SegmentWindowOutput(steps=steps, notes=notes)
 
 
+EMPHASIS = re.compile(r"\b(between (?:your |the )?fingers|under (?:your |the )?nails|backs? of (?:your |the )?hands|fingertips|wrists|thumbs|palms)\b", re.I)
+
+
+def _fake_substeps(ctx: dict) -> list[SubStepOutput]:
+    """Phases at narration anchors (else evenly spread anchors), captioned from the words spoken there."""
+    anchors = ctx.get("anchors") or [{"id": "a1", "t": ctx["start"], "source": "step start"}]
+    picked = [anchors[0]] + [a for a in anchors[1:] if a["source"].startswith("narration")]
+    if len(picked) == 1 and len(anchors) > 2:
+        picked.append(anchors[len(anchors) // 2])
+    picked = picked[:3]
+    boxes = ctx.get("boxes") or []
+    focus = "B2" if "B2" in boxes else "B1" if "B1" in boxes else "full"
+    segs = ctx.get("speech_segments") or []
+    out = []
+    for n, a in enumerate(picked):
+        nxt = picked[n + 1]["t"] if n + 1 < len(picked) else ctx["end"]
+        said = [s for s in segs if a["t"] - 0.5 <= s["start"] < nxt]
+        words = _words([s["text"] for s in said], 4).rstrip(".,!?")
+        m = next((EMPHASIS.search(s["text"]) for s in said if EMPHASIS.search(s["text"])), None)
+        emph_t = next((s["start"] for s in said if EMPHASIS.search(s["text"])), None)
+        out.append(SubStepOutput(start_s=a["t"], caption=f"{FAKE} {words or ('Continue' if n else 'Begin')}",
+                                 focus_box="full" if n == 0 and len(picked) > 2 else focus,
+                                 emphasis=m.group(1).lower() if m else None, emphasis_s=emph_t if m else None))
+    return out
+
+
 @fake_handler("draft_step")
 def fake_draft(req: LLMRequest) -> DraftStepOutput:
     ctx = req.context
@@ -97,6 +123,7 @@ def fake_draft(req: LLMRequest) -> DraftStepOutput:
     if SETTING_CUES.search(speech) and not re.search(r"\d", speech):
         missing.append(MissingItem(field="setting", description=f"{FAKE} The exact setting or temperature is not stated.", blocking=True))
     return DraftStepOutput(
+        substeps=_fake_substeps(ctx),
         title=title,
         instruction=instruction,
         details=details,

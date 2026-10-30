@@ -20,22 +20,25 @@ import json
 import shutil
 import tempfile
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Literal
 
 import numpy as np
 from pydantic import BaseModel
 
+from ..focus import FocusConfig, content_box, load_cuts, load_timeline
+from ..focus.crop import CropTrack, apply_crop, is_full, plan, to_crop
 from ..project import Project, now_iso
 from ..render import cards
-from ..render.overlay import HandTrack, draw_hands
+from ..render.layout import callouts as build_callouts
+from ..render.overlay import HandTrack, PoseHand, draw_hands
 from ..render.video import Encoder, FrameReader, audio_slice, output_size, pick_encoder, read_audio, write_wav
 from ..schemas.compliance import ComplianceNote, ComplianceReport
 from ..schemas.gestures import GestureTrack
 from ..schemas.media import HandFrame, VideoMeta
 from ..schemas.steps import Question, QuestionSet, Step, StepList
-from ..schemas.tutorial import Tutorial, TutorialStep
+from ..schemas.tutorial import Callout, CropSegment, Tutorial, TutorialStep
 from . import StageContext
 
 
@@ -57,6 +60,20 @@ class RenderConfig(BaseModel):
     encoder: Literal["auto", "libx264", "h264_nvenc"] = "auto"  # auto = nvenc when device is cuda and it works
     audio: bool = True
     audio_rate: int = 48000
+    # Structured layout (uses step.substeps when present; the focus crop is configured in the 'focus' section).
+    substep_captions: bool = True        # caption per sub-step, timed to the clip (else the step caption)
+    progress_bar: bool = True            # segmented step progress across the top of clips, sub-step ticks
+    callouts: bool = True                # tools/materials chip, emphasis chips, safety callouts from compliance notes
+    emphasis_seconds: float = 2.5
+    items_seconds: float = 3.0
+    max_safety_callouts: int = 2
+
+
+@dataclass
+class _Overlay:
+    callout: Callout
+    image: np.ndarray                 # BGRA
+    slot: str                         # "left" | "right"
 
 
 @dataclass
@@ -68,6 +85,9 @@ class _Piece:
     number: int = 0
     src_start: int = 0                # clip: first source frame
     caption: tuple[int, np.ndarray] | None = None
+    sub_captions: list[tuple[float, float, int, np.ndarray]] = field(default_factory=list)  # (start, end, y0, band)
+    overlays: list[_Overlay] = field(default_factory=list)
+    crop: CropTrack | None = None
 
 
 def _load_optional(project: Project, rel: str, model):
@@ -133,10 +153,16 @@ def run(ctx: StageContext) -> None:
     fps = meta.fps or reader.fps or 30.0
     n_src = meta.frame_count or int(round(meta.duration * fps))
     W, H = output_size(src_w, src_h, cfg.max_height)
-    track = HandTrack(hand_frames, tolerance=cfg.hand_tolerance_s) if cfg.overlay and hand_frames else None
+    focus = ctx.config.section("focus", FocusConfig)
+    zoom = focus.enabled and any(s.substeps for s in ordered) and bool(hand_frames)
+    # Hands are needed for the overlay and, with the crop on, to keep every hand inside the crop.
+    track = HandTrack(hand_frames, tolerance=cfg.hand_tolerance_s) if (cfg.overlay or zoom) and hand_frames else None
+    timeline = load_timeline(p, ctx.config, hand_frames) if zoom else None
+    cuts = load_cuts(p)
+    content = content_box(p.path(meta.video_path)) if zoom and focus.avoid_letterbox else None
     codec = pick_encoder(ctx.config.device, cfg.encoder)
-    log.info("render %d steps at %dx%d %.3g fps with %s%s", total, W, H, fps, codec,
-             f", {len(hand_frames)} hand samples" if track else "")
+    log.info("render %d steps at %dx%d %.3g fps with %s%s%s", total, W, H, fps, codec,
+             f", {len(hand_frames)} hand samples" if track else "", ", focus crop" if zoom else "")
 
     def secs(n: int) -> int:
         return max(int(round(n * fps)), 1)
@@ -147,6 +173,8 @@ def run(ctx: StageContext) -> None:
             W, H, title, total, meta.duration, source=meta.source, license=meta.license, uploader=meta.uploader,
             open_questions=len(open_qs))))
     clip_ranges: dict[str, tuple[int, int]] = {}
+    step_callouts: dict[str, list[Callout]] = {}
+    crop_plans: dict[str, list[CropSegment]] = {}
     for k, step in enumerate(ordered, 1):
         notes = notes_by_step.get(step.id, [])
         waiting = _needs_info(step, open_qs, questions is not None)
@@ -161,8 +189,22 @@ def run(ctx: StageContext) -> None:
             log.warning("step %s has an empty time range [%.2f, %.2f]: no clip", step.id, step.start, step.end)
             continue
         clip_ranges[step.id] = (f0, f1)
-        cap = cards.caption_overlay(W, H, k, total, step.title, step.instruction, bool(waiting)) if cfg.caption else None
-        pieces.append(_Piece("clip", f1 - f0, step=step, number=k, src_start=f0, caption=cap))
+        piece = _Piece("clip", f1 - f0, step=step, number=k, src_start=f0)
+        if cfg.caption and cfg.substep_captions and step.substeps:
+            n_sub = len(step.substeps)
+            piece.sub_captions = [(s.start, s.end, *cards.substep_caption(W, H, k, total, step.title, s.caption, bool(waiting),
+                                                                         (j, n_sub)))
+                                  for j, s in enumerate(step.substeps)]
+        elif cfg.caption:
+            piece.caption = cards.caption_overlay(W, H, k, total, step.title, step.instruction, bool(waiting))
+        if cfg.callouts:
+            step_callouts[step.id] = build_callouts(step, notes, emphasis_s=cfg.emphasis_seconds, items_s=cfg.items_seconds,
+                                                    max_safety=cfg.max_safety_callouts)
+            piece.overlays = [_overlay(c, notes, W, H) for c in step_callouts[step.id]]
+        if zoom:
+            crop_plans[step.id] = plan(step, timeline, cuts, focus, content)
+            piece.crop = CropTrack(crop_plans[step.id], focus)
+        pieces.append(piece)
     if cfg.include_cards:
         footer = f"tutorialgen  ·  revision {steps.revision}  ·  {meta.source}"
         outro_texts = [q.text for q in open_qs[:6]] + [n.text for n in (compliance.global_notes[:3] if compliance else [])]
@@ -221,19 +263,12 @@ def run(ctx: StageContext) -> None:
                         clip_wav = write_wav(tmp / f"{step.id}.wav", audio_slice(
                             src_audio, samples_at(piece.src_start), samples_at(piece.frames)), rate)
                     clip_enc = Encoder(tmp / f"{step.id}.mp4", W, H, fps, clip_wav, **enc_args)
+                rects = _crop_rects(piece, track, fps, focus.contain_ramp_s)
                 try:
                     for i in range(piece.frames):
                         src_index = piece.src_start + i
-                        frame = reader.read(src_index)
-                        frame = np.zeros((H, W, 3), np.uint8) if frame is None else frame
-                        if frame.shape[0] != H or frame.shape[1] != W:
-                            frame = _resize(frame, W, H)
-                        else:
-                            frame = frame.copy()
-                        if track is not None:
-                            draw_hands(frame, track.hands_at(src_index / fps), label=cfg.overlay_labels)
-                        if piece.caption is not None:
-                            cards.blend_band(frame, *piece.caption)
+                        frame = _clip_frame(reader.read(src_index), src_index / fps, piece, track, cfg, total, W, H,
+                                            rects[i] if rects else None)
                         main.write(frame)
                         if clip_enc is not None:
                             clip_enc.write(frame)
@@ -259,6 +294,8 @@ def run(ctx: StageContext) -> None:
             compliance=notes_by_step.get(s.id, []),
             gesture_keyframe_ids=[g.id for g in keyframes if s.start <= g.t < s.end or (g.t == s.end == ordered[-1].end)],
             clip_path=clip_paths.get(s.id),
+            callouts=step_callouts.get(s.id, []),
+            crop_plan=crop_plans.get(s.id, []),
         )
         for s in ordered
     ]
@@ -283,6 +320,75 @@ def run(ctx: StageContext) -> None:
     p.write("render/tutorial.json", tutorial)
     (out_dir / "tutorial.md").write_text(to_markdown(tutorial, meta, questions is not None))
     log.info("wrote %s (%d steps, %d clips)", p.rel(final), total, len(clip_paths))
+
+
+KIND_HEADERS = {"conflict": "SOP conflict", "requirement": "Requirement", "caution": "Caution"}
+
+
+def _overlay(c: Callout, notes: list[ComplianceNote], W: int, H: int) -> _Overlay:
+    if c.kind == "safety":
+        note = next((n for n in notes if n.id == c.note_id), None)
+        header = KIND_HEADERS.get(note.kind, note.kind) if note else "Safety"
+        if note and note.citations:
+            header += "  ·  " + cards.short_citation(note.citations[0])
+        return _Overlay(c, cards.callout_card(H, header, c.text, c.severity, max_width=W * 0.42), "right")
+    return _Overlay(c, cards.chip(H, c.text, c.kind, max_width=W * 0.5), "left")
+
+
+def _crop_rects(piece: _Piece, track: HandTrack | None, fps: float, ramp_s: float) -> list[list[float]] | None:
+    """Per-frame crop rects of a clip (containment eased over ``ramp_s``), or None without a crop."""
+    if piece.crop is None:
+        return None
+    times = [(piece.src_start + i) / fps for i in range(piece.frames)]
+    points = []
+    for t in times:
+        hands = track.hands_at(t) if track is not None else []
+        points.append(np.vstack([h.landmarks[:, :2] for h in hands]) if hands else None)
+    return piece.crop.rects(times, points, int(round(ramp_s * fps)))
+
+
+def _clip_frame(src: np.ndarray | None, t: float, piece: _Piece, track: HandTrack | None, cfg: RenderConfig, total: int,
+                W: int, H: int, rect: list[float] | None = None) -> np.ndarray:
+    """One output frame of a step clip: focus crop, hand overlay, progress bar, callouts, caption."""
+    hands = track.hands_at(t) if track is not None else []
+    rect = rect or [0.0, 0.0, 1.0, 1.0]
+    if src is None:
+        frame = np.zeros((H, W, 3), np.uint8)
+        rect = [0.0, 0.0, 1.0, 1.0]
+    else:
+        frame = apply_crop(src, rect, W, H)
+        if frame is src:
+            frame = frame.copy()
+    if cfg.overlay and hands:
+        if not is_full(rect):
+            hands = [PoseHand(h.handedness, to_crop(h.landmarks, rect), h.score) for h in hands]
+        draw_hands(frame, hands, label=cfg.overlay_labels)
+    step = piece.step
+    u = H / 720.0
+    top = 0
+    if cfg.progress_bar and step is not None:
+        dur = max(step.end - step.start, 1e-6)
+        ticks = [(s.start - step.start) / dur for s in step.substeps[1:]]
+        cards.draw_progress(frame, piece.number, total, (t - step.start) / dur, ticks)
+        top = int(round(10 * u))
+    y_left, y_right = top + int(14 * u), top + int(14 * u)
+    margin = int(max(W * 0.04, 20 * u))
+    for ov in piece.overlays:
+        if not (ov.callout.start <= t < ov.callout.end):
+            continue
+        oh, ow = ov.image.shape[:2]
+        if ov.slot == "left":
+            cards.blend_at(frame, margin, y_left, ov.image)
+            y_left += oh + int(8 * u)
+        else:
+            cards.blend_at(frame, W - margin - ow, y_right, ov.image)
+            y_right += oh + int(8 * u)
+    if piece.sub_captions:
+        band = next((b for b in piece.sub_captions if b[0] <= t < b[1]), piece.sub_captions[-1])
+        cards.blend_band(frame, band[2], band[3])
+    elif piece.caption is not None:
+        cards.blend_band(frame, *piece.caption)
+    return frame
 
 
 def _resize(frame: np.ndarray, w: int, h: int) -> np.ndarray:
@@ -319,6 +425,14 @@ def to_markdown(t: Tutorial, meta: VideoMeta, have_questions: bool = True) -> st
         for d in s.details:
             out.append(f"- {d}")
         if s.details:
+            out.append("")
+        if len(s.substeps) > 1 or any(x.emphasis for x in s.substeps):
+            labels = {b.id: b.label for b in s.focus_boxes}
+            out.append("**Phases:**")
+            for x in s.substeps:
+                where = labels.get(x.focus, "full frame" if x.focus == "full" else x.focus)
+                out.append(f"- `{cards.fmt_time(x.start)}` {x.caption} _(focus: {where})_"
+                           + (f" · watch: **{x.emphasis}**" if x.emphasis else ""))
             out.append("")
         if s.tools or s.materials:
             if s.tools:

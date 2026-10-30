@@ -21,7 +21,7 @@ from tutorialgen.schemas import (ActivitySample, BoundaryCandidate, Candidates, 
                                  TranscriptSegment, VideoMeta)
 from tutorialgen.stages import StageContext, draft, questions, refine, segment
 from tutorialgen.steps.guards import redact, ungrounded
-from tutorialgen.steps.llm_schemas import DraftStepOutput, ProposedStep, SegmentWindowOutput
+from tutorialgen.steps.llm_schemas import DraftStepOutput, ProposedStep, SegmentWindowOutput, SubStepOutput
 from tutorialgen.steps.windows import Proposal, build_intervals, build_windows, merge_windows, snap
 
 DURATION, FPS, W, H = 30.0, 5, 720, 360
@@ -115,7 +115,9 @@ def test_segment_covers_content_and_extracts_keyframes():
     assert len(frames) == len(BOUNDARIES) + 1
     assert cv2.imread(str(frames[0])).shape[1] == 640  # downscaled from 720
     call = cached(p, "segment_steps")[0]
-    assert len(call["images"]) == 6  # llm.max_images_per_call
+    assert len(call["images"]) == 6  # llm.max_images_per_call: 5 single frames + one 2-panel sheet
+    assert call["user"].count(" panel ") == 2 and "image 6 (frame at" in call["user"]
+    assert all(f"i0{k}: " in call["user"] and "image" in call["user"].split(f"i0{k}: ")[1].split("\n")[0] for k in range(1, 8))
     assert "hands g0" in call["user"] and "wet your hands" in call["user"]
 
 
@@ -215,7 +217,9 @@ def test_draft_fills_provenance_keyframes_and_keys():
 def test_draft_guard_removes_invented_numbers(monkeypatch):
     def inventive(req):
         return DraftStepOutput(title="Scrub hands", instruction="Scrub for 20 seconds in 40 °C water.", details=[], tools=[],
-                               materials=["soap"], expected_result=None, cautions=[], confidence=0.9, missing_info=[])
+                               materials=["soap"], expected_result=None, cautions=[], confidence=0.9, missing_info=[],
+                               substeps=[SubStepOutput(start_s=0, caption="Scrub 20 s", focus_box="B9", emphasis="40 °C",
+                                                       emphasis_s=None)])
 
     monkeypatch.setitem(fake_llm._HANDLERS, "draft_step", inventive)
     p = make_project()
@@ -225,6 +229,10 @@ def test_draft_guard_removes_invented_numbers(monkeypatch):
     s = p.read("draft/steps.json", StepList).steps[0]
     assert "20" not in s.instruction and "[?]" in s.instruction
     assert s.missing_info[0].blocking and "unverified" in s.missing_info[0].key and s.confidence <= 0.5
+    # On-screen text obeys the same guard; an unknown box id falls back (no hands here -> full frame).
+    sub = s.substeps[0]
+    assert "20" not in sub.caption and "[?]" in sub.caption and sub.emphasis == "[?]" and (sub.start, sub.end) == (s.start, s.end)
+    assert sub.focus == "full" and sub.focus_source == "fallback"
 
 
 def test_guard_helpers():

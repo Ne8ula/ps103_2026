@@ -44,6 +44,14 @@ class MissingItem(_Out):
     blocking: bool = Field(description="true if a learner could not perform the step safely or correctly without it")
 
 
+class SubStepOutput(_Out):
+    start_s: float = Field(description="start of this action phase; use one of the listed anchor times")
+    caption: str = Field(description="on-screen caption, imperative, at most ~6 words")
+    focus_box: str = Field(description="id of the focus box to zoom to during this phase (e.g. B2), or 'full'")
+    emphasis: str | None = Field(description="optional 1-3 word callout of the spot to watch (e.g. 'between fingers'), else null")
+    emphasis_s: float | None = Field(description="when the emphasis applies, seconds; null if no emphasis")
+
+
 class DraftStepOutput(_Out):
     title: str = Field(description="short imperative title, max ~8 words")
     instruction: str = Field(description="one or two imperative sentences")
@@ -54,6 +62,7 @@ class DraftStepOutput(_Out):
     cautions: list[str]
     confidence: float = Field(description="0-1: how well the evidence supports this description")
     missing_info: list[MissingItem]
+    substeps: list[SubStepOutput] = Field(description="1-4 consecutive action phases in time order; the first starts at the step start")
 
 
 # ---- refine_step --------------------------------------------------------------------------------
