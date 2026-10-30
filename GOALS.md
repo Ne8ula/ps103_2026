@@ -72,15 +72,15 @@ Each stage writes to `projects/<project_id>/<stage>/` so runs are resumable and 
 | ID | Milestone | Done when | Status |
 |---|---|---|---|
 | M0 | Contracts and skeleton | Pydantic schemas for every stage artifact; `pipeline/` package; CLI `run --stage`; LLM provider interface with a fixture/fake backend; sample demo video and SOP chosen and documented | ☑ |
-| M1 | Ingest + perception | YT URL and local file both produce normalized video, landmarks and transcript; debug render with skeletons matches the hands visually | ☐ |
-| M2 | GestLLM gesture text | Finger state, 8-way direction, grouping, trajectory and manipulation cues produced at keyframes; occlusion handled explicitly; unit tests on synthetic landmark poses; spot-check on sample video reads correctly to a human | ☐ |
-| M3 | Segmentation + drafting | Sample video yields an ordered step list with time ranges and drafted text; structured outputs validate against schemas | ☐ |
-| M4 | RAG compliance | SOP indexed; each step has cited notes or an explicit "no relevant guidance"; at least one deliberate conflict is detected | ☐ |
-| M5 | Question loop | Questions generated, answered via CLI/API, merged; only affected steps change | ☐ |
-| M6 | Tutorial render | `tutorial.mp4` with overlays and text cards, plus `tutorial.json` with provenance | ☐ |
-| M7 | Data endpoints | FastAPI covers the full flow (project → inputs → stages → questions → answers → artifacts) and is exercised end-to-end by tests; no UI | ☐ |
-| M8 | Remote GPU | Heavy stages run on a remote GPU worker (provider TBD) with identical outputs to the local run | ☐ |
-| M9 | Evaluation | Small eval set (2–3 videos) with hand-labelled steps; report boundary accuracy and question usefulness, **with vs. without gesture text**, to confirm it earns its place | ☐ |
+| M1 | Ingest + perception | YT URL and local file both produce normalized video, landmarks and transcript; debug render with skeletons matches the hands visually | ☑ |
+| M2 | GestLLM gesture text | Finger state, 8-way direction, grouping, trajectory and manipulation cues produced at keyframes; occlusion handled explicitly; unit tests on synthetic landmark poses; spot-check on sample video reads correctly to a human | ☑ |
+| M3 | Segmentation + drafting | Sample video yields an ordered step list with time ranges and drafted text; structured outputs validate against schemas | ☑ |
+| M4 | RAG compliance | SOP indexed; each step has cited notes or an explicit "no relevant guidance"; at least one deliberate conflict is detected | ☑ |
+| M5 | Question loop | Questions generated, answered via CLI/API, merged; only affected steps change | ☑ |
+| M6 | Tutorial render | `tutorial.mp4` with overlays and text cards, plus `tutorial.json` with provenance | ☑ |
+| M7 | Data endpoints | FastAPI covers the full flow (project → inputs → stages → questions → answers → artifacts) and is exercised end-to-end by tests; no UI | ☑ |
+| M8 | Remote GPU | Heavy stages run on a remote GPU worker (provider TBD) with identical outputs to the local run | ◐ prepared: `run --only`, worker Dockerfile, REMOTE_GPU.md; not deployed |
+| M9 | Evaluation | Small eval set (2–3 videos) with hand-labelled steps; report boundary accuracy and question usefulness, **with vs. without gesture text**, to confirm it earns its place | ◐ harness + labels for the SFDPH sample; real scores and the gesture-text comparison need the OpenAI key |
 
 ## Proposed Architecture
 
@@ -104,6 +104,12 @@ Agents only after **M0** is done serially, because every workstream depends on t
 | F — API | FastAPI data endpoints and their tests | API contract from M0 |
 
 Integration (wiring A→B→D→C→E end-to-end on the sample video) is done serially after the workstreams return.
+
+## Status Notes (29 Oct 2026)
+
+- M3–M5 are verified with the deterministic fake LLM, so structure, provenance, the number guard and the question loop work end to end; the *quality* of segmentation, drafted text and questions is unmeasured until GPT-5.4 mini runs.
+- End to end on the SFDPH sample (CPU): ~100 s ingest→refine, ~5 min for the first compliance run (one-time index of the 668-page Food Code), ~45 s for a re-run from segment; answering a question re-runs only refine→render.
+- Hands are detected in 54% of sampled frames on the sample; interlocked soapy hands mostly return no detection (reported as not visible, not guessed).
 
 ## Environment Gaps Found (29 Oct 2026)
 

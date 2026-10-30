@@ -1,0 +1,29 @@
+# Hand labels for samples/data/sfdph-wash-hands-en.webm (58.3 s), from the narration and scene cuts.
+# Boundaries are where a new instructional step starts; intro/outro are not steps.
+video: sfdph-wash-hands-en.webm
+tolerance_s: 2.0
+content: [9.7, 53.0]          # "Step 1." to the end of the sanitizer advice
+boundaries: [14.4, 27.9, 34.0, 40.0, 44.0]
+optional_boundaries: [30.2]   # rinse vs. dry inside "Step 3"; splitting here is not penalized
+steps:
+  - {start: 9.7, end: 14.4, label: wet hands and apply soap}
+  - {start: 14.4, end: 27.9, label: rub at least 20 s incl. backs, between fingers, fingertips, nails, wrists, thumbs}
+  - {start: 27.9, end: 34.0, label: rinse and dry with paper towel or air dryer}
+  - {start: 34.0, end: 40.0, label: optional - use paper towel on the door}
+  - {start: 40.0, end: 44.0, label: variant - at home a towel is fine}
+  - {start: 44.0, end: 53.0, label: alternative - hand sanitizer with at least 60% alcohol}
+# Facts a correct tutorial must state somewhere in its step text (case-insensitive substring, any of the alternatives).
+facts:
+  - ["20 seconds", "20 s"]
+  - ["back of your hands", "backs of your hands", "back of the hands"]
+  - ["between your fingers", "between the fingers"]
+  - ["nails"]
+  - ["paper towel"]
+  - ["60%", "60 percent"]
+# Gaps a good question set should raise (any keyword in a question's text).
+expected_questions:
+  - {about: water temperature (Food Code requires warm water), any: ["warm", "temperature"]}
+  - {about: amount of soap, any: ["how much soap", "amount of soap", "soap amount"]}
+# Compliance: the Food Code cleaning procedure should be cited for the rub/rinse steps.
+expected_citations:
+  - {about: Food Code 2-301.12 cleaning procedure, page: 61}

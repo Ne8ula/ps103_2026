@@ -68,7 +68,7 @@ def _echo(req):
 
 def test_fake_provider_and_cache(tmp_path):
     provider = make_provider(Config.load())
-    assert provider.label == "fake:fake"
+    assert provider.label.startswith("fake:fake-")
     llm = CachedLLM(provider, tmp_path / "cache")
     req = LLMRequest(task="test_echo", system="s", user="u", schema=Echo, context={"say": "hi"})
     out, key = llm.call(req)

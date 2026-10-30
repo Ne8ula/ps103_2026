@@ -84,8 +84,9 @@ def fake_draft(req: LLMRequest) -> DraftStepOutput:
         instruction = f"{FAKE} {_words(ctx['speech'], 20).rstrip('.,!?')}."
     else:
         title = f"{FAKE} Step {ctx['index'] + 1}"
-        instruction = f"{FAKE} Perform the action shown between {ctx['start']:.1f}s and {ctx['end']:.1f}s."
-    details = [f"{FAKE} Hands: {g['text'][:80]}" for g in gestures[:2]]
+        instruction = f"{FAKE} Perform the action shown in this part of the video."
+    # Drop the "t=12.4s | " prefix: timestamps are not narration and would trip the number guard.
+    details = [f"{FAKE} Hands: {g['text'].split(' | ', 1)[-1][:80]}" for g in gestures[:2]]
     missing: list[MissingItem] = []
     if not speech:
         missing.append(MissingItem(field="purpose", description=f"{FAKE} No narration: what is this step for?", blocking=False))

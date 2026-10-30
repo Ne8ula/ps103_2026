@@ -7,6 +7,8 @@ next to the stage that owns the task (``@fake_handler("segment_steps")``).
 
 from __future__ import annotations
 
+import hashlib
+import inspect
 from typing import Callable
 
 from pydantic import BaseModel
@@ -24,8 +26,33 @@ def fake_handler(task: str):
     return register
 
 
+def handlers_version() -> str:
+    """Hash of every registered handler's source, so editing a fake invalidates its cache entries and fingerprints."""
+    from ..stages import STAGES  # handlers register on import; load them all so the hash is stable
+
+    for spec in STAGES.values():
+        if spec.uses_llm:
+            spec.load()
+    h = hashlib.sha256()
+    for task in sorted(_HANDLERS):
+        h.update(task.encode())
+        try:
+            h.update(inspect.getsource(inspect.getmodule(_HANDLERS[task])).encode())
+        except (OSError, TypeError):
+            pass
+    return h.hexdigest()[:8]
+
+
 class FakeProvider(LLMProvider):
     name = "fake"
+
+    @property
+    def model(self) -> str:
+        return f"{self._model}-{handlers_version()}" if self._model == "fake" else self._model
+
+    @model.setter
+    def model(self, value: str) -> None:
+        self._model = value
 
     def generate(self, request: LLMRequest[T]) -> T:
         handler = _HANDLERS.get(request.task)
