@@ -107,13 +107,64 @@ def stage_timings(project: Project) -> list[dict]:
     return out
 
 
+def _ts(t: float) -> str:
+    t = max(0.0, t)
+    return f"{int(t // 3600):02d}:{int(t % 3600 // 60):02d}:{t % 60:06.3f}"
+
+
+def vtt(cues: list[tuple[float, float, str]], settings: str = "") -> str:
+    lines = ["WEBVTT", ""]
+    for i, (a, b, text) in enumerate(c for c in cues if c[1] - c[0] > 0.05):
+        lines += [str(i + 1), f"{_ts(a)} --> {_ts(b)}{(' ' + settings) if settings else ''}", text, ""]
+    return "\n".join(lines)
+
+
+def subtitle_lines(tr: Transcript, max_s: float = 6.0, max_words: int = 12, gap_s: float = 0.8) -> list[dict]:
+    """Short subtitle cues from Whisper word timestamps (segments can span long pauses), grouped
+    across segment boundaries so no cue is a stray word."""
+    words = [w for seg in tr.segments for w in seg.words]
+    if not words:
+        return [{"start": seg.start, "end": seg.end, "text": seg.text.strip()} for seg in tr.segments]
+    out, cur = [], []
+
+    def flush():
+        out.append({"start": cur[0].start, "end": cur[-1].end, "text": " ".join(x.word.strip() for x in cur)})
+
+    for w in words:
+        if cur and (w.start - cur[-1].end > gap_s or w.end - cur[0].start > max_s or len(cur) >= max_words):
+            flush()
+            cur = []
+        cur.append(w)
+    if cur:
+        flush()
+    return out
+
+
+def tutorial_cues(segments: list[dict], steps: list[dict], offsets: list[dict], title: str, tut_dur: float) -> list[tuple[float, float, str]]:
+    """Narration re-timed into the rendered tutorial: each step's clip plays [start, end] of the source
+    right after its card, so a segment inside a step moves by (clip offset - step start)."""
+    cues = [(0.0, offsets[0]["card"], title)] if offsets else []
+    for i, (s, o) in enumerate(zip(steps, offsets)):
+        cues.append((o["card"], o["clip"], f"Step {i + 1} of {len(steps)}: {s['title']}"))
+        shift = o["clip"] - s["start"]
+        for seg in segments:
+            a, b = max(seg["start"], s["start"]), min(seg["end"], s["end"])
+            if b > a:
+                cues.append((a + shift, min(b + shift, o["end"]), seg["text"]))
+    if offsets:
+        cues.append((offsets[-1]["end"], tut_dur, "Open questions for the expert"))
+    return sorted(cues)
+
+
 def write_local_compare(out: Path) -> None:
     """Three players side by side for local viewing; the curated video is a local-only copy (never published)."""
     curated = PIPELINE / "samples" / "data" / "reference" / f"{CURATED['id']}.mp4"
     rel = Path("..", "..", "samples", "data", "reference", curated.name).as_posix() if out.resolve() == (PIPELINE / "demo" / "out").resolve() else curated.as_uri()
-    cols = [("1 · Raw livestream excerpt", "media/raw.mp4"), ("2 · Our generated tutorial", "media/tutorial.mp4"),
-            (f"3 · {CURATED['channel']}: curated tutorial ({CURATED['views']:,} views)", rel)]
-    players = "".join(f'<figure><figcaption>{t}</figcaption><video src="{s}" controls preload="metadata"></video></figure>' for t, s in cols)
+    cols = [("1 · Raw livestream excerpt", "media/raw.mp4", "media/raw.vtt"),
+            ("2 · Our generated tutorial", "media/tutorial.mp4", "media/tutorial.vtt"),
+            (f"3 · {CURATED['channel']}: curated tutorial ({CURATED['views']:,} views)", rel, rel.replace(".mp4", ".en.vtt"))]
+    players = "".join(f'<figure><figcaption>{t}</figcaption><video src="{s}" controls preload="metadata">'
+                      f'<track kind="subtitles" srclang="en" label="English" src="{v}" default></video></figure>' for t, s, v in cols)
     (out / "compare_local.html").write_text(f"""<!doctype html><meta charset="utf-8"><title>SteinWipe: three videos</title>
 <style>body{{font:15px system-ui;margin:16px;background:#111;color:#eee}}main{{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}}
 figure{{margin:0}}video{{width:100%;background:#000}}button{{font:inherit;padding:6px 12px;margin-bottom:12px}}</style>
@@ -155,6 +206,13 @@ def main(project_id: str, capture_dir: str, out_dir: str) -> None:
     else:
         print(f"warning: found {len(runs)} card runs for {n} steps; step offsets left out", flush=True)
 
+    segments = subtitle_lines(tr)
+    raw_cues = [(s["start"], s["end"], s["text"]) for s in segments]
+    tut_cues = tutorial_cues(segments, after["steps"]["steps"], offsets, after_project.manifest.name, tut_dur) if offsets else []
+    # .vtt files serve the local compare page; the published page adds the same cues from its inline data.
+    (out / "media" / "raw.vtt").write_text(vtt(raw_cues))
+    (out / "media" / "tutorial.vtt").write_text(vtt(tut_cues, "line:6% position:50% align:center"))
+
     labels = Labels.model_validate(yaml.safe_load((PIPELINE / "eval" / "x1c-steinwipe-livestream.yaml").read_text()))
     ev_before, ev_after = evaluate(orig, labels), evaluate(after_project, labels)
     served = collections.Counter(json.loads(p.read_text()).get("served_by")
@@ -164,6 +222,8 @@ def main(project_id: str, capture_dir: str, out_dir: str) -> None:
         "project_id": project_id, "raw": RAW, "curated": CURATED,
         "duration": meta.duration, "excerpt_start": meta.excerpt_start,
         "transcript": [{"id": s.id, "start": s.start, "end": s.end, "text": s.text.strip()} for s in tr.segments],
+        "subs": {"raw": [[round(a, 2), round(b, 2), t] for a, b, t in raw_cues],
+                 "tutorial": [[round(a, 2), round(b, 2), t] for a, b, t in tut_cues]},
         "hands": hands, "labels": labels.steps, "tutorial_duration": round(tut_dur, 1), "offsets": offsets,
         "before": before, "after": after, "api_log": api_log,
         "stages": stage_timings(orig), "rerun_stages": stage_timings(after_project),

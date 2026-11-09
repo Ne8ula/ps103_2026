@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>SteinWipe Tutorial Studio</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +48,12 @@ button:disabled { opacity: 0.5; cursor: default; }
 button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 input, textarea { font: 0.95rem var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 7px 9px; width: 100%; box-sizing: border-box; }
 textarea { min-height: 64px; resize: vertical; }
+input[type="checkbox"] { width: auto; accent-color: var(--accent); }
+label.check { display: inline-flex; gap: 6px; align-items: center; font-size: 0.88rem; }
 
+.wrap, #view-compare, #view-compare > section:not(.trio) { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+#view-compare > .trio { min-width: 0; }
+header.top > div { min-width: 0; }
 header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
 .tabs { display: flex; gap: 4px; background: var(--sunk); padding: 4px; border-radius: 7px; }
 .tabs a { text-decoration: none; color: var(--ink); padding: 7px 14px; border-radius: 5px; font-weight: 600; }
@@ -55,7 +61,8 @@ header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; j
 
 /* Compare */
 .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: start; }
-.station { padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.station { padding: 14px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; min-width: 0; }
+.station > * { min-width: 0; }
 .station .tag { display: inline-block; font: 600 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 3px; background: var(--sunk); }
 .station .tag.ours { background: var(--accent); color: var(--accent-ink); }
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 0.86rem; }
@@ -63,7 +70,7 @@ header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; j
 .facts dd { margin: 0; }
 .ytcard { aspect-ratio: 16 / 9; max-width: 100%; box-sizing: border-box; border-radius: 4px; background: var(--sunk); display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; justify-items: center; text-align: center; gap: 8px; padding: 12px; overflow-wrap: anywhere; }
 .outline { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 0.86rem; max-height: 260px; overflow-y: auto; }
-.outline a { display: grid; grid-template-columns: 44px 1fr; gap: 8px; text-decoration: none; color: var(--ink); padding: 3px 4px; border-radius: 3px; }
+.outline a { display: grid; grid-template-columns: 44px minmax(0, 1fr); overflow-wrap: anywhere; gap: 8px; text-decoration: none; color: var(--ink); padding: 3px 4px; border-radius: 3px; }
 .outline a:hover { background: var(--sunk); }
 .outline .t { color: var(--muted); font-size: 0.78rem; padding-top: 2px; }
 table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
@@ -168,8 +175,22 @@ ins { text-decoration: none; background: var(--ok-soft); border-radius: 2px; }
 .call pre { margin: 0; padding: 8px 12px 12px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow-y: auto; background: var(--bg); font-size: 0.74rem; }
 .empty { padding: 16px; color: var(--muted); font-family: var(--body); font-size: 0.9rem; }
 
+/* Step navigator */
+.navbar { display: flex; gap: 2px; padding: 5px; height: 40px; box-sizing: border-box; }
+.navbar button { flex-basis: 0; flex-shrink: 1; min-width: 3px; padding: 0 2px; border: 0; border-radius: 2px; background: var(--accent-soft);
+  font: 500 0.66rem var(--mono); color: var(--ink); overflow: hidden; white-space: nowrap; }
+.navbar button:hover { background: var(--line); }
+.navbar button.on { background: var(--accent); color: var(--accent-ink); }
+.navgrid { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 12px; align-items: start; }
+.navgrid .steplist { max-height: 520px; }
+.lines { display: grid; gap: 2px; max-height: 240px; overflow-y: auto; }
+.lines button { display: grid; grid-template-columns: 48px 1fr; gap: 8px; text-align: left; font-weight: 400; border-color: transparent; background: transparent; padding: 4px 6px; }
+.lines button:hover { background: var(--bg); }
+.lines .t { color: var(--muted); font-size: 0.78rem; padding-top: 2px; }
+video::cue { font-family: var(--body); }
+
 @media (max-width: 1080px) { .studio { grid-template-columns: minmax(0, 1fr); } .console { position: static; max-height: 480px; } }
-@media (max-width: 900px) { .trio, .grid2, .review, .diffrow { grid-template-columns: minmax(0, 1fr); } .lane { grid-template-columns: 1fr; gap: 3px; } .steplist { max-height: 300px; } }
+@media (max-width: 900px) { .trio, .grid2, .review, .diffrow, .navgrid { grid-template-columns: minmax(0, 1fr); } .lane { grid-template-columns: 1fr; gap: 3px; } .steplist { max-height: 300px; } }
 @media (prefers-reduced-motion: reduce) { .stage.running .dot { animation: none; } .stage .meter i { transition: none; } }
 </style>
 
@@ -186,6 +207,15 @@ ins { text-decoration: none; background: var(--ok-soft); border-radius: 2px; }
   <!-- ============ COMPARE ============ -->
   <main id="view-compare" style="display:grid;gap:22px">
     <section class="trio" id="trio"></section>
+    <section style="display:grid;gap:10px">
+      <div class="row" style="justify-content:space-between">
+        <div style="display:grid;gap:2px"><h2>Step Navigator</h2><span class="muted small">Pick a step to jump the videos above. Subtitles are on; use the CC button in each player to turn them off.</span></div>
+        <div class="row"><label class="check" for="nav-both"><input type="checkbox" id="nav-both" checked> Move both videos</label>
+          <button id="nav-prev">Previous step</button><button id="nav-next" class="primary">Next step</button></div>
+      </div>
+      <div class="panel navbar" id="navbar" role="toolbar" aria-label="Steps"></div>
+      <div class="navgrid"><div class="panel steplist" id="navlist" role="listbox" aria-label="Step list"></div><div class="panel card" id="navdetail"></div></div>
+    </section>
     <section style="display:grid;gap:10px">
       <h2>Where Our Steps Fall In The Raw Stream</h2>
       <div class="panel timeline" id="timeline"></div>
@@ -301,11 +331,21 @@ function station(tag, tagCls, title, body, facts) {
 }
 const rawVid = el("video"); Object.assign(rawVid, { src: "media/raw.mp4", controls: true, preload: "metadata", playsInline: true });
 const ourVid = el("video"); Object.assign(ourVid, { src: "media/tutorial.mp4", controls: true, preload: "metadata", playsInline: true });
+// Subtitles come from the page data (artifacts don't serve .vtt files), added through the text-track API.
+function addSubs(v, cues, label, top, mode = "showing") {
+  const tt = v.addTextTrack("subtitles", label, "en");
+  for (const [a, b, text] of cues) {
+    try { const c = new VTTCue(a, b, text); if (top) { c.line = 1; c.snapToLines = true; } tt.addCue(c); } catch (e) { /* skip a bad cue */ }
+  }
+  tt.mode = mode; return tt;
+}
+addSubs(rawVid, D.subs.raw, "Narration", false);
+addSubs(ourVid, D.subs.tutorial, "Narration and step titles", true);
 const yt = el("div", "ytcard");
 const ya = el("a", null, "Open on YouTube"); ya.href = D.curated.url; ya.target = "_blank"; ya.rel = "noopener";
 yt.append(el("span", "eyebrow", `${D.curated.channel} · ${D.curated.views.toLocaleString()} views`), el("b", null, D.curated.title), ya,
   el("span", "muted small", "Not re-hosted here: standard YouTube license."));
-const ytBody = el("div"); ytBody.style.display = "grid"; ytBody.style.gap = "8px"; ytBody.append(yt);
+const ytBody = el("div"); Object.assign(ytBody.style, { display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: "8px" }); ytBody.append(yt);
 const ol = el("ul", "outline");
 for (const [t, txt] of D.curated.outline) {
   const li = el("li"); const a = el("a"); a.href = `${D.curated.url}&t=${t}s`; a.target = "_blank"; a.rel = "noopener";
@@ -336,6 +376,78 @@ const axis = el("div", "axis"); const axl = el("div", "lane"); axl.append(el("di
 for (let t = 0; t <= D.duration; t += 60) { const s = el("span", null, fmt(t)); s.style.left = pct(t, D.duration); axis.append(s); }
 tl.append(axl);
 rawVid.addEventListener("timeupdate", () => heads.forEach((h) => (h.style.left = pct(rawVid.currentTime, D.duration))));
+
+// ---------------- step navigator ----------------
+const OFF = D.offsets;
+let navIdx = 0, navHold = 0, lastActive = ourVid;
+rawVid.addEventListener("play", () => (lastActive = rawVid));
+ourVid.addEventListener("play", () => (lastActive = ourVid));
+const segsIn = (s) => D.transcript.filter((x) => x.end > s.start && x.start < s.end);
+stepsA.forEach((s, i) => {
+  const b = el("button", null, s.id.slice(1)); b.style.flexGrow = String(Math.max(s.end - s.start, 1));
+  b.title = `${s.id} · ${fmt(s.start)}–${fmt(s.end)} · ${s.title}`; b.setAttribute("aria-label", b.title);
+  b.addEventListener("click", () => navSelect(i)); $("#navbar").append(b);
+  const r = el("button"); r.setAttribute("role", "option");
+  r.append(el("span", "sid", s.id), el("span", "ttl", s.title), el("span", "muted small mono", fmt(s.start)));
+  r.addEventListener("click", () => navSelect(i)); $("#navlist").append(r);
+});
+function seekTo(v, t) { v.currentTime = t; }
+function navSelect(i, seek = true) {
+  navIdx = Math.max(0, Math.min(stepsA.length - 1, i));
+  [...$("#navbar").children].forEach((b, k) => b.classList.toggle("on", k === navIdx));
+  [...$("#navlist").children].forEach((b, k) => { b.classList.toggle("on", k === navIdx); b.setAttribute("aria-selected", String(k === navIdx)); });
+  const box = $("#navlist"), cur = box.children[navIdx];
+  box.scrollTop += cur.getBoundingClientRect().top - box.getBoundingClientRect().top - 60;
+  $("#nav-prev").disabled = navIdx === 0; $("#nav-next").disabled = navIdx === stepsA.length - 1;
+  renderNavDetail();
+  if (!seek) return;
+  const s = stepsA[navIdx], both = $("#nav-both").checked;
+  navHold = Date.now() + 600;
+  if (both || lastActive === rawVid) seekTo(rawVid, s.start);
+  if ((both || lastActive === ourVid) && OFF[navIdx]) seekTo(ourVid, OFF[navIdx].card);
+}
+function renderNavDetail() {
+  const s = stepsA[navIdx], o = OFF[navIdx], box = $("#navdetail"); box.innerHTML = "";
+  const head = el("div", "row");
+  head.append(el("span", "eyebrow", `Step ${navIdx + 1} of ${stepsA.length} · raw ${fmt(s.start)}–${fmt(s.end)}${o ? ` · tutorial ${fmt(o.card)}` : ""}`));
+  box.append(head, el("h3", null, s.title), el("p", null, s.instruction));
+  if (s.substeps?.length) {
+    const ul = el("div", "lines");
+    s.substeps.forEach((x) => {
+      const b = el("button"); b.append(el("span", "t", fmt(x.start)), el("span", null, x.caption + (x.emphasis ? ` · ${x.emphasis}` : "")));
+      b.title = "Play this part in the generated tutorial";
+      b.addEventListener("click", () => { if (o) { seekTo(ourVid, o.clip + (x.start - s.start)); ourVid.play().catch(() => {}); } });
+      ul.append(b);
+    });
+    box.append(el("span", "eyebrow", "On-screen captions in our tutorial"), ul);
+  }
+  if (s.user_supplied.length) {
+    const chips = el("div", "chips"); s.user_supplied.forEach((f) => chips.append(el("span", "chip user", f.replace(/\s*\(answer to:.*$/, ""))));
+    box.append(el("span", "eyebrow", "Added from the expert's answers"), chips);
+  }
+  const lines = el("div", "lines");
+  segsIn(s).forEach((x) => {
+    const b = el("button"); b.append(el("span", "t", fmt(x.start)), el("span", null, x.text));
+    b.title = "Play from here in the raw video";
+    b.addEventListener("click", () => { seekTo(rawVid, x.start); rawVid.play().catch(() => {}); }); lines.append(b);
+  });
+  box.append(el("span", "eyebrow", "What he says during this step"), lines.children.length ? lines : el("span", "muted small", "No narration in this step."));
+  const acts = el("div", "row");
+  const pr = el("button", null, "Play in raw video"); pr.addEventListener("click", () => { seekTo(rawVid, s.start); rawVid.play().catch(() => {}); });
+  const po = el("button", "primary", "Play in our tutorial"); po.disabled = !o; po.addEventListener("click", () => { seekTo(ourVid, o.card); ourVid.play().catch(() => {}); });
+  acts.append(pr, po); box.append(acts);
+}
+$("#nav-prev").addEventListener("click", () => navSelect(navIdx - 1));
+$("#nav-next").addEventListener("click", () => navSelect(navIdx + 1));
+function follow(v, find) {
+  v.addEventListener("timeupdate", () => {
+    if (v.paused || Date.now() < navHold) return;
+    const i = find(v.currentTime); if (i >= 0 && i !== navIdx) navSelect(i, false);
+  });
+}
+follow(rawVid, (t) => stepsA.findIndex((s) => t >= s.start && t < s.end));
+follow(ourVid, (t) => OFF.findIndex((o) => t >= o.card && t < o.end));
+navSelect(0, false);
 
 const ea = D.eval.after;
 const rows = [
@@ -469,10 +581,13 @@ function renderReview() {
 }
 let stopAt = null;
 const rv = $("#rv");
+const rvSubs = { raw: addSubs(rv, D.subs.raw, "Narration", false), tutorial: addSubs(rv, D.subs.tutorial, "Tutorial narration", true, "disabled") };
 rv.addEventListener("timeupdate", () => { if (stopAt != null && rv.currentTime >= stopAt) { rv.pause(); stopAt = null; } });
 function useSource(src, then) {
   if (rv.getAttribute("src") === src) return then();
   rv.setAttribute("src", src); rv.addEventListener("loadedmetadata", then, { once: true }); rv.load();
+  const raw = src.endsWith("raw.mp4");
+  rvSubs.raw.mode = raw ? "showing" : "disabled"; rvSubs.tutorial.mode = raw ? "disabled" : "showing";
 }
 function playStep() { const s = stepsB[current]; useSource("media/raw.mp4", () => { rv.currentTime = s.start; stopAt = s.end; rv.play().catch(() => {}); }); }
 function playGenerated() {
