@@ -124,8 +124,20 @@ def run(ctx: StageContext) -> None:
     by_key = {g.key: g for g in gaps}
     groups = _phrase(ctx, steps, gaps, answered, state) if gaps else []
 
+    prev_by_id = {q.id: q for q in (prev.questions if prev else [])}
+
+    def reusable(qid: str, keys: list[str]) -> bool:
+        """An answered question keeps its id only for the gaps it was answered for (its source_refs).
+        key_to_id remembers groupings from every earlier round, so without this a different gap that
+        was once grouped with it would come back as a re-opened version of the answered question."""
+        old = prev_by_id.get(qid)
+        if qid not in answered or old is None:
+            return True
+        return any(k in old.source_refs for k in keys)
+
     def qid_for(keys: list[str]) -> str:
-        known = sorted(state["key_to_id"][k] for k in keys if k in state["key_to_id"])
+        known = sorted(state["key_to_id"][k] for k in keys if k in state["key_to_id"]
+                       and reusable(state["key_to_id"][k], keys))
         qid = known[0] if known else f"q{state['next']:03d}"
         if not known:
             state["next"] += 1

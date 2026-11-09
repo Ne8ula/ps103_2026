@@ -341,6 +341,29 @@ def test_persisting_gap_is_reasked_with_same_id_and_cap(monkeypatch):
     assert len(state["key_to_id"]) > 2  # capped-out gaps still have reserved ids
 
 
+def test_answered_question_id_is_not_reused_for_a_different_gap():
+    p = make_project(compliance=True)
+    ctx = ctx_for(p)
+    for stage in (segment, draft, refine, questions):
+        stage.run(ctx)
+    q1 = load_questions(p)
+    target = next(q for q in q1.questions if q.kind == "missing_info" and q.step_id)
+    other = next(k for k, v in json.loads(p.path("questions/state.json").read_text())["key_to_id"].items()
+                 if v != target.id and k.split(":")[0] != target.step_id and ":missing:" in k)
+    # An earlier round once grouped another step's gap with the target question.
+    state = json.loads(p.path("questions/state.json").read_text())
+    state["key_to_id"][other] = target.id
+    p.write_json("questions/state.json", state)
+
+    add_answer(p, target.id, "Use warm water")
+    refine.run(ctx)
+    questions.run(ctx)
+    q2 = {q.id: q for q in load_questions(p).questions}
+    assert q2[target.id].status == "answered" and q2[target.id].text == target.text
+    reopened = [q for q in q2.values() if other in q.source_refs]
+    assert reopened and all(q.id != target.id and "did not fully resolve" not in q.why for q in reopened)
+
+
 def test_questions_without_compliance_and_low_confidence():
     p = make_project(transcript=False)
     ctx = ctx_for(p)
