@@ -13,3 +13,4 @@ __pycache__/
 pipeline/models/
 .env
 .claude/worktrees/
+pipeline/demo/out/

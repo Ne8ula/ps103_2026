@@ -1,0 +1,575 @@
+<title>SteinWipe Tutorial Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a maintenance bench. Compare view = three video stations side by side; Studio = guided job ticket on the left, API console on the right. */
+:root {
+  --bg: #eef0ee; --panel: #ffffff; --sunk: #e3e7e5; --ink: #1b2124; --muted: #5d676c; --line: #d3d9d8;
+  --accent: #1d6a86; --accent-soft: #d8eaf0; --accent-ink: #ffffff;
+  --ok: #2c7a4d; --ok-soft: #dcefe2; --warn: #9a6309; --warn-soft: #f5e9d2; --crit: #b0372d; --crit-soft: #f7dfdc;
+  --get: #2c7a4d; --post: #1d6a86; --put: #7a4ea3;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121618; --panel: #1a2023; --sunk: #232a2e; --ink: #e4eaec; --muted: #9aa6ab; --line: #2e383c;
+  --accent: #5fb4d3; --accent-soft: #1b3440; --accent-ink: #0d1b21;
+  --ok: #6cc893; --ok-soft: #1a3324; --warn: #e3ad55; --warn-soft: #3a2d15; --crit: #ee8a80; --crit-soft: #3c1f1c;
+  --get: #6cc893; --post: #5fb4d3; --put: #c19be6; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121618; --panel: #1a2023; --sunk: #232a2e; --ink: #e4eaec; --muted: #9aa6ab; --line: #2e383c;
+  --accent: #5fb4d3; --accent-soft: #1b3440; --accent-ink: #0d1b21;
+  --ok: #6cc893; --ok-soft: #1a3324; --warn: #e3ad55; --warn-soft: #3a2d15; --crit: #ee8a80; --crit-soft: #3c1f1c;
+  --get: #6cc893; --post: #5fb4d3; --put: #c19be6; color-scheme: dark }
+
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); }
+.wrap { max-width: 1320px; margin: 0 auto; padding-block: 20px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 22px; }
+h1, h2, h3 { font-family: var(--display); font-stretch: 85%; margin: 0; text-wrap: balance; }
+h1 { font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
+h2 { font-size: 1.3rem; font-weight: 650; }
+h3 { font-size: 1.08rem; font-weight: 650; }
+p { margin: 0; }
+.eyebrow { font: 500 0.7rem/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+.mono, .t { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.small { font-size: 0.86rem; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; }
+video { width: 100%; display: block; background: #000; border-radius: 4px; aspect-ratio: 16 / 9; }
+a { color: var(--accent); }
+button { font: 600 0.92rem var(--body); border-radius: 5px; border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  padding: 8px 14px; cursor: pointer; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+button:focus-visible, a:focus-visible, textarea:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input, textarea { font: 0.95rem var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 7px 9px; width: 100%; box-sizing: border-box; }
+textarea { min-height: 64px; resize: vertical; }
+
+header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
+.tabs { display: flex; gap: 4px; background: var(--sunk); padding: 4px; border-radius: 7px; }
+.tabs a { text-decoration: none; color: var(--ink); padding: 7px 14px; border-radius: 5px; font-weight: 600; }
+.tabs a[aria-current="page"] { background: var(--panel); box-shadow: 0 1px 2px rgb(0 0 0 / 0.12); }
+
+/* Compare */
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: start; }
+.station { padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.station .tag { display: inline-block; font: 600 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 7px; border-radius: 3px; background: var(--sunk); }
+.station .tag.ours { background: var(--accent); color: var(--accent-ink); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-size: 0.86rem; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+.ytcard { aspect-ratio: 16 / 9; max-width: 100%; box-sizing: border-box; border-radius: 4px; background: var(--sunk); display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; justify-items: center; text-align: center; gap: 8px; padding: 12px; overflow-wrap: anywhere; }
+.outline { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 0.86rem; max-height: 260px; overflow-y: auto; }
+.outline a { display: grid; grid-template-columns: 44px 1fr; gap: 8px; text-decoration: none; color: var(--ink); padding: 3px 4px; border-radius: 3px; }
+.outline a:hover { background: var(--sunk); }
+.outline .t { color: var(--muted); font-size: 0.78rem; padding-top: 2px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.scroll { overflow-x: auto; }
+
+.timeline { padding: 14px; display: grid; gap: 6px; }
+.lane { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 10px; align-items: center; }
+.lane-name { font-size: 0.82rem; color: var(--muted); }
+.lane-name b { color: var(--ink); }
+.track { position: relative; height: 30px; background: var(--sunk); border-radius: 3px; overflow: hidden; cursor: pointer; }
+.track.thin { height: 16px; }
+.seg { position: absolute; top: 3px; bottom: 3px; border-radius: 2px; font-size: 0.7rem; line-height: 24px; padding: 0 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px solid; }
+.seg.label { background: var(--panel); border-color: var(--muted); }
+.seg.ours { background: var(--accent-soft); border-color: var(--accent); }
+.seg.on { outline: 2px solid var(--accent); }
+.bar { position: absolute; bottom: 0; background: var(--accent); opacity: 0.5; }
+.playhead { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--crit); pointer-events: none; }
+.axis { position: relative; height: 14px; font: 0.68rem var(--mono); color: var(--muted); }
+.axis span { position: absolute; transform: translateX(-50%); }
+
+/* Studio */
+.studio { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 400px); gap: 16px; align-items: start; }
+.flow { display: grid; gap: 14px; min-width: 0; }
+.stepper { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.stepper li { counter-increment: s; display: flex; align-items: center; gap: 7px; padding: 6px 10px; border-radius: 5px; background: var(--sunk); font-weight: 600; font-size: 0.88rem; color: var(--muted); }
+.stepper li::before { content: counter(s); font: 600 0.75rem var(--mono); width: 20px; height: 20px; border-radius: 50%; display: grid; place-content: center; background: var(--panel); color: var(--muted); }
+.stepper li.on { background: var(--accent-soft); color: var(--ink); }
+.stepper li.on::before { background: var(--accent); color: var(--accent-ink); }
+.stepper li.done::before { content: "✓"; background: var(--ok); color: var(--accent-ink); }
+.card { padding: 16px; display: grid; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.drop { border: 1.5px dashed var(--line); border-radius: 6px; padding: 12px; display: grid; gap: 4px; background: var(--bg); }
+.field { display: grid; gap: 4px; }
+.field label { font-size: 0.82rem; font-weight: 600; }
+pre.sop { margin: 0; font: 0.8rem/1.45 var(--mono); white-space: pre-wrap; background: var(--bg); padding: 10px; border-radius: 4px; max-height: 220px; overflow-y: auto; }
+
+.stages { display: grid; gap: 4px; }
+.stage { display: grid; grid-template-columns: 22px 120px minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 0.9rem; padding: 4px 6px; border-radius: 4px; }
+.stage .dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--line); }
+.stage.running { background: var(--accent-soft); }
+.stage.running .dot { border-color: var(--accent); border-top-color: transparent; animation: spin 0.8s linear infinite; }
+.stage.done .dot { background: var(--ok); border-color: var(--ok); }
+.stage .meter { height: 6px; background: var(--sunk); border-radius: 3px; overflow: hidden; }
+.stage .meter i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.2s linear; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.review { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 12px; align-items: start; }
+.steplist { display: grid; gap: 3px; max-height: 640px; overflow-y: auto; padding: 6px; }
+.steplist button { text-align: left; display: grid; grid-template-columns: 34px 1fr auto; gap: 6px; align-items: center; padding: 6px 8px; font-weight: 400; border-color: transparent; background: transparent; }
+.steplist button:hover { background: var(--bg); }
+.steplist button.on { background: var(--accent-soft); border-color: var(--accent); }
+.steplist .sid { font: 500 0.75rem var(--mono); color: var(--muted); }
+.steplist .ttl { font-size: 0.88rem; line-height: 1.25; }
+.pip { width: 9px; height: 9px; border-radius: 50%; }
+.pip.ok { background: var(--ok); } .pip.warn { background: var(--warn); } .pip.crit { background: var(--crit); }
+.detail { display: grid; gap: 10px; min-width: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip { font-size: 0.78rem; padding: 2px 8px; border-radius: 999px; background: var(--sunk); }
+.chip.gap { background: var(--warn-soft); }
+.chip.gap.block { background: var(--crit-soft); }
+.chip.user { background: var(--ok-soft); }
+.note { padding: 7px 10px; border-radius: 4px; background: var(--bg); display: grid; gap: 2px; font-size: 0.9rem; border-left: 3px solid var(--line); }
+.note.conflict { border-left-color: var(--crit); }
+.note.requirement, .note.caution { border-left-color: var(--warn); }
+.kind { font: 600 0.66rem var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.note.conflict .kind { color: var(--crit); }
+.subs { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 0.88rem; }
+.subs li { display: grid; grid-template-columns: 54px 1fr auto; gap: 8px; }
+.subs .t { color: var(--muted); font-size: 0.78rem; padding-top: 2px; }
+.pill { font: 600 0.68rem var(--mono); padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.04em; }
+.pill.ok { background: var(--ok-soft); color: var(--ok); } .pill.warn { background: var(--warn-soft); color: var(--warn); } .pill.crit { background: var(--crit-soft); color: var(--crit); }
+.pill.info { background: var(--sunk); color: var(--muted); }
+.sop-cov { display: grid; gap: 4px; font-size: 0.88rem; }
+.sop-cov div { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 8px; align-items: start; }
+.qlist { display: grid; gap: 10px; }
+.q { display: grid; gap: 6px; padding: 12px; border-radius: 5px; background: var(--bg); }
+.q .qhead { display: flex; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.diff { display: grid; gap: 10px; }
+.diffrow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; padding: 12px; border-radius: 5px; background: var(--bg); }
+.diffrow > div { min-width: 0; display: grid; gap: 4px; align-content: start; }
+ins { text-decoration: none; background: var(--ok-soft); border-radius: 2px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+.stat { padding: 10px 12px; background: var(--bg); border-radius: 5px; display: grid; gap: 2px; }
+.stat b { font: 600 1.3rem var(--display); font-variant-numeric: tabular-nums; }
+
+/* API console */
+.console { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; }
+.console header { padding: 12px 14px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.calls { overflow-y: auto; font: 0.78rem/1.4 var(--mono); }
+.call { border-bottom: 1px solid var(--line); }
+.call summary { list-style: none; cursor: pointer; padding: 7px 12px; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 6px; align-items: baseline; }
+.call summary::-webkit-details-marker { display: none; }
+.call .m { font-weight: 600; } .m.GET { color: var(--get); } .m.POST { color: var(--post); } .m.PUT { color: var(--put); }
+.call .p { overflow-wrap: anywhere; }
+.call .s { color: var(--muted); }
+.call .src { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0 5px; border-radius: 3px; margin-left: 4px; }
+.src.recorded { background: var(--ok-soft); color: var(--ok); } .src.emulated { background: var(--sunk); color: var(--muted); }
+.call pre { margin: 0; padding: 8px 12px 12px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow-y: auto; background: var(--bg); font-size: 0.74rem; }
+.empty { padding: 16px; color: var(--muted); font-family: var(--body); font-size: 0.9rem; }
+
+@media (max-width: 1080px) { .studio { grid-template-columns: minmax(0, 1fr); } .console { position: static; max-height: 480px; } }
+@media (max-width: 900px) { .trio, .grid2, .review, .diffrow { grid-template-columns: minmax(0, 1fr); } .lane { grid-template-columns: 1fr; gap: 3px; } .steplist { max-height: 300px; } }
+@media (prefers-reduced-motion: reduce) { .stage.running .dot { animation: none; } .stage .meter i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div style="display:grid;gap:6px">
+      <span class="eyebrow">tutorialgen · Bambu X1C nozzle-wiper mod</span>
+      <h1>SteinWipe Tutorial Studio</h1>
+      <p class="muted small" id="sub"></p>
+    </div>
+    <nav class="tabs" aria-label="Views"><a href="#compare" id="tab-compare">Compare videos</a><a href="#studio" id="tab-studio">Expert studio</a></nav>
+  </header>
+
+  <!-- ============ COMPARE ============ -->
+  <main id="view-compare" style="display:grid;gap:22px">
+    <section class="trio" id="trio"></section>
+    <section style="display:grid;gap:10px">
+      <h2>Where Our Steps Fall In The Raw Stream</h2>
+      <div class="panel timeline" id="timeline"></div>
+      <p class="muted small">Click a lane to jump the raw video. Hand labels are the reference division written for evaluation; our lane is the expert-reviewed run.</p>
+    </section>
+    <section style="display:grid;gap:10px">
+      <h2>Side By Side</h2>
+      <div class="panel scroll"><table id="cmp"></table></div>
+    </section>
+  </main>
+
+  <!-- ============ STUDIO ============ -->
+  <main id="view-studio" class="studio" hidden>
+    <div class="flow">
+      <ol class="stepper" id="stepper"><li>Upload</li><li>Generate</li><li>Review steps</li><li>Answer questions</li><li>Publish</li></ol>
+
+      <section class="panel card" id="s-upload">
+        <h2>New Tutorial From A Demo Recording</h2>
+        <p class="muted small">An expert uploads one uncut recording and the procedure it should follow. Nothing is uploaded from this page; the console shows the calls the studio would make.</p>
+        <div class="field"><label for="pname">Project name</label><input id="pname" value="SteinWipe install (livestream)"></div>
+        <div class="grid2">
+          <div class="drop"><span class="eyebrow">Demo video</span><b id="vname"></b><span class="muted small" id="vmeta"></span>
+            <div class="grid2" style="margin-top:6px"><div class="field"><label for="ex-start">Use from (s)</label><input id="ex-start" class="mono" value="2940"></div>
+            <div class="field"><label for="ex-end">to (s)</label><input id="ex-end" class="mono" value="3750"></div></div></div>
+          <div class="drop"><span class="eyebrow">Procedure / SOP</span><b>bambu-x1-replace-nozzle-wiper.md</b><span class="muted small">Bambu Lab wiki, X1 series maintenance</span>
+            <details><summary class="small">Show the document</summary><pre class="sop" id="sop"></pre></details></div>
+        </div>
+        <div class="row"><button class="primary" id="btn-create">Create project</button><span class="muted small" id="create-msg"></span></div>
+      </section>
+
+      <section class="panel card" id="s-generate" hidden>
+        <div class="row" style="justify-content:space-between"><h2>Generating</h2><span class="pill info" id="gen-pill">queued</span></div>
+        <p class="muted small" id="gen-note"></p>
+        <div class="stages" id="stages"></div>
+        <div class="row"><button class="primary" id="btn-review" disabled>Review the steps</button><button id="btn-skip">Skip animation</button></div>
+      </section>
+
+      <section class="panel card" id="s-review" hidden>
+        <div class="row" style="justify-content:space-between"><h2>Review The Draft</h2><span class="muted small" id="review-count"></span></div>
+        <div class="grid2">
+          <video id="rv" src="media/raw.mp4" controls preload="metadata" playsinline></video>
+          <div style="display:grid;gap:8px;align-content:start">
+            <span class="eyebrow">Procedure coverage (Bambu SOP)</span>
+            <div class="sop-cov" id="sopcov"></div>
+          </div>
+        </div>
+        <div class="review">
+          <div class="panel steplist" id="steplist" role="listbox" aria-label="Steps"></div>
+          <div class="detail" id="detail"></div>
+        </div>
+        <div class="row"><button class="primary" id="btn-answer">Answer the open questions</button></div>
+      </section>
+
+      <section class="panel card" id="s-answer" hidden>
+        <h2>Questions For The Expert</h2>
+        <p class="muted small">Each question comes from a gap in the draft or a disagreement with the SOP. The answers below are the ones recorded in this demo session; they reflect what the creator says in the stream.</p>
+        <div class="qlist" id="qlist"></div>
+        <div class="row"><button class="primary" id="btn-send">Send answers and regenerate</button><span class="muted small" id="send-msg"></span></div>
+        <div class="stages" id="rerun" hidden></div>
+        <div id="diff" class="diff" hidden></div>
+        <div class="row"><button class="primary" id="btn-publish" hidden>Publish the tutorial</button></div>
+      </section>
+
+      <section class="panel card" id="s-publish" hidden>
+        <h2>Published Tutorial</h2>
+        <div class="grid2">
+          <video src="media/tutorial.mp4" controls preload="metadata" playsinline></video>
+          <div class="stats" id="final-stats"></div>
+        </div>
+        <p class="muted small" id="final-note"></p>
+      </section>
+    </div>
+
+    <aside class="panel console" aria-label="API console">
+      <header><span class="eyebrow">API console</span><span class="small muted">Recorded = real response from the tutorialgen FastAPI app. Emulated = built from the real run's files for steps this mock fakes.</span></header>
+      <div class="calls" id="calls"><div class="empty">Calls appear here as you go.</div></div>
+    </aside>
+  </main>
+</div>
+
+<script>
+const D = __DATA__;
+const $ = (s) => document.querySelector(s);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const fmt = (t) => { t = Math.max(0, Math.round(t)); return `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`; };
+const dur = (s) => s >= 60 ? `${Math.floor(s / 60)}m ${Math.round(s % 60)}s` : `${s.toFixed(s < 10 ? 1 : 0)}s`;
+const pct = (t, total) => `${(t / total) * 100}%`;
+const PID = D.project_id;
+const before = D.before, after = D.after;
+const stepsB = before.steps.steps, stepsA = after.steps.steps;
+const notesFor = (rep, id) => (rep.steps.find((s) => s.step_id === id) || { notes: [] }).notes;
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+$("#sub").textContent = `Raw source: ${D.raw.channel}, "${D.raw.title}" (${D.raw.license}), excerpt ${D.raw.excerpt}. SOP: Bambu Lab X1 "Replace Nozzle Wiper".`;
+
+// ---------------- routing ----------------
+function route() {
+  const v = location.hash === "#studio" ? "studio" : "compare";
+  $("#view-compare").hidden = v !== "compare"; $("#view-studio").hidden = v !== "studio";
+  for (const [id, name] of [["#tab-compare", "compare"], ["#tab-studio", "studio"]]) {
+    if (v === name) $(id).setAttribute("aria-current", "page"); else $(id).removeAttribute("aria-current");
+  }
+}
+addEventListener("hashchange", route); route();
+
+// ---------------- compare ----------------
+function station(tag, tagCls, title, body, facts) {
+  const s = el("article", "panel station");
+  const t = el("span", "tag " + tagCls, tag); s.append(t, el("h3", null, title), body);
+  const dl = el("dl", "facts");
+  for (const [k, v] of facts) { dl.append(el("dt", null, k), el("dd", null, v)); }
+  s.append(dl); return s;
+}
+const rawVid = el("video"); Object.assign(rawVid, { src: "media/raw.mp4", controls: true, preload: "metadata", playsInline: true });
+const ourVid = el("video"); Object.assign(ourVid, { src: "media/tutorial.mp4", controls: true, preload: "metadata", playsInline: true });
+const yt = el("div", "ytcard");
+const ya = el("a", null, "Open on YouTube"); ya.href = D.curated.url; ya.target = "_blank"; ya.rel = "noopener";
+yt.append(el("span", "eyebrow", `${D.curated.channel} · ${D.curated.views.toLocaleString()} views`), el("b", null, D.curated.title), ya,
+  el("span", "muted small", "Not re-hosted here: standard YouTube license."));
+const ytBody = el("div"); ytBody.style.display = "grid"; ytBody.style.gap = "8px"; ytBody.append(yt);
+const ol = el("ul", "outline");
+for (const [t, txt] of D.curated.outline) {
+  const li = el("li"); const a = el("a"); a.href = `${D.curated.url}&t=${t}s`; a.target = "_blank"; a.rel = "noopener";
+  a.append(el("span", "t", fmt(t)), el("span", null, txt)); li.append(a); ol.append(li);
+}
+ytBody.append(el("span", "eyebrow", "Its structure, from the captions"), ol);
+const nSteps = stepsA.length;
+$("#trio").append(
+  station("1 · Raw recording", "", "Uncut livestream excerpt", rawVid, [["Length", fmt(D.duration)], ["Editing", `${D.raw.cuts_per_min} cuts/min (one take)`], ["Structure", "None; he talks while he works"], ["Source", `${D.raw.channel}, ${D.raw.license}`]]),
+  station("2 · Our method", "ours", "Generated tutorial", ourVid, [["Length", fmt(D.tutorial_duration)], ["Structure", `${nSteps} steps, cards, sub-step captions`], ["Extras", "Hand overlays, focus crops, Bambu SOP notes, open questions"], ["Made from", "Video 1 + Bambu SOP + expert answers"]]),
+  station("3 · Curated tutorial", "", "Creator's edited version", ytBody, [["Length", fmt(D.curated.duration)], ["Editing", `${D.curated.cuts_per_min} cuts/min`], ["Structure", "Spoken sections, no on-screen steps"], ["Uploaded", D.curated.uploaded]]),
+);
+
+const tl = $("#timeline"); const heads = [];
+function lane(name, count, segs, cls, extra) {
+  const l = el("div", "lane"); const n = el("div", "lane-name"); n.innerHTML = `<b>${name}</b>${count != null ? ` · ${count}` : ""}`;
+  const tr = el("div", "track" + (extra?.thin ? " thin" : "")); tr.tabIndex = 0;
+  for (const s of segs) { const d = el("div", `seg ${cls}`, s.label); d.style.left = pct(s.start, D.duration); d.style.width = `calc(${pct(s.end - s.start, D.duration)} - 1px)`; d.title = `${fmt(s.start)}–${fmt(s.end)} ${s.label}`; tr.append(d); }
+  extra?.draw?.(tr);
+  tr.addEventListener("click", (e) => { const r = tr.getBoundingClientRect(); rawVid.currentTime = ((e.clientX - r.left) / r.width) * D.duration; rawVid.play().catch(() => {}); });
+  const ph = el("div", "playhead"); tr.append(ph); heads.push(ph); l.append(n, tr); tl.append(l);
+}
+lane("Hand labels", D.labels.length, D.labels.map((s) => ({ start: s.start, end: s.end, label: s.label })), "label");
+lane("Our steps", nSteps, stepsA.map((s) => ({ start: s.start, end: s.end, label: `${s.id} ${s.title}` })), "ours");
+lane("Narration", null, [], "", { thin: true, draw: (tr) => D.transcript.forEach((s) => { const d = el("div", "bar"); d.style.left = pct(s.start, D.duration); d.style.width = pct(s.end - s.start, D.duration); d.style.height = "100%"; d.style.opacity = "0.3"; tr.append(d); }) });
+lane("Hands visible", null, [], "", { thin: true, draw: (tr) => D.hands.forEach((v, i) => { const d = el("div", "bar"); d.style.left = pct(i * 2, D.duration); d.style.width = pct(2, D.duration); d.style.height = `${v * 100}%`; tr.append(d); }) });
+const axis = el("div", "axis"); const axl = el("div", "lane"); axl.append(el("div"), axis);
+for (let t = 0; t <= D.duration; t += 60) { const s = el("span", null, fmt(t)); s.style.left = pct(t, D.duration); axis.append(s); }
+tl.append(axl);
+rawVid.addEventListener("timeupdate", () => heads.forEach((h) => (h.style.left = pct(rawVid.currentTime, D.duration))));
+
+const ea = D.eval.after;
+const rows = [
+  ["Length", fmt(D.duration), fmt(D.tutorial_duration), fmt(D.curated.duration)],
+  ["Edits", "none (one take)", "automatic: cards + per-step clips", `${Math.round(D.curated.cuts_per_min * D.curated.duration / 60)} cuts`],
+  ["Steps a learner sees", "none", `${nSteps} numbered steps with sub-step captions`, "12 spoken sections (no on-screen numbering)"],
+  ["Key facts from the stream (1/16″, 1/8″, M3×6, M3×8, snug, deburr, G28)", "all spoken, scattered", `${ea.facts_stated} stated in the steps`, "most spoken; G28 test not shown"],
+  ["Safety: power off before working inside (Bambu SOP)", "not mentioned", "flagged and answered by the expert", "not mentioned"],
+  ["Open questions left for the expert", "n/a", `${ea.questions.open} (${ea.questions.blocking} blocking)`, "n/a"],
+  ["Hand-pose data", "none", "MediaPipe landmarks saved, skeleton overlay", "none"],
+  ["Effort", "live, unedited", `~${Object.values(D.llm_by_task).reduce((a, b) => a + b, 0)} LLM calls (Gemini free tier) + CPU`, "creator's own editing"],
+];
+const cmp = $("#cmp"); cmp.innerHTML = "<thead><tr><th></th><th>1 · Raw</th><th>2 · Ours</th><th>3 · Curated</th></tr></thead>";
+const tb = el("tbody"); rows.forEach((r) => { const tr = el("tr"); r.forEach((c, i) => tr.append(el(i ? "td" : "th", null, c))); tb.append(tr); }); cmp.append(tb);
+
+// ---------------- API console ----------------
+let callCount = 0;
+function logCall(entry, source) {
+  const box = $("#calls"); if (!callCount) box.innerHTML = ""; callCount++;
+  const d = el("details", "call"); const s = el("summary");
+  const m = el("span", `m ${entry.method}`, entry.method); const p = el("span", "p", entry.path);
+  const st = el("span", "s", `${entry.status}${entry.ms != null ? ` · ${entry.ms}ms` : ""}`);
+  st.append(el("span", `src ${source}`, source)); s.append(m, p, st); d.append(s);
+  const body = [];
+  if (entry.request) body.push("request:\n" + JSON.stringify(entry.request, null, 1));
+  if (entry.headers && Object.keys(entry.headers).length) body.push("headers:\n" + JSON.stringify(entry.headers, null, 1));
+  const resp = entry.response; let txt = resp?._truncated ? resp.preview + `\n… (${resp._bytes.toLocaleString()} bytes)` : JSON.stringify(resp, null, 1);
+  if (txt && txt.length > 4000) txt = txt.slice(0, 4000) + "\n…";
+  body.push("response:\n" + txt); d.append(el("pre", null, body.join("\n\n")));
+  box.prepend(d);
+}
+const recorded = (pred) => D.api_log.filter(pred);
+const M = D.manifest;
+
+// ---------------- studio flow ----------------
+const sections = ["s-upload", "s-generate", "s-review", "s-answer", "s-publish"];
+function goto(i) {
+  sections.forEach((id, k) => { if (k <= i) $("#" + id).hidden = false; });
+  [...$("#stepper").children].forEach((li, k) => { li.classList.toggle("on", k === i); li.classList.toggle("done", k < i); });
+  $("#" + sections[i]).scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+}
+[...$("#stepper").children][0].classList.add("on");
+$("#vname").textContent = "x1c-steinwipe-livestream.mp4";
+$("#vmeta").textContent = `${D.raw.title} · ${D.raw.channel} · ${D.raw.license}`;
+$("#sop").textContent = D.sop;
+
+$("#btn-create").addEventListener("click", () => {
+  $("#btn-create").disabled = true;
+  const name = $("#pname").value || M.name;
+  logCall({ method: "GET", path: "/health", status: 200, ...recorded((e) => e.path === "/health")[0] }, "recorded");
+  const created = { ...M, name, video: null, documents: [], stages: {}, active_run_id: null };
+  logCall({ method: "POST", path: "/projects", status: 201, request: { name }, response: created }, "emulated");
+  logCall({ method: "PUT", path: `/projects/${PID}/video`, status: 200, request: { file: "x1c-steinwipe-livestream.mp4 (multipart)" }, response: { ...created, video: M.video } }, "emulated");
+  logCall({ method: "POST", path: `/projects/${PID}/documents`, status: 201, request: { file: "bambu-x1-replace-nozzle-wiper.md (multipart)" }, response: M.documents[0] }, "emulated");
+  $("#create-msg").textContent = `Project ${PID} created. Excerpt ${$("#ex-start").value}–${$("#ex-end").value} s goes in the project config (there is no API endpoint for it yet).`;
+  goto(1); startGeneration();
+});
+
+const STAGE_CALLS = { segment: "segment_steps", draft: "draft_step", refine: "refine_step", questions: "questions" };
+function stageRows(container, timings) {
+  container.innerHTML = "";
+  return timings.map((s) => {
+    const r = el("div", "stage"); r.append(el("span", "dot"), el("span", "mono small", s.stage));
+    const meter = el("span", "meter"); const fill = el("i"); meter.append(fill); r.append(meter);
+    let calls = D.llm_by_task[STAGE_CALLS[s.stage]] || 0;
+    if (s.stage === "compliance") calls = Object.entries(D.llm_by_task).filter(([k]) => k.startsWith("compliance")).reduce((a, [, v]) => a + v, 0);
+    r.append(el("span", "muted small mono", `${dur(s.seconds)}${calls ? ` · ${calls} LLM` : ""}`));
+    container.append(r); return { row: r, fill, s };
+  });
+}
+let skip = false;
+const sleep = (ms) => new Promise((res) => setTimeout(res, skip || reduced ? 0 : ms));
+async function animate(rows, onStage) {
+  for (const x of rows) {
+    x.row.classList.add("running"); onStage?.(x.s.stage);
+    const ms = Math.min(2200, Math.max(350, x.s.seconds * 6));
+    const steps = 10;
+    for (let k = 1; k <= steps; k++) { x.fill.style.width = `${(k / steps) * 100}%`; await sleep(ms / steps); }
+    x.row.classList.remove("running"); x.row.classList.add("done");
+  }
+}
+async function startGeneration() {
+  const order = ["ingest", "perception", "transcribe", "gestures", "candidates", "segment", "draft", "refine", "compliance", "questions", "render"];
+  const timings = order.map((n) => D.stages.find((s) => s.stage === n)).filter(Boolean);
+  const total = timings.reduce((a, s) => a + s.seconds, 0);
+  $("#gen-note").textContent = `Durations are the real ones from this run on a laptop CPU (${dur(total)} in total, including the last re-render); the animation is sped up.`;
+  const runId = "r-demo-generate";
+  logCall({ method: "POST", path: `/projects/${PID}/runs`, status: 202, request: {}, response: { id: runId, project_id: PID, status: "queued", request: { stages: null, until: null, force: false } }, headers: { location: `/projects/${PID}/runs/${runId}` } }, "emulated");
+  $("#gen-pill").textContent = "running"; $("#gen-pill").className = "pill warn";
+  const rows = stageRows($("#stages"), timings);
+  await animate(rows, (stage) => logCall({ method: "GET", path: `/projects/${PID}/runs/${runId}`, status: 200, response: { id: runId, status: "running", current_stage: stage } }, "emulated"));
+  logCall({ method: "GET", path: `/projects/${PID}/runs/${runId}`, status: 200, response: { id: runId, status: "done", results: Object.fromEntries(order.map((n) => [n, "ran"])) } }, "emulated");
+  $("#gen-pill").textContent = "done"; $("#gen-pill").className = "pill ok";
+  $("#btn-review").disabled = false; $("#btn-skip").disabled = true;
+}
+$("#btn-skip").addEventListener("click", () => { skip = true; });
+
+// review
+let current = 0; const verdict = {};
+function stepState(s, notes) {
+  if (notes.some((n) => n.kind === "conflict") || s.missing_info.some((m) => m.blocking)) return "crit";
+  if (s.missing_info.length || s.confidence < 0.7) return "warn";
+  return "ok";
+}
+$("#btn-review").addEventListener("click", () => {
+  for (const n of ["steps", "compliance", "questions"]) {
+    const e = recorded((x) => x.method === "GET" && x.path === `/projects/${PID}/${n}`)[0];
+    if (e) logCall(e, "recorded");
+  }
+  goto(2); renderReview();
+});
+function renderSopCoverage(rep, box) {
+  box.innerHTML = "";
+  for (const p of rep.sop_procedure || []) {
+    const r = el("div"); r.append(el("span", "mono small", p.id), el("span", null, p.action));
+    const cls = p.status === "covered" ? "ok" : p.status === "missing" ? "crit" : "warn";
+    r.append(el("span", `pill ${cls}`, p.status.replace("_", " "))); box.append(r);
+  }
+}
+function renderReview() {
+  renderSopCoverage(before.compliance, $("#sopcov"));
+  const list = $("#steplist"); list.innerHTML = "";
+  stepsB.forEach((s, i) => {
+    const b = el("button"); b.setAttribute("role", "option");
+    b.append(el("span", "sid", s.id), el("span", "ttl", s.title), el("span", `pip ${stepState(s, notesFor(before.compliance, s.id))}`));
+    b.addEventListener("click", () => { current = i; selectStep(); playStep(); }); list.append(b);
+  });
+  const crit = stepsB.filter((s) => stepState(s, notesFor(before.compliance, s.id)) === "crit").length;
+  $("#review-count").textContent = `${stepsB.length} steps · ${crit} need attention`;
+  selectStep();
+}
+let stopAt = null;
+const rv = $("#rv");
+rv.addEventListener("timeupdate", () => { if (stopAt != null && rv.currentTime >= stopAt) { rv.pause(); stopAt = null; } });
+function useSource(src, then) {
+  if (rv.getAttribute("src") === src) return then();
+  rv.setAttribute("src", src); rv.addEventListener("loadedmetadata", then, { once: true }); rv.load();
+}
+function playStep() { const s = stepsB[current]; useSource("media/raw.mp4", () => { rv.currentTime = s.start; stopAt = s.end; rv.play().catch(() => {}); }); }
+function playGenerated() {
+  const o = D.offsets[current]; if (!o) return;
+  useSource("media/tutorial.mp4", () => { rv.currentTime = o.card; stopAt = o.end; rv.play().catch(() => {}); });
+}
+function selectStep() {
+  [...$("#steplist").children].forEach((b, k) => { b.classList.toggle("on", k === current); b.setAttribute("aria-selected", k === current); });
+  const s = stepsB[current]; const notes = notesFor(before.compliance, s.id); const box = $("#detail"); box.innerHTML = "";
+  const head = el("div", "row"); head.append(el("span", "eyebrow", `${s.id} · ${fmt(s.start)}–${fmt(s.end)} of the excerpt`));
+  const conf = s.confidence >= 0.85 ? "ok" : s.confidence >= 0.6 ? "warn" : "crit";
+  head.append(el("span", `pill ${conf}`, `confidence ${s.confidence}`)); box.append(head);
+  const title = el("h3", null, s.title); title.contentEditable = "true"; title.title = "Edit the title (stays in this demo)"; box.append(title);
+  box.append(el("p", null, s.instruction));
+  if (s.substeps?.length) {
+    const ul = el("ul", "subs"); s.substeps.forEach((x) => { const li = el("li"); li.append(el("span", "t", fmt(x.start)), el("span", null, x.caption), el("span", "muted small mono", x.focus)); ul.append(li); });
+    box.append(el("span", "eyebrow", "Sub-steps · on-screen caption · focus box"), ul);
+  }
+  const chips = el("div", "chips");
+  [...s.tools, ...s.materials].forEach((t) => chips.append(el("span", "chip", t)));
+  s.missing_info.forEach((m) => chips.append(el("span", "chip gap" + (m.blocking ? " block" : ""), `Missing ${m.field}: ${m.description}`)));
+  if (chips.children.length) box.append(chips);
+  if (notes.length) { box.append(el("span", "eyebrow", "Bambu SOP notes")); notes.forEach((n) => { const d = el("div", `note ${n.kind}`); d.append(el("span", "kind", `${n.kind} · ${n.severity}`), el("span", null, n.text)); if (n.citations?.[0]) d.append(el("span", "muted small", `“${n.citations[0].quote}”`)); box.append(d); }); }
+  const acts = el("div", "row");
+  const play = el("button", null, "Play original"); play.addEventListener("click", playStep);
+  const gen = el("button", null, "Play generated clip"); gen.addEventListener("click", playGenerated); gen.disabled = !D.offsets[current];
+  const ok = el("button", null, verdict[s.id] === "ok" ? "Marked correct" : "Looks right"); ok.addEventListener("click", () => { verdict[s.id] = "ok"; selectStep(); });
+  const flag = el("button", null, verdict[s.id] === "flag" ? "Flagged" : "Flag for edit"); flag.addEventListener("click", () => { verdict[s.id] = "flag"; selectStep(); });
+  const prev = el("button", null, "Previous"); prev.disabled = current === 0; prev.addEventListener("click", () => { current--; selectStep(); });
+  const next = el("button", null, "Next step"); next.disabled = current === stepsB.length - 1; next.addEventListener("click", () => { current++; selectStep(); });
+  acts.append(play, gen, ok, flag, prev, next); box.append(acts);
+}
+
+// answer
+const answerFor = Object.fromEntries(D.answers.map((a) => [a.question_id, a.text]));
+$("#btn-answer").addEventListener("click", () => {
+  const e = recorded((x) => x.method === "GET" && x.path.startsWith(`/projects/${PID}/questions?status=open`))[0]; if (e) logCall(e, "recorded");
+  goto(3);
+  const box = $("#qlist"); box.innerHTML = "";
+  for (const q of before.questions.questions.filter((q) => q.status === "open")) {
+    const d = el("div", "q"); const h = el("div", "qhead");
+    h.append(el("span", "mono small", q.id)); if (q.blocking) h.append(el("span", "pill crit", "blocking"));
+    h.append(el("span", "pill info", q.kind.replace("_", " ")), el("span", "muted small", q.step_id ? `step ${q.step_id}` : "whole procedure"));
+    d.append(h, el("b", null, q.text));
+    const ta = el("textarea"); ta.id = `ans-${q.id}`; ta.value = answerFor[q.id] || ""; ta.placeholder = "Leave empty to answer later";
+    ta.setAttribute("aria-label", `Answer to ${q.id}`); d.append(ta); box.append(d);
+  }
+});
+$("#btn-send").addEventListener("click", async () => {
+  $("#btn-send").disabled = true;
+  const posts = recorded((x) => x.method === "POST" && x.path.includes("/answers"));
+  const edited = posts.filter((p) => ($(`#ans-${p.request.question_id}`)?.value || "").trim() !== p.request.text);
+  $("#send-msg").textContent = edited.length ? "This demo replays the recorded answers; your edits are shown in the console but not re-run." : `${posts.length} answers sent; the last one asks for a re-run.`;
+  for (const p of posts) { logCall(p, "recorded"); await sleep(150); }
+  const rr = $("#rerun"); rr.hidden = false;
+  const runRec = recorded((x) => x.path.includes("/runs/"))[0];
+  const ran = Object.entries(runRec?.response?.results || {}).filter(([, v]) => v === "ran").map(([k]) => k);
+  const timings = D.rerun_stages.filter((s) => ran.includes(s.stage));
+  await animate(stageRows(rr, timings));
+  if (runRec) logCall(runRec, "recorded");
+  for (const n of ["steps", "questions", "compliance"]) { const e = recorded((x) => x.method === "GET" && x.path === `/projects/${PID}/${n}`).slice(-1)[0]; if (e) logCall(e, "recorded"); }
+  renderDiff(); $("#btn-publish").hidden = false;
+});
+function renderDiff() {
+  const box = $("#diff"); box.hidden = false; box.innerHTML = "";
+  const qa = Object.fromEntries(after.questions.questions.map((q) => [q.id, q]));
+  const qb = before.questions.questions.filter((q) => q.status === "open");
+  const answered = qb.filter((q) => qa[q.id]?.status === "answered").length;
+  const conflicts = (rep) => rep.steps.reduce((a, s) => a + s.notes.filter((n) => n.kind === "conflict").length, 0);
+  const st = el("div", "stats");
+  for (const [k, v] of [["Questions answered", `${answered} / ${qb.length}`], ["Still open", after.questions.questions.filter((q) => q.status === "open").length], ["SOP conflicts", `${conflicts(before.compliance)} → ${conflicts(after.compliance)}`], ["Steps revised", stepsA.filter((s, i) => JSON.stringify(s) !== JSON.stringify(stepsB[i])).length], ["Revision", `${before.steps.revision} → ${after.steps.revision}`]]) {
+    const s = el("div", "stat"); s.append(el("span", "eyebrow", k), el("b", null, String(v))); st.append(s);
+  }
+  box.append(el("h3", null, "What Changed"), st);
+  for (const a of stepsA) {
+    const b = stepsB.find((x) => x.id === a.id); if (!b) continue;
+    const added = a.user_supplied.filter((f) => !b.user_supplied.includes(f));
+    const resolved = b.missing_info.filter((m) => !a.missing_info.some((x) => x.description === m.description));
+    if (!added.length && !resolved.length && a.instruction === b.instruction) continue;
+    const r = el("div", "diffrow");
+    const L = el("div"); L.append(el("span", "eyebrow", `${b.id} before`), el("b", null, b.title), el("span", null, b.instruction));
+    resolved.forEach((m) => L.append(el("span", "chip gap block", `Missing ${m.field}: ${m.description}`)));
+    const R = el("div"); R.append(el("span", "eyebrow", `${a.id} after`), el("b", null, a.title));
+    const ins = el("span"); if (a.instruction !== b.instruction) { const i2 = el("ins", null, a.instruction); ins.append(i2); } else ins.textContent = a.instruction; R.append(ins);
+    added.forEach((f) => R.append(el("span", "chip user", `From the expert: ${f.replace(/\s*\(answer to:.*$/, "")}`)));
+    r.append(L, R); box.append(r);
+  }
+  for (const n of after.steps.notes || []) { const d = el("div", "note"); d.append(el("span", "kind", "procedure note from the expert"), el("span", null, n.text)); box.append(d); }
+}
+$("#btn-publish").addEventListener("click", () => {
+  logCall({ method: "GET", path: `/projects/${PID}/tutorial.mp4`, status: 206, headers: { "content-type": "video/mp4", "accept-ranges": "bytes" }, response: "(video stream)" }, "emulated");
+  goto(4);
+  const ea = D.eval.after, eb = D.eval.before;
+  const st = $("#final-stats"); st.innerHTML = "";
+  for (const [k, v] of [["Steps", stepsA.length], ["Tutorial length", fmt(D.tutorial_duration)], ["Key facts stated", ea.facts_stated], ["Expected questions raised", eb.questions.expected_raised], ["Expected SOP notes", ea.compliance.expected_notes_found], ["Boundary F1 (±5 s)", ea.boundaries.f1]]) {
+    const s = el("div", "stat"); s.append(el("span", "eyebrow", k), el("b", null, String(v))); st.append(s);
+  }
+  $("#final-note").textContent = `Scored against hand labels for this excerpt. The draft still over-splits the work (${stepsA.length} steps vs ${D.labels.length} labelled) and turns some narrated explanation into steps; those are the next fixes.`;
+});
+</script>
