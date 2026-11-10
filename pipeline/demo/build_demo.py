@@ -22,6 +22,7 @@ import yaml
 from tutorialgen.eval import Labels, evaluate
 from tutorialgen.media.video import ffmpeg_exe
 from tutorialgen.project import Project
+from tutorialgen.edit import subtitle_lines
 from tutorialgen.schemas import HandFrame, Transcript, VideoMeta
 from tutorialgen.stages.render import RenderConfig
 
@@ -119,38 +120,39 @@ def vtt(cues: list[tuple[float, float, str]], settings: str = "") -> str:
     return "\n".join(lines)
 
 
-def subtitle_lines(tr: Transcript, max_s: float = 6.0, max_words: int = 12, gap_s: float = 0.8) -> list[dict]:
-    """Short subtitle cues from Whisper word timestamps (segments can span long pauses), grouped
-    across segment boundaries so no cue is a stray word."""
-    words = [w for seg in tr.segments for w in seg.words]
-    if not words:
-        return [{"start": seg.start, "end": seg.end, "text": seg.text.strip()} for seg in tr.segments]
-    out, cur = [], []
-
-    def flush():
-        out.append({"start": cur[0].start, "end": cur[-1].end, "text": " ".join(x.word.strip() for x in cur)})
-
-    for w in words:
-        if cur and (w.start - cur[-1].end > gap_s or w.end - cur[0].start > max_s or len(cur) >= max_words):
-            flush()
-            cur = []
-        cur.append(w)
-    if cur:
-        flush()
-    return out
+def kept_segments(step: dict, edit: dict | None) -> list[list[float]]:
+    """[[source start, source end, output start within the clip, speed], ...] for one step's clip.
+    Without an edit list the clip is the whole step at 1x."""
+    if not edit:
+        return [[step["start"], step["end"], 0.0, 1.0]]
+    out, t = [], 0.0
+    for u in edit["units"]:
+        if u["action"] == "cut":
+            continue
+        speed = u["speed"] if u["action"] == "speed" else 1.0
+        if out and speed == 1.0 == out[-1][3] and abs(out[-1][1] - u["start"]) < 1e-6:
+            out[-1][1] = u["end"]                       # merge contiguous kept units
+        else:
+            out.append([u["start"], u["end"], t, speed])
+        t += (u["end"] - u["start"]) / speed
+    return [[round(x, 3) for x in seg] for seg in out]
 
 
-def tutorial_cues(segments: list[dict], steps: list[dict], offsets: list[dict], title: str, tut_dur: float) -> list[tuple[float, float, str]]:
-    """Narration re-timed into the rendered tutorial: each step's clip plays [start, end] of the source
-    right after its card, so a segment inside a step moves by (clip offset - step start)."""
+def tutorial_cues(segments: list[dict], steps: list[dict], offsets: list[dict], title: str, tut_dur: float,
+                  kept: list[list[list[float]]]) -> list[tuple[float, float, str]]:
+    """Narration re-timed into the rendered tutorial through each step's kept segments. Sped-up parts
+    are muted, so their lines get no subtitle; cut parts are not in the tutorial at all."""
     cues = [(0.0, offsets[0]["card"], title)] if offsets else []
     for i, (s, o) in enumerate(zip(steps, offsets)):
         cues.append((o["card"], o["clip"], f"Step {i + 1} of {len(steps)}: {s['title']}"))
-        shift = o["clip"] - s["start"]
-        for seg in segments:
-            a, b = max(seg["start"], s["start"]), min(seg["end"], s["end"])
-            if b > a:
-                cues.append((a + shift, min(b + shift, o["end"]), seg["text"]))
+        for a0, b0, out0, speed in kept[i]:
+            if speed != 1.0:
+                continue
+            shift = o["clip"] + out0 - a0
+            for seg in segments:
+                a, b = max(seg["start"], a0), min(seg["end"], b0)
+                if b - a > 0.15:
+                    cues.append((a + shift, min(b + shift, o["end"]), seg["text"]))
     if offsets:
         cues.append((offsets[-1]["end"], tut_dur, "Open questions for the expert"))
     return sorted(cues)
@@ -206,9 +208,12 @@ def main(project_id: str, capture_dir: str, out_dir: str) -> None:
     else:
         print(f"warning: found {len(runs)} card runs for {n} steps; step offsets left out", flush=True)
 
-    segments = subtitle_lines(tr)
+    segments = [{"start": l.start, "end": l.end, "text": l.text} for l in subtitle_lines(tr)]
+    edl = json.loads(after_project.path("edit/edl.json").read_text()) if after_project.exists("edit/edl.json") else None
+    edits = {e["step_id"]: e for e in edl["steps"]} if edl and edl["enabled"] else {}
+    kept = [kept_segments(s, edits.get(s["id"])) for s in after["steps"]["steps"]]
     raw_cues = [(s["start"], s["end"], s["text"]) for s in segments]
-    tut_cues = tutorial_cues(segments, after["steps"]["steps"], offsets, after_project.manifest.name, tut_dur) if offsets else []
+    tut_cues = tutorial_cues(segments, after["steps"]["steps"], offsets, after_project.manifest.name, tut_dur, kept) if offsets else []
     # .vtt files serve the local compare page; the published page adds the same cues from its inline data.
     (out / "media" / "raw.vtt").write_text(vtt(raw_cues))
     (out / "media" / "tutorial.vtt").write_text(vtt(tut_cues, "line:6% position:50% align:center"))
@@ -224,16 +229,21 @@ def main(project_id: str, capture_dir: str, out_dir: str) -> None:
         "transcript": [{"id": s.id, "start": s.start, "end": s.end, "text": s.text.strip()} for s in tr.segments],
         "subs": {"raw": [[round(a, 2), round(b, 2), t] for a, b, t in raw_cues],
                  "tutorial": [[round(a, 2), round(b, 2), t] for a, b, t in tut_cues]},
+        "kept": kept,
+        "edl": {"enabled": bool(edits), "source_s": edl["source_s"] if edl else None, "output_s": edl["output_s"] if edl else None,
+                "steps": [[[u["start"], u["end"], u["action"], u["label"], u["reason"]] for u in edits[s["id"]]["units"]]
+                          if s["id"] in edits else [] for s in after["steps"]["steps"]]},
         "hands": hands, "labels": labels.steps, "tutorial_duration": round(tut_dur, 1), "offsets": offsets,
         "before": before, "after": after, "api_log": api_log,
-        "stages": stage_timings(orig), "rerun_stages": stage_timings(after_project),
+        "stages": stage_timings(orig) + [t for t in stage_timings(after_project) if t["stage"] == "edit"],
+        "rerun_stages": stage_timings(after_project),
         "manifest": json.loads(orig.path("project.json").read_text()),
         "sop": (PIPELINE / "samples" / "data" / "bambu-x1-replace-nozzle-wiper.md").read_text(),
         "answers": json.loads(after_project.path("inputs/answers.json").read_text())["answers"],
         "eval": {"before": ev_before, "after": ev_after},
         "llm_calls": {k or "unknown": v for k, v in served.items()},
         "llm_by_task": dict(collections.Counter(json.loads(p.read_text())["task"]
-                                                for p in orig.path("llm_cache").glob("*.json"))),
+                                                for p in after_project.path("llm_cache").glob("*.json"))),
     }
     html = (Path(__file__).with_name("studio_template.html")).read_text()
     (out / "studio.html").write_text(html.replace("__DATA__", json.dumps(data).replace("</", "<\\/")))

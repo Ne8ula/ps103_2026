@@ -11,8 +11,8 @@ The protocol is the same for every video:
    only offered unit ids; anything it does not label is kept.
 4. Actions, by fixed rules: cut long idle and asides; speed up an aside spoken while the hands keep
    working, and long silent task stretches; keep everything else.
-5. Guards. A number stated in the step text keeps a unit where it was said; every step keeps a
-   minimum length.
+5. Guards. A number stated in the step text keeps a unit where it was said; a spoken line with a
+   number is never cut or muted; every step keeps a minimum length.
 """
 
 from .rules import EditConfig, apply_rules, step_output_seconds

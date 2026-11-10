@@ -81,7 +81,12 @@ def apply_rules(step: Step, units: list[Unit], labels: dict[str, tuple[str, str]
             first = sources[0]
             first.action, first.speed, first.restored_by = "keep", 1.0, f"states {value:g}, which the step uses"
 
-    # Guard 2: a minimum length per step, restoring the busiest units first.
+    # Guard 2: a spoken number is never cut or muted, whatever the label (sizes, positions, counts).
+    for e in out:
+        if e.action != "keep" and by_id[e.id].numbers:
+            e.action, e.speed, e.restored_by = "keep", 1.0, "says a number"
+
+    # Guard 3: a minimum length per step, restoring the busiest units first.
     if step_output_seconds(out) < cfg.min_step_s:
         for e in sorted((e for e in out if e.action != "keep"), key=lambda e: -(e.hands + e.motion)):
             e.action, e.speed, e.restored_by = "keep", 1.0, "step would be shorter than the minimum"

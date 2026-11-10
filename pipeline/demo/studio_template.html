@@ -89,6 +89,17 @@ th { font: 500 0.7rem var(--mono); text-transform: uppercase; letter-spacing: 0.
 .seg.label { background: var(--panel); border-color: var(--muted); }
 .seg.ours { background: var(--accent-soft); border-color: var(--accent); }
 .seg.on { outline: 2px solid var(--accent); }
+.seg.keep { background: var(--accent); border-color: transparent; opacity: 0.55; }
+.seg.speed { background: var(--warn); border-color: transparent; opacity: 0.7; }
+.seg.cut { background: repeating-linear-gradient(135deg, var(--line) 0 3px, transparent 3px 7px); border-color: transparent; }
+.editstrip { position: relative; height: 14px; border-radius: 3px; background: var(--sunk); overflow: hidden; }
+.editstrip i { position: absolute; top: 0; bottom: 0; }
+.editstrip i.keep { background: var(--accent); opacity: 0.6; }
+.editstrip i.speed { background: var(--warn); }
+.editstrip i.cut { background: repeating-linear-gradient(135deg, var(--line) 0 3px, transparent 3px 7px); }
+.cuttag { font: 600 0.62rem var(--mono); text-transform: uppercase; color: var(--muted); margin-left: 6px; }
+.legend-row { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.8rem; color: var(--muted); align-items: center; }
+.legend-row i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
 .bar { position: absolute; bottom: 0; background: var(--accent); opacity: 0.5; }
 .playhead { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--crit); pointer-events: none; }
 .axis { position: relative; height: 14px; font: 0.68rem var(--mono); color: var(--muted); }
@@ -219,7 +230,8 @@ video::cue { font-family: var(--body); }
     <section style="display:grid;gap:10px">
       <h2>Where Our Steps Fall In The Raw Stream</h2>
       <div class="panel timeline" id="timeline"></div>
-      <p class="muted small">Click a lane to jump the raw video. Hand labels are the reference division written for evaluation; our lane is the expert-reviewed run.</p>
+      <div class="legend-row"><span><i style="background:var(--accent);opacity:.6"></i>kept</span><span><i style="background:var(--warn)"></i>sped up 3×, muted</span><span><i style="background:repeating-linear-gradient(135deg,var(--line) 0 3px,transparent 3px 7px)"></i>cut</span></div>
+      <p class="muted small">Click a lane to jump the raw video. Hand labels are the reference division written for evaluation; our lanes are the expert-reviewed run and what its edit keeps.</p>
     </section>
     <section style="display:grid;gap:10px">
       <h2>Side By Side</h2>
@@ -355,7 +367,7 @@ ytBody.append(el("span", "eyebrow", "Its structure, from the captions"), ol);
 const nSteps = stepsA.length;
 $("#trio").append(
   station("1 · Raw recording", "", "Uncut livestream excerpt", rawVid, [["Length", fmt(D.duration)], ["Editing", `${D.raw.cuts_per_min} cuts/min (one take)`], ["Structure", "None; he talks while he works"], ["Source", `${D.raw.channel}, ${D.raw.license}`]]),
-  station("2 · Our method", "ours", "Generated tutorial", ourVid, [["Length", fmt(D.tutorial_duration)], ["Structure", `${nSteps} steps, cards, sub-step captions`], ["Extras", "Hand overlays, focus crops, Bambu SOP notes, open questions"], ["Made from", "Video 1 + Bambu SOP + expert answers"]]),
+  station("2 · Our method", "ours", "Generated tutorial", ourVid, [["Length", fmt(D.tutorial_duration)], ["Structure", `${nSteps} steps, cards, sub-step captions`], ["Extras", "Hand overlays, focus crops, Bambu SOP notes, open questions"], ["Edit", D.edl.enabled ? `${fmt(D.edl.output_s)} of footage kept from ${fmt(D.edl.source_s)}` : "full footage"], ["Made from", "Video 1 + Bambu SOP + expert answers"]]),
   station("3 · Curated tutorial", "", "Creator's edited version", ytBody, [["Length", fmt(D.curated.duration)], ["Editing", `${D.curated.cuts_per_min} cuts/min`], ["Structure", "Spoken sections, no on-screen steps"], ["Uploaded", D.curated.uploaded]]),
 );
 
@@ -370,6 +382,17 @@ function lane(name, count, segs, cls, extra) {
 }
 lane("Hand labels", D.labels.length, D.labels.map((s) => ({ start: s.start, end: s.end, label: s.label })), "label");
 lane("Our steps", nSteps, stepsA.map((s) => ({ start: s.start, end: s.end, label: `${s.id} ${s.title}` })), "ours");
+const editUnits = D.edl.steps.flat();
+if (editUnits.length) {
+  const l = el("div", "lane"); const n = el("div", "lane-name"); n.innerHTML = "<b>Our edit</b>";
+  const tr = el("div", "track thin"); tr.tabIndex = 0;
+  for (const [a, b, action, label, reason] of editUnits) {
+    const d = el("div", `seg ${action}`); d.style.top = "0"; d.style.bottom = "0";
+    d.style.left = pct(a, D.duration); d.style.width = pct(b - a, D.duration); d.title = `${fmt(a)}–${fmt(b)} ${action}: ${reason}`; tr.append(d);
+  }
+  tr.addEventListener("click", (e) => { const r = tr.getBoundingClientRect(); rawVid.currentTime = ((e.clientX - r.left) / r.width) * D.duration; rawVid.play().catch(() => {}); });
+  const ph = el("div", "playhead"); tr.append(ph); heads.push(ph); l.append(n, tr); tl.append(l);
+}
 lane("Narration", null, [], "", { thin: true, draw: (tr) => D.transcript.forEach((s) => { const d = el("div", "bar"); d.style.left = pct(s.start, D.duration); d.style.width = pct(s.end - s.start, D.duration); d.style.height = "100%"; d.style.opacity = "0.3"; tr.append(d); }) });
 lane("Hands visible", null, [], "", { thin: true, draw: (tr) => D.hands.forEach((v, i) => { const d = el("div", "bar"); d.style.left = pct(i * 2, D.duration); d.style.width = pct(2, D.duration); d.style.height = `${v * 100}%`; tr.append(d); }) });
 const axis = el("div", "axis"); const axl = el("div", "lane"); axl.append(el("div"), axis);
@@ -392,6 +415,11 @@ stepsA.forEach((s, i) => {
   r.addEventListener("click", () => navSelect(i)); $("#navlist").append(r);
 });
 function seekTo(v, t) { v.currentTime = t; }
+function srcToTut(i, t) {
+  const o = OFF[i], segs = D.kept[i]; if (!o || !segs?.length) return null;
+  for (const [a, b, out, sp] of segs) { if (t < a) return o.clip + out; if (t < b) return o.clip + out + (t - a) / sp; }
+  const [a, b, out, sp] = segs[segs.length - 1]; return o.clip + out + (b - a) / sp;
+}
 function navSelect(i, seek = true) {
   navIdx = Math.max(0, Math.min(stepsA.length - 1, i));
   [...$("#navbar").children].forEach((b, k) => b.classList.toggle("on", k === navIdx));
@@ -416,7 +444,7 @@ function renderNavDetail() {
     s.substeps.forEach((x) => {
       const b = el("button"); b.append(el("span", "t", fmt(x.start)), el("span", null, x.caption + (x.emphasis ? ` · ${x.emphasis}` : "")));
       b.title = "Play this part in the generated tutorial";
-      b.addEventListener("click", () => { if (o) { seekTo(ourVid, o.clip + (x.start - s.start)); ourVid.play().catch(() => {}); } });
+      b.addEventListener("click", () => { const t = srcToTut(navIdx, x.start); if (t != null) { seekTo(ourVid, t); ourVid.play().catch(() => {}); } });
       ul.append(b);
     });
     box.append(el("span", "eyebrow", "On-screen captions in our tutorial"), ul);
@@ -425,9 +453,25 @@ function renderNavDetail() {
     const chips = el("div", "chips"); s.user_supplied.forEach((f) => chips.append(el("span", "chip user", f.replace(/\s*\(answer to:.*$/, ""))));
     box.append(el("span", "eyebrow", "Added from the expert's answers"), chips);
   }
+  const units = D.edl.steps[navIdx] || [];
+  if (units.length) {
+    const span = s.end - s.start, kept = (D.kept[navIdx] || []).reduce((a, [x0, x1, , sp]) => a + (x1 - x0) / sp, 0);
+    const strip = el("div", "editstrip");
+    for (const [a, b, action, , reason] of units) { const i2 = el("i", action); i2.style.left = pct(a - s.start, span); i2.style.width = pct(b - a, span); i2.title = `${action}: ${reason}`; strip.append(i2); }
+    box.append(el("span", "eyebrow", `Edit: ${Math.round(kept)} s of ${Math.round(span)} s kept in the tutorial`), strip);
+    const changes = units.filter((u) => u[2] !== "keep");
+    if (changes.length) {
+      const cl = el("div", "lines");
+      changes.forEach(([a, b, action, , reason]) => { const r = el("button"); r.append(el("span", "t", fmt(a)), el("span", null, `${action === "cut" ? "Cut" : "Sped up"} ${Math.round(b - a)} s: ${reason}`)); r.title = "Play this part in the raw video"; r.addEventListener("click", () => { seekTo(rawVid, a); rawVid.play().catch(() => {}); }); cl.append(r); });
+      box.append(cl);
+    }
+  }
+  const cutAt = (t) => units.some(([a, b, action]) => action !== "keep" && t >= a && t < b);
   const lines = el("div", "lines");
   segsIn(s).forEach((x) => {
-    const b = el("button"); b.append(el("span", "t", fmt(x.start)), el("span", null, x.text));
+    const b = el("button"); const txt = el("span", null, x.text);
+    if (cutAt((x.start + x.end) / 2)) txt.append(el("span", "cuttag", "not in tutorial"));
+    b.append(el("span", "t", fmt(x.start)), txt);
     b.title = "Play from here in the raw video";
     b.addEventListener("click", () => { seekTo(rawVid, x.start); rawVid.play().catch(() => {}); }); lines.append(b);
   });
@@ -450,9 +494,15 @@ follow(ourVid, (t) => OFF.findIndex((o) => t >= o.card && t < o.end));
 navSelect(0, false);
 
 const ea = D.eval.after;
+const editTotals = { cut: 0, speed: 0, idle: 0, aside: 0 };
+for (const [a, b, action, label] of editUnits) {
+  if (action === "cut") { editTotals.cut += b - a; if (label === "idle") editTotals.idle += b - a; else if (label === "aside") editTotals.aside += b - a; }
+  if (action === "speed") editTotals.speed += b - a;
+}
+const editSummary = D.edl.enabled ? `cut ${fmt(editTotals.cut)} (idle ${fmt(editTotals.idle)}, asides ${fmt(editTotals.aside)}); sped up ${fmt(editTotals.speed)} at 3×` : "not edited";
 const rows = [
   ["Length", fmt(D.duration), fmt(D.tutorial_duration), fmt(D.curated.duration)],
-  ["Edits", "none (one take)", "automatic: cards + per-step clips", `${Math.round(D.curated.cuts_per_min * D.curated.duration / 60)} cuts`],
+  ["Edits", "none (one take)", `automatic: ${editSummary}`, `${Math.round(D.curated.cuts_per_min * D.curated.duration / 60)} cuts`],
   ["Steps a learner sees", "none", `${nSteps} numbered steps with sub-step captions`, "12 spoken sections (no on-screen numbering)"],
   ["Key facts from the stream (1/16″, 1/8″, M3×6, M3×8, snug, deburr, G28)", "all spoken, scattered", `${ea.facts_stated} stated in the steps`, "most spoken; G28 test not shown"],
   ["Safety: power off before working inside (Bambu SOP)", "not mentioned", "flagged and answered by the expert", "not mentioned"],
@@ -506,7 +556,7 @@ $("#btn-create").addEventListener("click", () => {
   goto(1); startGeneration();
 });
 
-const STAGE_CALLS = { segment: "segment_steps", draft: "draft_step", refine: "refine_step", questions: "questions" };
+const STAGE_CALLS = { segment: "segment_steps", draft: "draft_step", refine: "refine_step", questions: "questions", edit: "edit_units" };
 function stageRows(container, timings) {
   container.innerHTML = "";
   return timings.map((s) => {
@@ -530,7 +580,7 @@ async function animate(rows, onStage) {
   }
 }
 async function startGeneration() {
-  const order = ["ingest", "perception", "transcribe", "gestures", "candidates", "segment", "draft", "refine", "compliance", "questions", "render"];
+  const order = ["ingest", "perception", "transcribe", "gestures", "candidates", "segment", "draft", "refine", "compliance", "questions", "edit", "render"];
   const timings = order.map((n) => D.stages.find((s) => s.stage === n)).filter(Boolean);
   const total = timings.reduce((a, s) => a + s.seconds, 0);
   $("#gen-note").textContent = `Durations are the real ones from this run on a laptop CPU (${dur(total)} in total, including the last re-render); the animation is sped up.`;

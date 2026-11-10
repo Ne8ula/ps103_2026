@@ -66,6 +66,10 @@ def test_guards_keep_stated_numbers_and_a_minimum_length():
     assert out[0].action == "keep" and "8" in out[0].restored_by
     assert out[1].action == "cut"
 
+    spoken = apply_rules(step(0, 8, "Wait."), [unit("u1", 0, 4, "speech", "what is it, X 163?")], {"u1": ("aside", "")}, cfg)
+    assert spoken[0].action == "keep" and spoken[0].restored_by == "says a number"
+
+    units[0] = unit("u1", 0, 4, "speech", "open them up wide", hands=0.0)
     out = apply_rules(step(0, 8, "Wait."), units, labels, cfg)          # everything cut -> restore to >= 3 s
     assert sum(e.end - e.start for e in out if e.action == "keep") >= 3.0
     assert any(e.restored_by and "minimum" in e.restored_by for e in out)
