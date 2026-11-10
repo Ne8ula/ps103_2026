@@ -51,8 +51,20 @@ textarea { min-height: 64px; resize: vertical; }
 input[type="checkbox"] { width: auto; accent-color: var(--accent); }
 label.check { display: inline-flex; gap: 6px; align-items: center; font-size: 0.88rem; }
 
-.wrap, #view-compare, #view-compare > section:not(.trio) { grid-template-columns: minmax(0, 1fr); min-width: 0; }
-#view-compare > .trio { min-width: 0; }
+.wrap { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+.wrap > main { min-width: 0; }
+.vview { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; max-width: 1040px; width: 100%; }
+.ours { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 16px; align-items: start; }
+.player-col { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0; }
+.stage-panel { padding: 10px; }
+.sidebar { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); max-height: calc(100vh - 40px); box-sizing: border-box;
+  display: grid; grid-template-rows: auto auto auto minmax(0, 1fr); gap: 10px; padding: 12px; min-width: 0; }
+.sidebar .steplist { max-height: none; overflow-y: auto; padding: 0; min-height: 0; }
+.sidebar > * { min-width: 0; }
+.sidebar .navbar { padding: 0; height: 26px; overflow: hidden; }
+.sidebar .row button { flex: 1; }
+.tabs { flex-wrap: wrap; }
+@media (max-width: 1080px) { .ours { grid-template-columns: minmax(0, 1fr); } .sidebar { position: static; max-height: 560px; } }
 header.top > div { min-width: 0; }
 header.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
 .tabs { display: flex; gap: 4px; background: var(--sunk); padding: 4px; border-radius: 7px; }
@@ -212,26 +224,44 @@ video::cue { font-family: var(--body); }
       <h1>SteinWipe Tutorial Studio</h1>
       <p class="muted small" id="sub"></p>
     </div>
-    <nav class="tabs" aria-label="Views"><a href="#compare" id="tab-compare">Compare videos</a><a href="#studio" id="tab-studio">Expert studio</a></nav>
+    <nav class="tabs" aria-label="Views">
+      <a href="#raw" id="tab-raw">1 · Raw recording</a><a href="#ours" id="tab-ours">2 · Our tutorial</a><a href="#curated" id="tab-curated">3 · Curated tutorial</a><a href="#comparison" id="tab-comparison">Comparison</a><a href="#studio" id="tab-studio">Expert studio</a>
+    </nav>
   </header>
 
-  <!-- ============ COMPARE ============ -->
-  <main id="view-compare" style="display:grid;gap:22px">
-    <section class="trio" id="trio"></section>
-    <section style="display:grid;gap:10px">
-      <div class="row" style="justify-content:space-between">
-        <div style="display:grid;gap:2px"><h2>Step Navigator</h2><span class="muted small">Pick a step to jump the videos above. Subtitles are on; use the CC button in each player to turn them off.</span></div>
-        <div class="row"><label class="check" for="nav-both"><input type="checkbox" id="nav-both" checked> Move both videos</label>
-          <button id="nav-prev">Previous step</button><button id="nav-next" class="primary">Next step</button></div>
-      </div>
-      <div class="panel navbar" id="navbar" role="toolbar" aria-label="Steps"></div>
-      <div class="navgrid"><div class="panel steplist" id="navlist" role="listbox" aria-label="Step list"></div><div class="panel card" id="navdetail"></div></div>
-    </section>
+  <!-- ============ 1 RAW ============ -->
+  <main id="view-raw" class="vview" hidden>
+    <div class="panel stage-panel"><video id="raw-video" src="media/raw.mp4" controls preload="metadata" playsinline></video></div>
+    <section class="panel card"><span class="eyebrow">1 · Raw recording</span><h2>Uncut Livestream Excerpt</h2><dl class="facts" id="raw-facts"></dl>
+      <p class="muted small">One take with no edits. He talks while he works, adjusts the camera and chats with viewers. Subtitles come from the Whisper transcript; use the CC button to turn them off.</p></section>
+  </main>
+
+  <!-- ============ 2 OURS ============ -->
+  <main id="view-ours" class="ours" hidden>
+    <div class="player-col">
+      <div class="panel stage-panel"><video id="our-video" src="media/tutorial.mp4" controls preload="metadata" playsinline></video></div>
+      <section class="panel card" id="navdetail"></section>
+    </div>
+    <aside class="panel sidebar" aria-label="Steps">
+      <div style="display:grid;gap:2px"><span class="eyebrow">2 · Our tutorial · steps</span><span class="small muted" id="ours-summary"></span></div>
+      <div class="navbar" id="navbar" role="toolbar" aria-label="Step strip"></div>
+      <div class="row"><button id="nav-prev">Previous</button><button id="nav-next" class="primary">Next step</button></div>
+      <div class="steplist" id="navlist" role="listbox" aria-label="Steps"></div>
+    </aside>
+  </main>
+
+  <!-- ============ 3 CURATED ============ -->
+  <main id="view-curated" class="vview" hidden>
+    <section class="panel station" id="curated-body"></section>
+  </main>
+
+  <!-- ============ COMPARISON ============ -->
+  <main id="view-comparison" class="vview" style="max-width:none" hidden>
     <section style="display:grid;gap:10px">
       <h2>Where Our Steps Fall In The Raw Stream</h2>
       <div class="panel timeline" id="timeline"></div>
       <div class="legend-row"><span><i style="background:var(--accent);opacity:.6"></i>kept</span><span><i style="background:var(--warn)"></i>sped up 3×, muted</span><span><i style="background:repeating-linear-gradient(135deg,var(--line) 0 3px,transparent 3px 7px)"></i>cut</span></div>
-      <p class="muted small">Click a lane to jump the raw video. Hand labels are the reference division written for evaluation; our lanes are the expert-reviewed run and what its edit keeps.</p>
+      <p class="muted small">Click a lane to open the raw recording at that moment. Hand labels are the reference division written for evaluation; our lanes are the expert-reviewed run and what its edit keeps.</p>
     </section>
     <section style="display:grid;gap:10px">
       <h2>Side By Side</h2>
@@ -324,25 +354,20 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 $("#sub").textContent = `Raw source: ${D.raw.channel}, "${D.raw.title}" (${D.raw.license}), excerpt ${D.raw.excerpt}. SOP: Bambu Lab X1 "Replace Nozzle Wiper".`;
 
 // ---------------- routing ----------------
+const VIEWS = ["raw", "ours", "curated", "comparison", "studio"];
+const rawVid = $("#raw-video"), ourVid = $("#our-video");
 function route() {
-  const v = location.hash === "#studio" ? "studio" : "compare";
-  $("#view-compare").hidden = v !== "compare"; $("#view-studio").hidden = v !== "studio";
-  for (const [id, name] of [["#tab-compare", "compare"], ["#tab-studio", "studio"]]) {
-    if (v === name) $(id).setAttribute("aria-current", "page"); else $(id).removeAttribute("aria-current");
+  let v = location.hash.slice(1);
+  if (!VIEWS.includes(v)) v = "ours";
+  for (const name of VIEWS) {
+    $(`#view-${name}`).hidden = name !== v;
+    if (name === v) $(`#tab-${name}`).setAttribute("aria-current", "page"); else $(`#tab-${name}`).removeAttribute("aria-current");
   }
+  for (const vid of [rawVid, ourVid]) if (vid.closest("main").hidden && !vid.paused) vid.pause();
 }
 addEventListener("hashchange", route); route();
+function openRaw(t) { location.hash = "#raw"; rawVid.currentTime = t; rawVid.play().catch(() => {}); }
 
-// ---------------- compare ----------------
-function station(tag, tagCls, title, body, facts) {
-  const s = el("article", "panel station");
-  const t = el("span", "tag " + tagCls, tag); s.append(t, el("h3", null, title), body);
-  const dl = el("dl", "facts");
-  for (const [k, v] of facts) { dl.append(el("dt", null, k), el("dd", null, v)); }
-  s.append(dl); return s;
-}
-const rawVid = el("video"); Object.assign(rawVid, { src: "media/raw.mp4", controls: true, preload: "metadata", playsInline: true });
-const ourVid = el("video"); Object.assign(ourVid, { src: "media/tutorial.mp4", controls: true, preload: "metadata", playsInline: true });
 // Subtitles come from the page data (artifacts don't serve .vtt files), added through the text-track API.
 function addSubs(v, cues, label, top, mode = "showing") {
   const tt = v.addTextTrack("subtitles", label, "en");
@@ -353,45 +378,46 @@ function addSubs(v, cues, label, top, mode = "showing") {
 }
 addSubs(rawVid, D.subs.raw, "Narration", false);
 addSubs(ourVid, D.subs.tutorial, "Narration and step titles", true);
-const yt = el("div", "ytcard");
-const ya = el("a", null, "Open on YouTube"); ya.href = D.curated.url; ya.target = "_blank"; ya.rel = "noopener";
-yt.append(el("span", "eyebrow", `${D.curated.channel} · ${D.curated.views.toLocaleString()} views`), el("b", null, D.curated.title), ya,
-  el("span", "muted small", "Not re-hosted here: standard YouTube license."));
-const ytBody = el("div"); Object.assign(ytBody.style, { display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: "8px" }); ytBody.append(yt);
-const ol = el("ul", "outline");
-for (const [t, txt] of D.curated.outline) {
-  const li = el("li"); const a = el("a"); a.href = `${D.curated.url}&t=${t}s`; a.target = "_blank"; a.rel = "noopener";
-  a.append(el("span", "t", fmt(t)), el("span", null, txt)); li.append(a); ol.append(li);
-}
-ytBody.append(el("span", "eyebrow", "Its structure, from the captions"), ol);
-const nSteps = stepsA.length;
-$("#trio").append(
-  station("1 · Raw recording", "", "Uncut livestream excerpt", rawVid, [["Length", fmt(D.duration)], ["Editing", `${D.raw.cuts_per_min} cuts/min (one take)`], ["Structure", "None; he talks while he works"], ["Source", `${D.raw.channel}, ${D.raw.license}`]]),
-  station("2 · Our method", "ours", "Generated tutorial", ourVid, [["Length", fmt(D.tutorial_duration)], ["Structure", `${nSteps} steps, cards, sub-step captions`], ["Extras", "Hand overlays, focus crops, Bambu SOP notes, open questions"], ["Edit", D.edl.enabled ? `${fmt(D.edl.output_s)} of footage kept from ${fmt(D.edl.source_s)}` : "full footage"], ["Made from", "Video 1 + Bambu SOP + expert answers"]]),
-  station("3 · Curated tutorial", "", "Creator's edited version", ytBody, [["Length", fmt(D.curated.duration)], ["Editing", `${D.curated.cuts_per_min} cuts/min`], ["Structure", "Spoken sections, no on-screen steps"], ["Uploaded", D.curated.uploaded]]),
-);
 
+// ---------------- 1 raw / 3 curated ----------------
+function facts(dl, rows) { for (const [k, v] of rows) dl.append(el("dt", null, k), el("dd", null, v)); }
+facts($("#raw-facts"), [["Length", fmt(D.duration)], ["Editing", `${D.raw.cuts_per_min} cuts/min (one take)`], ["Structure", "None"],
+  ["Source", `${D.raw.channel}, "${D.raw.title}", excerpt ${D.raw.excerpt}`], ["License", D.raw.license]]);
+const nSteps = stepsA.length;
+{
+  const box = $("#curated-body");
+  const yt = el("div", "ytcard");
+  const ya = el("a", null, "Open on YouTube"); ya.href = D.curated.url; ya.target = "_blank"; ya.rel = "noopener";
+  yt.append(el("span", "eyebrow", `${D.curated.channel} · ${D.curated.views.toLocaleString()} views`), el("b", null, D.curated.title), ya,
+    el("span", "muted small", "Not re-hosted here: standard YouTube license. It opens on YouTube."));
+  const ol = el("ul", "outline"); ol.style.maxHeight = "none";
+  for (const [t, txt] of D.curated.outline) {
+    const li = el("li"); const a = el("a"); a.href = `${D.curated.url}&t=${t}s`; a.target = "_blank"; a.rel = "noopener";
+    a.append(el("span", "t", fmt(t)), el("span", null, txt)); li.append(a); ol.append(li);
+  }
+  const dl = el("dl", "facts");
+  facts(dl, [["Length", fmt(D.curated.duration)], ["Editing", `${D.curated.cuts_per_min} cuts/min`], ["Structure", "Spoken sections, no on-screen steps"], ["Uploaded", D.curated.uploaded]]);
+  box.append(el("span", "eyebrow", "3 · Curated tutorial"), el("h2", null, "The Creator's Edited Version"), yt, dl,
+    el("span", "eyebrow", "Its sections, from the captions (each opens YouTube at that time)"), ol);
+}
+
+// ---------------- comparison timeline ----------------
 const tl = $("#timeline"); const heads = [];
 function lane(name, count, segs, cls, extra) {
   const l = el("div", "lane"); const n = el("div", "lane-name"); n.innerHTML = `<b>${name}</b>${count != null ? ` · ${count}` : ""}`;
   const tr = el("div", "track" + (extra?.thin ? " thin" : "")); tr.tabIndex = 0;
   for (const s of segs) { const d = el("div", `seg ${cls}`, s.label); d.style.left = pct(s.start, D.duration); d.style.width = `calc(${pct(s.end - s.start, D.duration)} - 1px)`; d.title = `${fmt(s.start)}–${fmt(s.end)} ${s.label}`; tr.append(d); }
   extra?.draw?.(tr);
-  tr.addEventListener("click", (e) => { const r = tr.getBoundingClientRect(); rawVid.currentTime = ((e.clientX - r.left) / r.width) * D.duration; rawVid.play().catch(() => {}); });
+  tr.addEventListener("click", (e) => { const r = tr.getBoundingClientRect(); openRaw(((e.clientX - r.left) / r.width) * D.duration); });
   const ph = el("div", "playhead"); tr.append(ph); heads.push(ph); l.append(n, tr); tl.append(l);
 }
 lane("Hand labels", D.labels.length, D.labels.map((s) => ({ start: s.start, end: s.end, label: s.label })), "label");
 lane("Our steps", nSteps, stepsA.map((s) => ({ start: s.start, end: s.end, label: `${s.id} ${s.title}` })), "ours");
 const editUnits = D.edl.steps.flat();
 if (editUnits.length) {
-  const l = el("div", "lane"); const n = el("div", "lane-name"); n.innerHTML = "<b>Our edit</b>";
-  const tr = el("div", "track thin"); tr.tabIndex = 0;
-  for (const [a, b, action, label, reason] of editUnits) {
-    const d = el("div", `seg ${action}`); d.style.top = "0"; d.style.bottom = "0";
-    d.style.left = pct(a, D.duration); d.style.width = pct(b - a, D.duration); d.title = `${fmt(a)}–${fmt(b)} ${action}: ${reason}`; tr.append(d);
-  }
-  tr.addEventListener("click", (e) => { const r = tr.getBoundingClientRect(); rawVid.currentTime = ((e.clientX - r.left) / r.width) * D.duration; rawVid.play().catch(() => {}); });
-  const ph = el("div", "playhead"); tr.append(ph); heads.push(ph); l.append(n, tr); tl.append(l);
+  lane("Our edit", null, [], "", { thin: true, draw: (tr) => editUnits.forEach(([a, b, action, , reason]) => {
+    const d = el("div", `seg ${action}`); Object.assign(d.style, { top: "0", bottom: "0", left: pct(a, D.duration), width: pct(b - a, D.duration) });
+    d.title = `${fmt(a)}–${fmt(b)} ${action}: ${reason}`; tr.append(d); }) });
 }
 lane("Narration", null, [], "", { thin: true, draw: (tr) => D.transcript.forEach((s) => { const d = el("div", "bar"); d.style.left = pct(s.start, D.duration); d.style.width = pct(s.end - s.start, D.duration); d.style.height = "100%"; d.style.opacity = "0.3"; tr.append(d); }) });
 lane("Hands visible", null, [], "", { thin: true, draw: (tr) => D.hands.forEach((v, i) => { const d = el("div", "bar"); d.style.left = pct(i * 2, D.duration); d.style.width = pct(2, D.duration); d.style.height = `${v * 100}%`; tr.append(d); }) });
@@ -400,18 +426,18 @@ for (let t = 0; t <= D.duration; t += 60) { const s = el("span", null, fmt(t)); 
 tl.append(axl);
 rawVid.addEventListener("timeupdate", () => heads.forEach((h) => (h.style.left = pct(rawVid.currentTime, D.duration))));
 
-// ---------------- step navigator ----------------
+// ---------------- 2 our tutorial: step sidebar ----------------
 const OFF = D.offsets;
-let navIdx = 0, navHold = 0, lastActive = ourVid;
-rawVid.addEventListener("play", () => (lastActive = rawVid));
-ourVid.addEventListener("play", () => (lastActive = ourVid));
+let navIdx = 0, navHold = 0;
 const segsIn = (s) => D.transcript.filter((x) => x.end > s.start && x.start < s.end);
+$("#ours-summary").textContent = `${nSteps} steps · ${fmt(D.tutorial_duration)} long` + (D.edl.enabled ? ` · ${fmt(D.edl.output_s)} of footage kept from ${fmt(D.edl.source_s)}` : "");
 stepsA.forEach((s, i) => {
-  const b = el("button", null, s.id.slice(1)); b.style.flexGrow = String(Math.max(s.end - s.start, 1));
-  b.title = `${s.id} · ${fmt(s.start)}–${fmt(s.end)} · ${s.title}`; b.setAttribute("aria-label", b.title);
+  const o = OFF[i];
+  const b = el("button", null, String(i + 1)); b.style.flexGrow = String(o ? Math.max(o.end - o.card, 1) : 1);
+  b.title = `Step ${i + 1} · ${o ? fmt(o.card) : ""} · ${s.title}`; b.setAttribute("aria-label", b.title);
   b.addEventListener("click", () => navSelect(i)); $("#navbar").append(b);
   const r = el("button"); r.setAttribute("role", "option");
-  r.append(el("span", "sid", s.id), el("span", "ttl", s.title), el("span", "muted small mono", fmt(s.start)));
+  r.append(el("span", "sid", String(i + 1).padStart(2, "0")), el("span", "ttl", s.title), el("span", "muted small mono", o ? fmt(o.card) : ""));
   r.addEventListener("click", () => navSelect(i)); $("#navlist").append(r);
 });
 function seekTo(v, t) { v.currentTime = t; }
@@ -420,34 +446,28 @@ function srcToTut(i, t) {
   for (const [a, b, out, sp] of segs) { if (t < a) return o.clip + out; if (t < b) return o.clip + out + (t - a) / sp; }
   const [a, b, out, sp] = segs[segs.length - 1]; return o.clip + out + (b - a) / sp;
 }
+function playOurs(t) { if (t == null) return; navHold = Date.now() + 600; seekTo(ourVid, t); ourVid.play().catch(() => {}); }
 function navSelect(i, seek = true) {
   navIdx = Math.max(0, Math.min(stepsA.length - 1, i));
   [...$("#navbar").children].forEach((b, k) => b.classList.toggle("on", k === navIdx));
   [...$("#navlist").children].forEach((b, k) => { b.classList.toggle("on", k === navIdx); b.setAttribute("aria-selected", String(k === navIdx)); });
   const box = $("#navlist"), cur = box.children[navIdx];
-  box.scrollTop += cur.getBoundingClientRect().top - box.getBoundingClientRect().top - 60;
+  if (!box.closest("main").hidden) box.scrollTop += cur.getBoundingClientRect().top - box.getBoundingClientRect().top - 60;
   $("#nav-prev").disabled = navIdx === 0; $("#nav-next").disabled = navIdx === stepsA.length - 1;
   renderNavDetail();
-  if (!seek) return;
-  const s = stepsA[navIdx], both = $("#nav-both").checked;
-  navHold = Date.now() + 600;
-  if (both || lastActive === rawVid) seekTo(rawVid, s.start);
-  if ((both || lastActive === ourVid) && OFF[navIdx]) seekTo(ourVid, OFF[navIdx].card);
+  if (seek && OFF[navIdx]) { navHold = Date.now() + 600; seekTo(ourVid, OFF[navIdx].card); }
 }
 function renderNavDetail() {
   const s = stepsA[navIdx], o = OFF[navIdx], box = $("#navdetail"); box.innerHTML = "";
-  const head = el("div", "row");
-  head.append(el("span", "eyebrow", `Step ${navIdx + 1} of ${stepsA.length} · raw ${fmt(s.start)}–${fmt(s.end)}${o ? ` · tutorial ${fmt(o.card)}` : ""}`));
-  box.append(head, el("h3", null, s.title), el("p", null, s.instruction));
+  box.append(el("span", "eyebrow", `Step ${navIdx + 1} of ${stepsA.length}${o ? ` · ${fmt(o.card)} in the tutorial` : ""} · raw ${fmt(s.start)}–${fmt(s.end)}`),
+    el("h2", null, s.title), el("p", null, s.instruction));
   if (s.substeps?.length) {
     const ul = el("div", "lines");
     s.substeps.forEach((x) => {
       const b = el("button"); b.append(el("span", "t", fmt(x.start)), el("span", null, x.caption + (x.emphasis ? ` · ${x.emphasis}` : "")));
-      b.title = "Play this part in the generated tutorial";
-      b.addEventListener("click", () => { const t = srcToTut(navIdx, x.start); if (t != null) { seekTo(ourVid, t); ourVid.play().catch(() => {}); } });
-      ul.append(b);
+      b.title = "Play this part"; b.addEventListener("click", () => playOurs(srcToTut(navIdx, x.start))); ul.append(b);
     });
-    box.append(el("span", "eyebrow", "On-screen captions in our tutorial"), ul);
+    box.append(el("span", "eyebrow", "On-screen captions"), ul);
   }
   if (s.user_supplied.length) {
     const chips = el("div", "chips"); s.user_supplied.forEach((f) => chips.append(el("span", "chip user", f.replace(/\s*\(answer to:.*$/, ""))));
@@ -458,39 +478,41 @@ function renderNavDetail() {
     const span = s.end - s.start, kept = (D.kept[navIdx] || []).reduce((a, [x0, x1, , sp]) => a + (x1 - x0) / sp, 0);
     const strip = el("div", "editstrip");
     for (const [a, b, action, , reason] of units) { const i2 = el("i", action); i2.style.left = pct(a - s.start, span); i2.style.width = pct(b - a, span); i2.title = `${action}: ${reason}`; strip.append(i2); }
-    box.append(el("span", "eyebrow", `Edit: ${Math.round(kept)} s of ${Math.round(span)} s kept in the tutorial`), strip);
+    box.append(el("span", "eyebrow", `Edit: ${Math.round(kept)} s of ${Math.round(span)} s of raw footage`), strip);
     const changes = units.filter((u) => u[2] !== "keep");
     if (changes.length) {
       const cl = el("div", "lines");
-      changes.forEach(([a, b, action, , reason]) => { const r = el("button"); r.append(el("span", "t", fmt(a)), el("span", null, `${action === "cut" ? "Cut" : "Sped up"} ${Math.round(b - a)} s: ${reason}`)); r.title = "Play this part in the raw video"; r.addEventListener("click", () => { seekTo(rawVid, a); rawVid.play().catch(() => {}); }); cl.append(r); });
+      changes.forEach(([a, b, action, , reason]) => {
+        const r = el("button"); r.append(el("span", "t", fmt(a)), el("span", null, `${action === "cut" ? "Cut" : "Sped up"} ${Math.round(b - a)} s: ${reason}`));
+        r.title = action === "cut" ? "See the cut part in the raw recording" : "Play the sped-up part";
+        r.addEventListener("click", () => (action === "cut" ? openRaw(a) : playOurs(srcToTut(navIdx, a)))); cl.append(r);
+      });
       box.append(cl);
     }
   }
-  const cutAt = (t) => units.some(([a, b, action]) => action !== "keep" && t >= a && t < b);
+  const cutAt = (t) => units.some(([a, b, action]) => action === "cut" && t >= a && t < b);
   const lines = el("div", "lines");
   segsIn(s).forEach((x) => {
+    const mid = (x.start + x.end) / 2, gone = cutAt(mid);
     const b = el("button"); const txt = el("span", null, x.text);
-    if (cutAt((x.start + x.end) / 2)) txt.append(el("span", "cuttag", "not in tutorial"));
+    if (gone) txt.append(el("span", "cuttag", "cut · opens raw"));
     b.append(el("span", "t", fmt(x.start)), txt);
-    b.title = "Play from here in the raw video";
-    b.addEventListener("click", () => { seekTo(rawVid, x.start); rawVid.play().catch(() => {}); }); lines.append(b);
+    b.title = gone ? "This line was cut; open it in the raw recording" : "Play from here";
+    b.addEventListener("click", () => (gone ? openRaw(x.start) : playOurs(srcToTut(navIdx, Math.max(x.start, s.start))))); lines.append(b);
   });
-  box.append(el("span", "eyebrow", "What he says during this step"), lines.children.length ? lines : el("span", "muted small", "No narration in this step."));
+  box.append(el("span", "eyebrow", "What he says during this step (raw time)"), lines.children.length ? lines : el("span", "muted small", "No narration in this step."));
   const acts = el("div", "row");
-  const pr = el("button", null, "Play in raw video"); pr.addEventListener("click", () => { seekTo(rawVid, s.start); rawVid.play().catch(() => {}); });
-  const po = el("button", "primary", "Play in our tutorial"); po.disabled = !o; po.addEventListener("click", () => { seekTo(ourVid, o.card); ourVid.play().catch(() => {}); });
-  acts.append(pr, po); box.append(acts);
+  const po = el("button", "primary", "Play this step"); po.disabled = !o; po.addEventListener("click", () => playOurs(o.card));
+  const pr = el("button", null, "See it in the raw recording"); pr.addEventListener("click", () => openRaw(s.start));
+  acts.append(po, pr); box.append(acts);
 }
 $("#nav-prev").addEventListener("click", () => navSelect(navIdx - 1));
 $("#nav-next").addEventListener("click", () => navSelect(navIdx + 1));
-function follow(v, find) {
-  v.addEventListener("timeupdate", () => {
-    if (v.paused || Date.now() < navHold) return;
-    const i = find(v.currentTime); if (i >= 0 && i !== navIdx) navSelect(i, false);
-  });
-}
-follow(rawVid, (t) => stepsA.findIndex((s) => t >= s.start && t < s.end));
-follow(ourVid, (t) => OFF.findIndex((o) => t >= o.card && t < o.end));
+ourVid.addEventListener("timeupdate", () => {
+  if (ourVid.paused || Date.now() < navHold) return;
+  const i = OFF.findIndex((o) => ourVid.currentTime >= o.card && ourVid.currentTime < o.end);
+  if (i >= 0 && i !== navIdx) navSelect(i, false);
+});
 navSelect(0, false);
 
 const ea = D.eval.after;

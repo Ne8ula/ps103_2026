@@ -270,6 +270,9 @@ def run(ctx: StageContext) -> None:
         pieces.append(_Piece("card", secs(dur), cards.outro_card(W, H, open_qs, numbers, footer, notes=global_notes)))
     if not pieces:
         raise RuntimeError("nothing to render: no steps with a valid time range and cards disabled")
+    if cfg.include_cards:  # the intro states the tutorial's own length, known only once every piece is planned
+        pieces[0].image = cards.intro_card(W, H, title, total, sum(pc.frames for pc in pieces) / fps, source=meta.source,
+                                           license=meta.license, uploader=meta.uploader, open_questions=len(open_qs))
 
     # ---- audio -----------------------------------------------------------------------------
     rate = cfg.audio_rate

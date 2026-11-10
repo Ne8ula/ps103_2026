@@ -76,24 +76,28 @@ def encode_under(src: Path, dest: Path, limit_mb: float = 14.5) -> None:
 
 
 def card_runs(path: Path, step_s: float = 0.25) -> tuple[list[tuple[float, float]], float]:
-    """Time ranges where the tutorial shows a full-frame text card (intro, step cards, outro)."""
+    """Time ranges where the tutorial shows a full-frame text card (intro, step cards, outro).
+    One sequential pass (grab every frame, decode every ``step_s``): seeking per sample is far slower."""
     cap = cv2.VideoCapture(str(path))
     fps = cap.get(cv2.CAP_PROP_FPS)
     dur = cap.get(cv2.CAP_PROP_FRAME_COUNT) / fps
-    runs, start, t = [], None, 0.0
-    while t < dur:
-        cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000)
-        ok, f = cap.read()
-        if not ok:
-            break
-        small = cv2.resize(f, (64, 36)).reshape(-1, 3).astype(int)
-        is_card = (np.abs(small - CARD_BGR).sum(axis=1) < 30).mean() > 0.55
-        if is_card and start is None:
-            start = t
-        elif not is_card and start is not None:
-            runs.append((start, t))
-            start = None
-        t += step_s
+    stride = max(int(round(step_s * fps)), 1)
+    runs, start, i = [], None, 0
+    while cap.grab():
+        if i % stride == 0:
+            ok, f = cap.retrieve()
+            if not ok:
+                break
+            t = i / fps
+            small = cv2.resize(f, (64, 36)).reshape(-1, 3).astype(int)
+            is_card = (np.abs(small - CARD_BGR).sum(axis=1) < 30).mean() > 0.55
+            if is_card and start is None:
+                start = t
+            elif not is_card and start is not None:
+                runs.append((start, t))
+                start = None
+        i += 1
+    cap.release()
     if start is not None:
         runs.append((start, dur))
     return runs, dur
