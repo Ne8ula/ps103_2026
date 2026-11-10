@@ -35,6 +35,7 @@ from ..render.layout import callouts as build_callouts
 from ..render.overlay import HandTrack, PoseHand, draw_hands
 from ..render.video import Encoder, FrameReader, audio_slice, output_size, pick_encoder, read_audio, write_wav
 from ..schemas.compliance import ComplianceNote, ComplianceReport
+from ..schemas.edit import EditDecisionList, StepEdit
 from ..schemas.gestures import GestureTrack
 from ..schemas.media import HandFrame, VideoMeta
 from ..schemas.steps import Question, QuestionSet, Step, StepList
@@ -44,9 +45,9 @@ from . import StageContext
 
 class RenderConfig(BaseModel):
     include_cards: bool = True           # intro, per-step title cards and outro
-    intro_seconds: float = 3.5
-    card_min_seconds: float = 3.0        # step card duration scales with its text within [min, max]
-    card_max_seconds: float = 6.0
+    intro_seconds: float = 2.5
+    card_min_seconds: float = 2.0        # step card duration scales with its text within [min, max]
+    card_max_seconds: float = 4.0
     outro_min_seconds: float = 3.0
     outro_max_seconds: float = 8.0
     overlay: bool = True                 # hand skeletons on clips
@@ -88,6 +89,56 @@ class _Piece:
     sub_captions: list[tuple[float, float, int, np.ndarray]] = field(default_factory=list)  # (start, end, y0, band)
     overlays: list[_Overlay] = field(default_factory=list)
     crop: CropTrack | None = None
+    src_frames: list[int] = field(default_factory=list)          # clip: source frame per output frame (edit list)
+    audio_plan: list[tuple[int | None, int]] = field(default_factory=list)  # (source start frame | None = silence, frames)
+    speed_ranges: list[tuple[float, float]] = field(default_factory=list)   # source-time ranges shown faster
+    speed_chip: np.ndarray | None = None
+
+
+def _plan_frames(step: Step, edit: StepEdit | None, fps: float, n_src: int):
+    """Source frames, audio plan and sped-up ranges for one clip. Without an edit list the clip is the
+    step's full range; with one, cut units are skipped and sped-up units take every n-th frame, muted."""
+    def f(t: float) -> int:
+        return min(max(int(round(t * fps)), 0), n_src)
+
+    if edit is None:
+        f0, f1 = f(step.start), f(step.end)
+        return list(range(f0, f1)), [(f0, f1 - f0)], []
+    frames, audio, speed = [], [], []
+    for u in edit.units:
+        a, b = f(u.start), f(u.end)
+        if u.action == "cut" or b <= a:
+            continue
+        if u.action == "speed":
+            idx = list(range(a, b, max(int(round(u.speed)), 1)))
+            frames += idx
+            audio.append((None, len(idx)))
+            speed.append((u.start, u.end))
+        else:
+            frames += list(range(a, b))
+            audio.append((a, b - a))
+    return frames, audio, speed
+
+
+def _clip_audio(src: np.ndarray, plan: list[tuple[int | None, int]], fps: float, rate: int, length: int,
+                fade_s: float = 0.008) -> np.ndarray:
+    """Audio for an edited clip: source audio under kept units, silence under sped-up ones, a short fade
+    wherever the source jumps so cuts do not click. Exactly ``length`` samples."""
+    parts, fade = [], max(int(fade_s * rate), 1)
+    for i, (start, n) in enumerate(plan):
+        ns = int(round(n / fps * rate))
+        if start is None:
+            parts.append(np.zeros(ns, np.int16))
+            continue
+        seg = audio_slice(src, int(round(start / fps * rate)), ns).astype(np.float32)
+        prev, nxt = (plan[i - 1] if i else None), (plan[i + 1] if i + 1 < len(plan) else None)
+        if prev is not None and (prev[0] is None or prev[0] + prev[1] != start) and len(seg) > fade:
+            seg[:fade] *= np.linspace(0, 1, fade)
+        if nxt is not None and (nxt[0] is None or start + n != nxt[0]) and len(seg) > fade:
+            seg[-fade:] *= np.linspace(1, 0, fade)
+        parts.append(seg.astype(np.int16))
+    out = np.concatenate(parts) if parts else np.zeros(0, np.int16)
+    return np.pad(out, (0, max(length - len(out), 0)))[:length]
 
 
 def _load_optional(project: Project, rel: str, model):
@@ -129,6 +180,8 @@ def run(ctx: StageContext) -> None:
     compliance = _load_optional(p, "compliance/compliance.json", ComplianceReport)
     questions = _load_optional(p, "questions/questions.json", QuestionSet)
     gestures = _load_optional(p, "gestures/gestures.json", GestureTrack)
+    edl = _load_optional(p, "edit/edl.json", EditDecisionList)
+    edits = {e.step_id: e for e in edl.steps} if edl and edl.enabled else {}
     hand_frames = p.read_jsonl("hands/frames.jsonl", HandFrame) if p.exists("hands/frames.jsonl") else []
     if compliance is None:
         log.warning("no compliance/compliance.json: rendering without compliance notes")
@@ -183,13 +236,16 @@ def run(ctx: StageContext) -> None:
                      *[n.text for n in notes[:3]], *waiting[:2]]
             dur = cards.reading_seconds(texts, cfg.card_min_seconds, cfg.card_max_seconds)
             pieces.append(_Piece("card", secs(dur), cards.step_card(W, H, step, k, total, notes, bool(waiting), waiting)))
-        f0 = max(int(round(step.start * fps)), 0)
-        f1 = min(int(round(step.end * fps)), n_src)
-        if f1 <= f0:
+        src_frames, audio_plan, speed_ranges = _plan_frames(step, edits.get(step.id), fps, n_src)
+        if not src_frames:
             log.warning("step %s has an empty time range [%.2f, %.2f]: no clip", step.id, step.start, step.end)
             continue
-        clip_ranges[step.id] = (f0, f1)
-        piece = _Piece("clip", f1 - f0, step=step, number=k, src_start=f0)
+        clip_ranges[step.id] = (src_frames[0], src_frames[-1] + 1)
+        piece = _Piece("clip", len(src_frames), step=step, number=k, src_start=src_frames[0], src_frames=src_frames,
+                       audio_plan=audio_plan, speed_ranges=speed_ranges)
+        if speed_ranges:
+            factor = max(u.speed for u in edits[step.id].units if u.action == "speed")
+            piece.speed_chip = cards.chip(H, f"{factor:g}x speed", "items", max_width=W * 0.3)
         if cfg.caption and cfg.substep_captions and step.substeps:
             n_sub = len(step.substeps)
             piece.sub_captions = [(s.start, s.end, *cards.substep_caption(W, H, k, total, step.title, s.caption, bool(waiting),
@@ -243,7 +299,7 @@ def run(ctx: StageContext) -> None:
             chunks, cum = [], 0
             for piece in pieces:
                 n = samples_at(cum + piece.frames) - samples_at(cum)
-                chunks.append(audio_slice(src_audio, samples_at(piece.src_start), n) if piece.kind == "clip"
+                chunks.append(_clip_audio(src_audio, piece.audio_plan, fps, rate, n) if piece.kind == "clip"
                               else np.zeros(n, np.int16))
                 cum += piece.frames
             main_wav = write_wav(tmp / "tutorial.wav", np.concatenate(chunks), rate)
@@ -260,13 +316,12 @@ def run(ctx: StageContext) -> None:
                 if cfg.step_clips:
                     clip_wav = None
                     if src_audio is not None:
-                        clip_wav = write_wav(tmp / f"{step.id}.wav", audio_slice(
-                            src_audio, samples_at(piece.src_start), samples_at(piece.frames)), rate)
+                        clip_wav = write_wav(tmp / f"{step.id}.wav", _clip_audio(
+                            src_audio, piece.audio_plan, fps, rate, samples_at(piece.frames)), rate)
                     clip_enc = Encoder(tmp / f"{step.id}.mp4", W, H, fps, clip_wav, **enc_args)
                 rects = _crop_rects(piece, track, fps, focus.contain_ramp_s)
                 try:
-                    for i in range(piece.frames):
-                        src_index = piece.src_start + i
+                    for i, src_index in enumerate(piece.src_frames):
                         frame = _clip_frame(reader.read(src_index), src_index / fps, piece, track, cfg, total, W, H,
                                             rects[i] if rects else None)
                         main.write(frame)
@@ -304,7 +359,8 @@ def run(ctx: StageContext) -> None:
     for name, rel in [("landmarks", "hands/frames.jsonl"), ("hands_summary", "hands/summary.json"),
                       ("scenes", "hands/scenes.json"), ("gestures", "gestures/gestures.json"),
                       ("transcript", "transcript/transcript.json"), ("steps", "refine/steps.json"),
-                      ("compliance", "compliance/compliance.json"), ("questions", "questions/questions.json")]:
+                      ("compliance", "compliance/compliance.json"), ("questions", "questions/questions.json"),
+                      ("edl", "edit/edl.json")]:
         if p.exists(rel):
             artifacts[name] = rel
     if meta.audio_path and p.exists(meta.audio_path):
@@ -339,7 +395,7 @@ def _crop_rects(piece: _Piece, track: HandTrack | None, fps: float, ramp_s: floa
     """Per-frame crop rects of a clip (containment eased over ``ramp_s``), or None without a crop."""
     if piece.crop is None:
         return None
-    times = [(piece.src_start + i) / fps for i in range(piece.frames)]
+    times = [f / fps for f in piece.src_frames]
     points = []
     for t in times:
         hands = track.hands_at(t) if track is not None else []
@@ -373,6 +429,9 @@ def _clip_frame(src: np.ndarray | None, t: float, piece: _Piece, track: HandTrac
         top = int(round(10 * u))
     y_left, y_right = top + int(14 * u), top + int(14 * u)
     margin = int(max(W * 0.04, 20 * u))
+    if piece.speed_chip is not None and any(a <= t < b for a, b in piece.speed_ranges):
+        cards.blend_at(frame, W - margin - piece.speed_chip.shape[1], y_right, piece.speed_chip)
+        y_right += piece.speed_chip.shape[0] + int(8 * u)
     for ov in piece.overlays:
         if not (ov.callout.start <= t < ov.callout.end):
             continue

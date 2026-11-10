@@ -25,7 +25,7 @@ from ..config import load_env_files
 from .. import __version__, runner
 from ..answers import QUESTIONS, add_answer, load_answers
 from ..project import DocumentInput, Project, projects_home
-from ..schemas import (Answer, AnswerSet, Candidates, ComplianceReport, GestureTrack, QuestionSet, Segmentation, StepList,
+from ..schemas import (Answer, AnswerSet, Candidates, ComplianceReport, EditDecisionList, GestureTrack, QuestionSet, Segmentation, StepList,
                        Transcript, Tutorial, VideoMeta)
 from .jobs import JobManager, ProjectBusy, RunRecord, RunRequest
 from .models import AnswerRequest, CreateProject, Health, ProjectDetail, ProjectSummary, StageInfo, VideoUrl
@@ -44,6 +44,7 @@ ARTIFACTS: dict[str, tuple[str, type[BaseModel]]] = {
     "segments": ("segment/segments.json", Segmentation),
     "compliance": ("compliance/compliance.json", ComplianceReport),
     "tutorial": ("render/tutorial.json", Tutorial),
+    "edl": ("edit/edl.json", EditDecisionList),
 }
 STEPS = ("refine/steps.json", "draft/steps.json")  # preferred first
 

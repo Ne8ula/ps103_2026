@@ -70,7 +70,10 @@ STAGES: dict[str, StageSpec] = {
         StageSpec("questions", "questions", ("refine", "compliance"), ("questions/questions.json",),
                   ("questions", "llm"), inputs=("inputs/answers.json",), uses_llm=True,
                   description="turn gaps into prioritized questions for the uploader"),
-        StageSpec("render", "render", ("refine", "compliance", "questions", "perception", "gestures"),
+        StageSpec("edit", "edit", ("ingest", "perception", "transcribe", "refine"), ("edit/edl.json",),
+                  ("edit", "llm"), uses_llm=True,
+                  description="edit decision list: keep, speed up or cut parts of each step (idle, asides, long silent work)"),
+        StageSpec("render", "render", ("refine", "compliance", "questions", "perception", "gestures", "edit"),
                   ("render/tutorial.json", "render/tutorial.mp4", "render/tutorial.md"),
                   ("render", "device", "focus", "gestures"), gpu=True, description="tutorial video with hand overlays + text cards, tutorial.json"),
     ]
