@@ -1,0 +1,58 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 19 of 22, 560.7s to 581.8s.\nSegmentation summary: Describe and demonstrate the scrubbing motion of the toolhead between the wiper nubs.\nPrevious step: Describe and demonstrate the side-to-side X-sweeping motion of the original wipe cycle.\nNext step: Point out the wiper nubs to emphasize the importance of precise alignment.\n\nNarration during this step:\n[560.5-566.7s] \"go back and then use the back side to side and then it would kind of I was\"\n[566.7-571.2s] \"calling it a scrub where it would go in between and it would kind of work its\"\n[571.2-576.4s] \"way in between each one of these little nubs. And that's the part that it\"\n[576.4-582.5s] \"really became critical to get these wipers dialed in perfectly because if it's\"\n\nFrames: 3 attached: image 1 at 564.2s, image 2 at 571.3s, image 3 at 578.3s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 560.7s (step start + hands: grip change) - hands until 562.5s: one hand 96%; grip L: power grip 70%; active 37%, moving left; at top\na2 @ 562.5s (hands: activity change, grip change) - hands until 563.5s: one hand 100%; grip L: relaxed hand; active 67%, moving right; at top\na3 @ 563.5s (hands: activity change) - hands until 565.5s: both hands 37%, one hand 63%; grip R: power grip, L: relaxed hand 73%; hands touching 37%; active 27%; at top\na4 @ 565.5s (hands: activity change, finger change, grip change, interaction change, speed change, visibility change) - hands until 567.5s: both hands 90%, one hand 10%; grip R: power grip 93%, L: relaxed hand 67%; hands touching 90%; active 60%; at top\na5 @ 567.5s (hands: activity change, finger change, grip change, interaction change, speed change) - hands until 569.5s: both hands 100%; grip R: power grip, L: power grip 90%; hands touching 100%; active 27%; at top\na6 @ 569.5s (hands: finger change) - hands until 570.5s: both hands 100%; grip R: power grip, L: power grip; hands touching 100%; active 47%; at top\na7 @ 570.5s (hands: finger change) - hands until 572.5s: both hands 100%; grip R: power grip 93%, L: power grip 67%; hands touching 100%; active 63%, moving left; at centre\na8 @ 572.5s (hands: finger change, grip change, interaction change, speed change) - hands until 574.5s: both hands 7%, one hand 90%; grip L: pinch grip 83%; active 73%, moving up; at top\na9 @ 574.5s (hands: activity change, grip change, speed change, visibility change) - hands until 579.3s: no hands visible\na10 @ 579.3s (hands: visibility change) - hands until 581.8s: one hand 16%, no hands 84%; grip L: relaxed hand 83%; active 8%, moving up-left; at top\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video). They are drawn and labelled on the images.\nB1 both hands (everything the hands cover) - image 1: x 0.00-0.81, y 0.00-1.00 (81% of the frame); image 2: x 0.00-0.81, y 0.00-1.00 (81% of the frame); image 3: x 0.00-0.81, y 0.00-1.00 (81% of the frame)\nB2 work zone (where the hands meet or hold something, i.e. the object worked on) - image 1: x 0.05-0.79, y 0.00-0.98 (72% of the frame); image 2: x 0.05-0.79, y 0.00-0.98 (72% of the frame); image 3: x 0.05-0.79, y 0.00-0.98 (72% of the frame)\nfull - the whole frame (when the surroundings matter or no box fits)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s19/k1_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s19/k2_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s19/k3_boxes.jpg"
+  ],
+  "response": {
+    "title": "Perform a wiper nub scrubbing motion",
+    "instruction": "Manually guide the toolhead to perform a side-to-side scrubbing motion between each of the wiper nubs.",
+    "details": [
+      "Use a back-and-forth motion to navigate the toolhead in the spaces between the nubs.",
+      "Ensure precise alignment while moving the toolhead to effectively clean each section."
+    ],
+    "tools": [
+      "toolhead"
+    ],
+    "materials": [
+      "wiper nubs"
+    ],
+    "expected_result": null,
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "quantity",
+        "description": "The exact number of scrubbing cycles or repetitions required.",
+        "blocking": false
+      },
+      {
+        "field": "purpose",
+        "description": "Specific cleaning purpose of the nubs for the 3D printer.",
+        "blocking": false
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 560.7,
+        "caption": "Move toolhead side-to-side",
+        "focus_box": "B2",
+        "emphasis": "toolhead",
+        "emphasis_s": 560.7
+      },
+      {
+        "start_s": 567.5,
+        "caption": "Scrub between the nubs",
+        "focus_box": "B2",
+        "emphasis": "between nubs",
+        "emphasis_s": 571.2
+      }
+    ]
+  }
+}

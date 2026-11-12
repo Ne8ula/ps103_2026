@@ -1,0 +1,57 @@
+{
+  "task": "segment_steps",
+  "provider": "fake:fake",
+  "prompt_version": "95d8c084fb",
+  "system": "You segment a hands-on demonstration video into the steps of a tutorial. You see one time window of\nthe video at a time. A heuristic detector has already proposed candidate step boundaries; they are\nover-complete and sometimes wrong. Your job is to decide which candidate boundaries are real step\nboundaries: merge candidate intervals that belong to the same step, and split only where the evidence\nclearly shows a new action starting.\n\nWhat counts as a step: one coherent action a learner would perform and check before moving on\n(e.g. \"apply soap\", \"scrub the backs of the hands\"). A change of hand grip, tool or object, a spoken\ncue (\"now\", \"next\", \"then\"), or a clear visual change usually marks a new step. Pauses, fidgeting,\ncamera adjustments and repetitions of the same motion do not.\n\nEvidence you get, per candidate interval: the narration spoken in it (if any), a text description of the hand poses at gesture keyframes (finger states, grip, movement; derived from hand landmarks, so it can be wrong when hands are occluded), and a representative frame (attached images, numbered as listed).\n\nRules:\n- Steps must be consecutive, in time order, and stay inside the window. Use the listed boundary\n  times for start_s and end_s; only use another time if a new action clearly starts mid-interval.\n- Leading or trailing idle time inside the window belongs to the neighbouring step; do not create\n  steps for it.\n- Steps shorter than 2.0 seconds are not allowed.\n- The window may start or end in the middle of a step; segment what you see, the overlap with the\n  neighbouring window is reconciled afterwards.\n- Describe only what is spoken or visible. Never invent quantities, durations, temperatures, settings,\n  tool names or safety claims; if something important is not stated, say so in notes.\n- confidence reflects how clearly the evidence supports the boundaries (0.9 = obvious spoken and\n  visual cue, 0.5 = plausible, 0.3 = guess).",
+  "user": "Video duration: 58.3s. This is window 3 of 10, covering 16.0s to 33.2s.\n\n\nCandidate boundaries (id @ time, detector score, reasons):\nb06 @ 16.0s  score 0.39 (hands_enter, narration_pause)\nb07 @ 17.2s  score 1.00 (hands_enter, hands_exit, scene_cut)\nb08 @ 18.0s  score 0.65 (hand_state_change, hands_enter)\nb09 @ 20.0s  score 0.65 (hand_state_change, hands_exit)\nb10 @ 21.0s  score 0.56 (hand_state_change, motion_pause)\nb11 @ 23.0s  score 0.35 (hand_state_change)\nb12 @ 25.1s  score 0.65 (hand_state_change, hands_exit)\nb13 @ 25.8s  score 0.30 (hands_enter)\nb14 @ 27.5s  score 1.00 (hand_state_change, hands_exit, narration_pause, scene_cut)\nb15 @ 28.5s  score 0.70 (hands_enter, hands_exit, narration_pause)\nb16 @ 30.2s  score 1.00 (hand_state_change, hands_enter, hands_exit, scene_cut)\nb17 @ 32.2s  score 0.95 (hand_state_change, hands_enter, hands_exit)\nb18 @ 33.2s  score 0.95 (hand_state_change, hands_enter, hands_exit)\n\nCandidate intervals:\ni07: 16.0-17.2s (from b06 to b07), image 1\n  speech [15.5-17.9s] \"Rub your hands for at least 20 seconds.\"\n  hands g0008 @ 16.0s [idle]: t=16.0s | Right hand: not visible. Left hand: relaxed hand, palm facing away, ring extended pointing down-right, pinky extended pointing down-right, index and middle half-bent, thumb curled, at centre; moving up-right, moderate. Idle.\n  hands g0009 @ 17.0s [idle]: t=17.0s | Right hand: not visible. Left hand: not visible. No hands visible. Idle.\n\ni08: 17.2-18.0s (from b07 to b08)\n  speech: (none)\n  hands: (no gesture keyframes)\n\ni09: 18.0-20.0s (from b08 to b09), image 2\n  speech [18.3-23.6s] \"Remember to wash the back of your hands in between your fingers, your fingertips, and\"\n  hands g0010 @ 18.0s [active]: t=18.0s | Right hand: not visible. Left hand: open hand, palm facing away, fingers spread pointing down-right, thumb half-bent, at centre; moving up-right, moderate. Active.\n  hands g0011 @ 19.0s [active]: t=19.0s | Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together pointing right, thumb curled, at centre; moving right, moderate. Left hand: open hand, palm facing camera, thumb+pinky together pointing down-right, index+middle+ring together pointing down-right, at centre; mo...\n\ni10: 20.0-21.0s (from b09 to b10)\n  speech: (none)\n  hands g0012 @ 20.0s [active]: t=20.0s | Right hand: open hand, palm sideways, index+middle+ring together pointing down-right, thumb out pointing down-right, pinky extended pointing down-right, at top; moving up-right, moderate. Left hand: not visible. Active.\n\ni11: 21.0-23.0s (from b10 to b11), image 3\n  speech: (none)\n  hands g0013 @ 21.0s [active]: t=21.0s | Right hand: open hand, palm facing away, fingers spread pointing right, thumb half-bent, at centre; moving down, moderate. Left hand: not visible. Active.\n  hands g0014 @ 22.0s [active]: t=22.0s | Right hand: open hand, palm facing away, fingers spread pointing right, thumb out pointing right, at centre; moving left, slow. Left hand: not visible. Active.\n\ni12: 23.0-25.1s (from b11 to b12)\n  speech [23.6-26.8s] \"under your nails, as well as your wrists and thumbs.\"\n  hands g0015 @ 23.0s [active]: t=23.0s | Right hand: power grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving up-left, moderate. Left hand: not visible. Active.\n  hands g0016 @ 24.1s [idle]: t=24.1s | Right hand: not visible. Left hand: fist, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving left, moderate. Idle.\n\ni13: 25.1-25.8s (from b12 to b13), image 4\n  speech: (none)\n  hands g0017 @ 25.1s [idle]: t=25.1s | Right hand: not visible. Left hand: pinch grip, palm facing away, thumb+index+middle+ring+pinky together pointing right, at centre; moving left, fast. Idle.\n\ni14: 25.8-27.5s (from b13 to b14)\n  speech: (none)\n  hands g0018 @ 26.1s [idle]: t=26.1s | Right hand: power grip, palm facing away, index+middle+ring+pinky together pointing up-right, thumb half-bent, at centre; moving down-right, slow. Left hand: not visible. Idle.\n  hands g0019 @ 27.1s [active]: t=27.1s | Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together pointing up-right, thumb half-bent, at centre; moving up, moderate. Left hand: not visible. Active.\n\ni15: 27.5-28.5s (from b14 to b15), image 5\n  speech [27.9-28.9s] \"Step 3.\"\n  hands g0020 @ 28.1s [idle]: t=28.1s | Right hand: not visible. Left hand: not visible. No hands visible. Idle.\n\ni16: 28.5-30.2s (from b15 to b16)\n  speech [29.5-33.4s] \"Rinse your hands and dry them with paper towels or an air dryer.\"\n  hands: (no gesture keyframes)\n\ni17: 30.2-32.2s (from b16 to b17), image 6\n  speech: (none)\n  hands g0021 @ 30.2s [idle]: t=30.2s | Right hand: power grip, palm facing away, middle+ring together pointing right, thumb out pointing down-right, index and pinky half-bent, at centre; moving left, moderate. Left hand: not visible. Idle.\n  hands g0022 @ 31.2s [active]: t=31.2s | Right hand: not visible. Left hand: open hand, palm facing camera, fingers spread pointing right, thumb half-bent, at centre; moving right, moderate. Active.\n\ni18: 32.2-33.2s (from b17 to b18)\n  speech: (none)\n  hands g0023 @ 32.2s [idle]: t=32.2s | Right hand: not visible. Left hand: not visible. No hands visible. Idle.\n\nReturn the steps in this window with start_s, end_s, a one-sentence summary of what the person does,\nthe rationale for the boundaries, and a confidence. Add notes for anything ambiguous.",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/segment/keyframes/i07_0016.60s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/segment/keyframes/i09_0019.00s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/segment/keyframes/i11_0022.00s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/segment/keyframes/i13_0025.46s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/segment/keyframes/i15_0028.02s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/segment/keyframes/i17_0031.20s.jpg"
+  ],
+  "response": {
+    "steps": [
+      {
+        "start_s": 16.0,
+        "end_s": 18.0,
+        "summary": "[fake LLM] Narrated: \"Rub your hands for at least 20 seconds.\"",
+        "rationale": "[fake LLM] starts at b06 (hands_enter, narration_pause); merges 2 candidate interval(s)",
+        "confidence": 0.7
+      },
+      {
+        "start_s": 18.0,
+        "end_s": 21.0,
+        "summary": "[fake LLM] Narrated: \"Remember to wash the back of your hands in between\"",
+        "rationale": "[fake LLM] starts at b08 (hand_state_change, hands_enter); merges 2 candidate interval(s)",
+        "confidence": 0.65
+      },
+      {
+        "start_s": 21.0,
+        "end_s": 25.12,
+        "summary": "[fake LLM] Narrated: \"under your nails, as well as your wrists and thumbs.\"",
+        "rationale": "[fake LLM] starts at b10 (hand_state_change, motion_pause); merges 2 candidate interval(s)",
+        "confidence": 0.45
+      },
+      {
+        "start_s": 25.12,
+        "end_s": 30.2,
+        "summary": "[fake LLM] Narrated: \"Step 3. Rinse your hands and dry them with paper\"",
+        "rationale": "[fake LLM] starts at b12 (hand_state_change, hands_exit); merges 4 candidate interval(s)",
+        "confidence": 0.66
+      },
+      {
+        "start_s": 30.2,
+        "end_s": 33.2,
+        "summary": "[fake LLM] Hands idle: t=30.2s | Right hand: power grip, palm facing away, middle+r",
+        "rationale": "[fake LLM] starts at b16 (hand_state_change, hands_enter, hands_exit, scene_cut); merges 2 candidate interval(s)",
+        "confidence": 0.9
+      }
+    ],
+    "notes": [
+      "[fake LLM] window 2: 12 intervals -> 5 steps"
+    ]
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "documents": [
+    {
+      "id": "d01",
+      "name": "fda-food-code-2022.pdf",
+      "path": "inputs/documents/d01-fda-food-code-2022.pdf",
+      "pages": 668,
+      "chunks": 1236
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "notes": [
+        {
+          "id": "c-s01-1",
+          "step_id": "s01",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 3-301.11 Preventing Contamination from Hands appears relevant to '[fake LLM] Welcome to the handwashing video. The'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:679",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 372,
+              "quote": "Even though bare hands should never contact exposed, ready-to-eat food, thorough handwashing is important in keeping gloves or other utensils from becoming vehicles for transferring microbes to the food."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-437bb3973d08f8170f61"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:1063",
+        "d01:626",
+        "d01:890",
+        "d01:622",
+        "d01:623",
+        "d01:679"
+      ],
+      "query": "[fake LLM] Welcome to the handwashing video. The [fake LLM] Welcome to the handwashing video. The most important thing you can do to keep your family from getting sick is."
+    },
+    {
+      "step_id": "s02",
+      "notes": [
+        {
+          "id": "c-s02-1",
+          "step_id": "s02",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] Here is how. Step 1. Wash'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:622",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "It takes more than just the use of soap and running water to remove the transient pathogens that may be present."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-a7d8a31309f028732cc6"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:622",
+        "d01:225",
+        "d01:1125",
+        "d01:626",
+        "d01:80",
+        "d01:213"
+      ],
+      "query": "[fake LLM] Here is how. Step 1. Wash [fake LLM] Here is how. Step 1. Wash your hands with running water and soap. Using soap, water."
+    },
+    {
+      "step_id": "s03",
+      "notes": [
+        {
+          "id": "c-s03-1",
+          "step_id": "s03",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "[fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds.",
+          "citations": [
+            {
+              "chunk_id": "d01:226",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 131,
+              "quote": "(A) Hot water manual operations by immersion for at least 30 seconds and as specified under § 4-501.111;"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-cbf1d8fedca81c6d0d22"
+        },
+        {
+          "id": "c-s03-2",
+          "step_id": "s03",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] Step 2. Rub your hands for'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "(A) Except as specified in ¶ (D) of this section, FOOD EMPLOYEES shall clean their hands and exposed portions of their arms, including surrogate prosthetic devices for hands or arms for at least 20 seconds, using a cleaning compound in a"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-cbf1d8fedca81c6d0d22"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:78",
+        "d01:1147",
+        "d01:622",
+        "d01:226",
+        "d01:682",
+        "d01:1148"
+      ],
+      "query": "[fake LLM] Step 2. Rub your hands for [fake LLM] Step 2. Rub your hands for at least 20 seconds."
+    },
+    {
+      "step_id": "s04",
+      "notes": [
+        {
+          "id": "c-s04-1",
+          "step_id": "s04",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 3-301.11 Preventing Contamination from Hands appears relevant to '[fake LLM] Remember to wash the back of'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:682",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 374,
+              "quote": "(A) Personal Cleanliness, i.e., handwashing procedures, including frequency and methodology of handwashing that ensure food employees keep their hands and fingertips clean and handwashing occurs at the times specified in section 2-301.14,"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-421760206b442182059a"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:1146",
+        "d01:682",
+        "d01:79",
+        "d01:626",
+        "d01:639",
+        "d01:625"
+      ],
+      "query": "[fake LLM] Remember to wash the back of [fake LLM] Remember to wash the back of your hands in between your fingers, your fingertips, and."
+    },
+    {
+      "step_id": "s05",
+      "notes": [
+        {
+          "id": "c-s05-1",
+          "step_id": "s05",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 2 Hazard Evaluation appears relevant to '[fake LLM] Step 5'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:996",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 520,
+              "quote": "Clear instructions should be developed detailing who is responsible for performing the corrective actions, the procedures to be followed, and when."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-e97b1d4272260dfcd2c3"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:996",
+        "d01:1041",
+        "d01:1044",
+        "d01:1070",
+        "d01:1001",
+        "d01:997"
+      ],
+      "query": "[fake LLM] Step 5 [fake LLM] Perform the action shown in this part of the video."
+    },
+    {
+      "step_id": "s06",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:437",
+        "d01:107",
+        "d01:626",
+        "d01:639",
+        "d01:429",
+        "d01:84"
+      ],
+      "query": "[fake LLM] Under your nails, as well as [fake LLM] under your nails, as well as your wrists and thumbs. Step 3."
+    },
+    {
+      "step_id": "s07",
+      "notes": [
+        {
+          "id": "c-s07-1",
+          "step_id": "s07",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] Rinse your hands and dry them'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "(C) TO avoid recontaminating their hands or surrogate prosthetic devices, FOOD EMPLOYEES may use disposable paper towels or similar clean barriers when touching surfaces such as manually operated faucet handles on a HANDWASHING SINK or the"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-a015104c42daa3969237"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:623",
+        "d01:293",
+        "d01:926",
+        "d01:626",
+        "d01:622",
+        "d01:78"
+      ],
+      "query": "[fake LLM] Rinse your hands and dry them [fake LLM] Rinse your hands and dry them with paper towels or an air dryer. Using towel, paper towel."
+    },
+    {
+      "step_id": "s08",
+      "notes": [
+        {
+          "id": "c-s08-1",
+          "step_id": "s08",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] If you have concerns with the'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:623",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "This can be accomplished by obtaining a paper towel from its dispenser before the handwashing procedure, then, after handwashing, using the paper towel to operate the hand sink faucet handles and restroom door handles."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-a58e93eed83306b085d5"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:623",
+        "d01:927",
+        "d01:698",
+        "d01:697",
+        "d01:626",
+        "d01:690"
+      ],
+      "query": "[fake LLM] If you have concerns with the [fake LLM] If you have concerns with the cleanliness of your surroundings, you can use the paper towel to help with the. Using towel, paper towel."
+    },
+    {
+      "step_id": "s09",
+      "notes": [
+        {
+          "id": "c-s09-1",
+          "step_id": "s09",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 3-304.14 Wiping Cloths, Use Limitation appears relevant to '[fake LLM] If you are at home, it'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:698",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 381,
+              "quote": "Further, for the purpose of wiping up food spills from surfaces in situations where full cleaning and sanitizing is not required (such as when a soft drink overflows onto the side of a cup or onto a countertop) the use of dry cloths and"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-90a8f596b8fd99578777"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:623",
+        "d01:927",
+        "d01:698",
+        "d01:293",
+        "d01:697",
+        "d01:626"
+      ],
+      "query": "[fake LLM] If you are at home, it [fake LLM] If you are at home, it is safe to use a towel to dry your hands. Using towel."
+    },
+    {
+      "step_id": "s10",
+      "notes": [
+        {
+          "id": "c-s10-1",
+          "step_id": "s10",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.16 Hand Antiseptics appears relevant to '[fake LLM] If you don't have soap and'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:80",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 62,
+              "quote": "(A) A hand antiseptic used as a topical application, a hand antiseptic solution used as a hand dip, or a hand antiseptic soap shall:"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-3a66a72b663885d2ad52"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:80",
+        "d01:430",
+        "d01:622",
+        "d01:842",
+        "d01:293",
+        "d01:431"
+      ],
+      "query": "[fake LLM] If you don't have soap and [fake LLM] If you don't have soap and water available, you can use alcohol-based hand sanitizer that. Using soap, water, sanitizer."
+    },
+    {
+      "step_id": "s11",
+      "notes": [
+        {
+          "id": "c-s11-1",
+          "step_id": "s11",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.16 Hand Antiseptics appears relevant to '[fake LLM] Contains at least 60% alcohol to'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:1147",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 617,
+              "quote": "2-301.11 Clean condition-Hands and Arms (P)"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-b69bc452e4a12c37d887"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:81",
+        "d01:1147",
+        "d01:430",
+        "d01:984",
+        "d01:408",
+        "d01:226"
+      ],
+      "query": "[fake LLM] Contains at least 60% alcohol to [fake LLM] contains at least 60% alcohol to clean your hands."
+    },
+    {
+      "step_id": "s12",
+      "notes": [
+        {
+          "id": "c-s12-1",
+          "step_id": "s12",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 8-203.10 Preoperational Inspections appears relevant to '[fake LLM] Step 12'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:960",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 495,
+              "quote": "12 Contents of the Plans and Specifications."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-6328f8395332941f936f"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:996",
+        "d01:1041",
+        "d01:960",
+        "d01:836",
+        "d01:997",
+        "d01:1001"
+      ],
+      "query": "[fake LLM] Step 12 [fake LLM] Perform the action shown in this part of the video."
+    },
+    {
+      "step_id": "s13",
+      "notes": [
+        {
+          "id": "c-s13-1",
+          "step_id": "s13",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 4 Food Defense Guidance from Farm to Table appears relevant to '[fake LLM] For more information, please visit sfdph.org'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:538",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 283,
+              "quote": "National Restaurant Association Information for restaurants can be found at http://www.restaurant.org."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-4a2008592d4290dd1234"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:538",
+        "d01:502",
+        "d01:1126",
+        "d01:533",
+        "d01:525",
+        "d01:789"
+      ],
+      "query": "[fake LLM] For more information, please visit sfdph.org [fake LLM] For more information, please visit sfdph.org."
+    }
+  ],
+  "global_notes": [
+    {
+      "id": "c-global-1",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "warning",
+      "text": "[fake LLM] Placeholder: the document lists a step the video may not show: (1) Rinse under clean, running warm water",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "(1) Rinse under clean, running warm water"
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-bb053b4f967ed9cddbfe"
+    },
+    {
+      "id": "c-global-2",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "warning",
+      "text": "[fake LLM] Placeholder: the document lists a step the video may not show: (2) Apply an amount of cleaning compound recommended by the cleaning compound manufacturer",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "(2) Apply an amount of cleaning compound recommended by the cleaning compound manufacturer"
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-bb053b4f967ed9cddbfe"
+    },
+    {
+      "id": "c-global-3",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "warning",
+      "text": "[fake LLM] Placeholder: the document lists a step the video may not show: (4) Thoroughly rinse under clean, running warm water",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "(4) Thoroughly rinse under clean, running warm water"
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-bb053b4f967ed9cddbfe"
+    }
+  ],
+  "embedding_model": "local:BAAI/bge-small-en-v1.5",
+  "dropped": []
+}

@@ -1,0 +1,117 @@
+{
+  "task": "questions",
+  "provider": "fake:fake-6abdf482",
+  "prompt_version": "d1906e7783",
+  "system": "You turn gaps found in a draft tutorial into questions for the person who recorded the demonstration\nvideo. They know the procedure well but are busy: ask short, concrete, plain-language questions that\nthey can answer in a few words.\n\nRules:\n- One question per gap, except: when several gaps ask for the same information, ask once and list all\n  their keys in gap_keys. Every gap key must appear in exactly one question; use only the given keys.\n- Refer to steps by their title, not by internal ids.\n- Choose answer_type: yes_no for confirmations, choice when there are a few plausible options (put\n  them in choices), number only when a single number with an obvious unit is asked, free_text otherwise.\n- Never suggest specific numeric values, settings or safety rules in the question or the choices;\n  ask for them. Choices may only offer structural options (e.g. split / merge / correct).\n- priority: 1 = a learner could not do the step correctly or safely without the answer (blocking gaps,\n  SOP conflicts), 2 = important for quality, 3 = nice to have.\n- If a gap was asked before and answered but persists, rephrase it to make clear what is still missing.",
+  "user": "Procedure steps:\n- [fake LLM] Welcome to the handwashing video. The (0.0-7.9s): [fake LLM] Welcome to the handwashing video. The most important thing you can do to keep your family from getting sick is.\n- [fake LLM] Here is how. Step 1. Wash (7.9-13.4s): [fake LLM] Here is how. Step 1. Wash your hands with running water and soap.\n- [fake LLM] Step 2. Rub your hands for (13.4-18.0s): [fake LLM] Step 2. Rub your hands for at least 20 seconds.\n- [fake LLM] Remember to wash the back of (18.0-21.0s): [fake LLM] Remember to wash the back of your hands in between your fingers, your fingertips, and.\n- [fake LLM] Step 5 (21.0-25.1s): [fake LLM] Perform the action shown in this part of the video.\n- [fake LLM] Under your nails, as well as (25.1-30.2s): [fake LLM] under your nails, as well as your wrists and thumbs. Step 3.\n- [fake LLM] Rinse your hands and dry them (30.2-36.2s): [fake LLM] Rinse your hands and dry them with paper towels or an air dryer.\n- [fake LLM] If you have concerns with the (36.2-41.2s): [fake LLM] If you have concerns with the cleanliness of your surroundings, you can use the paper towel to help with the.\n- [fake LLM] If you are at home, it (41.2-44.0s): [fake LLM] If you are at home, it is safe to use a towel to dry your hands.\n- [fake LLM] If you don't have soap and (44.0-47.7s): [fake LLM] If you don't have soap and water available, you can use alcohol-based hand sanitizer that.\n- [fake LLM] Contains at least 60% alcohol to (47.7-51.3s): [fake LLM] contains at least 60% alcohol to clean your hands.\n- [fake LLM] Step 12 (51.3-53.4s): [fake LLM] Perform the action shown in this part of the video.\n- [fake LLM] For more information, please visit sfdph.org (53.4-58.3s): [fake LLM] For more information, please visit sfdph.org.\n\nGaps (key | step | kind | blocking | description):\nc:s03:conflict:d01:226 | [fake LLM] Step 2. Rub your hands for | sop_conflict | blocking | [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) | asked before, answer was: \"Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure.\"\ns09:missing:duration | [fake LLM] If you are at home, it | missing_info (duration) | blocking | [fake LLM] How long this action lasts is not stated.\ns13:missing:unverified | [fake LLM] For more information, please visit sfdph.org | missing_info (quantity) | blocking | The draft stated '54.3', which the narration does not support; the value was removed and needs confirming.\ns05:missing:purpose | [fake LLM] Step 5 | missing_info (purpose) | not blocking | [fake LLM] No narration: what is this step for?\ns12:missing:purpose | [fake LLM] Step 12 | missing_info (purpose) | not blocking | [fake LLM] No narration: what is this step for?\nc:global:missing_step:d01:78 | whole procedure | sop_missing_step | not blocking | [fake LLM] Placeholder: the document lists a step the video may not show: (1) Rinse under clean, running warm water (fda-food-code-2022.pdf, p. 61)\ns05:low_confidence | [fake LLM] Step 5 | low_confidence | not blocking | Low confidence (0.45) that this step is cut and described correctly.\ns12:low_confidence | [fake LLM] Step 12 | low_confidence | not blocking | Low confidence (0.45) that this step is cut and described correctly.\ns13:low_confidence | [fake LLM] For more information, please visit sfdph.org | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.",
+  "images": [],
+  "response": {
+    "questions": [
+      {
+        "gap_keys": [
+          "c:s03:conflict:d01:226"
+        ],
+        "text": "[fake LLM] The video and the SOP disagree for step s03 (\"[fake LLM] Step 2. Rub your hands for\"): [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) Which is correct?",
+        "why": "[fake LLM] Needed so learners can follow step s03 (\"[fake LLM] Step 2. Rub your hands for\") correctly.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s09:missing:duration"
+        ],
+        "text": "[fake LLM] For step s09 (\"[fake LLM] If you are at home, it\"): [fake LLM] How long this action lasts is not stated. Please specify.",
+        "why": "[fake LLM] Needed so learners can follow step s09 (\"[fake LLM] If you are at home, it\") correctly.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s13:missing:unverified"
+        ],
+        "text": "[fake LLM] For step s13 (\"[fake LLM] For more information, please visit sfdph.org\"): The draft stated '54.3', which the narration does not support; the value was removed and needs confirming. Please specify.",
+        "why": "[fake LLM] Needed so learners can follow step s13 (\"[fake LLM] For more information, please visit sfdph.org\") correctly.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s05:missing:purpose"
+        ],
+        "text": "[fake LLM] For step s05 (\"[fake LLM] Step 5\"): [fake LLM] No narration: what is this step for? Please specify.",
+        "why": "[fake LLM] Needed so learners can follow step s05 (\"[fake LLM] Step 5\") correctly.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s12:missing:purpose"
+        ],
+        "text": "[fake LLM] For step s12 (\"[fake LLM] Step 12\"): [fake LLM] No narration: what is this step for? Please specify.",
+        "why": "[fake LLM] Needed so learners can follow step s12 (\"[fake LLM] Step 12\") correctly.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "c:global:missing_step:d01:78"
+        ],
+        "text": "[fake LLM] The SOP requires: [fake LLM] Placeholder: the document lists a step the video may not show: (1) Rinse under clean, running warm water (fda-food-code-2022.pdf, p. 61) Is this done in your procedure?",
+        "why": "[fake LLM] Needed so learners can follow the procedure correctly.",
+        "answer_type": "yes_no",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s05:low_confidence"
+        ],
+        "text": "[fake LLM] Is step s05 (\"[fake LLM] Step 5\") described and cut correctly?",
+        "why": "[fake LLM] Needed so learners can follow step s05 (\"[fake LLM] Step 5\") correctly.",
+        "answer_type": "choice",
+        "choices": [
+          "Yes, it is correct",
+          "It should be split",
+          "It should be merged with a neighbour",
+          "The description is wrong"
+        ],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s12:low_confidence"
+        ],
+        "text": "[fake LLM] Is step s12 (\"[fake LLM] Step 12\") described and cut correctly?",
+        "why": "[fake LLM] Needed so learners can follow step s12 (\"[fake LLM] Step 12\") correctly.",
+        "answer_type": "choice",
+        "choices": [
+          "Yes, it is correct",
+          "It should be split",
+          "It should be merged with a neighbour",
+          "The description is wrong"
+        ],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s13:low_confidence"
+        ],
+        "text": "[fake LLM] Is step s13 (\"[fake LLM] For more information, please visit sfdph.org\") described and cut correctly?",
+        "why": "[fake LLM] Needed so learners can follow step s13 (\"[fake LLM] For more information, please visit sfdph.org\") correctly.",
+        "answer_type": "choice",
+        "choices": [
+          "Yes, it is correct",
+          "It should be split",
+          "It should be merged with a neighbour",
+          "The description is wrong"
+        ],
+        "priority": 2
+      }
+    ]
+  }
+}

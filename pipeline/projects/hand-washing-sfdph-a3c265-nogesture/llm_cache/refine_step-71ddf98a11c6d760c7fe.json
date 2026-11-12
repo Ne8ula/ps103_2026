@@ -1,0 +1,25 @@
+{
+  "task": "refine_step",
+  "provider": "fake:fake-6abdf482",
+  "prompt_version": "ff89ae4e94",
+  "system": "You update one step of a tutorial with answers the video's uploader gave to questions about it.\nThe uploader is the authority on their own procedure: integrate their answers faithfully.\n\nRules:\n- Change only what the answers address. Keep every other field as it is, word for word.\n- Put each new fact from the answers into user_supplied as a short, self-contained statement\n  (e.g. \"Scrub for at least 20 seconds\"). Keep earlier user_supplied facts unless an answer marked as\n  superseding replaces them.\n- Use the facts in the instruction, details, tools, materials, cautions or expected_result where a\n  learner needs them.\n- List in resolved_missing_keys the keys of missing-info items the answers fully resolve. Do not list\n  items the answers do not address.\n- Never invent numeric values, settings or safety claims beyond what the answers and the existing step\n  state. If an answer is vague or raises a new gap, add it to new_missing_info instead of guessing.\n- confidence: raise it if the answers confirm the step, lower it if they contradict it.",
+  "user": "Current step (s03, 13.4s to 18.0s):\n{\n  \"title\": \"[fake LLM] Step 2. Rub your hands for\",\n  \"instruction\": \"[fake LLM] Step 2. Rub your hands for at least 20 seconds.\",\n  \"details\": [],\n  \"tools\": [],\n  \"materials\": [],\n  \"expected_result\": \"[fake LLM] Narrated: \\\"Step 2. Rub your hands for at least 20 seconds.\\\"\",\n  \"cautions\": [],\n  \"confidence\": 0.75,\n  \"user_supplied\": []\n}\n\nOpen missing-info items (key: field, blocking, description):\n(none)\n\nUploader answers to apply:\n- Question: [fake LLM] The video and the SOP disagree for step s03 (\"[fake LLM] Step 2. Rub your hands for\"): [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) Which is correct?\n  Answer: Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure.\n  Raised by: c:s03:conflict:d01:226",
+  "images": [],
+  "response": {
+    "title": "[fake LLM] Step 2. Rub your hands for",
+    "instruction": "[fake LLM] Step 2. Rub your hands for at least 20 seconds.",
+    "details": [
+      "[fake LLM] Per the uploader: Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure."
+    ],
+    "tools": [],
+    "materials": [],
+    "expected_result": "[fake LLM] Narrated: \"Step 2. Rub your hands for at least 20 seconds.\"",
+    "cautions": [],
+    "confidence": 0.85,
+    "user_supplied": [
+      "Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure. (answer to: [fake LLM] The video and the SOP disagree for step s03 (\"[fake LLM] Step 2. Rub your hands for\"): [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) Which is correct?)"
+    ],
+    "resolved_missing_keys": [],
+    "new_missing_info": []
+  }
+}

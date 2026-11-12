@@ -1,0 +1,287 @@
+{
+  "revision": 0,
+  "steps": [
+    {
+      "id": "s01",
+      "index": 0,
+      "start": 0.0,
+      "end": 13.4,
+      "title": "Wet your hands and apply soap",
+      "instruction": "Wet your hands under running water and then apply soap using a dispenser.",
+      "details": [
+        "Ensure hands are fully wet before applying soap.",
+        "Use the soap dispenser to place a portion of soap onto your palm."
+      ],
+      "tools": [
+        "sink",
+        "faucet",
+        "soap dispenser"
+      ],
+      "materials": [
+        "running water",
+        "soap"
+      ],
+      "expected_result": "Hands are wet and coated with soap.",
+      "cautions": [],
+      "confidence": 0.9,
+      "missing_info": [
+        {
+          "field": "setting",
+          "description": "The required temperature of the running water is not specified.",
+          "blocking": false,
+          "key": "s01:missing:setting"
+        },
+        {
+          "field": "quantity",
+          "description": "The amount of soap to be applied is not specified.",
+          "blocking": false,
+          "key": "s01:missing:quantity"
+        },
+        {
+          "field": "duration",
+          "description": "The duration for wetting the hands is not specified.",
+          "blocking": false,
+          "key": "s01:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s01/k1.jpg",
+        "draft/keyframes/s01/k2.jpg",
+        "draft/keyframes/s01/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 0.0,
+            "end": 13.4
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0001",
+          "g0002",
+          "g0003",
+          "g0004",
+          "g0005",
+          "g0006"
+        ],
+        "transcript_segment_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5f4ccfbf2e31f958477",
+          "draft_step-6a465f66aa2329ce7a06"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "index": 1,
+      "start": 13.4,
+      "end": 27.52,
+      "title": "Scrub hands and wrists for 20 seconds",
+      "instruction": "Rub your hands together for at least 20 seconds to ensure a thorough clean. Scrub the backs of your hands, between your fingers, your fingertips, under your nails, your thumbs, and your wrists.",
+      "details": [
+        "Interlace your fingers to clean the spaces between them.",
+        "Pay close attention to scrubbing under the fingernails and around the thumbs.",
+        "Extend the scrubbing action up to your wrists."
+      ],
+      "tools": [
+        "Sink"
+      ],
+      "materials": [
+        "Soap"
+      ],
+      "expected_result": "Both hands and wrists are completely covered in soap lather.",
+      "cautions": [],
+      "confidence": 1.0,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s02/k1.jpg",
+        "draft/keyframes/s02/k2.jpg",
+        "draft/keyframes/s02/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 13.4,
+            "end": 27.52
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0007",
+          "g0008",
+          "g0010",
+          "g0011",
+          "g0013",
+          "g0015",
+          "g0016",
+          "g0018"
+        ],
+        "transcript_segment_ids": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5f4ccfbf2e31f958477",
+          "draft_step-e9f8e21e63dc1250095e"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "index": 2,
+      "start": 27.52,
+      "end": 44.0,
+      "title": "Rinse and dry your hands",
+      "instruction": "Rinse your hands thoroughly and dry them completely using a paper towel, air dryer, or cloth towel.",
+      "details": [
+        "Use a paper towel to grasp the door handle when exiting a public restroom to maintain cleanliness.",
+        "A clean cloth towel is suitable for drying hands when at home."
+      ],
+      "tools": [
+        "paper towels",
+        "air dryer",
+        "door handle",
+        "towel"
+      ],
+      "materials": [
+        "water"
+      ],
+      "expected_result": "Hands are clean and dry.",
+      "cautions": [],
+      "confidence": 0.9,
+      "missing_info": [
+        {
+          "field": "duration",
+          "description": "The duration for rinsing hands is not specified.",
+          "blocking": false,
+          "key": "s03:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s03/k1.jpg",
+        "draft/keyframes/s03/k2.jpg",
+        "draft/keyframes/s03/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 27.52,
+            "end": 44.0
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0020",
+          "g0022",
+          "g0024",
+          "g0026",
+          "g0028",
+          "g0030",
+          "g0032",
+          "g0034"
+        ],
+        "transcript_segment_ids": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5f4ccfbf2e31f958477",
+          "draft_step-f2373eaec67132b3e9bc"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "index": 3,
+      "start": 44.0,
+      "end": 58.32,
+      "title": "Use hand sanitizer if soap is unavailable",
+      "instruction": "Apply an alcohol-based hand sanitizer to your hands and rub them together until dry.",
+      "details": [
+        "Ensure the sanitizer contains at least 60% alcohol.",
+        "Cover all surfaces of your hands during rubbing."
+      ],
+      "tools": [
+        "Hand sanitizer pump bottle"
+      ],
+      "materials": [
+        "Alcohol-based hand sanitizer"
+      ],
+      "expected_result": "Hands are coated in sanitizer and rubbed until completely dry.",
+      "cautions": [],
+      "confidence": 0.9,
+      "missing_info": [
+        {
+          "field": "quantity",
+          "description": "the amount of hand sanitizer to dispense per use",
+          "blocking": false,
+          "key": "s04:missing:quantity"
+        },
+        {
+          "field": "duration",
+          "description": "the total time to rub hands together",
+          "blocking": false,
+          "key": "s04:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s04/k1.jpg",
+        "draft/keyframes/s04/k2.jpg",
+        "draft/keyframes/s04/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 44.0,
+            "end": 58.32
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0036",
+          "g0037",
+          "g0038",
+          "g0039",
+          "g0041",
+          "g0042",
+          "g0043",
+          "g0044"
+        ],
+        "transcript_segment_ids": [
+          15,
+          16,
+          17
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5f4ccfbf2e31f958477",
+          "draft_step-2f58bcee91fa1603de6d"
+        ]
+      }
+    }
+  ],
+  "applied_answer_ids": [],
+  "notes": [],
+  "answer_log": [],
+  "base_hash": "c478257e516bf2c0"
+}

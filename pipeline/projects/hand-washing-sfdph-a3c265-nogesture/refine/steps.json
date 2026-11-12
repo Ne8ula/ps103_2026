@@ -1,0 +1,579 @@
+{
+  "revision": 1,
+  "steps": [
+    {
+      "id": "s01",
+      "index": 0,
+      "start": 0.0,
+      "end": 7.92,
+      "title": "[fake LLM] Welcome to the handwashing video. The",
+      "instruction": "[fake LLM] Welcome to the handwashing video. The most important thing you can do to keep your family from getting sick is.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Welcome to the handwashing video. The most important thing you\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s01/k1.jpg",
+        "draft/keyframes/s01/k2.jpg",
+        "draft/keyframes/s01/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 0.0,
+            "end": 7.92
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          0,
+          1,
+          2
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-f1cb40cebe94622396ff",
+          "draft_step-61878acb32880ceced6f"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "index": 1,
+      "start": 7.92,
+      "end": 13.4,
+      "title": "[fake LLM] Here is how. Step 1. Wash",
+      "instruction": "[fake LLM] Here is how. Step 1. Wash your hands with running water and soap.",
+      "details": [],
+      "tools": [],
+      "materials": [
+        "soap",
+        "water"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"Here is how. Step 1. Wash your hands with running\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s02/k1.jpg",
+        "draft/keyframes/s02/k2.jpg",
+        "draft/keyframes/s02/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 7.92,
+            "end": 13.4
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          3,
+          4,
+          5
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-f1cb40cebe94622396ff",
+          "draft_step-e2797a6a27af8fa61bcd"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "index": 2,
+      "start": 13.4,
+      "end": 18.0,
+      "title": "[fake LLM] Step 2. Rub your hands for",
+      "instruction": "[fake LLM] Step 2. Rub your hands for at least 20 seconds.",
+      "details": [
+        "[fake LLM] Per the uploader: Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure."
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Step 2. Rub your hands for at least 20 seconds.\"",
+      "cautions": [],
+      "confidence": 0.85,
+      "missing_info": [],
+      "user_supplied": [
+        "Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure. (answer to: [fake LLM] The video and the SOP disagree for step s03 (\"[fake LLM] Step 2. Rub your hands for\"): [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) Which is correct?)"
+      ],
+      "keyframe_paths": [
+        "draft/keyframes/s03/k1.jpg",
+        "draft/keyframes/s03/k2.jpg",
+        "draft/keyframes/s03/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 13.4,
+            "end": 18.0
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          6,
+          7
+        ],
+        "chunk_ids": [],
+        "answer_ids": [
+          "a-q001-2434b3"
+        ],
+        "llm_calls": [
+          "segment_steps-f1cb40cebe94622396ff",
+          "draft_step-6c220e83f4cd039d207b",
+          "refine_step-71ddf98a11c6d760c7fe"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "index": 3,
+      "start": 18.0,
+      "end": 21.0,
+      "title": "[fake LLM] Remember to wash the back of",
+      "instruction": "[fake LLM] Remember to wash the back of your hands in between your fingers, your fingertips, and.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Remember to wash the back of your hands in between\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s04/k1.jpg",
+        "draft/keyframes/s04/k2.jpg",
+        "draft/keyframes/s04/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 18.0,
+            "end": 21.0
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          8
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-c107d25446f025837fe2",
+          "draft_step-dc0c6600c8a26c3f585f"
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "index": 4,
+      "start": 21.0,
+      "end": 25.12,
+      "title": "[fake LLM] Step 5",
+      "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": null,
+      "cautions": [],
+      "confidence": 0.45,
+      "missing_info": [
+        {
+          "field": "purpose",
+          "description": "[fake LLM] No narration: what is this step for?",
+          "blocking": false,
+          "key": "s05:missing:purpose"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s05/k1.jpg",
+        "draft/keyframes/s05/k2.jpg",
+        "draft/keyframes/s05/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 21.0,
+            "end": 25.12
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-594454b035f8483355f5",
+          "draft_step-26923d562bd2e36b37b5"
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "index": 5,
+      "start": 25.12,
+      "end": 30.2,
+      "title": "[fake LLM] Under your nails, as well as",
+      "instruction": "[fake LLM] under your nails, as well as your wrists and thumbs. Step 3.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Step 3. Rinse your hands and dry them with paper\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s06/k1.jpg",
+        "draft/keyframes/s06/k2.jpg",
+        "draft/keyframes/s06/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 25.12,
+            "end": 30.2
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          9,
+          10
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-4bac3d9cd40a508021f3",
+          "draft_step-4ec81e36d19169f74ac6"
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "index": 6,
+      "start": 30.2,
+      "end": 36.2,
+      "title": "[fake LLM] Rinse your hands and dry them",
+      "instruction": "[fake LLM] Rinse your hands and dry them with paper towels or an air dryer.",
+      "details": [],
+      "tools": [],
+      "materials": [
+        "towel",
+        "paper towel"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"If you have concerns with the cleanliness of your surroundings,\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [
+        {
+          "field": "duration",
+          "description": "[fake LLM] How long this action lasts is not stated.",
+          "blocking": true,
+          "key": "s07:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s07/k1.jpg",
+        "draft/keyframes/s07/k2.jpg",
+        "draft/keyframes/s07/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 30.2,
+            "end": 36.2
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          11
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-c2026fd2efdca1fc4597",
+          "draft_step-d78e3d00dc1fc45d9752"
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "index": 7,
+      "start": 36.2,
+      "end": 41.2,
+      "title": "[fake LLM] If you have concerns with the",
+      "instruction": "[fake LLM] If you have concerns with the cleanliness of your surroundings, you can use the paper towel to help with the.",
+      "details": [],
+      "tools": [],
+      "materials": [
+        "towel",
+        "paper towel"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"to help with the door. If you are at home,\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s08/k1.jpg",
+        "draft/keyframes/s08/k2.jpg",
+        "draft/keyframes/s08/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 36.2,
+            "end": 41.2
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          12,
+          13
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-05cae4fed3f2cb8112b5",
+          "draft_step-d31de22283a115d963fb"
+        ]
+      }
+    },
+    {
+      "id": "s09",
+      "index": 8,
+      "start": 41.2,
+      "end": 44.0,
+      "title": "[fake LLM] If you are at home, it",
+      "instruction": "[fake LLM] If you are at home, it is safe to use a towel to dry your hands.",
+      "details": [],
+      "tools": [],
+      "materials": [
+        "towel"
+      ],
+      "expected_result": "[fake LLM] Activity from 41.2s to 44.0s",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [
+        {
+          "field": "duration",
+          "description": "[fake LLM] How long this action lasts is not stated.",
+          "blocking": true,
+          "key": "s09:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s09/k1.jpg",
+        "draft/keyframes/s09/k2.jpg",
+        "draft/keyframes/s09/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 41.2,
+            "end": 44.0
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          14
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-7c3cb1fd7e5ff8e8effd",
+          "draft_step-311e350d841888d39dfb"
+        ]
+      }
+    },
+    {
+      "id": "s10",
+      "index": 9,
+      "start": 44.0,
+      "end": 47.72,
+      "title": "[fake LLM] If you don't have soap and",
+      "instruction": "[fake LLM] If you don't have soap and water available, you can use alcohol-based hand sanitizer that.",
+      "details": [],
+      "tools": [],
+      "materials": [
+        "soap",
+        "water",
+        "sanitizer"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"If you don't have soap and water available, you can\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s10/k1.jpg",
+        "draft/keyframes/s10/k2.jpg",
+        "draft/keyframes/s10/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 44.0,
+            "end": 47.72
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          15
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d28d0e4d550d7c53fe2e",
+          "draft_step-9beb8f4f2f9b117f9604"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "index": 10,
+      "start": 47.72,
+      "end": 51.32,
+      "title": "[fake LLM] Contains at least 60% alcohol to",
+      "instruction": "[fake LLM] contains at least 60% alcohol to clean your hands.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"contains at least 60% alcohol to clean your hands.\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s11/k1.jpg",
+        "draft/keyframes/s11/k2.jpg",
+        "draft/keyframes/s11/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 47.72,
+            "end": 51.32
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          16
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d28d0e4d550d7c53fe2e",
+          "draft_step-a439ccc3360c28aec244"
+        ]
+      }
+    },
+    {
+      "id": "s12",
+      "index": 11,
+      "start": 51.32,
+      "end": 53.4,
+      "title": "[fake LLM] Step 12",
+      "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": null,
+      "cautions": [],
+      "confidence": 0.45,
+      "missing_info": [
+        {
+          "field": "purpose",
+          "description": "[fake LLM] No narration: what is this step for?",
+          "blocking": false,
+          "key": "s12:missing:purpose"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s12/k1.jpg",
+        "draft/keyframes/s12/k2.jpg",
+        "draft/keyframes/s12/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 51.32,
+            "end": 53.4
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d28d0e4d550d7c53fe2e",
+          "draft_step-45445f2d19656ad46dd1"
+        ]
+      }
+    },
+    {
+      "id": "s13",
+      "index": 12,
+      "start": 53.4,
+      "end": 58.32,
+      "title": "[fake LLM] For more information, please visit sfdph.org",
+      "instruction": "[fake LLM] For more information, please visit sfdph.org.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Activity from 53.4s to 58.3s",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s13/k1.jpg",
+        "draft/keyframes/s13/k2.jpg",
+        "draft/keyframes/s13/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 53.4,
+            "end": 58.32
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          17
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d28d0e4d550d7c53fe2e",
+          "draft_step-9f15fde55f2fb4af297c"
+        ]
+      }
+    }
+  ],
+  "applied_answer_ids": [
+    "a-q001-2434b3"
+  ],
+  "notes": [],
+  "answer_log": [
+    {
+      "answer_id": "a-q001-2434b3",
+      "question_id": "q001",
+      "text": "Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure.",
+      "step_id": "s03",
+      "revision": 1
+    }
+  ],
+  "base_hash": "4b4e5c94a4d1b4dd"
+}

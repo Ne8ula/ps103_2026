@@ -1,0 +1,1093 @@
+{
+  "available": true,
+  "language": "en",
+  "model": "faster-whisper:base",
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.11,
+      "end": 2.01,
+      "text": "Welcome to the handwashing video.",
+      "words": [
+        {
+          "start": 0.11,
+          "end": 0.69,
+          "word": "Welcome",
+          "probability": 0.6232
+        },
+        {
+          "start": 0.69,
+          "end": 0.95,
+          "word": "to",
+          "probability": 0.9866
+        },
+        {
+          "start": 0.95,
+          "end": 1.07,
+          "word": "the",
+          "probability": 0.9452
+        },
+        {
+          "start": 1.07,
+          "end": 1.63,
+          "word": "handwashing",
+          "probability": 0.662
+        },
+        {
+          "start": 1.63,
+          "end": 2.01,
+          "word": "video.",
+          "probability": 0.9952
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "start": 2.49,
+      "end": 6.79,
+      "text": "The most important thing you can do to keep your family from getting sick is washing your",
+      "words": [
+        {
+          "start": 2.49,
+          "end": 2.57,
+          "word": "The",
+          "probability": 0.9592
+        },
+        {
+          "start": 2.57,
+          "end": 2.77,
+          "word": "most",
+          "probability": 0.995
+        },
+        {
+          "start": 2.77,
+          "end": 3.23,
+          "word": "important",
+          "probability": 0.9977
+        },
+        {
+          "start": 3.23,
+          "end": 3.47,
+          "word": "thing",
+          "probability": 0.991
+        },
+        {
+          "start": 3.47,
+          "end": 3.69,
+          "word": "you",
+          "probability": 0.9738
+        },
+        {
+          "start": 3.69,
+          "end": 3.85,
+          "word": "can",
+          "probability": 0.9892
+        },
+        {
+          "start": 3.85,
+          "end": 4.07,
+          "word": "do",
+          "probability": 0.9945
+        },
+        {
+          "start": 4.07,
+          "end": 4.21,
+          "word": "to",
+          "probability": 0.9962
+        },
+        {
+          "start": 4.21,
+          "end": 4.45,
+          "word": "keep",
+          "probability": 0.9957
+        },
+        {
+          "start": 4.45,
+          "end": 4.67,
+          "word": "your",
+          "probability": 0.9836
+        },
+        {
+          "start": 4.67,
+          "end": 4.95,
+          "word": "family",
+          "probability": 0.9967
+        },
+        {
+          "start": 4.95,
+          "end": 5.19,
+          "word": "from",
+          "probability": 0.9897
+        },
+        {
+          "start": 5.19,
+          "end": 5.37,
+          "word": "getting",
+          "probability": 0.9975
+        },
+        {
+          "start": 5.37,
+          "end": 5.79,
+          "word": "sick",
+          "probability": 0.9898
+        },
+        {
+          "start": 5.79,
+          "end": 6.15,
+          "word": "is",
+          "probability": 0.9435
+        },
+        {
+          "start": 6.15,
+          "end": 6.59,
+          "word": "washing",
+          "probability": 0.9843
+        },
+        {
+          "start": 6.59,
+          "end": 6.79,
+          "word": "your",
+          "probability": 0.9965
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 6.79,
+      "end": 7.63,
+      "text": "hands correctly.",
+      "words": [
+        {
+          "start": 6.79,
+          "end": 7.15,
+          "word": "hands",
+          "probability": 0.9947
+        },
+        {
+          "start": 7.15,
+          "end": 7.63,
+          "word": "correctly.",
+          "probability": 0.9946
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 8.19,
+      "end": 8.99,
+      "text": "Here is how.",
+      "words": [
+        {
+          "start": 8.19,
+          "end": 8.49,
+          "word": "Here",
+          "probability": 0.9877
+        },
+        {
+          "start": 8.49,
+          "end": 8.79,
+          "word": "is",
+          "probability": 0.9836
+        },
+        {
+          "start": 8.79,
+          "end": 8.99,
+          "word": "how.",
+          "probability": 0.9895
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 9.65,
+      "end": 10.27,
+      "text": "Step 1.",
+      "words": [
+        {
+          "start": 9.65,
+          "end": 9.87,
+          "word": "Step",
+          "probability": 0.9452
+        },
+        {
+          "start": 9.87,
+          "end": 10.27,
+          "word": "1.",
+          "probability": 0.763
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 10.93,
+      "end": 13.07,
+      "text": "Wash your hands with running water and soap.",
+      "words": [
+        {
+          "start": 10.93,
+          "end": 11.11,
+          "word": "Wash",
+          "probability": 0.9722
+        },
+        {
+          "start": 11.11,
+          "end": 11.29,
+          "word": "your",
+          "probability": 0.9978
+        },
+        {
+          "start": 11.29,
+          "end": 11.55,
+          "word": "hands",
+          "probability": 0.9964
+        },
+        {
+          "start": 11.55,
+          "end": 11.75,
+          "word": "with",
+          "probability": 0.9984
+        },
+        {
+          "start": 11.75,
+          "end": 12.07,
+          "word": "running",
+          "probability": 0.9963
+        },
+        {
+          "start": 12.07,
+          "end": 12.49,
+          "word": "water",
+          "probability": 0.9955
+        },
+        {
+          "start": 12.49,
+          "end": 12.83,
+          "word": "and",
+          "probability": 0.8692
+        },
+        {
+          "start": 12.83,
+          "end": 13.07,
+          "word": "soap.",
+          "probability": 0.997
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 14.41,
+      "end": 14.91,
+      "text": "Step 2.",
+      "words": [
+        {
+          "start": 14.41,
+          "end": 14.51,
+          "word": "Step",
+          "probability": 0.99
+        },
+        {
+          "start": 14.51,
+          "end": 14.91,
+          "word": "2.",
+          "probability": 0.9863
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 15.53,
+      "end": 17.89,
+      "text": "Rub your hands for at least 20 seconds.",
+      "words": [
+        {
+          "start": 15.53,
+          "end": 15.59,
+          "word": "Rub",
+          "probability": 0.9476
+        },
+        {
+          "start": 15.59,
+          "end": 15.81,
+          "word": "your",
+          "probability": 0.9979
+        },
+        {
+          "start": 15.81,
+          "end": 16.15,
+          "word": "hands",
+          "probability": 0.9936
+        },
+        {
+          "start": 16.15,
+          "end": 16.47,
+          "word": "for",
+          "probability": 0.997
+        },
+        {
+          "start": 16.47,
+          "end": 16.61,
+          "word": "at",
+          "probability": 0.9953
+        },
+        {
+          "start": 16.61,
+          "end": 16.81,
+          "word": "least",
+          "probability": 0.9968
+        },
+        {
+          "start": 16.81,
+          "end": 17.31,
+          "word": "20",
+          "probability": 0.8637
+        },
+        {
+          "start": 17.31,
+          "end": 17.89,
+          "word": "seconds.",
+          "probability": 0.9955
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 18.33,
+      "end": 23.57,
+      "text": "Remember to wash the back of your hands in between your fingers, your fingertips, and",
+      "words": [
+        {
+          "start": 18.33,
+          "end": 18.55,
+          "word": "Remember",
+          "probability": 0.9961
+        },
+        {
+          "start": 18.55,
+          "end": 18.79,
+          "word": "to",
+          "probability": 0.9959
+        },
+        {
+          "start": 18.79,
+          "end": 19.05,
+          "word": "wash",
+          "probability": 0.9961
+        },
+        {
+          "start": 19.05,
+          "end": 19.25,
+          "word": "the",
+          "probability": 0.9903
+        },
+        {
+          "start": 19.25,
+          "end": 19.47,
+          "word": "back",
+          "probability": 0.9977
+        },
+        {
+          "start": 19.47,
+          "end": 19.63,
+          "word": "of",
+          "probability": 0.9954
+        },
+        {
+          "start": 19.63,
+          "end": 19.75,
+          "word": "your",
+          "probability": 0.9959
+        },
+        {
+          "start": 19.75,
+          "end": 20.19,
+          "word": "hands",
+          "probability": 0.9915
+        },
+        {
+          "start": 20.19,
+          "end": 20.67,
+          "word": "in",
+          "probability": 0.7677
+        },
+        {
+          "start": 20.67,
+          "end": 20.95,
+          "word": "between",
+          "probability": 0.9462
+        },
+        {
+          "start": 20.95,
+          "end": 21.17,
+          "word": "your",
+          "probability": 0.987
+        },
+        {
+          "start": 21.17,
+          "end": 21.63,
+          "word": "fingers,",
+          "probability": 0.994
+        },
+        {
+          "start": 22.05,
+          "end": 22.27,
+          "word": "your",
+          "probability": 0.9861
+        },
+        {
+          "start": 22.27,
+          "end": 22.75,
+          "word": "fingertips,",
+          "probability": 0.974
+        },
+        {
+          "start": 23.15,
+          "end": 23.57,
+          "word": "and",
+          "probability": 0.9842
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 23.57,
+      "end": 26.83,
+      "text": "under your nails, as well as your wrists and thumbs.",
+      "words": [
+        {
+          "start": 23.57,
+          "end": 23.91,
+          "word": "under",
+          "probability": 0.9859
+        },
+        {
+          "start": 23.91,
+          "end": 24.11,
+          "word": "your",
+          "probability": 0.9922
+        },
+        {
+          "start": 24.11,
+          "end": 24.39,
+          "word": "nails,",
+          "probability": 0.9955
+        },
+        {
+          "start": 24.73,
+          "end": 24.89,
+          "word": "as",
+          "probability": 0.9951
+        },
+        {
+          "start": 24.89,
+          "end": 25.05,
+          "word": "well",
+          "probability": 0.9984
+        },
+        {
+          "start": 25.05,
+          "end": 25.35,
+          "word": "as",
+          "probability": 0.9959
+        },
+        {
+          "start": 25.35,
+          "end": 25.51,
+          "word": "your",
+          "probability": 0.99
+        },
+        {
+          "start": 25.51,
+          "end": 25.87,
+          "word": "wrists",
+          "probability": 0.9737
+        },
+        {
+          "start": 25.87,
+          "end": 26.43,
+          "word": "and",
+          "probability": 0.9135
+        },
+        {
+          "start": 26.43,
+          "end": 26.83,
+          "word": "thumbs.",
+          "probability": 0.9501
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 27.93,
+      "end": 28.87,
+      "text": "Step 3.",
+      "words": [
+        {
+          "start": 27.93,
+          "end": 28.41,
+          "word": "Step",
+          "probability": 0.9911
+        },
+        {
+          "start": 28.41,
+          "end": 28.87,
+          "word": "3.",
+          "probability": 0.9926
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 29.51,
+      "end": 33.41,
+      "text": "Rinse your hands and dry them with paper towels or an air dryer.",
+      "words": [
+        {
+          "start": 29.51,
+          "end": 29.75,
+          "word": "Rinse",
+          "probability": 0.7647
+        },
+        {
+          "start": 29.75,
+          "end": 29.97,
+          "word": "your",
+          "probability": 0.9918
+        },
+        {
+          "start": 29.97,
+          "end": 30.27,
+          "word": "hands",
+          "probability": 0.9969
+        },
+        {
+          "start": 30.27,
+          "end": 30.59,
+          "word": "and",
+          "probability": 0.9622
+        },
+        {
+          "start": 30.59,
+          "end": 30.85,
+          "word": "dry",
+          "probability": 0.9196
+        },
+        {
+          "start": 30.85,
+          "end": 31.11,
+          "word": "them",
+          "probability": 0.9958
+        },
+        {
+          "start": 31.11,
+          "end": 31.33,
+          "word": "with",
+          "probability": 0.995
+        },
+        {
+          "start": 31.33,
+          "end": 31.67,
+          "word": "paper",
+          "probability": 0.9937
+        },
+        {
+          "start": 31.67,
+          "end": 31.99,
+          "word": "towels",
+          "probability": 0.9971
+        },
+        {
+          "start": 31.99,
+          "end": 32.63,
+          "word": "or",
+          "probability": 0.8381
+        },
+        {
+          "start": 32.63,
+          "end": 32.95,
+          "word": "an",
+          "probability": 0.9466
+        },
+        {
+          "start": 32.95,
+          "end": 33.13,
+          "word": "air",
+          "probability": 0.9856
+        },
+        {
+          "start": 33.13,
+          "end": 33.41,
+          "word": "dryer.",
+          "probability": 0.9494
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 33.95,
+      "end": 38.53,
+      "text": "If you have concerns with the cleanliness of your surroundings, you can use the paper towel",
+      "words": [
+        {
+          "start": 33.95,
+          "end": 34.15,
+          "word": "If",
+          "probability": 0.995
+        },
+        {
+          "start": 34.15,
+          "end": 34.29,
+          "word": "you",
+          "probability": 0.9989
+        },
+        {
+          "start": 34.29,
+          "end": 34.53,
+          "word": "have",
+          "probability": 0.9975
+        },
+        {
+          "start": 34.53,
+          "end": 34.89,
+          "word": "concerns",
+          "probability": 0.9937
+        },
+        {
+          "start": 34.89,
+          "end": 35.27,
+          "word": "with",
+          "probability": 0.9866
+        },
+        {
+          "start": 35.27,
+          "end": 35.39,
+          "word": "the",
+          "probability": 0.9939
+        },
+        {
+          "start": 35.39,
+          "end": 35.87,
+          "word": "cleanliness",
+          "probability": 0.97
+        },
+        {
+          "start": 35.87,
+          "end": 36.11,
+          "word": "of",
+          "probability": 0.9954
+        },
+        {
+          "start": 36.11,
+          "end": 36.23,
+          "word": "your",
+          "probability": 0.9875
+        },
+        {
+          "start": 36.23,
+          "end": 36.73,
+          "word": "surroundings,",
+          "probability": 0.9958
+        },
+        {
+          "start": 37.29,
+          "end": 37.35,
+          "word": "you",
+          "probability": 0.9891
+        },
+        {
+          "start": 37.35,
+          "end": 37.51,
+          "word": "can",
+          "probability": 0.9963
+        },
+        {
+          "start": 37.51,
+          "end": 37.73,
+          "word": "use",
+          "probability": 0.997
+        },
+        {
+          "start": 37.73,
+          "end": 37.91,
+          "word": "the",
+          "probability": 0.9658
+        },
+        {
+          "start": 37.91,
+          "end": 38.21,
+          "word": "paper",
+          "probability": 0.9923
+        },
+        {
+          "start": 38.21,
+          "end": 38.53,
+          "word": "towel",
+          "probability": 0.9959
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 38.53,
+      "end": 39.57,
+      "text": "to help with the door.",
+      "words": [
+        {
+          "start": 38.53,
+          "end": 38.77,
+          "word": "to",
+          "probability": 0.9936
+        },
+        {
+          "start": 38.77,
+          "end": 39.01,
+          "word": "help",
+          "probability": 0.9986
+        },
+        {
+          "start": 39.01,
+          "end": 39.25,
+          "word": "with",
+          "probability": 0.9815
+        },
+        {
+          "start": 39.25,
+          "end": 39.37,
+          "word": "the",
+          "probability": 0.9975
+        },
+        {
+          "start": 39.37,
+          "end": 39.57,
+          "word": "door.",
+          "probability": 0.9884
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 40.09,
+      "end": 43.51,
+      "text": "If you are at home, it is safe to use a towel to dry your hands.",
+      "words": [
+        {
+          "start": 40.09,
+          "end": 40.27,
+          "word": "If",
+          "probability": 0.9927
+        },
+        {
+          "start": 40.27,
+          "end": 40.39,
+          "word": "you",
+          "probability": 0.9942
+        },
+        {
+          "start": 40.39,
+          "end": 40.49,
+          "word": "are",
+          "probability": 0.6679
+        },
+        {
+          "start": 40.49,
+          "end": 40.59,
+          "word": "at",
+          "probability": 0.9924
+        },
+        {
+          "start": 40.59,
+          "end": 40.85,
+          "word": "home,",
+          "probability": 0.9996
+        },
+        {
+          "start": 41.19,
+          "end": 41.29,
+          "word": "it",
+          "probability": 0.9916
+        },
+        {
+          "start": 41.29,
+          "end": 41.41,
+          "word": "is",
+          "probability": 0.9881
+        },
+        {
+          "start": 41.41,
+          "end": 41.69,
+          "word": "safe",
+          "probability": 0.9764
+        },
+        {
+          "start": 41.69,
+          "end": 41.87,
+          "word": "to",
+          "probability": 0.9959
+        },
+        {
+          "start": 41.87,
+          "end": 42.07,
+          "word": "use",
+          "probability": 0.9939
+        },
+        {
+          "start": 42.07,
+          "end": 42.25,
+          "word": "a",
+          "probability": 0.9858
+        },
+        {
+          "start": 42.25,
+          "end": 42.55,
+          "word": "towel",
+          "probability": 0.9992
+        },
+        {
+          "start": 42.55,
+          "end": 42.75,
+          "word": "to",
+          "probability": 0.9967
+        },
+        {
+          "start": 42.75,
+          "end": 42.95,
+          "word": "dry",
+          "probability": 0.9939
+        },
+        {
+          "start": 42.95,
+          "end": 43.11,
+          "word": "your",
+          "probability": 0.9914
+        },
+        {
+          "start": 43.11,
+          "end": 43.51,
+          "word": "hands.",
+          "probability": 0.9957
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 44.11,
+      "end": 49.33,
+      "text": "If you don't have soap and water available, you can use alcohol-based hand sanitizer that",
+      "words": [
+        {
+          "start": 44.11,
+          "end": 44.33,
+          "word": "If",
+          "probability": 0.9925
+        },
+        {
+          "start": 44.33,
+          "end": 44.45,
+          "word": "you",
+          "probability": 0.9969
+        },
+        {
+          "start": 44.45,
+          "end": 44.65,
+          "word": "don't",
+          "probability": 0.9798
+        },
+        {
+          "start": 44.65,
+          "end": 44.83,
+          "word": "have",
+          "probability": 0.9979
+        },
+        {
+          "start": 44.83,
+          "end": 45.05,
+          "word": "soap",
+          "probability": 0.9974
+        },
+        {
+          "start": 45.05,
+          "end": 45.29,
+          "word": "and",
+          "probability": 0.9791
+        },
+        {
+          "start": 45.29,
+          "end": 45.51,
+          "word": "water",
+          "probability": 0.999
+        },
+        {
+          "start": 45.51,
+          "end": 45.97,
+          "word": "available,",
+          "probability": 0.9987
+        },
+        {
+          "start": 46.51,
+          "end": 46.59,
+          "word": "you",
+          "probability": 0.9931
+        },
+        {
+          "start": 46.59,
+          "end": 46.75,
+          "word": "can",
+          "probability": 0.9951
+        },
+        {
+          "start": 46.75,
+          "end": 47.01,
+          "word": "use",
+          "probability": 0.9975
+        },
+        {
+          "start": 47.01,
+          "end": 47.47,
+          "word": "alcohol",
+          "probability": 0.9299
+        },
+        {
+          "start": 47.47,
+          "end": 47.93,
+          "word": "-based",
+          "probability": 0.7737
+        },
+        {
+          "start": 47.93,
+          "end": 48.37,
+          "word": "hand",
+          "probability": 0.9572
+        },
+        {
+          "start": 48.37,
+          "end": 48.87,
+          "word": "sanitizer",
+          "probability": 0.9681
+        },
+        {
+          "start": 48.87,
+          "end": 49.33,
+          "word": "that",
+          "probability": 0.9698
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 49.33,
+      "end": 53.05,
+      "text": "contains at least 60% alcohol to clean your hands.",
+      "words": [
+        {
+          "start": 49.33,
+          "end": 49.67,
+          "word": "contains",
+          "probability": 0.994
+        },
+        {
+          "start": 49.67,
+          "end": 49.97,
+          "word": "at",
+          "probability": 0.9916
+        },
+        {
+          "start": 49.97,
+          "end": 50.17,
+          "word": "least",
+          "probability": 0.9963
+        },
+        {
+          "start": 50.17,
+          "end": 50.79,
+          "word": "60",
+          "probability": 0.9788
+        },
+        {
+          "start": 50.79,
+          "end": 51.13,
+          "word": "%",
+          "probability": 0.8747
+        },
+        {
+          "start": 51.13,
+          "end": 51.57,
+          "word": "alcohol",
+          "probability": 0.9987
+        },
+        {
+          "start": 51.57,
+          "end": 52.19,
+          "word": "to",
+          "probability": 0.9882
+        },
+        {
+          "start": 52.19,
+          "end": 52.41,
+          "word": "clean",
+          "probability": 0.9981
+        },
+        {
+          "start": 52.41,
+          "end": 52.61,
+          "word": "your",
+          "probability": 0.9968
+        },
+        {
+          "start": 52.61,
+          "end": 53.05,
+          "word": "hands.",
+          "probability": 0.9967
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "start": 53.05,
+      "end": 57.45,
+      "text": "For more information, please visit sfdph.org.",
+      "words": [
+        {
+          "start": 53.05,
+          "end": 53.83,
+          "word": "For",
+          "probability": 0.8504
+        },
+        {
+          "start": 53.83,
+          "end": 54.01,
+          "word": "more",
+          "probability": 0.9982
+        },
+        {
+          "start": 54.01,
+          "end": 54.47,
+          "word": "information,",
+          "probability": 0.996
+        },
+        {
+          "start": 54.87,
+          "end": 55.11,
+          "word": "please",
+          "probability": 0.9786
+        },
+        {
+          "start": 55.11,
+          "end": 55.59,
+          "word": "visit",
+          "probability": 0.9971
+        },
+        {
+          "start": 55.59,
+          "end": 56.71,
+          "word": "sfdph",
+          "probability": 0.8072
+        },
+        {
+          "start": 56.71,
+          "end": 57.45,
+          "word": ".org.",
+          "probability": 0.9907
+        }
+      ]
+    }
+  ]
+}

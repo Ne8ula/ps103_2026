@@ -1,0 +1,37 @@
+{
+  "project": "projects/hand-washing-sfdph-a3c265-nogesture",
+  "labels": "sfdph-wash-hands-en.yaml",
+  "run": "edited PSA, fake LLM, gesture text off",
+  "steps": 13,
+  "labelled_steps": 6,
+  "boundaries": {
+    "predicted": 8,
+    "true_positives": 3,
+    "precision": 0.375,
+    "recall": 0.6,
+    "f1": 0.462,
+    "mean_abs_error_s": 0.73
+  },
+  "facts_stated": "6/6",
+  "facts_missing": [],
+  "questions": {
+    "open": 7,
+    "blocking": 2,
+    "expected_raised": "1/2",
+    "expected_missing": [
+      "amount of soap"
+    ]
+  },
+  "compliance": {
+    "notes": 16,
+    "conflicts": 1,
+    "missing_steps": 3,
+    "steps_without_guidance": 1,
+    "expected_citations_found": "1/1",
+    "dropped_by_validation": 0
+  },
+  "llm": [
+    "fake:fake",
+    "fake:fake-6abdf482"
+  ]
+}

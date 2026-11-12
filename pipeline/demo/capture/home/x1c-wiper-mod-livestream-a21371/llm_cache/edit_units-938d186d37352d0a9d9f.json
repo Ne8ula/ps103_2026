@@ -1,0 +1,313 @@
+{
+  "task": "edit_units",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "80f0672eaa",
+  "served_by": "gemini-3.5-flash",
+  "system": "You help edit a raw, unedited demonstration video into a tight tutorial. The video has already been\nsplit into steps. Each step is split into short spoken lines. For every spoken line, say what it is\nfor a learner who wants to repeat the procedure:\n\n- task: describes or accompanies the action being done right now (what to do, how to hold or move\n  something, what tool or part is used).\n- result: points out the outcome to check (what it should look or feel like, how to tell it worked).\n- explain: background the learner needs to do the step correctly or safely (why, what goes wrong if\n  not, sizes, settings, warnings).\n- aside: anything a learner does not need: greetings, chat with viewers, camera or stream\n  adjustments, stories, product opinions, sales, repeating what was already said, thinking aloud.\n\nRules:\n- Label every line id you are given, exactly once. Use only the given ids.\n- Judge each line in the context of its step and the lines around it. When unsure between aside and\n  anything else, do not choose aside.\n- A line that states a measurement, size, count, setting or a safety point is never an aside.\n- Give a short reason (a few words).\n\nHand and motion figures come from the video: \"hands\" is the share of samples with a hand visible,\n\"motion\" is how much the image changes (1 = busy for this video). They help tell a line spoken while\nworking from a line spoken while nothing happens.",
+  "user": "Lines to label, grouped by step (id | time | hands | motion | text):\nStep \"Verify Backing Plate Installation\": Confirm the backing plate is correctly installed and note the specific screw sizes used for different positions.\ns12-u08 | 445.6-449.7s | hands 72% | motion 0.13 | these ones are an 8mm so M3 by 8.\n\nStep \"Test Fit Wiper in Backing Plate\": Insert the spare wiper into the backing plate hole to verify it is centered and moves freely.\ns13-u02 | 450.5-453.6s | hands 0% | motion 0.02 | So you need two of those and then one of the M3\ns13-u03 | 453.6-454.2s | hands 0% | motion 0.01 | by 6\ns13-u05 | 455.3-459.4s | hands 0% | motion 0.01 | and I'm just going to put\ns13-u06 | 459.4-465.3s | hands 28% | motion 0.06 | this spare wiper that I have here on here and we'll just\ns13-u07 | 465.3-470.4s | hands 100% | motion 0.07 | make sure everything fits nice. It feels like I'm right center on\ns13-u08 | 470.4-473.8s | hands 100% | motion 0.05 | that hole. I can move it a little to each side. So\ns13-u09 | 473.8-474.9s | hands 65% | motion 0.24 | that's a good sign.\n\nStep \"Verify wiper alignment\": Test the wiper fit by ensuring it can move slightly in all directions within the hole without binding.\ns14-u02 | 475.3-479.1s | hands 100% | motion 0.13 | I'll leave that screw loose for a second. So if you have\ns14-u03 | 479.1-482.3s | hands 100% | motion 0.07 | your holes perfectly center, you should be able to move it up.\ns14-u04 | 482.3-485.4s | hands 100% | motion 0.05 | You should be able to move it slightly down, but you should\ns14-u05 | 485.4-485.9s | hands 100% | motion 0.06 | be able to move it a little bit side to side. But\n\nStep \"Enlarge wiper mounting holes\": If the wiper binds, remove it and carefully enlarge the mounting holes to improve the fit.\ns15-u01 | 485.9-487.9s | hands 100% | motion 0.05 | be able to move it a little bit side to side. But\ns15-u02 | 487.9-491.0s | hands 100% | motion 0.10 | if you feel it's binding on either one way, then you know\ns15-u03 | 491.0-495.0s | hands 100% | motion 0.08 | that your holes were not drilled in the correct spot and it's\ns15-u04 | 495.0-498.6s | hands 91% | motion 0.11 | not really a big deal. You could open up this hole, you\ns15-u05 | 498.6-503.0s | hands 0% | motion 0.02 | could open this up to let's say even 3 -16s. As long\ns15-u06 | 503.0-504.0s | hands 100% | motion 0.21 | as the backing plate stays in place, it'll just be a little\n\nStep \"Position and tighten the wiper plate\": Position the wiper plate against the top surface and push it to the side to avoid stressing the mounting screws before tightening.\ns16-u01 | 504.0-506.4s | hands 100% | motion 0.11 | as the backing plate stays in place, it'll just be a little\ns16-u02 | 506.4-510.9s | hands 100% | motion 0.09 | bit of a challenge to try to get that plate tightened down\ns16-u03 | 510.9-515.3s | hands 100% | motion 0.16 | in the correct position. That way, this top part of the wiper\ns16-u04 | 515.3-519.0s | hands 100% | motion 0.17 | is resting on the top plane here and it's pushed all the\ns16-u05 | 519.0-522.0s | hands 100% | motion 0.16 | way to the side and you're not putting any additional stress on\ns16-u06 | 522.0-522.3s | hands 100% | motion 0.15 | the screws.\n\nStep \"Confirm wiper assembly replacement without recalibration\": Replace the wiper by removing the mounting screws and reattaching the new wiper plate. This action maintains position accuracy so that no further recalibration is needed.\ns17-u01 | 522.3-522.5s | hands 100% | motion 0.10 | the screws.\ns17-u03 | 523.6-527.8s | hands 59% | motion 0.07 | Because the idea with these screws is that you can take the\ns17-u04 | 527.8-528.5s | hands 100% | motion 0.22 | screws out,\ns17-u06 | 529.2-532.8s | hands 98% | motion 0.08 | remove the wiper, put on a new wiper that's already on a\ns17-u07 | 532.8-536.2s | hands 98% | motion 0.20 | new plate and just screw it back in and the positioning will\ns17-u08 | 536.2-540.3s | hands 100% | motion 0.14 | be perfect. You don't want to have to go run a calibration\ns17-u09 | 540.3-542.0s | hands 100% | motion 0.06 | and figure out where your position is.\n\nStep \"Perform the original X-axis wipe cycle\": Demonstrate the side-to-side X-axis sweeping motion originally used in the printer's wipe cycle.\ns18-u02 | 543.0-544.3s | hands 0% | motion 0.01 | Speaking of that,\ns18-u04 | 545.1-551.2s | hands 81% | motion 0.26 | so the original the original wipe cycle did\ns18-u05 | 551.2-552.2s | hands 44% | motion 0.88 | a couple things.\ns18-u07 | 553.4-558.4s | hands 100% | motion 0.65 | So we did some X sweeping. So it was going side to\ns18-u08 | 558.4-560.7s | hands 100% | motion 0.66 | side on the X and then it will go back and then\n\nStep \"Perform a wiper nub scrubbing motion\": Manually guide the toolhead to perform a side-to-side scrubbing motion between each of the wiper nubs.\ns19-u01 | 560.7-561.4s | hands 100% | motion 0.34 | side on the X and then it will go back and then\ns19-u02 | 561.4-566.1s | hands 100% | motion 0.45 | use the back side to side and then it would kind of\ns19-u03 | 566.1-568.8s | hands 100% | motion 0.43 | I was calling it a scrub where it would go in between\ns19-u04 | 568.8-572.8s | hands 100% | motion 0.52 | and it would kind of work its way in between each one\ns19-u05 | 572.8-573.9s | hands 100% | motion 0.31 | of these little nubs.\ns19-u07 | 574.5-579.2s | hands 0% | motion 0.07 | And that's the part that it really became critical to get these\ns19-u08 | 579.2-581.8s | hands 16% | motion 0.07 | wipers dialed in perfectly because if it's off half a millimeter, then\n\nStep \"Verify nozzle clearance with wiper nubs\": Visually inspect the nozzle tip's alignment relative to the wiper nubs. Ensure the nozzle clears the nubs to prevent accidental damage.\ns20-u01 | 581.8-584.3s | hands 21% | motion 0.11 | wipers dialed in perfectly because if it's off half a millimeter, then\ns20-u02 | 584.3-589.0s | hands 18% | motion 0.12 | you're basically shearing the nubs off with the nozzle tip. So in\ns20-u03 | 589.0-592.5s | hands 88% | motion 0.13 | the newest release I did some experimenting and I found that with\n\nStep \"Understand the Nozzle Wiper Update\": Observe the improved nozzle scrubbing movement. The updated wiper routine now performs a three-stage sweep across the nozzle.\ns21-u01 | 592.5-594.7s | hands 0% | motion 0.11 | the newest release I did some experimenting and I found that with\ns21-u02 | 594.7-597.8s | hands 0% | motion 0.04 | the amount that you run the wiper, you really don't need to\ns21-u03 | 597.8-599.6s | hands 7% | motion 0.07 | get that aggressive with the scrubbing.\ns21-u05 | 600.2-605.0s | hands 1% | motion 0.09 | The scrubbing was only really necessary on the earlier releases because we\ns21-u06 | 605.0-608.0s | hands 28% | motion 0.15 | didn't have the AMS stuff set up yet. So we were just\ns21-u07 | 608.0-611.8s | hands 53% | motion 0.14 | running the scrub on the start -up routine and then it wouldn't\ns21-u08 | 611.8-616.2s | hands 58% | motion 0.28 | scrub again until the next print. So we were taking you know\ns21-u09 | 616.2-619.8s | hands 67% | motion 0.33 | full advantage of having that wiper there to get the most scrubbing\ns21-u10 | 619.8-620.4s | hands 100% | motion 0.22 | possible.\ns21-u12 | 621.1-626.3s | hands 83% | motion 0.25 | So now all we're doing in this recent update is we're just\ns21-u13 | 626.3-630.5s | hands 98% | motion 0.43 | sweeping on the X and then we're step on the end of\ns21-u14 | 630.5-634.3s | hands 82% | motion 0.43 | on the end of the wiper. We're step up and then we'll\ns21-u15 | 634.3-636.7s | hands 69% | motion 0.41 | sweep on the X again and then we'll step down and we'll\ns21-u16 | 636.7-639.6s | hands 70% | motion 0.58 | sweep on the X again and that's the wiper team. So now",
+  "images": [],
+  "response": {
+    "labels": [
+      {
+        "unit_id": "s12-u08",
+        "label": "explain",
+        "reason": "specifies hardware screw dimensions"
+      },
+      {
+        "unit_id": "s13-u02",
+        "label": "explain",
+        "reason": "states required hardware quantities and sizes"
+      },
+      {
+        "unit_id": "s13-u03",
+        "label": "explain",
+        "reason": "completes screw size measurement specification"
+      },
+      {
+        "unit_id": "s13-u05",
+        "label": "task",
+        "reason": "states action being started"
+      },
+      {
+        "unit_id": "s13-u06",
+        "label": "task",
+        "reason": "describes placing spare wiper on plate"
+      },
+      {
+        "unit_id": "s13-u07",
+        "label": "result",
+        "reason": "describes checking centering and fit"
+      },
+      {
+        "unit_id": "s13-u08",
+        "label": "result",
+        "reason": "checks clearance by moving side to side"
+      },
+      {
+        "unit_id": "s13-u09",
+        "label": "result",
+        "reason": "confirms positive outcome of fit test"
+      },
+      {
+        "unit_id": "s14-u02",
+        "label": "task",
+        "reason": "instructs leaving screw loose during alignment test"
+      },
+      {
+        "unit_id": "s14-u03",
+        "label": "result",
+        "reason": "states expected upward movement outcome"
+      },
+      {
+        "unit_id": "s14-u04",
+        "label": "result",
+        "reason": "states expected downward movement outcome"
+      },
+      {
+        "unit_id": "s14-u05",
+        "label": "result",
+        "reason": "states expected side-to-side movement outcome"
+      },
+      {
+        "unit_id": "s15-u01",
+        "label": "explain",
+        "reason": "continues describing alignment movement checks"
+      },
+      {
+        "unit_id": "s15-u02",
+        "label": "explain",
+        "reason": "explains how binding indicates misplaced holes"
+      },
+      {
+        "unit_id": "s15-u03",
+        "label": "explain",
+        "reason": "explains cause of binding issues"
+      },
+      {
+        "unit_id": "s15-u04",
+        "label": "task",
+        "reason": "instructs how to enlarge the hole"
+      },
+      {
+        "unit_id": "s15-u05",
+        "label": "explain",
+        "reason": "provides specific drill size measurement"
+      },
+      {
+        "unit_id": "s15-u06",
+        "label": "explain",
+        "reason": "explains condition for modifying hole size"
+      },
+      {
+        "unit_id": "s16-u01",
+        "label": "explain",
+        "reason": "explains positioning condition"
+      },
+      {
+        "unit_id": "s16-u02",
+        "label": "explain",
+        "reason": "explains challenge of tightening plate correctly"
+      },
+      {
+        "unit_id": "s16-u03",
+        "label": "explain",
+        "reason": "explains reason for top alignment"
+      },
+      {
+        "unit_id": "s16-u04",
+        "label": "task",
+        "reason": "describes positioning wiper flush against top plane"
+      },
+      {
+        "unit_id": "s16-u05",
+        "label": "task",
+        "reason": "describes pushing wiper completely to the side"
+      },
+      {
+        "unit_id": "s16-u06",
+        "label": "explain",
+        "reason": "explains safety reason to prevent screw stress"
+      },
+      {
+        "unit_id": "s17-u01",
+        "label": "explain",
+        "reason": "completes statement about avoiding screw stress"
+      },
+      {
+        "unit_id": "s17-u03",
+        "label": "explain",
+        "reason": "explains mechanical design purpose of mounting screws"
+      },
+      {
+        "unit_id": "s17-u04",
+        "label": "task",
+        "reason": "describes removing screws during replacement"
+      },
+      {
+        "unit_id": "s17-u06",
+        "label": "task",
+        "reason": "describes swapping out old wiper plate for new"
+      },
+      {
+        "unit_id": "s17-u07",
+        "label": "task",
+        "reason": "describes reattaching plate with screws"
+      },
+      {
+        "unit_id": "s17-u08",
+        "label": "result",
+        "reason": "states result that positioning remains accurate"
+      },
+      {
+        "unit_id": "s17-u09",
+        "label": "explain",
+        "reason": "explains why recalibration is avoided"
+      },
+      {
+        "unit_id": "s18-u02",
+        "label": "aside",
+        "reason": "conversational transition text"
+      },
+      {
+        "unit_id": "s18-u04",
+        "label": "explain",
+        "reason": "introduces original wipe cycle mechanics"
+      },
+      {
+        "unit_id": "s18-u05",
+        "label": "explain",
+        "reason": "background detail on original routine"
+      },
+      {
+        "unit_id": "s18-u07",
+        "label": "task",
+        "reason": "demonstrates X-axis sweeping movement"
+      },
+      {
+        "unit_id": "s18-u08",
+        "label": "task",
+        "reason": "demonstrates back-and-forth motion on X"
+      },
+      {
+        "unit_id": "s19-u01",
+        "label": "task",
+        "reason": "demonstrates continuing motion along X-axis"
+      },
+      {
+        "unit_id": "s19-u02",
+        "label": "task",
+        "reason": "demonstrates reverse side-to-side movement"
+      },
+      {
+        "unit_id": "s19-u03",
+        "label": "task",
+        "reason": "demonstrates scrubbing motion between nubs"
+      },
+      {
+        "unit_id": "s19-u04",
+        "label": "task",
+        "reason": "demonstrates guiding toolhead through nubs"
+      },
+      {
+        "unit_id": "s19-u05",
+        "label": "task",
+        "reason": "points out target nubs during motion"
+      },
+      {
+        "unit_id": "s19-u07",
+        "label": "explain",
+        "reason": "explains why precise wiper dialing is critical"
+      },
+      {
+        "unit_id": "s19-u08",
+        "label": "explain",
+        "reason": "gives specific tolerance measurement of half millimeter"
+      },
+      {
+        "unit_id": "s20-u01",
+        "label": "explain",
+        "reason": "warns of consequence of misalignment"
+      },
+      {
+        "unit_id": "s20-u02",
+        "label": "explain",
+        "reason": "explains danger of shearing nubs with nozzle tip"
+      },
+      {
+        "unit_id": "s20-u03",
+        "label": "explain",
+        "reason": "provides background context for updated design"
+      },
+      {
+        "unit_id": "s21-u01",
+        "label": "explain",
+        "reason": "provides background context for update"
+      },
+      {
+        "unit_id": "s21-u02",
+        "label": "explain",
+        "reason": "explains why aggressive scrubbing is unnecessary"
+      },
+      {
+        "unit_id": "s21-u03",
+        "label": "explain",
+        "reason": "concludes explanation of reduced scrubbing needs"
+      },
+      {
+        "unit_id": "s21-u05",
+        "label": "explain",
+        "reason": "gives historical context for old scrubbing routine"
+      },
+      {
+        "unit_id": "s21-u06",
+        "label": "explain",
+        "reason": "explains setup background regarding AMS"
+      },
+      {
+        "unit_id": "s21-u07",
+        "label": "explain",
+        "reason": "describes start-up routine operation"
+      },
+      {
+        "unit_id": "s21-u08",
+        "label": "explain",
+        "reason": "explains timing between scrub cycles"
+      },
+      {
+        "unit_id": "s21-u09",
+        "label": "explain",
+        "reason": "explains reasoning behind original scrubbing design"
+      },
+      {
+        "unit_id": "s21-u10",
+        "label": "explain",
+        "reason": "completes background reasoning statement"
+      },
+      {
+        "unit_id": "s21-u12",
+        "label": "explain",
+        "reason": "describes overview of recent software update routine"
+      },
+      {
+        "unit_id": "s21-u13",
+        "label": "task",
+        "reason": "demonstrates updated X-sweep motion"
+      },
+      {
+        "unit_id": "s21-u14",
+        "label": "task",
+        "reason": "demonstrates stepping up motion at end of wiper"
+      },
+      {
+        "unit_id": "s21-u15",
+        "label": "task",
+        "reason": "demonstrates secondary X-sweep and step down"
+      },
+      {
+        "unit_id": "s21-u16",
+        "label": "task",
+        "reason": "demonstrates final X-sweep stage of updated routine"
+      }
+    ]
+  }
+}

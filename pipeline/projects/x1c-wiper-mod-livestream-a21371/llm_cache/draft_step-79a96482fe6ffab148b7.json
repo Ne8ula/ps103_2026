@@ -1,0 +1,69 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 9 of 22, 362.6s to 383.9s.\nSegmentation summary: Position the backing plate and wiper assembly into the printer and thread the center screw to hold them in place.\nPrevious step: Vacuum the printer's rails and the bottom of the case to remove filament debris and tidy the workspace.\nNext step: Thread the center screw loosely into the backing plate to hold it in place while checking the alignment of the outside holes.\n\nNarration during this step:\n[369.4-378.0s] \"not to drop this. If you got really big hands, you could just put some tape around\"\n[378.0-383.6s] \"your fingers that will stick to the backing plate and then it won't drop by\"\n\nFrames: 3 attached: image 1 at 366.2s, image 2 at 373.3s, image 3 at 380.4s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 362.6s (step start) - hands until 363.6s: one hand 40%, no hands 60%; grip L: relaxed hand; active 27%, moving up-right; at top-left\na2 @ 363.6s (hands: visibility change) - hands until 365.5s: no hands 97%; active 0%; at bottom\na3 @ 365.5s (hands: visibility change) - hands until 367.5s: one hand 90%, no hands 7%; grip R: relaxed hand 57%; active 67%, moving up-right; at bottom\na4 @ 367.5s (hands: activity change, finger change, grip change) - hands until 369.4s: one hand 100%; grip L: power grip 68%; active 0%; at bottom\na5 @ 369.4s (narration + hands: finger change, grip change) - hands until 373.9s: one hand 19%, no hands 81%; active 9%, moving down-left; at bottom\na6 @ 373.9s (hands: visibility change) - hands until 375.9s: one hand 100%; grip R: open hand 75%, L: open hand 55%; active 30%, moving in place; at bottom\na7 @ 375.9s (hands: finger change, grip change) - hands until 377.9s: one hand 100%; grip L: power grip 53%; active 63%, moving down-left; at bottom\na8 @ 377.9s (hands: finger change, grip change) - hands until 379.9s: one hand 60%, no hands 40%; grip L: power grip 44%; active 50%, moving up-right; at bottom\na9 @ 379.9s (hands: activity change, visibility change) - hands until 381.9s: both hands 7%, one hand 93%; grip R: open hand 78%, L: power grip 48%; active 70%, moving in place; at bottom\na10 @ 381.9s (hands: finger change, grip change, speed change, visibility change) - hands until 383.9s: both hands 53%, one hand 47%; grip R: relaxed hand 94%, L: power grip 86%; hands touching 53%; active 43%, moving in place; at bottom\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video). They are drawn and labelled on the images.\nB1 both hands (everything the hands cover) - image 1: x 0.10-0.64, y 0.00-1.00 (54% of the frame); image 2: x 0.10-0.64, y 0.00-1.00 (54% of the frame); image 3: x 0.10-0.64, y 0.00-1.00 (54% of the frame)\nB2 work zone (where the hands meet or hold something, i.e. the object worked on) - image 1: x 0.31-0.63, y 0.37-1.00 (20% of the frame); image 2: x 0.31-0.63, y 0.37-1.00 (20% of the frame); image 3: x 0.31-0.63, y 0.37-1.00 (20% of the frame)\nfull - the whole frame (when the surroundings matter or no box fits)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s09/k1_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s09/k2_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s09/k3_boxes.jpg"
+  ],
+  "response": {
+    "title": "Position backing plate and wiper",
+    "instruction": "Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation.",
+    "details": [
+      "Carefully place the assembly into position to avoid dropping components into the machine.",
+      "If your hands are large, you can use tape on your fingertips to help grip the backing plate during insertion."
+    ],
+    "tools": [
+      "tape"
+    ],
+    "materials": [
+      "backing plate",
+      "wiper assembly",
+      "center screw"
+    ],
+    "expected_result": "The backing plate and wiper assembly are positioned correctly within the printer cavity.",
+    "cautions": [
+      "Avoid dropping small parts into the printer housing."
+    ],
+    "confidence": 0.85,
+    "missing_info": [
+      {
+        "field": "tool",
+        "description": "Specific type of tape or applicator for the screw/plate is not defined.",
+        "blocking": false
+      },
+      {
+        "field": "other",
+        "description": "The exact orientation or mating point of the wiper assembly is not clearly shown in the frames.",
+        "blocking": true
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 362.6,
+        "caption": "Position the assembly in the printer",
+        "focus_box": "B2",
+        "emphasis": "work zone",
+        "emphasis_s": 362.6
+      },
+      {
+        "start_s": 369.4,
+        "caption": "Apply tape to fingers if needed",
+        "focus_box": "B2",
+        "emphasis": "fingers",
+        "emphasis_s": 369.4
+      },
+      {
+        "start_s": 381.9,
+        "caption": "Hold assembly for screw alignment",
+        "focus_box": "B2",
+        "emphasis": "center screw",
+        "emphasis_s": 381.9
+      }
+    ]
+  }
+}

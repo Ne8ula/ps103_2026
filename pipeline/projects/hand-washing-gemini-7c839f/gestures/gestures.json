@@ -1,0 +1,3250 @@
+{
+  "version": "gesture_text/1.0",
+  "config_hash": "ff43338c29a89e6e",
+  "keyframes": [
+    {
+      "id": "g0001",
+      "frame": 201,
+      "t": 8.04,
+      "reasons": [
+        "start",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 316.4,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 338.5,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 332.6,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 325.1,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 314.4,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.5022,
+            0.5237
+          ],
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=8.0s | Left hand: relaxed hand, palm facing away, ring extended pointing down-right, thumb, index, middle and pinky half-bent, at centre. Idle."
+    },
+    {
+      "id": "g0002",
+      "frame": 226,
+      "t": 9.04,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=9.0s | Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0003",
+      "frame": 251,
+      "t": 10.04,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 311.3,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 312.5,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 312.4,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 311.2,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 310.6,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "open",
+          "palm_facing": "camera",
+          "position": [
+            0.4135,
+            0.5601
+          ],
+          "trajectory": {
+            "since_t": 8.04,
+            "direction": "left",
+            "distance": 0.0742,
+            "speed": "slow"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=10.0s | Left hand: open hand, palm facing camera, index+middle+ring+pinky together pointing down-right, thumb half-bent, at centre; moving left, slow. Active."
+    },
+    {
+      "id": "g0004",
+      "frame": 276,
+      "t": 11.04,
+      "reasons": [
+        "finger_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 302.0,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 317.0,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 316.0,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 316.4,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 314.4,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle"
+            ]
+          ],
+          "grip": "open",
+          "palm_facing": "camera",
+          "position": [
+            0.321,
+            0.5862
+          ],
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=11.0s | Right hand: open hand, palm facing camera, index+middle together pointing down-right, ring extended pointing down-right, pinky extended pointing down-right, thumb half-bent, at left side. Left hand: not visible. Idle."
+    },
+    {
+      "id": "g0005",
+      "frame": 301,
+      "t": 12.04,
+      "reasons": [
+        "finger_change",
+        "grip_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 303.5,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.4767,
+            0.5656
+          ],
+          "trajectory": {
+            "since_t": 11.04,
+            "direction": "right",
+            "distance": 0.1251,
+            "speed": "fast"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=12.0s | Right hand: power grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving right, fast. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0006",
+      "frame": 326,
+      "t": 13.04,
+      "reasons": [
+        "activity_change",
+        "grip_change",
+        "speed_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 290.3,
+              "direction": "down"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "fist",
+          "palm_facing": "away",
+          "position": [
+            0.354,
+            0.6104
+          ],
+          "trajectory": {
+            "since_t": 12.04,
+            "direction": "left",
+            "distance": 0.1017,
+            "speed": "slow"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=13.0s | Right hand: fist, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving left, slow. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0007",
+      "frame": 351,
+      "t": 14.04,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=14.0s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0008",
+      "frame": 400,
+      "t": 16.0,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 320.4,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 327.9,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 328.1,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 334.7,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.4477,
+            0.5173
+          ],
+          "trajectory": {
+            "since_t": 10.04,
+            "direction": "up-right",
+            "distance": 0.0375,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=16.0s | Right hand: not visible. Left hand: relaxed hand, palm facing away, ring extended pointing down-right, pinky extended pointing down-right, index and middle half-bent, thumb curled, at centre; moving up-right, moderate. Idle."
+    },
+    {
+      "id": "g0009",
+      "frame": 425,
+      "t": 17.0,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=17.0s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0010",
+      "frame": 450,
+      "t": 18.0,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 342.1,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 319.8,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 329.1,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 332.1,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 340.6,
+              "direction": "right"
+            }
+          ],
+          "groups": [],
+          "grip": "open",
+          "palm_facing": "away",
+          "position": [
+            0.5059,
+            0.4585
+          ],
+          "trajectory": {
+            "since_t": 16.0,
+            "direction": "up-right",
+            "distance": 0.0584,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=18.0s | Right hand: not visible. Left hand: open hand, palm facing away, fingers spread pointing down-right, thumb half-bent, at centre; moving up-right, moderate. Active."
+    },
+    {
+      "id": "g0011",
+      "frame": 475,
+      "t": 19.0,
+      "reasons": [
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 14.0,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 12.5,
+              "direction": "right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 19.8,
+              "direction": "right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 25.1,
+              "direction": "up-right"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.392,
+            0.6168
+          ],
+          "trajectory": {
+            "since_t": 13.04,
+            "direction": "right",
+            "distance": 0.0306,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 325.9,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 301.8,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 299.1,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 298.8,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 297.6,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [
+            [
+              "thumb",
+              "pinky"
+            ],
+            [
+              "index",
+              "middle",
+              "ring"
+            ]
+          ],
+          "grip": "open",
+          "palm_facing": "camera",
+          "position": [
+            0.5518,
+            0.3699
+          ],
+          "trajectory": {
+            "since_t": 18.0,
+            "direction": "up-right",
+            "distance": 0.0646,
+            "speed": "slow"
+          }
+        }
+      ],
+      "interaction": "hands_touching",
+      "activity": "active",
+      "text": "t=19.0s | Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together pointing right, thumb curled, at centre; moving right, moderate. Left hand: open hand, palm facing camera, thumb+pinky together pointing down-right, index+middle+ring together pointing down-right, at centre; moving up-right, slow. Hands touching. Active."
+    },
+    {
+      "id": "g0012",
+      "frame": 500,
+      "t": 20.0,
+      "reasons": [
+        "finger_change",
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 332.8,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 318.2,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 317.5,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 316.8,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 318.7,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring"
+            ]
+          ],
+          "grip": "open",
+          "palm_facing": "side",
+          "position": [
+            0.5372,
+            0.3195
+          ],
+          "trajectory": {
+            "since_t": 19.0,
+            "direction": "up-right",
+            "distance": 0.2129,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=20.0s | Right hand: open hand, palm sideways, index+middle+ring together pointing down-right, thumb out pointing down-right, pinky extended pointing down-right, at top; moving up-right, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0013",
+      "frame": 525,
+      "t": 21.0,
+      "reasons": [
+        "finger_change",
+        "grip_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 20.2,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 20.7,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 16.7,
+              "direction": "right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 1.2,
+              "direction": "right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 345.9,
+              "direction": "right"
+            }
+          ],
+          "groups": [],
+          "grip": "open",
+          "palm_facing": "away",
+          "position": [
+            0.5415,
+            0.4295
+          ],
+          "trajectory": {
+            "since_t": 20.0,
+            "direction": "down",
+            "distance": 0.0661,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=21.0s | Right hand: open hand, palm facing away, fingers spread pointing right, thumb half-bent, at centre; moving down, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0014",
+      "frame": 550,
+      "t": 22.0,
+      "reasons": [
+        "finger_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 17.4,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 10.1,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 355.3,
+              "direction": "right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 353.4,
+              "direction": "right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 343.6,
+              "direction": "right"
+            }
+          ],
+          "groups": [],
+          "grip": "open",
+          "palm_facing": "away",
+          "position": [
+            0.4992,
+            0.4487
+          ],
+          "trajectory": {
+            "since_t": 21.0,
+            "direction": "left",
+            "distance": 0.0357,
+            "speed": "slow"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=22.0s | Right hand: open hand, palm facing away, fingers spread pointing right, thumb out pointing right, at centre; moving left, slow. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0015",
+      "frame": 575,
+      "t": 23.0,
+      "reasons": [
+        "finger_change",
+        "grip_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 62.9,
+              "direction": "up-right"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.428,
+            0.3509
+          ],
+          "trajectory": {
+            "since_t": 22.0,
+            "direction": "up-left",
+            "distance": 0.0817,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=23.0s | Right hand: power grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving up-left, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0016",
+      "frame": 603,
+      "t": 24.12,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 21.2,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "fist",
+          "palm_facing": "away",
+          "position": [
+            0.5212,
+            0.3543
+          ],
+          "trajectory": {
+            "since_t": 19.0,
+            "direction": "left",
+            "distance": 0.0262,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=24.1s | Right hand: not visible. Left hand: fist, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving left, moderate. Idle."
+    },
+    {
+      "id": "g0017",
+      "frame": 628,
+      "t": 25.12,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 16.2,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 357.7,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 333.0,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 326.2,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 326.2,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [
+            [
+              "thumb",
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "pinch",
+          "palm_facing": "away",
+          "position": [
+            0.4342,
+            0.3754
+          ],
+          "trajectory": {
+            "since_t": 24.12,
+            "direction": "left",
+            "distance": 0.0708,
+            "speed": "fast"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=25.1s | Right hand: not visible. Left hand: pinch grip, palm facing away, thumb+index+middle+ring+pinky together pointing right, at centre; moving left, fast. Idle."
+    },
+    {
+      "id": "g0018",
+      "frame": 653,
+      "t": 26.12,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 9.4,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 50.6,
+              "direction": "up-right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 71.2,
+              "direction": "up"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 73.1,
+              "direction": "up"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 72.1,
+              "direction": "up"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.5663,
+            0.6014
+          ],
+          "trajectory": {
+            "since_t": 23.0,
+            "direction": "down-right",
+            "distance": 0.1866,
+            "speed": "slow"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=26.1s | Right hand: power grip, palm facing away, index+middle+ring+pinky together pointing up-right, thumb half-bent, at centre; moving down-right, slow. Left hand: not visible. Idle."
+    },
+    {
+      "id": "g0019",
+      "frame": 678,
+      "t": 27.12,
+      "reasons": [
+        "activity_change",
+        "grip_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 52.1,
+              "direction": "up-right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 49.5,
+              "direction": "up-right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 58.1,
+              "direction": "up-right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 64.9,
+              "direction": "up-right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 71.1,
+              "direction": "up"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.5576,
+            0.4878
+          ],
+          "trajectory": {
+            "since_t": 26.12,
+            "direction": "up",
+            "distance": 0.0685,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=27.1s | Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together pointing up-right, thumb half-bent, at centre; moving up, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0020",
+      "frame": 703,
+      "t": 28.12,
+      "reasons": [
+        "activity_change",
+        "finger_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=28.1s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0021",
+      "frame": 728,
+      "t": 29.12,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=29.1s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0022",
+      "frame": 755,
+      "t": 30.2,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 336.7,
+              "direction": "down-right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 347.9,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 358.3,
+              "direction": "right"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 2.0,
+              "direction": "right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 18.3,
+              "direction": "right"
+            }
+          ],
+          "groups": [
+            [
+              "middle",
+              "ring"
+            ]
+          ],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.3915,
+            0.5404
+          ],
+          "trajectory": {
+            "since_t": 27.12,
+            "direction": "left",
+            "distance": 0.1366,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=30.2s | Right hand: power grip, palm facing away, middle+ring together pointing right, thumb out pointing down-right, index and pinky half-bent, at centre; moving left, moderate. Left hand: not visible. Idle."
+    },
+    {
+      "id": "g0023",
+      "frame": 780,
+      "t": 31.2,
+      "reasons": [
+        "activity_change",
+        "grip_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 22.2,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 5.0,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 1.5,
+              "direction": "right"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 355.3,
+              "direction": "right"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 340.6,
+              "direction": "right"
+            }
+          ],
+          "groups": [],
+          "grip": "open",
+          "palm_facing": "camera",
+          "position": [
+            0.5194,
+            0.3441
+          ],
+          "trajectory": {
+            "since_t": 25.12,
+            "direction": "right",
+            "distance": 0.0707,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=31.2s | Right hand: not visible. Left hand: open hand, palm facing camera, fingers spread pointing right, thumb half-bent, at centre; moving right, moderate. Active."
+    },
+    {
+      "id": "g0024",
+      "frame": 805,
+      "t": 32.2,
+      "reasons": [
+        "activity_change",
+        "finger_change",
+        "grip_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=32.2s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0025",
+      "frame": 830,
+      "t": 33.2,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 41.3,
+              "direction": "up-right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 43.5,
+              "direction": "up-right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 53.1,
+              "direction": "up-right"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 61.7,
+              "direction": "up-right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 68.4,
+              "direction": "up"
+            }
+          ],
+          "groups": [
+            [
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.5548,
+            0.6039
+          ],
+          "trajectory": {
+            "since_t": 30.2,
+            "direction": "right",
+            "distance": 0.1361,
+            "speed": "fast"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=33.2s | Right hand: relaxed hand, palm facing away, ring+pinky together pointing up-right, thumb out pointing up-right, index and middle half-bent, at centre; moving right, fast. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0026",
+      "frame": 855,
+      "t": 34.2,
+      "reasons": [
+        "activity_change",
+        "finger_change",
+        "grip_change",
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=34.2s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0027",
+      "frame": 880,
+      "t": 35.2,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 36.0,
+              "direction": "up-right"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 348.8,
+              "direction": "right"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 11.9,
+              "direction": "right"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 1.3,
+              "direction": "right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 356.8,
+              "direction": "right"
+            }
+          ],
+          "groups": [
+            [
+              "thumb",
+              "index"
+            ],
+            [
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.4389,
+            0.4175
+          ],
+          "trajectory": {
+            "since_t": 31.2,
+            "direction": "down-left",
+            "distance": 0.078,
+            "speed": "fast"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=35.2s | Right hand: not visible. Left hand: relaxed hand, palm facing away, thumb+index together pointing right, ring+pinky together pointing right, middle extended pointing right, at centre; moving down-left, fast. Active."
+    },
+    {
+      "id": "g0028",
+      "frame": 905,
+      "t": 36.2,
+      "reasons": [
+        "finger_change",
+        "grip_change",
+        "speed_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 28.4,
+              "direction": "up-right"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 40.6,
+              "direction": "up-right"
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "point",
+          "palm_facing": "away",
+          "position": [
+            0.5444,
+            0.4731
+          ],
+          "trajectory": {
+            "since_t": 35.2,
+            "direction": "right",
+            "distance": 0.0908,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=36.2s | Right hand: not visible. Left hand: point gesture, palm facing away, thumb out pointing up-right, index extended pointing up-right, middle, ring and pinky curled, at centre; moving right, moderate. Active."
+    },
+    {
+      "id": "g0029",
+      "frame": 930,
+      "t": 37.2,
+      "reasons": [
+        "activity_change",
+        "finger_change",
+        "speed_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 359.4,
+              "direction": "right"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 287.3,
+              "direction": "down"
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.549,
+            0.4559
+          ],
+          "trajectory": {
+            "since_t": 36.2,
+            "direction": null,
+            "distance": 0.011,
+            "speed": "still"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=37.2s | Right hand: not visible. Left hand: power grip, palm facing away, thumb out pointing right, pinky half-bent, index, middle and ring curled, at centre; holding position. Idle."
+    },
+    {
+      "id": "g0030",
+      "frame": 955,
+      "t": 38.2,
+      "reasons": [
+        "activity_change",
+        "grip_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 321.2,
+              "direction": "down-right"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 318.2,
+              "direction": "down-right"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 323.6,
+              "direction": "down-right"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 331.0,
+              "direction": "down-right"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "away",
+          "position": [
+            0.5999,
+            0.5793
+          ],
+          "trajectory": {
+            "since_t": 33.2,
+            "direction": "right",
+            "distance": 0.0389,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=38.2s | Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together pointing down-right, thumb curled, at centre; moving right, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0031",
+      "frame": 980,
+      "t": 39.2,
+      "reasons": [
+        "activity_change",
+        "grip_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=39.2s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0032",
+      "frame": 1005,
+      "t": 40.2,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 251.3,
+              "direction": "down"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 245.6,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 253.2,
+              "direction": "down"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 254.0,
+              "direction": "down"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 254.2,
+              "direction": "down"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "side",
+          "position": [
+            0.4438,
+            0.5059
+          ],
+          "trajectory": {
+            "since_t": 38.2,
+            "direction": "left",
+            "distance": 0.1324,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=40.2s | Right hand: relaxed hand, palm sideways, index+middle+ring+pinky together pointing down, thumb out pointing down, at centre; moving left, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0033",
+      "frame": 1030,
+      "t": 41.2,
+      "reasons": [
+        "finger_change",
+        "grip_change",
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 246.9,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 224.0,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 220.8,
+              "direction": "down-left"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 224.1,
+              "direction": "down-left"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 228.6,
+              "direction": "down-left"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "open",
+          "palm_facing": "away",
+          "position": [
+            0.4453,
+            0.4351
+          ],
+          "trajectory": {
+            "since_t": 40.2,
+            "direction": "up",
+            "distance": 0.0425,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 205.5,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 232.7,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 210.1,
+              "direction": "down-left"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 207.0,
+              "direction": "down-left"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 212.6,
+              "direction": "down-left"
+            }
+          ],
+          "groups": [
+            [
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "side",
+          "position": [
+            0.5241,
+            0.4323
+          ],
+          "trajectory": {
+            "since_t": 37.2,
+            "direction": "up-left",
+            "distance": 0.0244,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "hands_touching",
+      "activity": "active",
+      "text": "t=41.2s | Right hand: open hand, palm facing away, index+middle+ring+pinky together pointing down-left, thumb out pointing down-left, at centre; moving up, moderate. Left hand: relaxed hand, palm sideways, middle+ring+pinky together pointing down-left, thumb and index half-bent, at centre; moving up-left, moderate. Hands touching. Active."
+    },
+    {
+      "id": "g0034",
+      "frame": 1055,
+      "t": 42.2,
+      "reasons": [
+        "grip_change",
+        "interaction_change",
+        "speed_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 133.9,
+              "direction": "up-left"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "fist",
+          "palm_facing": "away",
+          "position": [
+            0.5967,
+            0.3527
+          ],
+          "trajectory": {
+            "since_t": 41.2,
+            "direction": "up-right",
+            "distance": 0.0752,
+            "speed": "slow"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=42.2s | Right hand: not visible. Left hand: fist, palm facing away, thumb out pointing up-left, index, middle, ring and pinky curled, at centre; moving up-right, slow. Active."
+    },
+    {
+      "id": "g0035",
+      "frame": 1080,
+      "t": 43.2,
+      "reasons": [
+        "finger_change",
+        "grip_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 163.4,
+              "direction": "left"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 221.5,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 227.1,
+              "direction": "down-left"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 229.3,
+              "direction": "down-left"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 220.5,
+              "direction": "down-left"
+            }
+          ],
+          "groups": [
+            [
+              "middle",
+              "ring"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "camera",
+          "position": [
+            0.568,
+            0.1902
+          ],
+          "trajectory": {
+            "since_t": 41.2,
+            "direction": "up-right",
+            "distance": 0.1767,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 190.8,
+              "direction": "left"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.6166,
+            0.4111
+          ],
+          "trajectory": {
+            "since_t": 42.2,
+            "direction": "down-right",
+            "distance": 0.0385,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "hands_close",
+      "activity": "active",
+      "text": "t=43.2s | Right hand: relaxed hand, palm facing camera, middle+ring together pointing down-left, pinky extended pointing down-left, thumb and index half-bent, at top; moving up-right, moderate. Left hand: power grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving down-right, moderate. Hands close together. Active."
+    },
+    {
+      "id": "g0036",
+      "frame": 1105,
+      "t": 44.2,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=44.2s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    },
+    {
+      "id": "g0037",
+      "frame": 1158,
+      "t": 46.32,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 200.8,
+              "direction": "left"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 154.8,
+              "direction": "up-left"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 147.7,
+              "direction": "up-left"
+            },
+            {
+              "name": "ring",
+              "state": "partial",
+              "direction_deg": 143.3,
+              "direction": "up-left"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 143.1,
+              "direction": "up-left"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring",
+              "pinky"
+            ]
+          ],
+          "grip": "power_grip",
+          "palm_facing": "side",
+          "position": [
+            0.9346,
+            0.3624
+          ],
+          "trajectory": {
+            "since_t": 43.2,
+            "direction": "right",
+            "distance": 0.2561,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=46.3s | Right hand: not visible. Left hand: power grip, palm sideways, index+middle+ring+pinky together pointing up-left, thumb out pointing left, at right side; moving right, moderate. Idle."
+    },
+    {
+      "id": "g0038",
+      "frame": 1183,
+      "t": 47.32,
+      "reasons": [
+        "activity_change",
+        "finger_change",
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 262.1,
+              "direction": "down"
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "camera",
+          "position": [
+            0.4739,
+            0.2235
+          ],
+          "trajectory": {
+            "since_t": 43.2,
+            "direction": "left",
+            "distance": 0.0779,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 211.5,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.6046,
+            0.4075
+          ],
+          "trajectory": {
+            "since_t": 46.32,
+            "direction": "left",
+            "distance": 0.2653,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "hands_touching",
+      "activity": "idle",
+      "text": "t=47.3s | Right hand: power grip, palm facing camera, index half-bent, thumb, middle, ring and pinky curled, at top; moving left, moderate. Left hand: power grip, palm facing away, thumb out pointing down-left, index, middle, ring and pinky curled, at centre; moving left, moderate. Hands touching. Idle."
+    },
+    {
+      "id": "g0039",
+      "frame": 1208,
+      "t": 48.32,
+      "reasons": [
+        "finger_change",
+        "grip_change",
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "extended",
+              "direction_deg": 193.9,
+              "direction": "left"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 216.3,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 214.9,
+              "direction": "down-left"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 209.7,
+              "direction": "down-left"
+            },
+            {
+              "name": "pinky",
+              "state": "extended",
+              "direction_deg": 207.2,
+              "direction": "down-left"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle",
+              "ring"
+            ]
+          ],
+          "grip": "open",
+          "palm_facing": "camera",
+          "position": [
+            0.5177,
+            0.2434
+          ],
+          "trajectory": {
+            "since_t": 47.32,
+            "direction": "right",
+            "distance": 0.0371,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=48.3s | Right hand: open hand, palm facing camera, index+middle+ring together pointing down-left, thumb out pointing left, pinky extended pointing down-left, at top; moving right, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0040",
+      "frame": 1233,
+      "t": 49.32,
+      "reasons": [
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 219.9,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "power_grip",
+          "palm_facing": "away",
+          "position": [
+            0.5684,
+            0.4217
+          ],
+          "trajectory": {
+            "since_t": 47.32,
+            "direction": "left",
+            "distance": 0.0302,
+            "speed": "moderate"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=49.3s | Right hand: not visible. Left hand: power grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving left, moderate. Active."
+    },
+    {
+      "id": "g0041",
+      "frame": 1258,
+      "t": 50.32,
+      "reasons": [
+        "finger_change",
+        "grip_change",
+        "interaction_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 227.5,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "partial",
+              "direction_deg": 243.4,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "partial",
+              "direction_deg": 241.7,
+              "direction": "down-left"
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [
+            [
+              "thumb",
+              "index",
+              "middle"
+            ]
+          ],
+          "grip": "power_grip",
+          "palm_facing": "camera",
+          "position": [
+            0.5643,
+            0.3941
+          ],
+          "trajectory": {
+            "since_t": 48.32,
+            "direction": "down",
+            "distance": 0.0978,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=50.3s | Right hand: power grip, palm facing camera, thumb+index+middle together pointing down-left, ring and pinky curled, at centre; moving down, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0042",
+      "frame": 1283,
+      "t": 51.32,
+      "reasons": [
+        "finger_change",
+        "grip_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "low_confidence",
+          "visibility_reason": "implausible_shape",
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "unknown",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "index",
+              "state": "unknown",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "unknown",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "unknown",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "unknown",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": [
+            0.6655,
+            0.3427
+          ],
+          "trajectory": {
+            "since_t": 50.32,
+            "direction": "right",
+            "distance": 0.0866,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=51.3s | Right hand: unclear (unstable tracking), at centre; moving right, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0043",
+      "frame": 1308,
+      "t": 52.32,
+      "reasons": [
+        "finger_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 233.1,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "extended",
+              "direction_deg": 224.3,
+              "direction": "down-left"
+            },
+            {
+              "name": "middle",
+              "state": "extended",
+              "direction_deg": 219.1,
+              "direction": "down-left"
+            },
+            {
+              "name": "ring",
+              "state": "extended",
+              "direction_deg": 211.3,
+              "direction": "down-left"
+            },
+            {
+              "name": "pinky",
+              "state": "partial",
+              "direction_deg": 200.5,
+              "direction": "left"
+            }
+          ],
+          "groups": [
+            [
+              "index",
+              "middle"
+            ]
+          ],
+          "grip": "relaxed",
+          "palm_facing": "side",
+          "position": [
+            0.6024,
+            0.5552
+          ],
+          "trajectory": {
+            "since_t": 51.32,
+            "direction": "down",
+            "distance": 0.1372,
+            "speed": "moderate"
+          }
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=52.3s | Right hand: relaxed hand, palm sideways, index+middle together pointing down-left, ring extended pointing down-left, thumb and pinky half-bent, at centre; moving down, moderate. Left hand: not visible. Active."
+    },
+    {
+      "id": "g0044",
+      "frame": 1333,
+      "t": 53.32,
+      "reasons": [
+        "grip_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "visible",
+          "visibility_reason": null,
+          "fingers": [
+            {
+              "name": "thumb",
+              "state": "partial",
+              "direction_deg": 214.5,
+              "direction": "down-left"
+            },
+            {
+              "name": "index",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "middle",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "ring",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            },
+            {
+              "name": "pinky",
+              "state": "curled",
+              "direction_deg": null,
+              "direction": null
+            }
+          ],
+          "groups": [],
+          "grip": "pinch",
+          "palm_facing": "away",
+          "position": [
+            0.6962,
+            0.6819
+          ],
+          "trajectory": {
+            "since_t": 49.32,
+            "direction": "down-right",
+            "distance": 0.1866,
+            "speed": "fast"
+          }
+        }
+      ],
+      "interaction": "none",
+      "activity": "active",
+      "text": "t=53.3s | Right hand: not visible. Left hand: pinch grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at bottom-right; moving down-right, fast. Active."
+    },
+    {
+      "id": "g0045",
+      "frame": 1358,
+      "t": 54.32,
+      "reasons": [
+        "activity_change",
+        "visibility_change"
+      ],
+      "hands": [
+        {
+          "handedness": "Right",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        },
+        {
+          "handedness": "Left",
+          "visibility": "not_visible",
+          "visibility_reason": null,
+          "fingers": [],
+          "groups": [],
+          "grip": "unknown",
+          "palm_facing": "unknown",
+          "position": null,
+          "trajectory": null
+        }
+      ],
+      "interaction": "none",
+      "activity": "idle",
+      "text": "t=54.3s | Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "round": 2,
+  "questions": [
+    {
+      "id": "q004",
+      "step_id": "s03",
+      "kind": "missing_info",
+      "text": "How should learners test whether the drill bit fits properly inside the guide holes during 'Examine the 3D-printed drill template'?",
+      "why": "Ensures the guide holes are accurately sized before attempting to mark and drill.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s03:missing:outcome"
+      ]
+    },
+    {
+      "id": "q011",
+      "step_id": null,
+      "kind": "missing_info",
+      "text": "What personal protective equipment, such as eye protection, should be worn while drilling and modifying components?",
+      "why": "Prevents injury from flying metal or plastic debris during drilling and hole enlargement.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s05:missing:safety",
+        "s06:missing:safety",
+        "s15:missing:safety"
+      ]
+    },
+    {
+      "id": "q006",
+      "step_id": "s09",
+      "kind": "missing_info",
+      "text": "How should the backing plate and wiper assembly be oriented and fitted together in 'Position backing plate and wiper'?",
+      "why": "Prevents misaligned installation of the backing plate.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s09:missing:other"
+      ]
+    },
+    {
+      "id": "q012",
+      "step_id": null,
+      "kind": "missing_info",
+      "text": "Following up on tool selection, how much tightness or torque should be applied when securing the center screw and wiper plate screws?",
+      "why": "Prevents over-tightening which warps the mounting plate and causes misalignment.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s11:missing:other",
+        "s16:missing:setting"
+      ]
+    },
+    {
+      "id": "q001",
+      "step_id": null,
+      "kind": "sop_conflict",
+      "text": "To clarify differences from the single-screw factory wiper, should the step explicitly state that this mod uses three screws across the backing and wiper plates?",
+      "why": "Your earlier answer (\"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\") did not fully resolve this. Resolves conflict between factory manual single-screw setup and modification multi-screw setup.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s16:conflict:d01:2",
+        "c:s17:conflict:d01:2",
+        "s17:missing:quantity",
+        "s12:missing:other"
+      ]
+    },
+    {
+      "id": "q013",
+      "step_id": "s15",
+      "kind": "missing_info",
+      "text": "Following up on driver info, what specific tool should be used to enlarge the wiper mounting holes in 'Enlarge wiper mounting holes'?",
+      "why": "Identifies the correct tool needed to relieve binding in mounting holes.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s15:missing:tool"
+      ]
+    },
+    {
+      "id": "q005",
+      "step_id": null,
+      "kind": "sop_conflict",
+      "text": "Since this mod replaces stock screws, should the tutorial explicitly instruct learners to use a hex driver instead of the standard manual's key for 'Position and tighten the wiper plate' and 'Confirm wiper assembly replacement without recalibration'?",
+      "why": "Your earlier answer (\"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\") did not fully resolve this. Resolves conflict with official documentation tool specifications.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s16:conflict:d01:1",
+        "c:s17:conflict:d01:1",
+        "s16:missing:tool",
+        "s17:missing:tool"
+      ]
+    },
+    {
+      "id": "q014",
+      "step_id": "s20",
+      "kind": "missing_info",
+      "text": "Following up on power rules, should the printer remain powered off while manually inspecting nozzle clearance near the wiper nubs?",
+      "why": "Prevents accidental toolhead movement injuries during visual inspection.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s20:missing:safety"
+      ]
+    },
+    {
+      "id": "q003",
+      "step_id": "s02",
+      "kind": "missing_info",
+      "text": "Should the printer be powered off before manually moving the toolhead in Push the printer toolhead aside?",
+      "why": "Manual movement of the toolhead while powered on can damage the stepper motors.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "answered",
+      "source_refs": [
+        "s02:missing:safety"
+      ]
+    },
+    {
+      "id": "q002",
+      "step_id": "s05",
+      "kind": "missing_info",
+      "text": "What is the diameter of the pilot holes to be drilled into the frame in Drill pilot holes into the frame?",
+      "why": "The pilot hole size is missing and is critical for the secondary enlargement step.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "answered",
+      "source_refs": [
+        "s05:missing:unverified"
+      ]
+    },
+    {
+      "id": "q009",
+      "step_id": "s14",
+      "kind": "sop_conflict",
+      "text": "In Verify wiper alignment, should the wiper move slightly in all directions or be firmly seated?",
+      "why": "The video suggests movement is required, which contradicts the manual's instruction for parts to be properly seated.",
+      "answer_type": "choice",
+      "choices": [
+        "move slightly",
+        "firmly seated"
+      ],
+      "priority": 1,
+      "blocking": true,
+      "status": "answered",
+      "source_refs": [
+        "c:s14:conflict:d01:2"
+      ]
+    },
+    {
+      "id": "q010",
+      "step_id": "s15",
+      "kind": "sop_conflict",
+      "text": "Is enlarging the mounting holes with a drill an approved technique for the nozzle wiper installation?",
+      "why": "The manual does not list drills as a required tool and implies the part should be installed as-is.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "answered",
+      "source_refs": [
+        "c:s15:conflict:d01:1",
+        "c:s15:conflict:d01:2"
+      ]
+    }
+  ]
+}

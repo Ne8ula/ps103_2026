@@ -1,0 +1,7811 @@
+{
+  "available": true,
+  "language": "en",
+  "model": "faster-whisper:base",
+  "segments": [
+    {
+      "id": 0,
+      "start": 5.87,
+      "end": 50.07,
+      "text": "the tripod up first. Looks like it was warping for a second, but it was just a",
+      "words": [
+        {
+          "start": 5.87,
+          "end": 5.99,
+          "word": "the",
+          "probability": 0.3392
+        },
+        {
+          "start": 5.99,
+          "end": 6.45,
+          "word": "tripod",
+          "probability": 0.9703
+        },
+        {
+          "start": 6.45,
+          "end": 6.75,
+          "word": "up",
+          "probability": 0.9703
+        },
+        {
+          "start": 6.75,
+          "end": 7.07,
+          "word": "first.",
+          "probability": 0.9869
+        },
+        {
+          "start": 47.65,
+          "end": 47.97,
+          "word": "Looks",
+          "probability": 0.2897
+        },
+        {
+          "start": 47.97,
+          "end": 48.11,
+          "word": "like",
+          "probability": 0.9962
+        },
+        {
+          "start": 48.11,
+          "end": 48.23,
+          "word": "it",
+          "probability": 0.9947
+        },
+        {
+          "start": 48.23,
+          "end": 48.39,
+          "word": "was",
+          "probability": 0.9987
+        },
+        {
+          "start": 48.39,
+          "end": 48.79,
+          "word": "warping",
+          "probability": 0.8496
+        },
+        {
+          "start": 48.79,
+          "end": 48.99,
+          "word": "for",
+          "probability": 0.9735
+        },
+        {
+          "start": 48.99,
+          "end": 49.07,
+          "word": "a",
+          "probability": 0.9954
+        },
+        {
+          "start": 49.07,
+          "end": 49.35,
+          "word": "second,",
+          "probability": 0.9989
+        },
+        {
+          "start": 49.37,
+          "end": 49.53,
+          "word": "but",
+          "probability": 0.9974
+        },
+        {
+          "start": 49.53,
+          "end": 49.61,
+          "word": "it",
+          "probability": 0.9955
+        },
+        {
+          "start": 49.61,
+          "end": 49.77,
+          "word": "was",
+          "probability": 0.9976
+        },
+        {
+          "start": 49.77,
+          "end": 49.91,
+          "word": "just",
+          "probability": 0.9976
+        },
+        {
+          "start": 49.91,
+          "end": 50.07,
+          "word": "a",
+          "probability": 0.8939
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "start": 50.07,
+      "end": 70.03,
+      "text": "burr. Now, because it's live, it won't let me switch cameras. Of course, so I'll",
+      "words": [
+        {
+          "start": 50.07,
+          "end": 50.69,
+          "word": "burr.",
+          "probability": 0.7504
+        },
+        {
+          "start": 64.75,
+          "end": 64.87,
+          "word": "Now,",
+          "probability": 0.9633
+        },
+        {
+          "start": 64.95,
+          "end": 65.17,
+          "word": "because",
+          "probability": 0.997
+        },
+        {
+          "start": 65.17,
+          "end": 65.45,
+          "word": "it's",
+          "probability": 0.9945
+        },
+        {
+          "start": 65.45,
+          "end": 65.69,
+          "word": "live,",
+          "probability": 0.9611
+        },
+        {
+          "start": 66.17,
+          "end": 66.33,
+          "word": "it",
+          "probability": 0.9247
+        },
+        {
+          "start": 66.33,
+          "end": 66.53,
+          "word": "won't",
+          "probability": 0.9969
+        },
+        {
+          "start": 66.53,
+          "end": 66.67,
+          "word": "let",
+          "probability": 0.9973
+        },
+        {
+          "start": 66.67,
+          "end": 66.79,
+          "word": "me",
+          "probability": 0.996
+        },
+        {
+          "start": 66.79,
+          "end": 67.11,
+          "word": "switch",
+          "probability": 0.9981
+        },
+        {
+          "start": 67.11,
+          "end": 67.71,
+          "word": "cameras.",
+          "probability": 0.9918
+        },
+        {
+          "start": 68.43,
+          "end": 68.55,
+          "word": "Of",
+          "probability": 0.9394
+        },
+        {
+          "start": 68.55,
+          "end": 68.83,
+          "word": "course,",
+          "probability": 0.9991
+        },
+        {
+          "start": 69.25,
+          "end": 69.95,
+          "word": "so",
+          "probability": 0.7653
+        },
+        {
+          "start": 69.95,
+          "end": 70.03,
+          "word": "I'll",
+          "probability": 0.7908
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 70.03,
+      "end": 100.9,
+      "text": "try to get you into the action the best I can. Hopefully it stays focused.",
+      "words": [
+        {
+          "start": 70.03,
+          "end": 70.23,
+          "word": "try",
+          "probability": 0.9978
+        },
+        {
+          "start": 70.23,
+          "end": 70.35,
+          "word": "to",
+          "probability": 0.9616
+        },
+        {
+          "start": 70.35,
+          "end": 70.53,
+          "word": "get",
+          "probability": 0.9953
+        },
+        {
+          "start": 70.53,
+          "end": 70.75,
+          "word": "you",
+          "probability": 0.9944
+        },
+        {
+          "start": 70.75,
+          "end": 71.83,
+          "word": "into",
+          "probability": 0.9636
+        },
+        {
+          "start": 71.83,
+          "end": 72.03,
+          "word": "the",
+          "probability": 0.9988
+        },
+        {
+          "start": 72.03,
+          "end": 72.35,
+          "word": "action",
+          "probability": 0.9942
+        },
+        {
+          "start": 72.35,
+          "end": 72.51,
+          "word": "the",
+          "probability": 0.7983
+        },
+        {
+          "start": 72.51,
+          "end": 72.73,
+          "word": "best",
+          "probability": 0.9973
+        },
+        {
+          "start": 72.73,
+          "end": 72.85,
+          "word": "I",
+          "probability": 0.9232
+        },
+        {
+          "start": 72.85,
+          "end": 73.13,
+          "word": "can.",
+          "probability": 0.9993
+        },
+        {
+          "start": 95.81,
+          "end": 96.33,
+          "word": "Hopefully",
+          "probability": 0.793
+        },
+        {
+          "start": 96.33,
+          "end": 98.27,
+          "word": "it",
+          "probability": 0.716
+        },
+        {
+          "start": 100.32,
+          "end": 100.54,
+          "word": "stays",
+          "probability": 0.9903
+        },
+        {
+          "start": 100.54,
+          "end": 100.9,
+          "word": "focused.",
+          "probability": 0.9899
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 111.44,
+      "end": 117.42,
+      "text": "So this is actually the very first version of this template that I printed",
+      "words": [
+        {
+          "start": 111.44,
+          "end": 111.86,
+          "word": "So",
+          "probability": 0.6136
+        },
+        {
+          "start": 111.86,
+          "end": 112.02,
+          "word": "this",
+          "probability": 0.8912
+        },
+        {
+          "start": 112.02,
+          "end": 112.16,
+          "word": "is",
+          "probability": 0.9062
+        },
+        {
+          "start": 112.16,
+          "end": 112.52,
+          "word": "actually",
+          "probability": 0.9847
+        },
+        {
+          "start": 112.52,
+          "end": 112.8,
+          "word": "the",
+          "probability": 0.9873
+        },
+        {
+          "start": 112.8,
+          "end": 113.52,
+          "word": "very",
+          "probability": 0.8809
+        },
+        {
+          "start": 113.52,
+          "end": 114.18,
+          "word": "first",
+          "probability": 0.9982
+        },
+        {
+          "start": 114.18,
+          "end": 114.72,
+          "word": "version",
+          "probability": 0.9961
+        },
+        {
+          "start": 114.72,
+          "end": 114.9,
+          "word": "of",
+          "probability": 0.9979
+        },
+        {
+          "start": 114.9,
+          "end": 115.3,
+          "word": "this",
+          "probability": 0.9979
+        },
+        {
+          "start": 115.3,
+          "end": 116.16,
+          "word": "template",
+          "probability": 0.9993
+        },
+        {
+          "start": 116.16,
+          "end": 116.48,
+          "word": "that",
+          "probability": 0.9875
+        },
+        {
+          "start": 116.48,
+          "end": 116.72,
+          "word": "I",
+          "probability": 0.9959
+        },
+        {
+          "start": 116.72,
+          "end": 117.42,
+          "word": "printed",
+          "probability": 0.9785
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 117.42,
+      "end": 123.68,
+      "text": "and I've used it twice now. This would be the third time. The holes are still",
+      "words": [
+        {
+          "start": 117.42,
+          "end": 117.84,
+          "word": "and",
+          "probability": 0.4579
+        },
+        {
+          "start": 117.84,
+          "end": 118.08,
+          "word": "I've",
+          "probability": 0.9595
+        },
+        {
+          "start": 118.08,
+          "end": 118.24,
+          "word": "used",
+          "probability": 0.9942
+        },
+        {
+          "start": 118.24,
+          "end": 118.44,
+          "word": "it",
+          "probability": 0.9946
+        },
+        {
+          "start": 118.44,
+          "end": 119.34,
+          "word": "twice",
+          "probability": 0.9633
+        },
+        {
+          "start": 119.34,
+          "end": 119.72,
+          "word": "now.",
+          "probability": 0.9786
+        },
+        {
+          "start": 120.48,
+          "end": 120.84,
+          "word": "This",
+          "probability": 0.6057
+        },
+        {
+          "start": 120.84,
+          "end": 120.88,
+          "word": "would",
+          "probability": 0.4429
+        },
+        {
+          "start": 120.88,
+          "end": 121.0,
+          "word": "be",
+          "probability": 0.9862
+        },
+        {
+          "start": 121.0,
+          "end": 121.12,
+          "word": "the",
+          "probability": 0.9961
+        },
+        {
+          "start": 121.12,
+          "end": 121.36,
+          "word": "third",
+          "probability": 0.9887
+        },
+        {
+          "start": 121.36,
+          "end": 121.72,
+          "word": "time.",
+          "probability": 0.999
+        },
+        {
+          "start": 122.68,
+          "end": 123.12,
+          "word": "The",
+          "probability": 0.9765
+        },
+        {
+          "start": 123.12,
+          "end": 123.3,
+          "word": "holes",
+          "probability": 0.994
+        },
+        {
+          "start": 123.3,
+          "end": 123.44,
+          "word": "are",
+          "probability": 0.9963
+        },
+        {
+          "start": 123.44,
+          "end": 123.68,
+          "word": "still",
+          "probability": 0.9523
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 123.68,
+      "end": 137.26,
+      "text": "pretty tight on the drill bit too, so let's see. It's good and solid here. Let's go",
+      "words": [
+        {
+          "start": 123.68,
+          "end": 124.1,
+          "word": "pretty",
+          "probability": 0.9972
+        },
+        {
+          "start": 124.1,
+          "end": 125.46,
+          "word": "tight",
+          "probability": 0.9558
+        },
+        {
+          "start": 125.46,
+          "end": 125.68,
+          "word": "on",
+          "probability": 0.984
+        },
+        {
+          "start": 125.68,
+          "end": 125.84,
+          "word": "the",
+          "probability": 0.9915
+        },
+        {
+          "start": 125.84,
+          "end": 126.0,
+          "word": "drill",
+          "probability": 0.9941
+        },
+        {
+          "start": 126.0,
+          "end": 126.18,
+          "word": "bit",
+          "probability": 0.9856
+        },
+        {
+          "start": 126.18,
+          "end": 126.46,
+          "word": "too,",
+          "probability": 0.7647
+        },
+        {
+          "start": 126.68,
+          "end": 126.78,
+          "word": "so",
+          "probability": 0.9764
+        },
+        {
+          "start": 126.78,
+          "end": 127.78,
+          "word": "let's",
+          "probability": 0.8454
+        },
+        {
+          "start": 130.34,
+          "end": 130.52,
+          "word": "see.",
+          "probability": 0.9963
+        },
+        {
+          "start": 132.82,
+          "end": 133.14,
+          "word": "It's",
+          "probability": 0.7295
+        },
+        {
+          "start": 133.14,
+          "end": 133.84,
+          "word": "good",
+          "probability": 0.9807
+        },
+        {
+          "start": 133.84,
+          "end": 133.98,
+          "word": "and",
+          "probability": 0.9542
+        },
+        {
+          "start": 133.98,
+          "end": 134.3,
+          "word": "solid",
+          "probability": 0.9979
+        },
+        {
+          "start": 134.3,
+          "end": 134.58,
+          "word": "here.",
+          "probability": 0.989
+        },
+        {
+          "start": 136.96,
+          "end": 137.12,
+          "word": "Let's",
+          "probability": 0.8912
+        },
+        {
+          "start": 137.12,
+          "end": 137.26,
+          "word": "go",
+          "probability": 0.9961
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 137.26,
+      "end": 179.98,
+      "text": "and mark these holes. I have fireball. No going back. Any last words? I'll bring",
+      "words": [
+        {
+          "start": 137.26,
+          "end": 137.42,
+          "word": "and",
+          "probability": 0.9717
+        },
+        {
+          "start": 137.42,
+          "end": 137.56,
+          "word": "mark",
+          "probability": 0.995
+        },
+        {
+          "start": 137.56,
+          "end": 137.84,
+          "word": "these",
+          "probability": 0.9726
+        },
+        {
+          "start": 137.84,
+          "end": 138.12,
+          "word": "holes.",
+          "probability": 0.9972
+        },
+        {
+          "start": 167.96,
+          "end": 168.02,
+          "word": "I",
+          "probability": 0.348
+        },
+        {
+          "start": 168.02,
+          "end": 168.12,
+          "word": "have",
+          "probability": 0.3272
+        },
+        {
+          "start": 168.12,
+          "end": 168.58,
+          "word": "fireball.",
+          "probability": 0.7693
+        },
+        {
+          "start": 171.29,
+          "end": 171.51,
+          "word": "No",
+          "probability": 0.5917
+        },
+        {
+          "start": 171.51,
+          "end": 171.67,
+          "word": "going",
+          "probability": 0.9461
+        },
+        {
+          "start": 171.67,
+          "end": 171.97,
+          "word": "back.",
+          "probability": 0.9986
+        },
+        {
+          "start": 172.95,
+          "end": 173.39,
+          "word": "Any",
+          "probability": 0.9597
+        },
+        {
+          "start": 173.39,
+          "end": 173.57,
+          "word": "last",
+          "probability": 0.994
+        },
+        {
+          "start": 173.57,
+          "end": 173.93,
+          "word": "words?",
+          "probability": 0.996
+        },
+        {
+          "start": 179.62,
+          "end": 179.84,
+          "word": "I'll",
+          "probability": 0.442
+        },
+        {
+          "start": 179.84,
+          "end": 179.98,
+          "word": "bring",
+          "probability": 0.9972
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 179.98,
+      "end": 191.98,
+      "text": "the light over. Maybe that'll help a little bit. At least I can see when I'm",
+      "words": [
+        {
+          "start": 179.98,
+          "end": 180.16,
+          "word": "the",
+          "probability": 0.9947
+        },
+        {
+          "start": 180.16,
+          "end": 180.3,
+          "word": "light",
+          "probability": 0.9965
+        },
+        {
+          "start": 180.3,
+          "end": 180.6,
+          "word": "over.",
+          "probability": 0.9983
+        },
+        {
+          "start": 181.1,
+          "end": 181.28,
+          "word": "Maybe",
+          "probability": 0.9598
+        },
+        {
+          "start": 181.28,
+          "end": 181.56,
+          "word": "that'll",
+          "probability": 0.9235
+        },
+        {
+          "start": 181.56,
+          "end": 181.74,
+          "word": "help",
+          "probability": 0.9967
+        },
+        {
+          "start": 181.74,
+          "end": 181.88,
+          "word": "a",
+          "probability": 0.9909
+        },
+        {
+          "start": 181.88,
+          "end": 182.08,
+          "word": "little",
+          "probability": 0.9963
+        },
+        {
+          "start": 182.08,
+          "end": 182.26,
+          "word": "bit.",
+          "probability": 0.9853
+        },
+        {
+          "start": 190.94,
+          "end": 191.06,
+          "word": "At",
+          "probability": 0.8869
+        },
+        {
+          "start": 191.06,
+          "end": 191.16,
+          "word": "least",
+          "probability": 0.9983
+        },
+        {
+          "start": 191.16,
+          "end": 191.32,
+          "word": "I",
+          "probability": 0.9748
+        },
+        {
+          "start": 191.32,
+          "end": 191.44,
+          "word": "can",
+          "probability": 0.9987
+        },
+        {
+          "start": 191.44,
+          "end": 191.64,
+          "word": "see",
+          "probability": 0.9991
+        },
+        {
+          "start": 191.64,
+          "end": 191.76,
+          "word": "when",
+          "probability": 0.317
+        },
+        {
+          "start": 191.76,
+          "end": 191.98,
+          "word": "I'm",
+          "probability": 0.9961
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 191.98,
+      "end": 228.54,
+      "text": "doing. I think that went well. We'll open the holes up to one-eighth. By the way,",
+      "words": [
+        {
+          "start": 191.98,
+          "end": 192.1,
+          "word": "doing.",
+          "probability": 0.0039
+        },
+        {
+          "start": 221.74,
+          "end": 222.22,
+          "word": "I",
+          "probability": 0.8063
+        },
+        {
+          "start": 222.22,
+          "end": 222.3,
+          "word": "think",
+          "probability": 0.8667
+        },
+        {
+          "start": 222.3,
+          "end": 222.54,
+          "word": "that",
+          "probability": 0.9868
+        },
+        {
+          "start": 222.54,
+          "end": 222.7,
+          "word": "went",
+          "probability": 0.9889
+        },
+        {
+          "start": 222.7,
+          "end": 223.0,
+          "word": "well.",
+          "probability": 0.9874
+        },
+        {
+          "start": 225.2,
+          "end": 225.32,
+          "word": "We'll",
+          "probability": 0.6448
+        },
+        {
+          "start": 225.32,
+          "end": 225.6,
+          "word": "open",
+          "probability": 0.9968
+        },
+        {
+          "start": 225.6,
+          "end": 225.78,
+          "word": "the",
+          "probability": 0.9904
+        },
+        {
+          "start": 225.78,
+          "end": 225.94,
+          "word": "holes",
+          "probability": 0.9345
+        },
+        {
+          "start": 225.94,
+          "end": 226.18,
+          "word": "up",
+          "probability": 0.9798
+        },
+        {
+          "start": 226.18,
+          "end": 226.42,
+          "word": "to",
+          "probability": 0.9935
+        },
+        {
+          "start": 226.42,
+          "end": 226.76,
+          "word": "one",
+          "probability": 0.4366
+        },
+        {
+          "start": 226.76,
+          "end": 227.88,
+          "word": "-eighth.",
+          "probability": 0.7395
+        },
+        {
+          "start": 227.94,
+          "end": 228.22,
+          "word": "By",
+          "probability": 0.9007
+        },
+        {
+          "start": 228.22,
+          "end": 228.36,
+          "word": "the",
+          "probability": 0.9991
+        },
+        {
+          "start": 228.36,
+          "end": 228.54,
+          "word": "way,",
+          "probability": 0.9987
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 228.72,
+      "end": 236.54,
+      "text": "this first one is one-sixteenth of an inch and that finds those center points",
+      "words": [
+        {
+          "start": 228.72,
+          "end": 229.0,
+          "word": "this",
+          "probability": 0.9243
+        },
+        {
+          "start": 229.0,
+          "end": 229.32,
+          "word": "first",
+          "probability": 0.9793
+        },
+        {
+          "start": 229.32,
+          "end": 229.62,
+          "word": "one",
+          "probability": 0.9863
+        },
+        {
+          "start": 229.62,
+          "end": 230.84,
+          "word": "is",
+          "probability": 0.9633
+        },
+        {
+          "start": 230.84,
+          "end": 231.32,
+          "word": "one",
+          "probability": 0.5868
+        },
+        {
+          "start": 231.32,
+          "end": 231.96,
+          "word": "-sixteenth",
+          "probability": 0.9129
+        },
+        {
+          "start": 231.96,
+          "end": 232.1,
+          "word": "of",
+          "probability": 0.9012
+        },
+        {
+          "start": 232.1,
+          "end": 232.22,
+          "word": "an",
+          "probability": 0.9926
+        },
+        {
+          "start": 232.22,
+          "end": 232.56,
+          "word": "inch",
+          "probability": 0.991
+        },
+        {
+          "start": 232.56,
+          "end": 234.36,
+          "word": "and",
+          "probability": 0.3062
+        },
+        {
+          "start": 234.36,
+          "end": 234.48,
+          "word": "that",
+          "probability": 0.9969
+        },
+        {
+          "start": 234.48,
+          "end": 234.82,
+          "word": "finds",
+          "probability": 0.9822
+        },
+        {
+          "start": 234.82,
+          "end": 235.4,
+          "word": "those",
+          "probability": 0.9841
+        },
+        {
+          "start": 235.4,
+          "end": 236.12,
+          "word": "center",
+          "probability": 0.9662
+        },
+        {
+          "start": 236.12,
+          "end": 236.54,
+          "word": "points",
+          "probability": 0.9853
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 236.54,
+      "end": 282.94,
+      "text": "very, very nice that we put in by hand. There's my deburring tool, misplaced.",
+      "words": [
+        {
+          "start": 236.54,
+          "end": 237.04,
+          "word": "very,",
+          "probability": 0.9807
+        },
+        {
+          "start": 237.04,
+          "end": 237.32,
+          "word": "very",
+          "probability": 0.9975
+        },
+        {
+          "start": 237.32,
+          "end": 237.54,
+          "word": "nice",
+          "probability": 0.9977
+        },
+        {
+          "start": 237.54,
+          "end": 237.76,
+          "word": "that",
+          "probability": 0.9558
+        },
+        {
+          "start": 237.76,
+          "end": 237.9,
+          "word": "we",
+          "probability": 0.9954
+        },
+        {
+          "start": 237.9,
+          "end": 238.46,
+          "word": "put",
+          "probability": 0.9934
+        },
+        {
+          "start": 238.46,
+          "end": 238.6,
+          "word": "in",
+          "probability": 0.5979
+        },
+        {
+          "start": 238.6,
+          "end": 238.76,
+          "word": "by",
+          "probability": 0.9759
+        },
+        {
+          "start": 238.76,
+          "end": 239.12,
+          "word": "hand.",
+          "probability": 0.9946
+        },
+        {
+          "start": 276.0,
+          "end": 276.52,
+          "word": "There's",
+          "probability": 0.6639
+        },
+        {
+          "start": 276.52,
+          "end": 276.64,
+          "word": "my",
+          "probability": 0.9979
+        },
+        {
+          "start": 276.64,
+          "end": 277.08,
+          "word": "deburring",
+          "probability": 0.5773
+        },
+        {
+          "start": 277.08,
+          "end": 277.34,
+          "word": "tool,",
+          "probability": 0.9929
+        },
+        {
+          "start": 282.48,
+          "end": 282.94,
+          "word": "misplaced.",
+          "probability": 0.9791
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 291.33,
+      "end": 295.11,
+      "text": "Just take a little bit of that burr off just so that the wiper sits nice and",
+      "words": [
+        {
+          "start": 291.33,
+          "end": 291.45,
+          "word": "Just",
+          "probability": 0.6095
+        },
+        {
+          "start": 291.45,
+          "end": 291.65,
+          "word": "take",
+          "probability": 0.9964
+        },
+        {
+          "start": 291.65,
+          "end": 291.79,
+          "word": "a",
+          "probability": 0.998
+        },
+        {
+          "start": 291.79,
+          "end": 292.05,
+          "word": "little",
+          "probability": 0.9975
+        },
+        {
+          "start": 292.05,
+          "end": 292.31,
+          "word": "bit",
+          "probability": 0.9958
+        },
+        {
+          "start": 292.31,
+          "end": 292.43,
+          "word": "of",
+          "probability": 0.9977
+        },
+        {
+          "start": 292.43,
+          "end": 292.61,
+          "word": "that",
+          "probability": 0.9962
+        },
+        {
+          "start": 292.61,
+          "end": 292.93,
+          "word": "burr",
+          "probability": 0.711
+        },
+        {
+          "start": 292.93,
+          "end": 293.25,
+          "word": "off",
+          "probability": 0.9732
+        },
+        {
+          "start": 293.25,
+          "end": 293.49,
+          "word": "just",
+          "probability": 0.6567
+        },
+        {
+          "start": 293.49,
+          "end": 293.73,
+          "word": "so",
+          "probability": 0.9987
+        },
+        {
+          "start": 293.73,
+          "end": 293.91,
+          "word": "that",
+          "probability": 0.9628
+        },
+        {
+          "start": 293.91,
+          "end": 294.13,
+          "word": "the",
+          "probability": 0.9966
+        },
+        {
+          "start": 294.13,
+          "end": 294.35,
+          "word": "wiper",
+          "probability": 0.9278
+        },
+        {
+          "start": 294.35,
+          "end": 294.59,
+          "word": "sits",
+          "probability": 0.9882
+        },
+        {
+          "start": 294.59,
+          "end": 294.91,
+          "word": "nice",
+          "probability": 0.9959
+        },
+        {
+          "start": 294.91,
+          "end": 295.11,
+          "word": "and",
+          "probability": 0.9978
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 295.11,
+      "end": 314.26,
+      "text": "flat. I always keep this vacuum around for the printers. This was like an Amazon",
+      "words": [
+        {
+          "start": 295.11,
+          "end": 295.39,
+          "word": "flat.",
+          "probability": 0.7343
+        },
+        {
+          "start": 310.16,
+          "end": 310.6,
+          "word": "I",
+          "probability": 0.9029
+        },
+        {
+          "start": 310.6,
+          "end": 310.76,
+          "word": "always",
+          "probability": 0.9953
+        },
+        {
+          "start": 310.76,
+          "end": 310.98,
+          "word": "keep",
+          "probability": 0.9971
+        },
+        {
+          "start": 310.98,
+          "end": 311.2,
+          "word": "this",
+          "probability": 0.9886
+        },
+        {
+          "start": 311.2,
+          "end": 311.52,
+          "word": "vacuum",
+          "probability": 0.9923
+        },
+        {
+          "start": 311.52,
+          "end": 311.86,
+          "word": "around",
+          "probability": 0.9981
+        },
+        {
+          "start": 311.86,
+          "end": 312.12,
+          "word": "for",
+          "probability": 0.9929
+        },
+        {
+          "start": 312.12,
+          "end": 312.24,
+          "word": "the",
+          "probability": 0.9987
+        },
+        {
+          "start": 312.24,
+          "end": 312.5,
+          "word": "printers.",
+          "probability": 0.9691
+        },
+        {
+          "start": 313.4,
+          "end": 313.5,
+          "word": "This",
+          "probability": 0.9344
+        },
+        {
+          "start": 313.5,
+          "end": 313.68,
+          "word": "was",
+          "probability": 0.9909
+        },
+        {
+          "start": 313.68,
+          "end": 313.86,
+          "word": "like",
+          "probability": 0.9175
+        },
+        {
+          "start": 313.86,
+          "end": 313.96,
+          "word": "an",
+          "probability": 0.974
+        },
+        {
+          "start": 313.96,
+          "end": 314.26,
+          "word": "Amazon",
+          "probability": 0.9415
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 314.26,
+      "end": 319.36,
+      "text": "sale and I cut it like four years ago and it's still going today. It works great",
+      "words": [
+        {
+          "start": 314.26,
+          "end": 314.62,
+          "word": "sale",
+          "probability": 0.9849
+        },
+        {
+          "start": 314.62,
+          "end": 314.84,
+          "word": "and",
+          "probability": 0.6651
+        },
+        {
+          "start": 314.84,
+          "end": 314.92,
+          "word": "I",
+          "probability": 0.991
+        },
+        {
+          "start": 314.92,
+          "end": 315.16,
+          "word": "cut",
+          "probability": 0.7989
+        },
+        {
+          "start": 315.16,
+          "end": 315.3,
+          "word": "it",
+          "probability": 0.997
+        },
+        {
+          "start": 315.3,
+          "end": 315.46,
+          "word": "like",
+          "probability": 0.9428
+        },
+        {
+          "start": 315.46,
+          "end": 315.8,
+          "word": "four",
+          "probability": 0.9173
+        },
+        {
+          "start": 315.8,
+          "end": 316.06,
+          "word": "years",
+          "probability": 0.9989
+        },
+        {
+          "start": 316.06,
+          "end": 316.34,
+          "word": "ago",
+          "probability": 0.9997
+        },
+        {
+          "start": 316.34,
+          "end": 316.76,
+          "word": "and",
+          "probability": 0.8367
+        },
+        {
+          "start": 316.76,
+          "end": 316.98,
+          "word": "it's",
+          "probability": 0.9935
+        },
+        {
+          "start": 316.98,
+          "end": 317.2,
+          "word": "still",
+          "probability": 0.9994
+        },
+        {
+          "start": 317.2,
+          "end": 317.44,
+          "word": "going",
+          "probability": 0.9983
+        },
+        {
+          "start": 317.44,
+          "end": 317.74,
+          "word": "today.",
+          "probability": 0.9956
+        },
+        {
+          "start": 318.52,
+          "end": 318.7,
+          "word": "It",
+          "probability": 0.9333
+        },
+        {
+          "start": 318.7,
+          "end": 318.88,
+          "word": "works",
+          "probability": 0.9869
+        },
+        {
+          "start": 318.88,
+          "end": 319.36,
+          "word": "great",
+          "probability": 0.9946
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 319.36,
+      "end": 325.72,
+      "text": "for keeping the little bits of filament that day. I always give the inside of",
+      "words": [
+        {
+          "start": 319.36,
+          "end": 319.66,
+          "word": "for",
+          "probability": 0.9975
+        },
+        {
+          "start": 319.66,
+          "end": 320.64,
+          "word": "keeping",
+          "probability": 0.9808
+        },
+        {
+          "start": 320.64,
+          "end": 320.86,
+          "word": "the",
+          "probability": 0.9845
+        },
+        {
+          "start": 320.86,
+          "end": 321.02,
+          "word": "little",
+          "probability": 0.9974
+        },
+        {
+          "start": 321.02,
+          "end": 321.18,
+          "word": "bits",
+          "probability": 0.9951
+        },
+        {
+          "start": 321.18,
+          "end": 321.36,
+          "word": "of",
+          "probability": 0.9828
+        },
+        {
+          "start": 321.36,
+          "end": 321.64,
+          "word": "filament",
+          "probability": 0.9514
+        },
+        {
+          "start": 321.64,
+          "end": 321.98,
+          "word": "that",
+          "probability": 0.4763
+        },
+        {
+          "start": 321.98,
+          "end": 322.16,
+          "word": "day.",
+          "probability": 0.8446
+        },
+        {
+          "start": 323.74,
+          "end": 324.0,
+          "word": "I",
+          "probability": 0.7327
+        },
+        {
+          "start": 324.0,
+          "end": 324.22,
+          "word": "always",
+          "probability": 0.986
+        },
+        {
+          "start": 324.22,
+          "end": 324.4,
+          "word": "give",
+          "probability": 0.9944
+        },
+        {
+          "start": 324.4,
+          "end": 324.66,
+          "word": "the",
+          "probability": 0.9918
+        },
+        {
+          "start": 324.66,
+          "end": 325.52,
+          "word": "inside",
+          "probability": 0.7123
+        },
+        {
+          "start": 325.52,
+          "end": 325.72,
+          "word": "of",
+          "probability": 0.984
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 325.72,
+      "end": 338.99,
+      "text": "the rails a little backing down as well with all the bits out of the bottom.",
+      "words": [
+        {
+          "start": 325.72,
+          "end": 325.82,
+          "word": "the",
+          "probability": 0.9993
+        },
+        {
+          "start": 325.82,
+          "end": 326.04,
+          "word": "rails",
+          "probability": 0.9597
+        },
+        {
+          "start": 326.04,
+          "end": 326.42,
+          "word": "a",
+          "probability": 0.907
+        },
+        {
+          "start": 326.42,
+          "end": 327.7,
+          "word": "little",
+          "probability": 0.9956
+        },
+        {
+          "start": 327.7,
+          "end": 328.06,
+          "word": "backing",
+          "probability": 0.4884
+        },
+        {
+          "start": 328.06,
+          "end": 328.3,
+          "word": "down",
+          "probability": 0.9993
+        },
+        {
+          "start": 328.3,
+          "end": 328.5,
+          "word": "as",
+          "probability": 0.9905
+        },
+        {
+          "start": 328.5,
+          "end": 328.74,
+          "word": "well",
+          "probability": 0.9974
+        },
+        {
+          "start": 328.74,
+          "end": 329.68,
+          "word": "with",
+          "probability": 0.3684
+        },
+        {
+          "start": 338.03,
+          "end": 338.13,
+          "word": "all",
+          "probability": 0.9905
+        },
+        {
+          "start": 338.13,
+          "end": 338.25,
+          "word": "the",
+          "probability": 0.9898
+        },
+        {
+          "start": 338.25,
+          "end": 338.37,
+          "word": "bits",
+          "probability": 0.9702
+        },
+        {
+          "start": 338.37,
+          "end": 338.59,
+          "word": "out",
+          "probability": 0.9742
+        },
+        {
+          "start": 338.59,
+          "end": 338.69,
+          "word": "of",
+          "probability": 0.4336
+        },
+        {
+          "start": 338.69,
+          "end": 338.77,
+          "word": "the",
+          "probability": 0.9961
+        },
+        {
+          "start": 338.77,
+          "end": 338.99,
+          "word": "bottom.",
+          "probability": 0.9992
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 349.01,
+      "end": 369.41,
+      "text": "I'm going to go tidy, tidy. The camera's kind of where I would like to be, but to my best",
+      "words": [
+        {
+          "start": 349.01,
+          "end": 349.13,
+          "word": "I'm",
+          "probability": 0.4266
+        },
+        {
+          "start": 349.13,
+          "end": 349.13,
+          "word": "going",
+          "probability": 0.6638
+        },
+        {
+          "start": 349.13,
+          "end": 349.15,
+          "word": "to",
+          "probability": 0.9832
+        },
+        {
+          "start": 349.15,
+          "end": 349.23,
+          "word": "go",
+          "probability": 0.9606
+        },
+        {
+          "start": 349.23,
+          "end": 349.49,
+          "word": "tidy,",
+          "probability": 0.2397
+        },
+        {
+          "start": 349.69,
+          "end": 349.85,
+          "word": "tidy.",
+          "probability": 0.9996
+        },
+        {
+          "start": 365.81,
+          "end": 365.95,
+          "word": "The",
+          "probability": 0.6875
+        },
+        {
+          "start": 365.95,
+          "end": 366.39,
+          "word": "camera's",
+          "probability": 0.7363
+        },
+        {
+          "start": 366.39,
+          "end": 366.53,
+          "word": "kind",
+          "probability": 0.9477
+        },
+        {
+          "start": 366.53,
+          "end": 366.63,
+          "word": "of",
+          "probability": 0.9967
+        },
+        {
+          "start": 366.63,
+          "end": 366.79,
+          "word": "where",
+          "probability": 0.9983
+        },
+        {
+          "start": 366.79,
+          "end": 366.99,
+          "word": "I",
+          "probability": 0.9968
+        },
+        {
+          "start": 366.99,
+          "end": 367.15,
+          "word": "would",
+          "probability": 0.9934
+        },
+        {
+          "start": 367.15,
+          "end": 367.27,
+          "word": "like",
+          "probability": 0.999
+        },
+        {
+          "start": 367.27,
+          "end": 367.43,
+          "word": "to",
+          "probability": 0.9713
+        },
+        {
+          "start": 367.43,
+          "end": 367.63,
+          "word": "be,",
+          "probability": 0.9984
+        },
+        {
+          "start": 368.17,
+          "end": 368.45,
+          "word": "but",
+          "probability": 0.9956
+        },
+        {
+          "start": 368.45,
+          "end": 369.03,
+          "word": "to",
+          "probability": 0.4618
+        },
+        {
+          "start": 369.03,
+          "end": 369.19,
+          "word": "my",
+          "probability": 0.9679
+        },
+        {
+          "start": 369.19,
+          "end": 369.41,
+          "word": "best",
+          "probability": 0.9979
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "start": 369.41,
+      "end": 378.04,
+      "text": "not to drop this. If you got really big hands, you could just put some tape around",
+      "words": [
+        {
+          "start": 369.41,
+          "end": 369.57,
+          "word": "not",
+          "probability": 0.3423
+        },
+        {
+          "start": 369.57,
+          "end": 369.71,
+          "word": "to",
+          "probability": 0.6827
+        },
+        {
+          "start": 369.71,
+          "end": 369.91,
+          "word": "drop",
+          "probability": 0.9954
+        },
+        {
+          "start": 369.91,
+          "end": 370.25,
+          "word": "this.",
+          "probability": 0.9919
+        },
+        {
+          "start": 374.2,
+          "end": 374.64,
+          "word": "If",
+          "probability": 0.948
+        },
+        {
+          "start": 374.64,
+          "end": 374.74,
+          "word": "you",
+          "probability": 0.9964
+        },
+        {
+          "start": 374.74,
+          "end": 374.88,
+          "word": "got",
+          "probability": 0.4184
+        },
+        {
+          "start": 374.88,
+          "end": 375.08,
+          "word": "really",
+          "probability": 0.9153
+        },
+        {
+          "start": 375.08,
+          "end": 375.32,
+          "word": "big",
+          "probability": 0.9977
+        },
+        {
+          "start": 375.32,
+          "end": 375.62,
+          "word": "hands,",
+          "probability": 0.9874
+        },
+        {
+          "start": 375.74,
+          "end": 375.78,
+          "word": "you",
+          "probability": 0.9938
+        },
+        {
+          "start": 375.78,
+          "end": 375.86,
+          "word": "could",
+          "probability": 0.5091
+        },
+        {
+          "start": 375.86,
+          "end": 376.0,
+          "word": "just",
+          "probability": 0.9259
+        },
+        {
+          "start": 376.0,
+          "end": 376.28,
+          "word": "put",
+          "probability": 0.9775
+        },
+        {
+          "start": 376.28,
+          "end": 376.48,
+          "word": "some",
+          "probability": 0.9835
+        },
+        {
+          "start": 376.48,
+          "end": 376.82,
+          "word": "tape",
+          "probability": 0.9984
+        },
+        {
+          "start": 376.82,
+          "end": 378.04,
+          "word": "around",
+          "probability": 0.9907
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "start": 378.04,
+      "end": 383.64,
+      "text": "your fingers that will stick to the backing plate and then it won't drop by",
+      "words": [
+        {
+          "start": 378.04,
+          "end": 379.12,
+          "word": "your",
+          "probability": 0.8544
+        },
+        {
+          "start": 379.12,
+          "end": 379.42,
+          "word": "fingers",
+          "probability": 0.9509
+        },
+        {
+          "start": 379.42,
+          "end": 379.66,
+          "word": "that",
+          "probability": 0.9282
+        },
+        {
+          "start": 379.66,
+          "end": 379.76,
+          "word": "will",
+          "probability": 0.8856
+        },
+        {
+          "start": 379.76,
+          "end": 380.06,
+          "word": "stick",
+          "probability": 0.9994
+        },
+        {
+          "start": 380.06,
+          "end": 381.0,
+          "word": "to",
+          "probability": 0.9964
+        },
+        {
+          "start": 381.0,
+          "end": 381.24,
+          "word": "the",
+          "probability": 0.9975
+        },
+        {
+          "start": 381.24,
+          "end": 381.8,
+          "word": "backing",
+          "probability": 0.9971
+        },
+        {
+          "start": 381.8,
+          "end": 382.1,
+          "word": "plate",
+          "probability": 0.9929
+        },
+        {
+          "start": 382.1,
+          "end": 382.38,
+          "word": "and",
+          "probability": 0.765
+        },
+        {
+          "start": 382.38,
+          "end": 382.5,
+          "word": "then",
+          "probability": 0.9012
+        },
+        {
+          "start": 382.5,
+          "end": 382.66,
+          "word": "it",
+          "probability": 0.9765
+        },
+        {
+          "start": 382.66,
+          "end": 382.82,
+          "word": "won't",
+          "probability": 0.9872
+        },
+        {
+          "start": 382.82,
+          "end": 383.12,
+          "word": "drop",
+          "probability": 0.9992
+        },
+        {
+          "start": 383.12,
+          "end": 383.64,
+          "word": "by",
+          "probability": 0.9939
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "start": 383.64,
+      "end": 393.32,
+      "text": "accident. We'll just thread in that center screw just to hold it in place and",
+      "words": [
+        {
+          "start": 383.64,
+          "end": 384.06,
+          "word": "accident.",
+          "probability": 0.9983
+        },
+        {
+          "start": 388.46,
+          "end": 388.58,
+          "word": "We'll",
+          "probability": 0.4777
+        },
+        {
+          "start": 388.58,
+          "end": 388.68,
+          "word": "just",
+          "probability": 0.9964
+        },
+        {
+          "start": 388.68,
+          "end": 388.96,
+          "word": "thread",
+          "probability": 0.9415
+        },
+        {
+          "start": 388.96,
+          "end": 389.14,
+          "word": "in",
+          "probability": 0.9859
+        },
+        {
+          "start": 389.14,
+          "end": 389.34,
+          "word": "that",
+          "probability": 0.9859
+        },
+        {
+          "start": 389.34,
+          "end": 389.8,
+          "word": "center",
+          "probability": 0.9487
+        },
+        {
+          "start": 389.8,
+          "end": 390.66,
+          "word": "screw",
+          "probability": 0.9575
+        },
+        {
+          "start": 390.66,
+          "end": 390.94,
+          "word": "just",
+          "probability": 0.5592
+        },
+        {
+          "start": 390.94,
+          "end": 391.1,
+          "word": "to",
+          "probability": 0.9698
+        },
+        {
+          "start": 391.1,
+          "end": 391.26,
+          "word": "hold",
+          "probability": 0.9963
+        },
+        {
+          "start": 391.26,
+          "end": 391.42,
+          "word": "it",
+          "probability": 0.9931
+        },
+        {
+          "start": 391.42,
+          "end": 391.54,
+          "word": "in",
+          "probability": 0.9978
+        },
+        {
+          "start": 391.54,
+          "end": 391.84,
+          "word": "place",
+          "probability": 0.9996
+        },
+        {
+          "start": 391.84,
+          "end": 393.32,
+          "word": "and",
+          "probability": 0.526
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "start": 393.32,
+      "end": 401.62,
+      "text": "we'll leave it loose and then we'll line up two outside holes and this will",
+      "words": [
+        {
+          "start": 393.32,
+          "end": 394.22,
+          "word": "we'll",
+          "probability": 0.9827
+        },
+        {
+          "start": 394.22,
+          "end": 394.44,
+          "word": "leave",
+          "probability": 0.9986
+        },
+        {
+          "start": 394.44,
+          "end": 394.56,
+          "word": "it",
+          "probability": 0.9961
+        },
+        {
+          "start": 394.56,
+          "end": 394.86,
+          "word": "loose",
+          "probability": 0.9992
+        },
+        {
+          "start": 394.86,
+          "end": 396.9,
+          "word": "and",
+          "probability": 0.7316
+        },
+        {
+          "start": 396.9,
+          "end": 397.08,
+          "word": "then",
+          "probability": 0.9577
+        },
+        {
+          "start": 397.08,
+          "end": 397.48,
+          "word": "we'll",
+          "probability": 0.9809
+        },
+        {
+          "start": 397.48,
+          "end": 397.86,
+          "word": "line",
+          "probability": 0.9941
+        },
+        {
+          "start": 397.86,
+          "end": 398.06,
+          "word": "up",
+          "probability": 0.9943
+        },
+        {
+          "start": 398.06,
+          "end": 398.38,
+          "word": "two",
+          "probability": 0.7894
+        },
+        {
+          "start": 398.38,
+          "end": 398.82,
+          "word": "outside",
+          "probability": 0.9795
+        },
+        {
+          "start": 398.82,
+          "end": 399.12,
+          "word": "holes",
+          "probability": 0.9916
+        },
+        {
+          "start": 399.12,
+          "end": 401.3,
+          "word": "and",
+          "probability": 0.5879
+        },
+        {
+          "start": 401.3,
+          "end": 401.5,
+          "word": "this",
+          "probability": 0.9966
+        },
+        {
+          "start": 401.5,
+          "end": 401.62,
+          "word": "will",
+          "probability": 0.9832
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "start": 401.62,
+      "end": 408.64,
+      "text": "make sure that it's level and these outside holes are going to line up and now",
+      "words": [
+        {
+          "start": 401.62,
+          "end": 401.8,
+          "word": "make",
+          "probability": 0.3258
+        },
+        {
+          "start": 401.8,
+          "end": 402.08,
+          "word": "sure",
+          "probability": 0.9989
+        },
+        {
+          "start": 402.08,
+          "end": 402.38,
+          "word": "that",
+          "probability": 0.9626
+        },
+        {
+          "start": 402.38,
+          "end": 402.74,
+          "word": "it's",
+          "probability": 0.9514
+        },
+        {
+          "start": 402.74,
+          "end": 403.06,
+          "word": "level",
+          "probability": 0.9974
+        },
+        {
+          "start": 403.06,
+          "end": 403.94,
+          "word": "and",
+          "probability": 0.5346
+        },
+        {
+          "start": 406.08,
+          "end": 406.26,
+          "word": "these",
+          "probability": 0.9873
+        },
+        {
+          "start": 406.26,
+          "end": 406.62,
+          "word": "outside",
+          "probability": 0.9749
+        },
+        {
+          "start": 406.62,
+          "end": 406.88,
+          "word": "holes",
+          "probability": 0.9747
+        },
+        {
+          "start": 406.88,
+          "end": 407.08,
+          "word": "are",
+          "probability": 0.9909
+        },
+        {
+          "start": 407.08,
+          "end": 407.22,
+          "word": "going",
+          "probability": 0.7048
+        },
+        {
+          "start": 407.22,
+          "end": 407.32,
+          "word": "to",
+          "probability": 0.997
+        },
+        {
+          "start": 407.32,
+          "end": 407.52,
+          "word": "line",
+          "probability": 0.9945
+        },
+        {
+          "start": 407.52,
+          "end": 407.76,
+          "word": "up",
+          "probability": 0.9901
+        },
+        {
+          "start": 407.76,
+          "end": 408.46,
+          "word": "and",
+          "probability": 0.5763
+        },
+        {
+          "start": 408.46,
+          "end": 408.64,
+          "word": "now",
+          "probability": 0.9864
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "start": 408.64,
+      "end": 414.02,
+      "text": "we'll tighten down the center and make sure that you don't over tighten. You just",
+      "words": [
+        {
+          "start": 408.64,
+          "end": 408.84,
+          "word": "we'll",
+          "probability": 0.9832
+        },
+        {
+          "start": 408.84,
+          "end": 409.08,
+          "word": "tighten",
+          "probability": 0.9937
+        },
+        {
+          "start": 409.08,
+          "end": 409.38,
+          "word": "down",
+          "probability": 0.9951
+        },
+        {
+          "start": 409.38,
+          "end": 409.56,
+          "word": "the",
+          "probability": 0.9982
+        },
+        {
+          "start": 409.56,
+          "end": 409.92,
+          "word": "center",
+          "probability": 0.9772
+        },
+        {
+          "start": 409.92,
+          "end": 411.54,
+          "word": "and",
+          "probability": 0.6581
+        },
+        {
+          "start": 411.54,
+          "end": 411.72,
+          "word": "make",
+          "probability": 0.9848
+        },
+        {
+          "start": 411.72,
+          "end": 411.96,
+          "word": "sure",
+          "probability": 0.9995
+        },
+        {
+          "start": 411.96,
+          "end": 412.14,
+          "word": "that",
+          "probability": 0.9925
+        },
+        {
+          "start": 412.14,
+          "end": 412.3,
+          "word": "you",
+          "probability": 0.9976
+        },
+        {
+          "start": 412.3,
+          "end": 412.88,
+          "word": "don't",
+          "probability": 0.9986
+        },
+        {
+          "start": 412.88,
+          "end": 413.16,
+          "word": "over",
+          "probability": 0.8797
+        },
+        {
+          "start": 413.16,
+          "end": 413.48,
+          "word": "tighten.",
+          "probability": 0.956
+        },
+        {
+          "start": 413.78,
+          "end": 413.88,
+          "word": "You",
+          "probability": 0.9738
+        },
+        {
+          "start": 413.88,
+          "end": 414.02,
+          "word": "just",
+          "probability": 0.9939
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "start": 414.02,
+      "end": 417.52,
+      "text": "want to make it snug so it's not going to come loose and it's not going to",
+      "words": [
+        {
+          "start": 414.02,
+          "end": 414.2,
+          "word": "want",
+          "probability": 0.9794
+        },
+        {
+          "start": 414.2,
+          "end": 414.32,
+          "word": "to",
+          "probability": 0.9975
+        },
+        {
+          "start": 414.32,
+          "end": 414.58,
+          "word": "make",
+          "probability": 0.9946
+        },
+        {
+          "start": 414.58,
+          "end": 414.76,
+          "word": "it",
+          "probability": 0.9747
+        },
+        {
+          "start": 414.76,
+          "end": 415.04,
+          "word": "snug",
+          "probability": 0.9954
+        },
+        {
+          "start": 415.04,
+          "end": 415.28,
+          "word": "so",
+          "probability": 0.8778
+        },
+        {
+          "start": 415.28,
+          "end": 415.6,
+          "word": "it's",
+          "probability": 0.8974
+        },
+        {
+          "start": 415.6,
+          "end": 415.94,
+          "word": "not",
+          "probability": 0.7292
+        },
+        {
+          "start": 415.94,
+          "end": 416.06,
+          "word": "going",
+          "probability": 0.9225
+        },
+        {
+          "start": 416.06,
+          "end": 416.14,
+          "word": "to",
+          "probability": 0.9984
+        },
+        {
+          "start": 416.14,
+          "end": 416.28,
+          "word": "come",
+          "probability": 0.9849
+        },
+        {
+          "start": 416.28,
+          "end": 416.48,
+          "word": "loose",
+          "probability": 0.9996
+        },
+        {
+          "start": 416.48,
+          "end": 416.94,
+          "word": "and",
+          "probability": 0.9793
+        },
+        {
+          "start": 416.94,
+          "end": 417.14,
+          "word": "it's",
+          "probability": 0.9926
+        },
+        {
+          "start": 417.14,
+          "end": 417.26,
+          "word": "not",
+          "probability": 0.9987
+        },
+        {
+          "start": 417.26,
+          "end": 417.42,
+          "word": "going",
+          "probability": 0.9629
+        },
+        {
+          "start": 417.42,
+          "end": 417.52,
+          "word": "to",
+          "probability": 0.9981
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "start": 417.52,
+      "end": 421.92,
+      "text": "teeter. If you start to over tighten it, it'll bend in the center causing the",
+      "words": [
+        {
+          "start": 417.52,
+          "end": 417.94,
+          "word": "teeter.",
+          "probability": 0.7018
+        },
+        {
+          "start": 418.6,
+          "end": 418.82,
+          "word": "If",
+          "probability": 0.9918
+        },
+        {
+          "start": 418.82,
+          "end": 418.92,
+          "word": "you",
+          "probability": 0.9985
+        },
+        {
+          "start": 418.92,
+          "end": 419.12,
+          "word": "start",
+          "probability": 0.9991
+        },
+        {
+          "start": 419.12,
+          "end": 419.26,
+          "word": "to",
+          "probability": 0.9956
+        },
+        {
+          "start": 419.26,
+          "end": 419.5,
+          "word": "over",
+          "probability": 0.9739
+        },
+        {
+          "start": 419.5,
+          "end": 419.84,
+          "word": "tighten",
+          "probability": 0.9544
+        },
+        {
+          "start": 419.84,
+          "end": 420.08,
+          "word": "it,",
+          "probability": 0.9384
+        },
+        {
+          "start": 420.08,
+          "end": 420.3,
+          "word": "it'll",
+          "probability": 0.9409
+        },
+        {
+          "start": 420.3,
+          "end": 420.56,
+          "word": "bend",
+          "probability": 0.9991
+        },
+        {
+          "start": 420.56,
+          "end": 420.76,
+          "word": "in",
+          "probability": 0.9931
+        },
+        {
+          "start": 420.76,
+          "end": 420.88,
+          "word": "the",
+          "probability": 0.9979
+        },
+        {
+          "start": 420.88,
+          "end": 421.22,
+          "word": "center",
+          "probability": 0.9926
+        },
+        {
+          "start": 421.22,
+          "end": 421.7,
+          "word": "causing",
+          "probability": 0.8288
+        },
+        {
+          "start": 421.7,
+          "end": 421.92,
+          "word": "the",
+          "probability": 0.9922
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "start": 421.92,
+      "end": 425.92,
+      "text": "outsides to kind of go out and then you'll have a hard time getting your screws",
+      "words": [
+        {
+          "start": 421.92,
+          "end": 422.6,
+          "word": "outsides",
+          "probability": 0.8914
+        },
+        {
+          "start": 422.6,
+          "end": 423.24,
+          "word": "to",
+          "probability": 0.989
+        },
+        {
+          "start": 423.24,
+          "end": 423.58,
+          "word": "kind",
+          "probability": 0.8509
+        },
+        {
+          "start": 423.58,
+          "end": 423.7,
+          "word": "of",
+          "probability": 0.9941
+        },
+        {
+          "start": 423.7,
+          "end": 423.84,
+          "word": "go",
+          "probability": 0.9978
+        },
+        {
+          "start": 423.84,
+          "end": 424.06,
+          "word": "out",
+          "probability": 0.9983
+        },
+        {
+          "start": 424.06,
+          "end": 424.32,
+          "word": "and",
+          "probability": 0.7894
+        },
+        {
+          "start": 424.32,
+          "end": 424.42,
+          "word": "then",
+          "probability": 0.9965
+        },
+        {
+          "start": 424.42,
+          "end": 424.58,
+          "word": "you'll",
+          "probability": 0.9913
+        },
+        {
+          "start": 424.58,
+          "end": 424.72,
+          "word": "have",
+          "probability": 0.9983
+        },
+        {
+          "start": 424.72,
+          "end": 424.82,
+          "word": "a",
+          "probability": 0.9977
+        },
+        {
+          "start": 424.82,
+          "end": 424.98,
+          "word": "hard",
+          "probability": 0.9994
+        },
+        {
+          "start": 424.98,
+          "end": 425.2,
+          "word": "time",
+          "probability": 0.9964
+        },
+        {
+          "start": 425.2,
+          "end": 425.44,
+          "word": "getting",
+          "probability": 0.9972
+        },
+        {
+          "start": 425.44,
+          "end": 425.66,
+          "word": "your",
+          "probability": 0.9974
+        },
+        {
+          "start": 425.66,
+          "end": 425.92,
+          "word": "screws",
+          "probability": 0.9953
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "start": 425.92,
+      "end": 436.28,
+      "text": "to line up and that's it. Holes are installed or drilled.",
+      "words": [
+        {
+          "start": 425.92,
+          "end": 426.16,
+          "word": "to",
+          "probability": 0.3996
+        },
+        {
+          "start": 426.16,
+          "end": 426.38,
+          "word": "line",
+          "probability": 0.972
+        },
+        {
+          "start": 426.38,
+          "end": 426.62,
+          "word": "up",
+          "probability": 0.9805
+        },
+        {
+          "start": 428.09,
+          "end": 429.37,
+          "word": "and",
+          "probability": 0.3105
+        },
+        {
+          "start": 429.37,
+          "end": 431.13,
+          "word": "that's",
+          "probability": 0.9457
+        },
+        {
+          "start": 431.13,
+          "end": 431.37,
+          "word": "it.",
+          "probability": 0.999
+        },
+        {
+          "start": 431.95,
+          "end": 432.31,
+          "word": "Holes",
+          "probability": 0.6499
+        },
+        {
+          "start": 432.31,
+          "end": 432.93,
+          "word": "are",
+          "probability": 0.986
+        },
+        {
+          "start": 432.93,
+          "end": 433.49,
+          "word": "installed",
+          "probability": 0.9976
+        },
+        {
+          "start": 433.49,
+          "end": 434.69,
+          "word": "or",
+          "probability": 0.2449
+        },
+        {
+          "start": 435.94,
+          "end": 436.28,
+          "word": "drilled.",
+          "probability": 0.9963
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "start": 436.62,
+      "end": 442.18,
+      "text": "Backing plate is installed. Oh by the way, the center screw is a 6mm so it's a",
+      "words": [
+        {
+          "start": 436.62,
+          "end": 436.92,
+          "word": "Backing",
+          "probability": 0.7965
+        },
+        {
+          "start": 436.92,
+          "end": 437.06,
+          "word": "plate",
+          "probability": 0.9674
+        },
+        {
+          "start": 437.06,
+          "end": 437.26,
+          "word": "is",
+          "probability": 0.9948
+        },
+        {
+          "start": 437.26,
+          "end": 437.64,
+          "word": "installed.",
+          "probability": 0.9983
+        },
+        {
+          "start": 437.96,
+          "end": 438.0,
+          "word": "Oh",
+          "probability": 0.8467
+        },
+        {
+          "start": 438.0,
+          "end": 438.12,
+          "word": "by",
+          "probability": 0.6008
+        },
+        {
+          "start": 438.12,
+          "end": 438.22,
+          "word": "the",
+          "probability": 0.9997
+        },
+        {
+          "start": 438.22,
+          "end": 438.34,
+          "word": "way,",
+          "probability": 0.997
+        },
+        {
+          "start": 438.8,
+          "end": 439.06,
+          "word": "the",
+          "probability": 0.9514
+        },
+        {
+          "start": 439.06,
+          "end": 439.32,
+          "word": "center",
+          "probability": 0.9535
+        },
+        {
+          "start": 439.32,
+          "end": 439.66,
+          "word": "screw",
+          "probability": 0.9954
+        },
+        {
+          "start": 439.66,
+          "end": 440.14,
+          "word": "is",
+          "probability": 0.9986
+        },
+        {
+          "start": 440.14,
+          "end": 440.4,
+          "word": "a",
+          "probability": 0.9492
+        },
+        {
+          "start": 440.4,
+          "end": 440.98,
+          "word": "6mm",
+          "probability": 0.5313
+        },
+        {
+          "start": 440.98,
+          "end": 441.76,
+          "word": "so",
+          "probability": 0.5531
+        },
+        {
+          "start": 441.76,
+          "end": 441.96,
+          "word": "it's",
+          "probability": 0.9888
+        },
+        {
+          "start": 441.96,
+          "end": 442.18,
+          "word": "a",
+          "probability": 0.6176
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "start": 442.18,
+      "end": 451.48,
+      "text": "M3 by 6 and the outside, these ones are an 8mm so M3 by 8. So you need two of",
+      "words": [
+        {
+          "start": 442.18,
+          "end": 443.14,
+          "word": "M3",
+          "probability": 0.8806
+        },
+        {
+          "start": 443.14,
+          "end": 443.34,
+          "word": "by",
+          "probability": 0.3228
+        },
+        {
+          "start": 443.34,
+          "end": 443.7,
+          "word": "6",
+          "probability": 0.9904
+        },
+        {
+          "start": 443.7,
+          "end": 444.58,
+          "word": "and",
+          "probability": 0.6827
+        },
+        {
+          "start": 444.58,
+          "end": 444.72,
+          "word": "the",
+          "probability": 0.9838
+        },
+        {
+          "start": 444.72,
+          "end": 445.32,
+          "word": "outside,",
+          "probability": 0.9939
+        },
+        {
+          "start": 445.74,
+          "end": 446.08,
+          "word": "these",
+          "probability": 0.9918
+        },
+        {
+          "start": 446.08,
+          "end": 446.3,
+          "word": "ones",
+          "probability": 0.988
+        },
+        {
+          "start": 446.3,
+          "end": 446.88,
+          "word": "are",
+          "probability": 0.9078
+        },
+        {
+          "start": 446.88,
+          "end": 447.2,
+          "word": "an",
+          "probability": 0.9832
+        },
+        {
+          "start": 447.2,
+          "end": 447.64,
+          "word": "8mm",
+          "probability": 0.9759
+        },
+        {
+          "start": 447.64,
+          "end": 448.56,
+          "word": "so",
+          "probability": 0.7545
+        },
+        {
+          "start": 448.56,
+          "end": 448.94,
+          "word": "M3",
+          "probability": 0.9465
+        },
+        {
+          "start": 448.94,
+          "end": 449.12,
+          "word": "by",
+          "probability": 0.9882
+        },
+        {
+          "start": 449.12,
+          "end": 449.36,
+          "word": "8.",
+          "probability": 0.9943
+        },
+        {
+          "start": 450.62,
+          "end": 450.9,
+          "word": "So",
+          "probability": 0.9431
+        },
+        {
+          "start": 450.9,
+          "end": 450.98,
+          "word": "you",
+          "probability": 0.9494
+        },
+        {
+          "start": 450.98,
+          "end": 451.12,
+          "word": "need",
+          "probability": 0.9957
+        },
+        {
+          "start": 451.12,
+          "end": 451.34,
+          "word": "two",
+          "probability": 0.9061
+        },
+        {
+          "start": 451.34,
+          "end": 451.48,
+          "word": "of",
+          "probability": 0.9927
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "start": 451.48,
+      "end": 463.36,
+      "text": "those and then one of the M3 by 6 and I'm just going to put this spare",
+      "words": [
+        {
+          "start": 451.48,
+          "end": 451.66,
+          "word": "those",
+          "probability": 0.2804
+        },
+        {
+          "start": 451.66,
+          "end": 452.34,
+          "word": "and",
+          "probability": 0.4549
+        },
+        {
+          "start": 452.34,
+          "end": 452.5,
+          "word": "then",
+          "probability": 0.9396
+        },
+        {
+          "start": 452.5,
+          "end": 452.8,
+          "word": "one",
+          "probability": 0.8829
+        },
+        {
+          "start": 452.8,
+          "end": 453.1,
+          "word": "of",
+          "probability": 0.9907
+        },
+        {
+          "start": 453.1,
+          "end": 453.24,
+          "word": "the",
+          "probability": 0.9575
+        },
+        {
+          "start": 453.24,
+          "end": 453.62,
+          "word": "M3",
+          "probability": 0.8546
+        },
+        {
+          "start": 453.62,
+          "end": 453.8,
+          "word": "by",
+          "probability": 0.4795
+        },
+        {
+          "start": 453.8,
+          "end": 454.06,
+          "word": "6",
+          "probability": 0.8998
+        },
+        {
+          "start": 455.44,
+          "end": 456.98,
+          "word": "and",
+          "probability": 0.2398
+        },
+        {
+          "start": 456.98,
+          "end": 458.24,
+          "word": "I'm",
+          "probability": 0.9282
+        },
+        {
+          "start": 458.24,
+          "end": 458.36,
+          "word": "just",
+          "probability": 0.8765
+        },
+        {
+          "start": 458.36,
+          "end": 458.58,
+          "word": "going",
+          "probability": 0.9882
+        },
+        {
+          "start": 458.58,
+          "end": 458.86,
+          "word": "to",
+          "probability": 0.998
+        },
+        {
+          "start": 458.86,
+          "end": 459.44,
+          "word": "put",
+          "probability": 0.9911
+        },
+        {
+          "start": 459.44,
+          "end": 462.0,
+          "word": "this",
+          "probability": 0.804
+        },
+        {
+          "start": 462.0,
+          "end": 463.36,
+          "word": "spare",
+          "probability": 0.992
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "start": 463.36,
+      "end": 468.08,
+      "text": "wiper that I have here on here and we'll just make sure everything fits nice.",
+      "words": [
+        {
+          "start": 463.36,
+          "end": 463.7,
+          "word": "wiper",
+          "probability": 0.8511
+        },
+        {
+          "start": 463.7,
+          "end": 463.98,
+          "word": "that",
+          "probability": 0.8655
+        },
+        {
+          "start": 463.98,
+          "end": 464.1,
+          "word": "I",
+          "probability": 0.9909
+        },
+        {
+          "start": 464.1,
+          "end": 464.26,
+          "word": "have",
+          "probability": 0.9978
+        },
+        {
+          "start": 464.26,
+          "end": 464.48,
+          "word": "here",
+          "probability": 0.9865
+        },
+        {
+          "start": 464.48,
+          "end": 464.7,
+          "word": "on",
+          "probability": 0.9894
+        },
+        {
+          "start": 464.7,
+          "end": 464.92,
+          "word": "here",
+          "probability": 0.9953
+        },
+        {
+          "start": 464.92,
+          "end": 465.08,
+          "word": "and",
+          "probability": 0.4289
+        },
+        {
+          "start": 465.08,
+          "end": 465.12,
+          "word": "we'll",
+          "probability": 0.954
+        },
+        {
+          "start": 465.12,
+          "end": 465.28,
+          "word": "just",
+          "probability": 0.9919
+        },
+        {
+          "start": 465.28,
+          "end": 466.46,
+          "word": "make",
+          "probability": 0.9791
+        },
+        {
+          "start": 466.46,
+          "end": 466.68,
+          "word": "sure",
+          "probability": 0.9987
+        },
+        {
+          "start": 466.68,
+          "end": 467.0,
+          "word": "everything",
+          "probability": 0.997
+        },
+        {
+          "start": 467.0,
+          "end": 467.8,
+          "word": "fits",
+          "probability": 0.8276
+        },
+        {
+          "start": 467.8,
+          "end": 468.08,
+          "word": "nice.",
+          "probability": 0.991
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "start": 468.84,
+      "end": 472.68,
+      "text": "It feels like I'm right center on that hole. I can move it a little to each side.",
+      "words": [
+        {
+          "start": 468.84,
+          "end": 469.04,
+          "word": "It",
+          "probability": 0.9848
+        },
+        {
+          "start": 469.04,
+          "end": 469.24,
+          "word": "feels",
+          "probability": 0.9975
+        },
+        {
+          "start": 469.24,
+          "end": 469.44,
+          "word": "like",
+          "probability": 0.9983
+        },
+        {
+          "start": 469.44,
+          "end": 469.66,
+          "word": "I'm",
+          "probability": 0.9963
+        },
+        {
+          "start": 469.66,
+          "end": 469.86,
+          "word": "right",
+          "probability": 0.9757
+        },
+        {
+          "start": 469.86,
+          "end": 470.24,
+          "word": "center",
+          "probability": 0.9779
+        },
+        {
+          "start": 470.24,
+          "end": 470.4,
+          "word": "on",
+          "probability": 0.9926
+        },
+        {
+          "start": 470.4,
+          "end": 470.56,
+          "word": "that",
+          "probability": 0.9925
+        },
+        {
+          "start": 470.56,
+          "end": 470.76,
+          "word": "hole.",
+          "probability": 0.9758
+        },
+        {
+          "start": 470.9,
+          "end": 470.94,
+          "word": "I",
+          "probability": 0.9944
+        },
+        {
+          "start": 470.94,
+          "end": 471.06,
+          "word": "can",
+          "probability": 0.9924
+        },
+        {
+          "start": 471.06,
+          "end": 471.28,
+          "word": "move",
+          "probability": 0.9987
+        },
+        {
+          "start": 471.28,
+          "end": 471.46,
+          "word": "it",
+          "probability": 0.9928
+        },
+        {
+          "start": 471.46,
+          "end": 471.64,
+          "word": "a",
+          "probability": 0.9988
+        },
+        {
+          "start": 471.64,
+          "end": 471.8,
+          "word": "little",
+          "probability": 0.9989
+        },
+        {
+          "start": 471.8,
+          "end": 472.02,
+          "word": "to",
+          "probability": 0.9923
+        },
+        {
+          "start": 472.02,
+          "end": 472.24,
+          "word": "each",
+          "probability": 0.9989
+        },
+        {
+          "start": 472.24,
+          "end": 472.68,
+          "word": "side.",
+          "probability": 0.999
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "start": 473.42,
+      "end": 479.14,
+      "text": "So that's a good sign. I'll leave that screw loose for a second. So if you have",
+      "words": [
+        {
+          "start": 473.42,
+          "end": 473.76,
+          "word": "So",
+          "probability": 0.9784
+        },
+        {
+          "start": 473.76,
+          "end": 473.98,
+          "word": "that's",
+          "probability": 0.9421
+        },
+        {
+          "start": 473.98,
+          "end": 474.02,
+          "word": "a",
+          "probability": 0.9986
+        },
+        {
+          "start": 474.02,
+          "end": 474.14,
+          "word": "good",
+          "probability": 0.9988
+        },
+        {
+          "start": 474.14,
+          "end": 474.56,
+          "word": "sign.",
+          "probability": 0.9984
+        },
+        {
+          "start": 475.42,
+          "end": 475.6,
+          "word": "I'll",
+          "probability": 0.6156
+        },
+        {
+          "start": 475.6,
+          "end": 475.66,
+          "word": "leave",
+          "probability": 0.9927
+        },
+        {
+          "start": 475.66,
+          "end": 475.84,
+          "word": "that",
+          "probability": 0.9955
+        },
+        {
+          "start": 475.84,
+          "end": 476.06,
+          "word": "screw",
+          "probability": 0.994
+        },
+        {
+          "start": 476.06,
+          "end": 476.34,
+          "word": "loose",
+          "probability": 0.9966
+        },
+        {
+          "start": 476.34,
+          "end": 476.54,
+          "word": "for",
+          "probability": 0.9987
+        },
+        {
+          "start": 476.54,
+          "end": 476.64,
+          "word": "a",
+          "probability": 0.9987
+        },
+        {
+          "start": 476.64,
+          "end": 476.88,
+          "word": "second.",
+          "probability": 0.9954
+        },
+        {
+          "start": 477.64,
+          "end": 477.74,
+          "word": "So",
+          "probability": 0.9192
+        },
+        {
+          "start": 477.74,
+          "end": 478.04,
+          "word": "if",
+          "probability": 0.9354
+        },
+        {
+          "start": 478.04,
+          "end": 478.52,
+          "word": "you",
+          "probability": 0.9249
+        },
+        {
+          "start": 478.52,
+          "end": 479.14,
+          "word": "have",
+          "probability": 0.5453
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "start": 479.14,
+      "end": 482.68,
+      "text": "your holes perfectly center, you should be able to move it up. You should be able",
+      "words": [
+        {
+          "start": 479.14,
+          "end": 479.3,
+          "word": "your",
+          "probability": 0.9969
+        },
+        {
+          "start": 479.3,
+          "end": 479.54,
+          "word": "holes",
+          "probability": 0.9319
+        },
+        {
+          "start": 479.54,
+          "end": 479.94,
+          "word": "perfectly",
+          "probability": 0.9622
+        },
+        {
+          "start": 479.94,
+          "end": 480.48,
+          "word": "center,",
+          "probability": 0.8065
+        },
+        {
+          "start": 480.94,
+          "end": 481.1,
+          "word": "you",
+          "probability": 0.9978
+        },
+        {
+          "start": 481.1,
+          "end": 481.22,
+          "word": "should",
+          "probability": 0.9979
+        },
+        {
+          "start": 481.22,
+          "end": 481.34,
+          "word": "be",
+          "probability": 0.994
+        },
+        {
+          "start": 481.34,
+          "end": 481.4,
+          "word": "able",
+          "probability": 0.9995
+        },
+        {
+          "start": 481.4,
+          "end": 481.48,
+          "word": "to",
+          "probability": 0.9987
+        },
+        {
+          "start": 481.48,
+          "end": 481.66,
+          "word": "move",
+          "probability": 0.9975
+        },
+        {
+          "start": 481.66,
+          "end": 481.78,
+          "word": "it",
+          "probability": 0.9968
+        },
+        {
+          "start": 481.78,
+          "end": 482.02,
+          "word": "up.",
+          "probability": 0.9991
+        },
+        {
+          "start": 482.3,
+          "end": 482.4,
+          "word": "You",
+          "probability": 0.9915
+        },
+        {
+          "start": 482.4,
+          "end": 482.48,
+          "word": "should",
+          "probability": 0.9952
+        },
+        {
+          "start": 482.48,
+          "end": 482.6,
+          "word": "be",
+          "probability": 0.9967
+        },
+        {
+          "start": 482.6,
+          "end": 482.68,
+          "word": "able",
+          "probability": 0.9996
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "start": 482.68,
+      "end": 486.26,
+      "text": "to move it slightly down, but you should be able to move it a little bit",
+      "words": [
+        {
+          "start": 482.68,
+          "end": 482.76,
+          "word": "to",
+          "probability": 0.2198
+        },
+        {
+          "start": 482.76,
+          "end": 482.92,
+          "word": "move",
+          "probability": 0.8825
+        },
+        {
+          "start": 482.92,
+          "end": 483.12,
+          "word": "it",
+          "probability": 0.961
+        },
+        {
+          "start": 483.12,
+          "end": 483.6,
+          "word": "slightly",
+          "probability": 0.9829
+        },
+        {
+          "start": 483.6,
+          "end": 484.02,
+          "word": "down,",
+          "probability": 0.9905
+        },
+        {
+          "start": 484.76,
+          "end": 485.18,
+          "word": "but",
+          "probability": 0.9553
+        },
+        {
+          "start": 485.18,
+          "end": 485.32,
+          "word": "you",
+          "probability": 0.9927
+        },
+        {
+          "start": 485.32,
+          "end": 485.42,
+          "word": "should",
+          "probability": 0.9974
+        },
+        {
+          "start": 485.42,
+          "end": 485.52,
+          "word": "be",
+          "probability": 0.8654
+        },
+        {
+          "start": 485.52,
+          "end": 485.6,
+          "word": "able",
+          "probability": 0.9981
+        },
+        {
+          "start": 485.6,
+          "end": 485.68,
+          "word": "to",
+          "probability": 0.9953
+        },
+        {
+          "start": 485.68,
+          "end": 485.82,
+          "word": "move",
+          "probability": 0.9951
+        },
+        {
+          "start": 485.82,
+          "end": 485.96,
+          "word": "it",
+          "probability": 0.9888
+        },
+        {
+          "start": 485.96,
+          "end": 486.02,
+          "word": "a",
+          "probability": 0.9894
+        },
+        {
+          "start": 486.02,
+          "end": 486.14,
+          "word": "little",
+          "probability": 0.9946
+        },
+        {
+          "start": 486.14,
+          "end": 486.26,
+          "word": "bit",
+          "probability": 0.9781
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "start": 486.26,
+      "end": 491.14,
+      "text": "side to side. But if you feel it's binding on either one way, then you know that",
+      "words": [
+        {
+          "start": 486.26,
+          "end": 486.54,
+          "word": "side",
+          "probability": 0.9426
+        },
+        {
+          "start": 486.54,
+          "end": 486.68,
+          "word": "to",
+          "probability": 0.8556
+        },
+        {
+          "start": 486.68,
+          "end": 487.0,
+          "word": "side.",
+          "probability": 0.9984
+        },
+        {
+          "start": 487.5,
+          "end": 487.9,
+          "word": "But",
+          "probability": 0.9555
+        },
+        {
+          "start": 487.9,
+          "end": 488.04,
+          "word": "if",
+          "probability": 0.9593
+        },
+        {
+          "start": 488.04,
+          "end": 488.12,
+          "word": "you",
+          "probability": 0.9981
+        },
+        {
+          "start": 488.12,
+          "end": 488.36,
+          "word": "feel",
+          "probability": 0.9907
+        },
+        {
+          "start": 488.36,
+          "end": 488.6,
+          "word": "it's",
+          "probability": 0.9296
+        },
+        {
+          "start": 488.6,
+          "end": 488.98,
+          "word": "binding",
+          "probability": 0.9878
+        },
+        {
+          "start": 488.98,
+          "end": 489.26,
+          "word": "on",
+          "probability": 0.9948
+        },
+        {
+          "start": 489.26,
+          "end": 489.6,
+          "word": "either",
+          "probability": 0.997
+        },
+        {
+          "start": 489.6,
+          "end": 490.0,
+          "word": "one",
+          "probability": 0.9948
+        },
+        {
+          "start": 490.0,
+          "end": 490.34,
+          "word": "way,",
+          "probability": 0.9837
+        },
+        {
+          "start": 490.58,
+          "end": 490.72,
+          "word": "then",
+          "probability": 0.9913
+        },
+        {
+          "start": 490.72,
+          "end": 490.84,
+          "word": "you",
+          "probability": 0.9921
+        },
+        {
+          "start": 490.84,
+          "end": 490.98,
+          "word": "know",
+          "probability": 0.9975
+        },
+        {
+          "start": 490.98,
+          "end": 491.14,
+          "word": "that",
+          "probability": 0.9683
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "start": 491.14,
+      "end": 496.24,
+      "text": "your holes were not drilled in the correct spot and it's not really a big deal.",
+      "words": [
+        {
+          "start": 491.14,
+          "end": 491.34,
+          "word": "your",
+          "probability": 0.995
+        },
+        {
+          "start": 491.34,
+          "end": 491.66,
+          "word": "holes",
+          "probability": 0.9385
+        },
+        {
+          "start": 491.66,
+          "end": 491.9,
+          "word": "were",
+          "probability": 0.9297
+        },
+        {
+          "start": 491.9,
+          "end": 492.36,
+          "word": "not",
+          "probability": 0.9929
+        },
+        {
+          "start": 492.36,
+          "end": 492.9,
+          "word": "drilled",
+          "probability": 0.9969
+        },
+        {
+          "start": 492.9,
+          "end": 493.12,
+          "word": "in",
+          "probability": 0.9878
+        },
+        {
+          "start": 493.12,
+          "end": 493.24,
+          "word": "the",
+          "probability": 0.9948
+        },
+        {
+          "start": 493.24,
+          "end": 493.48,
+          "word": "correct",
+          "probability": 0.995
+        },
+        {
+          "start": 493.48,
+          "end": 493.82,
+          "word": "spot",
+          "probability": 0.999
+        },
+        {
+          "start": 493.82,
+          "end": 494.72,
+          "word": "and",
+          "probability": 0.0413
+        },
+        {
+          "start": 494.72,
+          "end": 494.96,
+          "word": "it's",
+          "probability": 0.9943
+        },
+        {
+          "start": 494.96,
+          "end": 495.14,
+          "word": "not",
+          "probability": 0.998
+        },
+        {
+          "start": 495.14,
+          "end": 495.58,
+          "word": "really",
+          "probability": 0.9913
+        },
+        {
+          "start": 495.58,
+          "end": 495.78,
+          "word": "a",
+          "probability": 0.999
+        },
+        {
+          "start": 495.78,
+          "end": 495.98,
+          "word": "big",
+          "probability": 0.999
+        },
+        {
+          "start": 495.98,
+          "end": 496.24,
+          "word": "deal.",
+          "probability": 0.9999
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "start": 496.44,
+      "end": 502.08,
+      "text": "You could open up this hole, you could open this up to let's say even 3-16s.",
+      "words": [
+        {
+          "start": 496.44,
+          "end": 496.5,
+          "word": "You",
+          "probability": 0.9931
+        },
+        {
+          "start": 496.5,
+          "end": 496.78,
+          "word": "could",
+          "probability": 0.9931
+        },
+        {
+          "start": 496.78,
+          "end": 497.22,
+          "word": "open",
+          "probability": 0.9962
+        },
+        {
+          "start": 497.22,
+          "end": 497.4,
+          "word": "up",
+          "probability": 0.9816
+        },
+        {
+          "start": 497.4,
+          "end": 497.7,
+          "word": "this",
+          "probability": 0.9965
+        },
+        {
+          "start": 497.7,
+          "end": 497.98,
+          "word": "hole,",
+          "probability": 0.9951
+        },
+        {
+          "start": 498.46,
+          "end": 498.56,
+          "word": "you",
+          "probability": 0.9671
+        },
+        {
+          "start": 498.56,
+          "end": 498.7,
+          "word": "could",
+          "probability": 0.9923
+        },
+        {
+          "start": 498.7,
+          "end": 498.94,
+          "word": "open",
+          "probability": 0.9979
+        },
+        {
+          "start": 498.94,
+          "end": 499.16,
+          "word": "this",
+          "probability": 0.9957
+        },
+        {
+          "start": 499.16,
+          "end": 499.32,
+          "word": "up",
+          "probability": 0.9959
+        },
+        {
+          "start": 499.32,
+          "end": 499.6,
+          "word": "to",
+          "probability": 0.9776
+        },
+        {
+          "start": 499.6,
+          "end": 500.14,
+          "word": "let's",
+          "probability": 0.6516
+        },
+        {
+          "start": 500.14,
+          "end": 500.3,
+          "word": "say",
+          "probability": 0.9954
+        },
+        {
+          "start": 500.3,
+          "end": 500.94,
+          "word": "even",
+          "probability": 0.7828
+        },
+        {
+          "start": 500.94,
+          "end": 501.16,
+          "word": "3",
+          "probability": 0.5173
+        },
+        {
+          "start": 501.16,
+          "end": 502.08,
+          "word": "-16s.",
+          "probability": 0.4979
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "start": 502.54,
+      "end": 506.78,
+      "text": "As long as the backing plate stays in place, it'll just be a little bit of a",
+      "words": [
+        {
+          "start": 502.54,
+          "end": 502.82,
+          "word": "As",
+          "probability": 0.9865
+        },
+        {
+          "start": 502.82,
+          "end": 502.98,
+          "word": "long",
+          "probability": 0.9983
+        },
+        {
+          "start": 502.98,
+          "end": 503.18,
+          "word": "as",
+          "probability": 0.9988
+        },
+        {
+          "start": 503.18,
+          "end": 503.28,
+          "word": "the",
+          "probability": 0.9674
+        },
+        {
+          "start": 503.28,
+          "end": 503.56,
+          "word": "backing",
+          "probability": 0.9888
+        },
+        {
+          "start": 503.56,
+          "end": 503.84,
+          "word": "plate",
+          "probability": 0.9691
+        },
+        {
+          "start": 503.84,
+          "end": 504.18,
+          "word": "stays",
+          "probability": 0.9981
+        },
+        {
+          "start": 504.18,
+          "end": 504.34,
+          "word": "in",
+          "probability": 0.9996
+        },
+        {
+          "start": 504.34,
+          "end": 504.68,
+          "word": "place,",
+          "probability": 0.9994
+        },
+        {
+          "start": 505.46,
+          "end": 505.7,
+          "word": "it'll",
+          "probability": 0.9562
+        },
+        {
+          "start": 505.7,
+          "end": 505.86,
+          "word": "just",
+          "probability": 0.9925
+        },
+        {
+          "start": 505.86,
+          "end": 506.04,
+          "word": "be",
+          "probability": 0.9994
+        },
+        {
+          "start": 506.04,
+          "end": 506.16,
+          "word": "a",
+          "probability": 0.9973
+        },
+        {
+          "start": 506.16,
+          "end": 506.38,
+          "word": "little",
+          "probability": 0.9964
+        },
+        {
+          "start": 506.38,
+          "end": 506.56,
+          "word": "bit",
+          "probability": 0.9937
+        },
+        {
+          "start": 506.56,
+          "end": 506.68,
+          "word": "of",
+          "probability": 0.9976
+        },
+        {
+          "start": 506.68,
+          "end": 506.78,
+          "word": "a",
+          "probability": 0.9963
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "start": 506.78,
+      "end": 512.16,
+      "text": "challenge to try to get that plate tightened down in the correct position. That",
+      "words": [
+        {
+          "start": 506.78,
+          "end": 507.18,
+          "word": "challenge",
+          "probability": 0.9993
+        },
+        {
+          "start": 507.18,
+          "end": 507.46,
+          "word": "to",
+          "probability": 0.9972
+        },
+        {
+          "start": 507.46,
+          "end": 507.74,
+          "word": "try",
+          "probability": 0.9943
+        },
+        {
+          "start": 507.74,
+          "end": 508.02,
+          "word": "to",
+          "probability": 0.996
+        },
+        {
+          "start": 508.02,
+          "end": 508.5,
+          "word": "get",
+          "probability": 0.998
+        },
+        {
+          "start": 508.5,
+          "end": 508.86,
+          "word": "that",
+          "probability": 0.997
+        },
+        {
+          "start": 508.86,
+          "end": 509.64,
+          "word": "plate",
+          "probability": 0.9923
+        },
+        {
+          "start": 509.64,
+          "end": 510.58,
+          "word": "tightened",
+          "probability": 0.8858
+        },
+        {
+          "start": 510.58,
+          "end": 510.88,
+          "word": "down",
+          "probability": 0.9981
+        },
+        {
+          "start": 510.88,
+          "end": 511.06,
+          "word": "in",
+          "probability": 0.9965
+        },
+        {
+          "start": 511.06,
+          "end": 511.14,
+          "word": "the",
+          "probability": 0.9986
+        },
+        {
+          "start": 511.14,
+          "end": 511.38,
+          "word": "correct",
+          "probability": 0.9987
+        },
+        {
+          "start": 511.38,
+          "end": 511.9,
+          "word": "position.",
+          "probability": 0.9993
+        },
+        {
+          "start": 512.08,
+          "end": 512.16,
+          "word": "That",
+          "probability": 0.9938
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "start": 512.16,
+      "end": 518.4,
+      "text": "way, this top part of the wiper is resting on the top plane here and it's",
+      "words": [
+        {
+          "start": 512.16,
+          "end": 512.4,
+          "word": "way,",
+          "probability": 0.1642
+        },
+        {
+          "start": 512.66,
+          "end": 513.26,
+          "word": "this",
+          "probability": 0.9777
+        },
+        {
+          "start": 513.26,
+          "end": 513.54,
+          "word": "top",
+          "probability": 0.9948
+        },
+        {
+          "start": 513.54,
+          "end": 514.42,
+          "word": "part",
+          "probability": 0.9675
+        },
+        {
+          "start": 514.42,
+          "end": 514.62,
+          "word": "of",
+          "probability": 0.9848
+        },
+        {
+          "start": 514.62,
+          "end": 514.86,
+          "word": "the",
+          "probability": 0.9953
+        },
+        {
+          "start": 514.86,
+          "end": 515.28,
+          "word": "wiper",
+          "probability": 0.97
+        },
+        {
+          "start": 515.28,
+          "end": 515.64,
+          "word": "is",
+          "probability": 0.9895
+        },
+        {
+          "start": 515.64,
+          "end": 515.98,
+          "word": "resting",
+          "probability": 0.9961
+        },
+        {
+          "start": 515.98,
+          "end": 516.24,
+          "word": "on",
+          "probability": 0.9991
+        },
+        {
+          "start": 516.24,
+          "end": 516.46,
+          "word": "the",
+          "probability": 0.9952
+        },
+        {
+          "start": 516.46,
+          "end": 516.76,
+          "word": "top",
+          "probability": 0.9849
+        },
+        {
+          "start": 516.76,
+          "end": 517.18,
+          "word": "plane",
+          "probability": 0.8369
+        },
+        {
+          "start": 517.18,
+          "end": 517.52,
+          "word": "here",
+          "probability": 0.972
+        },
+        {
+          "start": 517.52,
+          "end": 518.2,
+          "word": "and",
+          "probability": 0.5453
+        },
+        {
+          "start": 518.2,
+          "end": 518.4,
+          "word": "it's",
+          "probability": 0.8891
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "start": 518.4,
+      "end": 521.96,
+      "text": "pushed all the way to the side and you're not putting any additional stress on",
+      "words": [
+        {
+          "start": 518.4,
+          "end": 518.64,
+          "word": "pushed",
+          "probability": 0.9938
+        },
+        {
+          "start": 518.64,
+          "end": 518.88,
+          "word": "all",
+          "probability": 0.9927
+        },
+        {
+          "start": 518.88,
+          "end": 518.96,
+          "word": "the",
+          "probability": 0.9987
+        },
+        {
+          "start": 518.96,
+          "end": 519.08,
+          "word": "way",
+          "probability": 0.9983
+        },
+        {
+          "start": 519.08,
+          "end": 519.24,
+          "word": "to",
+          "probability": 0.9962
+        },
+        {
+          "start": 519.24,
+          "end": 519.38,
+          "word": "the",
+          "probability": 0.9914
+        },
+        {
+          "start": 519.38,
+          "end": 519.72,
+          "word": "side",
+          "probability": 0.9972
+        },
+        {
+          "start": 519.72,
+          "end": 519.92,
+          "word": "and",
+          "probability": 0.8311
+        },
+        {
+          "start": 519.92,
+          "end": 520.04,
+          "word": "you're",
+          "probability": 0.987
+        },
+        {
+          "start": 520.04,
+          "end": 520.14,
+          "word": "not",
+          "probability": 0.9983
+        },
+        {
+          "start": 520.14,
+          "end": 520.4,
+          "word": "putting",
+          "probability": 0.9973
+        },
+        {
+          "start": 520.4,
+          "end": 520.74,
+          "word": "any",
+          "probability": 0.9958
+        },
+        {
+          "start": 520.74,
+          "end": 521.18,
+          "word": "additional",
+          "probability": 0.9993
+        },
+        {
+          "start": 521.18,
+          "end": 521.72,
+          "word": "stress",
+          "probability": 0.9956
+        },
+        {
+          "start": 521.72,
+          "end": 521.96,
+          "word": "on",
+          "probability": 0.9991
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "start": 521.96,
+      "end": 528.04,
+      "text": "the screws. Because the idea with these screws is that you can take the screws",
+      "words": [
+        {
+          "start": 521.96,
+          "end": 522.12,
+          "word": "the",
+          "probability": 0.9982
+        },
+        {
+          "start": 522.12,
+          "end": 522.4,
+          "word": "screws.",
+          "probability": 0.9904
+        },
+        {
+          "start": 523.7,
+          "end": 524.08,
+          "word": "Because",
+          "probability": 0.9611
+        },
+        {
+          "start": 524.08,
+          "end": 524.24,
+          "word": "the",
+          "probability": 0.9941
+        },
+        {
+          "start": 524.24,
+          "end": 524.48,
+          "word": "idea",
+          "probability": 0.9991
+        },
+        {
+          "start": 524.48,
+          "end": 524.68,
+          "word": "with",
+          "probability": 0.941
+        },
+        {
+          "start": 524.68,
+          "end": 524.82,
+          "word": "these",
+          "probability": 0.9689
+        },
+        {
+          "start": 524.82,
+          "end": 525.14,
+          "word": "screws",
+          "probability": 0.9942
+        },
+        {
+          "start": 525.14,
+          "end": 525.42,
+          "word": "is",
+          "probability": 0.9887
+        },
+        {
+          "start": 525.42,
+          "end": 525.7,
+          "word": "that",
+          "probability": 0.9966
+        },
+        {
+          "start": 525.7,
+          "end": 526.2,
+          "word": "you",
+          "probability": 0.973
+        },
+        {
+          "start": 526.2,
+          "end": 526.42,
+          "word": "can",
+          "probability": 0.9991
+        },
+        {
+          "start": 526.42,
+          "end": 527.6,
+          "word": "take",
+          "probability": 0.9879
+        },
+        {
+          "start": 527.6,
+          "end": 527.78,
+          "word": "the",
+          "probability": 0.9976
+        },
+        {
+          "start": 527.78,
+          "end": 528.04,
+          "word": "screws",
+          "probability": 0.996
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "start": 528.04,
+      "end": 534.04,
+      "text": "out, remove the wiper, put on a new wiper that's already on a new plate and",
+      "words": [
+        {
+          "start": 528.04,
+          "end": 528.42,
+          "word": "out,",
+          "probability": 0.9984
+        },
+        {
+          "start": 529.3,
+          "end": 529.44,
+          "word": "remove",
+          "probability": 0.9976
+        },
+        {
+          "start": 529.44,
+          "end": 529.7,
+          "word": "the",
+          "probability": 0.9997
+        },
+        {
+          "start": 529.7,
+          "end": 530.06,
+          "word": "wiper,",
+          "probability": 0.9937
+        },
+        {
+          "start": 530.36,
+          "end": 530.46,
+          "word": "put",
+          "probability": 0.9979
+        },
+        {
+          "start": 530.46,
+          "end": 530.64,
+          "word": "on",
+          "probability": 0.9843
+        },
+        {
+          "start": 530.64,
+          "end": 530.76,
+          "word": "a",
+          "probability": 0.9628
+        },
+        {
+          "start": 530.76,
+          "end": 530.94,
+          "word": "new",
+          "probability": 0.9985
+        },
+        {
+          "start": 530.94,
+          "end": 531.38,
+          "word": "wiper",
+          "probability": 0.9945
+        },
+        {
+          "start": 531.38,
+          "end": 532.26,
+          "word": "that's",
+          "probability": 0.7725
+        },
+        {
+          "start": 532.26,
+          "end": 532.46,
+          "word": "already",
+          "probability": 0.9987
+        },
+        {
+          "start": 532.46,
+          "end": 532.7,
+          "word": "on",
+          "probability": 0.9983
+        },
+        {
+          "start": 532.7,
+          "end": 532.82,
+          "word": "a",
+          "probability": 0.9951
+        },
+        {
+          "start": 532.82,
+          "end": 532.98,
+          "word": "new",
+          "probability": 0.9991
+        },
+        {
+          "start": 532.98,
+          "end": 533.3,
+          "word": "plate",
+          "probability": 0.996
+        },
+        {
+          "start": 533.3,
+          "end": 534.04,
+          "word": "and",
+          "probability": 0.7202
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "start": 534.04,
+      "end": 538.64,
+      "text": "just screw it back in and the positioning will be perfect. You don't want to have",
+      "words": [
+        {
+          "start": 534.04,
+          "end": 534.16,
+          "word": "just",
+          "probability": 0.8844
+        },
+        {
+          "start": 534.16,
+          "end": 534.38,
+          "word": "screw",
+          "probability": 0.9973
+        },
+        {
+          "start": 534.38,
+          "end": 534.52,
+          "word": "it",
+          "probability": 0.9977
+        },
+        {
+          "start": 534.52,
+          "end": 534.66,
+          "word": "back",
+          "probability": 0.9993
+        },
+        {
+          "start": 534.66,
+          "end": 534.94,
+          "word": "in",
+          "probability": 0.9981
+        },
+        {
+          "start": 534.94,
+          "end": 535.26,
+          "word": "and",
+          "probability": 0.8486
+        },
+        {
+          "start": 535.26,
+          "end": 535.4,
+          "word": "the",
+          "probability": 0.9964
+        },
+        {
+          "start": 535.4,
+          "end": 535.88,
+          "word": "positioning",
+          "probability": 0.9954
+        },
+        {
+          "start": 535.88,
+          "end": 536.22,
+          "word": "will",
+          "probability": 0.9988
+        },
+        {
+          "start": 536.22,
+          "end": 536.4,
+          "word": "be",
+          "probability": 0.9995
+        },
+        {
+          "start": 536.4,
+          "end": 537.24,
+          "word": "perfect.",
+          "probability": 0.9983
+        },
+        {
+          "start": 537.88,
+          "end": 538.06,
+          "word": "You",
+          "probability": 0.9934
+        },
+        {
+          "start": 538.06,
+          "end": 538.16,
+          "word": "don't",
+          "probability": 0.9981
+        },
+        {
+          "start": 538.16,
+          "end": 538.3,
+          "word": "want",
+          "probability": 0.9344
+        },
+        {
+          "start": 538.3,
+          "end": 538.42,
+          "word": "to",
+          "probability": 0.9974
+        },
+        {
+          "start": 538.42,
+          "end": 538.64,
+          "word": "have",
+          "probability": 0.9841
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "start": 538.64,
+      "end": 541.88,
+      "text": "to go run a calibration and figure out where your position is.",
+      "words": [
+        {
+          "start": 538.64,
+          "end": 539.04,
+          "word": "to",
+          "probability": 0.1837
+        },
+        {
+          "start": 539.04,
+          "end": 539.44,
+          "word": "go",
+          "probability": 0.8801
+        },
+        {
+          "start": 539.44,
+          "end": 539.72,
+          "word": "run",
+          "probability": 0.8276
+        },
+        {
+          "start": 539.72,
+          "end": 539.84,
+          "word": "a",
+          "probability": 0.9777
+        },
+        {
+          "start": 539.84,
+          "end": 540.32,
+          "word": "calibration",
+          "probability": 0.991
+        },
+        {
+          "start": 540.32,
+          "end": 540.52,
+          "word": "and",
+          "probability": 0.7109
+        },
+        {
+          "start": 540.52,
+          "end": 540.72,
+          "word": "figure",
+          "probability": 0.9905
+        },
+        {
+          "start": 540.72,
+          "end": 540.88,
+          "word": "out",
+          "probability": 0.9974
+        },
+        {
+          "start": 540.88,
+          "end": 541.0,
+          "word": "where",
+          "probability": 0.6052
+        },
+        {
+          "start": 541.0,
+          "end": 541.1,
+          "word": "your",
+          "probability": 0.979
+        },
+        {
+          "start": 541.1,
+          "end": 541.38,
+          "word": "position",
+          "probability": 0.9849
+        },
+        {
+          "start": 541.38,
+          "end": 541.88,
+          "word": "is.",
+          "probability": 0.9968
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "start": 543.14,
+      "end": 553.82,
+      "text": "Speaking of that, so the original the original wipe cycle did a couple things. So",
+      "words": [
+        {
+          "start": 543.14,
+          "end": 543.68,
+          "word": "Speaking",
+          "probability": 0.1356
+        },
+        {
+          "start": 543.68,
+          "end": 543.96,
+          "word": "of",
+          "probability": 0.9939
+        },
+        {
+          "start": 543.96,
+          "end": 544.18,
+          "word": "that,",
+          "probability": 0.9956
+        },
+        {
+          "start": 545.2,
+          "end": 545.28,
+          "word": "so",
+          "probability": 0.505
+        },
+        {
+          "start": 545.28,
+          "end": 545.46,
+          "word": "the",
+          "probability": 0.9616
+        },
+        {
+          "start": 545.46,
+          "end": 545.96,
+          "word": "original",
+          "probability": 0.9905
+        },
+        {
+          "start": 545.96,
+          "end": 547.32,
+          "word": "the",
+          "probability": 0.1643
+        },
+        {
+          "start": 547.32,
+          "end": 548.9,
+          "word": "original",
+          "probability": 0.9248
+        },
+        {
+          "start": 548.9,
+          "end": 549.28,
+          "word": "wipe",
+          "probability": 0.8599
+        },
+        {
+          "start": 549.28,
+          "end": 550.3,
+          "word": "cycle",
+          "probability": 0.9903
+        },
+        {
+          "start": 550.3,
+          "end": 551.18,
+          "word": "did",
+          "probability": 0.8821
+        },
+        {
+          "start": 551.18,
+          "end": 551.36,
+          "word": "a",
+          "probability": 0.9996
+        },
+        {
+          "start": 551.36,
+          "end": 551.62,
+          "word": "couple",
+          "probability": 0.9988
+        },
+        {
+          "start": 551.62,
+          "end": 552.1,
+          "word": "things.",
+          "probability": 0.776
+        },
+        {
+          "start": 553.56,
+          "end": 553.82,
+          "word": "So",
+          "probability": 0.8873
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "start": 553.82,
+      "end": 560.48,
+      "text": "we did some X sweeping. So it was going side to side on the X and then it will",
+      "words": [
+        {
+          "start": 553.82,
+          "end": 554.02,
+          "word": "we",
+          "probability": 0.9379
+        },
+        {
+          "start": 554.02,
+          "end": 554.26,
+          "word": "did",
+          "probability": 0.9987
+        },
+        {
+          "start": 554.26,
+          "end": 555.16,
+          "word": "some",
+          "probability": 0.9662
+        },
+        {
+          "start": 555.16,
+          "end": 555.44,
+          "word": "X",
+          "probability": 0.4019
+        },
+        {
+          "start": 555.44,
+          "end": 555.84,
+          "word": "sweeping.",
+          "probability": 0.9389
+        },
+        {
+          "start": 556.4,
+          "end": 556.5,
+          "word": "So",
+          "probability": 0.94
+        },
+        {
+          "start": 556.5,
+          "end": 556.94,
+          "word": "it",
+          "probability": 0.978
+        },
+        {
+          "start": 556.94,
+          "end": 557.1,
+          "word": "was",
+          "probability": 0.9991
+        },
+        {
+          "start": 557.1,
+          "end": 557.44,
+          "word": "going",
+          "probability": 0.9975
+        },
+        {
+          "start": 557.44,
+          "end": 558.18,
+          "word": "side",
+          "probability": 0.9527
+        },
+        {
+          "start": 558.18,
+          "end": 558.38,
+          "word": "to",
+          "probability": 0.8263
+        },
+        {
+          "start": 558.38,
+          "end": 558.62,
+          "word": "side",
+          "probability": 0.9972
+        },
+        {
+          "start": 558.62,
+          "end": 558.82,
+          "word": "on",
+          "probability": 0.9938
+        },
+        {
+          "start": 558.82,
+          "end": 559.0,
+          "word": "the",
+          "probability": 0.9945
+        },
+        {
+          "start": 559.0,
+          "end": 559.3,
+          "word": "X",
+          "probability": 0.936
+        },
+        {
+          "start": 559.3,
+          "end": 560.16,
+          "word": "and",
+          "probability": 0.5237
+        },
+        {
+          "start": 560.16,
+          "end": 560.28,
+          "word": "then",
+          "probability": 0.9953
+        },
+        {
+          "start": 560.28,
+          "end": 560.38,
+          "word": "it",
+          "probability": 0.9636
+        },
+        {
+          "start": 560.38,
+          "end": 560.48,
+          "word": "will",
+          "probability": 0.311
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "start": 560.48,
+      "end": 566.66,
+      "text": "go back and then use the back side to side and then it would kind of I was",
+      "words": [
+        {
+          "start": 560.48,
+          "end": 560.6,
+          "word": "go",
+          "probability": 0.9933
+        },
+        {
+          "start": 560.6,
+          "end": 560.88,
+          "word": "back",
+          "probability": 0.9985
+        },
+        {
+          "start": 560.88,
+          "end": 561.3,
+          "word": "and",
+          "probability": 0.9641
+        },
+        {
+          "start": 561.3,
+          "end": 561.42,
+          "word": "then",
+          "probability": 0.9558
+        },
+        {
+          "start": 561.42,
+          "end": 561.66,
+          "word": "use",
+          "probability": 0.9699
+        },
+        {
+          "start": 561.66,
+          "end": 561.8,
+          "word": "the",
+          "probability": 0.9971
+        },
+        {
+          "start": 561.8,
+          "end": 562.0,
+          "word": "back",
+          "probability": 0.9852
+        },
+        {
+          "start": 562.0,
+          "end": 562.56,
+          "word": "side",
+          "probability": 0.9425
+        },
+        {
+          "start": 562.56,
+          "end": 562.68,
+          "word": "to",
+          "probability": 0.981
+        },
+        {
+          "start": 562.68,
+          "end": 563.02,
+          "word": "side",
+          "probability": 0.9934
+        },
+        {
+          "start": 563.02,
+          "end": 563.8,
+          "word": "and",
+          "probability": 0.3341
+        },
+        {
+          "start": 563.8,
+          "end": 564.3,
+          "word": "then",
+          "probability": 0.9934
+        },
+        {
+          "start": 564.3,
+          "end": 565.26,
+          "word": "it",
+          "probability": 0.9291
+        },
+        {
+          "start": 565.26,
+          "end": 565.46,
+          "word": "would",
+          "probability": 0.9677
+        },
+        {
+          "start": 565.46,
+          "end": 565.84,
+          "word": "kind",
+          "probability": 0.6254
+        },
+        {
+          "start": 565.84,
+          "end": 566.06,
+          "word": "of",
+          "probability": 0.9862
+        },
+        {
+          "start": 566.06,
+          "end": 566.28,
+          "word": "I",
+          "probability": 0.4187
+        },
+        {
+          "start": 566.28,
+          "end": 566.66,
+          "word": "was",
+          "probability": 0.9937
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "start": 566.66,
+      "end": 571.16,
+      "text": "calling it a scrub where it would go in between and it would kind of work its",
+      "words": [
+        {
+          "start": 566.66,
+          "end": 566.94,
+          "word": "calling",
+          "probability": 0.2182
+        },
+        {
+          "start": 566.94,
+          "end": 567.08,
+          "word": "it",
+          "probability": 0.9888
+        },
+        {
+          "start": 567.08,
+          "end": 567.14,
+          "word": "a",
+          "probability": 0.9862
+        },
+        {
+          "start": 567.14,
+          "end": 567.4,
+          "word": "scrub",
+          "probability": 0.9315
+        },
+        {
+          "start": 567.4,
+          "end": 567.7,
+          "word": "where",
+          "probability": 0.5771
+        },
+        {
+          "start": 567.7,
+          "end": 567.9,
+          "word": "it",
+          "probability": 0.9976
+        },
+        {
+          "start": 567.9,
+          "end": 568.02,
+          "word": "would",
+          "probability": 0.9874
+        },
+        {
+          "start": 568.02,
+          "end": 568.18,
+          "word": "go",
+          "probability": 0.997
+        },
+        {
+          "start": 568.18,
+          "end": 568.4,
+          "word": "in",
+          "probability": 0.9974
+        },
+        {
+          "start": 568.4,
+          "end": 568.76,
+          "word": "between",
+          "probability": 0.933
+        },
+        {
+          "start": 568.76,
+          "end": 570.3,
+          "word": "and",
+          "probability": 0.5853
+        },
+        {
+          "start": 570.3,
+          "end": 570.42,
+          "word": "it",
+          "probability": 0.3055
+        },
+        {
+          "start": 570.42,
+          "end": 570.44,
+          "word": "would",
+          "probability": 0.7019
+        },
+        {
+          "start": 570.44,
+          "end": 570.64,
+          "word": "kind",
+          "probability": 0.7522
+        },
+        {
+          "start": 570.64,
+          "end": 570.78,
+          "word": "of",
+          "probability": 0.9984
+        },
+        {
+          "start": 570.78,
+          "end": 570.96,
+          "word": "work",
+          "probability": 0.9883
+        },
+        {
+          "start": 570.96,
+          "end": 571.16,
+          "word": "its",
+          "probability": 0.8952
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "start": 571.16,
+      "end": 576.36,
+      "text": "way in between each one of these little nubs. And that's the part that it",
+      "words": [
+        {
+          "start": 571.16,
+          "end": 571.32,
+          "word": "way",
+          "probability": 0.9858
+        },
+        {
+          "start": 571.32,
+          "end": 571.7,
+          "word": "in",
+          "probability": 0.9817
+        },
+        {
+          "start": 571.7,
+          "end": 572.0,
+          "word": "between",
+          "probability": 0.9958
+        },
+        {
+          "start": 572.0,
+          "end": 572.56,
+          "word": "each",
+          "probability": 0.9977
+        },
+        {
+          "start": 572.56,
+          "end": 572.8,
+          "word": "one",
+          "probability": 0.984
+        },
+        {
+          "start": 572.8,
+          "end": 572.92,
+          "word": "of",
+          "probability": 0.9986
+        },
+        {
+          "start": 572.92,
+          "end": 573.16,
+          "word": "these",
+          "probability": 0.9974
+        },
+        {
+          "start": 573.16,
+          "end": 573.38,
+          "word": "little",
+          "probability": 0.9991
+        },
+        {
+          "start": 573.38,
+          "end": 573.8,
+          "word": "nubs.",
+          "probability": 0.9386
+        },
+        {
+          "start": 574.62,
+          "end": 574.7,
+          "word": "And",
+          "probability": 0.9214
+        },
+        {
+          "start": 574.7,
+          "end": 575.04,
+          "word": "that's",
+          "probability": 0.9952
+        },
+        {
+          "start": 575.04,
+          "end": 575.14,
+          "word": "the",
+          "probability": 0.9983
+        },
+        {
+          "start": 575.14,
+          "end": 575.44,
+          "word": "part",
+          "probability": 0.9993
+        },
+        {
+          "start": 575.44,
+          "end": 575.74,
+          "word": "that",
+          "probability": 0.99
+        },
+        {
+          "start": 575.74,
+          "end": 576.36,
+          "word": "it",
+          "probability": 0.9771
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "start": 576.36,
+      "end": 582.52,
+      "text": "really became critical to get these wipers dialed in perfectly because if it's",
+      "words": [
+        {
+          "start": 576.36,
+          "end": 576.9,
+          "word": "really",
+          "probability": 0.9986
+        },
+        {
+          "start": 576.9,
+          "end": 577.48,
+          "word": "became",
+          "probability": 0.9956
+        },
+        {
+          "start": 577.48,
+          "end": 578.08,
+          "word": "critical",
+          "probability": 0.9991
+        },
+        {
+          "start": 578.08,
+          "end": 578.66,
+          "word": "to",
+          "probability": 0.9902
+        },
+        {
+          "start": 578.66,
+          "end": 578.84,
+          "word": "get",
+          "probability": 0.9993
+        },
+        {
+          "start": 578.84,
+          "end": 579.24,
+          "word": "these",
+          "probability": 0.9929
+        },
+        {
+          "start": 579.24,
+          "end": 579.88,
+          "word": "wipers",
+          "probability": 0.9452
+        },
+        {
+          "start": 579.88,
+          "end": 580.66,
+          "word": "dialed",
+          "probability": 0.9233
+        },
+        {
+          "start": 580.66,
+          "end": 580.72,
+          "word": "in",
+          "probability": 0.9867
+        },
+        {
+          "start": 580.72,
+          "end": 581.24,
+          "word": "perfectly",
+          "probability": 0.9938
+        },
+        {
+          "start": 581.24,
+          "end": 582.12,
+          "word": "because",
+          "probability": 0.3631
+        },
+        {
+          "start": 582.12,
+          "end": 582.3,
+          "word": "if",
+          "probability": 0.9809
+        },
+        {
+          "start": 582.3,
+          "end": 582.52,
+          "word": "it's",
+          "probability": 0.9946
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "start": 582.52,
+      "end": 587.02,
+      "text": "off half a millimeter, then you're basically shearing the nubs off with the",
+      "words": [
+        {
+          "start": 582.52,
+          "end": 582.7,
+          "word": "off",
+          "probability": 0.9188
+        },
+        {
+          "start": 582.7,
+          "end": 583.24,
+          "word": "half",
+          "probability": 0.9822
+        },
+        {
+          "start": 583.24,
+          "end": 583.4,
+          "word": "a",
+          "probability": 0.9931
+        },
+        {
+          "start": 583.4,
+          "end": 583.86,
+          "word": "millimeter,",
+          "probability": 0.9782
+        },
+        {
+          "start": 584.16,
+          "end": 584.28,
+          "word": "then",
+          "probability": 0.9882
+        },
+        {
+          "start": 584.28,
+          "end": 584.52,
+          "word": "you're",
+          "probability": 0.9896
+        },
+        {
+          "start": 584.52,
+          "end": 584.94,
+          "word": "basically",
+          "probability": 0.9987
+        },
+        {
+          "start": 584.94,
+          "end": 585.4,
+          "word": "shearing",
+          "probability": 0.8546
+        },
+        {
+          "start": 585.4,
+          "end": 585.6,
+          "word": "the",
+          "probability": 0.9979
+        },
+        {
+          "start": 585.6,
+          "end": 585.88,
+          "word": "nubs",
+          "probability": 0.9879
+        },
+        {
+          "start": 585.88,
+          "end": 586.22,
+          "word": "off",
+          "probability": 0.9934
+        },
+        {
+          "start": 586.22,
+          "end": 586.56,
+          "word": "with",
+          "probability": 0.9956
+        },
+        {
+          "start": 586.56,
+          "end": 587.02,
+          "word": "the",
+          "probability": 0.9966
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "start": 587.02,
+      "end": 594.74,
+      "text": "nozzle tip. So in the newest release I did some experimenting and I found that with",
+      "words": [
+        {
+          "start": 587.02,
+          "end": 587.56,
+          "word": "nozzle",
+          "probability": 0.8914
+        },
+        {
+          "start": 587.56,
+          "end": 587.86,
+          "word": "tip.",
+          "probability": 0.9957
+        },
+        {
+          "start": 588.6,
+          "end": 588.8,
+          "word": "So",
+          "probability": 0.9767
+        },
+        {
+          "start": 588.8,
+          "end": 589.04,
+          "word": "in",
+          "probability": 0.8843
+        },
+        {
+          "start": 589.04,
+          "end": 589.14,
+          "word": "the",
+          "probability": 0.9982
+        },
+        {
+          "start": 589.14,
+          "end": 589.34,
+          "word": "newest",
+          "probability": 0.9883
+        },
+        {
+          "start": 589.34,
+          "end": 589.72,
+          "word": "release",
+          "probability": 0.9975
+        },
+        {
+          "start": 589.72,
+          "end": 590.44,
+          "word": "I",
+          "probability": 0.2023
+        },
+        {
+          "start": 590.44,
+          "end": 591.32,
+          "word": "did",
+          "probability": 0.9965
+        },
+        {
+          "start": 591.32,
+          "end": 591.54,
+          "word": "some",
+          "probability": 0.9993
+        },
+        {
+          "start": 591.54,
+          "end": 592.06,
+          "word": "experimenting",
+          "probability": 0.9967
+        },
+        {
+          "start": 592.06,
+          "end": 592.52,
+          "word": "and",
+          "probability": 0.8278
+        },
+        {
+          "start": 592.52,
+          "end": 592.64,
+          "word": "I",
+          "probability": 0.9888
+        },
+        {
+          "start": 592.64,
+          "end": 592.92,
+          "word": "found",
+          "probability": 0.9961
+        },
+        {
+          "start": 592.92,
+          "end": 593.3,
+          "word": "that",
+          "probability": 0.9887
+        },
+        {
+          "start": 593.3,
+          "end": 594.74,
+          "word": "with",
+          "probability": 0.9475
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "start": 594.74,
+      "end": 598.36,
+      "text": "the amount that you run the wiper, you really don't need to get that",
+      "words": [
+        {
+          "start": 594.74,
+          "end": 594.88,
+          "word": "the",
+          "probability": 0.2016
+        },
+        {
+          "start": 594.88,
+          "end": 595.1,
+          "word": "amount",
+          "probability": 0.882
+        },
+        {
+          "start": 595.1,
+          "end": 595.34,
+          "word": "that",
+          "probability": 0.8769
+        },
+        {
+          "start": 595.34,
+          "end": 595.48,
+          "word": "you",
+          "probability": 0.9899
+        },
+        {
+          "start": 595.48,
+          "end": 595.66,
+          "word": "run",
+          "probability": 0.9653
+        },
+        {
+          "start": 595.66,
+          "end": 595.84,
+          "word": "the",
+          "probability": 0.9681
+        },
+        {
+          "start": 595.84,
+          "end": 596.16,
+          "word": "wiper,",
+          "probability": 0.7762
+        },
+        {
+          "start": 596.68,
+          "end": 596.92,
+          "word": "you",
+          "probability": 0.9815
+        },
+        {
+          "start": 596.92,
+          "end": 597.14,
+          "word": "really",
+          "probability": 0.9553
+        },
+        {
+          "start": 597.14,
+          "end": 597.38,
+          "word": "don't",
+          "probability": 0.9952
+        },
+        {
+          "start": 597.38,
+          "end": 597.54,
+          "word": "need",
+          "probability": 0.9924
+        },
+        {
+          "start": 597.54,
+          "end": 597.78,
+          "word": "to",
+          "probability": 0.9945
+        },
+        {
+          "start": 597.78,
+          "end": 598.14,
+          "word": "get",
+          "probability": 0.9965
+        },
+        {
+          "start": 598.14,
+          "end": 598.36,
+          "word": "that",
+          "probability": 0.9827
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "start": 598.36,
+      "end": 603.34,
+      "text": "aggressive with the scrubbing. The scrubbing was only really necessary on the",
+      "words": [
+        {
+          "start": 598.36,
+          "end": 598.76,
+          "word": "aggressive",
+          "probability": 0.9927
+        },
+        {
+          "start": 598.76,
+          "end": 599.0,
+          "word": "with",
+          "probability": 0.9928
+        },
+        {
+          "start": 599.0,
+          "end": 599.1,
+          "word": "the",
+          "probability": 0.9433
+        },
+        {
+          "start": 599.1,
+          "end": 599.52,
+          "word": "scrubbing.",
+          "probability": 0.9927
+        },
+        {
+          "start": 600.32,
+          "end": 600.64,
+          "word": "The",
+          "probability": 0.9752
+        },
+        {
+          "start": 600.64,
+          "end": 601.04,
+          "word": "scrubbing",
+          "probability": 0.9978
+        },
+        {
+          "start": 601.04,
+          "end": 601.2,
+          "word": "was",
+          "probability": 0.9963
+        },
+        {
+          "start": 601.2,
+          "end": 601.48,
+          "word": "only",
+          "probability": 0.9887
+        },
+        {
+          "start": 601.48,
+          "end": 601.76,
+          "word": "really",
+          "probability": 0.9726
+        },
+        {
+          "start": 601.76,
+          "end": 602.52,
+          "word": "necessary",
+          "probability": 0.9962
+        },
+        {
+          "start": 602.52,
+          "end": 603.18,
+          "word": "on",
+          "probability": 0.9787
+        },
+        {
+          "start": 603.18,
+          "end": 603.34,
+          "word": "the",
+          "probability": 0.9897
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "start": 603.34,
+      "end": 607.86,
+      "text": "earlier releases because we didn't have the AMS stuff set up yet. So we were",
+      "words": [
+        {
+          "start": 603.34,
+          "end": 603.72,
+          "word": "earlier",
+          "probability": 0.9956
+        },
+        {
+          "start": 603.72,
+          "end": 604.26,
+          "word": "releases",
+          "probability": 0.9869
+        },
+        {
+          "start": 604.26,
+          "end": 604.7,
+          "word": "because",
+          "probability": 0.8665
+        },
+        {
+          "start": 604.7,
+          "end": 605.0,
+          "word": "we",
+          "probability": 0.9964
+        },
+        {
+          "start": 605.0,
+          "end": 605.18,
+          "word": "didn't",
+          "probability": 0.9983
+        },
+        {
+          "start": 605.18,
+          "end": 605.34,
+          "word": "have",
+          "probability": 0.9976
+        },
+        {
+          "start": 605.34,
+          "end": 605.56,
+          "word": "the",
+          "probability": 0.995
+        },
+        {
+          "start": 605.56,
+          "end": 605.98,
+          "word": "AMS",
+          "probability": 0.9066
+        },
+        {
+          "start": 605.98,
+          "end": 606.26,
+          "word": "stuff",
+          "probability": 0.9932
+        },
+        {
+          "start": 606.26,
+          "end": 606.52,
+          "word": "set",
+          "probability": 0.9765
+        },
+        {
+          "start": 606.52,
+          "end": 606.7,
+          "word": "up",
+          "probability": 0.9941
+        },
+        {
+          "start": 606.7,
+          "end": 606.92,
+          "word": "yet.",
+          "probability": 0.9833
+        },
+        {
+          "start": 607.5,
+          "end": 607.56,
+          "word": "So",
+          "probability": 0.8927
+        },
+        {
+          "start": 607.56,
+          "end": 607.76,
+          "word": "we",
+          "probability": 0.8613
+        },
+        {
+          "start": 607.76,
+          "end": 607.86,
+          "word": "were",
+          "probability": 0.6061
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "start": 607.86,
+      "end": 612.64,
+      "text": "just running the scrub on the start-up routine and then it wouldn't scrub",
+      "words": [
+        {
+          "start": 607.86,
+          "end": 608.04,
+          "word": "just",
+          "probability": 0.9953
+        },
+        {
+          "start": 608.04,
+          "end": 608.62,
+          "word": "running",
+          "probability": 0.9984
+        },
+        {
+          "start": 608.62,
+          "end": 608.82,
+          "word": "the",
+          "probability": 0.997
+        },
+        {
+          "start": 608.82,
+          "end": 609.08,
+          "word": "scrub",
+          "probability": 0.981
+        },
+        {
+          "start": 609.08,
+          "end": 609.48,
+          "word": "on",
+          "probability": 0.9968
+        },
+        {
+          "start": 609.48,
+          "end": 609.62,
+          "word": "the",
+          "probability": 0.9934
+        },
+        {
+          "start": 609.62,
+          "end": 609.8,
+          "word": "start",
+          "probability": 0.2856
+        },
+        {
+          "start": 609.8,
+          "end": 609.96,
+          "word": "-up",
+          "probability": 0.8279
+        },
+        {
+          "start": 609.96,
+          "end": 610.3,
+          "word": "routine",
+          "probability": 0.9989
+        },
+        {
+          "start": 610.3,
+          "end": 610.7,
+          "word": "and",
+          "probability": 0.6637
+        },
+        {
+          "start": 610.7,
+          "end": 610.92,
+          "word": "then",
+          "probability": 0.6652
+        },
+        {
+          "start": 610.92,
+          "end": 611.4,
+          "word": "it",
+          "probability": 0.9421
+        },
+        {
+          "start": 611.4,
+          "end": 611.82,
+          "word": "wouldn't",
+          "probability": 0.9931
+        },
+        {
+          "start": 611.82,
+          "end": 612.64,
+          "word": "scrub",
+          "probability": 0.9234
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "start": 612.64,
+      "end": 617.36,
+      "text": "again until the next print. So we were taking you know full advantage of having",
+      "words": [
+        {
+          "start": 612.64,
+          "end": 613.02,
+          "word": "again",
+          "probability": 0.9804
+        },
+        {
+          "start": 613.02,
+          "end": 613.32,
+          "word": "until",
+          "probability": 0.9954
+        },
+        {
+          "start": 613.32,
+          "end": 613.48,
+          "word": "the",
+          "probability": 0.9984
+        },
+        {
+          "start": 613.48,
+          "end": 613.7,
+          "word": "next",
+          "probability": 0.9997
+        },
+        {
+          "start": 613.7,
+          "end": 614.0,
+          "word": "print.",
+          "probability": 0.9918
+        },
+        {
+          "start": 614.66,
+          "end": 615.06,
+          "word": "So",
+          "probability": 0.9625
+        },
+        {
+          "start": 615.06,
+          "end": 615.18,
+          "word": "we",
+          "probability": 0.9833
+        },
+        {
+          "start": 615.18,
+          "end": 615.24,
+          "word": "were",
+          "probability": 0.8891
+        },
+        {
+          "start": 615.24,
+          "end": 615.46,
+          "word": "taking",
+          "probability": 0.851
+        },
+        {
+          "start": 615.46,
+          "end": 616.08,
+          "word": "you",
+          "probability": 0.0658
+        },
+        {
+          "start": 616.08,
+          "end": 616.16,
+          "word": "know",
+          "probability": 0.9912
+        },
+        {
+          "start": 616.16,
+          "end": 616.36,
+          "word": "full",
+          "probability": 0.7325
+        },
+        {
+          "start": 616.36,
+          "end": 616.74,
+          "word": "advantage",
+          "probability": 0.9992
+        },
+        {
+          "start": 616.74,
+          "end": 616.98,
+          "word": "of",
+          "probability": 0.9987
+        },
+        {
+          "start": 616.98,
+          "end": 617.36,
+          "word": "having",
+          "probability": 0.9981
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "start": 617.36,
+      "end": 623.98,
+      "text": "that wiper there to get the most scrubbing possible. So now all we're doing in",
+      "words": [
+        {
+          "start": 617.36,
+          "end": 617.6,
+          "word": "that",
+          "probability": 0.9978
+        },
+        {
+          "start": 617.6,
+          "end": 617.96,
+          "word": "wiper",
+          "probability": 0.9751
+        },
+        {
+          "start": 617.96,
+          "end": 618.22,
+          "word": "there",
+          "probability": 0.9972
+        },
+        {
+          "start": 618.22,
+          "end": 618.7,
+          "word": "to",
+          "probability": 0.9947
+        },
+        {
+          "start": 618.7,
+          "end": 619.1,
+          "word": "get",
+          "probability": 0.9989
+        },
+        {
+          "start": 619.1,
+          "end": 619.26,
+          "word": "the",
+          "probability": 0.9989
+        },
+        {
+          "start": 619.26,
+          "end": 619.42,
+          "word": "most",
+          "probability": 0.9986
+        },
+        {
+          "start": 619.42,
+          "end": 619.82,
+          "word": "scrubbing",
+          "probability": 0.9974
+        },
+        {
+          "start": 619.82,
+          "end": 620.28,
+          "word": "possible.",
+          "probability": 0.9996
+        },
+        {
+          "start": 621.24,
+          "end": 621.76,
+          "word": "So",
+          "probability": 0.9783
+        },
+        {
+          "start": 621.76,
+          "end": 621.98,
+          "word": "now",
+          "probability": 0.9914
+        },
+        {
+          "start": 621.98,
+          "end": 623.06,
+          "word": "all",
+          "probability": 0.7663
+        },
+        {
+          "start": 623.06,
+          "end": 623.22,
+          "word": "we're",
+          "probability": 0.988
+        },
+        {
+          "start": 623.22,
+          "end": 623.5,
+          "word": "doing",
+          "probability": 0.9987
+        },
+        {
+          "start": 623.5,
+          "end": 623.98,
+          "word": "in",
+          "probability": 0.9894
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "start": 623.98,
+      "end": 630.16,
+      "text": "this recent update is we're just sweeping on the X and then we're step on the",
+      "words": [
+        {
+          "start": 623.98,
+          "end": 624.28,
+          "word": "this",
+          "probability": 0.0977
+        },
+        {
+          "start": 624.28,
+          "end": 624.88,
+          "word": "recent",
+          "probability": 0.9703
+        },
+        {
+          "start": 624.88,
+          "end": 625.38,
+          "word": "update",
+          "probability": 0.9953
+        },
+        {
+          "start": 625.38,
+          "end": 625.9,
+          "word": "is",
+          "probability": 0.9417
+        },
+        {
+          "start": 625.9,
+          "end": 626.14,
+          "word": "we're",
+          "probability": 0.9318
+        },
+        {
+          "start": 626.14,
+          "end": 626.3,
+          "word": "just",
+          "probability": 0.9933
+        },
+        {
+          "start": 626.3,
+          "end": 627.1,
+          "word": "sweeping",
+          "probability": 0.9761
+        },
+        {
+          "start": 627.1,
+          "end": 627.4,
+          "word": "on",
+          "probability": 0.9974
+        },
+        {
+          "start": 627.4,
+          "end": 627.56,
+          "word": "the",
+          "probability": 0.993
+        },
+        {
+          "start": 627.56,
+          "end": 627.92,
+          "word": "X",
+          "probability": 0.3555
+        },
+        {
+          "start": 627.92,
+          "end": 628.82,
+          "word": "and",
+          "probability": 0.5571
+        },
+        {
+          "start": 628.82,
+          "end": 628.94,
+          "word": "then",
+          "probability": 0.9708
+        },
+        {
+          "start": 628.94,
+          "end": 629.14,
+          "word": "we're",
+          "probability": 0.9567
+        },
+        {
+          "start": 629.14,
+          "end": 629.4,
+          "word": "step",
+          "probability": 0.8329
+        },
+        {
+          "start": 629.4,
+          "end": 629.98,
+          "word": "on",
+          "probability": 0.9779
+        },
+        {
+          "start": 629.98,
+          "end": 630.16,
+          "word": "the",
+          "probability": 0.987
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "start": 630.16,
+      "end": 635.0,
+      "text": "end of on the end of the wiper. We're step up and then we'll sweep on the X",
+      "words": [
+        {
+          "start": 630.16,
+          "end": 630.32,
+          "word": "end",
+          "probability": 0.9707
+        },
+        {
+          "start": 630.32,
+          "end": 630.5,
+          "word": "of",
+          "probability": 0.9156
+        },
+        {
+          "start": 630.5,
+          "end": 630.86,
+          "word": "on",
+          "probability": 0.0893
+        },
+        {
+          "start": 630.86,
+          "end": 631.24,
+          "word": "the",
+          "probability": 0.9871
+        },
+        {
+          "start": 631.24,
+          "end": 631.38,
+          "word": "end",
+          "probability": 0.995
+        },
+        {
+          "start": 631.38,
+          "end": 631.52,
+          "word": "of",
+          "probability": 0.996
+        },
+        {
+          "start": 631.52,
+          "end": 631.82,
+          "word": "the",
+          "probability": 0.9889
+        },
+        {
+          "start": 631.82,
+          "end": 632.9,
+          "word": "wiper.",
+          "probability": 0.7252
+        },
+        {
+          "start": 633.08,
+          "end": 633.18,
+          "word": "We're",
+          "probability": 0.9585
+        },
+        {
+          "start": 633.18,
+          "end": 633.42,
+          "word": "step",
+          "probability": 0.9806
+        },
+        {
+          "start": 633.42,
+          "end": 633.7,
+          "word": "up",
+          "probability": 0.9872
+        },
+        {
+          "start": 633.7,
+          "end": 634.1,
+          "word": "and",
+          "probability": 0.9148
+        },
+        {
+          "start": 634.1,
+          "end": 634.2,
+          "word": "then",
+          "probability": 0.9607
+        },
+        {
+          "start": 634.2,
+          "end": 634.32,
+          "word": "we'll",
+          "probability": 0.9951
+        },
+        {
+          "start": 634.32,
+          "end": 634.52,
+          "word": "sweep",
+          "probability": 0.9981
+        },
+        {
+          "start": 634.52,
+          "end": 634.72,
+          "word": "on",
+          "probability": 0.9979
+        },
+        {
+          "start": 634.72,
+          "end": 634.84,
+          "word": "the",
+          "probability": 0.9963
+        },
+        {
+          "start": 634.84,
+          "end": 635.0,
+          "word": "X",
+          "probability": 0.8806
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "start": 635.0,
+      "end": 638.16,
+      "text": "again and then we'll step down and we'll sweep on the X again and that's the",
+      "words": [
+        {
+          "start": 635.0,
+          "end": 635.26,
+          "word": "again",
+          "probability": 0.9836
+        },
+        {
+          "start": 635.26,
+          "end": 635.64,
+          "word": "and",
+          "probability": 0.7913
+        },
+        {
+          "start": 635.64,
+          "end": 635.72,
+          "word": "then",
+          "probability": 0.9775
+        },
+        {
+          "start": 635.72,
+          "end": 635.82,
+          "word": "we'll",
+          "probability": 0.9966
+        },
+        {
+          "start": 635.82,
+          "end": 636.02,
+          "word": "step",
+          "probability": 0.9946
+        },
+        {
+          "start": 636.02,
+          "end": 636.3,
+          "word": "down",
+          "probability": 0.9986
+        },
+        {
+          "start": 636.3,
+          "end": 636.6,
+          "word": "and",
+          "probability": 0.9661
+        },
+        {
+          "start": 636.6,
+          "end": 636.72,
+          "word": "we'll",
+          "probability": 0.9909
+        },
+        {
+          "start": 636.72,
+          "end": 636.94,
+          "word": "sweep",
+          "probability": 0.9988
+        },
+        {
+          "start": 636.94,
+          "end": 637.12,
+          "word": "on",
+          "probability": 0.9979
+        },
+        {
+          "start": 637.12,
+          "end": 637.24,
+          "word": "the",
+          "probability": 0.9934
+        },
+        {
+          "start": 637.24,
+          "end": 637.4,
+          "word": "X",
+          "probability": 0.977
+        },
+        {
+          "start": 637.4,
+          "end": 637.62,
+          "word": "again",
+          "probability": 0.9971
+        },
+        {
+          "start": 637.62,
+          "end": 637.8,
+          "word": "and",
+          "probability": 0.8305
+        },
+        {
+          "start": 637.8,
+          "end": 638.08,
+          "word": "that's",
+          "probability": 0.9972
+        },
+        {
+          "start": 638.08,
+          "end": 638.16,
+          "word": "the",
+          "probability": 0.7487
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "start": 638.16,
+      "end": 646.6,
+      "text": "wiper team. So now it's not overly critical for the X positioning but it is",
+      "words": [
+        {
+          "start": 638.16,
+          "end": 638.38,
+          "word": "wiper",
+          "probability": 0.844
+        },
+        {
+          "start": 638.38,
+          "end": 638.66,
+          "word": "team.",
+          "probability": 0.9515
+        },
+        {
+          "start": 639.32,
+          "end": 639.46,
+          "word": "So",
+          "probability": 0.8766
+        },
+        {
+          "start": 639.46,
+          "end": 639.64,
+          "word": "now",
+          "probability": 0.965
+        },
+        {
+          "start": 639.64,
+          "end": 640.54,
+          "word": "it's",
+          "probability": 0.9254
+        },
+        {
+          "start": 640.54,
+          "end": 640.72,
+          "word": "not",
+          "probability": 0.9993
+        },
+        {
+          "start": 640.72,
+          "end": 641.2,
+          "word": "overly",
+          "probability": 0.9966
+        },
+        {
+          "start": 641.2,
+          "end": 641.84,
+          "word": "critical",
+          "probability": 0.9991
+        },
+        {
+          "start": 641.84,
+          "end": 643.56,
+          "word": "for",
+          "probability": 0.9494
+        },
+        {
+          "start": 643.56,
+          "end": 644.0,
+          "word": "the",
+          "probability": 0.9972
+        },
+        {
+          "start": 644.0,
+          "end": 645.2,
+          "word": "X",
+          "probability": 0.8558
+        },
+        {
+          "start": 645.2,
+          "end": 645.8,
+          "word": "positioning",
+          "probability": 0.989
+        },
+        {
+          "start": 645.8,
+          "end": 646.24,
+          "word": "but",
+          "probability": 0.6447
+        },
+        {
+          "start": 646.24,
+          "end": 646.4,
+          "word": "it",
+          "probability": 0.9964
+        },
+        {
+          "start": 646.4,
+          "end": 646.6,
+          "word": "is",
+          "probability": 0.9989
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "start": 646.6,
+      "end": 651.1,
+      "text": "critical on the Y positioning but not as critical as it would have been on the X.",
+      "words": [
+        {
+          "start": 646.6,
+          "end": 647.08,
+          "word": "critical",
+          "probability": 0.9989
+        },
+        {
+          "start": 647.08,
+          "end": 647.4,
+          "word": "on",
+          "probability": 0.9976
+        },
+        {
+          "start": 647.4,
+          "end": 647.56,
+          "word": "the",
+          "probability": 0.9985
+        },
+        {
+          "start": 647.56,
+          "end": 647.84,
+          "word": "Y",
+          "probability": 0.8799
+        },
+        {
+          "start": 647.84,
+          "end": 648.36,
+          "word": "positioning",
+          "probability": 0.9955
+        },
+        {
+          "start": 648.36,
+          "end": 648.98,
+          "word": "but",
+          "probability": 0.684
+        },
+        {
+          "start": 648.98,
+          "end": 649.24,
+          "word": "not",
+          "probability": 0.9974
+        },
+        {
+          "start": 649.24,
+          "end": 649.44,
+          "word": "as",
+          "probability": 0.9928
+        },
+        {
+          "start": 649.44,
+          "end": 649.82,
+          "word": "critical",
+          "probability": 0.9991
+        },
+        {
+          "start": 649.82,
+          "end": 650.1,
+          "word": "as",
+          "probability": 0.9815
+        },
+        {
+          "start": 650.1,
+          "end": 650.2,
+          "word": "it",
+          "probability": 0.9981
+        },
+        {
+          "start": 650.2,
+          "end": 650.34,
+          "word": "would",
+          "probability": 0.9988
+        },
+        {
+          "start": 650.34,
+          "end": 650.46,
+          "word": "have",
+          "probability": 0.938
+        },
+        {
+          "start": 650.46,
+          "end": 650.6,
+          "word": "been",
+          "probability": 0.9983
+        },
+        {
+          "start": 650.6,
+          "end": 650.74,
+          "word": "on",
+          "probability": 0.998
+        },
+        {
+          "start": 650.74,
+          "end": 650.9,
+          "word": "the",
+          "probability": 0.9946
+        },
+        {
+          "start": 650.9,
+          "end": 651.1,
+          "word": "X.",
+          "probability": 0.9882
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "start": 651.1,
+      "end": 655.24,
+      "text": "So as long as you're within you know half a millimeter I don't think you're",
+      "words": [
+        {
+          "start": 651.1,
+          "end": 651.38,
+          "word": "So",
+          "probability": 0.4779
+        },
+        {
+          "start": 651.38,
+          "end": 651.66,
+          "word": "as",
+          "probability": 0.8231
+        },
+        {
+          "start": 651.66,
+          "end": 651.8,
+          "word": "long",
+          "probability": 0.9992
+        },
+        {
+          "start": 651.8,
+          "end": 652.0,
+          "word": "as",
+          "probability": 0.9973
+        },
+        {
+          "start": 652.0,
+          "end": 652.1,
+          "word": "you're",
+          "probability": 0.985
+        },
+        {
+          "start": 652.1,
+          "end": 652.46,
+          "word": "within",
+          "probability": 0.9915
+        },
+        {
+          "start": 652.46,
+          "end": 652.9,
+          "word": "you",
+          "probability": 0.0768
+        },
+        {
+          "start": 652.9,
+          "end": 653.02,
+          "word": "know",
+          "probability": 0.9898
+        },
+        {
+          "start": 653.02,
+          "end": 653.44,
+          "word": "half",
+          "probability": 0.7322
+        },
+        {
+          "start": 653.44,
+          "end": 653.58,
+          "word": "a",
+          "probability": 0.9915
+        },
+        {
+          "start": 653.58,
+          "end": 654.0,
+          "word": "millimeter",
+          "probability": 0.9812
+        },
+        {
+          "start": 654.0,
+          "end": 654.78,
+          "word": "I",
+          "probability": 0.2859
+        },
+        {
+          "start": 654.78,
+          "end": 654.88,
+          "word": "don't",
+          "probability": 0.9977
+        },
+        {
+          "start": 654.88,
+          "end": 655.06,
+          "word": "think",
+          "probability": 0.9991
+        },
+        {
+          "start": 655.06,
+          "end": 655.24,
+          "word": "you're",
+          "probability": 0.9966
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "start": 655.24,
+      "end": 658.68,
+      "text": "going to have any issues. You almost probably don't even need to run the",
+      "words": [
+        {
+          "start": 655.24,
+          "end": 655.32,
+          "word": "going",
+          "probability": 0.4188
+        },
+        {
+          "start": 655.32,
+          "end": 655.42,
+          "word": "to",
+          "probability": 0.9984
+        },
+        {
+          "start": 655.42,
+          "end": 655.6,
+          "word": "have",
+          "probability": 0.9979
+        },
+        {
+          "start": 655.6,
+          "end": 655.84,
+          "word": "any",
+          "probability": 0.9971
+        },
+        {
+          "start": 655.84,
+          "end": 656.16,
+          "word": "issues.",
+          "probability": 0.9958
+        },
+        {
+          "start": 656.16,
+          "end": 656.54,
+          "word": "You",
+          "probability": 0.984
+        },
+        {
+          "start": 656.54,
+          "end": 656.76,
+          "word": "almost",
+          "probability": 0.9907
+        },
+        {
+          "start": 656.76,
+          "end": 657.54,
+          "word": "probably",
+          "probability": 0.9851
+        },
+        {
+          "start": 657.54,
+          "end": 657.82,
+          "word": "don't",
+          "probability": 0.9973
+        },
+        {
+          "start": 657.82,
+          "end": 658.0,
+          "word": "even",
+          "probability": 0.9946
+        },
+        {
+          "start": 658.0,
+          "end": 658.22,
+          "word": "need",
+          "probability": 0.998
+        },
+        {
+          "start": 658.22,
+          "end": 658.38,
+          "word": "to",
+          "probability": 0.999
+        },
+        {
+          "start": 658.38,
+          "end": 658.52,
+          "word": "run",
+          "probability": 0.9978
+        },
+        {
+          "start": 658.52,
+          "end": 658.68,
+          "word": "the",
+          "probability": 0.9986
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "start": 658.68,
+      "end": 670.9,
+      "text": "calibration but we'll do it anyways just for good measure. So the the nice thing",
+      "words": [
+        {
+          "start": 658.68,
+          "end": 659.2,
+          "word": "calibration",
+          "probability": 0.9974
+        },
+        {
+          "start": 659.2,
+          "end": 659.56,
+          "word": "but",
+          "probability": 0.4177
+        },
+        {
+          "start": 659.56,
+          "end": 660.34,
+          "word": "we'll",
+          "probability": 0.9587
+        },
+        {
+          "start": 660.34,
+          "end": 660.68,
+          "word": "do",
+          "probability": 0.9987
+        },
+        {
+          "start": 660.68,
+          "end": 660.82,
+          "word": "it",
+          "probability": 0.9971
+        },
+        {
+          "start": 660.82,
+          "end": 661.18,
+          "word": "anyways",
+          "probability": 0.9408
+        },
+        {
+          "start": 661.18,
+          "end": 661.5,
+          "word": "just",
+          "probability": 0.8893
+        },
+        {
+          "start": 661.5,
+          "end": 661.8,
+          "word": "for",
+          "probability": 0.9971
+        },
+        {
+          "start": 661.8,
+          "end": 662.36,
+          "word": "good",
+          "probability": 0.658
+        },
+        {
+          "start": 662.36,
+          "end": 662.68,
+          "word": "measure.",
+          "probability": 0.9942
+        },
+        {
+          "start": 669.74,
+          "end": 669.94,
+          "word": "So",
+          "probability": 0.9773
+        },
+        {
+          "start": 669.94,
+          "end": 670.14,
+          "word": "the",
+          "probability": 0.9652
+        },
+        {
+          "start": 670.14,
+          "end": 670.46,
+          "word": "the",
+          "probability": 0.4093
+        },
+        {
+          "start": 670.46,
+          "end": 670.66,
+          "word": "nice",
+          "probability": 0.9965
+        },
+        {
+          "start": 670.66,
+          "end": 670.9,
+          "word": "thing",
+          "probability": 0.9985
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "start": 670.9,
+      "end": 679.66,
+      "text": "about this printer with the touchscreen, I'm going to reposition you guys",
+      "words": [
+        {
+          "start": 670.9,
+          "end": 671.26,
+          "word": "about",
+          "probability": 0.9984
+        },
+        {
+          "start": 671.26,
+          "end": 672.26,
+          "word": "this",
+          "probability": 0.9214
+        },
+        {
+          "start": 672.26,
+          "end": 672.62,
+          "word": "printer",
+          "probability": 0.9939
+        },
+        {
+          "start": 672.62,
+          "end": 673.14,
+          "word": "with",
+          "probability": 0.9894
+        },
+        {
+          "start": 673.14,
+          "end": 673.7,
+          "word": "the",
+          "probability": 0.9977
+        },
+        {
+          "start": 673.7,
+          "end": 674.4,
+          "word": "touchscreen,",
+          "probability": 0.6153
+        },
+        {
+          "start": 676.42,
+          "end": 677.9,
+          "word": "I'm",
+          "probability": 0.9815
+        },
+        {
+          "start": 677.9,
+          "end": 678.02,
+          "word": "going",
+          "probability": 0.7568
+        },
+        {
+          "start": 678.02,
+          "end": 678.08,
+          "word": "to",
+          "probability": 0.9979
+        },
+        {
+          "start": 678.08,
+          "end": 678.68,
+          "word": "reposition",
+          "probability": 0.9754
+        },
+        {
+          "start": 678.68,
+          "end": 679.46,
+          "word": "you",
+          "probability": 0.9426
+        },
+        {
+          "start": 679.46,
+          "end": 679.66,
+          "word": "guys",
+          "probability": 0.9985
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "start": 679.66,
+      "end": 688.92,
+      "text": "here in a moment, spring up the tools here. I still want to show the printer's",
+      "words": [
+        {
+          "start": 679.66,
+          "end": 679.96,
+          "word": "here",
+          "probability": 0.9947
+        },
+        {
+          "start": 679.96,
+          "end": 680.14,
+          "word": "in",
+          "probability": 0.9961
+        },
+        {
+          "start": 680.14,
+          "end": 680.18,
+          "word": "a",
+          "probability": 0.9875
+        },
+        {
+          "start": 680.18,
+          "end": 680.52,
+          "word": "moment,",
+          "probability": 0.9996
+        },
+        {
+          "start": 680.92,
+          "end": 681.18,
+          "word": "spring",
+          "probability": 0.8046
+        },
+        {
+          "start": 681.18,
+          "end": 681.34,
+          "word": "up",
+          "probability": 0.9888
+        },
+        {
+          "start": 681.34,
+          "end": 681.5,
+          "word": "the",
+          "probability": 0.9959
+        },
+        {
+          "start": 681.5,
+          "end": 681.8,
+          "word": "tools",
+          "probability": 0.992
+        },
+        {
+          "start": 681.8,
+          "end": 682.14,
+          "word": "here.",
+          "probability": 0.9968
+        },
+        {
+          "start": 686.06,
+          "end": 686.2,
+          "word": "I",
+          "probability": 0.2942
+        },
+        {
+          "start": 686.2,
+          "end": 686.26,
+          "word": "still",
+          "probability": 0.6925
+        },
+        {
+          "start": 686.26,
+          "end": 686.46,
+          "word": "want",
+          "probability": 0.9145
+        },
+        {
+          "start": 686.46,
+          "end": 686.56,
+          "word": "to",
+          "probability": 0.996
+        },
+        {
+          "start": 686.56,
+          "end": 686.86,
+          "word": "show",
+          "probability": 0.9989
+        },
+        {
+          "start": 686.86,
+          "end": 688.32,
+          "word": "the",
+          "probability": 0.9134
+        },
+        {
+          "start": 688.32,
+          "end": 688.92,
+          "word": "printer's",
+          "probability": 0.8435
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "start": 688.92,
+      "end": 701.82,
+      "text": "login. We can say on-screen console and now we can actually just fire some G",
+      "words": [
+        {
+          "start": 688.92,
+          "end": 689.3,
+          "word": "login.",
+          "probability": 0.2404
+        },
+        {
+          "start": 697.5,
+          "end": 698.06,
+          "word": "We",
+          "probability": 0.9501
+        },
+        {
+          "start": 698.06,
+          "end": 698.2,
+          "word": "can",
+          "probability": 0.9941
+        },
+        {
+          "start": 698.2,
+          "end": 698.4,
+          "word": "say",
+          "probability": 0.884
+        },
+        {
+          "start": 698.4,
+          "end": 698.68,
+          "word": "on",
+          "probability": 0.9495
+        },
+        {
+          "start": 698.68,
+          "end": 698.98,
+          "word": "-screen",
+          "probability": 0.7107
+        },
+        {
+          "start": 698.98,
+          "end": 699.62,
+          "word": "console",
+          "probability": 0.9654
+        },
+        {
+          "start": 699.62,
+          "end": 700.16,
+          "word": "and",
+          "probability": 0.2584
+        },
+        {
+          "start": 700.16,
+          "end": 700.32,
+          "word": "now",
+          "probability": 0.9861
+        },
+        {
+          "start": 700.32,
+          "end": 700.46,
+          "word": "we",
+          "probability": 0.9717
+        },
+        {
+          "start": 700.46,
+          "end": 700.58,
+          "word": "can",
+          "probability": 0.9919
+        },
+        {
+          "start": 700.58,
+          "end": 700.8,
+          "word": "actually",
+          "probability": 0.9811
+        },
+        {
+          "start": 700.8,
+          "end": 701.0,
+          "word": "just",
+          "probability": 0.9948
+        },
+        {
+          "start": 701.0,
+          "end": 701.3,
+          "word": "fire",
+          "probability": 0.9662
+        },
+        {
+          "start": 701.3,
+          "end": 701.66,
+          "word": "some",
+          "probability": 0.996
+        },
+        {
+          "start": 701.66,
+          "end": 701.82,
+          "word": "G",
+          "probability": 0.4074
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "start": 701.82,
+      "end": 707.02,
+      "text": "codes in here so we can test the positioning just by doing that. So right off the",
+      "words": [
+        {
+          "start": 701.82,
+          "end": 702.06,
+          "word": "codes",
+          "probability": 0.6984
+        },
+        {
+          "start": 702.06,
+          "end": 702.36,
+          "word": "in",
+          "probability": 0.9977
+        },
+        {
+          "start": 702.36,
+          "end": 702.56,
+          "word": "here",
+          "probability": 0.9975
+        },
+        {
+          "start": 702.56,
+          "end": 702.82,
+          "word": "so",
+          "probability": 0.318
+        },
+        {
+          "start": 702.82,
+          "end": 703.06,
+          "word": "we",
+          "probability": 0.995
+        },
+        {
+          "start": 703.06,
+          "end": 703.2,
+          "word": "can",
+          "probability": 0.9974
+        },
+        {
+          "start": 703.2,
+          "end": 703.42,
+          "word": "test",
+          "probability": 0.9983
+        },
+        {
+          "start": 703.42,
+          "end": 703.74,
+          "word": "the",
+          "probability": 0.9967
+        },
+        {
+          "start": 703.74,
+          "end": 704.34,
+          "word": "positioning",
+          "probability": 0.996
+        },
+        {
+          "start": 704.34,
+          "end": 704.64,
+          "word": "just",
+          "probability": 0.962
+        },
+        {
+          "start": 704.64,
+          "end": 704.84,
+          "word": "by",
+          "probability": 0.9981
+        },
+        {
+          "start": 704.84,
+          "end": 705.06,
+          "word": "doing",
+          "probability": 0.9988
+        },
+        {
+          "start": 705.06,
+          "end": 705.36,
+          "word": "that.",
+          "probability": 0.9935
+        },
+        {
+          "start": 706.48,
+          "end": 706.58,
+          "word": "So",
+          "probability": 0.8766
+        },
+        {
+          "start": 706.58,
+          "end": 706.72,
+          "word": "right",
+          "probability": 0.9744
+        },
+        {
+          "start": 706.72,
+          "end": 706.9,
+          "word": "off",
+          "probability": 0.9868
+        },
+        {
+          "start": 706.9,
+          "end": 707.02,
+          "word": "the",
+          "probability": 0.9895
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "start": 707.02,
+      "end": 730.55,
+      "text": "hop we want to home the X and the Y so that'll be G28 X and we don't need to",
+      "words": [
+        {
+          "start": 707.02,
+          "end": 707.62,
+          "word": "hop",
+          "probability": 0.8035
+        },
+        {
+          "start": 707.62,
+          "end": 707.9,
+          "word": "we",
+          "probability": 0.4825
+        },
+        {
+          "start": 707.9,
+          "end": 708.1,
+          "word": "want",
+          "probability": 0.9312
+        },
+        {
+          "start": 708.1,
+          "end": 708.28,
+          "word": "to",
+          "probability": 0.9955
+        },
+        {
+          "start": 708.28,
+          "end": 709.12,
+          "word": "home",
+          "probability": 0.7155
+        },
+        {
+          "start": 709.12,
+          "end": 709.56,
+          "word": "the",
+          "probability": 0.9799
+        },
+        {
+          "start": 709.56,
+          "end": 709.88,
+          "word": "X",
+          "probability": 0.5673
+        },
+        {
+          "start": 709.88,
+          "end": 710.02,
+          "word": "and",
+          "probability": 0.7766
+        },
+        {
+          "start": 710.02,
+          "end": 710.06,
+          "word": "the",
+          "probability": 0.7247
+        },
+        {
+          "start": 710.06,
+          "end": 710.26,
+          "word": "Y",
+          "probability": 0.9902
+        },
+        {
+          "start": 710.26,
+          "end": 710.56,
+          "word": "so",
+          "probability": 0.8014
+        },
+        {
+          "start": 710.56,
+          "end": 710.96,
+          "word": "that'll",
+          "probability": 0.7699
+        },
+        {
+          "start": 710.96,
+          "end": 711.12,
+          "word": "be",
+          "probability": 0.9986
+        },
+        {
+          "start": 711.12,
+          "end": 713.4,
+          "word": "G28",
+          "probability": 0.7402
+        },
+        {
+          "start": 713.4,
+          "end": 715.92,
+          "word": "X",
+          "probability": 0.3376
+        },
+        {
+          "start": 715.92,
+          "end": 716.8,
+          "word": "and",
+          "probability": 0.6752
+        },
+        {
+          "start": 718.56,
+          "end": 719.62,
+          "word": "we",
+          "probability": 0.9783
+        },
+        {
+          "start": 722.21,
+          "end": 730.55,
+          "word": "don't",
+          "probability": 0.9983
+        },
+        {
+          "start": 730.55,
+          "end": 730.55,
+          "word": "need",
+          "probability": 0.9986
+        },
+        {
+          "start": 730.55,
+          "end": 730.55,
+          "word": "to",
+          "probability": 0.9736
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "start": 730.55,
+      "end": 734.93,
+      "text": "bring the head all the way over to the end and I actually can't remember the",
+      "words": [
+        {
+          "start": 730.55,
+          "end": 731.15,
+          "word": "bring",
+          "probability": 0.2507
+        },
+        {
+          "start": 731.15,
+          "end": 731.39,
+          "word": "the",
+          "probability": 0.9976
+        },
+        {
+          "start": 731.39,
+          "end": 731.63,
+          "word": "head",
+          "probability": 0.9938
+        },
+        {
+          "start": 731.63,
+          "end": 731.87,
+          "word": "all",
+          "probability": 0.9856
+        },
+        {
+          "start": 731.87,
+          "end": 731.99,
+          "word": "the",
+          "probability": 0.9981
+        },
+        {
+          "start": 731.99,
+          "end": 732.15,
+          "word": "way",
+          "probability": 0.9996
+        },
+        {
+          "start": 732.15,
+          "end": 732.53,
+          "word": "over",
+          "probability": 0.986
+        },
+        {
+          "start": 732.53,
+          "end": 732.71,
+          "word": "to",
+          "probability": 0.9879
+        },
+        {
+          "start": 732.71,
+          "end": 732.85,
+          "word": "the",
+          "probability": 0.9986
+        },
+        {
+          "start": 732.85,
+          "end": 732.99,
+          "word": "end",
+          "probability": 0.9873
+        },
+        {
+          "start": 732.99,
+          "end": 733.19,
+          "word": "and",
+          "probability": 0.447
+        },
+        {
+          "start": 733.19,
+          "end": 733.29,
+          "word": "I",
+          "probability": 0.613
+        },
+        {
+          "start": 733.29,
+          "end": 733.57,
+          "word": "actually",
+          "probability": 0.7394
+        },
+        {
+          "start": 733.57,
+          "end": 734.45,
+          "word": "can't",
+          "probability": 0.7895
+        },
+        {
+          "start": 734.45,
+          "end": 734.77,
+          "word": "remember",
+          "probability": 0.9588
+        },
+        {
+          "start": 734.77,
+          "end": 734.93,
+          "word": "the",
+          "probability": 0.996
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "start": 734.93,
+      "end": 744.27,
+      "text": "Y position. What is it X 163? Let's check here.",
+      "words": [
+        {
+          "start": 734.93,
+          "end": 735.07,
+          "word": "Y",
+          "probability": 0.0932
+        },
+        {
+          "start": 735.07,
+          "end": 735.47,
+          "word": "position.",
+          "probability": 0.1168
+        },
+        {
+          "start": 736.97,
+          "end": 737.53,
+          "word": "What",
+          "probability": 0.6277
+        },
+        {
+          "start": 737.53,
+          "end": 737.65,
+          "word": "is",
+          "probability": 0.9472
+        },
+        {
+          "start": 737.65,
+          "end": 737.77,
+          "word": "it",
+          "probability": 0.9459
+        },
+        {
+          "start": 737.77,
+          "end": 738.23,
+          "word": "X",
+          "probability": 0.2623
+        },
+        {
+          "start": 738.23,
+          "end": 741.61,
+          "word": "163?",
+          "probability": 0.715
+        },
+        {
+          "start": 742.81,
+          "end": 743.33,
+          "word": "Let's",
+          "probability": 0.8978
+        },
+        {
+          "start": 743.33,
+          "end": 743.71,
+          "word": "check",
+          "probability": 0.7402
+        },
+        {
+          "start": 743.71,
+          "end": 744.27,
+          "word": "here.",
+          "probability": 0.966
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "start": 763.79,
+      "end": 806.15,
+      "text": "So let's start with team. All right so it's 161.3 and 261.3. So if we do the X",
+      "words": [
+        {
+          "start": 763.79,
+          "end": 765.31,
+          "word": "So",
+          "probability": 0.2641
+        },
+        {
+          "start": 765.31,
+          "end": 767.79,
+          "word": "let's",
+          "probability": 0.7314
+        },
+        {
+          "start": 767.79,
+          "end": 768.31,
+          "word": "start",
+          "probability": 0.671
+        },
+        {
+          "start": 768.31,
+          "end": 768.55,
+          "word": "with",
+          "probability": 0.667
+        },
+        {
+          "start": 768.55,
+          "end": 768.75,
+          "word": "team.",
+          "probability": 0.4886
+        },
+        {
+          "start": 792.31,
+          "end": 792.31,
+          "word": "All",
+          "probability": 0.4182
+        },
+        {
+          "start": 792.31,
+          "end": 792.41,
+          "word": "right",
+          "probability": 0.9988
+        },
+        {
+          "start": 792.41,
+          "end": 792.65,
+          "word": "so",
+          "probability": 0.1586
+        },
+        {
+          "start": 792.65,
+          "end": 792.91,
+          "word": "it's",
+          "probability": 0.5045
+        },
+        {
+          "start": 792.91,
+          "end": 793.93,
+          "word": "161",
+          "probability": 0.8919
+        },
+        {
+          "start": 793.93,
+          "end": 794.71,
+          "word": ".3",
+          "probability": 0.9905
+        },
+        {
+          "start": 794.71,
+          "end": 796.27,
+          "word": "and",
+          "probability": 0.8194
+        },
+        {
+          "start": 796.27,
+          "end": 797.03,
+          "word": "261",
+          "probability": 0.9731
+        },
+        {
+          "start": 797.03,
+          "end": 797.67,
+          "word": ".3.",
+          "probability": 0.9984
+        },
+        {
+          "start": 804.73,
+          "end": 805.01,
+          "word": "So",
+          "probability": 0.9497
+        },
+        {
+          "start": 805.01,
+          "end": 805.15,
+          "word": "if",
+          "probability": 0.9516
+        },
+        {
+          "start": 805.15,
+          "end": 805.27,
+          "word": "we",
+          "probability": 0.9965
+        },
+        {
+          "start": 805.27,
+          "end": 805.77,
+          "word": "do",
+          "probability": 0.9971
+        },
+        {
+          "start": 805.77,
+          "end": 805.97,
+          "word": "the",
+          "probability": 0.9974
+        },
+        {
+          "start": 805.97,
+          "end": 806.15,
+          "word": "X",
+          "probability": 0.431
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "start": 806.15,
+      "end": 808.07,
+      "text": "first. So let's see.",
+      "words": [
+        {
+          "start": 806.15,
+          "end": 806.53,
+          "word": "first.",
+          "probability": 0.5743
+        },
+        {
+          "start": 807.47,
+          "end": 807.55,
+          "word": "So",
+          "probability": 0.892
+        },
+        {
+          "start": 807.55,
+          "end": 807.83,
+          "word": "let's",
+          "probability": 0.6646
+        },
+        {
+          "start": 807.83,
+          "end": 808.07,
+          "word": "see.",
+          "probability": 0.5707
+        }
+      ]
+    }
+  ]
+}

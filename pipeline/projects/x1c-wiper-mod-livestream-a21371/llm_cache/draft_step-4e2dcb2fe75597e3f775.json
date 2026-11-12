@@ -1,0 +1,62 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 5 of 22, 157.1s to 193.3s.\nSegmentation summary: Drill 1/16-inch pilot holes at the marked locations.\nPrevious step: Position the drill template inside the printer frame and use the drill bit to mark hole locations.\nNext step: Enlarge the pilot holes to 1/8-inch using a larger drill bit.\n\nNarration during this step:\n[137.3-180.0s] \"and mark these holes. I have fireball. No going back. Any last words? I'll bring\"\n[180.0-192.0s] \"the light over. Maybe that'll help a little bit. At least I can see when I'm\"\n\nFrames: 3 attached: image 1 at 163.1s, image 2 at 175.2s, image 3 at 187.3s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 157.1s (step start) - hands until 158.1s: both hands 20%, one hand 80%; grip R: fist, L: pinch grip; hands touching 20%; active 20%; at centre\na2 @ 158.1s (hands: activity change, finger change, visibility change) - hands until 159.1s: one hand 73%, no hands 27%; grip L: pinch grip 82%; active 53%, moving down-left; at centre\na3 @ 159.1s (hands: activity change, visibility change) - hands until 160.1s: one hand 20%, no hands 80%; grip L: power grip; active 13%; at bottom\na4 @ 160.1s (hands: activity change, visibility change) - hands until 161.1s: one hand 100%; grip L: power grip 93%; active 93%, moving up-right; at centre\na5 @ 161.1s (hands: activity change, speed change) - hands until 162.2s: one hand 100%; grip L: power grip; active 6%; at centre\na6 @ 162.2s (hands: grip change) - hands until 175.3s: one hand 8%, no hands 92%; active 6%, moving up-right; at centre\na7 @ 175.3s (hands: activity change, finger change, grip change, visibility change) - hands until 176.3s: one hand 100%; grip L: open hand; active 13%; at centre\na8 @ 176.3s (hands: activity change) - hands until 177.3s: one hand 67%, no hands 33%; grip L: pinch grip 44%; active 40%, moving up-left; at centre\na9 @ 177.3s (hands: activity change, finger change, grip change, speed change, visibility change) - hands until 180.0s: no hands visible\na10 @ 180.0s (narration) - hands until 193.3s: no hands 96%; active 4%, moving up-right; at top-left\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video).\n(no hand boxes for this step: use full)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s05/k1.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s05/k2.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s05/k3.jpg"
+  ],
+  "response": {
+    "title": "Drill pilot holes into the frame",
+    "instruction": "Use the power drill to create 1/16-inch pilot holes at the previously marked locations on the printer frame.",
+    "details": [
+      "Hold the drill firmly with both hands for stability.",
+      "Align the drill bit precisely over the marked hole spots before engaging the trigger.",
+      "Apply steady, controlled pressure to penetrate the material without forcing the drill."
+    ],
+    "tools": [
+      "power drill",
+      "1/16-inch drill bit"
+    ],
+    "materials": [
+      "printer frame"
+    ],
+    "expected_result": "Clean 1/16-inch pilot holes drilled into the designated points on the frame.",
+    "cautions": [
+      "Keep hands and fingers away from the rotating drill bit to avoid injury."
+    ],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "setting",
+        "description": "The appropriate drill speed or torque setting for the frame material.",
+        "blocking": false
+      },
+      {
+        "field": "safety",
+        "description": "Recommendations for eye protection while drilling metal or plastic components.",
+        "blocking": true
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 157.1,
+        "caption": "Align drill bit over marks",
+        "focus_box": "full",
+        "emphasis": "drill bit tip",
+        "emphasis_s": 157.1
+      },
+      {
+        "start_s": 162.2,
+        "caption": "Drill pilot holes carefully",
+        "focus_box": "full",
+        "emphasis": "drill contact point",
+        "emphasis_s": 165.0
+      }
+    ]
+  }
+}

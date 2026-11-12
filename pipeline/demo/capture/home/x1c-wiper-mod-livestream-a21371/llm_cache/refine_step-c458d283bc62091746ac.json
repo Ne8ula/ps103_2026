@@ -1,0 +1,32 @@
+{
+  "task": "refine_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "ff89ae4e94",
+  "served_by": "gemini-3.6-flash",
+  "system": "You update one step of a tutorial with answers the video's uploader gave to questions about it.\nThe uploader is the authority on their own procedure: integrate their answers faithfully.\n\nRules:\n- Change only what the answers address. Keep every other field as it is, word for word.\n- Put each new fact from the answers into user_supplied as a short, self-contained statement\n  (e.g. \"Scrub for at least 20 seconds\"). Keep earlier user_supplied facts unless an answer marked as\n  superseding replaces them.\n- Use the facts in the instruction, details, tools, materials, cautions or expected_result where a\n  learner needs them.\n- List in resolved_missing_keys the keys of missing-info items the answers fully resolve. Do not list\n  items the answers do not address.\n- Never invent numeric values, settings or safety claims beyond what the answers and the existing step\n  state. If an answer is vague or raises a new gap, add it to new_missing_info instead of guessing.\n- confidence: raise it if the answers confirm the step, lower it if they contradict it.",
+  "user": "Current step (s02, 52.7s to 73.3s):\n{\n  \"title\": \"Push the printer toolhead aside\",\n  \"instruction\": \"Manually slide the printer toolhead to the back or side of the enclosure. This clears the central workspace for upcoming tasks.\",\n  \"details\": [\n    \"Grip the top of the white toolhead housing with your hand and push it along the gantry rails.\"\n  ],\n  \"tools\": [\n    \"3D printer\"\n  ],\n  \"materials\": [],\n  \"expected_result\": \"The central area of the printer bed is unobstructed by the toolhead.\",\n  \"cautions\": [],\n  \"confidence\": 0.9,\n  \"user_supplied\": []\n}\n\nOpen missing-info items (key: field, blocking, description):\ns02:missing:safety: safety, blocking, The user should know if the printer must be powered off before manually moving the toolhead to avoid motor damage.\n\nUploader answers to apply:\n- Question: Should the printer be powered off before manually moving the toolhead in Push the printer toolhead aside?\n  Answer: Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.\n  Raised by: s02:missing:safety",
+  "images": [],
+  "response": {
+    "title": "Push the printer toolhead aside",
+    "instruction": "Manually slide the printer toolhead to the back or side of the enclosure while the printer is powered off. This clears the central workspace for upcoming tasks.",
+    "details": [
+      "Grip the top of the white toolhead housing with your hand and push it along the gantry rails."
+    ],
+    "tools": [
+      "3D printer"
+    ],
+    "materials": [],
+    "expected_result": "The central area of the printer bed is unobstructed by the toolhead.",
+    "cautions": [
+      "Power the printer off before reaching inside and moving the toolhead by hand."
+    ],
+    "confidence": 0.95,
+    "user_supplied": [
+      "Power off the printer before reaching inside and moving the toolhead by hand."
+    ],
+    "resolved_missing_keys": [
+      "s02:missing:safety"
+    ],
+    "new_missing_info": []
+  }
+}

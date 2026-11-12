@@ -35,7 +35,7 @@ A tutorial package containing:
 
 ## Functionality 2
 
-_Deferred by the user. Out of scope until raised again._
+_Learner assistant: on-request Q&A over the tutorial, SOP, transcript and expert answers, plus proactive checks (safety-critical, easy to mess up, comprehension) that the tutorial maker can tune. Designed, not built: see [pipeline/LEARNER_ASSISTANT.md](pipeline/LEARNER_ASSISTANT.md)._
 
 ## Decisions (29 Oct 2026)
 

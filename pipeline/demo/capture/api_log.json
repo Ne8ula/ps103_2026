@@ -1,0 +1,890 @@
+[
+ {
+  "method": "GET",
+  "path": "/health",
+  "status": 200,
+  "ms": 29,
+  "request": null,
+  "headers": {},
+  "response": {
+   "status": "ok",
+   "version": "0.1.0",
+   "active_runs": 0
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371",
+  "status": 200,
+  "ms": 6,
+  "request": null,
+  "headers": {},
+  "response": {
+   "schema_version": 1,
+   "id": "x1c-wiper-mod-livestream-a21371",
+   "name": "X1C wiper mod (livestream)",
+   "created_at": "2026-10-30T15:37:24+00:00",
+   "video": {
+    "source": "inputs/video.mp4",
+    "kind": "file"
+   },
+   "documents": [
+    {
+     "id": "d01",
+     "name": "bambu-x1-replace-nozzle-wiper.md",
+     "path": "inputs/documents/d01-bambu-x1-replace-nozzle-wiper.md",
+     "sha": "9fb435144cff6031"
+    }
+   ],
+   "stages": {
+    "ingest": {
+     "status": "done",
+     "fingerprint": "04d43a47ea43ac5f",
+     "output_hash": "815b994c2953b8e0",
+     "started_at": "2026-10-30T15:37:53+00:00",
+     "finished_at": "2026-10-30T15:38:39+00:00",
+     "error": null
+    },
+    "perception": {
+     "status": "done",
+     "fingerprint": "e621b84e6fb42389",
+     "output_hash": "ceecc8396d364c89",
+     "started_at": "2026-10-30T15:38:39+00:00",
+     "finished_at": "2026-10-30T15:42:04+00:00",
+     "error": null
+    },
+    "transcribe": {
+     "status": "done",
+     "fingerprint": "e4e6b97d10f5d6e3",
+     "output_hash": "65a5f374000facba",
+     "started_at": "2026-10-30T15:42:04+00:00",
+     "finished_at": "2026-10-30T15:42:36+00:00",
+     "error": null
+    },
+    "gestures": {
+     "status": "done",
+     "fingerprint": "b50dbe0edd4d3b7a",
+     "output_hash": "88766a877c9f55e4",
+     "started_at": "2026-10-30T15:42:36+00:00",
+     "finished_at": "2026-10-30T15:42:41+00:00",
+     "error": null
+    },
+    "candidates": {
+     "status": "done",
+     "fingerprint": "de351ca7f7f472e4",
+     "output_hash": "379af1c90dc27ec2",
+     "started_at": "2026-10-30T15:42:41+00:00",
+     "finished_at": "2026-10-30T15:42:42+00:00",
+     "error": null
+    },
+    "segment": {
+     "status": "done",
+     "fingerprint": "aeb8a234c50532b9",
+     "output_hash": "eaa7d4c32677b58a",
+     "started_at": "2026-10-30T15:44:01+00:00",
+     "finished_at": "2026-10-30T15:48:56+00:00",
+     "error": null
+    },
+    "draft": {
+     "status": "done",
+     "fingerprint": "f1fe4a2c3446028a",
+     "output_hash": "f062e94071e71ab0",
+     "started_at": "2026-10-30T16:20:18+00:00",
+     "finished_at": "2026-10-30T16:20:28+00:00",
+     "error": null
+    },
+    "refine": {
+     "status": "done",
+     "fingerprint": "ef6cabd485a4db5b",
+     "output_hash": "279eea40cb23d7a8",
+     "started_at": "2026-10-30T16:20:28+00:00",
+     "finished_at": "2026-10-30T16:20:28+00:00",
+     "error": null
+    },
+    "compliance": {
+     "status": "done",
+     "fingerprint": "2a5143ada6231c0e",
+     "output_hash": "489358ff80ead499",
+     "started_at": "2026-11-09T20:56:19+00:00",
+     "finished_at": "2026-11-09T21:08:48+00:00",
+     "error": null
+    },
+    "questions": {
+     "status": "done",
+     "fingerprint": "213608236a02caff",
+     "output_hash": "dce5c33dcc1a8808",
+     "started_at": "2026-11-09T21:08:48+00:00",
+     "finished_at": "2026-11-09T21:09:42+00:00",
+     "error": null
+    },
+    "render": {
+     "status": "done",
+     "fingerprint": "6e83156fc3966d01",
+     "output_hash": "0a702596c6d8fe77",
+     "started_at": "2026-11-12T23:04:56+00:00",
+     "finished_at": "2026-11-12T23:07:39+00:00",
+     "error": null
+    },
+    "edit": {
+     "status": "done",
+     "fingerprint": "099358f38ac7b602",
+     "output_hash": "6e91a4d159111568",
+     "started_at": "2026-11-12T22:58:29+00:00",
+     "finished_at": "2026-11-12T23:04:56+00:00",
+     "error": null
+    }
+   },
+   "active_run_id": null
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/steps",
+  "status": 200,
+  "ms": 9,
+  "request": null,
+  "headers": {
+   "x-steps-source": "refine"
+  },
+  "response": {
+   "_truncated": true,
+   "_bytes": 50895,
+   "preview": "{\"revision\": 0, \"steps\": [{\"id\": \"s01\", \"index\": 0, \"start\": 5.4, \"end\": 52.733, \"title\": \"Clear and remove the glass top cover\", \"instruction\": \"Clear all loose objects from the top of the 3D printer and lift the glass cover away.\", \"details\": [\"Use a pinch grip to remove small components from the surface.\", \"Ensure the tripod or other large objects are moved before lifting the glass.\"], \"tools\": [\"3D printer\", \"glass top cover\", \"tripod\"], \"materials\": [\"small parts\"], \"expected_result\": \"The top of the 3D printer is open and clear of obstructions.\", \"cautions\": [\"Handle the glass top cover carefully to prevent breaking or scratching it.\"], \"confidence\": 0.9, \"missing_info\": [{\"field\": \"other\", \"description\": \"A designated safe area to store the removed glass cover.\", \"blocking\": false, \"key\": \"s01:missing:other\"}], \"user_supplied\": [], \"keyframe_paths\": [\"draft/keyframes/s01/k1.jpg\", \"draft/keyframes/s01/k2.jpg\", \"draft/keyframes/s01/k3.jpg\"], \"provenance\": {\"time_ranges\": [{\"start\": 5.4, \"end\": 52.733}], \"gesture_keyframe_ids\": [\"g0002\", \"g0004\", \"g0006\", \"g0008\", \"g0011\", \"g0013\", \"g0015\", \"g0017\"], \"transcript_segment_ids\": [0], \"chunk_ids\": [], \"answer_ids\": [], \"llm_calls\": [\"segment_steps-27c50c24567721bbc687\", \"draft_step-3a9ef9831d6a0f579cdb\"]}, \"substeps\": [{\"start\": 5.4, \"end\": 40.6, \"caption\": \"Clear objects from the glass surface\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0002\", \"g0003\", \"g0004\", \"g0005\", \"g0006\", \"g0007\"]}, {\"start\": 40.6, \"end\": 50.733, \"caption\": \"Pick up small components\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"small items\", \"emphasis_t\": 44.8, \"gesture_keyframe_ids\": [\"g0008\", \"g0009\", \"g0010\", \"g0011\", \"g0012\", \"g0013\", \"g0014\", \"g0015\", \"g0016\", \"g0017\"]}, {\"start\": 50.733, \"end\": 52.733, \"caption\": \"Lift the glass cover off\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0018\", \"g0019\"]}], \"focus_boxes\": []}, {\"id\": \"s02\", \"index\": 1, \"start\": 52.733, \"end\": 73.333, \"title\": \"Push the printer toolhead aside\", \"instruction\": \"Manually slide the printer toolhead to the back or side of the enclosure. This clears the central workspace for upcoming tasks.\", \"details\": [\"Grip the top of the white toolhead housing with your hand and push it along the gantry rails.\"], \"tools\": [\"3D printer\"], \"materials\": [], \"expected_result\": \"The central area of the printer bed is unobstructed by the toolhead.\", \"cautions\": [], \"confidence\": 0.9, \"missing_info\": [{\"field\": \"safety\", \"description\": \"The user should know if the printer must be powered off before manually moving the toolhead to avoid motor damage.\", \"blocking\": true, \"key\": \"s02:missing:safety\"}], \"user_supplied\": [], \"keyframe_paths\": [\"draft/keyframes/s02/k1.jpg\", \"draft/keyframes/s02/k2.jpg\", \"draft/keyframes/s02/k3.jpg\"], \"provenance\": {\"time_ranges\": [{\"start\": 52.733, \"end\": 73.333}], \"gesture_keyframe_ids\": [\"g0020\", \"g0021\", \"g0022\", \"g0023\", \"g0024\"], \"transcript_segment_ids\": [1], \"chunk_ids\": [], \"answer_ids\": [], \"llm_calls\": [\"segment_steps-27c50c24567721bbc687\", \"draft_step-bf74538b13ce2f3542f2\"]}, \"substeps\": [{\"start\": 52.733, \"end\": 69.067, \"caption\": \"Access the printer workspace\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0020\"]}, {\"start\": 69.067, \"end\": 73.333, \"caption\": \"Push toolhead out of the way\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"toolhead\", \"emphasis_t\": 69.9, \"gesture_keyframe_ids\": [\"g0021\", \"g0022\", \"g0023\", \"g0024\"]}], \"focus_boxes\": []}, {\"id\": \"s03\", \"index\": 2, \"start\": 73.333, \"end\": 128.267, \"title\": \"Examine the 3D-printed drill template\", \"instruction\": \"Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly.\", \"details\": [\"Hold the printed template up to inspect it for wear or damage.\", \"Verify that the guide holes are unobstructed before use.\"], \"tools\": [\"drill bit\"], \"materials\": [\"3D-printed template\"], \"expected_result\": \"A 3D-printed template with unobstructed, usable guide holes.\", \"cautions\": [], \"confidence\": 0.9, \"missing_info\": [{\"field\": \"outcome\", \"description\": \"How to specifically test the fit of the drill bit inside the guide hole is not explicitly demonstrated.\", \"blocking\": true, \"key\": \"s03:missing:outcome\"}, {\"field\": \"purpose\", \"description\": \"The specific dimensions or material type of the template are not provided.\", \"blocking\": false, \"key\": \"s03:missing:purpose\"}], \"user_supplied\": [], \"keyframe_paths\": [\"draft/keyframes/s03/k1.jpg\", \"draft/keyframes/s03/k2.jpg\", \"draft/keyframes/s03/k3.jpg\"], \"provenance\": {\"time_ranges\": [{\"start\": 73.333, \"end\": 128.267}], \"gesture_keyframe_ids\": [\"g0025\", \"g0027\", \"g0029\", \"g0031\", \"g0033\", \"g0035\", \"g0037\", \"g0039\"], \"transcript_segment_ids\": [2, 3, 4], \"chunk_ids\": [], \"answer_ids\": [], \"llm_calls\": [\"segment_steps-27c50c24567721bbc687\", \"draft_step-43178319ff639c0dc300\"]}, \"substeps\": [{\"start\": 73.333, \"end\": 113.133, \"caption\": \"Examine the printed template\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0025\"]}, {\"start\": 113.133, \"end\": 119.133, \"caption\": \"Hold template for inspection\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"template\", \"emphasis_t\": 113.133, \"gesture_keyframe_ids\": [\"g0026\", \"g0027\", \"g0028\", \"g0029\", \"g0030\", \"g0031\"]}, {\"start\": 119.133, \"end\": 128.267, \"caption\": \"Verify guide holes\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"guide holes\", \"emphasis_t\": 119.133, \"gesture_keyframe_ids\": [\"g0032\", \"g0033\", \"g0034\", \"g0035\", \"g0036\", \"g0037\", \"g0038\", \"g0039\", \"g0040\"]}], \"focus_boxes\": []}, {\"id\": \"s04\", \"index\": 3, \"start\": 128.267, \"end\": 157.067, \"title\": \"Position template and mark hole locations\", \"instruction\": \"Place the drill template into the printer frame and use the drill bit to mark the hole locations.\", \"details\": [\"Hold the "
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/questions",
+  "status": 200,
+  "ms": 6,
+  "request": null,
+  "headers": {},
+  "response": {
+   "round": 1,
+   "questions": [
+    {
+     "id": "q003",
+     "step_id": "s02",
+     "kind": "missing_info",
+     "text": "Should the printer be powered off before manually moving the toolhead in Push the printer toolhead aside?",
+     "why": "Manual movement of the toolhead while powered on can damage the stepper motors.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s02:missing:safety"
+     ]
+    },
+    {
+     "id": "q004",
+     "step_id": "s03",
+     "kind": "missing_info",
+     "text": "How should the fit of the drill bit inside the guide hole be tested in Examine the 3D-printed drill template?",
+     "why": "Ensuring a correct fit is necessary to prevent drilling inaccurately or damaging the template.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s03:missing:outcome"
+     ]
+    },
+    {
+     "id": "q002",
+     "step_id": "s05",
+     "kind": "missing_info",
+     "text": "What is the diameter of the pilot holes to be drilled into the frame in Drill pilot holes into the frame?",
+     "why": "The pilot hole size is missing and is critical for the secondary enlargement step.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s05:missing:unverified"
+     ]
+    },
+    {
+     "id": "q006",
+     "step_id": "s09",
+     "kind": "missing_info",
+     "text": "What is the correct orientation or mating point for the assembly in Position backing plate and wiper?",
+     "why": "The visual frames do not clearly show how the parts align before installation.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s09:missing:other"
+     ]
+    },
+    {
+     "id": "q005",
+     "step_id": null,
+     "kind": "sop_conflict",
+     "text": "Should an H2.0 Allen key or a screwdriver be used for the screws in Tighten the center screw, Position and tighten the wiper plate, and Confirm wiper assembly replacement without recalibration?",
+     "why": "There is a conflict between the video's use of a screwdriver and the manual's requirement for an Allen key.",
+     "answer_type": "choice",
+     "choices": [
+      "H2.0 Allen key",
+      "screwdriver"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s11:conflict:d01:1",
+      "c:s16:conflict:d01:1",
+      "c:s17:conflict:d01:1",
+      "s11:missing:tool",
+      "s16:missing:tool",
+      "s17:missing:tool"
+     ]
+    },
+    {
+     "id": "q001",
+     "step_id": null,
+     "kind": "sop_conflict",
+     "text": "Does the installation require a single screw or multiple screws including a center screw and outer screws?",
+     "why": "The manual specifies only one screw, but the video procedure and backing plate installation suggest several.",
+     "answer_type": "choice",
+     "choices": [
+      "single screw",
+      "center and outer screws"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s11:conflict:d01:2",
+      "c:s16:conflict:d01:2",
+      "c:s17:conflict:d01:2",
+      "s12:missing:other",
+      "s17:missing:quantity"
+     ]
+    },
+    {
+     "id": "q009",
+     "step_id": "s14",
+     "kind": "sop_conflict",
+     "text": "In Verify wiper alignment, should the wiper move slightly in all directions or be firmly seated?",
+     "why": "The video suggests movement is required, which contradicts the manual's instruction for parts to be properly seated.",
+     "answer_type": "choice",
+     "choices": [
+      "move slightly",
+      "firmly seated"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s14:conflict:d01:2"
+     ]
+    },
+    {
+     "id": "q010",
+     "step_id": "s15",
+     "kind": "sop_conflict",
+     "text": "Is enlarging the mounting holes with a drill an approved technique for the nozzle wiper installation?",
+     "why": "The manual does not list drills as a required tool and implies the part should be installed as-is.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s15:conflict:d01:1",
+      "c:s15:conflict:d01:2"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/compliance",
+  "status": 200,
+  "ms": 6,
+  "request": null,
+  "headers": {},
+  "response": {
+   "_truncated": true,
+   "_bytes": 24689,
+   "preview": "{\"documents\": [{\"id\": \"d01\", \"name\": \"bambu-x1-replace-nozzle-wiper.md\", \"path\": \"inputs/documents/d01-bambu-x1-replace-nozzle-wiper.md\", \"pages\": null, \"chunks\": 3}], \"steps\": [{\"step_id\": \"s01\", \"notes\": [{\"id\": \"c-s01-1\", \"step_id\": \"s01\", \"kind\": \"requirement\", \"severity\": \"warning\", \"text\": \"Ensure you power off the printer before removing the top glass cover.\", \"citations\": [{\"chunk_id\": \"d01:1\", \"doc_name\": \"bambu-x1-replace-nozzle-wiper.md\", \"page\": null, \"quote\": \"Power off the printer.\", \"sentence_ids\": [4]}, {\"chunk_id\": \"d01:1\", \"doc_name\": \"bambu-x1-replace-nozzle-wiper.md\", \"page\": null, \"quote\": \"Power off the printer and remove the top glass cover.\", \"sentence_ids\": [7]}], \"after_step_id\": null, \"llm_call\": \"compliance_step-2e54066340630d55ef69\", \"requirement_type\": \"technique\", \"step_field\": \"instruction\", \"sop_value\": \"Power off the printer.\", \"video_value\": null, \"sop_step_id\": null}], \"no_relevant_guidance\": false, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Clear and remove the glass top cover Clear all loose objects from the top of the 3D printer and lift the glass cover away. Using 3D printer, glass top cover, tripod, small parts. Handle the glass top cover carefully to prevent breaking or scratching it.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": [\"P1\"]}, {\"step_id\": \"s02\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Push the printer toolhead aside Manually slide the printer toolhead to the back or side of the enclosure. This clears the central workspace for upcoming tasks. Using 3D printer.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": [\"P2\"]}, {\"step_id\": \"s03\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Examine the 3D-printed drill template Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly. Using drill bit, 3D-printed template.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s04\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Position template and mark hole locations Place the drill template into the printer frame and use the drill bit to mark the hole locations. Using drill bit, drill template, printer frame.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s05\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Drill pilot holes into the frame Use the power drill to create 1/[?]-inch pilot holes at the previously marked locations on the printer frame. Using power drill, 1/[?]-inch drill bit, printer frame. Keep hands and fingers away from the rotating drill bit to avoid injury.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s06\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Enlarge pilot holes to 1/8 inch Insert a 1/8-inch drill bit into your drill and enlarge the previously created 1/16-inch pilot holes. Using drill, 1/8-inch drill bit, 3D printed part. Use caution when handling power tools and sharp drill bits.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s07\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"query\": \"Deburr the printer part Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly. Using manual deburring tool, printed part.\", \"context_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"sop_step_ids\": []}, {\"step_id\": \"s08\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"query\": \"Vacuum printer debris Vacuum the printer rails and the bottom of the printer case to remove filament debris. Using portable vacuum, filament debris.\", \"context_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"sop_step_ids\": []}, {\"step_id\": \"s09\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Position backing plate and wiper Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation. Using tape, backing plate, wiper assembly, center screw. Avoid dropping small parts into the printer housing.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": [\"P4\"]}, {\"step_id\": \"s10\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"query\": \"Thread center screw loosely and align plate Thread the center screw into the backing plate just enough to hold it in place. Align the two outside holes to ensure the plate is level before tightening. Using hex driver, center screw.\", \"context_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"sop_step_ids\": [\"P5\"]}, {\"step_id\": \"s11\", \"notes\": [{\"id\": \"c-s11-1\", \"step_id\": \"s11\", \"kind\": \"conflict\", \"severity\": \"warning\", \"text\": \"Use an H2.0 Allen key as specified in the manual instead of a screwdriver to tighten the screw.\", \"citations\": [{\"chunk_id\": \"d01:1\", \"doc_name\": \"bambu-x1-replace-nozzle-wiper.md\", \"page\": null, \"quote\": \"- nozzle wiper - H2.0 Allen key\", \"sentence_ids\": [2]}], \"after_step_id\": null, \"llm_call\": \"compliance_step-580f4ee1b02e511512c3\", \"requirement_type\": \"equipment\", \"step_field\": \"tools\", \"sop_value\": \"H2.0 Allen key\", \"video_value\": \"screwdriver\", \"sop_step_id\": null}, {\"id\": \"c-s11-2\", \"step_id\": \"s11\", \"kind\": \"conflict\", \"severity\": \"critical\", \"text\": \"The manual specifies installing only one screw, but the video refers to a center screw and mentions outer screws, which suggests a different part assembly.\", \"citations\": [{\"chunk_id\": \"d01:2\", \"doc_name\": \"bambu-x1-replace-nozzle-wiper.md\", \"page\": null, \"quote\": \"Screw in 1 screw and put back the glass cover.\", \"s"
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/questions?status=open",
+  "status": 200,
+  "ms": 5,
+  "request": null,
+  "headers": {},
+  "response": {
+   "round": 1,
+   "questions": [
+    {
+     "id": "q003",
+     "step_id": "s02",
+     "kind": "missing_info",
+     "text": "Should the printer be powered off before manually moving the toolhead in Push the printer toolhead aside?",
+     "why": "Manual movement of the toolhead while powered on can damage the stepper motors.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s02:missing:safety"
+     ]
+    },
+    {
+     "id": "q004",
+     "step_id": "s03",
+     "kind": "missing_info",
+     "text": "How should the fit of the drill bit inside the guide hole be tested in Examine the 3D-printed drill template?",
+     "why": "Ensuring a correct fit is necessary to prevent drilling inaccurately or damaging the template.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s03:missing:outcome"
+     ]
+    },
+    {
+     "id": "q002",
+     "step_id": "s05",
+     "kind": "missing_info",
+     "text": "What is the diameter of the pilot holes to be drilled into the frame in Drill pilot holes into the frame?",
+     "why": "The pilot hole size is missing and is critical for the secondary enlargement step.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s05:missing:unverified"
+     ]
+    },
+    {
+     "id": "q006",
+     "step_id": "s09",
+     "kind": "missing_info",
+     "text": "What is the correct orientation or mating point for the assembly in Position backing plate and wiper?",
+     "why": "The visual frames do not clearly show how the parts align before installation.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s09:missing:other"
+     ]
+    },
+    {
+     "id": "q005",
+     "step_id": null,
+     "kind": "sop_conflict",
+     "text": "Should an H2.0 Allen key or a screwdriver be used for the screws in Tighten the center screw, Position and tighten the wiper plate, and Confirm wiper assembly replacement without recalibration?",
+     "why": "There is a conflict between the video's use of a screwdriver and the manual's requirement for an Allen key.",
+     "answer_type": "choice",
+     "choices": [
+      "H2.0 Allen key",
+      "screwdriver"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s11:conflict:d01:1",
+      "c:s16:conflict:d01:1",
+      "c:s17:conflict:d01:1",
+      "s11:missing:tool",
+      "s16:missing:tool",
+      "s17:missing:tool"
+     ]
+    },
+    {
+     "id": "q001",
+     "step_id": null,
+     "kind": "sop_conflict",
+     "text": "Does the installation require a single screw or multiple screws including a center screw and outer screws?",
+     "why": "The manual specifies only one screw, but the video procedure and backing plate installation suggest several.",
+     "answer_type": "choice",
+     "choices": [
+      "single screw",
+      "center and outer screws"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s11:conflict:d01:2",
+      "c:s16:conflict:d01:2",
+      "c:s17:conflict:d01:2",
+      "s12:missing:other",
+      "s17:missing:quantity"
+     ]
+    },
+    {
+     "id": "q009",
+     "step_id": "s14",
+     "kind": "sop_conflict",
+     "text": "In Verify wiper alignment, should the wiper move slightly in all directions or be firmly seated?",
+     "why": "The video suggests movement is required, which contradicts the manual's instruction for parts to be properly seated.",
+     "answer_type": "choice",
+     "choices": [
+      "move slightly",
+      "firmly seated"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s14:conflict:d01:2"
+     ]
+    },
+    {
+     "id": "q010",
+     "step_id": "s15",
+     "kind": "sop_conflict",
+     "text": "Is enlarging the mounting holes with a drill an approved technique for the nozzle wiper installation?",
+     "why": "The manual does not list drills as a required tool and implies the part should be installed as-is.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s15:conflict:d01:1",
+      "c:s15:conflict:d01:2"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "method": "POST",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers",
+  "status": 201,
+  "request": {
+   "question_id": "q003",
+   "text": "Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end."
+  },
+  "response": {
+   "id": "a-q003-55186b",
+   "question_id": "q003",
+   "text": "Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.",
+   "created_at": "2026-11-12T23:07:41+00:00"
+  },
+  "headers": {}
+ },
+ {
+  "method": "POST",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers",
+  "status": 201,
+  "request": {
+   "question_id": "q002",
+   "text": "Drill 1/16 inch pilot holes through the template first, then open them up to 1/8 inch."
+  },
+  "response": {
+   "id": "a-q002-5d159f",
+   "question_id": "q002",
+   "text": "Drill 1/16 inch pilot holes through the template first, then open them up to 1/8 inch.",
+   "created_at": "2026-11-12T23:07:41+00:00"
+  },
+  "headers": {}
+ },
+ {
+  "method": "POST",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers",
+  "status": 201,
+  "request": {
+   "question_id": "q001",
+   "text": "This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper."
+  },
+  "response": {
+   "id": "a-q001-5cfd7a",
+   "question_id": "q001",
+   "text": "This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.",
+   "created_at": "2026-11-12T23:07:41+00:00"
+  },
+  "headers": {}
+ },
+ {
+  "method": "POST",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers",
+  "status": 201,
+  "request": {
+   "question_id": "q005",
+   "text": "Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces."
+  },
+  "response": {
+   "id": "a-q005-69ed17",
+   "question_id": "q005",
+   "text": "Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.",
+   "created_at": "2026-11-12T23:07:41+00:00"
+  },
+  "headers": {}
+ },
+ {
+  "method": "POST",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers",
+  "status": 201,
+  "request": {
+   "question_id": "q009",
+   "text": "Before the outer screws are tightened it should shift slightly side to side, which shows the holes are centred. Once tightened it must be firm with no play."
+  },
+  "response": {
+   "id": "a-q009-1fc9b3",
+   "question_id": "q009",
+   "text": "Before the outer screws are tightened it should shift slightly side to side, which shows the holes are centred. Once tightened it must be firm with no play.",
+   "created_at": "2026-11-12T23:07:41+00:00"
+  },
+  "headers": {}
+ },
+ {
+  "method": "POST",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers?rerun=true",
+  "status": 201,
+  "request": {
+   "question_id": "q010",
+   "text": "Only if the wiper binds. You can open the holes up to 3/16 inch as long as the backing plate still clamps flat. This is part of the mod, not the stock Bambu procedure."
+  },
+  "response": {
+   "id": "a-q010-0569ba",
+   "question_id": "q010",
+   "text": "Only if the wiper binds. You can open the holes up to 3/16 inch as long as the backing plate still clamps flat. This is part of the mod, not the stock Bambu procedure.",
+   "created_at": "2026-11-12T23:07:41+00:00"
+  },
+  "headers": {
+   "x-run-id": "r-986ee1132a"
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/runs/r-986ee1132a",
+  "status": 200,
+  "request": null,
+  "response": {
+   "id": "r-986ee1132a",
+   "project_id": "x1c-wiper-mod-livestream-a21371",
+   "status": "done",
+   "request": {
+    "stages": null,
+    "until": null,
+    "force": false
+   },
+   "created_at": "2026-11-12T23:07:41+00:00",
+   "started_at": "2026-11-12T23:07:41+00:00",
+   "finished_at": "2026-11-12T23:21:06+00:00",
+   "results": {
+    "ingest": "skipped",
+    "perception": "skipped",
+    "transcribe": "skipped",
+    "gestures": "skipped",
+    "candidates": "skipped",
+    "segment": "skipped",
+    "draft": "skipped",
+    "refine": "ran",
+    "compliance": "ran",
+    "questions": "ran",
+    "edit": "ran",
+    "render": "ran"
+   },
+   "current_stage": null,
+   "failed_stage": null,
+   "error": null
+  },
+  "headers": {},
+  "polls": 400
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/steps",
+  "status": 200,
+  "ms": 14,
+  "request": null,
+  "headers": {
+   "x-steps-source": "refine"
+  },
+  "response": {
+   "_truncated": true,
+   "_bytes": 53220,
+   "preview": "{\"revision\": 1, \"steps\": [{\"id\": \"s01\", \"index\": 0, \"start\": 5.4, \"end\": 52.733, \"title\": \"Clear and remove the glass top cover\", \"instruction\": \"Clear all loose objects from the top of the 3D printer and lift the glass cover away.\", \"details\": [\"Use a pinch grip to remove small components from the surface.\", \"Ensure the tripod or other large objects are moved before lifting the glass.\"], \"tools\": [\"3D printer\", \"glass top cover\", \"tripod\"], \"materials\": [\"small parts\"], \"expected_result\": \"The top of the 3D printer is open and clear of obstructions.\", \"cautions\": [\"Handle the glass top cover carefully to prevent breaking or scratching it.\"], \"confidence\": 0.9, \"missing_info\": [{\"field\": \"other\", \"description\": \"A designated safe area to store the removed glass cover.\", \"blocking\": false, \"key\": \"s01:missing:other\"}], \"user_supplied\": [], \"keyframe_paths\": [\"draft/keyframes/s01/k1.jpg\", \"draft/keyframes/s01/k2.jpg\", \"draft/keyframes/s01/k3.jpg\"], \"provenance\": {\"time_ranges\": [{\"start\": 5.4, \"end\": 52.733}], \"gesture_keyframe_ids\": [\"g0002\", \"g0004\", \"g0006\", \"g0008\", \"g0011\", \"g0013\", \"g0015\", \"g0017\"], \"transcript_segment_ids\": [0], \"chunk_ids\": [], \"answer_ids\": [], \"llm_calls\": [\"segment_steps-27c50c24567721bbc687\", \"draft_step-3a9ef9831d6a0f579cdb\"]}, \"substeps\": [{\"start\": 5.4, \"end\": 40.6, \"caption\": \"Clear objects from the glass surface\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0002\", \"g0003\", \"g0004\", \"g0005\", \"g0006\", \"g0007\"]}, {\"start\": 40.6, \"end\": 50.733, \"caption\": \"Pick up small components\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"small items\", \"emphasis_t\": 44.8, \"gesture_keyframe_ids\": [\"g0008\", \"g0009\", \"g0010\", \"g0011\", \"g0012\", \"g0013\", \"g0014\", \"g0015\", \"g0016\", \"g0017\"]}, {\"start\": 50.733, \"end\": 52.733, \"caption\": \"Lift the glass cover off\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0018\", \"g0019\"]}], \"focus_boxes\": []}, {\"id\": \"s02\", \"index\": 1, \"start\": 52.733, \"end\": 73.333, \"title\": \"Push the printer toolhead aside\", \"instruction\": \"Manually slide the printer toolhead to the back or side of the enclosure while the printer is powered off. This clears the central workspace for upcoming tasks.\", \"details\": [\"Grip the top of the white toolhead housing with your hand and push it along the gantry rails.\"], \"tools\": [\"3D printer\"], \"materials\": [], \"expected_result\": \"The central area of the printer bed is unobstructed by the toolhead.\", \"cautions\": [\"Power the printer off before reaching inside and moving the toolhead by hand.\"], \"confidence\": 0.95, \"missing_info\": [], \"user_supplied\": [\"Power off the printer before reaching inside and moving the toolhead by hand.\"], \"keyframe_paths\": [\"draft/keyframes/s02/k1.jpg\", \"draft/keyframes/s02/k2.jpg\", \"draft/keyframes/s02/k3.jpg\"], \"provenance\": {\"time_ranges\": [{\"start\": 52.733, \"end\": 73.333}], \"gesture_keyframe_ids\": [\"g0020\", \"g0021\", \"g0022\", \"g0023\", \"g0024\"], \"transcript_segment_ids\": [1], \"chunk_ids\": [], \"answer_ids\": [\"a-q003-55186b\"], \"llm_calls\": [\"segment_steps-27c50c24567721bbc687\", \"draft_step-bf74538b13ce2f3542f2\", \"refine_step-c458d283bc62091746ac\"]}, \"substeps\": [{\"start\": 52.733, \"end\": 69.067, \"caption\": \"Access the printer workspace\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0020\"]}, {\"start\": 69.067, \"end\": 73.333, \"caption\": \"Push toolhead out of the way\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"toolhead\", \"emphasis_t\": 69.9, \"gesture_keyframe_ids\": [\"g0021\", \"g0022\", \"g0023\", \"g0024\"]}], \"focus_boxes\": []}, {\"id\": \"s03\", \"index\": 2, \"start\": 73.333, \"end\": 128.267, \"title\": \"Examine the 3D-printed drill template\", \"instruction\": \"Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly.\", \"details\": [\"Hold the printed template up to inspect it for wear or damage.\", \"Verify that the guide holes are unobstructed before use.\"], \"tools\": [\"drill bit\"], \"materials\": [\"3D-printed template\"], \"expected_result\": \"A 3D-printed template with unobstructed, usable guide holes.\", \"cautions\": [], \"confidence\": 0.9, \"missing_info\": [{\"field\": \"outcome\", \"description\": \"How to specifically test the fit of the drill bit inside the guide hole is not explicitly demonstrated.\", \"blocking\": true, \"key\": \"s03:missing:outcome\"}, {\"field\": \"purpose\", \"description\": \"The specific dimensions or material type of the template are not provided.\", \"blocking\": false, \"key\": \"s03:missing:purpose\"}], \"user_supplied\": [], \"keyframe_paths\": [\"draft/keyframes/s03/k1.jpg\", \"draft/keyframes/s03/k2.jpg\", \"draft/keyframes/s03/k3.jpg\"], \"provenance\": {\"time_ranges\": [{\"start\": 73.333, \"end\": 128.267}], \"gesture_keyframe_ids\": [\"g0025\", \"g0027\", \"g0029\", \"g0031\", \"g0033\", \"g0035\", \"g0037\", \"g0039\"], \"transcript_segment_ids\": [2, 3, 4], \"chunk_ids\": [], \"answer_ids\": [], \"llm_calls\": [\"segment_steps-27c50c24567721bbc687\", \"draft_step-43178319ff639c0dc300\"]}, \"substeps\": [{\"start\": 73.333, \"end\": 113.133, \"caption\": \"Examine the printed template\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": null, \"emphasis_t\": null, \"gesture_keyframe_ids\": [\"g0025\"]}, {\"start\": 113.133, \"end\": 119.133, \"caption\": \"Hold template for inspection\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"template\", \"emphasis_t\": 113.133, \"gesture_keyframe_ids\": [\"g0026\", \"g0027\", \"g0028\", \"g0029\", \"g0030\", \"g0031\"]}, {\"start\": 119.133, \"end\": 128.267, \"caption\": \"Verify guide holes\", \"focus\": \"full\", \"focus_source\": \"llm\", \"emphasis\": \"guide holes\", \"emphasis_t\": 119.133, \"gesture_keyframe_ids\": [\"g0032\", \"g0033\", \"g0034\", \"g0035\", \"g0036\", \"g0037\", \"g0038\", \"g0039\", \"g0040\"]}], \"focus_boxes\": []}, {\"id\": \"s04\", \"index\": 3, \"start\": 128.267, \"end\": 157.067, \"title\": \"Position template and mark hole locations\", \"instruction\": \"Place the drill template into the printer frame and use the drill bit to mark "
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/questions",
+  "status": 200,
+  "ms": 8,
+  "request": null,
+  "headers": {},
+  "response": {
+   "round": 2,
+   "questions": [
+    {
+     "id": "q004",
+     "step_id": "s03",
+     "kind": "missing_info",
+     "text": "How should learners test whether the drill bit fits properly inside the guide holes during 'Examine the 3D-printed drill template'?",
+     "why": "Ensures the guide holes are accurately sized before attempting to mark and drill.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s03:missing:outcome"
+     ]
+    },
+    {
+     "id": "q011",
+     "step_id": null,
+     "kind": "missing_info",
+     "text": "What personal protective equipment, such as eye protection, should be worn while drilling and modifying components?",
+     "why": "Prevents injury from flying metal or plastic debris during drilling and hole enlargement.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s05:missing:safety",
+      "s06:missing:safety",
+      "s15:missing:safety"
+     ]
+    },
+    {
+     "id": "q006",
+     "step_id": "s09",
+     "kind": "missing_info",
+     "text": "How should the backing plate and wiper assembly be oriented and fitted together in 'Position backing plate and wiper'?",
+     "why": "Prevents misaligned installation of the backing plate.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s09:missing:other"
+     ]
+    },
+    {
+     "id": "q012",
+     "step_id": null,
+     "kind": "missing_info",
+     "text": "Following up on tool selection, how much tightness or torque should be applied when securing the center screw and wiper plate screws?",
+     "why": "Prevents over-tightening which warps the mounting plate and causes misalignment.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s11:missing:other",
+      "s16:missing:setting"
+     ]
+    },
+    {
+     "id": "q001",
+     "step_id": null,
+     "kind": "sop_conflict",
+     "text": "To clarify differences from the single-screw factory wiper, should the step explicitly state that this mod uses three screws across the backing and wiper plates?",
+     "why": "Your earlier answer (\"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\") did not fully resolve this. Resolves conflict between factory manual single-screw setup and modification multi-screw setup.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s16:conflict:d01:2",
+      "c:s17:conflict:d01:2",
+      "s17:missing:quantity",
+      "s12:missing:other"
+     ]
+    },
+    {
+     "id": "q013",
+     "step_id": "s15",
+     "kind": "missing_info",
+     "text": "Following up on driver info, what specific tool should be used to enlarge the wiper mounting holes in 'Enlarge wiper mounting holes'?",
+     "why": "Identifies the correct tool needed to relieve binding in mounting holes.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s15:missing:tool"
+     ]
+    },
+    {
+     "id": "q005",
+     "step_id": null,
+     "kind": "sop_conflict",
+     "text": "Since this mod replaces stock screws, should the tutorial explicitly instruct learners to use a hex driver instead of the standard manual's key for 'Position and tighten the wiper plate' and 'Confirm wiper assembly replacement without recalibration'?",
+     "why": "Your earlier answer (\"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\") did not fully resolve this. Resolves conflict with official documentation tool specifications.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "c:s16:conflict:d01:1",
+      "c:s17:conflict:d01:1",
+      "s16:missing:tool",
+      "s17:missing:tool"
+     ]
+    },
+    {
+     "id": "q014",
+     "step_id": "s20",
+     "kind": "missing_info",
+     "text": "Following up on power rules, should the printer remain powered off while manually inspecting nozzle clearance near the wiper nubs?",
+     "why": "Prevents accidental toolhead movement injuries during visual inspection.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "open",
+     "source_refs": [
+      "s20:missing:safety"
+     ]
+    },
+    {
+     "id": "q003",
+     "step_id": "s02",
+     "kind": "missing_info",
+     "text": "Should the printer be powered off before manually moving the toolhead in Push the printer toolhead aside?",
+     "why": "Manual movement of the toolhead while powered on can damage the stepper motors.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "answered",
+     "source_refs": [
+      "s02:missing:safety"
+     ]
+    },
+    {
+     "id": "q002",
+     "step_id": "s05",
+     "kind": "missing_info",
+     "text": "What is the diameter of the pilot holes to be drilled into the frame in Drill pilot holes into the frame?",
+     "why": "The pilot hole size is missing and is critical for the secondary enlargement step.",
+     "answer_type": "free_text",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "answered",
+     "source_refs": [
+      "s05:missing:unverified"
+     ]
+    },
+    {
+     "id": "q009",
+     "step_id": "s14",
+     "kind": "sop_conflict",
+     "text": "In Verify wiper alignment, should the wiper move slightly in all directions or be firmly seated?",
+     "why": "The video suggests movement is required, which contradicts the manual's instruction for parts to be properly seated.",
+     "answer_type": "choice",
+     "choices": [
+      "move slightly",
+      "firmly seated"
+     ],
+     "priority": 1,
+     "blocking": true,
+     "status": "answered",
+     "source_refs": [
+      "c:s14:conflict:d01:2"
+     ]
+    },
+    {
+     "id": "q010",
+     "step_id": "s15",
+     "kind": "sop_conflict",
+     "text": "Is enlarging the mounting holes with a drill an approved technique for the nozzle wiper installation?",
+     "why": "The manual does not list drills as a required tool and implies the part should be installed as-is.",
+     "answer_type": "yes_no",
+     "choices": [],
+     "priority": 1,
+     "blocking": true,
+     "status": "answered",
+     "source_refs": [
+      "c:s15:conflict:d01:1",
+      "c:s15:conflict:d01:2"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/compliance",
+  "status": 200,
+  "ms": 11,
+  "request": null,
+  "headers": {},
+  "response": {
+   "_truncated": true,
+   "_bytes": 20565,
+   "preview": "{\"documents\": [{\"id\": \"d01\", \"name\": \"bambu-x1-replace-nozzle-wiper.md\", \"path\": \"inputs/documents/d01-bambu-x1-replace-nozzle-wiper.md\", \"pages\": null, \"chunks\": 3}], \"steps\": [{\"step_id\": \"s01\", \"notes\": [{\"id\": \"c-s01-1\", \"step_id\": \"s01\", \"kind\": \"requirement\", \"severity\": \"warning\", \"text\": \"Ensure you power off the printer before removing the top glass cover.\", \"citations\": [{\"chunk_id\": \"d01:1\", \"doc_name\": \"bambu-x1-replace-nozzle-wiper.md\", \"page\": null, \"quote\": \"Power off the printer.\", \"sentence_ids\": [4]}, {\"chunk_id\": \"d01:1\", \"doc_name\": \"bambu-x1-replace-nozzle-wiper.md\", \"page\": null, \"quote\": \"Power off the printer and remove the top glass cover.\", \"sentence_ids\": [7]}], \"after_step_id\": null, \"llm_call\": \"compliance_step-2e54066340630d55ef69\", \"requirement_type\": \"technique\", \"step_field\": \"instruction\", \"sop_value\": \"Power off the printer.\", \"video_value\": null, \"sop_step_id\": null}], \"no_relevant_guidance\": false, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Clear and remove the glass top cover Clear all loose objects from the top of the 3D printer and lift the glass cover away. Using 3D printer, glass top cover, tripod, small parts. Handle the glass top cover carefully to prevent breaking or scratching it.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": [\"P1\"]}, {\"step_id\": \"s02\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Push the printer toolhead aside Manually slide the printer toolhead to the back or side of the enclosure while the printer is powered off. This clears the central workspace for upcoming tasks. Using 3D printer. Power the printer off before reaching inside and moving the toolhead by hand.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": [\"P1\", \"P2\"]}, {\"step_id\": \"s03\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Examine the 3D-printed drill template Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly. Using drill bit, 3D-printed template.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s04\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Position template and mark hole locations Place the drill template into the printer frame and use the drill bit to mark the hole locations. Using drill bit, drill template, printer frame.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s05\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Drill pilot holes into the frame Use the power drill to create 1/16-inch pilot holes through the template at the previously marked locations on the printer frame, then open them up to 1/8 inch. Using power drill, 1/16-inch drill bit, 1/8-inch drill bit, printer frame. Keep hands and fingers away from the rotating drill bit to avoid injury.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s06\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Enlarge pilot holes to 1/8 inch Insert a 1/8-inch drill bit into your drill and enlarge the previously created 1/16-inch pilot holes. Using drill, 1/8-inch drill bit, 3D printed part. Use caution when handling power tools and sharp drill bits.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": []}, {\"step_id\": \"s07\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"query\": \"Deburr the printer part Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly. Using manual deburring tool, printed part.\", \"context_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"sop_step_ids\": []}, {\"step_id\": \"s08\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"query\": \"Vacuum printer debris Vacuum the printer rails and the bottom of the printer case to remove filament debris. Using portable vacuum, filament debris.\", \"context_chunk_ids\": [\"d01:1\", \"d01:0\", \"d01:2\"], \"sop_step_ids\": []}, {\"step_id\": \"s09\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"query\": \"Position backing plate and wiper Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation. Using tape, backing plate, wiper assembly, center screw. Avoid dropping small parts into the printer housing.\", \"context_chunk_ids\": [\"d01:1\", \"d01:2\", \"d01:0\"], \"sop_step_ids\": [\"P4\"]}, {\"step_id\": \"s10\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"query\": \"Thread center screw loosely and align plate Thread the center screw into the backing plate just enough to hold it in place. Align the two outside holes to ensure the plate is level before tightening. Using hex driver, center screw.\", \"context_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"sop_step_ids\": [\"P5\"]}, {\"step_id\": \"s11\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"query\": \"Tighten the center screw Tighten the M3x6 center screw until it is snug. Ensure you do not over-tighten, as this will bend the plate and cause misalignment for the outer screws. Using hex driver, M3x6 center screw, metal plate. Do not over-tighten, or the center will bend and cause the outsides to misalign.\", \"context_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"sop_step_ids\": [\"P5\"]}, {\"step_id\": \"s12\", \"notes\": [], \"no_relevant_guidance\": true, \"retrieved_chunk_ids\": [\"d01:2\", \"d01:1\", \"d01:0\"], \"query\": \"Verify Backing Plate Installation Confirm the backing plate is correctly installed and note the specific screw sizes used for different positions. Using screwdriver, backing plate"
+  }
+ },
+ {
+  "method": "GET",
+  "path": "/projects/x1c-wiper-mod-livestream-a21371/answers",
+  "status": 200,
+  "ms": 9,
+  "request": null,
+  "headers": {},
+  "response": {
+   "answers": [
+    {
+     "id": "a-q003-55186b",
+     "question_id": "q003",
+     "text": "Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.",
+     "created_at": "2026-11-12T23:07:41+00:00"
+    },
+    {
+     "id": "a-q002-5d159f",
+     "question_id": "q002",
+     "text": "Drill 1/16 inch pilot holes through the template first, then open them up to 1/8 inch.",
+     "created_at": "2026-11-12T23:07:41+00:00"
+    },
+    {
+     "id": "a-q001-5cfd7a",
+     "question_id": "q001",
+     "text": "This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.",
+     "created_at": "2026-11-12T23:07:41+00:00"
+    },
+    {
+     "id": "a-q005-69ed17",
+     "question_id": "q005",
+     "text": "Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.",
+     "created_at": "2026-11-12T23:07:41+00:00"
+    },
+    {
+     "id": "a-q009-1fc9b3",
+     "question_id": "q009",
+     "text": "Before the outer screws are tightened it should shift slightly side to side, which shows the holes are centred. Once tightened it must be firm with no play.",
+     "created_at": "2026-11-12T23:07:41+00:00"
+    },
+    {
+     "id": "a-q010-0569ba",
+     "question_id": "q010",
+     "text": "Only if the wiper binds. You can open the holes up to 3/16 inch as long as the backing plate still clamps flat. This is part of the mod, not the stock Bambu procedure.",
+     "created_at": "2026-11-12T23:07:41+00:00"
+    }
+   ]
+  }
+ }
+]

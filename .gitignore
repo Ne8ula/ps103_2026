@@ -4,8 +4,6 @@ dist/
 *.log
 .DS_Store
 .venv/
-pipeline/projects/
-pipeline/samples/data/
 __pycache__/
 *.pyc
 .pytest_cache/
@@ -13,4 +11,19 @@ __pycache__/
 pipeline/models/
 .env
 .claude/worktrees/
-pipeline/demo/out/
+
+# Pipeline data is committed (media via Git LFS, see .gitattributes), except:
+# - the curated YouTube tutorial (standard YouTube license, local reference only)
+pipeline/samples/data/reference/
+# - full-text copies of Bambu Lab's copyrighted wiki page (short quotes in compliance notes are kept;
+#   samples/fetch.py re-downloads it): the SOP files, its search-index text, and the prompt logs of the
+#   compliance calls, which contain the retrieved text
+pipeline/samples/data/bambu-x1-replace-nozzle-wiper.*
+pipeline/projects/x1c-*/inputs/documents/
+pipeline/projects/x1c-*/compliance/index/chunks.json
+pipeline/projects/x1c-*/llm_cache/compliance_*
+pipeline/demo/capture/home/*/inputs/documents/
+pipeline/demo/capture/home/*/compliance/index/chunks.json
+pipeline/demo/capture/home/*/llm_cache/compliance_*
+# - the demo page itself embeds the full SOP text; rebuild it with demo/build_demo.py (its media is committed)
+pipeline/demo/out/studio.html

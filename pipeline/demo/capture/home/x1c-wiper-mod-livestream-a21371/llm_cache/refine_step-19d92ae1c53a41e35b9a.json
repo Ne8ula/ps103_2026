@@ -1,0 +1,38 @@
+{
+  "task": "refine_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "ff89ae4e94",
+  "served_by": "gemini-3.6-flash",
+  "system": "You update one step of a tutorial with answers the video's uploader gave to questions about it.\nThe uploader is the authority on their own procedure: integrate their answers faithfully.\n\nRules:\n- Change only what the answers address. Keep every other field as it is, word for word.\n- Put each new fact from the answers into user_supplied as a short, self-contained statement\n  (e.g. \"Scrub for at least 20 seconds\"). Keep earlier user_supplied facts unless an answer marked as\n  superseding replaces them.\n- Use the facts in the instruction, details, tools, materials, cautions or expected_result where a\n  learner needs them.\n- List in resolved_missing_keys the keys of missing-info items the answers fully resolve. Do not list\n  items the answers do not address.\n- Never invent numeric values, settings or safety claims beyond what the answers and the existing step\n  state. If an answer is vague or raises a new gap, add it to new_missing_info instead of guessing.\n- confidence: raise it if the answers confirm the step, lower it if they contradict it.",
+  "user": "Current step (s05, 157.1s to 193.3s):\n{\n  \"title\": \"Drill pilot holes into the frame\",\n  \"instruction\": \"Use the power drill to create 1/[?]-inch pilot holes at the previously marked locations on the printer frame.\",\n  \"details\": [\n    \"Hold the drill firmly with both hands for stability.\",\n    \"Align the drill bit precisely over the marked hole spots before engaging the trigger.\",\n    \"Apply steady, controlled pressure to penetrate the material without forcing the drill.\"\n  ],\n  \"tools\": [\n    \"power drill\",\n    \"1/[?]-inch drill bit\"\n  ],\n  \"materials\": [\n    \"printer frame\"\n  ],\n  \"expected_result\": \"Clean 1/[?]-inch pilot holes drilled into the designated points on the frame.\",\n  \"cautions\": [\n    \"Keep hands and fingers away from the rotating drill bit to avoid injury.\"\n  ],\n  \"confidence\": 0.5,\n  \"user_supplied\": []\n}\n\nOpen missing-info items (key: field, blocking, description):\ns05:missing:unverified: quantity, blocking, The draft stated '16', which the narration does not support; the value was removed and needs confirming.\ns05:missing:safety: safety, blocking, Recommendations for eye protection while drilling metal or plastic components.\ns05:missing:setting: setting, not blocking, The appropriate drill speed or torque setting for the frame material.\n\nUploader answers to apply:\n- Question: What is the diameter of the pilot holes to be drilled into the frame in Drill pilot holes into the frame?\n  Answer: Drill 1/16 inch pilot holes through the template first, then open them up to 1/8 inch.\n  Raised by: s05:missing:unverified",
+  "images": [],
+  "response": {
+    "title": "Drill pilot holes into the frame",
+    "instruction": "Use the power drill to create 1/16-inch pilot holes through the template at the previously marked locations on the printer frame, then open them up to 1/8 inch.",
+    "details": [
+      "Hold the drill firmly with both hands for stability.",
+      "Align the drill bit precisely over the marked hole spots before engaging the trigger.",
+      "Apply steady, controlled pressure to penetrate the material without forcing the drill."
+    ],
+    "tools": [
+      "power drill",
+      "1/16-inch drill bit",
+      "1/8-inch drill bit"
+    ],
+    "materials": [
+      "printer frame"
+    ],
+    "expected_result": "Clean pilot holes drilled into the designated points on the frame, enlarged to 1/8 inch.",
+    "cautions": [
+      "Keep hands and fingers away from the rotating drill bit to avoid injury."
+    ],
+    "confidence": 0.85,
+    "user_supplied": [
+      "Drill 1/16-inch pilot holes through the template first, then open them up to 1/8 inch."
+    ],
+    "resolved_missing_keys": [
+      "s05:missing:unverified"
+    ],
+    "new_missing_info": []
+  }
+}

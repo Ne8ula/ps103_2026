@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "embedding_model": "local:BAAI/bge-small-en-v1.5",
+  "documents": [
+    {
+      "id": "d01",
+      "sha": "9fb435144cff6031"
+    }
+  ],
+  "chunking": {
+    "max_words": 300,
+    "overlap_words": 40,
+    "min_words": 60,
+    "strip_priority_markers": true
+  },
+  "build_seconds": 1.35
+}

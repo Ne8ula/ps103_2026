@@ -1,0 +1,15 @@
+{
+  "source": "inputs/video.webm",
+  "source_kind": "file",
+  "title": null,
+  "uploader": null,
+  "license": null,
+  "duration": 58.32,
+  "fps": 25.0,
+  "width": 960,
+  "height": 720,
+  "frame_count": 1458,
+  "has_audio": true,
+  "video_path": "ingest/video.mp4",
+  "audio_path": "ingest/audio.wav"
+}

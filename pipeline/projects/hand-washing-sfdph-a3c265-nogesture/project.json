@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "id": "hand-washing-sfdph-a3c265-nogesture",
+  "name": "Hand washing (SFDPH)",
+  "created_at": "2026-10-30T01:19:35+00:00",
+  "video": {
+    "source": "inputs/video.webm",
+    "kind": "file"
+  },
+  "documents": [
+    {
+      "id": "d01",
+      "name": "fda-food-code-2022.pdf",
+      "path": "inputs/documents/d01-fda-food-code-2022.pdf",
+      "sha": "aa523bbee8e4fd90"
+    }
+  ],
+  "stages": {
+    "ingest": {
+      "status": "done",
+      "fingerprint": "4c79baa6620423ec",
+      "output_hash": "5f4c6953f09c3b36",
+      "started_at": "2026-10-30T01:19:36+00:00",
+      "finished_at": "2026-10-30T01:19:55+00:00",
+      "error": null
+    },
+    "perception": {
+      "status": "done",
+      "fingerprint": "8e4c3532232910af",
+      "output_hash": "f12b1fb50c7c70e8",
+      "started_at": "2026-10-30T01:19:55+00:00",
+      "finished_at": "2026-10-30T01:20:45+00:00",
+      "error": null
+    },
+    "transcribe": {
+      "status": "done",
+      "fingerprint": "222d33570edb1f14",
+      "output_hash": "347fbd8c4352f750",
+      "started_at": "2026-10-30T01:20:45+00:00",
+      "finished_at": "2026-10-30T01:21:00+00:00",
+      "error": null
+    },
+    "gestures": {
+      "status": "done",
+      "fingerprint": "b5c37412f7e8a9c1",
+      "output_hash": "8776353452efb4c9",
+      "started_at": "2026-10-30T01:21:00+00:00",
+      "finished_at": "2026-10-30T01:21:01+00:00",
+      "error": null
+    },
+    "candidates": {
+      "status": "done",
+      "fingerprint": "96f7ffcddc71c183",
+      "output_hash": "6c13fbb9fa426b66",
+      "started_at": "2026-10-30T01:21:01+00:00",
+      "finished_at": "2026-10-30T01:21:01+00:00",
+      "error": null
+    },
+    "segment": {
+      "status": "done",
+      "fingerprint": "b4d166921d25d507",
+      "output_hash": "6f70762e6aaaf2f3",
+      "started_at": "2026-10-30T01:36:48+00:00",
+      "finished_at": "2026-10-30T01:36:50+00:00",
+      "error": null
+    },
+    "draft": {
+      "status": "done",
+      "fingerprint": "7ccfb99daf89ec02",
+      "output_hash": "4b4e5c94a4d1b4dd",
+      "started_at": "2026-10-30T01:36:50+00:00",
+      "finished_at": "2026-10-30T01:36:52+00:00",
+      "error": null
+    },
+    "refine": {
+      "status": "done",
+      "fingerprint": "653f7cb0f51b64fa",
+      "output_hash": "4dc1e2c94b7d5e64",
+      "started_at": "2026-10-30T01:36:52+00:00",
+      "finished_at": "2026-10-30T01:36:52+00:00",
+      "error": null
+    },
+    "compliance": {
+      "status": "done",
+      "fingerprint": "eb21a5339a0bde20",
+      "output_hash": "93c600306cba1f5b",
+      "started_at": "2026-10-30T01:36:52+00:00",
+      "finished_at": "2026-10-30T01:36:53+00:00",
+      "error": null
+    },
+    "questions": {
+      "status": "done",
+      "fingerprint": "84ecb8de79321ece",
+      "output_hash": "36f34fe6a22343aa",
+      "started_at": "2026-10-30T01:36:53+00:00",
+      "finished_at": "2026-10-30T01:36:53+00:00",
+      "error": null
+    },
+    "render": {
+      "status": "done",
+      "fingerprint": "9f77d112f42c46c7",
+      "output_hash": "92563ff8ec63bbe8",
+      "started_at": "2026-10-30T01:35:41+00:00",
+      "finished_at": "2026-10-30T01:36:19+00:00",
+      "error": null
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "model": "hand_landmarker.task",
+  "sample_fps": 15.0,
+  "frames_processed": 875,
+  "frames_with_hands": 466,
+  "smoothing": "one_euro(min_cutoff=1,beta=1,d_cutoff=1)",
+  "device": "cpu",
+  "mirror_handedness": false,
+  "frames_with_two_hands": 65,
+  "elapsed_s": 20.98
+}

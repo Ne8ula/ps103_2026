@@ -1,0 +1,313 @@
+{
+  "task": "edit_units",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "80f0672eaa",
+  "served_by": "gemini-3.6-flash",
+  "system": "You help edit a raw, unedited demonstration video into a tight tutorial. The video has already been\nsplit into steps. Each step is split into short spoken lines. For every spoken line, say what it is\nfor a learner who wants to repeat the procedure:\n\n- task: describes or accompanies the action being done right now (what to do, how to hold or move\n  something, what tool or part is used).\n- result: points out the outcome to check (what it should look or feel like, how to tell it worked).\n- explain: background the learner needs to do the step correctly or safely (why, what goes wrong if\n  not, sizes, settings, warnings).\n- aside: anything a learner does not need: greetings, chat with viewers, camera or stream\n  adjustments, stories, product opinions, sales, repeating what was already said, thinking aloud.\n\nRules:\n- Label every line id you are given, exactly once. Use only the given ids.\n- Judge each line in the context of its step and the lines around it. When unsure between aside and\n  anything else, do not choose aside.\n- A line that states a measurement, size, count, setting or a safety point is never an aside.\n- Give a short reason (a few words).\n\nHand and motion figures come from the video: \"hands\" is the share of samples with a hand visible,\n\"motion\" is how much the image changes (1 = busy for this video). They help tell a line spoken while\nworking from a line spoken while nothing happens.",
+  "user": "Lines to label, grouped by step (id | time | hands | motion | text):\nStep \"Clear and remove the glass top cover\": Clear all loose objects from the top of the 3D printer and lift the glass cover away.\ns01-u02 | 5.8-7.2s | hands 10% | motion 1.17 | the tripod up first.\ns01-u04 | 47.5-49.9s | hands 100% | motion 0.62 | Looks like it was warping for a second, but it was just\ns01-u05 | 49.9-50.8s | hands 100% | motion 0.45 | a burr.\n\nStep \"Push the printer toolhead aside\": Manually slide the printer toolhead to the back or side of the enclosure. This clears the central workspace for upcoming tasks.\ns02-u02 | 64.6-69.0s | hands 0% | motion 0.20 | Now, because it's live, it won't let me switch cameras. Of course,\ns02-u04 | 69.1-72.8s | hands 96% | motion 0.63 | so I'll try to get you into the action the best I\ns02-u05 | 72.8-73.3s | hands 0% | motion 0.26 | can.\n\nStep \"Examine the 3D-printed drill template\": Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly.\ns03-u02 | 95.7-98.4s | hands 0% | motion 0.10 | Hopefully it\ns03-u04 | 100.2-101.0s | hands 0% | motion 0.02 | stays focused.\ns03-u06 | 111.3-116.5s | hands 65% | motion 0.41 | So this is actually the very first version of this template that\ns03-u07 | 116.5-121.1s | hands 100% | motion 0.25 | I printed and I've used it twice now. This would be the\ns03-u08 | 121.1-121.8s | hands 100% | motion 0.28 | third time.\ns03-u10 | 122.6-126.8s | hands 100% | motion 0.19 | The holes are still pretty tight on the drill bit too, so\ns03-u11 | 126.8-127.9s | hands 100% | motion 0.24 | let's\n\nStep \"Position template and mark hole locations\": Place the drill template into the printer frame and use the drill bit to mark the hole locations.\ns04-u02 | 130.2-130.6s | hands 100% | motion 0.27 | see.\ns04-u04 | 132.7-134.7s | hands 100% | motion 0.12 | It's good and solid here.\ns04-u06 | 136.8-138.2s | hands 100% | motion 0.12 | Let's go and mark these holes.\n\nStep \"Drill pilot holes into the frame\": Use the power drill to create 1/[?]-inch pilot holes at the previously marked locations on the printer frame.\ns05-u02 | 167.8-168.7s | hands 0% | motion 0.03 | I have fireball.\ns05-u04 | 171.2-172.1s | hands 0% | motion 0.15 | No going back.\ns05-u06 | 172.8-174.1s | hands 0% | motion 0.14 | Any last words?\ns05-u08 | 179.5-182.4s | hands 0% | motion 0.03 | I'll bring the light over. Maybe that'll help a little bit.\ns05-u10 | 190.8-192.2s | hands 0% | motion 0.10 | At least I can see when I'm doing.\n\nStep \"Enlarge pilot holes to 1/8 inch\": Insert a 1/8-inch drill bit into your drill and enlarge the previously created 1/16-inch pilot holes.\ns06-u02 | 221.6-222.1s | hands 100% | motion 0.15 | I think that went well.\n\nStep \"Deburr the printer part\": Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly.\ns07-u01 | 222.1-223.1s | hands 0% | motion 0.17 | I think that went well.\ns07-u03 | 225.1-229.0s | hands 0% | motion 0.00 | We'll open the holes up to one -eighth. By the way, this\ns07-u04 | 229.0-234.8s | hands 50% | motion 0.50 | first one is one -sixteenth of an inch and that finds\ns07-u05 | 234.8-239.2s | hands 0% | motion 0.00 | those center points very, very nice that we put in by hand.\ns07-u07 | 275.9-277.5s | hands 0% | motion 0.04 | There's my deburring tool,\ns07-u09 | 282.4-283.1s | hands 0% | motion 0.05 | misplaced.\ns07-u11 | 291.2-293.9s | hands 100% | motion 0.12 | Just take a little bit of that burr off just so that\ns07-u12 | 293.9-295.5s | hands 100% | motion 0.18 | the wiper sits nice and flat.\n\nStep \"Vacuum printer debris\": Vacuum the printer rails and the bottom of the printer case to remove filament debris.\ns08-u02 | 310.0-312.6s | hands 23% | motion 0.15 | I always keep this vacuum around for the printers.\ns08-u04 | 313.3-315.8s | hands 35% | motion 0.13 | This was like an Amazon sale and I cut it like four\ns08-u05 | 315.8-320.6s | hands 18% | motion 0.15 | years ago and it's still going today. It works great for keeping\ns08-u06 | 320.6-322.3s | hands 100% | motion 0.11 | the little bits of filament that day.\ns08-u08 | 323.6-328.3s | hands 37% | motion 0.77 | I always give the inside of the rails a little backing down\ns08-u09 | 328.3-329.8s | hands 0% | motion 0.99 | as well with\ns08-u11 | 337.9-339.1s | hands 0% | motion 0.01 | all the bits out of the bottom.\ns08-u13 | 348.9-350.0s | hands 0% | motion 0.02 | I'm going to go tidy, tidy.\n\nStep \"Position backing plate and wiper\": Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation.\ns09-u02 | 365.7-369.0s | hands 96% | motion 0.09 | The camera's kind of where I would like to be, but to\ns09-u03 | 369.0-370.4s | hands 90% | motion 0.10 | my best not to drop this.\ns09-u05 | 374.1-376.8s | hands 100% | motion 0.12 | If you got really big hands, you could just put some tape\ns09-u06 | 376.8-382.5s | hands 86% | motion 0.13 | around your fingers that will stick to the backing plate and then\ns09-u07 | 382.5-383.9s | hands 100% | motion 0.04 | it won't drop by accident.\n\nStep \"Thread center screw loosely and align plate\": Thread the center screw into the backing plate just enough to hold it in place. Align the two outside holes to ensure the plate is level before tightening.\ns10-u01 | 383.9-384.2s | hands 100% | motion 0.03 | it won't drop by accident.\ns10-u03 | 388.3-391.5s | hands 35% | motion 0.09 | We'll just thread in that center screw just to hold it in\ns10-u04 | 391.5-397.5s | hands 36% | motion 0.06 | place and we'll leave it loose and then we'll\ns10-u05 | 397.5-402.7s | hands 100% | motion 0.09 | line up two outside holes and this will make sure that it's\ns10-u06 | 402.7-404.1s | hands 100% | motion 0.11 | level and\ns10-u08 | 406.0-408.4s | hands 97% | motion 0.09 | these outside holes are going to line up and now we'll tighten\n\nStep \"Tighten the center screw\": Tighten the center screw until it is snug. Ensure you do not over-tighten, as this will bend the plate and cause misalignment for the outer screws.\ns11-u01 | 408.4-409.1s | hands 100% | motion 0.08 | these outside holes are going to line up and now we'll tighten\ns11-u02 | 409.1-413.9s | hands 29% | motion 0.04 | down the center and make sure that you don't over tighten. You\ns11-u03 | 413.9-416.3s | hands 6% | motion 0.03 | just want to make it snug so it's not going to come\ns11-u04 | 416.3-419.5s | hands 46% | motion 0.23 | loose and it's not going to teeter. If you start to over\ns11-u05 | 419.5-423.6s | hands 100% | motion 0.23 | tighten it, it'll bend in the center causing the outsides to kind\ns11-u06 | 423.6-425.7s | hands 68% | motion 0.33 | of go out and then you'll have a hard time getting your\ns11-u07 | 425.7-426.9s | hands 90% | motion 0.11 | screws to line up\n\nStep \"Verify Backing Plate Installation\": Confirm the backing plate is correctly installed and note the specific screw sizes used for different positions.\ns12-u02 | 428.0-433.5s | hands 100% | motion 0.16 | and that's it. Holes are installed\ns12-u03 | 433.5-434.8s | hands 100% | motion 0.08 | or\ns12-u05 | 435.8-439.7s | hands 33% | motion 0.20 | drilled. Backing plate is installed. Oh by the way, the center screw\ns12-u06 | 439.7-445.4s | hands 34% | motion 0.09 | is a 6mm so it's a M3 by 6 and the outside,",
+  "images": [],
+  "response": {
+    "labels": [
+      {
+        "unit_id": "s01-u02",
+        "label": "aside",
+        "reason": "camera tripod adjustment chat"
+      },
+      {
+        "unit_id": "s01-u04",
+        "label": "result",
+        "reason": "inspecting print surface quality outcome"
+      },
+      {
+        "unit_id": "s01-u05",
+        "label": "result",
+        "reason": "identifying observed burr on part"
+      },
+      {
+        "unit_id": "s02-u02",
+        "label": "aside",
+        "reason": "complaint about live stream camera switching"
+      },
+      {
+        "unit_id": "s02-u04",
+        "label": "aside",
+        "reason": "stream commentary on camera angle"
+      },
+      {
+        "unit_id": "s02-u05",
+        "label": "aside",
+        "reason": "finishing sentence about stream camera"
+      },
+      {
+        "unit_id": "s03-u02",
+        "label": "aside",
+        "reason": "hoping camera stays focused"
+      },
+      {
+        "unit_id": "s03-u04",
+        "label": "aside",
+        "reason": "continuation of camera focus comment"
+      },
+      {
+        "unit_id": "s03-u06",
+        "label": "aside",
+        "reason": "personal anecdote about template print history"
+      },
+      {
+        "unit_id": "s03-u07",
+        "label": "aside",
+        "reason": "continuing personal story of template usage"
+      },
+      {
+        "unit_id": "s03-u08",
+        "label": "aside",
+        "reason": "finishing anecdote on template usage count"
+      },
+      {
+        "unit_id": "s03-u10",
+        "label": "result",
+        "reason": "observing tight fit of drill bit in holes"
+      },
+      {
+        "unit_id": "s03-u11",
+        "label": "aside",
+        "reason": "filler phrase while starting next task"
+      },
+      {
+        "unit_id": "s04-u02",
+        "label": "aside",
+        "reason": "thinking aloud"
+      },
+      {
+        "unit_id": "s04-u04",
+        "label": "result",
+        "reason": "confirming solid fit of positioned template"
+      },
+      {
+        "unit_id": "s04-u06",
+        "label": "task",
+        "reason": "directing action to mark drill holes"
+      },
+      {
+        "unit_id": "s05-u02",
+        "label": "aside",
+        "reason": "joke while preparing to drill"
+      },
+      {
+        "unit_id": "s05-u04",
+        "label": "aside",
+        "reason": "dramatic banter before drilling"
+      },
+      {
+        "unit_id": "s05-u06",
+        "label": "aside",
+        "reason": "joke with viewers"
+      },
+      {
+        "unit_id": "s05-u08",
+        "label": "task",
+        "reason": "moving light source over workspace"
+      },
+      {
+        "unit_id": "s05-u10",
+        "label": "result",
+        "reason": "confirming improved visibility of workspace"
+      },
+      {
+        "unit_id": "s06-u02",
+        "label": "result",
+        "reason": "evaluating drilling result"
+      },
+      {
+        "unit_id": "s07-u01",
+        "label": "aside",
+        "reason": "repeated commentary on previous outcome"
+      },
+      {
+        "unit_id": "s07-u03",
+        "label": "task",
+        "reason": "stating action to enlarge holes"
+      },
+      {
+        "unit_id": "s07-u04",
+        "label": "explain",
+        "reason": "explains drill bit size and centering purpose"
+      },
+      {
+        "unit_id": "s07-u05",
+        "label": "explain",
+        "reason": "explains benefit of initial pilot size"
+      },
+      {
+        "unit_id": "s07-u07",
+        "label": "task",
+        "reason": "locating deburring tool for use"
+      },
+      {
+        "unit_id": "s07-u09",
+        "label": "aside",
+        "reason": "thinking aloud about misplaced tool"
+      },
+      {
+        "unit_id": "s07-u11",
+        "label": "task",
+        "reason": "instructing how to deburr hole"
+      },
+      {
+        "unit_id": "s07-u12",
+        "label": "explain",
+        "reason": "explains why burr must be removed"
+      },
+      {
+        "unit_id": "s08-u02",
+        "label": "aside",
+        "reason": "general chat about personal vacuum cleaner"
+      },
+      {
+        "unit_id": "s08-u04",
+        "label": "aside",
+        "reason": "story about buying vacuum on sale"
+      },
+      {
+        "unit_id": "s08-u05",
+        "label": "aside",
+        "reason": "vacuum purchase story continuation"
+      },
+      {
+        "unit_id": "s08-u06",
+        "label": "explain",
+        "reason": "explains vacuum purpose for cleaning filament bits"
+      },
+      {
+        "unit_id": "s08-u08",
+        "label": "task",
+        "reason": "describes vacuuming inside printer rails"
+      },
+      {
+        "unit_id": "s08-u09",
+        "label": "task",
+        "reason": "continuing vacuum action"
+      },
+      {
+        "unit_id": "s08-u11",
+        "label": "task",
+        "reason": "vacuuming debris from bottom of case"
+      },
+      {
+        "unit_id": "s08-u13",
+        "label": "aside",
+        "reason": "sing-song chatter while tidying up"
+      },
+      {
+        "unit_id": "s09-u02",
+        "label": "aside",
+        "reason": "camera positioning complaint"
+      },
+      {
+        "unit_id": "s09-u03",
+        "label": "task",
+        "reason": "holding component carefully to avoid dropping"
+      },
+      {
+        "unit_id": "s09-u05",
+        "label": "explain",
+        "reason": "tip on using tape for better grip"
+      },
+      {
+        "unit_id": "s09-u06",
+        "label": "explain",
+        "reason": "describes tape method for large hands"
+      },
+      {
+        "unit_id": "s09-u07",
+        "label": "explain",
+        "reason": "explains outcome of tape tip"
+      },
+      {
+        "unit_id": "s10-u01",
+        "label": "aside",
+        "reason": "repetition of previous tip statement"
+      },
+      {
+        "unit_id": "s10-u03",
+        "label": "task",
+        "reason": "directs threading center screw loosely"
+      },
+      {
+        "unit_id": "s10-u04",
+        "label": "task",
+        "reason": "instructs leaving screw loose initially"
+      },
+      {
+        "unit_id": "s10-u05",
+        "label": "task",
+        "reason": "instructs lining up outside holes"
+      },
+      {
+        "unit_id": "s10-u06",
+        "label": "explain",
+        "reason": "explains alignment ensures plate is level"
+      },
+      {
+        "unit_id": "s10-u08",
+        "label": "task",
+        "reason": "verifying hole alignment before tightening"
+      },
+      {
+        "unit_id": "s11-u01",
+        "label": "task",
+        "reason": "directs tightening center screw"
+      },
+      {
+        "unit_id": "s11-u02",
+        "label": "task",
+        "reason": "warning not to overtighten center screw"
+      },
+      {
+        "unit_id": "s11-u03",
+        "label": "explain",
+        "reason": "explains correct tightness tightness level"
+      },
+      {
+        "unit_id": "s11-u04",
+        "label": "explain",
+        "reason": "explains consequence of overtightening"
+      },
+      {
+        "unit_id": "s11-u05",
+        "label": "explain",
+        "reason": "describes structural deformation if overtightened"
+      },
+      {
+        "unit_id": "s11-u06",
+        "label": "explain",
+        "reason": "describes misalignment caused by overtightening"
+      },
+      {
+        "unit_id": "s11-u07",
+        "label": "explain",
+        "reason": "finishing explanation of misalignment risk"
+      },
+      {
+        "unit_id": "s12-u02",
+        "label": "result",
+        "reason": "confirming completion of drilling step"
+      },
+      {
+        "unit_id": "s12-u03",
+        "label": "aside",
+        "reason": "speech self-correction filler word"
+      },
+      {
+        "unit_id": "s12-u05",
+        "label": "result",
+        "reason": "verifying backing plate installation finish"
+      },
+      {
+        "unit_id": "s12-u06",
+        "label": "explain",
+        "reason": "states specific screw size M3x6"
+      }
+    ]
+  }
+}

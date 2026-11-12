@@ -1,0 +1,18 @@
+{
+  "key_to_id": {
+    "c:s03:conflict:d01:293": "q001",
+    "c:s04:conflict:d01:293": "q002",
+    "c:global:missing_step:d01:80": "q003",
+    "c:global:missing_step:d01:78": "q004",
+    "c:global:missing_step:d01:622": "q005",
+    "s01:missing:setting": "q006",
+    "s01:missing:quantity": "q007",
+    "s01:missing:duration": "q008",
+    "s03:missing:duration": "q009",
+    "s04:missing:quantity": "q010",
+    "s04:missing:duration": "q011"
+  },
+  "next": 12,
+  "answers_sig": "4f53cda18c2baa0c",
+  "round": 1
+}

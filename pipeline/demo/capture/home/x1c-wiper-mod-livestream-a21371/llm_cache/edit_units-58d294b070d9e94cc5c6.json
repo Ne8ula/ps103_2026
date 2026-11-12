@@ -1,0 +1,148 @@
+{
+  "task": "edit_units",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "80f0672eaa",
+  "served_by": "gemini-3.6-flash",
+  "system": "You help edit a raw, unedited demonstration video into a tight tutorial. The video has already been\nsplit into steps. Each step is split into short spoken lines. For every spoken line, say what it is\nfor a learner who wants to repeat the procedure:\n\n- task: describes or accompanies the action being done right now (what to do, how to hold or move\n  something, what tool or part is used).\n- result: points out the outcome to check (what it should look or feel like, how to tell it worked).\n- explain: background the learner needs to do the step correctly or safely (why, what goes wrong if\n  not, sizes, settings, warnings).\n- aside: anything a learner does not need: greetings, chat with viewers, camera or stream\n  adjustments, stories, product opinions, sales, repeating what was already said, thinking aloud.\n\nRules:\n- Label every line id you are given, exactly once. Use only the given ids.\n- Judge each line in the context of its step and the lines around it. When unsure between aside and\n  anything else, do not choose aside.\n- A line that states a measurement, size, count, setting or a safety point is never an aside.\n- Give a short reason (a few words).\n\nHand and motion figures come from the video: \"hands\" is the share of samples with a hand visible,\n\"motion\" is how much the image changes (1 = busy for this video). They help tell a line spoken while\nworking from a line spoken while nothing happens.",
+  "user": "Lines to label, grouped by step (id | time | hands | motion | text):\nStep \"Understand the Nozzle Wiper Update\": Observe the improved nozzle scrubbing movement. The updated wiper routine now performs a three-stage sweep across the nozzle.\ns21-u17 | 639.6-645.2s | hands 92% | motion 0.60 | it's not overly critical for the X\ns21-u18 | 645.2-649.4s | hands 100% | motion 0.28 | positioning but it is critical on the Y positioning but not as\ns21-u19 | 649.4-649.9s | hands 43% | motion 0.38 | critical as it would have been on the X. So as long\n\nStep \"Calibrate Nozzle Position via G-Code\": Use the printer's touchscreen console to home the axes and send G-code commands to verify the nozzle position.\ns22-u01 | 649.9-651.8s | hands 0% | motion 0.15 | critical as it would have been on the X. So as long\ns22-u02 | 651.8-655.2s | hands 0% | motion 0.04 | as you're within you know half a millimeter I don't think you're\ns22-u03 | 655.2-658.4s | hands 0% | motion 0.05 | going to have any issues. You almost probably don't even need to\ns22-u04 | 658.4-662.8s | hands 8% | motion 0.34 | run the calibration but we'll do it anyways just for good measure.\ns22-u06 | 669.6-674.5s | hands 0% | motion 0.04 | So the the nice thing about this printer with the touchscreen,\ns22-u08 | 676.3-681.3s | hands 0% | motion 0.02 | I'm going to reposition you guys here in a moment, spring up\ns22-u09 | 681.3-682.3s | hands 0% | motion 0.01 | the tools here.\ns22-u11 | 685.9-689.4s | hands 0% | motion 1.39 | I still want to show the printer's login.\ns22-u13 | 697.4-701.0s | hands 4% | motion 0.16 | We can say on -screen console and now we can actually just\ns22-u14 | 701.0-704.3s | hands 0% | motion 0.28 | fire some G codes in here so we can test the positioning\ns22-u15 | 704.3-705.5s | hands 0% | motion 0.30 | just by doing that.\ns22-u17 | 706.4-710.0s | hands 0% | motion 0.20 | So right off the hop we want to home the X and\ns22-u18 | 710.0-715.9s | hands 0% | motion 0.20 | the Y so that'll be G28 X\ns22-u19 | 715.9-716.9s | hands 0% | motion 0.19 | and\ns22-u21 | 718.4-719.7s | hands 0% | motion 0.40 | we\ns22-u23 | 722.1-730.5s | hands 0% | motion 0.20 | don't\ns22-u24 | 730.5-733.0s | hands 0% | motion 0.29 | need to bring the head all the way over to the end\ns22-u25 | 733.0-735.6s | hands 0% | motion 0.16 | and I actually can't remember the Y position.\ns22-u27 | 736.9-741.7s | hands 0% | motion 0.04 | What is it X 163?\ns22-u29 | 742.7-744.4s | hands 0% | motion 0.02 | Let's check here.\ns22-u31 | 763.7-768.9s | hands 0% | motion 0.02 | So let's start with team.\ns22-u33 | 792.2-797.8s | hands 0% | motion 0.02 | All right so it's 161 .3 and 261 .3.\ns22-u35 | 804.6-806.6s | hands 0% | motion 0.12 | So if we do the X first.\ns22-u37 | 807.4-808.1s | hands 0% | motion 0.13 | So let's see.",
+  "images": [],
+  "response": {
+    "labels": [
+      {
+        "unit_id": "s21-u17",
+        "label": "explain",
+        "reason": "Explains criticality of X positioning tolerance."
+      },
+      {
+        "unit_id": "s21-u18",
+        "label": "explain",
+        "reason": "Explains criticality of Y vs X positioning."
+      },
+      {
+        "unit_id": "s21-u19",
+        "label": "explain",
+        "reason": "Continues explanation of positioning precision requirements."
+      },
+      {
+        "unit_id": "s22-u01",
+        "label": "explain",
+        "reason": "Continues explanation of acceptable positioning tolerance."
+      },
+      {
+        "unit_id": "s22-u02",
+        "label": "explain",
+        "reason": "Gives specific measurement tolerance of half a millimeter."
+      },
+      {
+        "unit_id": "s22-u03",
+        "label": "explain",
+        "reason": "Explains necessity of running calibration."
+      },
+      {
+        "unit_id": "s22-u04",
+        "label": "aside",
+        "reason": "Meta commentary on doing calibration anyway."
+      },
+      {
+        "unit_id": "s22-u06",
+        "label": "aside",
+        "reason": "General comment on printer touchscreen."
+      },
+      {
+        "unit_id": "s22-u08",
+        "label": "aside",
+        "reason": "Announces camera repositioning."
+      },
+      {
+        "unit_id": "s22-u09",
+        "label": "aside",
+        "reason": "Filler comment about tools."
+      },
+      {
+        "unit_id": "s22-u11",
+        "label": "aside",
+        "reason": "Camera/screen setup commentary."
+      },
+      {
+        "unit_id": "s22-u13",
+        "label": "task",
+        "reason": "Directs opening the on-screen console."
+      },
+      {
+        "unit_id": "s22-u14",
+        "label": "task",
+        "reason": "Instructs entering G-code commands into console."
+      },
+      {
+        "unit_id": "s22-u15",
+        "label": "task",
+        "reason": "Describes testing position using commands."
+      },
+      {
+        "unit_id": "s22-u17",
+        "label": "task",
+        "reason": "Instructs homing the X and Y axes."
+      },
+      {
+        "unit_id": "s22-u18",
+        "label": "task",
+        "reason": "Specifies command G28 X to home."
+      },
+      {
+        "unit_id": "s22-u19",
+        "label": "task",
+        "reason": "Paired with typing command."
+      },
+      {
+        "unit_id": "s22-u21",
+        "label": "task",
+        "reason": "Paired with typing command."
+      },
+      {
+        "unit_id": "s22-u23",
+        "label": "task",
+        "reason": "Paired with typing command."
+      },
+      {
+        "unit_id": "s22-u24",
+        "label": "explain",
+        "reason": "Explains why head doesn't move all the way."
+      },
+      {
+        "unit_id": "s22-u25",
+        "label": "aside",
+        "reason": "Thinking aloud about memory."
+      },
+      {
+        "unit_id": "s22-u27",
+        "label": "aside",
+        "reason": "Thinking aloud to guess coordinates."
+      },
+      {
+        "unit_id": "s22-u29",
+        "label": "task",
+        "reason": "Action to check coordinate settings."
+      },
+      {
+        "unit_id": "s22-u31",
+        "label": "aside",
+        "reason": "Filler chat."
+      },
+      {
+        "unit_id": "s22-u33",
+        "label": "explain",
+        "reason": "States exact target coordinate measurements 161.3 and 261.3."
+      },
+      {
+        "unit_id": "s22-u35",
+        "label": "task",
+        "reason": "Directs entering X axis coordinate first."
+      },
+      {
+        "unit_id": "s22-u37",
+        "label": "aside",
+        "reason": "Thinking aloud."
+      }
+    ]
+  }
+}

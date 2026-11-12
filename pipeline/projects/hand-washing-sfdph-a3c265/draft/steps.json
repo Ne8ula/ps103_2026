@@ -1,0 +1,660 @@
+{
+  "revision": 0,
+  "steps": [
+    {
+      "id": "s01",
+      "index": 0,
+      "start": 0.0,
+      "end": 7.92,
+      "title": "[fake LLM] Welcome to the handwashing video. The",
+      "instruction": "[fake LLM] Welcome to the handwashing video. The most important thing you can do to keep your family from getting sick is.",
+      "details": [],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Welcome to the handwashing video. The most important thing you\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s01/k1.jpg",
+        "draft/keyframes/s01/k2.jpg",
+        "draft/keyframes/s01/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 0.0,
+            "end": 7.92
+          }
+        ],
+        "gesture_keyframe_ids": [],
+        "transcript_segment_ids": [
+          0,
+          1,
+          2
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-185a301c31c330280719",
+          "draft_step-19117ae7e7246962ef39"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "index": 1,
+      "start": 7.92,
+      "end": 13.4,
+      "title": "[fake LLM] Here is how. Step 1. Wash",
+      "instruction": "[fake LLM] Here is how. Step 1. Wash your hands with running water and soap.",
+      "details": [
+        "[fake LLM] Hands: Left hand: relaxed hand, palm facing away, ring extended pointing down-right, th",
+        "[fake LLM] Hands: Left hand: not visible. No hands visible. Idle."
+      ],
+      "tools": [],
+      "materials": [
+        "soap",
+        "water"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"Here is how. Step 1. Wash your hands with running\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s02/k1.jpg",
+        "draft/keyframes/s02/k2.jpg",
+        "draft/keyframes/s02/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 7.92,
+            "end": 13.4
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0001",
+          "g0002",
+          "g0003",
+          "g0004",
+          "g0005",
+          "g0006"
+        ],
+        "transcript_segment_ids": [
+          3,
+          4,
+          5
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-185a301c31c330280719",
+          "draft_step-bd961e6028a7f1c20cb0"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "index": 2,
+      "start": 13.4,
+      "end": 18.0,
+      "title": "[fake LLM] Step 2. Rub your hands for",
+      "instruction": "[fake LLM] Step 2. Rub your hands for at least 20 seconds.",
+      "details": [
+        "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle.",
+        "[fake LLM] Hands: Right hand: not visible. Left hand: relaxed hand, palm facing away, ring extende"
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Step 2. Rub your hands for at least 20 seconds.\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s03/k1.jpg",
+        "draft/keyframes/s03/k2.jpg",
+        "draft/keyframes/s03/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 13.4,
+            "end": 18.0
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0007",
+          "g0008",
+          "g0009"
+        ],
+        "transcript_segment_ids": [
+          6,
+          7
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-185a301c31c330280719",
+          "draft_step-b5853e54566ac933dda9"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "index": 3,
+      "start": 18.0,
+      "end": 21.0,
+      "title": "[fake LLM] Remember to wash the back of",
+      "instruction": "[fake LLM] Remember to wash the back of your hands in between your fingers, your fingertips, and.",
+      "details": [
+        "[fake LLM] Hands: Right hand: not visible. Left hand: open hand, palm facing away, fingers spread ",
+        "[fake LLM] Hands: Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together poi"
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Remember to wash the back of your hands in between\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s04/k1.jpg",
+        "draft/keyframes/s04/k2.jpg",
+        "draft/keyframes/s04/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 18.0,
+            "end": 21.0
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0010",
+          "g0011",
+          "g0012"
+        ],
+        "transcript_segment_ids": [
+          8
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d12789070b1a7fcf76d0",
+          "draft_step-4abdb4ca977e9d951824"
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "index": 4,
+      "start": 21.0,
+      "end": 25.12,
+      "title": "[fake LLM] Step 5",
+      "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+      "details": [
+        "[fake LLM] Hands: Right hand: open hand, palm facing away, fingers spread pointing right, thumb ha",
+        "[fake LLM] Hands: Right hand: open hand, palm facing away, fingers spread pointing right, thumb ou"
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": null,
+      "cautions": [],
+      "confidence": 0.45,
+      "missing_info": [
+        {
+          "field": "purpose",
+          "description": "[fake LLM] No narration: what is this step for?",
+          "blocking": false,
+          "key": "s05:missing:purpose"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s05/k1.jpg",
+        "draft/keyframes/s05/k2.jpg",
+        "draft/keyframes/s05/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 21.0,
+            "end": 25.12
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0013",
+          "g0014",
+          "g0015",
+          "g0016"
+        ],
+        "transcript_segment_ids": [],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-1baf205cbffdc1ffcc55",
+          "draft_step-f6d54ba7f81669fcac22"
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "index": 5,
+      "start": 25.12,
+      "end": 30.2,
+      "title": "[fake LLM] Under your nails, as well as",
+      "instruction": "[fake LLM] under your nails, as well as your wrists and thumbs. Step 3.",
+      "details": [
+        "[fake LLM] Hands: Right hand: not visible. Left hand: pinch grip, palm facing away, thumb+index+mi",
+        "[fake LLM] Hands: Right hand: power grip, palm facing away, index+middle+ring+pinky together point"
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"Step 3. Rinse your hands and dry them with paper\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s06/k1.jpg",
+        "draft/keyframes/s06/k2.jpg",
+        "draft/keyframes/s06/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 25.12,
+            "end": 30.2
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0017",
+          "g0018",
+          "g0019",
+          "g0020"
+        ],
+        "transcript_segment_ids": [
+          9,
+          10
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-404198db2466e7fbbd3e",
+          "draft_step-e23ed9579a78f53b521e"
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "index": 6,
+      "start": 30.2,
+      "end": 36.2,
+      "title": "[fake LLM] Rinse your hands and dry them",
+      "instruction": "[fake LLM] Rinse your hands and dry them with paper towels or an air dryer.",
+      "details": [
+        "[fake LLM] Hands: Right hand: power grip, palm facing away, middle+ring together pointing right, t",
+        "[fake LLM] Hands: Right hand: not visible. Left hand: open hand, palm facing camera, fingers sprea"
+      ],
+      "tools": [],
+      "materials": [
+        "towel",
+        "paper towel"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"If you have concerns with the cleanliness of your surroundings,\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [
+        {
+          "field": "duration",
+          "description": "[fake LLM] How long this action lasts is not stated.",
+          "blocking": true,
+          "key": "s07:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s07/k1.jpg",
+        "draft/keyframes/s07/k2.jpg",
+        "draft/keyframes/s07/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 30.2,
+            "end": 36.2
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0021",
+          "g0022",
+          "g0023",
+          "g0024",
+          "g0025",
+          "g0026"
+        ],
+        "transcript_segment_ids": [
+          11
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-9e5aedda882b6be21c40",
+          "draft_step-d9756ce32aef22e4ef29"
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "index": 7,
+      "start": 36.2,
+      "end": 41.2,
+      "title": "[fake LLM] If you have concerns with the",
+      "instruction": "[fake LLM] If you have concerns with the cleanliness of your surroundings, you can use the paper towel to help with the.",
+      "details": [
+        "[fake LLM] Hands: Right hand: not visible. Left hand: point gesture, palm facing away, thumb out p",
+        "[fake LLM] Hands: Right hand: not visible. Left hand: power grip, palm facing away, thumb out poin"
+      ],
+      "tools": [],
+      "materials": [
+        "towel",
+        "paper towel"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"to help with the door. If you are at home,\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s08/k1.jpg",
+        "draft/keyframes/s08/k2.jpg",
+        "draft/keyframes/s08/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 36.2,
+            "end": 41.2
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0027",
+          "g0028",
+          "g0029",
+          "g0030",
+          "g0031"
+        ],
+        "transcript_segment_ids": [
+          12,
+          13
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-40434fdfa09f9265b0f4",
+          "draft_step-3d0c1167e77dabec3ac6"
+        ]
+      }
+    },
+    {
+      "id": "s09",
+      "index": 8,
+      "start": 41.2,
+      "end": 44.0,
+      "title": "[fake LLM] If you are at home, it",
+      "instruction": "[fake LLM] If you are at home, it is safe to use a towel to dry your hands.",
+      "details": [
+        "[fake LLM] Hands: Right hand: open hand, palm facing away, index+middle+ring+pinky together pointi",
+        "[fake LLM] Hands: Right hand: not visible. Left hand: fist, palm facing away, thumb out pointing u"
+      ],
+      "tools": [],
+      "materials": [
+        "towel"
+      ],
+      "expected_result": "[fake LLM] Hands active: t=41.2s | Right hand: open hand, palm facing away, index+mid",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [
+        {
+          "field": "duration",
+          "description": "[fake LLM] How long this action lasts is not stated.",
+          "blocking": true,
+          "key": "s09:missing:duration"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s09/k1.jpg",
+        "draft/keyframes/s09/k2.jpg",
+        "draft/keyframes/s09/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 41.2,
+            "end": 44.0
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0032",
+          "g0033",
+          "g0034"
+        ],
+        "transcript_segment_ids": [
+          14
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-0df11c92bede355ffcef",
+          "draft_step-4f0ef818ba48f717b856"
+        ]
+      }
+    },
+    {
+      "id": "s10",
+      "index": 9,
+      "start": 44.0,
+      "end": 47.72,
+      "title": "[fake LLM] If you don't have soap and",
+      "instruction": "[fake LLM] If you don't have soap and water available, you can use alcohol-based hand sanitizer that.",
+      "details": [
+        "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle.",
+        "[fake LLM] Hands: Right hand: not visible. Left hand: power grip, palm sideways, index+middle+ring"
+      ],
+      "tools": [],
+      "materials": [
+        "soap",
+        "water",
+        "sanitizer"
+      ],
+      "expected_result": "[fake LLM] Narrated: \"If you don't have soap and water available, you can\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s10/k1.jpg",
+        "draft/keyframes/s10/k2.jpg",
+        "draft/keyframes/s10/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 44.0,
+            "end": 47.72
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0035",
+          "g0036",
+          "g0037"
+        ],
+        "transcript_segment_ids": [
+          15
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5dffac0864d3843a616",
+          "draft_step-3f3971ef748021a56393"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "index": 10,
+      "start": 47.72,
+      "end": 51.32,
+      "title": "[fake LLM] Contains at least 60% alcohol to",
+      "instruction": "[fake LLM] contains at least 60% alcohol to clean your hands.",
+      "details": [
+        "[fake LLM] Hands: Right hand: open hand, palm facing camera, index+middle+ring together pointing d",
+        "[fake LLM] Hands: Right hand: not visible. Left hand: power grip, palm facing away, thumb half-ben"
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Narrated: \"contains at least 60% alcohol to clean your hands.\"",
+      "cautions": [],
+      "confidence": 0.75,
+      "missing_info": [],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s11/k1.jpg",
+        "draft/keyframes/s11/k2.jpg",
+        "draft/keyframes/s11/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 47.72,
+            "end": 51.32
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0038",
+          "g0039",
+          "g0040"
+        ],
+        "transcript_segment_ids": [
+          16
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5dffac0864d3843a616",
+          "draft_step-027af95928877293e82e"
+        ]
+      }
+    },
+    {
+      "id": "s12",
+      "index": 11,
+      "start": 51.32,
+      "end": 53.4,
+      "title": "[fake LLM] Step 12",
+      "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+      "details": [
+        "[fake LLM] Hands: Right hand: unclear (unstable tracking), at centre; moving right, moderate. Left",
+        "[fake LLM] Hands: Right hand: relaxed hand, palm sideways, index+middle together pointing down-lef"
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": null,
+      "cautions": [],
+      "confidence": 0.45,
+      "missing_info": [
+        {
+          "field": "purpose",
+          "description": "[fake LLM] No narration: what is this step for?",
+          "blocking": false,
+          "key": "s12:missing:purpose"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s12/k1.jpg",
+        "draft/keyframes/s12/k2.jpg",
+        "draft/keyframes/s12/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 51.32,
+            "end": 53.4
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0041",
+          "g0042",
+          "g0043"
+        ],
+        "transcript_segment_ids": [],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5dffac0864d3843a616",
+          "draft_step-52235faff3a73ab633d6"
+        ]
+      }
+    },
+    {
+      "id": "s13",
+      "index": 12,
+      "start": 53.4,
+      "end": 58.32,
+      "title": "[fake LLM] For more information, please visit sfdph.org",
+      "instruction": "[fake LLM] For more information, please visit sfdph.org.",
+      "details": [
+        "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+      ],
+      "tools": [],
+      "materials": [],
+      "expected_result": "[fake LLM] Hands idle: t=54.3s | Right hand: not visible. Left hand: not visible. N",
+      "cautions": [],
+      "confidence": 0.5,
+      "missing_info": [
+        {
+          "field": "quantity",
+          "description": "The draft stated '54.3', which the narration does not support; the value was removed and needs confirming.",
+          "blocking": true,
+          "key": "s13:missing:unverified"
+        }
+      ],
+      "user_supplied": [],
+      "keyframe_paths": [
+        "draft/keyframes/s13/k1.jpg",
+        "draft/keyframes/s13/k2.jpg",
+        "draft/keyframes/s13/k3.jpg"
+      ],
+      "provenance": {
+        "time_ranges": [
+          {
+            "start": 53.4,
+            "end": 58.32
+          }
+        ],
+        "gesture_keyframe_ids": [
+          "g0044"
+        ],
+        "transcript_segment_ids": [
+          17
+        ],
+        "chunk_ids": [],
+        "answer_ids": [],
+        "llm_calls": [
+          "segment_steps-d5dffac0864d3843a616",
+          "draft_step-b656ffd2b115f1ca998d"
+        ]
+      }
+    }
+  ],
+  "applied_answer_ids": [],
+  "notes": [],
+  "answer_log": [],
+  "base_hash": null
+}

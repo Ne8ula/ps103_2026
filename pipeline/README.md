@@ -75,3 +75,17 @@ The LLM makes small choices from options that code generated; code does the book
 `ingest → perception → transcribe → gestures → candidates → segment → draft → refine → compliance → questions → render`
 
 Each stage reads upstream files and writes its own folder in the project. A stage re-runs only when its config sections, upstream outputs or inputs change. Stages marked `gpu=True` are the ones intended for a remote GPU worker.
+
+## Data In This Repo
+
+Pipeline data is committed, with media and large files in **Git LFS** (`git lfs install`, then clone or `git lfs pull`; see `.gitattributes`):
+
+| Path | Contents |
+|---|---|
+| `projects/` | Every stage's output for the sample runs: hand-washing PSA (fake LLM, fake LLM without gesture text, Gemini) and the uncut X1C livestream (Gemini) |
+| `demo/capture/` | The recorded expert session: six answers, the API log, before/after artifacts, and the reviewed X1C project the demo is built from |
+| `demo/out/media/` | The demo page's compressed raw excerpt and generated tutorial, with subtitles |
+| `samples/data/` | Sample videos and the FDA Food Code; `yt/` holds the CC BY livestreams downloaded to screen for editing |
+| `eval/` | Hand labels and `results/`, written by `python eval/save_results.py` |
+
+Left out on purpose: the curated YouTube tutorial (standard YouTube license), the full-text copies of Bambu Lab's wiki page (the SOP file, its search-index text and the prompt logs of compliance calls; `samples/fetch.py` re-downloads the page). The page is short, so the X1C compliance notes, `tutorial.json`/`.md` and the API snapshots still quote most of its sentences, one per citation, with a link to the source, and `demo/out/studio.html`, which embeds that text (`python demo/build_demo.py x1c-wiper-mod-livestream-a21371 demo/capture demo/out` rebuilds it).

@@ -1,0 +1,57 @@
+{
+  "task": "compliance_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "2ac8a20612",
+  "served_by": "gemini-3-flash-preview",
+  "system": "You are a compliance reviewer for workplace tutorials. You compare ONE step of a procedure, as it\nwas demonstrated in a video, against excerpts (\"chunks\") retrieved from the uploader's SOPs,\nregulations or manuals, and write short notes for the person doing the step.\n\nNote kinds:\n- requirement: the documents require something for this step (an amount, a duration, a temperature, an order, a tool).\n- caution: a safety or hygiene hazard the documents warn about for this step.\n- conflict: the video step contradicts the documents (e.g. a shorter duration, a different tool, a different order). Say what the step does and what the documents require.\n- reference: relevant background that does not impose a requirement.\n\nSeverity: critical = following the video as shown would violate a requirement; warning = a requirement or caution the step does not mention; info = background.\n\nRules:\n- Use ONLY the chunks below. Every note needs at least one citation: the chunk id exactly as labelled (e.g. d01:12) and a quote copied verbatim from that chunk (one sentence or clause, not paraphrased).\n- Never state a number, setting, duration or temperature that does not appear in a cited chunk or in the step itself.\n- Only write notes that are specific to this step. If no chunk is relevant to this step, return an empty list of notes; that is a valid answer.\n- At most 4 notes. Prefer one precise note over several vague ones.",
+  "user": "Procedure step s01: Wet your hands and apply soap\nInstruction: Wet your hands under running water and then apply soap using a dispenser.\nDetails: Ensure hands are fully wet before applying soap.; Use the soap dispenser to place a portion of soap onto your palm.\nTools/materials: sink, faucet, soap dispenser, running water, soap\nCautions already shown: none\nShown in the video from 0.0s to 13.4s.\n\nRetrieved document chunks:\n\n[d01:622] fda-food-code-2022.pdf (p. 346, 2-301.12 Cleaning Procedure)\nA moderate number of these organisms can be removed with adequate handwashing. Resident microbes consist of a relatively stable population that survive and multiply on the skin and they are not easily washed off the hands. Resident microbes on the hands are usually not a concern for potential contamination in food service. All aspects of proper handwashing are important in reducing microbial transients on the hands. However, friction and water have been found to play the most important role. This is why the amount of time spent scrubbing the hands is critical in proper handwashing. It takes more than just the use of soap and running water to remove the transient pathogens that may be present. It is the abrasive action obtained by vigorously rubbing the surfaces being cleaned that loosens the transient microorganisms on the hands. Research has shown a minimum 10-15 second scrub is necessary to remove transient pathogens from the hands and when an antimicrobial soap is used, a minimum of 15 seconds is required. Soap is important for the surfactant effect in removing soil from the hands and a warm water temperature is important in achieving the maximum surfactant effect of the soap. Every stage in handwashing is equally important and has an additive effect in transient microbial reduction. Therefore, effective handwashing must include scrubbing, rinsing, and drying the hands. When done properly, each stage of handwashing further decreases the transient microbial load on the hands. It is equally important to avoid recontaminating hands by avoiding direct hand contact with heavily contaminated environmental sources, such as manually operated handwashing sink faucets, paper towel dispensers, and rest room door handles after the handwashing procedure.\n\n[d01:623] fda-food-code-2022.pdf (p. 346, 2-301.12 Cleaning Procedure)\nIt is equally important to avoid recontaminating hands by avoiding direct hand contact with heavily contaminated environmental sources, such as manually operated handwashing sink faucets, paper towel dispensers, and rest room door handles after the handwashing procedure. This can be accomplished by obtaining a paper towel from its dispenser before the handwashing procedure, then, after handwashing, using the paper towel to operate the hand sink faucet handles and restroom door handles. Handwashing done properly can result in a 2-3 log reduction in transient bacteria and a 2-log reduction in transient viruses and protozoa. With heavy contamination of transient microbial pathogens, (i.e., > 104 microbes, as found on hands contaminated with bodily wastes and infected bodily fluids) handwashing may be ineffective in completely decontaminating the hands. Therefore, a further intervention such as a barrier between hands and ready-to-eat food is necessary.\n\n[d01:293] fda-food-code-2022.pdf (p. 153-154, 6-301.12 Hand Drying Provision)\n6-301.11 Handwashing Cleanser, Availability.\nEach HANDWASHING SINK or group of 2 adjacent HANDWASHING SINKS shall be provided with a supply of hand cleaning liquid, powder, or bar soap.\n6-301.12 Hand Drying Provision.\nEach HANDWASHING SINK or group of adjacent HANDWASHING SINKS shall be provided with: (A) Individual, disposable towels; (B) A continuous towel system that supplies the user with a clean towel; or (C) A heated-air hand drying device; or (D) A hand drying device that employs an air-knife system that delivers high velocity, pressurized air at ambient temperatures.\n\n[d01:894] fda-food-code-2022.pdf (p. 472, 5-204.11 Handwashing Sinks)\n5-204.11 Handwashing Sinks.\nHands are a common vehicle for the transmission of pathogens to foods in an establishment. Hands can become soiled with a variety of contaminants during routine operations. The transfer of contaminants can be limited by providing food employees with handwashing sinks that are properly equipped and conveniently located. A handwashing sink that is properly located is one that is available to food employees who are working in food preparation, food dispensing, and warewashing areas. Handwashing sinks that are blocked by portable equipment or stacked full of soiled utensils and other items, are rendered unavailable for employee use. Nothing must block the approach to a handwashing sink thereby discouraging its use, plus it must be kept clean and well stocked with soap and sanitary towels to facilitate frequent use. Therefore, a handwashing sink that is located in the immediate work area, or between work areas that the Code states must be equipped with handwashing sinks, depending upon the size and function of the facility, would be considered properly located. Such placement of handwashing sinks facilitates frequent handwashing by food employees in all work areas.\n\n[d01:887] fda-food-code-2022.pdf (p. 470, 5-202.12 Handwashing Sink, Installation)\n5-202.12 Handwashing Sink, Installation.\nSection 5-202.12 does not establish a temperature for washing hands. Rather, Section 5-202.12 establishes criteria for the installation of handwashing sinks used in a retail food establishment that includes the temperature of the water delivered at the sink. Paragraph 5-202.12(A) states that a handwashing sink must be capable of delivering running water that is at least 29.4\u00b0C (85\u00b0F). An inadequate flow or temperature of water may lead to poor handwashing practices by food employees. A mixing valve or combination faucet is needed to provide properly tempered water for handwashing. The International Plumbing Code (IPC) states that tempered water is having a temperature range between 29.4\u00b0C (85\u00b0F) and 43\u00b0C (110\u00b0F). Steam mixing valves are not allowed for this use because they are hard to control and injury by scalding is a possible hazard.\n\n[d01:80] fda-food-code-2022.pdf (p. 62-63, 2-301.16 Hand Antiseptics)\n2-301.15 Where to Wash.\nFOOD EMPLOYEES shall clean their hands in a HANDWASHING SINK or APPROVED automatic handwashing facility and may not clean their hands in a sink used for FOOD preparation or WAREWASHING, or in a service sink or a curbed cleaning facility used for the disposal of mop water and similar liquid waste.\n2-301.16 Hand Antiseptics\n(A) A hand antiseptic used as a topical application, a hand antiseptic solution used as a hand dip, or a hand antiseptic soap shall: (1) Comply with one of the following: (a) Be an APPROVED drug that is listed in the FDA publication Approved Drug Products with Therapeutic Equivalence Evaluations as an APPROVED drug based on safety and effectiveness; or (b) Have active antimicrobial ingredients that are listed in the FDA monograph for OTC Health-Care Antiseptic Drug Products as an antiseptic handwash, and (2) Consist only of components which the intended use of each complies with one of the following: (a) A threshold of regulation exemption under 21 CFR 170.39 - Threshold of regulation for substances used in FOOD-contact articles; or (b) 21 CFR 178 - Indirect FOOD Additives: Adjuvants, Production Aids, and Sanitizers as regulated for use as a FOOD ADDITIVE with conditions of safe use, or (c) A determination of generally recognized as safe (GRAS).",
+  "images": [],
+  "response": {
+    "notes": [
+      {
+        "kind": "requirement",
+        "severity": "warning",
+        "text": "Use warm water when wetting your hands to ensure the soap works effectively.",
+        "citations": [
+          {
+            "chunk_id": "d01:622",
+            "quote": "a warm water temperature is important in achieving the maximum surfactant effect of the soap."
+          }
+        ]
+      },
+      {
+        "kind": "requirement",
+        "severity": "warning",
+        "text": "The sink used must be capable of providing running water at a temperature of at least 29.4&deg;C (85&deg;F).",
+        "citations": [
+          {
+            "chunk_id": "d01:887",
+            "quote": "a handwashing sink must be capable of delivering running water that is at least 29.4&deg;C (85&deg;F)."
+          }
+        ]
+      },
+      {
+        "kind": "requirement",
+        "severity": "warning",
+        "text": "Before beginning the handwashing procedure, retrieve a paper towel to use later for turning off the faucet and opening doors to avoid recontamination.",
+        "citations": [
+          {
+            "chunk_id": "d01:623",
+            "quote": "This can be accomplished by obtaining a paper towel from its dispenser before the handwashing procedure"
+          }
+        ]
+      },
+      {
+        "kind": "requirement",
+        "severity": "warning",
+        "text": "Ensure you are using a designated handwashing sink; washing in sinks used for food preparation or warewashing is not permitted.",
+        "citations": [
+          {
+            "chunk_id": "d01:80",
+            "quote": "FOOD EMPLOYEES shall clean their hands in a HANDWASHING SINK or APPROVED automatic handwashing facility and may not clean their hands in a sink used for FOOD preparation or WAREWASHING"
+          }
+        ]
+      }
+    ]
+  }
+}

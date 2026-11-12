@@ -1,0 +1,73 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 22 of 22, 649.9s to 808.1s.\nSegmentation summary: Use the printer's touchscreen console to home the axes and enter G-code commands to test nozzle positioning.\nPrevious step: Explain the nozzle scrubbing mechanical update and how the nozzle sweeps across the wiper.\nNext step: (none, this is the last step)\n\nNarration during this step:\n[651.1-655.2s] \"So as long as you're within you know half a millimeter I don't think you're\"\n[655.2-658.7s] \"going to have any issues. You almost probably don't even need to run the\"\n[658.7-670.9s] \"calibration but we'll do it anyways just for good measure. So the the nice thing\"\n[670.9-679.7s] \"about this printer with the touchscreen, I'm going to reposition you guys\"\n[679.7-688.9s] \"here in a moment, spring up the tools here. I still want to show the printer's\"\n[688.9-701.8s] \"login. We can say on-screen console and now we can actually just fire some G\"\n[701.8-707.0s] \"codes in here so we can test the positioning just by doing that. So right off the\"\n[707.0-730.5s] \"hop we want to home the X and the Y so that'll be G28 X and we don't need to\"\n[730.5-734.9s] \"bring the head all the way over to the end and I actually can't remember the\"\n[734.9-744.3s] \"Y position. What is it X 163? Let's check here.\"\n[763.8-806.1s] \"So let's start with team. All right so it's 161.3 and 261.3. So if we do the X\"\n[806.1-808.1s] \"first. So let's see.\"\n\nFrames: 3 attached: image 1 at 676.2s, image 2 at 729.0s, image 3 at 781.7s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 649.9s (step start) - hands until 651.1s: no hands visible\na2 @ 651.1s (narration) - hands until 655.2s: no hands visible\na3 @ 655.2s (narration) - hands until 665.8s: no hands 97%; active 1%, moving down-right; at top-left\na4 @ 665.8s (hands: visibility change) - hands until 666.8s: one hand 20%, no hands 80%; active 13%\na5 @ 666.8s (hands: visibility change) - hands until 679.7s: no hands visible\na6 @ 679.7s (narration) - hands until 688.9s: no hands visible\na7 @ 688.9s (narration) - hands until 707.0s: no hands 99%; active 0%; at bottom\na8 @ 707.0s (narration) - hands until 730.5s: no hands visible\na9 @ 730.5s (narration) - hands until 763.8s: no hands visible\na10 @ 763.8s (narration) - hands until 808.1s: no hands visible\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video).\n(no hand boxes for this step: use full)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s22/k1.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s22/k2.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s22/k3.jpg"
+  ],
+  "response": {
+    "title": "Calibrate Nozzle Position via G-Code",
+    "instruction": "Use the printer's touchscreen console to home the axes and send G-code commands to verify the nozzle position.",
+    "details": [
+      "Navigate to the printer's on-screen console menu.",
+      "Input the home command G28 X to home the X-axis.",
+      "Verify the nozzle positioning coordinates on the screen as required."
+    ],
+    "tools": [
+      "printer touchscreen"
+    ],
+    "materials": [
+      "G-code"
+    ],
+    "expected_result": "The printer axes are homed and the nozzle is positioned at the correct coordinate.",
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "other",
+        "description": "The specific sequence of menu taps to reach the console interface on this printer model.",
+        "blocking": true
+      },
+      {
+        "field": "other",
+        "description": "The correct Y-axis G-code command and coordinate for the specific printer model.",
+        "blocking": true
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 649.9,
+        "caption": "Access the printer console",
+        "focus_box": "full",
+        "emphasis": null,
+        "emphasis_s": null
+      },
+      {
+        "start_s": 688.9,
+        "caption": "Enter G-code command",
+        "focus_box": "full",
+        "emphasis": "on-screen console",
+        "emphasis_s": 690.0
+      },
+      {
+        "start_s": 707.0,
+        "caption": "Home the printer axes",
+        "focus_box": "full",
+        "emphasis": "G28 X",
+        "emphasis_s": 710.0
+      },
+      {
+        "start_s": 763.8,
+        "caption": "Verify position coordinates",
+        "focus_box": "full",
+        "emphasis": "161.3",
+        "emphasis_s": 770.0
+      }
+    ]
+  }
+}

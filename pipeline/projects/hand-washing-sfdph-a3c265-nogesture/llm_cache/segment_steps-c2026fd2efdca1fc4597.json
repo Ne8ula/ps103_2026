@@ -1,0 +1,43 @@
+{
+  "task": "segment_steps",
+  "provider": "fake:fake-6abdf482",
+  "prompt_version": "95d8c084fb",
+  "system": "You segment a hands-on demonstration video into the steps of a tutorial. You see one time window of\nthe video at a time. A heuristic detector has already proposed candidate step boundaries; they are\nover-complete and sometimes wrong. Your job is to decide which candidate boundaries are real step\nboundaries: merge candidate intervals that belong to the same step, and split only where the evidence\nclearly shows a new action starting.\n\nWhat counts as a step: one coherent action a learner would perform and check before moving on\n(e.g. \"apply soap\", \"scrub the backs of the hands\"). A change of hand grip, tool or object, a spoken\ncue (\"now\", \"next\", \"then\"), or a clear visual change usually marks a new step. Pauses, fidgeting,\ncamera adjustments and repetitions of the same motion do not.\n\nEvidence you get, per candidate interval: the narration spoken in it (if any), and a representative frame (attached images, numbered as listed).\n\nRules:\n- Steps must be consecutive, in time order, and stay inside the window. Use the listed boundary\n  times for start_s and end_s; only use another time if a new action clearly starts mid-interval.\n- Leading or trailing idle time inside the window belongs to the neighbouring step; do not create\n  steps for it.\n- Steps shorter than 2.0 seconds are not allowed.\n- The window may start or end in the middle of a step; segment what you see, the overlap with the\n  neighbouring window is reconciled afterwards.\n- Describe only what is spoken or visible. Never invent quantities, durations, temperatures, settings,\n  tool names or safety claims; if something important is not stated, say so in notes.\n- confidence reflects how clearly the evidence supports the boundaries (0.9 = obvious spoken and\n  visual cue, 0.5 = plausible, 0.3 = guess).",
+  "user": "Video duration: 58.3s. This is window 6 of 10, covering 25.1s to 41.2s.\n\n\nCandidate boundaries (id @ time, detector score, reasons):\nb12 @ 25.1s  score 0.65 (hand_state_change, hands_exit)\nb13 @ 25.8s  score 0.30 (hands_enter)\nb14 @ 27.5s  score 1.00 (hand_state_change, hands_exit, narration_pause, scene_cut)\nb15 @ 28.5s  score 0.70 (hands_enter, hands_exit, narration_pause)\nb16 @ 30.2s  score 1.00 (hand_state_change, hands_enter, hands_exit, scene_cut)\nb17 @ 32.2s  score 0.95 (hand_state_change, hands_enter, hands_exit)\nb18 @ 33.2s  score 0.95 (hand_state_change, hands_enter, hands_exit)\nb19 @ 33.9s  score 1.00 (hand_state_change, hands_exit, scene_cut)\nb20 @ 35.2s  score 0.65 (hand_state_change, hands_enter)\nb21 @ 36.2s  score 0.70 (hand_state_change, motion_pause)\nb22 @ 38.2s  score 0.65 (hand_state_change, hands_exit)\nb23 @ 39.8s  score 1.00 (hand_state_change, hands_enter, scene_cut)\nb24 @ 41.2s  score 0.95 (hand_state_change, hands_enter, hands_exit)\n\nCandidate intervals:\ni13: 25.1-25.8s (from b12 to b13), image 1\n  speech [23.6-26.8s] \"under your nails, as well as your wrists and thumbs.\"\n\ni14: 25.8-27.5s (from b13 to b14)\n  speech: (none)\n\ni15: 27.5-28.5s (from b14 to b15), image 2\n  speech [27.9-28.9s] \"Step 3.\"\n\ni16: 28.5-30.2s (from b15 to b16)\n  speech [29.5-33.4s] \"Rinse your hands and dry them with paper towels or an air dryer.\"\n\ni17: 30.2-32.2s (from b16 to b17), image 3\n  speech: (none)\n\ni18: 32.2-33.2s (from b17 to b18)\n  speech: (none)\n\ni19: 33.2-33.9s (from b18 to b19), image 4\n  speech: (none)\n\ni20: 33.9-35.2s (from b19 to b20)\n  speech [34.0-38.5s] \"If you have concerns with the cleanliness of your surroundings, you can use the paper towel\"\n\ni21: 35.2-36.2s (from b20 to b21), image 5\n  speech: (none)\n\ni22: 36.2-38.2s (from b21 to b22)\n  speech: (none)\n\ni23: 38.2-39.8s (from b22 to b23), image 6\n  speech [38.5-39.6s] \"to help with the door.\"\n\ni24: 39.8-41.2s (from b23 to b24)\n  speech [40.1-43.5s] \"If you are at home, it is safe to use a towel to dry your hands.\"\n\nReturn the steps in this window with start_s, end_s, a one-sentence summary of what the person does,\nthe rationale for the boundaries, and a confidence. Add notes for anything ambiguous.",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265-nogesture/segment/keyframes/i13_0025.46s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265-nogesture/segment/keyframes/i15_0028.02s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265-nogesture/segment/keyframes/i17_0031.20s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265-nogesture/segment/keyframes/i19_0033.56s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265-nogesture/segment/keyframes/i21_0035.70s.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265-nogesture/segment/keyframes/i23_0039.00s.jpg"
+  ],
+  "response": {
+    "steps": [
+      {
+        "start_s": 25.12,
+        "end_s": 30.2,
+        "summary": "[fake LLM] Narrated: \"under your nails, as well as your wrists and thumbs.\"",
+        "rationale": "[fake LLM] starts at b12 (hand_state_change, hands_exit); merges 4 candidate interval(s)",
+        "confidence": 0.66
+      },
+      {
+        "start_s": 30.2,
+        "end_s": 36.2,
+        "summary": "[fake LLM] Narrated: \"If you have concerns with the cleanliness of your surroundings,\"",
+        "rationale": "[fake LLM] starts at b16 (hand_state_change, hands_enter, hands_exit, scene_cut); merges 5 candidate interval(s)",
+        "confidence": 0.9
+      },
+      {
+        "start_s": 36.2,
+        "end_s": 41.2,
+        "summary": "[fake LLM] Narrated: \"to help with the door. If you are at home,\"",
+        "rationale": "[fake LLM] starts at b21 (hand_state_change, motion_pause); merges 3 candidate interval(s)",
+        "confidence": 0.78
+      }
+    ],
+    "notes": [
+      "[fake LLM] window 5: 12 intervals -> 3 steps"
+    ]
+  }
+}

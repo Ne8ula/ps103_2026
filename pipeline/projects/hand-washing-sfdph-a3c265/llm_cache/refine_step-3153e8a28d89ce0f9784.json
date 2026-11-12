@@ -1,0 +1,32 @@
+{
+  "task": "refine_step",
+  "provider": "fake:fake-6abdf482",
+  "prompt_version": "ff89ae4e94",
+  "system": "You update one step of a tutorial with answers the video's uploader gave to questions about it.\nThe uploader is the authority on their own procedure: integrate their answers faithfully.\n\nRules:\n- Change only what the answers address. Keep every other field as it is, word for word.\n- Put each new fact from the answers into user_supplied as a short, self-contained statement\n  (e.g. \"Scrub for at least 20 seconds\"). Keep earlier user_supplied facts unless an answer marked as\n  superseding replaces them.\n- Use the facts in the instruction, details, tools, materials, cautions or expected_result where a\n  learner needs them.\n- List in resolved_missing_keys the keys of missing-info items the answers fully resolve. Do not list\n  items the answers do not address.\n- Never invent numeric values, settings or safety claims beyond what the answers and the existing step\n  state. If an answer is vague or raises a new gap, add it to new_missing_info instead of guessing.\n- confidence: raise it if the answers confirm the step, lower it if they contradict it.",
+  "user": "Current step (s07, 30.2s to 36.2s):\n{\n  \"title\": \"[fake LLM] Rinse your hands and dry them\",\n  \"instruction\": \"[fake LLM] Rinse your hands and dry them with paper towels or an air dryer.\",\n  \"details\": [\n    \"[fake LLM] Hands: Right hand: power grip, palm facing away, middle+ring together pointing right, t\",\n    \"[fake LLM] Hands: Right hand: not visible. Left hand: open hand, palm facing camera, fingers sprea\"\n  ],\n  \"tools\": [],\n  \"materials\": [\n    \"towel\",\n    \"paper towel\"\n  ],\n  \"expected_result\": \"[fake LLM] Narrated: \\\"If you have concerns with the cleanliness of your surroundings,\\\"\",\n  \"cautions\": [],\n  \"confidence\": 0.75,\n  \"user_supplied\": []\n}\n\nOpen missing-info items (key: field, blocking, description):\ns07:missing:duration: duration, blocking, [fake LLM] How long this action lasts is not stated.\n\nUploader answers to apply:\n- Question: [fake LLM] For step s07 (\"[fake LLM] Rinse your hands and dry them\"): [fake LLM] How long this action lasts is not stated. Please specify.\n  Answer: Use warm running water.\n  Raised by: s07:missing:duration",
+  "images": [],
+  "response": {
+    "title": "[fake LLM] Rinse your hands and dry them",
+    "instruction": "[fake LLM] Rinse your hands and dry them with paper towels or an air dryer.",
+    "details": [
+      "[fake LLM] Hands: Right hand: power grip, palm facing away, middle+ring together pointing right, t",
+      "[fake LLM] Hands: Right hand: not visible. Left hand: open hand, palm facing camera, fingers sprea",
+      "[fake LLM] Per the uploader: Use warm running water."
+    ],
+    "tools": [],
+    "materials": [
+      "towel",
+      "paper towel"
+    ],
+    "expected_result": "[fake LLM] Narrated: \"If you have concerns with the cleanliness of your surroundings,\"",
+    "cautions": [],
+    "confidence": 0.85,
+    "user_supplied": [
+      "Use warm running water. (answer to: [fake LLM] For step s07 (\"[fake LLM] Rinse your hands and dry them\"): [fake LLM] How long this action lasts is not stated. Please specify.)"
+    ],
+    "resolved_missing_keys": [
+      "s07:missing:duration"
+    ],
+    "new_missing_info": []
+  }
+}

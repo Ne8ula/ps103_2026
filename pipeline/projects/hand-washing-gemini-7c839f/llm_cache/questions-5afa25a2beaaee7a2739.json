@@ -1,0 +1,126 @@
+{
+  "task": "questions",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "d1906e7783",
+  "served_by": "gemini-3-flash-preview",
+  "system": "You turn gaps found in a draft tutorial into questions for the person who recorded the demonstration\nvideo. They know the procedure well but are busy: ask short, concrete, plain-language questions that\nthey can answer in a few words.\n\nRules:\n- One question per gap, except: when several gaps ask for the same information, ask once and list all\n  their keys in gap_keys. Every gap key must appear in exactly one question; use only the given keys.\n- Refer to steps by their title, not by internal ids.\n- Choose answer_type: yes_no for confirmations, choice when there are a few plausible options (put\n  them in choices), number only when a single number with an obvious unit is asked, free_text otherwise.\n- Never suggest specific numeric values, settings or safety rules in the question or the choices;\n  ask for them. Choices may only offer structural options (e.g. split / merge / correct).\n- priority: 1 = a learner could not do the step correctly or safely without the answer (blocking gaps,\n  SOP conflicts), 2 = important for quality, 3 = nice to have.\n- If a gap was asked before and answered but persists, rephrase it to make clear what is still missing.",
+  "user": "Procedure steps:\n- Wet your hands and apply soap (0.0-13.4s): Wet your hands under running water and then apply soap using a dispenser.\n- Scrub hands and wrists for 20 seconds (13.4-27.5s): Rub your hands together for at least 20 seconds to ensure a thorough clean. Scrub the backs of your hands, between your fingers, your fingertips, under your nails, your thumbs, and your wrists.\n- Rinse and dry your hands (27.5-44.0s): Rinse your hands thoroughly and dry them completely using a paper towel, air dryer, or cloth towel.\n- Use hand sanitizer if soap is unavailable (44.0-58.3s): Apply an alcohol-based hand sanitizer to your hands and rub them together until dry.\n\nGaps (key | step | kind | blocking | description):\nc:s03:conflict:d01:293 | Rinse and dry your hands | sop_conflict | blocking | The instructions suggest using a cloth towel at home, but regulations require specific hand-drying methods such as individual disposable towels or a continuous towel system. (fda-food-code-2022.pdf, p. 153)\nc:s04:conflict:d01:293 | Use hand sanitizer if soap is unavailable | sop_conflict | blocking | Hand sanitizer cannot be used as a substitute for washing with soap; regulations require that each handwashing sink be provided with a supply of hand cleaning soap for employee use. (fda-food-code-2022.pdf, p. 153)\nc:global:missing_step:d01:80 | whole procedure | sop_missing_step | blocking | Food employees are required to wash their hands in a dedicated handwashing sink, and are explicitly prohibited from using sinks used for food preparation, dishwashing, or service tasks. (fda-food-code-2022.pdf, p. 62)\nc:global:missing_step:d01:78 | whole procedure | sop_missing_step | blocking | The scrubbing procedure must extend beyond the hands and wrists to include all exposed portions of the arms. (fda-food-code-2022.pdf, p. 61)\nc:global:missing_step:d01:622 | whole procedure | sop_missing_step | blocking | After washing, it is essential to avoid recontaminating hands through direct contact with surfaces like manual faucet handles, paper towel dispensers, or restroom door handles. (fda-food-code-2022.pdf, p. 346)\ns01:missing:setting | Wet your hands and apply soap | missing_info (setting) | not blocking | The required temperature of the running water is not specified.\ns01:missing:quantity | Wet your hands and apply soap | missing_info (quantity) | not blocking | The amount of soap to be applied is not specified.\ns01:missing:duration | Wet your hands and apply soap | missing_info (duration) | not blocking | The duration for wetting the hands is not specified.\ns03:missing:duration | Rinse and dry your hands | missing_info (duration) | not blocking | The duration for rinsing hands is not specified.\ns04:missing:quantity | Use hand sanitizer if soap is unavailable | missing_info (quantity) | not blocking | the amount of hand sanitizer to dispense per use\ns04:missing:duration | Use hand sanitizer if soap is unavailable | missing_info (duration) | not blocking | the total time to rub hands together",
+  "images": [],
+  "response": {
+    "questions": [
+      {
+        "gap_keys": [
+          "c:s03:conflict:d01:293"
+        ],
+        "text": "In 'Rinse and dry your hands', which specific hand-drying methods should be listed instead of a cloth towel?",
+        "why": "Cloth towels are prohibited in food service environments to prevent cross-contamination.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "c:s04:conflict:d01:293"
+        ],
+        "text": "How should 'Use hand sanitizer if soap is unavailable' be modified to comply with the requirement that soap must always be used?",
+        "why": "Hand sanitizer is not a legal substitute for soap and water for required employee handwashing.",
+        "answer_type": "choice",
+        "choices": [
+          "remove",
+          "correct"
+        ],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "c:global:missing_step:d01:80"
+        ],
+        "text": "What type of sink must be used for this procedure to meet health and safety regulations?",
+        "why": "Employees must use dedicated handwashing sinks rather than those used for food prep or dishwashing.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "c:global:missing_step:d01:78"
+        ],
+        "text": "Besides the hands and wrists, which parts of the arms must also be scrubbed?",
+        "why": "Food safety codes require scrubbing all exposed portions of the arms.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "c:global:missing_step:d01:622"
+        ],
+        "text": "What is the correct way to turn off faucets or use dispensers to avoid recontaminating hands after washing?",
+        "why": "Avoiding contact with manual handles after washing is essential for proper hygiene.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s01:missing:setting"
+        ],
+        "text": "What is the required temperature for the running water in 'Wet your hands and apply soap'?",
+        "why": "The water must be at a specific temperature to comply with safety standards.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s01:missing:quantity"
+        ],
+        "text": "How much soap should be applied during the first step?",
+        "why": "The amount of soap used affects the thoroughness of the cleaning.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s01:missing:duration"
+        ],
+        "text": "How many seconds should hands be held under the water before applying soap?",
+        "why": "A specific duration for wetting hands helps ensure they are ready for scrubbing.",
+        "answer_type": "number",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s03:missing:duration"
+        ],
+        "text": "In 'Rinse and dry your hands', how many seconds should the rinse phase last?",
+        "why": "Sufficient rinsing time is required to remove all soap and contaminants.",
+        "answer_type": "number",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s04:missing:quantity"
+        ],
+        "text": "What volume of hand sanitizer should be dispensed per application?",
+        "why": "Using the correct amount of sanitizer is necessary for its effectiveness.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s04:missing:duration"
+        ],
+        "text": "How many seconds should hands be rubbed together when applying sanitizer?",
+        "why": "The effectiveness of hand sanitizer depends on a minimum contact time.",
+        "answer_type": "number",
+        "choices": [],
+        "priority": 2
+      }
+    ]
+  }
+}

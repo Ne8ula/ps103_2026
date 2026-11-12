@@ -1,0 +1,128 @@
+{
+  "round": 1,
+  "questions": [
+    {
+      "id": "q001",
+      "step_id": "s03",
+      "kind": "sop_conflict",
+      "text": "In 'Rinse and dry your hands', which specific hand-drying methods should be listed instead of a cloth towel?",
+      "why": "Cloth towels are prohibited in food service environments to prevent cross-contamination.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s03:conflict:d01:293"
+      ]
+    },
+    {
+      "id": "q002",
+      "step_id": "s04",
+      "kind": "sop_conflict",
+      "text": "How should 'Use hand sanitizer if soap is unavailable' be modified to comply with the requirement that soap must always be used?",
+      "why": "Hand sanitizer is not a legal substitute for soap and water for required employee handwashing.",
+      "answer_type": "choice",
+      "choices": [
+        "remove",
+        "correct"
+      ],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s04:conflict:d01:293"
+      ]
+    },
+    {
+      "id": "q003",
+      "step_id": null,
+      "kind": "sop_missing_step",
+      "text": "What type of sink must be used for this procedure to meet health and safety regulations?",
+      "why": "Employees must use dedicated handwashing sinks rather than those used for food prep or dishwashing.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:global:missing_step:d01:80"
+      ]
+    },
+    {
+      "id": "q004",
+      "step_id": null,
+      "kind": "sop_missing_step",
+      "text": "Besides the hands and wrists, which parts of the arms must also be scrubbed?",
+      "why": "Food safety codes require scrubbing all exposed portions of the arms.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:global:missing_step:d01:78"
+      ]
+    },
+    {
+      "id": "q005",
+      "step_id": null,
+      "kind": "sop_missing_step",
+      "text": "What is the correct way to turn off faucets or use dispensers to avoid recontaminating hands after washing?",
+      "why": "Avoiding contact with manual handles after washing is essential for proper hygiene.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:global:missing_step:d01:622"
+      ]
+    },
+    {
+      "id": "q006",
+      "step_id": "s01",
+      "kind": "missing_info",
+      "text": "What is the required temperature for the running water in 'Wet your hands and apply soap'?",
+      "why": "The water must be at a specific temperature to comply with safety standards.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s01:missing:setting"
+      ]
+    },
+    {
+      "id": "q007",
+      "step_id": "s01",
+      "kind": "missing_info",
+      "text": "How much soap should be applied during the first step?",
+      "why": "The amount of soap used affects the thoroughness of the cleaning.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s01:missing:quantity"
+      ]
+    },
+    {
+      "id": "q009",
+      "step_id": "s03",
+      "kind": "missing_info",
+      "text": "In 'Rinse and dry your hands', how many seconds should the rinse phase last?",
+      "why": "Sufficient rinsing time is required to remove all soap and contaminants.",
+      "answer_type": "number",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s03:missing:duration"
+      ]
+    }
+  ]
+}

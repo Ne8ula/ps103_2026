@@ -1,0 +1,59 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 7 of 22, 222.1s to 302.7s.\nSegmentation summary: Deburr the printed part using a drill and a manual deburring tool to clear any imperfections.\nPrevious step: Enlarge the pilot holes to 1/8-inch using a larger drill bit.\nNext step: Vacuum the printer's rails and the bottom of the case to remove filament debris and tidy the workspace.\n\nNarration during this step:\n[228.7-236.5s] \"this first one is one-sixteenth of an inch and that finds those center points\"\n[236.5-282.9s] \"very, very nice that we put in by hand. There's my deburring tool, misplaced.\"\n[291.3-295.1s] \"Just take a little bit of that burr off just so that the wiper sits nice and\"\n\nFrames: 3 attached: image 1 at 235.6s, image 2 at 262.4s, image 3 at 289.3s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 222.1s (step start + hands: visibility change) - hands until 228.7s: no hands visible\na2 @ 228.7s (narration) - hands until 232.5s: one hand 75%, no hands 23%; grip L: power grip 43%; active 56%, back-and-forth left-right; at centre\na3 @ 232.5s (hands: activity change, finger change, visibility change) - hands until 242.7s: one hand 20%, no hands 80%; grip L: relaxed hand 46%; active 10%, moving down-right; at centre\na4 @ 242.7s (hands: finger change, grip change) - hands until 245.7s: one hand 71%, no hands 29%; grip L: relaxed hand 48%; active 56%, back-and-forth up-down; at centre\na5 @ 245.7s (hands: activity change, visibility change) - hands until 249.7s: one hand 90%, no hands 10%; grip L: pinch grip 70%; active 43%, back-and-forth diagonal; at top\na6 @ 249.7s (hands: activity change, speed change) - hands until 287.7s: one hand 33%, no hands 67%; grip L: pinch grip; active 1%, moving down-right; at top\na7 @ 287.7s (hands: activity change) - hands until 291.7s: both hands 95%, one hand 5%; grip R: fist 60%, L: pinch grip; active 77%; at top\na8 @ 291.7s (hands: finger change, grip change) - hands until 294.7s: both hands 100%; grip R: fist 91%, L: pinch grip; active 71%, back-and-forth left-right; at centre\na9 @ 294.7s (hands: activity change, finger change, interaction change, speed change) - hands until 298.7s: both hands 63%, one hand 37%; grip R: fist 95%, L: pinch grip; hands close 18%; active 62%; at top\na10 @ 298.7s (hands: finger change, speed change) - hands until 302.7s: both hands 85%, one hand 15%; grip R: fist, L: pinch grip; hands close 20%; active 70%; at top\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video). They are drawn and labelled on the images.\nB1 both hands (everything the hands cover) - image 1: x 0.05-0.87, y 0.00-1.00 (82% of the frame); image 2: x 0.05-0.87, y 0.00-1.00 (82% of the frame); image 3: x 0.05-0.87, y 0.00-1.00 (82% of the frame)\nB2 work zone (where the hands meet or hold something, i.e. the object worked on) - image 1: x 0.18-0.85, y 0.00-1.00 (68% of the frame); image 2: x 0.18-0.85, y 0.00-1.00 (68% of the frame); image 3: x 0.18-0.85, y 0.00-1.00 (68% of the frame)\nB4 left hand (the left hand alone) - image 1: x 0.06-0.87, y 0.00-1.00 (81% of the frame); image 2: x 0.06-0.87, y 0.00-1.00 (81% of the frame); image 3: x 0.06-0.87, y 0.00-1.00 (81% of the frame)\nfull - the whole frame (when the surroundings matter or no box fits)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s07/k1_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s07/k2_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s07/k3_boxes.jpg"
+  ],
+  "response": {
+    "title": "Deburr the printer part",
+    "instruction": "Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly.",
+    "details": [
+      "Use a pinch grip on the manual deburring tool.",
+      "Insert the tip of the tool into the holes created in the previous step.",
+      "Rotate the tool manually within the hole to smooth the edges."
+    ],
+    "tools": [
+      "manual deburring tool"
+    ],
+    "materials": [
+      "printed part"
+    ],
+    "expected_result": "The holes on the printed part are smooth and free of burrs, allowing the wiper component to seat properly.",
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "tool",
+        "description": "Specific brand or type of manual deburring tool is not specified.",
+        "blocking": false
+      },
+      {
+        "field": "other",
+        "description": "The exact location and orientation of the wiper component are not provided.",
+        "blocking": false
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 222.1,
+        "caption": "Locate center points",
+        "focus_box": "B2",
+        "emphasis": null,
+        "emphasis_s": null
+      },
+      {
+        "start_s": 287.7,
+        "caption": "Use deburring tool",
+        "focus_box": "B2",
+        "emphasis": "burrs",
+        "emphasis_s": 291.7
+      }
+    ]
+  }
+}

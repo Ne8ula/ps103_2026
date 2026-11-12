@@ -1,0 +1,41 @@
+{
+  "project": "demo/capture/home/x1c-wiper-mod-livestream-a21371",
+  "labels": "x1c-steinwipe-livestream.yaml",
+  "run": "uncut livestream, Gemini, after expert answers",
+  "steps": 22,
+  "labelled_steps": 7,
+  "boundaries": {
+    "predicted": 19,
+    "true_positives": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "mean_abs_error_s": null
+  },
+  "facts_stated": "7/7",
+  "facts_missing": [],
+  "questions": {
+    "open": 8,
+    "blocking": 8,
+    "expected_raised": "2/2",
+    "expected_missing": []
+  },
+  "compliance": {
+    "notes": 13,
+    "conflicts": 6,
+    "missing_steps": 0,
+    "steps_without_guidance": 16,
+    "expected_citations_found": "0/0",
+    "dropped_by_validation": 0,
+    "expected_notes_found": "2/2",
+    "expected_notes_missing": []
+  },
+  "llm": [
+    "gemini:gemini-3.6-flash"
+  ],
+  "edit": {
+    "enabled": true,
+    "step_seconds": 802.67,
+    "kept_seconds": 529.625
+  }
+}

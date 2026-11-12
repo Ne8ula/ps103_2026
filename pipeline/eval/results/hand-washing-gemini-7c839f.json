@@ -1,0 +1,34 @@
+{
+  "project": "projects/hand-washing-gemini-7c839f",
+  "labels": "sfdph-wash-hands-en.yaml",
+  "run": "edited PSA, Gemini free tier",
+  "steps": 4,
+  "labelled_steps": 6,
+  "boundaries": {
+    "predicted": 3,
+    "true_positives": 3,
+    "precision": 1.0,
+    "recall": 0.6,
+    "f1": 0.75,
+    "mean_abs_error_s": 0.46
+  },
+  "facts_stated": "6/6",
+  "facts_missing": [],
+  "questions": {
+    "open": 8,
+    "blocking": 5,
+    "expected_raised": "2/2",
+    "expected_missing": []
+  },
+  "compliance": {
+    "notes": 18,
+    "conflicts": 2,
+    "missing_steps": 3,
+    "steps_without_guidance": 0,
+    "expected_citations_found": "1/1",
+    "dropped_by_validation": 2
+  },
+  "llm": [
+    "gemini:gemini-3.6-flash"
+  ]
+}

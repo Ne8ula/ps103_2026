@@ -1,0 +1,144 @@
+{
+  "round": 1,
+  "questions": [
+    {
+      "id": "q003",
+      "step_id": "s02",
+      "kind": "missing_info",
+      "text": "Should the printer be powered off before manually moving the toolhead in Push the printer toolhead aside?",
+      "why": "Manual movement of the toolhead while powered on can damage the stepper motors.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s02:missing:safety"
+      ]
+    },
+    {
+      "id": "q004",
+      "step_id": "s03",
+      "kind": "missing_info",
+      "text": "How should the fit of the drill bit inside the guide hole be tested in Examine the 3D-printed drill template?",
+      "why": "Ensuring a correct fit is necessary to prevent drilling inaccurately or damaging the template.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s03:missing:outcome"
+      ]
+    },
+    {
+      "id": "q002",
+      "step_id": "s05",
+      "kind": "missing_info",
+      "text": "What is the diameter of the pilot holes to be drilled into the frame in Drill pilot holes into the frame?",
+      "why": "The pilot hole size is missing and is critical for the secondary enlargement step.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s05:missing:unverified"
+      ]
+    },
+    {
+      "id": "q006",
+      "step_id": "s09",
+      "kind": "missing_info",
+      "text": "What is the correct orientation or mating point for the assembly in Position backing plate and wiper?",
+      "why": "The visual frames do not clearly show how the parts align before installation.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s09:missing:other"
+      ]
+    },
+    {
+      "id": "q005",
+      "step_id": null,
+      "kind": "sop_conflict",
+      "text": "Should an H2.0 Allen key or a screwdriver be used for the screws in Tighten the center screw, Position and tighten the wiper plate, and Confirm wiper assembly replacement without recalibration?",
+      "why": "There is a conflict between the video's use of a screwdriver and the manual's requirement for an Allen key.",
+      "answer_type": "choice",
+      "choices": [
+        "H2.0 Allen key",
+        "screwdriver"
+      ],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s11:conflict:d01:1",
+        "c:s16:conflict:d01:1",
+        "c:s17:conflict:d01:1",
+        "s11:missing:tool",
+        "s16:missing:tool",
+        "s17:missing:tool"
+      ]
+    },
+    {
+      "id": "q001",
+      "step_id": null,
+      "kind": "sop_conflict",
+      "text": "Does the installation require a single screw or multiple screws including a center screw and outer screws?",
+      "why": "The manual specifies only one screw, but the video procedure and backing plate installation suggest several.",
+      "answer_type": "choice",
+      "choices": [
+        "single screw",
+        "center and outer screws"
+      ],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s11:conflict:d01:2",
+        "c:s16:conflict:d01:2",
+        "c:s17:conflict:d01:2",
+        "s12:missing:other",
+        "s17:missing:quantity"
+      ]
+    },
+    {
+      "id": "q009",
+      "step_id": "s14",
+      "kind": "sop_conflict",
+      "text": "In Verify wiper alignment, should the wiper move slightly in all directions or be firmly seated?",
+      "why": "The video suggests movement is required, which contradicts the manual's instruction for parts to be properly seated.",
+      "answer_type": "choice",
+      "choices": [
+        "move slightly",
+        "firmly seated"
+      ],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s14:conflict:d01:2"
+      ]
+    },
+    {
+      "id": "q010",
+      "step_id": "s15",
+      "kind": "sop_conflict",
+      "text": "Is enlarging the mounting holes with a drill an approved technique for the nozzle wiper installation?",
+      "why": "The manual does not list drills as a required tool and implies the part should be installed as-is.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "c:s15:conflict:d01:1",
+        "c:s15:conflict:d01:2"
+      ]
+    }
+  ]
+}

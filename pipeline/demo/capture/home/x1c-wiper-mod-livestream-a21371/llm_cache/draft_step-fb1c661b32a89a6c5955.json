@@ -1,0 +1,67 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 17 of 22, 522.3s to 542.4s.\nSegmentation summary: Confirm that the wiper and plate can be removed and replaced without requiring recalibration.\nPrevious step: Position the wiper plate so it rests against the top surface to avoid stressing the mounting screws.\nNext step: Describe and demonstrate the side-to-side X-sweeping motion of the original wipe cycle.\n\nNarration during this step:\n[522.0-528.0s] \"the screws. Because the idea with these screws is that you can take the screws\"\n[528.0-534.0s] \"out, remove the wiper, put on a new wiper that's already on a new plate and\"\n[534.0-538.6s] \"just screw it back in and the positioning will be perfect. You don't want to have\"\n[538.6-541.9s] \"to go run a calibration and figure out where your position is.\"\n\nFrames: 3 attached: image 1 at 525.6s, image 2 at 532.3s, image 3 at 539.0s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 522.3s (step start) - hands until 523.3s: one hand 40%, no hands 60%; grip L: relaxed hand 50%; active 0%; at bottom\na2 @ 523.3s (hands: visibility change) - hands until 525.7s: one hand 50%, no hands 50%; grip R: open hand 62%; active 22%, back-and-forth up-down; at bottom\na3 @ 525.7s (hands: finger change) - hands until 527.8s: one hand 61%, no hands 39%; grip R: open hand 45%, L: open hand 62%; active 19%, back-and-forth left-right; at bottom\na4 @ 527.8s (hands: visibility change) - hands until 529.8s: both hands 17%, one hand 83%; grip R: open hand 76%, L: fist 43%; hands touching 17%; active 67%, moving up-right; at bottom\na5 @ 529.8s (hands: finger change, grip change, visibility change) - hands until 531.8s: both hands 23%, one hand 77%; grip R: relaxed hand 50%, L: relaxed hand 48%; hands touching 23%; active 40%, back-and-forth up-down; at bottom\na6 @ 531.8s (hands: finger change, grip change, interaction change, visibility change) - hands until 533.8s: one hand 93%; grip R: relaxed hand 82%, L: relaxed hand 37%; active 33%, back-and-forth diagonal; at bottom\na7 @ 533.8s (hands: visibility change) - hands until 535.8s: one hand 97%; grip R: open hand, L: open hand 83%; active 67%, back-and-forth diagonal; at bottom\na8 @ 535.8s (hands: visibility change) - hands until 537.8s: one hand 100%; grip R: open hand 56%, L: open hand 64%; active 50%, moving in place; at bottom\na9 @ 537.8s (hands: finger change, visibility change) - hands until 539.8s: one hand 97%; grip R: relaxed hand 55%, L: open hand 40%; active 57%, back-and-forth diagonal; at bottom\na10 @ 539.8s (hands: visibility change) - hands until 542.4s: one hand 100%; grip R: open hand; active 51%, moving down-left; at bottom\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video). They are drawn and labelled on the images.\nB1 both hands (everything the hands cover) - image 1: x 0.23-0.68, y 0.39-1.00 (27% of the frame); image 2: x 0.23-0.68, y 0.39-1.00 (27% of the frame); image 3: x 0.23-0.68, y 0.39-1.00 (27% of the frame)\nfull - the whole frame (when the surroundings matter or no box fits)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s17/k1_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s17/k2_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s17/k3_boxes.jpg"
+  ],
+  "response": {
+    "title": "Confirm wiper assembly replacement without recalibration",
+    "instruction": "Replace the wiper by removing the mounting screws and reattaching the new wiper plate. This action maintains position accuracy so that no further recalibration is needed.",
+    "details": [
+      "The wiper is part of a pre-assembled plate unit.",
+      "The screw mounting design ensures consistent positioning when replacing the entire assembly.",
+      "Manual handling involves unscrewing the old plate and installing the new one back into the same mounting points."
+    ],
+    "tools": [
+      "screwdriver"
+    ],
+    "materials": [
+      "wiper plate",
+      "mounting screws"
+    ],
+    "expected_result": "The wiper assembly is securely reattached with its original alignment, eliminating the need for system calibration.",
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "tool",
+        "description": "The specific type or size of screwdriver required for the wiper plate screws is not specified.",
+        "blocking": true
+      },
+      {
+        "field": "quantity",
+        "description": "The exact number of mounting screws to remove and replace is not stated.",
+        "blocking": false
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 522.3,
+        "caption": "Remove the old wiper plate screws",
+        "focus_box": "B1",
+        "emphasis": "screws",
+        "emphasis_s": 525.0
+      },
+      {
+        "start_s": 531.8,
+        "caption": "Install the new wiper assembly",
+        "focus_box": "B1",
+        "emphasis": "wiper plate",
+        "emphasis_s": 532.5
+      },
+      {
+        "start_s": 537.8,
+        "caption": "Tighten screws to secure plate",
+        "focus_box": "B1",
+        "emphasis": "screws",
+        "emphasis_s": 539.0
+      }
+    ]
+  }
+}

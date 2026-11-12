@@ -1,0 +1,32 @@
+{
+  "task": "draft_step",
+  "provider": "fake:fake-6abdf482",
+  "prompt_version": "1ea921f623",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hand poses at gesture keyframes, and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames.\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 12 of 13, 51.3s to 53.4s.\nSegmentation summary: [fake LLM] Narrated: \"For more information, please visit sfdph.org.\"\nPrevious step: [fake LLM] Narrated: \"contains at least 60% alcohol to clean your hands.\"\nNext step: [fake LLM] Hands idle: t=54.3s | Right hand: not visible. Left hand: not visible. N\n\nNarration during this step:\n(nothing said during this step)\n\nHand poses at gesture keyframes (derived from landmarks; may be wrong when hands are occluded):\ng0041 @ 51.3s [active]: t=51.3s | Right hand: unclear (unstable tracking), at centre; moving right, moderate. Left hand: not visible. Active.\ng0042 @ 52.3s [active]: t=52.3s | Right hand: relaxed hand, palm sideways, index+middle together pointing down-left, ring extended pointing down-left, thumb and pinky half-bent, at centre; moving down, moderate. Left hand: not visible. Active.\ng0043 @ 53.3s [active]: t=53.3s | Right hand: not visible. Left hand: pinch grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at bottom-right; moving down-right, fast. Active.\n\nFrames: 3 attached, at 51.7s, 52.4s, 53.1s",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/draft/keyframes/s12/k1.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/draft/keyframes/s12/k2.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/draft/keyframes/s12/k3.jpg"
+  ],
+  "response": {
+    "title": "[fake LLM] Step 12",
+    "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+    "details": [
+      "[fake LLM] Hands: Right hand: unclear (unstable tracking), at centre; moving right, moderate. Left",
+      "[fake LLM] Hands: Right hand: relaxed hand, palm sideways, index+middle together pointing down-lef"
+    ],
+    "tools": [],
+    "materials": [],
+    "expected_result": null,
+    "cautions": [],
+    "confidence": 0.45,
+    "missing_info": [
+      {
+        "field": "purpose",
+        "description": "[fake LLM] No narration: what is this step for?",
+        "blocking": false
+      }
+    ]
+  }
+}

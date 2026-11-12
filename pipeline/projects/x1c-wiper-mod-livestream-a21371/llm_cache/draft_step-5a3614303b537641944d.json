@@ -1,0 +1,58 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 21 of 22, 592.5s to 649.9s.\nSegmentation summary: Explain the nozzle scrubbing mechanical update and how the nozzle sweeps across the wiper.\nPrevious step: Point out the wiper nubs to emphasize the importance of precise alignment.\nNext step: Use the printer's touchscreen console to home the axes and enter G-code commands to test nozzle positioning.\n\nNarration during this step:\n[594.7-598.4s] \"the amount that you run the wiper, you really don't need to get that\"\n[598.4-603.3s] \"aggressive with the scrubbing. The scrubbing was only really necessary on the\"\n[603.3-607.9s] \"earlier releases because we didn't have the AMS stuff set up yet. So we were\"\n[607.9-612.6s] \"just running the scrub on the start-up routine and then it wouldn't scrub\"\n[612.6-617.4s] \"again until the next print. So we were taking you know full advantage of having\"\n[617.4-624.0s] \"that wiper there to get the most scrubbing possible. So now all we're doing in\"\n[624.0-630.2s] \"this recent update is we're just sweeping on the X and then we're step on the\"\n[630.2-635.0s] \"end of on the end of the wiper. We're step up and then we'll sweep on the X\"\n[635.0-638.2s] \"again and then we'll step down and we'll sweep on the X again and that's the\"\n[638.2-646.6s] \"wiper team. So now it's not overly critical for the X positioning but it is\"\n[646.6-651.1s] \"critical on the Y positioning but not as critical as it would have been on the X.\"\n\nFrames: 3 attached: image 1 at 602.0s, image 2 at 621.2s, image 3 at 640.3s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 592.5s (step start) - hands until 593.5s: no hands visible\na2 @ 593.5s (hands: visibility change) - hands until 606.9s: no hands 98%; active 0%; at top\na3 @ 606.9s (hands: visibility change) - hands until 612.5s: both hands 13%, one hand 44%, no hands 43%; grip R: relaxed hand 86%, L: relaxed hand 52%; hands touching 13%; active 46%, moving up-left; at top\na4 @ 612.5s (hands: visibility change) - hands until 618.1s: one hand 62%, no hands 38%; grip L: relaxed hand 73%; active 51%, back-and-forth up-down; at top\na5 @ 618.1s (hands: activity change, finger change, grip change, visibility change) - hands until 623.1s: both hands 5%, one hand 83%, no hands 12%; grip L: relaxed hand 58%; active 67%, back-and-forth diagonal; at top\na6 @ 623.1s (hands: activity change, speed change) - hands until 628.1s: one hand 83%, no hands 17%; grip L: relaxed hand 68%; active 40%, moving left; at top\na7 @ 628.1s (hands: finger change) - hands until 633.1s: one hand 85%, no hands 15%; grip L: relaxed hand 37%; active 56%, back-and-forth up-down; at top\na8 @ 633.1s (hands: grip change) - hands until 638.2s: one hand 83%, no hands 17%; grip L: open hand 63%; active 64%, back-and-forth left-right; at top\na9 @ 638.2s (narration + hands: activity change, visibility change) - hands until 643.9s: one hand 78%, no hands 21%; grip L: open hand 93%; active 55%, back-and-forth left-right; at top\na10 @ 643.9s (hands: activity change, finger change, speed change) - hands until 649.9s: one hand 96%; grip L: open hand 79%; active 54%, back-and-forth diagonal; at top\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video). They are drawn and labelled on the images.\nB1 both hands (everything the hands cover) - image 1: x 0.06-0.85, y 0.00-0.77 (61% of the frame); image 2: x 0.06-0.85, y 0.00-0.77 (61% of the frame); image 3: x 0.06-0.85, y 0.00-0.77 (61% of the frame)\nfull - the whole frame (when the surroundings matter or no box fits)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s21/k1_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s21/k2_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s21/k3_boxes.jpg"
+  ],
+  "response": {
+    "title": "Understand the Nozzle Wiper Update",
+    "instruction": "Observe the improved nozzle scrubbing movement. The updated wiper routine now performs a three-stage sweep across the nozzle.",
+    "details": [
+      "The updated wiper sequence moves the nozzle in three passes along the X-axis, stepping up or down between each horizontal sweep.",
+      "Precise Y-axis positioning is critical, while X-axis positioning is now less critical than in previous versions."
+    ],
+    "tools": [
+      "nozzle wiper"
+    ],
+    "materials": [],
+    "expected_result": null,
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "other",
+        "description": "The specific firmware version or software update this change refers to is not named.",
+        "blocking": false
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 592.5,
+        "caption": "Observe the wiper sequence update",
+        "focus_box": "B1",
+        "emphasis": null,
+        "emphasis_s": null
+      },
+      {
+        "start_s": 623.1,
+        "caption": "Identify the multi-pass X-sweep",
+        "focus_box": "B1",
+        "emphasis": "X-sweep",
+        "emphasis_s": 624.0
+      },
+      {
+        "start_s": 638.2,
+        "caption": "Confirm Y-positioning importance",
+        "focus_box": "B1",
+        "emphasis": "Y-positioning",
+        "emphasis_s": 646.6
+      }
+    ]
+  }
+}

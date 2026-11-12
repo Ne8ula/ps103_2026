@@ -1,0 +1,17 @@
+{
+  "source": "inputs/video.mp4",
+  "source_kind": "file",
+  "title": null,
+  "uploader": null,
+  "license": null,
+  "duration": 810.0,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "frame_count": 24300,
+  "has_audio": true,
+  "video_path": "ingest/video.mp4",
+  "audio_path": "ingest/audio.wav",
+  "excerpt_start": 2940.0,
+  "excerpt_end": 3750.0
+}

@@ -1,0 +1,392 @@
+{
+  "documents": [
+    {
+      "id": "d01",
+      "name": "fda-food-code-2022.pdf",
+      "path": "inputs/documents/d01-fda-food-code-2022.pdf",
+      "pages": 668,
+      "chunks": 1236
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "notes": [
+        {
+          "id": "c-s01-1",
+          "step_id": "s01",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "Use warm water when wetting your hands to ensure the soap works effectively.",
+          "citations": [
+            {
+              "chunk_id": "d01:622",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "a warm water temperature is important in achieving the maximum surfactant effect of the soap."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-2dd7a18c7ceb83791adb"
+        },
+        {
+          "id": "c-s01-2",
+          "step_id": "s01",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "Before beginning the handwashing procedure, retrieve a paper towel to use later for turning off the faucet and opening doors to avoid recontamination.",
+          "citations": [
+            {
+              "chunk_id": "d01:623",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "This can be accomplished by obtaining a paper towel from its dispenser before the handwashing procedure"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-2dd7a18c7ceb83791adb"
+        },
+        {
+          "id": "c-s01-3",
+          "step_id": "s01",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "Ensure you are using a designated handwashing sink; washing in sinks used for food preparation or warewashing is not permitted.",
+          "citations": [
+            {
+              "chunk_id": "d01:80",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 62,
+              "quote": "FOOD EMPLOYEES shall clean their hands in a HANDWASHING SINK or APPROVED automatic handwashing facility and may not clean their hands in a sink used for FOOD preparation or WAREWASHING"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-2dd7a18c7ceb83791adb"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:622",
+        "d01:623",
+        "d01:293",
+        "d01:894",
+        "d01:887",
+        "d01:80"
+      ],
+      "query": "Wet your hands and apply soap Wet your hands under running water and then apply soap using a dispenser. Using sink, faucet, soap dispenser, running water, soap."
+    },
+    {
+      "step_id": "s02",
+      "notes": [
+        {
+          "id": "c-s02-1",
+          "step_id": "s02",
+          "kind": "requirement",
+          "severity": "info",
+          "text": "The most important part of the process is the abrasive action created by vigorously rubbing your hands together to loosen transient microorganisms.",
+          "citations": [
+            {
+              "chunk_id": "d01:622",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "It is the abrasive action obtained by vigorously rubbing the surfaces being cleaned that loosens the transient microorganisms on the hands."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-7f6bb3c257c345b8210a"
+        },
+        {
+          "id": "c-s02-2",
+          "step_id": "s02",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "While scrubbing, you must pay particular attention to removing any soil from underneath your fingernails.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "Paying particular attention to removing soil from underneath the fingernails during the cleaning procedure"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-7f6bb3c257c345b8210a"
+        },
+        {
+          "id": "c-s02-3",
+          "step_id": "s02",
+          "kind": "requirement",
+          "severity": "info",
+          "text": "The vigorous rubbing phase must last at least 10 to 15 seconds, but the total cleaning procedure from start to finish must take at least 20 seconds.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "FOOD EMPLOYEES shall clean their hands and exposed portions of their arms, including surrogate prosthetic devices for hands or arms for at least 20 seconds"
+            },
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "Rub together vigorously for at least 10 to 15 seconds"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-7f6bb3c257c345b8210a"
+        },
+        {
+          "id": "c-s02-4",
+          "step_id": "s02",
+          "kind": "caution",
+          "severity": "warning",
+          "text": "Never wash your hands in a food preparation sink, as this practice can lead to avoidable contamination of the sink and food products.",
+          "citations": [
+            {
+              "chunk_id": "d01:626",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 347,
+              "quote": "It is inappropriate to wash hands in a food preparation sink since this may result in avoidable contamination of the sink and the food prepared therein."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-7f6bb3c257c345b8210a"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:622",
+        "d01:78",
+        "d01:626",
+        "d01:623",
+        "d01:293",
+        "d01:620"
+      ],
+      "query": "Scrub hands and wrists for 20 seconds Rub your hands together for at least 20 seconds to ensure a thorough clean. Scrub the backs of your hands, between your fingers, your fingertips, under your nails, your thumbs, and your wrists. Using Sink, Soap."
+    },
+    {
+      "step_id": "s03",
+      "notes": [
+        {
+          "id": "c-s03-1",
+          "step_id": "s03",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "The instructions suggest using a cloth towel at home, but regulations require specific hand-drying methods such as individual disposable towels or a continuous towel system.",
+          "citations": [
+            {
+              "chunk_id": "d01:293",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 153,
+              "quote": "Each HANDWASHING SINK or group of adjacent HANDWASHING SINKS shall be provided with: (A) Individual, disposable towels; (B) A continuous towel system that supplies the user with a clean towel; or (C) A heated-air hand drying device"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-4cd0fd62968b29cd9616"
+        },
+        {
+          "id": "c-s03-2",
+          "step_id": "s03",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "To prevent recontamination after rinsing, you should also use a paper towel to operate the sink faucet handles.",
+          "citations": [
+            {
+              "chunk_id": "d01:623",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "This can be accomplished by obtaining a paper towel from its dispenser before the handwashing procedure, then, after handwashing, using the paper towel to operate the hand sink faucet handles and restroom door handles."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-4cd0fd62968b29cd9616"
+        },
+        {
+          "id": "c-s03-3",
+          "step_id": "s03",
+          "kind": "reference",
+          "severity": "info",
+          "text": "Ensuring hands are completely dry is vital as moisture increases the risk of transferring bacteria and viruses to other surfaces.",
+          "citations": [
+            {
+              "chunk_id": "d01:926",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 482,
+              "quote": "The residual moisture found on the hands after washing allows for bacterial and viral transfer to food or solid surfaces by touch."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-4cd0fd62968b29cd9616"
+        },
+        {
+          "id": "c-s03-4",
+          "step_id": "s03",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "When rinsing your hands, you must use clean, running warm water.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "(4) Thoroughly rinse under clean, running warm water;"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-4cd0fd62968b29cd9616"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:623",
+        "d01:293",
+        "d01:926",
+        "d01:626",
+        "d01:622",
+        "d01:78"
+      ],
+      "query": "Rinse and dry your hands Rinse your hands thoroughly and dry them completely using a paper towel, air dryer, or cloth towel. Using paper towels, air dryer, door handle, towel, water."
+    },
+    {
+      "step_id": "s04",
+      "notes": [
+        {
+          "id": "c-s04-1",
+          "step_id": "s04",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "Hand sanitizer cannot be used as a substitute for washing with soap; regulations require that each handwashing sink be provided with a supply of hand cleaning soap for employee use.",
+          "citations": [
+            {
+              "chunk_id": "d01:293",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 153,
+              "quote": "Each HANDWASHING SINK or group of 2 adjacent HANDWASHING SINKS shall be provided with a supply of hand cleaning liquid, powder, or bar soap."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-0ea3df38203031ba3057"
+        },
+        {
+          "id": "c-s04-2",
+          "step_id": "s04",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "The hand antiseptic used must be an FDA-approved drug or contain active antimicrobial ingredients listed in the FDA monograph to ensure safety and effectiveness.",
+          "citations": [
+            {
+              "chunk_id": "d01:80",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 62,
+              "quote": "A hand antiseptic used as a topical application, a hand antiseptic solution used as a hand dip, or a hand antiseptic soap shall: (1) Comply with one of the following: (a) Be an APPROVED drug that is listed in the FDA publication Approved Drug Products with Therapeutic Equivalence Evaluations"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-0ea3df38203031ba3057"
+        },
+        {
+          "id": "c-s04-3",
+          "step_id": "s04",
+          "kind": "reference",
+          "severity": "info",
+          "text": "Regulatory standards use the term \"hand antiseptic\" instead of \"hand sanitizer\" because skin agents typically achieve a much lower microbial reduction than the 5-log standard required for equipment.",
+          "citations": [
+            {
+              "chunk_id": "d01:627",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 347,
+              "quote": "The Food Code definition of \"sanitizer\" requires a minimum microbial reduction of 5 logs, which is equal to a 99.999% reduction."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-0ea3df38203031ba3057"
+        },
+        {
+          "id": "c-s04-4",
+          "step_id": "s04",
+          "kind": "caution",
+          "severity": "warning",
+          "text": "Ensure your hands are completely dry before proceeding, as residual moisture on the skin allows for easier transfer of bacteria and viruses to food and surfaces.",
+          "citations": [
+            {
+              "chunk_id": "d01:926",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 482,
+              "quote": "It is known that wet hands transfer bacteria more readily than dry hands."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-0ea3df38203031ba3057"
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:80",
+        "d01:622",
+        "d01:627",
+        "d01:430",
+        "d01:926",
+        "d01:293"
+      ],
+      "query": "Use hand sanitizer if soap is unavailable Apply an alcohol-based hand sanitizer to your hands and rub them together until dry. Using Hand sanitizer pump bottle, Alcohol-based hand sanitizer."
+    }
+  ],
+  "global_notes": [
+    {
+      "id": "c-global-1",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "critical",
+      "text": "Food employees are required to wash their hands in a dedicated handwashing sink, and are explicitly prohibited from using sinks used for food preparation, dishwashing, or service tasks.",
+      "citations": [
+        {
+          "chunk_id": "d01:80",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 62,
+          "quote": "FOOD EMPLOYEES shall clean their hands in a HANDWASHING SINK or APPROVED automatic handwashing facility and may not clean their hands in a sink used for FOOD preparation or WAREWASHING, or in a service sink or a curbed cleaning facility used for the disposal of mop water and similar liquid waste."
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-2751f4189a0948097f71"
+    },
+    {
+      "id": "c-global-2",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "critical",
+      "text": "The scrubbing procedure must extend beyond the hands and wrists to include all exposed portions of the arms.",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "FOOD EMPLOYEES shall use the following cleaning procedure in the order stated to clean their hands and exposed portions of their arms, including surrogate prosthetic devices for hands and arms"
+        }
+      ],
+      "after_step_id": "s02",
+      "llm_call": "compliance_missing_steps-2751f4189a0948097f71"
+    },
+    {
+      "id": "c-global-3",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "critical",
+      "text": "After washing, it is essential to avoid recontaminating hands through direct contact with surfaces like manual faucet handles, paper towel dispensers, or restroom door handles.",
+      "citations": [
+        {
+          "chunk_id": "d01:622",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 346,
+          "quote": "It is equally important to avoid recontaminating hands by avoiding direct hand contact with heavily contaminated environmental sources, such as manually operated handwashing sink faucets, paper towel dispensers, and rest room door handles after the handwashing procedure."
+        }
+      ],
+      "after_step_id": "s03",
+      "llm_call": "compliance_missing_steps-2751f4189a0948097f71"
+    }
+  ],
+  "embedding_model": "local:BAAI/bge-small-en-v1.5",
+  "dropped": [
+    "c-s01 draft 2: quote not found in d01:887: 'a handwashing sink must be capable of delivering running water that is at least '",
+    "c-s01 draft 2: no valid citations; note dropped: 'The sink used must be capable of providing running water at a temperature of at '"
+  ]
+}

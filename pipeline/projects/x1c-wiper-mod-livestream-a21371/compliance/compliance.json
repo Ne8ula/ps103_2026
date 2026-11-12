@@ -1,0 +1,1086 @@
+{
+  "documents": [
+    {
+      "id": "d01",
+      "name": "bambu-x1-replace-nozzle-wiper.md",
+      "path": "inputs/documents/d01-bambu-x1-replace-nozzle-wiper.md",
+      "pages": null,
+      "chunks": 3
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s01",
+      "notes": [
+        {
+          "id": "c-s01-1",
+          "step_id": "s01",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "Ensure you power off the printer before removing the top glass cover.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Power off the printer.",
+              "sentence_ids": [
+                4
+              ]
+            },
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Power off the printer and remove the top glass cover.",
+              "sentence_ids": [
+                7
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-2e54066340630d55ef69",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "Power off the printer.",
+          "video_value": null,
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Clear and remove the glass top cover Clear all loose objects from the top of the 3D printer and lift the glass cover away. Using 3D printer, glass top cover, tripod, small parts. Handle the glass top cover carefully to prevent breaking or scratching it.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P1"
+      ]
+    },
+    {
+      "step_id": "s02",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Push the printer toolhead aside Manually slide the printer toolhead to the back or side of the enclosure. This clears the central workspace for upcoming tasks. Using 3D printer.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P2"
+      ]
+    },
+    {
+      "step_id": "s03",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Examine the 3D-printed drill template Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly. Using drill bit, 3D-printed template.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s04",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Position template and mark hole locations Place the drill template into the printer frame and use the drill bit to mark the hole locations. Using drill bit, drill template, printer frame.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s05",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Drill pilot holes into the frame Use the power drill to create 1/[?]-inch pilot holes at the previously marked locations on the printer frame. Using power drill, 1/[?]-inch drill bit, printer frame. Keep hands and fingers away from the rotating drill bit to avoid injury.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s06",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Enlarge pilot holes to 1/8 inch Insert a 1/8-inch drill bit into your drill and enlarge the previously created 1/16-inch pilot holes. Using drill, 1/8-inch drill bit, 3D printed part. Use caution when handling power tools and sharp drill bits.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s07",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:0",
+        "d01:2"
+      ],
+      "query": "Deburr the printer part Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly. Using manual deburring tool, printed part.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:0",
+        "d01:2"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s08",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:0",
+        "d01:2"
+      ],
+      "query": "Vacuum printer debris Vacuum the printer rails and the bottom of the printer case to remove filament debris. Using portable vacuum, filament debris.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:0",
+        "d01:2"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s09",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Position backing plate and wiper Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation. Using tape, backing plate, wiper assembly, center screw. Avoid dropping small parts into the printer housing.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P4"
+      ]
+    },
+    {
+      "step_id": "s10",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "query": "Thread center screw loosely and align plate Thread the center screw into the backing plate just enough to hold it in place. Align the two outside holes to ensure the plate is level before tightening. Using hex driver, center screw.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P5"
+      ]
+    },
+    {
+      "step_id": "s11",
+      "notes": [
+        {
+          "id": "c-s11-1",
+          "step_id": "s11",
+          "kind": "conflict",
+          "severity": "warning",
+          "text": "Use an H2.0 Allen key as specified in the manual instead of a screwdriver to tighten the screw.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "- nozzle wiper - H2.0 Allen key",
+              "sentence_ids": [
+                2
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-580f4ee1b02e511512c3",
+          "requirement_type": "equipment",
+          "step_field": "tools",
+          "sop_value": "H2.0 Allen key",
+          "video_value": "screwdriver",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s11-2",
+          "step_id": "s11",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "The manual specifies installing only one screw, but the video refers to a center screw and mentions outer screws, which suggests a different part assembly.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Screw in 1 screw and put back the glass cover.",
+              "sentence_ids": [
+                6
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-580f4ee1b02e511512c3",
+          "requirement_type": "material",
+          "step_field": "instruction",
+          "sop_value": "1 screw",
+          "video_value": "center screw",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s11-3",
+          "step_id": "s11",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "After the screw is tightened, the glass cover should be put back as part of this step.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Screw in 1 screw and put back the glass cover.",
+              "sentence_ids": [
+                6
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-580f4ee1b02e511512c3",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "put back the glass cover",
+          "video_value": null,
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "query": "Tighten the center screw Tighten the center screw until it is snug. Ensure you do not over-tighten, as this will bend the plate and cause misalignment for the outer screws. Using screwdriver, center screw, metal plate. Do not over-tighten, or the center will bend and cause the outsides to misalign.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P5"
+      ]
+    },
+    {
+      "step_id": "s12",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "query": "Verify Backing Plate Installation Confirm the backing plate is correctly installed and note the specific screw sizes used for different positions. Using screwdriver, backing plate, M3 by 6mm screw, M3 by 8mm screws.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P6"
+      ]
+    },
+    {
+      "step_id": "s13",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "query": "Test Fit Wiper in Backing Plate Insert the spare wiper into the backing plate hole to verify it is centered and moves freely. Using spare wiper, backing plate.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s14",
+      "notes": [
+        {
+          "id": "c-s14-1",
+          "step_id": "s14",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "The instructions to ensure the wiper can move slightly in all directions contradicts the requirement that the wiper and screws be properly seated.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Check that the Nozzle Wiper and screws are properly seated.",
+              "sentence_ids": [
+                8
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-c55506a51473181a56f2",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "Check that the Nozzle Wiper and screws are properly seated.",
+          "video_value": "ensure it can move slightly in all directions within the hole without binding",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s14-2",
+          "step_id": "s14",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "As part of the verification check, ensure that the screws are also properly seated.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Check that the Nozzle Wiper and screws are properly seated.",
+              "sentence_ids": [
+                8
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-c55506a51473181a56f2",
+          "requirement_type": "technique",
+          "step_field": "whole_step",
+          "sop_value": "Check that the Nozzle Wiper and screws are properly seated.",
+          "video_value": null,
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "query": "Verify wiper alignment Test the wiper fit by ensuring it can move slightly in all directions within the hole without binding. Using wiper component.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "sop_step_ids": [
+        "P6"
+      ]
+    },
+    {
+      "step_id": "s15",
+      "notes": [
+        {
+          "id": "c-s15-1",
+          "step_id": "s15",
+          "kind": "conflict",
+          "severity": "warning",
+          "text": "The SOP only lists an H2.0 Allen key as a required tool for this procedure; do not use a drill and drill bit.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "- nozzle wiper - H2.0 Allen key",
+              "sentence_ids": [
+                2
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-80aeca0a3580ba6b5e32",
+          "requirement_type": "equipment",
+          "step_field": "tools",
+          "sop_value": "H2.0 Allen key",
+          "video_value": "drill, drill bit",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s15-2",
+          "step_id": "s15",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "The SOP requires installing the nozzle wiper as-is; enlarging the mounting holes is not an approved technique.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Install the new Nozzle Wiper in its place.",
+              "sentence_ids": [
+                4
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-80aeca0a3580ba6b5e32",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "Install the new Nozzle Wiper in its place",
+          "video_value": "enlarge the mounting holes to improve the fit",
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "query": "Enlarge wiper mounting holes If the wiper binds, remove it and carefully enlarge the mounting holes to improve the fit. Using drill, drill bit, wiper. Be careful when using drilling tools to enlarge holes.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s16",
+      "notes": [
+        {
+          "id": "c-s16-1",
+          "step_id": "s16",
+          "kind": "conflict",
+          "severity": "warning",
+          "text": "Use an H2.0 Allen key as specified in the manual instead of a screwdriver to avoid damaging the screw heads.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "- nozzle wiper - H2.0 Allen key",
+              "sentence_ids": [
+                2
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-b2a662c739117b806c9c",
+          "requirement_type": "equipment",
+          "step_field": "tools",
+          "sop_value": "H2.0 Allen key",
+          "video_value": "screwdriver",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s16-2",
+          "step_id": "s16",
+          "kind": "conflict",
+          "severity": "warning",
+          "text": "The SOP specifies using only 1 screw for the Nozzle Wiper installation, while the video step implies the use of multiple screws.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Remove 1 screw and remove the Nozzle Wiper.",
+              "sentence_ids": [
+                2
+              ]
+            },
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Screw in 1 screw and put back the glass cover.",
+              "sentence_ids": [
+                6
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-b2a662c739117b806c9c",
+          "requirement_type": "quantity",
+          "step_field": "materials",
+          "sop_value": "1 screw",
+          "video_value": "mounting screws",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s16-3",
+          "step_id": "s16",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "The procedure requires you to put the glass cover back on the printer as part of this step once the wiper is secured.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Screw in 1 screw and put back the glass cover.",
+              "sentence_ids": [
+                6
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-b2a662c739117b806c9c",
+          "requirement_type": "order",
+          "step_field": "whole_step",
+          "sop_value": "put back the glass cover",
+          "video_value": null,
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "query": "Position and tighten the wiper plate Position the wiper plate against the top surface and push it to the side to avoid stressing the mounting screws before tightening. Using screwdriver, wiper plate, mounting screws. Improper positioning may stress the mounting screws.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:1",
+        "d01:0"
+      ],
+      "sop_step_ids": [
+        "P4",
+        "P5"
+      ]
+    },
+    {
+      "step_id": "s17",
+      "notes": [
+        {
+          "id": "c-s17-1",
+          "step_id": "s17",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "The procedure requires using an H2.0 Allen key, but the video step specifies a screwdriver.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "- nozzle wiper - H2.0 Allen key",
+              "sentence_ids": [
+                2
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-32189f09fa5058f17428",
+          "requirement_type": "equipment",
+          "step_field": "tools",
+          "sop_value": "H2.0 Allen key",
+          "video_value": "screwdriver",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s17-2",
+          "step_id": "s17",
+          "kind": "conflict",
+          "severity": "warning",
+          "text": "The SOP specifies removing only 1 screw to replace the nozzle wiper, but the video instruction refers to multiple mounting screws.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Remove 1 screw and remove the Nozzle Wiper.",
+              "sentence_ids": [
+                2
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-32189f09fa5058f17428",
+          "requirement_type": "quantity",
+          "step_field": "instruction",
+          "sop_value": "1 screw",
+          "video_value": "mounting screws",
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "query": "Confirm wiper assembly replacement without recalibration Replace the wiper by removing the mounting screws and reattaching the new wiper plate. This action maintains position accuracy so that no further recalibration is needed. Using screwdriver, wiper plate, mounting screws.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "sop_step_ids": [
+        "P3",
+        "P4"
+      ]
+    },
+    {
+      "step_id": "s18",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Perform the original X-axis wipe cycle Demonstrate the side-to-side X-axis sweeping motion originally used in the printer's wipe cycle. Using 3D printer.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s19",
+      "notes": [
+        {
+          "id": "c-s19-1",
+          "step_id": "s19",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "Before manually guiding the toolhead, ensure the printer is powered off as required by the safety guidelines to prevent damage to the motors.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Power off the printer.",
+              "sentence_ids": [
+                4
+              ]
+            },
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Power off the printer and remove the top glass cover.",
+              "sentence_ids": [
+                7
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-6f102381f9e946e34743",
+          "requirement_type": "other",
+          "step_field": "instruction",
+          "sop_value": "Power off the printer",
+          "video_value": null,
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s19-2",
+          "step_id": "s19",
+          "kind": "requirement",
+          "severity": "info",
+          "text": "Use this side-to-side scrubbing motion to verify that the wiper and its components are properly seated and aligned.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Check that the Nozzle Wiper and screws are properly seated.",
+              "sentence_ids": [
+                8
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-6f102381f9e946e34743",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "Check that the Nozzle Wiper and screws are properly seated.",
+          "video_value": null,
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s19-3",
+          "step_id": "s19",
+          "kind": "reference",
+          "severity": "info",
+          "text": "The scrubbing motion between nubs simulates how the wiper effectively cleans the nozzle during standard operation.",
+          "citations": [
+            {
+              "chunk_id": "d01:0",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "The Nozzle Wiper is a flexible tool mounted on the edge of the waste chute to clean the nozzles before printing.",
+              "sentence_ids": [
+                6
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-6f102381f9e946e34743",
+          "requirement_type": "other",
+          "step_field": "instruction",
+          "sop_value": "The Nozzle Wiper is a flexible tool mounted on the edge of the waste chute to clean the nozzles before printing.",
+          "video_value": null,
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Perform a wiper nub scrubbing motion Manually guide the toolhead to perform a side-to-side scrubbing motion between each of the wiper nubs. Using toolhead, wiper nubs.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s20",
+      "notes": [
+        {
+          "id": "c-s20-1",
+          "step_id": "s20",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "The verification check should ensure that both the Nozzle Wiper and its screws are properly seated, in addition to checking nozzle clearance.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Check that the Nozzle Wiper and screws are properly seated.",
+              "sentence_ids": [
+                8
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-eafbff68a426b05e5727",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "Check that the Nozzle Wiper and screws are properly seated",
+          "video_value": null,
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s20-2",
+          "step_id": "s20",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "According to the safety guidelines, the printer must be powered off before performing maintenance operations.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Power off the printer.",
+              "sentence_ids": [
+                4
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-eafbff68a426b05e5727",
+          "requirement_type": "other",
+          "step_field": "whole_step",
+          "sop_value": "Power off the printer",
+          "video_value": null,
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "query": "Verify nozzle clearance with wiper nubs Visually inspect the nozzle tip's alignment relative to the wiper nubs. Ensure the nozzle clears the nubs to prevent accidental damage. Using 3D printer nozzle, wiper nubs. Misalignment by even a small distance can cause the nozzle to shear the wiper nubs off.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "sop_step_ids": [
+        "P6"
+      ]
+    },
+    {
+      "step_id": "s21",
+      "notes": [],
+      "no_relevant_guidance": true,
+      "retrieved_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "query": "Understand the Nozzle Wiper Update Observe the improved nozzle scrubbing movement. The updated wiper routine now performs a three-stage sweep across the nozzle. Using nozzle wiper.",
+      "context_chunk_ids": [
+        "d01:2",
+        "d01:0",
+        "d01:1"
+      ],
+      "sop_step_ids": []
+    },
+    {
+      "step_id": "s22",
+      "notes": [
+        {
+          "id": "c-s22-1",
+          "step_id": "s22",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "The safety instructions require the printer to be powered off, which contradicts the use of the touchscreen console in this step.",
+          "citations": [
+            {
+              "chunk_id": "d01:1",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Power off the printer.",
+              "sentence_ids": [
+                4
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-fd33997c4800021aec8d",
+          "requirement_type": "other",
+          "step_field": "instruction",
+          "sop_value": "Power off the printer.",
+          "video_value": "Use the printer's touchscreen console",
+          "sop_step_id": null
+        },
+        {
+          "id": "c-s22-2",
+          "step_id": "s22",
+          "kind": "conflict",
+          "severity": "warning",
+          "text": "The manual specifies verifying the installation by checking that the wiper and screws are properly seated, rather than using G-code coordinates on the screen.",
+          "citations": [
+            {
+              "chunk_id": "d01:2",
+              "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+              "page": null,
+              "quote": "Check that the Nozzle Wiper and screws are properly seated.",
+              "sentence_ids": [
+                8
+              ]
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-fd33997c4800021aec8d",
+          "requirement_type": "technique",
+          "step_field": "instruction",
+          "sop_value": "Check that the Nozzle Wiper and screws are properly seated.",
+          "video_value": "Verify the nozzle positioning coordinates on the screen as required.",
+          "sop_step_id": null
+        }
+      ],
+      "no_relevant_guidance": false,
+      "retrieved_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "query": "Calibrate Nozzle Position via G-Code Use the printer's touchscreen console to home the axes and send G-code commands to verify the nozzle position. Using printer touchscreen, G-code.",
+      "context_chunk_ids": [
+        "d01:1",
+        "d01:2",
+        "d01:0"
+      ],
+      "sop_step_ids": []
+    }
+  ],
+  "global_notes": [],
+  "embedding_model": "local:BAAI/bge-small-en-v1.5",
+  "dropped": [],
+  "sop_procedure": [
+    {
+      "id": "P1",
+      "action": "Power off the printer and remove the top glass cover",
+      "mandatory": false,
+      "citations": [
+        {
+          "chunk_id": "d01:1",
+          "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+          "page": null,
+          "quote": "Power off the printer and remove the top glass cover.",
+          "sentence_ids": [
+            7
+          ]
+        }
+      ],
+      "video_step_ids": [
+        "s01"
+      ],
+      "status": "partly_covered"
+    },
+    {
+      "id": "P2",
+      "action": "Move the tool head out of the chip chute for better access to the Nozzle Wiper",
+      "mandatory": false,
+      "citations": [
+        {
+          "chunk_id": "d01:1",
+          "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+          "page": null,
+          "quote": "Move the tool head out of the chip chute for better access to the Nozzle Wiper.",
+          "sentence_ids": [
+            8
+          ]
+        }
+      ],
+      "video_step_ids": [
+        "s02"
+      ],
+      "status": "covered"
+    },
+    {
+      "id": "P3",
+      "action": "Remove 1 screw and remove the Nozzle Wiper",
+      "mandatory": false,
+      "citations": [
+        {
+          "chunk_id": "d01:2",
+          "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+          "page": null,
+          "quote": "Remove 1 screw and remove the Nozzle Wiper.",
+          "sentence_ids": [
+            2
+          ]
+        }
+      ],
+      "video_step_ids": [
+        "s17"
+      ],
+      "status": "covered"
+    },
+    {
+      "id": "P4",
+      "action": "Install the new Nozzle Wiper in its place",
+      "mandatory": false,
+      "citations": [
+        {
+          "chunk_id": "d01:2",
+          "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+          "page": null,
+          "quote": "Install the new Nozzle Wiper in its place.",
+          "sentence_ids": [
+            4
+          ]
+        }
+      ],
+      "video_step_ids": [
+        "s09",
+        "s16",
+        "s17"
+      ],
+      "status": "covered"
+    },
+    {
+      "id": "P5",
+      "action": "Screw in 1 screw and put back the glass cover",
+      "mandatory": false,
+      "citations": [
+        {
+          "chunk_id": "d01:2",
+          "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+          "page": null,
+          "quote": "Screw in 1 screw and put back the glass cover.",
+          "sentence_ids": [
+            6
+          ]
+        }
+      ],
+      "video_step_ids": [
+        "s10",
+        "s11",
+        "s16"
+      ],
+      "status": "partly_covered"
+    },
+    {
+      "id": "P6",
+      "action": "Check that the Nozzle Wiper and screws are properly seated",
+      "mandatory": false,
+      "citations": [
+        {
+          "chunk_id": "d01:2",
+          "doc_name": "bambu-x1-replace-nozzle-wiper.md",
+          "page": null,
+          "quote": "Check that the Nozzle Wiper and screws are properly seated.",
+          "sentence_ids": [
+            8
+          ]
+        }
+      ],
+      "video_step_ids": [
+        "s12",
+        "s14",
+        "s20"
+      ],
+      "status": "covered"
+    }
+  ],
+  "sop_procedure_title": "Replace Nozzle Wiper",
+  "procedure_chunk_ids": [
+    "d01:1",
+    "d01:2",
+    "d01:0"
+  ],
+  "citation_stats": {
+    "proposed_citations": 26,
+    "invalid_citations": 0
+  }
+}

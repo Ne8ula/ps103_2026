@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "id": "x1c-wiper-mod-livestream-a21371",
+  "name": "X1C wiper mod (livestream)",
+  "created_at": "2026-10-30T15:37:24+00:00",
+  "video": {
+    "source": "inputs/video.mp4",
+    "kind": "file"
+  },
+  "documents": [
+    {
+      "id": "d01",
+      "name": "bambu-x1-replace-nozzle-wiper.md",
+      "path": "inputs/documents/d01-bambu-x1-replace-nozzle-wiper.md",
+      "sha": "9fb435144cff6031"
+    }
+  ],
+  "stages": {
+    "ingest": {
+      "status": "done",
+      "fingerprint": "04d43a47ea43ac5f",
+      "output_hash": "815b994c2953b8e0",
+      "started_at": "2026-10-30T15:37:53+00:00",
+      "finished_at": "2026-10-30T15:38:39+00:00",
+      "error": null
+    },
+    "perception": {
+      "status": "done",
+      "fingerprint": "e621b84e6fb42389",
+      "output_hash": "ceecc8396d364c89",
+      "started_at": "2026-10-30T15:38:39+00:00",
+      "finished_at": "2026-10-30T15:42:04+00:00",
+      "error": null
+    },
+    "transcribe": {
+      "status": "done",
+      "fingerprint": "e4e6b97d10f5d6e3",
+      "output_hash": "65a5f374000facba",
+      "started_at": "2026-10-30T15:42:04+00:00",
+      "finished_at": "2026-10-30T15:42:36+00:00",
+      "error": null
+    },
+    "gestures": {
+      "status": "done",
+      "fingerprint": "b50dbe0edd4d3b7a",
+      "output_hash": "88766a877c9f55e4",
+      "started_at": "2026-10-30T15:42:36+00:00",
+      "finished_at": "2026-10-30T15:42:41+00:00",
+      "error": null
+    },
+    "candidates": {
+      "status": "done",
+      "fingerprint": "de351ca7f7f472e4",
+      "output_hash": "379af1c90dc27ec2",
+      "started_at": "2026-10-30T15:42:41+00:00",
+      "finished_at": "2026-10-30T15:42:42+00:00",
+      "error": null
+    },
+    "segment": {
+      "status": "done",
+      "fingerprint": "aeb8a234c50532b9",
+      "output_hash": "eaa7d4c32677b58a",
+      "started_at": "2026-10-30T15:44:01+00:00",
+      "finished_at": "2026-10-30T15:48:56+00:00",
+      "error": null
+    },
+    "draft": {
+      "status": "done",
+      "fingerprint": "f1fe4a2c3446028a",
+      "output_hash": "f062e94071e71ab0",
+      "started_at": "2026-10-30T16:20:18+00:00",
+      "finished_at": "2026-10-30T16:20:28+00:00",
+      "error": null
+    },
+    "refine": {
+      "status": "done",
+      "fingerprint": "ef6cabd485a4db5b",
+      "output_hash": "279eea40cb23d7a8",
+      "started_at": "2026-10-30T16:20:28+00:00",
+      "finished_at": "2026-10-30T16:20:28+00:00",
+      "error": null
+    },
+    "compliance": {
+      "status": "done",
+      "fingerprint": "2a5143ada6231c0e",
+      "output_hash": "489358ff80ead499",
+      "started_at": "2026-11-09T20:56:19+00:00",
+      "finished_at": "2026-11-09T21:08:48+00:00",
+      "error": null
+    },
+    "questions": {
+      "status": "done",
+      "fingerprint": "213608236a02caff",
+      "output_hash": "dce5c33dcc1a8808",
+      "started_at": "2026-11-09T21:08:48+00:00",
+      "finished_at": "2026-11-09T21:09:42+00:00",
+      "error": null
+    },
+    "render": {
+      "status": "done",
+      "fingerprint": "6e83156fc3966d01",
+      "output_hash": "0a702596c6d8fe77",
+      "started_at": "2026-11-12T23:04:56+00:00",
+      "finished_at": "2026-11-12T23:07:39+00:00",
+      "error": null
+    },
+    "edit": {
+      "status": "done",
+      "fingerprint": "099358f38ac7b602",
+      "output_hash": "6e91a4d159111568",
+      "started_at": "2026-11-12T22:58:29+00:00",
+      "finished_at": "2026-11-12T23:04:56+00:00",
+      "error": null
+    }
+  }
+}

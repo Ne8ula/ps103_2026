@@ -1,0 +1,266 @@
+{
+  "segments": [
+    {
+      "id": "s01",
+      "start": 5.4,
+      "end": 52.733,
+      "summary": "Clear objects off the top glass and remove the glass top cover from the 3D printer.",
+      "rationale": "Starts at window boundary; hand picks up object on top glass at 41.6s and lifts off top glass panel, completing removal by b13 (52.7s).",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-27c50c24567721bbc687"
+      ]
+    },
+    {
+      "id": "s02",
+      "start": 52.733,
+      "end": 73.333,
+      "summary": "Manually push the printer toolhead out of the way to open up the workspace inside.",
+      "rationale": "Starts after glass cover is removed; hand reaches inside at b14 (69.1s) and moves toolhead back, exiting frame at b17 (73.3s).",
+      "confidence": 0.85,
+      "llm_calls": [
+        "segment_steps-27c50c24567721bbc687"
+      ]
+    },
+    {
+      "id": "s03",
+      "start": 73.333,
+      "end": 128.267,
+      "summary": "Examine the 3D-printed drill template and verify the drill bit fit inside the guide hole.",
+      "rationale": "Narration introduces template at 111.4s; hand enters with template at b19 (114.1s) and checks drill bit fit through b27 (128.3s).",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-27c50c24567721bbc687"
+      ]
+    },
+    {
+      "id": "s04",
+      "start": 128.267,
+      "end": 157.067,
+      "summary": "Position the drill template inside the printer frame and use the drill bit to mark hole locations.",
+      "rationale": "Template is moved inside printer frame around b28 (130.3s) and speaker uses drill bit in template hole to mark drilling spots up to window edge b40 (151.1s).",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-27c50c24567721bbc687"
+      ]
+    },
+    {
+      "id": "s05",
+      "start": 157.067,
+      "end": 193.333,
+      "summary": "Drill 1/16-inch pilot holes at the marked locations.",
+      "rationale": "After a brief period of light adjustment, the drill enters at 175.3s (b48); the narrator later confirms these were 1/16-inch holes used to find center points.",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-65b0cc254da06aa8a8a6"
+      ]
+    },
+    {
+      "id": "s06",
+      "start": 193.333,
+      "end": 222.133,
+      "summary": "Enlarge the pilot holes to 1/8-inch using a larger drill bit.",
+      "rationale": "The narrator specifies opening the holes up to 1/8-inch at 192s; drilling activity is observed from 199.6s until hands exit the workspace at 222.1s (b61).",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-65b0cc254da06aa8a8a6"
+      ]
+    },
+    {
+      "id": "s07",
+      "start": 222.133,
+      "end": 302.733,
+      "summary": "Deburr the printed part using a drill and a manual deburring tool to clear any imperfections.",
+      "rationale": "The step begins as the narrator mentions a misplaced deburring tool and hands enter the frame; it includes drilling and manual scraping shown in the images, ending when the tool is set aside and hands exit.",
+      "confidence": 0.85,
+      "llm_calls": [
+        "segment_steps-5fda30f7e22dff68ff63"
+      ]
+    },
+    {
+      "id": "s08",
+      "start": 302.733,
+      "end": 362.6,
+      "summary": "Vacuum the printer's rails and the bottom of the case to remove filament debris and tidy the workspace.",
+      "rationale": "The boundary is defined by the transition from deburring to cleaning, as the narrator discusses his vacuum and proceeds to use it on the printer's interior, followed by a short period of tidying.",
+      "confidence": 0.75,
+      "llm_calls": [
+        "segment_steps-5fda30f7e22dff68ff63"
+      ]
+    },
+    {
+      "id": "s09",
+      "start": 362.6,
+      "end": 383.933,
+      "summary": "Position the backing plate and wiper assembly into the printer and thread the center screw to hold them in place.",
+      "rationale": "Hands return to the frame at the start of this step with a small part; the narrator explains a trick for handling small parts and then describes threading the center screw as he works.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-5fda30f7e22dff68ff63"
+      ]
+    },
+    {
+      "id": "s10",
+      "start": 383.933,
+      "end": 408.4,
+      "summary": "Thread the center screw loosely into the backing plate to hold it in place while checking the alignment of the outside holes.",
+      "rationale": "The step begins with the spoken instruction to thread the center screw and ends as the narrator prepares to tighten it fully at 408.6s (b112).",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-a6d9ae3186508e5e0fd0"
+      ]
+    },
+    {
+      "id": "s11",
+      "start": 408.4,
+      "end": 426.867,
+      "summary": "Tighten the center screw until it is snug, ensuring not to over-tighten and warp the plate.",
+      "rationale": "This step encompasses the tightening process mentioned in the narration and ends after the narrator says 'that's it' and the hand state changes at b122.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-a6d9ae3186508e5e0fd0"
+      ]
+    },
+    {
+      "id": "s12",
+      "start": 426.867,
+      "end": 449.733,
+      "summary": "The person confirms the backing plate is installed and notes the specific screw sizes used for the center and sides.",
+      "rationale": "Starts after the screw is tightened; the narrator provides verbal confirmation of the installation and hardware specs before moving to the next component.",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-a6d9ae3186508e5e0fd0"
+      ]
+    },
+    {
+      "id": "s13",
+      "start": 449.733,
+      "end": 474.933,
+      "summary": "The person performs a test fit of a spare wiper against the plate to verify proper hole alignment.",
+      "rationale": "Starts when the narrator mentions using a spare wiper to check the fit (b133) and continues until the end of the window while they handle the grey part.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-a6d9ae3186508e5e0fd0"
+      ]
+    },
+    {
+      "id": "s14",
+      "start": 474.933,
+      "end": 485.933,
+      "summary": "Check that the wiper can move slightly in all directions within the hole without binding.",
+      "rationale": "Speech beginning at 479.1s explicitly describes moving the piece up, down, and side to side to check for binding, while hands perform these micro-adjustments.",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-6b3e10d54fcb00d3ff50"
+      ]
+    },
+    {
+      "id": "s15",
+      "start": 485.933,
+      "end": 504.0,
+      "summary": "Note that if the wiper binds, the holes can be enlarged slightly to improve fit.",
+      "rationale": "The narrator provides a troubleshooting tip for binding issues, suggesting widening the hole to 3/16s. Hands remain on the object to illustrate the point before exiting at 504.0s (b153).",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-6b3e10d54fcb00d3ff50"
+      ]
+    },
+    {
+      "id": "s16",
+      "start": 504.0,
+      "end": 522.267,
+      "summary": "Position the wiper plate so it rests against the top surface to avoid stressing the mounting screws.",
+      "rationale": "The narrator explains the importance of the plate resting on the top plane to prevent stress on screws, with gestures in image 4 panels B and C highlighting the contact points.",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-6b3e10d54fcb00d3ff50"
+      ]
+    },
+    {
+      "id": "s17",
+      "start": 522.267,
+      "end": 542.4,
+      "summary": "Confirm that the wiper and plate can be removed and replaced without requiring recalibration.",
+      "rationale": "The narrator explains the modularity of the design, gesturing to the assembly to show how parts can be swapped without losing calibration (image 5 panel C and image 6 panel A). The step ends at b171 as the narration shifts topic.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-6b3e10d54fcb00d3ff50"
+      ]
+    },
+    {
+      "id": "s18",
+      "start": 542.4,
+      "end": 560.733,
+      "summary": "Describe and demonstrate the side-to-side X-sweeping motion of the original wipe cycle.",
+      "rationale": "Narration transitions to the wipe cycle at 543.1s; the person manually moves the toolhead to show the motion until the narration shifts to the 'scrubbing' phase at 560.5s.",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-c8efe343e6d173f17370"
+      ]
+    },
+    {
+      "id": "s19",
+      "start": 560.733,
+      "end": 581.8,
+      "summary": "Describe and demonstrate the scrubbing motion of the toolhead between the wiper nubs.",
+      "rationale": "The narrator explains the 'scrub' while moving the toolhead between the nubs; the step ends at a transition in the narration about alignment (b190).",
+      "confidence": 0.7,
+      "llm_calls": [
+        "segment_steps-c8efe343e6d173f17370"
+      ]
+    },
+    {
+      "id": "s20",
+      "start": 581.8,
+      "end": 592.467,
+      "summary": "Point out the wiper nubs to emphasize the importance of precise alignment.",
+      "rationale": "The narrator discusses alignment precision while a finger enters at 589.5s to point at the wiper nubs, exiting at 592.5s (b195).",
+      "confidence": 0.6,
+      "llm_calls": [
+        "segment_steps-c8efe343e6d173f17370"
+      ]
+    },
+    {
+      "id": "s21",
+      "start": 592.467,
+      "end": 649.867,
+      "summary": "Explain the nozzle scrubbing mechanical update and how the nozzle sweeps across the wiper.",
+      "rationale": "The person begins explaining the scrub routine at the start of the window, pointing to the nozzle and wiper components, and the explanation of the sweep logic concludes as hands exit the frame at 649.9s.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-2f33116c88fbb5f9a420"
+      ]
+    },
+    {
+      "id": "s22",
+      "start": 649.867,
+      "end": 808.07,
+      "summary": "Use the printer's touchscreen console to home the axes and enter G-code commands to test nozzle positioning.",
+      "rationale": "Following a transition period where the camera is repositioned, the narrator uses the on-screen console to enter G-codes (G28) for homing and verifies positioning coordinates as seen in the final frames and narration.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-2f33116c88fbb5f9a420"
+      ]
+    }
+  ],
+  "notes": [
+    "content range 5.4-808.1s of 810.0s; 225 candidate intervals; 7 window(s); gesture text on",
+    "window 0: Idle setup/camera positioning time between 5.4s-41.6s and 73.3s-114.1s has been subsumed into neighboring step boundaries as per guidelines.",
+    "window 1: The 157.1s to 175.3s interval includes repositioning and lighting adjustments before pilot drilling begins.",
+    "window 1: The transition between the 1/16-inch and 1/8-inch bits happens during the pause at 193.3s.",
+    "window 1: Deburring begins after the tool is located, though some drilling motion is still visible near the end of the window.",
+    "window 2: The narration regarding the vacuum overlaps with the end of the deburring step, but the vacuuming action itself starts around 312s.",
+    "window 2: A long idle period between 261s and 287s is merged into the first step as it occurs during the deburring process.",
+    "window 2: The period from 344s to 362s where no hands are visible is included in the cleaning step as the narrator explicitly mentions tidying up during this time.",
+    "window 3: Screw sizes are identified as M3x6 for the center and M3x8 for the outside holes.",
+    "window 3: The step between 426.9s and 449.7s is largely verbal confirmation with some hand movement but is distinct from the previous mechanical action and the subsequent test fitting.",
+    "window 4: The narrator uses pointing gestures and hand positioning to explain theoretical concepts like screw stress and recalibration avoidance.",
+    "window 4: Troubleshooting advice regarding hole widening is included as a step because it involves a specific check (feeling for binding) and a remedial action.",
+    "window 5: Long gaps of purely explanatory narration with no hand activity (e.g., 574.5-589.5s and 592.5-606.9s) were merged into the surrounding steps to maintain continuity.",
+    "window 5: Step 4 consists mostly of verbal explanation supported by a brief pointing gesture.",
+    "window 6: The segment between 649.9s and approximately 700s contains mostly transitional narration regarding calibration and camera repositioning before the touchscreen interface becomes the primary focus.",
+    "window 6: The coordinates for X and Y positioning mentioned at the end of the video are identified through the on-screen console."
+  ],
+  "content_start": 5.4,
+  "content_end": 808.07
+}

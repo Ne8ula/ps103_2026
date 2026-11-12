@@ -1,0 +1,8 @@
+[
+ {"question_id": "q003", "text": "Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end."},
+ {"question_id": "q002", "text": "Drill 1/16 inch pilot holes through the template first, then open them up to 1/8 inch."},
+ {"question_id": "q001", "text": "This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper."},
+ {"question_id": "q005", "text": "Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces."},
+ {"question_id": "q009", "text": "Before the outer screws are tightened it should shift slightly side to side, which shows the holes are centred. Once tightened it must be firm with no play."},
+ {"question_id": "q010", "text": "Only if the wiper binds. You can open the holes up to 3/16 inch as long as the backing plate still clamps flat. This is part of the mod, not the stock Bambu procedure."}
+]

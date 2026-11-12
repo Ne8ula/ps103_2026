@@ -1,0 +1,170 @@
+{
+  "round": 3,
+  "questions": [
+    {
+      "id": "q013",
+      "step_id": "s09",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s09 (\"[fake LLM] If you are at home, it\"): [fake LLM] How long this action lasts is not stated. Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s09 (\"[fake LLM] If you are at home, it\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s09:missing:duration"
+      ]
+    },
+    {
+      "id": "q017",
+      "step_id": "s13",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s13 (\"[fake LLM] For more information, please visit sfdph.org\"): The draft stated '54.3', which the narration does not support; the value was removed and needs confirming. Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s13 (\"[fake LLM] For more information, please visit sfdph.org\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s13:missing:unverified"
+      ]
+    },
+    {
+      "id": "q018",
+      "step_id": "s05",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s05 (\"[fake LLM] Step 5\"): [fake LLM] No narration: what is this step for? Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s05 (\"[fake LLM] Step 5\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s05:missing:purpose"
+      ]
+    },
+    {
+      "id": "q024",
+      "step_id": "s05",
+      "kind": "low_confidence",
+      "text": "[fake LLM] Is step s05 (\"[fake LLM] Step 5\") described and cut correctly?",
+      "why": "[fake LLM] Needed so learners can follow step s05 (\"[fake LLM] Step 5\") correctly.",
+      "answer_type": "choice",
+      "choices": [
+        "Yes, it is correct",
+        "It should be split",
+        "It should be merged with a neighbour",
+        "The description is wrong"
+      ],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s05:low_confidence"
+      ]
+    },
+    {
+      "id": "q019",
+      "step_id": "s12",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s12 (\"[fake LLM] Step 12\"): [fake LLM] No narration: what is this step for? Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s12 (\"[fake LLM] Step 12\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s12:missing:purpose"
+      ]
+    },
+    {
+      "id": "q031",
+      "step_id": "s12",
+      "kind": "low_confidence",
+      "text": "[fake LLM] Is step s12 (\"[fake LLM] Step 12\") described and cut correctly?",
+      "why": "[fake LLM] Needed so learners can follow step s12 (\"[fake LLM] Step 12\") correctly.",
+      "answer_type": "choice",
+      "choices": [
+        "Yes, it is correct",
+        "It should be split",
+        "It should be merged with a neighbour",
+        "The description is wrong"
+      ],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s12:low_confidence"
+      ]
+    },
+    {
+      "id": "q032",
+      "step_id": "s13",
+      "kind": "low_confidence",
+      "text": "[fake LLM] Is step s13 (\"[fake LLM] For more information, please visit sfdph.org\") described and cut correctly?",
+      "why": "[fake LLM] Needed so learners can follow step s13 (\"[fake LLM] For more information, please visit sfdph.org\") correctly.",
+      "answer_type": "choice",
+      "choices": [
+        "Yes, it is correct",
+        "It should be split",
+        "It should be merged with a neighbour",
+        "The description is wrong"
+      ],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s13:low_confidence"
+      ]
+    },
+    {
+      "id": "q020",
+      "step_id": null,
+      "kind": "sop_missing_step",
+      "text": "[fake LLM] The SOP requires: [fake LLM] Placeholder: the document lists a step the video may not show: (1) Rinse under clean, running warm water (fda-food-code-2022.pdf, p. 61) Is this done in your procedure?",
+      "why": "[fake LLM] Needed so learners can follow the procedure correctly.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "c:global:missing_step:d01:78"
+      ]
+    },
+    {
+      "id": "q010",
+      "step_id": "s07",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s07 (\"[fake LLM] Rinse your hands and dry them\"): [fake LLM] How long this action lasts is not stated. Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s07 (\"[fake LLM] Rinse your hands and dry them\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "answered",
+      "source_refs": [
+        "s07:missing:duration"
+      ]
+    },
+    {
+      "id": "q001",
+      "step_id": "s03",
+      "kind": "sop_conflict",
+      "text": "[fake LLM] The video and the SOP disagree for step s03 (\"[fake LLM] Step 2. Rub your hands for\"): [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) Which is correct?",
+      "why": "[fake LLM] Needed so learners can follow step s03 (\"[fake LLM] Step 2. Rub your hands for\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "answered",
+      "source_refs": [
+        "c:s03:conflict:d01:226"
+      ]
+    }
+  ]
+}

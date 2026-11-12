@@ -1,0 +1,54 @@
+{
+  "segments": [
+    {
+      "id": "s01",
+      "start": 0.0,
+      "end": 13.4,
+      "summary": "Wet your hands with running water and apply soap.",
+      "rationale": "The video starts with introductory remarks, then at 9.7s provides the vocal cue 'Step 1' followed by a visual demonstration of washing hands under a tap, ending at b05 with a scene cut.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-d5f4ccfbf2e31f958477"
+      ]
+    },
+    {
+      "id": "s02",
+      "start": 13.4,
+      "end": 27.52,
+      "summary": "Rub your hands together, ensuring you scrub the backs, between fingers, fingertips, and wrists for at least 20 seconds.",
+      "rationale": "This step begins with the 'Step 2' vocal cue and covers the entire scrubbing sequence described in the narration and shown visually, concluding at b14 before the next step.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-d5f4ccfbf2e31f958477"
+      ]
+    },
+    {
+      "id": "s03",
+      "start": 27.52,
+      "end": 44.0,
+      "summary": "Rinse your hands thoroughly and dry them with a paper towel, which can also be used to open the door.",
+      "rationale": "Starts at the 'Step 3' vocal cue; visually depicts rinsing and drying hands with a paper towel, and shows using that towel on a door handle, ending at the scene cut b26.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-d5f4ccfbf2e31f958477"
+      ]
+    },
+    {
+      "id": "s04",
+      "start": 44.0,
+      "end": 58.32,
+      "summary": "Use an alcohol-based hand sanitizer containing at least 60% alcohol if soap and water are unavailable.",
+      "rationale": "Starts with a clear narration transition to hand sanitizer as an alternative method and shows the product being used before the video ends.",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-d5f4ccfbf2e31f958477"
+      ]
+    }
+  ],
+  "notes": [
+    "content range 0.0-58.3s of 58.3s; 33 candidate intervals; 1 window(s); gesture text on",
+    "window 0: The first step includes a 10-second title card and spoken introduction. Step 3 includes advice on using a paper towel to avoid touching door handles after washing."
+  ],
+  "content_start": 0.0,
+  "content_end": 58.32
+}

@@ -1,0 +1,1239 @@
+{
+  "project_id": "hand-washing-sfdph-a3c265",
+  "title": "Hand washing (SFDPH)",
+  "source": "inputs/video.webm",
+  "revision": 2,
+  "generated_at": "2026-10-30T01:37:53+00:00",
+  "llm": "fake:fake-6abdf482",
+  "steps": [
+    {
+      "step": {
+        "id": "s01",
+        "index": 0,
+        "start": 0.0,
+        "end": 7.92,
+        "title": "[fake LLM] Welcome to the handwashing video. The",
+        "instruction": "[fake LLM] Welcome to the handwashing video. The most important thing you can do to keep your family from getting sick is.",
+        "details": [],
+        "tools": [],
+        "materials": [],
+        "expected_result": "[fake LLM] Narrated: \"Welcome to the handwashing video. The most important thing you\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s01/k1.jpg",
+          "draft/keyframes/s01/k2.jpg",
+          "draft/keyframes/s01/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 0.0,
+              "end": 7.92
+            }
+          ],
+          "gesture_keyframe_ids": [],
+          "transcript_segment_ids": [
+            0,
+            1,
+            2
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-185a301c31c330280719",
+            "draft_step-19117ae7e7246962ef39"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s01-1",
+          "step_id": "s01",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 3-301.11 Preventing Contamination from Hands appears relevant to '[fake LLM] Welcome to the handwashing video. The'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:679",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 372,
+              "quote": "Even though bare hands should never contact exposed, ready-to-eat food, thorough handwashing is important in keeping gloves or other utensils from becoming vehicles for transferring microbes to the food."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-437bb3973d08f8170f61"
+        }
+      ],
+      "gesture_keyframe_ids": [],
+      "clip_path": "render/steps/s01.mp4"
+    },
+    {
+      "step": {
+        "id": "s02",
+        "index": 1,
+        "start": 7.92,
+        "end": 13.4,
+        "title": "[fake LLM] Here is how. Step 1. Wash",
+        "instruction": "[fake LLM] Here is how. Step 1. Wash your hands with running water and soap.",
+        "details": [
+          "[fake LLM] Hands: Left hand: relaxed hand, palm facing away, ring extended pointing down-right, th",
+          "[fake LLM] Hands: Left hand: not visible. No hands visible. Idle."
+        ],
+        "tools": [],
+        "materials": [
+          "soap",
+          "water"
+        ],
+        "expected_result": "[fake LLM] Narrated: \"Here is how. Step 1. Wash your hands with running\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s02/k1.jpg",
+          "draft/keyframes/s02/k2.jpg",
+          "draft/keyframes/s02/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 7.92,
+              "end": 13.4
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0001",
+            "g0002",
+            "g0003",
+            "g0004",
+            "g0005",
+            "g0006"
+          ],
+          "transcript_segment_ids": [
+            3,
+            4,
+            5
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-185a301c31c330280719",
+            "draft_step-bd961e6028a7f1c20cb0"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s02-1",
+          "step_id": "s02",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] Here is how. Step 1. Wash'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:622",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "It takes more than just the use of soap and running water to remove the transient pathogens that may be present."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-14d49d604abeb1413d59"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0001",
+        "g0002",
+        "g0003",
+        "g0004",
+        "g0005",
+        "g0006"
+      ],
+      "clip_path": "render/steps/s02.mp4"
+    },
+    {
+      "step": {
+        "id": "s03",
+        "index": 2,
+        "start": 13.4,
+        "end": 18.0,
+        "title": "[fake LLM] Step 2. Rub your hands for",
+        "instruction": "[fake LLM] Step 2. Rub your hands for at least 20 seconds.",
+        "details": [
+          "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle.",
+          "[fake LLM] Hands: Right hand: not visible. Left hand: relaxed hand, palm facing away, ring extende",
+          "[fake LLM] Per the uploader: Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure."
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": "[fake LLM] Narrated: \"Step 2. Rub your hands for at least 20 seconds.\"",
+        "cautions": [],
+        "confidence": 0.85,
+        "missing_info": [],
+        "user_supplied": [
+          "Rub for at least 20 seconds; the Food Code minimum is 20 seconds for the whole procedure. (answer to: [fake LLM] The video and the SOP disagree for step s03 (\"[fake LLM] Step 2. Rub your hands for\"): [fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds. (fda-food-code-2022.pdf, p. 131) Which is correct?)"
+        ],
+        "keyframe_paths": [
+          "draft/keyframes/s03/k1.jpg",
+          "draft/keyframes/s03/k2.jpg",
+          "draft/keyframes/s03/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 13.4,
+              "end": 18.0
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0007",
+            "g0008",
+            "g0009"
+          ],
+          "transcript_segment_ids": [
+            6,
+            7
+          ],
+          "chunk_ids": [],
+          "answer_ids": [
+            "a-q001-2434b3"
+          ],
+          "llm_calls": [
+            "segment_steps-185a301c31c330280719",
+            "draft_step-b5853e54566ac933dda9",
+            "refine_step-14a4ea24b10aa77f7f12"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s03-1",
+          "step_id": "s03",
+          "kind": "conflict",
+          "severity": "critical",
+          "text": "[fake LLM] The video shows 20 seconds, but the document requires at least 30 seconds.",
+          "citations": [
+            {
+              "chunk_id": "d01:226",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 131,
+              "quote": "(A) Hot water manual operations by immersion for at least 30 seconds and as specified under § 4-501.111;"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-9c226adee2c540a08aab"
+        },
+        {
+          "id": "c-s03-2",
+          "step_id": "s03",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] Step 2. Rub your hands for'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "(A) Except as specified in ¶ (D) of this section, FOOD EMPLOYEES shall clean their hands and exposed portions of their arms, including surrogate prosthetic devices for hands or arms for at least 20 seconds, using a cleaning compound in a"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-9c226adee2c540a08aab"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0007",
+        "g0008",
+        "g0009"
+      ],
+      "clip_path": "render/steps/s03.mp4"
+    },
+    {
+      "step": {
+        "id": "s04",
+        "index": 3,
+        "start": 18.0,
+        "end": 21.0,
+        "title": "[fake LLM] Remember to wash the back of",
+        "instruction": "[fake LLM] Remember to wash the back of your hands in between your fingers, your fingertips, and.",
+        "details": [
+          "[fake LLM] Hands: Right hand: not visible. Left hand: open hand, palm facing away, fingers spread ",
+          "[fake LLM] Hands: Right hand: relaxed hand, palm facing away, index+middle+ring+pinky together poi"
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": "[fake LLM] Narrated: \"Remember to wash the back of your hands in between\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s04/k1.jpg",
+          "draft/keyframes/s04/k2.jpg",
+          "draft/keyframes/s04/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 18.0,
+              "end": 21.0
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0010",
+            "g0011",
+            "g0012"
+          ],
+          "transcript_segment_ids": [
+            8
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-d12789070b1a7fcf76d0",
+            "draft_step-4abdb4ca977e9d951824"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s04-1",
+          "step_id": "s04",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 3-301.11 Preventing Contamination from Hands appears relevant to '[fake LLM] Remember to wash the back of'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:682",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 374,
+              "quote": "(A) Personal Cleanliness, i.e., handwashing procedures, including frequency and methodology of handwashing that ensure food employees keep their hands and fingertips clean and handwashing occurs at the times specified in section 2-301.14,"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-b38811126f1d0293e3ec"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0010",
+        "g0011",
+        "g0012"
+      ],
+      "clip_path": "render/steps/s04.mp4"
+    },
+    {
+      "step": {
+        "id": "s05",
+        "index": 4,
+        "start": 21.0,
+        "end": 25.12,
+        "title": "[fake LLM] Step 5",
+        "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+        "details": [
+          "[fake LLM] Hands: Right hand: open hand, palm facing away, fingers spread pointing right, thumb ha",
+          "[fake LLM] Hands: Right hand: open hand, palm facing away, fingers spread pointing right, thumb ou"
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": null,
+        "cautions": [],
+        "confidence": 0.45,
+        "missing_info": [
+          {
+            "field": "purpose",
+            "description": "[fake LLM] No narration: what is this step for?",
+            "blocking": false,
+            "key": "s05:missing:purpose"
+          }
+        ],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s05/k1.jpg",
+          "draft/keyframes/s05/k2.jpg",
+          "draft/keyframes/s05/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 21.0,
+              "end": 25.12
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0013",
+            "g0014",
+            "g0015",
+            "g0016"
+          ],
+          "transcript_segment_ids": [],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-1baf205cbffdc1ffcc55",
+            "draft_step-f6d54ba7f81669fcac22"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s05-1",
+          "step_id": "s05",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 2 Hazard Evaluation appears relevant to '[fake LLM] Step 5'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:996",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 520,
+              "quote": "Clear instructions should be developed detailing who is responsible for performing the corrective actions, the procedures to be followed, and when."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-bbd60e5566802cf7197c"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0013",
+        "g0014",
+        "g0015",
+        "g0016"
+      ],
+      "clip_path": "render/steps/s05.mp4"
+    },
+    {
+      "step": {
+        "id": "s06",
+        "index": 5,
+        "start": 25.12,
+        "end": 30.2,
+        "title": "[fake LLM] Under your nails, as well as",
+        "instruction": "[fake LLM] under your nails, as well as your wrists and thumbs. Step 3.",
+        "details": [
+          "[fake LLM] Hands: Right hand: not visible. Left hand: pinch grip, palm facing away, thumb+index+mi",
+          "[fake LLM] Hands: Right hand: power grip, palm facing away, index+middle+ring+pinky together point"
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": "[fake LLM] Narrated: \"Step 3. Rinse your hands and dry them with paper\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s06/k1.jpg",
+          "draft/keyframes/s06/k2.jpg",
+          "draft/keyframes/s06/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 25.12,
+              "end": 30.2
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0017",
+            "g0018",
+            "g0019",
+            "g0020"
+          ],
+          "transcript_segment_ids": [
+            9,
+            10
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-404198db2466e7fbbd3e",
+            "draft_step-e23ed9579a78f53b521e"
+          ]
+        }
+      },
+      "compliance": [],
+      "gesture_keyframe_ids": [
+        "g0017",
+        "g0018",
+        "g0019",
+        "g0020"
+      ],
+      "clip_path": "render/steps/s06.mp4"
+    },
+    {
+      "step": {
+        "id": "s07",
+        "index": 6,
+        "start": 30.2,
+        "end": 36.2,
+        "title": "[fake LLM] Rinse your hands and dry them",
+        "instruction": "[fake LLM] Rinse your hands and dry them with paper towels or an air dryer.",
+        "details": [
+          "[fake LLM] Hands: Right hand: power grip, palm facing away, middle+ring together pointing right, t",
+          "[fake LLM] Hands: Right hand: not visible. Left hand: open hand, palm facing camera, fingers sprea",
+          "[fake LLM] Per the uploader: Use warm running water."
+        ],
+        "tools": [],
+        "materials": [
+          "towel",
+          "paper towel"
+        ],
+        "expected_result": "[fake LLM] Narrated: \"If you have concerns with the cleanliness of your surroundings,\"",
+        "cautions": [],
+        "confidence": 0.85,
+        "missing_info": [],
+        "user_supplied": [
+          "Use warm running water. (answer to: [fake LLM] For step s07 (\"[fake LLM] Rinse your hands and dry them\"): [fake LLM] How long this action lasts is not stated. Please specify.)"
+        ],
+        "keyframe_paths": [
+          "draft/keyframes/s07/k1.jpg",
+          "draft/keyframes/s07/k2.jpg",
+          "draft/keyframes/s07/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 30.2,
+              "end": 36.2
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0021",
+            "g0022",
+            "g0023",
+            "g0024",
+            "g0025",
+            "g0026"
+          ],
+          "transcript_segment_ids": [
+            11
+          ],
+          "chunk_ids": [],
+          "answer_ids": [
+            "a-q010-9ffada"
+          ],
+          "llm_calls": [
+            "segment_steps-9e5aedda882b6be21c40",
+            "draft_step-d9756ce32aef22e4ef29",
+            "refine_step-3153e8a28d89ce0f9784"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s07-1",
+          "step_id": "s07",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] Rinse your hands and dry them'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:78",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 61,
+              "quote": "(1) Rinse under clean, running warm water;"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-daaebc7f326e799237c3"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0021",
+        "g0022",
+        "g0023",
+        "g0024",
+        "g0025",
+        "g0026"
+      ],
+      "clip_path": "render/steps/s07.mp4"
+    },
+    {
+      "step": {
+        "id": "s08",
+        "index": 7,
+        "start": 36.2,
+        "end": 41.2,
+        "title": "[fake LLM] If you have concerns with the",
+        "instruction": "[fake LLM] If you have concerns with the cleanliness of your surroundings, you can use the paper towel to help with the.",
+        "details": [
+          "[fake LLM] Hands: Right hand: not visible. Left hand: point gesture, palm facing away, thumb out p",
+          "[fake LLM] Hands: Right hand: not visible. Left hand: power grip, palm facing away, thumb out poin"
+        ],
+        "tools": [],
+        "materials": [
+          "towel",
+          "paper towel"
+        ],
+        "expected_result": "[fake LLM] Narrated: \"to help with the door. If you are at home,\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s08/k1.jpg",
+          "draft/keyframes/s08/k2.jpg",
+          "draft/keyframes/s08/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 36.2,
+              "end": 41.2
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0027",
+            "g0028",
+            "g0029",
+            "g0030",
+            "g0031"
+          ],
+          "transcript_segment_ids": [
+            12,
+            13
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-40434fdfa09f9265b0f4",
+            "draft_step-3d0c1167e77dabec3ac6"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s08-1",
+          "step_id": "s08",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 2-301.12 Cleaning Procedure appears relevant to '[fake LLM] If you have concerns with the'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:623",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 346,
+              "quote": "This can be accomplished by obtaining a paper towel from its dispenser before the handwashing procedure, then, after handwashing, using the paper towel to operate the hand sink faucet handles and restroom door handles."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-4069798e760fdc05be4e"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0027",
+        "g0028",
+        "g0029",
+        "g0030",
+        "g0031"
+      ],
+      "clip_path": "render/steps/s08.mp4"
+    },
+    {
+      "step": {
+        "id": "s09",
+        "index": 8,
+        "start": 41.2,
+        "end": 44.0,
+        "title": "[fake LLM] If you are at home, it",
+        "instruction": "[fake LLM] If you are at home, it is safe to use a towel to dry your hands.",
+        "details": [
+          "[fake LLM] Hands: Right hand: open hand, palm facing away, index+middle+ring+pinky together pointi",
+          "[fake LLM] Hands: Right hand: not visible. Left hand: fist, palm facing away, thumb out pointing u"
+        ],
+        "tools": [],
+        "materials": [
+          "towel"
+        ],
+        "expected_result": "[fake LLM] Hands active: t=41.2s | Right hand: open hand, palm facing away, index+mid",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [
+          {
+            "field": "duration",
+            "description": "[fake LLM] How long this action lasts is not stated.",
+            "blocking": true,
+            "key": "s09:missing:duration"
+          }
+        ],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s09/k1.jpg",
+          "draft/keyframes/s09/k2.jpg",
+          "draft/keyframes/s09/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 41.2,
+              "end": 44.0
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0032",
+            "g0033",
+            "g0034"
+          ],
+          "transcript_segment_ids": [
+            14
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-0df11c92bede355ffcef",
+            "draft_step-4f0ef818ba48f717b856"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s09-1",
+          "step_id": "s09",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 3-304.14 Wiping Cloths, Use Limitation appears relevant to '[fake LLM] If you are at home, it'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:698",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 381,
+              "quote": "Further, for the purpose of wiping up food spills from surfaces in situations where full cleaning and sanitizing is not required (such as when a soft drink overflows onto the side of a cup or onto a countertop) the use of dry cloths and"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-2b9bb2c186a37fbf839b"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0032",
+        "g0033",
+        "g0034"
+      ],
+      "clip_path": "render/steps/s09.mp4"
+    },
+    {
+      "step": {
+        "id": "s10",
+        "index": 9,
+        "start": 44.0,
+        "end": 47.72,
+        "title": "[fake LLM] If you don't have soap and",
+        "instruction": "[fake LLM] If you don't have soap and water available, you can use alcohol-based hand sanitizer that.",
+        "details": [
+          "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle.",
+          "[fake LLM] Hands: Right hand: not visible. Left hand: power grip, palm sideways, index+middle+ring"
+        ],
+        "tools": [],
+        "materials": [
+          "soap",
+          "water",
+          "sanitizer"
+        ],
+        "expected_result": "[fake LLM] Narrated: \"If you don't have soap and water available, you can\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s10/k1.jpg",
+          "draft/keyframes/s10/k2.jpg",
+          "draft/keyframes/s10/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 44.0,
+              "end": 47.72
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0035",
+            "g0036",
+            "g0037"
+          ],
+          "transcript_segment_ids": [
+            15
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-d5dffac0864d3843a616",
+            "draft_step-3f3971ef748021a56393"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s10-1",
+          "step_id": "s10",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.16 Hand Antiseptics appears relevant to '[fake LLM] If you don't have soap and'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:80",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 62,
+              "quote": "(A) A hand antiseptic used as a topical application, a hand antiseptic solution used as a hand dip, or a hand antiseptic soap shall:"
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-e9d101beebd20d4dd400"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0035",
+        "g0036",
+        "g0037"
+      ],
+      "clip_path": "render/steps/s10.mp4"
+    },
+    {
+      "step": {
+        "id": "s11",
+        "index": 10,
+        "start": 47.72,
+        "end": 51.32,
+        "title": "[fake LLM] Contains at least 60% alcohol to",
+        "instruction": "[fake LLM] contains at least 60% alcohol to clean your hands.",
+        "details": [
+          "[fake LLM] Hands: Right hand: open hand, palm facing camera, index+middle+ring together pointing d",
+          "[fake LLM] Hands: Right hand: not visible. Left hand: power grip, palm facing away, thumb half-ben"
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": "[fake LLM] Narrated: \"contains at least 60% alcohol to clean your hands.\"",
+        "cautions": [],
+        "confidence": 0.75,
+        "missing_info": [],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s11/k1.jpg",
+          "draft/keyframes/s11/k2.jpg",
+          "draft/keyframes/s11/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 47.72,
+              "end": 51.32
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0038",
+            "g0039",
+            "g0040"
+          ],
+          "transcript_segment_ids": [
+            16
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-d5dffac0864d3843a616",
+            "draft_step-027af95928877293e82e"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s11-1",
+          "step_id": "s11",
+          "kind": "requirement",
+          "severity": "warning",
+          "text": "[fake LLM] Placeholder note: 2-301.16 Hand Antiseptics appears relevant to '[fake LLM] Contains at least 60% alcohol to'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:81",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 63,
+              "quote": "(C) A hand antiseptic solution used as a hand dip shall be maintained clean and at a strength equivalent to at least 100 MG/L chlorine."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-deb907c13f75219e16c3"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0038",
+        "g0039",
+        "g0040"
+      ],
+      "clip_path": "render/steps/s11.mp4"
+    },
+    {
+      "step": {
+        "id": "s12",
+        "index": 11,
+        "start": 51.32,
+        "end": 53.4,
+        "title": "[fake LLM] Step 12",
+        "instruction": "[fake LLM] Perform the action shown in this part of the video.",
+        "details": [
+          "[fake LLM] Hands: Right hand: unclear (unstable tracking), at centre; moving right, moderate. Left",
+          "[fake LLM] Hands: Right hand: relaxed hand, palm sideways, index+middle together pointing down-lef"
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": null,
+        "cautions": [],
+        "confidence": 0.45,
+        "missing_info": [
+          {
+            "field": "purpose",
+            "description": "[fake LLM] No narration: what is this step for?",
+            "blocking": false,
+            "key": "s12:missing:purpose"
+          }
+        ],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s12/k1.jpg",
+          "draft/keyframes/s12/k2.jpg",
+          "draft/keyframes/s12/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 51.32,
+              "end": 53.4
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0041",
+            "g0042",
+            "g0043"
+          ],
+          "transcript_segment_ids": [],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-d5dffac0864d3843a616",
+            "draft_step-52235faff3a73ab633d6"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s12-1",
+          "step_id": "s12",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 8-203.10 Preoperational Inspections appears relevant to '[fake LLM] Step 12'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:960",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 495,
+              "quote": "12 Contents of the Plans and Specifications."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-1bc22dff582d53f412b2"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0041",
+        "g0042",
+        "g0043"
+      ],
+      "clip_path": "render/steps/s12.mp4"
+    },
+    {
+      "step": {
+        "id": "s13",
+        "index": 12,
+        "start": 53.4,
+        "end": 58.32,
+        "title": "[fake LLM] For more information, please visit sfdph.org",
+        "instruction": "[fake LLM] For more information, please visit sfdph.org.",
+        "details": [
+          "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+        ],
+        "tools": [],
+        "materials": [],
+        "expected_result": "[fake LLM] Hands idle: t=54.3s | Right hand: not visible. Left hand: not visible. N",
+        "cautions": [],
+        "confidence": 0.5,
+        "missing_info": [
+          {
+            "field": "quantity",
+            "description": "The draft stated '54.3', which the narration does not support; the value was removed and needs confirming.",
+            "blocking": true,
+            "key": "s13:missing:unverified"
+          }
+        ],
+        "user_supplied": [],
+        "keyframe_paths": [
+          "draft/keyframes/s13/k1.jpg",
+          "draft/keyframes/s13/k2.jpg",
+          "draft/keyframes/s13/k3.jpg"
+        ],
+        "provenance": {
+          "time_ranges": [
+            {
+              "start": 53.4,
+              "end": 58.32
+            }
+          ],
+          "gesture_keyframe_ids": [
+            "g0044"
+          ],
+          "transcript_segment_ids": [
+            17
+          ],
+          "chunk_ids": [],
+          "answer_ids": [],
+          "llm_calls": [
+            "segment_steps-d5dffac0864d3843a616",
+            "draft_step-b656ffd2b115f1ca998d"
+          ]
+        }
+      },
+      "compliance": [
+        {
+          "id": "c-s13-1",
+          "step_id": "s13",
+          "kind": "reference",
+          "severity": "info",
+          "text": "[fake LLM] Placeholder note: 4 Food Defense Guidance from Farm to Table appears relevant to '[fake LLM] For more information, please visit sfdph.org'; check the quoted passage.",
+          "citations": [
+            {
+              "chunk_id": "d01:538",
+              "doc_name": "fda-food-code-2022.pdf",
+              "page": 283,
+              "quote": "National Restaurant Association Information for restaurants can be found at http://www.restaurant.org."
+            }
+          ],
+          "after_step_id": null,
+          "llm_call": "compliance_step-1dcd84876f168a4a4a15"
+        }
+      ],
+      "gesture_keyframe_ids": [
+        "g0044"
+      ],
+      "clip_path": "render/steps/s13.mp4"
+    }
+  ],
+  "global_notes": [
+    {
+      "id": "c-global-1",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "warning",
+      "text": "[fake LLM] Placeholder: the document lists a step the video may not show: (1) Rinse under clean, running warm water",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "(1) Rinse under clean, running warm water"
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-bb053b4f967ed9cddbfe"
+    },
+    {
+      "id": "c-global-2",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "warning",
+      "text": "[fake LLM] Placeholder: the document lists a step the video may not show: (2) Apply an amount of cleaning compound recommended by the cleaning compound manufacturer",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "(2) Apply an amount of cleaning compound recommended by the cleaning compound manufacturer"
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-bb053b4f967ed9cddbfe"
+    },
+    {
+      "id": "c-global-3",
+      "step_id": null,
+      "kind": "missing_step",
+      "severity": "warning",
+      "text": "[fake LLM] Placeholder: the document lists a step the video may not show: (4) Thoroughly rinse under clean, running warm water",
+      "citations": [
+        {
+          "chunk_id": "d01:78",
+          "doc_name": "fda-food-code-2022.pdf",
+          "page": 61,
+          "quote": "(4) Thoroughly rinse under clean, running warm water"
+        }
+      ],
+      "after_step_id": null,
+      "llm_call": "compliance_missing_steps-bb053b4f967ed9cddbfe"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "q013",
+      "step_id": "s09",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s09 (\"[fake LLM] If you are at home, it\"): [fake LLM] How long this action lasts is not stated. Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s09 (\"[fake LLM] If you are at home, it\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s09:missing:duration"
+      ]
+    },
+    {
+      "id": "q017",
+      "step_id": "s13",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s13 (\"[fake LLM] For more information, please visit sfdph.org\"): The draft stated '54.3', which the narration does not support; the value was removed and needs confirming. Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s13 (\"[fake LLM] For more information, please visit sfdph.org\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 1,
+      "blocking": true,
+      "status": "open",
+      "source_refs": [
+        "s13:missing:unverified"
+      ]
+    },
+    {
+      "id": "q018",
+      "step_id": "s05",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s05 (\"[fake LLM] Step 5\"): [fake LLM] No narration: what is this step for? Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s05 (\"[fake LLM] Step 5\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s05:missing:purpose"
+      ]
+    },
+    {
+      "id": "q024",
+      "step_id": "s05",
+      "kind": "low_confidence",
+      "text": "[fake LLM] Is step s05 (\"[fake LLM] Step 5\") described and cut correctly?",
+      "why": "[fake LLM] Needed so learners can follow step s05 (\"[fake LLM] Step 5\") correctly.",
+      "answer_type": "choice",
+      "choices": [
+        "Yes, it is correct",
+        "It should be split",
+        "It should be merged with a neighbour",
+        "The description is wrong"
+      ],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s05:low_confidence"
+      ]
+    },
+    {
+      "id": "q019",
+      "step_id": "s12",
+      "kind": "missing_info",
+      "text": "[fake LLM] For step s12 (\"[fake LLM] Step 12\"): [fake LLM] No narration: what is this step for? Please specify.",
+      "why": "[fake LLM] Needed so learners can follow step s12 (\"[fake LLM] Step 12\") correctly.",
+      "answer_type": "free_text",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s12:missing:purpose"
+      ]
+    },
+    {
+      "id": "q031",
+      "step_id": "s12",
+      "kind": "low_confidence",
+      "text": "[fake LLM] Is step s12 (\"[fake LLM] Step 12\") described and cut correctly?",
+      "why": "[fake LLM] Needed so learners can follow step s12 (\"[fake LLM] Step 12\") correctly.",
+      "answer_type": "choice",
+      "choices": [
+        "Yes, it is correct",
+        "It should be split",
+        "It should be merged with a neighbour",
+        "The description is wrong"
+      ],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s12:low_confidence"
+      ]
+    },
+    {
+      "id": "q032",
+      "step_id": "s13",
+      "kind": "low_confidence",
+      "text": "[fake LLM] Is step s13 (\"[fake LLM] For more information, please visit sfdph.org\") described and cut correctly?",
+      "why": "[fake LLM] Needed so learners can follow step s13 (\"[fake LLM] For more information, please visit sfdph.org\") correctly.",
+      "answer_type": "choice",
+      "choices": [
+        "Yes, it is correct",
+        "It should be split",
+        "It should be merged with a neighbour",
+        "The description is wrong"
+      ],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "s13:low_confidence"
+      ]
+    },
+    {
+      "id": "q020",
+      "step_id": null,
+      "kind": "sop_missing_step",
+      "text": "[fake LLM] The SOP requires: [fake LLM] Placeholder: the document lists a step the video may not show: (1) Rinse under clean, running warm water (fda-food-code-2022.pdf, p. 61) Is this done in your procedure?",
+      "why": "[fake LLM] Needed so learners can follow the procedure correctly.",
+      "answer_type": "yes_no",
+      "choices": [],
+      "priority": 2,
+      "blocking": false,
+      "status": "open",
+      "source_refs": [
+        "c:global:missing_step:d01:78"
+      ]
+    }
+  ],
+  "procedure_notes": [],
+  "artifacts": {
+    "video": "ingest/video.mp4",
+    "tutorial_video": "render/tutorial.mp4",
+    "tutorial_json": "render/tutorial.json",
+    "tutorial_md": "render/tutorial.md",
+    "landmarks": "hands/frames.jsonl",
+    "hands_summary": "hands/summary.json",
+    "scenes": "hands/scenes.json",
+    "gestures": "gestures/gestures.json",
+    "transcript": "transcript/transcript.json",
+    "steps": "refine/steps.json",
+    "compliance": "compliance/compliance.json",
+    "questions": "questions/questions.json",
+    "audio": "ingest/audio.wav",
+    "clip:s01": "render/steps/s01.mp4",
+    "clip:s02": "render/steps/s02.mp4",
+    "clip:s03": "render/steps/s03.mp4",
+    "clip:s04": "render/steps/s04.mp4",
+    "clip:s05": "render/steps/s05.mp4",
+    "clip:s06": "render/steps/s06.mp4",
+    "clip:s07": "render/steps/s07.mp4",
+    "clip:s08": "render/steps/s08.mp4",
+    "clip:s09": "render/steps/s09.mp4",
+    "clip:s10": "render/steps/s10.mp4",
+    "clip:s11": "render/steps/s11.mp4",
+    "clip:s12": "render/steps/s12.mp4",
+    "clip:s13": "render/steps/s13.mp4"
+  }
+}

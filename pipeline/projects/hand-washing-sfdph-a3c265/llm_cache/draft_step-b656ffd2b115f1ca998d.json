@@ -1,0 +1,25 @@
+{
+  "task": "draft_step",
+  "provider": "fake:fake-6abdf482",
+  "prompt_version": "1ea921f623",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hand poses at gesture keyframes, and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames.\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 13 of 13, 53.4s to 58.3s.\nSegmentation summary: [fake LLM] Hands idle: t=54.3s | Right hand: not visible. Left hand: not visible. N\nPrevious step: [fake LLM] Narrated: \"For more information, please visit sfdph.org.\"\nNext step: (none, this is the last step)\n\nNarration during this step:\n[53.0-57.5s] \"For more information, please visit sfdph.org.\"\n\nHand poses at gesture keyframes (derived from landmarks; may be wrong when hands are occluded):\ng0044 @ 54.3s [idle]: t=54.3s | Right hand: not visible. Left hand: not visible. No hands visible. Idle.\n\nFrames: 3 attached, at 54.2s, 55.9s, 57.5s",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/draft/keyframes/s13/k1.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/draft/keyframes/s13/k2.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-sfdph-a3c265/draft/keyframes/s13/k3.jpg"
+  ],
+  "response": {
+    "title": "[fake LLM] For more information, please visit sfdph.org",
+    "instruction": "[fake LLM] For more information, please visit sfdph.org.",
+    "details": [
+      "[fake LLM] Hands: Right hand: not visible. Left hand: not visible. No hands visible. Idle."
+    ],
+    "tools": [],
+    "materials": [],
+    "expected_result": "[fake LLM] Hands idle: t=54.3s | Right hand: not visible. Left hand: not visible. N",
+    "cautions": [],
+    "confidence": 0.75,
+    "missing_info": []
+  }
+}

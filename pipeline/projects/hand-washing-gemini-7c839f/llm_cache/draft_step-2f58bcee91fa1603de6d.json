@@ -1,0 +1,42 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1ea921f623",
+  "served_by": "gemini-3-flash-preview",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hand poses at gesture keyframes, and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames.\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 4 of 4, 44.0s to 58.3s.\nSegmentation summary: Use an alcohol-based hand sanitizer containing at least 60% alcohol if soap and water are unavailable.\nPrevious step: Rinse your hands thoroughly and dry them with a paper towel, which can also be used to open the door.\nNext step: (none, this is the last step)\n\nNarration during this step:\n[44.1-49.3s] \"If you don't have soap and water available, you can use alcohol-based hand sanitizer that\"\n[49.3-53.0s] \"contains at least 60% alcohol to clean your hands.\"\n[53.0-57.5s] \"For more information, please visit sfdph.org.\"\n\nHand poses at gesture keyframes (derived from landmarks; may be wrong when hands are occluded):\ng0036 @ 44.2s [idle]: t=44.2s | Right hand: not visible. Left hand: not visible. No hands visible. Idle.\ng0037 @ 46.3s [idle]: t=46.3s | Right hand: not visible. Left hand: power grip, palm sideways, index+middle+ring+pinky together pointing up-left, thumb out pointing left, at right side; moving right, moderate. Idle.\ng0038 @ 47.3s [idle]: t=47.3s | Right hand: power grip, palm facing camera, index half-bent, thumb, middle, ring and pinky curled, at top; moving left, moderate. Left hand: power grip, palm facing away, thumb out pointing down-left, index, middle, ring and pinky curled, at centre; moving left, moderate. Hands touching...\ng0039 @ 48.3s [active]: t=48.3s | Right hand: open hand, palm facing camera, index+middle+ring together pointing down-left, thumb out pointing left, pinky extended pointing down-left, at top; moving right, moderate. Left hand: not visible. Active.\ng0041 @ 50.3s [active]: t=50.3s | Right hand: power grip, palm facing camera, thumb+index+middle together pointing down-left, ring and pinky curled, at centre; moving down, moderate. Left hand: not visible. Active.\ng0042 @ 51.3s [active]: t=51.3s | Right hand: unclear (unstable tracking), at centre; moving right, moderate. Left hand: not visible. Active.\ng0043 @ 52.3s [active]: t=52.3s | Right hand: relaxed hand, palm sideways, index+middle together pointing down-left, ring extended pointing down-left, thumb and pinky half-bent, at centre; moving down, moderate. Left hand: not visible. Active.\ng0044 @ 53.3s [active]: t=53.3s | Right hand: not visible. Left hand: pinch grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at bottom-right; moving down-right, fast. Active.\n\nFrames: 3 attached, at 46.4s, 51.2s, 55.9s",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-gemini-7c839f/draft/keyframes/s04/k1.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-gemini-7c839f/draft/keyframes/s04/k2.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-gemini-7c839f/draft/keyframes/s04/k3.jpg"
+  ],
+  "response": {
+    "title": "Use hand sanitizer if soap is unavailable",
+    "instruction": "Apply an alcohol-based hand sanitizer to your hands and rub them together until dry.",
+    "details": [
+      "Ensure the sanitizer contains at least 60% alcohol.",
+      "Cover all surfaces of your hands during rubbing."
+    ],
+    "tools": [
+      "Hand sanitizer pump bottle"
+    ],
+    "materials": [
+      "Alcohol-based hand sanitizer"
+    ],
+    "expected_result": "Hands are coated in sanitizer and rubbed until completely dry.",
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "quantity",
+        "description": "the amount of hand sanitizer to dispense per use",
+        "blocking": false
+      },
+      {
+        "field": "duration",
+        "description": "the total time to rub hands together",
+        "blocking": false
+      }
+    ]
+  }
+}

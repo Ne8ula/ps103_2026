@@ -1,0 +1,50 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1ea921f623",
+  "served_by": "gemini-3-flash-preview",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hand poses at gesture keyframes, and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames.\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 1 of 4, 0.0s to 13.4s.\nSegmentation summary: Wet your hands with running water and apply soap.\nPrevious step: (none, this is the first step)\nNext step: Rub your hands together, ensuring you scrub the backs, between fingers, fingertips, and wrists for at least 20 seconds.\n\nNarration during this step:\n[0.1-2.0s] \"Welcome to the handwashing video.\"\n[2.5-6.8s] \"The most important thing you can do to keep your family from getting sick is washing your\"\n[6.8-7.6s] \"hands correctly.\"\n[8.2-9.0s] \"Here is how.\"\n[9.7-10.3s] \"Step 1.\"\n[10.9-13.1s] \"Wash your hands with running water and soap.\"\n\nHand poses at gesture keyframes (derived from landmarks; may be wrong when hands are occluded):\ng0001 @ 8.0s [idle]: t=8.0s | Left hand: relaxed hand, palm facing away, ring extended pointing down-right, thumb, index, middle and pinky half-bent, at centre. Idle.\ng0002 @ 9.0s [idle]: t=9.0s | Left hand: not visible. No hands visible. Idle.\ng0003 @ 10.0s [active]: t=10.0s | Left hand: open hand, palm facing camera, index+middle+ring+pinky together pointing down-right, thumb half-bent, at centre; moving left, slow. Active.\ng0004 @ 11.0s [idle]: t=11.0s | Right hand: open hand, palm facing camera, index+middle together pointing down-right, ring extended pointing down-right, pinky extended pointing down-right, thumb half-bent, at left side. Left hand: not visible. Idle.\ng0005 @ 12.0s [active]: t=12.0s | Right hand: power grip, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving right, fast. Left hand: not visible. Active.\ng0006 @ 13.0s [active]: t=13.0s | Right hand: fist, palm facing away, thumb half-bent, index, middle, ring and pinky curled, at centre; moving left, slow. Left hand: not visible. Active.\n\nFrames: 3 attached, at 2.2s, 6.7s, 11.2s",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-gemini-7c839f/draft/keyframes/s01/k1.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-gemini-7c839f/draft/keyframes/s01/k2.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/hand-washing-gemini-7c839f/draft/keyframes/s01/k3.jpg"
+  ],
+  "response": {
+    "title": "Wet your hands and apply soap",
+    "instruction": "Wet your hands under running water and then apply soap using a dispenser.",
+    "details": [
+      "Ensure hands are fully wet before applying soap.",
+      "Use the soap dispenser to place a portion of soap onto your palm."
+    ],
+    "tools": [
+      "sink",
+      "faucet",
+      "soap dispenser"
+    ],
+    "materials": [
+      "running water",
+      "soap"
+    ],
+    "expected_result": "Hands are wet and coated with soap.",
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "setting",
+        "description": "The required temperature of the running water is not specified.",
+        "blocking": false
+      },
+      {
+        "field": "quantity",
+        "description": "The amount of soap to be applied is not specified.",
+        "blocking": false
+      },
+      {
+        "field": "duration",
+        "description": "The duration for wetting the hands is not specified.",
+        "blocking": false
+      }
+    ]
+  }
+}

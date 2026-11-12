@@ -1,0 +1,61 @@
+{
+  "task": "draft_step",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "1e45ffca5f",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You write one step of a hands-on tutorial from the evidence of a demonstration video: the narration spoken during the step, text descriptions of the hands (from hand landmarks; may be wrong when hands are occluded), and a few frames from inside the step (attached images, in time order). The reader is a learner who will repeat the procedure without the video.\n\nWrite:\n- title: a short imperative title (max ~8 words).\n- instruction: one or two imperative sentences saying exactly what to do.\n- details: extra how-to points that are actually supported by the evidence (hand position, grip,\n  order of sub-actions). Empty if none.\n- tools and materials: only those named in the narration or clearly visible in the frames, as short\n  labels (1-3 words, e.g. \"soap\", \"paper towel\").\n- expected_result: what the learner should see when the step is done, or null if not evident.\n- cautions: only cautions stated in the narration or obvious from what is shown (e.g. a blade).\n- confidence: 0-1, how well the evidence supports your description.\n- missing_info: everything a learner would need but the evidence does not state.\n- substeps: the step's action phases for the tutorial video, 1 to 4, in time order. Split\n  only where the action visibly or audibly changes (e.g. \"scrub palms\" then \"scrub between fingers\");\n  one phase is fine for a single action. For each phase:\n  - start_s: one of the listed anchor times (the first phase starts at the step start).\n  - caption: on-screen text, imperative, at most 44 characters (about 6 words).\n  - focus_box: the id of the listed focus box that best shows this phase (e.g. the work zone while the\n    hands manipulate something, both hands for whole-hand actions), or \"full\" when the surroundings\n    matter (e.g. reaching for a tap or a door). Only use listed ids; never invent coordinates.\n  - emphasis: optional 1-3 word callout of the exact spot a learner should watch (e.g. \"between\n    fingers\", \"under nails\"), at most 24 characters, only if the narration or the frames\n    show it; else null. emphasis_s: when it applies (inside the phase), else null.\n\nGrounding rules (strict):\n- Never invent numeric values: quantities, durations, counts, temperatures, speeds, settings,\n  concentrations, sizes. If the narration does not state a number, do not write one; add a\n  missing_info item (field quantity / duration / setting) instead. This applies to captions too.\n- Never invent tool or material names you cannot see or hear; use a generic description and add a\n  missing_info item (field tool / material) if the specific item matters.\n- Never invent safety or compliance claims. If the action looks hazardous and no precaution is stated,\n  add a missing_info item with field safety.\n- Mark a missing_info item blocking when a learner could not perform the step correctly or safely\n  without it.\n- The previous/next step summaries are context only; describe this step alone.",
+  "user": "Step 4 of 22, 128.3s to 157.1s.\nSegmentation summary: Position the drill template inside the printer frame and use the drill bit to mark hole locations.\nPrevious step: Examine the 3D-printed drill template and verify the drill bit fit inside the guide hole.\nNext step: Drill 1/16-inch pilot holes at the marked locations.\n\nNarration during this step:\n[123.7-137.3s] \"pretty tight on the drill bit too, so let's see. It's good and solid here. Let's go\"\n\nFrames: 3 attached: image 1 at 133.1s, image 2 at 142.7s, image 3 at 152.3s\n\nAnchors (times a phase may start at, each with a summary of the hands until the next anchor):\na1 @ 128.3s (step start) - hands until 129.3s: both hands 87%, one hand 13%; grip R: pinch grip 73%, L: power grip 69%; hands close 87%; active 100%, back-and-forth up-down; at bottom\na2 @ 129.3s (hands: finger change, grip change, interaction change, speed change, visibility change) - hands until 131.3s: both hands 27%, one hand 73%; grip R: pinch grip 60%, L: pinch grip 88%; hands close 27%; active 77%, moving up; at bottom\na3 @ 131.3s (hands: interaction change, speed change, visibility change) - hands until 134.3s: both hands 76%, one hand 24%; grip R: power grip 56%, L: pinch grip; hands close 76%; active 31%; at bottom\na4 @ 134.3s (hands: interaction change, visibility change) - hands until 137.7s: both hands 61%, one hand 39%; grip R: power grip 48%, L: pinch grip; hands close 61%; active 25%; at centre\na5 @ 137.7s (hands: activity change, finger change, grip change, interaction change) - hands until 142.1s: both hands 100%; grip R: power grip 92%, L: pinch grip; hands close 100%; active 48%, moving in place; at bottom\na6 @ 142.1s (hands: finger change, grip change, interaction change) - hands until 145.1s: both hands 100%; grip R: power grip 53%, L: pinch grip; hands close 100%; active 84%, back-and-forth up-down; at bottom\na7 @ 145.1s (hands: finger change, grip change, interaction change) - hands until 148.1s: both hands 96%; grip R: pinch grip 53%, L: pinch grip; hands touching 96%; active 80%; at centre\na8 @ 148.1s (hands: finger change, grip change, interaction change) - hands until 151.1s: both hands 100%; grip R: power grip 53%, L: pinch grip; hands close 100%; active 67%, back-and-forth up-down; at bottom\na9 @ 151.1s (hands: activity change, finger change, grip change, speed change) - hands until 154.1s: both hands 100%; grip R: power grip 51%, L: pinch grip; hands touching 100%; active 87%, back-and-forth up-down; at bottom\na10 @ 154.1s (hands: finger change, grip change, interaction change) - hands until 157.1s: both hands 96%; grip R: power grip 56%, L: pinch grip; hands touching 96%; active 91%, moving in place; at bottom\n\nFocus boxes (computed from the hand landmarks; candidate zooms for the video). They are drawn and labelled on the images.\nB1 both hands (everything the hands cover) - image 1: x 0.12-0.74, y 0.00-1.00 (63% of the frame); image 2: x 0.12-0.74, y 0.00-1.00 (63% of the frame); image 3: x 0.12-0.74, y 0.00-1.00 (63% of the frame)\nB2 work zone (where the hands meet or hold something, i.e. the object worked on) - image 1: x 0.32-0.72, y 0.09-1.00 (36% of the frame); image 2: x 0.32-0.72, y 0.09-1.00 (36% of the frame); image 3: x 0.32-0.72, y 0.09-1.00 (36% of the frame)\nfull - the whole frame (when the surroundings matter or no box fits)",
+  "images": [
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s04/k1_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s04/k2_boxes.jpg",
+    "/home/jiwonjjeong/repos/cornell-tech/ps103_2026/pipeline/projects/x1c-wiper-mod-livestream-a21371/draft/keyframes/s04/k3_boxes.jpg"
+  ],
+  "response": {
+    "title": "Position template and mark hole locations",
+    "instruction": "Place the drill template into the printer frame and use the drill bit to mark the hole locations.",
+    "details": [
+      "Hold the drill template against the printer frame using one hand.",
+      "Insert the drill bit through the guide hole of the template to mark the surface beneath."
+    ],
+    "tools": [
+      "drill bit"
+    ],
+    "materials": [
+      "drill template",
+      "printer frame"
+    ],
+    "expected_result": "Indentations are marked on the printer frame at the correct positions.",
+    "cautions": [],
+    "confidence": 0.9,
+    "missing_info": [
+      {
+        "field": "tool",
+        "description": "The type of drill bit is not explicitly named beyond its use as a marking tool.",
+        "blocking": false
+      }
+    ],
+    "substeps": [
+      {
+        "start_s": 128.3,
+        "caption": "Hold template in place",
+        "focus_box": "B2",
+        "emphasis": "template",
+        "emphasis_s": 128.3
+      },
+      {
+        "start_s": 137.7,
+        "caption": "Insert drill bit into guide",
+        "focus_box": "B2",
+        "emphasis": "guide hole",
+        "emphasis_s": 142.1
+      },
+      {
+        "start_s": 145.1,
+        "caption": "Mark hole locations",
+        "focus_box": "B2",
+        "emphasis": "drill bit tip",
+        "emphasis_s": 145.1
+      }
+    ]
+  }
+}

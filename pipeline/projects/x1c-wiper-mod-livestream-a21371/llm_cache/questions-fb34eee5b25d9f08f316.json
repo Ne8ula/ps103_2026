@@ -1,0 +1,136 @@
+{
+  "task": "questions",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "d1906e7783",
+  "served_by": "gemini-3.1-flash-lite",
+  "system": "You turn gaps found in a draft tutorial into questions for the person who recorded the demonstration\nvideo. They know the procedure well but are busy: ask short, concrete, plain-language questions that\nthey can answer in a few words.\n\nRules:\n- One question per gap, except: when several gaps ask for the same information, ask once and list all\n  their keys in gap_keys. Every gap key must appear in exactly one question; use only the given keys.\n- Refer to steps by their title, not by internal ids.\n- Choose answer_type: yes_no for confirmations, choice when there are a few plausible options (put\n  them in choices), number only when a single number with an obvious unit is asked, free_text otherwise.\n- Never suggest specific numeric values, settings or safety rules in the question or the choices;\n  ask for them. Choices may only offer structural options (e.g. split / merge / correct).\n- priority: 1 = a learner could not do the step correctly or safely without the answer (blocking gaps,\n  SOP conflicts), 2 = important for quality, 3 = nice to have.\n- If a gap was asked before and answered but persists, rephrase it to make clear what is still missing.",
+  "user": "Procedure steps:\n- Clear and remove the glass top cover (5.4-52.7s): Clear all loose objects from the top of the 3D printer and lift the glass cover away.\n- Push the printer toolhead aside (52.7-73.3s): Manually slide the printer toolhead to the back or side of the enclosure. This clears the central workspace for upcoming tasks.\n- Examine the 3D-printed drill template (73.3-128.3s): Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly.\n- Position template and mark hole locations (128.3-157.1s): Place the drill template into the printer frame and use the drill bit to mark the hole locations.\n- Drill pilot holes into the frame (157.1-193.3s): Use the power drill to create 1/[?]-inch pilot holes at the previously marked locations on the printer frame.\n- Enlarge pilot holes to 1/[?] (193.3-222.1s): Insert a 1/[?]-inch drill bit into your drill and enlarge the previously created 1/[?]-inch pilot holes.\n- Deburr the printer part (222.1-302.7s): Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly.\n- Vacuum printer debris (302.7-362.6s): Vacuum the printer rails and the bottom of the printer case to remove filament debris.\n- Position backing plate and wiper (362.6-383.9s): Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation.\n- Thread center screw loosely and align plate (383.9-408.4s): Thread the center screw into the backing plate just enough to hold it in place. Align the two outside holes to ensure the plate is level before tightening.\n- Tighten the center screw (408.4-426.9s): Tighten the center screw until it is snug. Ensure you do not over-tighten, as this will bend the plate and cause misalignment for the outer screws.\n- Verify Backing Plate Installation (426.9-449.7s): Confirm the backing plate is correctly installed and note the specific screw sizes used for different positions.\n- Test Fit Wiper in Backing Plate (449.7-474.9s): Insert the spare wiper into the backing plate hole to verify it is centered and moves freely.\n- Verify wiper alignment (474.9-485.9s): Test the wiper fit by ensuring it can move slightly in all directions within the hole without binding.\n- Enlarge wiper mounting holes (485.9-504.0s): If the wiper binds, remove it and carefully enlarge the mounting holes to improve the fit.\n- Position and tighten the wiper plate (504.0-522.3s): Position the wiper plate against the top surface and push it to the side to avoid stressing the mounting screws before tightening.\n- Confirm wiper assembly replacement without recalibration (522.3-542.4s): Replace the wiper by removing the mounting screws and reattaching the new wiper plate. This action maintains position accuracy so that no further recalibration is needed.\n- Perform the original X-axis wipe cycle (542.4-560.7s): Demonstrate the side-to-side X-axis sweeping motion originally used in the printer's wipe cycle.\n- Perform a wiper nub scrubbing motion (560.7-581.8s): Manually guide the toolhead to perform a side-to-side scrubbing motion between each of the wiper nubs.\n- Verify nozzle clearance with wiper nubs (581.8-592.5s): Visually inspect the nozzle tip's alignment relative to the wiper nubs. Ensure the nozzle clears the nubs to prevent accidental damage.\n- Understand the Nozzle Wiper Update (592.5-649.9s): Observe the improved nozzle scrubbing movement. The updated wiper routine now performs a three-stage sweep across the nozzle.\n- Calibrate Nozzle Position via G-Code (649.9-808.1s): Use the printer's touchscreen console to home the axes and send G-code commands to verify the nozzle position.\n\nGaps (key | step | kind | blocking | description):\nc:s17:conflict:d01:2 | Confirm wiper assembly replacement without recalibration | sop_conflict | blocking | The procedure specifies removing and re-installing 1 screw, whereas the video indicates multiple mounting screws. (bambu-x1-replace-nozzle-wiper.md)\nc:s18:conflict:d01:2 | Perform the original X-axis wipe cycle | sop_conflict | blocking | The procedure specifies checking that the wiper and screws are seated. Performing an X-axis wipe cycle is not the required verification step. (bambu-x1-replace-nozzle-wiper.md)\nc:s22:conflict:d01:2 | Calibrate Nozzle Position via G-Code | sop_conflict | blocking | The procedure requires verifying that the nozzle wiper and screws are seated properly, not calibrating the nozzle position via G-code. (bambu-x1-replace-nozzle-wiper.md)\ns01:missing:unverified | Clear and remove the glass top cover | missing_info (quantity) | blocking | The draft stated '3', which the narration does not support; the value was removed and needs confirming.\ns02:missing:unverified | Push the printer toolhead aside | missing_info (quantity) | blocking | The draft stated '3', which the narration does not support; the value was removed and needs confirming.\ns02:missing:safety | Push the printer toolhead aside | missing_info (safety) | blocking | The user should know if the printer must be powered off before manually moving the toolhead to avoid motor damage.\ns03:missing:outcome | Examine the 3D-printed drill template | missing_info (outcome) | blocking | How to specifically test the fit of the drill bit inside the guide hole is not explicitly demonstrated.\ns05:missing:unverified | Drill pilot holes into the frame | missing_info (quantity) | blocking | The draft stated '16', which the narration does not support; the value was removed and needs confirming.\ns05:missing:safety | Drill pilot holes into the frame | missing_info (safety) | blocking | Recommendations for eye protection while drilling metal or plastic components.\ns06:missing:unverified | Enlarge pilot holes to 1/[?] | missing_info (setting) | blocking | The draft stated '8 inch', '8', '16', '3', which the narration does not support; the value was removed and needs confirming.\ns06:missing:safety | Enlarge pilot holes to 1/[?] | missing_info (safety) | blocking | Safety gear recommendations such as eye protection are missing.\ns09:missing:other | Position backing plate and wiper | missing_info (other) | blocking | The exact orientation or mating point of the wiper assembly is not clearly shown in the frames.\ns11:missing:other | Tighten the center screw | missing_info (other) | blocking | The torque or force level defining 'snug' is subjective.\ns14:missing:outcome | Verify wiper alignment | missing_info (outcome) | blocking | What to do if the part binds or has no room for movement.\ns15:missing:tool | Enlarge wiper mounting holes | missing_info (tool) | blocking | The specific type of tool used to enlarge the hole (e.g., drill, file, reamer) is not clearly identified.\ns15:missing:quantity | Enlarge wiper mounting holes | missing_info (quantity) | blocking | The exact diameter for the enlarged hole is not specified, only a suggestion.\ns15:missing:safety | Enlarge wiper mounting holes | missing_info (safety) | blocking | Standard safety precautions for drilling or modifying parts are not mentioned.\ns16:missing:setting | Position and tighten the wiper plate | missing_info (setting) | blocking | The appropriate tightness or torque specification for the mounting screws is not provided.\ns17:missing:tool | Confirm wiper assembly replacement without recalibration | missing_info (tool) | blocking | The specific type or size of screwdriver required for the wiper plate screws is not specified.\ns18:missing:unverified | Perform the original X-axis wipe cycle | missing_info (quantity) | blocking | The draft stated '3', which the narration does not support; the value was removed and needs confirming.\ns20:missing:unverified | Verify nozzle clearance with wiper nubs | missing_info (quantity) | blocking | The draft stated '3', which the narration does not support; the value was removed and needs confirming.\ns20:missing:other | Verify nozzle clearance with wiper nubs | missing_info (other) | blocking | The exact clearance threshold required for safe operation.\ns20:missing:safety | Verify nozzle clearance with wiper nubs | missing_info (safety) | blocking | Ensure the printer is powered off or in a safe state before performing manual inspection near the nozzle.\ns22:missing:other | Calibrate Nozzle Position via G-Code | missing_info (other) | blocking | The specific sequence of menu taps to reach the console interface on this printer model.\ns22:missing:other:2 | Calibrate Nozzle Position via G-Code | missing_info (other) | blocking | The correct Y-axis G-code command and coordinate for the specific printer model.\ns01:missing:other | Clear and remove the glass top cover | missing_info (other) | not blocking | A designated safe area to store the removed glass cover.\ns03:missing:purpose | Examine the 3D-printed drill template | missing_info (purpose) | not blocking | The specific dimensions or material type of the template are not provided.\ns04:missing:tool | Position template and mark hole locations | missing_info (tool) | not blocking | The type of drill bit is not explicitly named beyond its use as a marking tool.\ns05:missing:setting | Drill pilot holes into the frame | missing_info (setting) | not blocking | The appropriate drill speed or torque setting for the frame material.\ns06:missing:tool | Enlarge pilot holes to 1/[?] | missing_info (tool) | not blocking | Specific model or type of power drill is not stated.\ns07:missing:tool | Deburr the printer part | missing_info (tool) | not blocking | Specific brand or type of manual deburring tool is not specified.\ns07:missing:other | Deburr the printer part | missing_info (other) | not blocking | The exact location and orientation of the wiper component are not provided.\ns08:missing:tool | Vacuum printer debris | missing_info (tool) | not blocking | Specific model or type of vacuum is not provided.\ns08:missing:duration | Vacuum printer debris | missing_info (duration) | not blocking | The duration of the vacuuming is not specified.\ns09:missing:tool | Position backing plate and wiper | missing_info (tool) | not blocking | Specific type of tape or applicator for the screw/plate is not defined.\ns10:missing:setting | Thread center screw loosely and align plate | missing_info (setting) | not blocking | specific size of the hex driver needed for the center screw\ns11:missing:tool | Tighten the center screw | missing_info (tool) | not blocking | The specific type of screwdriver required (e.g. Phillips or hex) is not identified.\ns12:missing:other | Verify Backing Plate Installation | missing_info (other) | not blocking | The exact number of outside screws required is not stated, though the narration implies plural.\ns13:missing:purpose | Test Fit Wiper in Backing Plate | missing_info (purpose) | not blocking | The exact reason for checking the movement (e.g. to prevent binding or ensure alignment during operation) is not explicitly stated.\ns16:missing:tool | Position and tighten the wiper plate | missing_info (tool) | not blocking | The specific type of screwdriver or tool used to tighten the mounting screws is not stated.\ns17:missing:quantity | Confirm wiper assembly replacement without recalibration | missing_info (quantity) | not blocking | The exact number of mounting screws to remove and replace is not stated.\ns18:missing:other | Perform the original X-axis wipe cycle | missing_info (other) | not blocking | The video shows the user demonstrating the motion with their hands inside the machine; it is unclear if this is purely illustrative or if a tool is intended to be used.\ns19:missing:quantity | Perform a wiper nub scrubbing motion | missing_info (quantity) | not blocking | The exact number of scrubbing cycles or repetitions required.\ns19:missing:purpose | Perform a wiper nub scrubbing motion | missing_info (purpose) | not blocking | Specific cleaning purpose of the nubs for the 3D printer.\ns21:missing:other | Understand the Nozzle Wiper Update | missing_info (other) | not blocking | The specific firmware version or software update this change refers to is not named.\ns01:low_confidence | Clear and remove the glass top cover | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.\ns02:low_confidence | Push the printer toolhead aside | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.\ns05:low_confidence | Drill pilot holes into the frame | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.\ns06:low_confidence | Enlarge pilot holes to 1/[?] | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.\ns18:low_confidence | Perform the original X-axis wipe cycle | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.\ns20:low_confidence | Verify nozzle clearance with wiper nubs | low_confidence | not blocking | Low confidence (0.50) that this step is cut and described correctly.",
+  "images": [],
+  "response": {
+    "questions": [
+      {
+        "gap_keys": [
+          "c:s17:conflict:d01:2",
+          "c:s18:conflict:d01:2",
+          "c:s22:conflict:d01:2"
+        ],
+        "text": "The draft procedure steps for replacing the wiper and performing verification appear to conflict with the video demonstration; could you clarify the exact physical steps required to finalize the installation and verify the assembly?",
+        "why": "The draft contains procedural steps that do not match the video's actual verification method, causing an SOP conflict.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s01:missing:unverified",
+          "s02:missing:unverified",
+          "s05:missing:unverified",
+          "s06:missing:unverified",
+          "s18:missing:unverified",
+          "s20:missing:unverified"
+        ],
+        "text": "Several steps include numeric placeholders or counts that were removed because they were unverified; could you provide the correct quantities for these steps?",
+        "why": "The tutorial needs accurate numbers to be actionable.",
+        "answer_type": "number",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s02:missing:safety",
+          "s05:missing:safety",
+          "s06:missing:safety",
+          "s15:missing:safety",
+          "s20:missing:safety"
+        ],
+        "text": "What safety precautions, such as powering off the printer or wearing eye protection, are strictly required for these physical modifications?",
+        "why": "Safety is essential for the user when operating power tools near the printer.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s03:missing:outcome",
+          "s14:missing:outcome"
+        ],
+        "text": "How should the user confirm the fit of the drill bit and the movement of the wiper to determine if further adjustments are needed?",
+        "why": "The user needs to know how to validate the result of their work.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s15:missing:tool",
+          "s15:missing:quantity",
+          "s16:missing:setting",
+          "s17:missing:tool",
+          "s22:missing:other",
+          "s22:missing:other:2"
+        ],
+        "text": "Could you specify the tools, hole diameters, torque, and menu navigation required to complete the mechanical adjustments and software calibration?",
+        "why": "Specific technical details are missing that are necessary to successfully complete the modification.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s09:missing:other",
+          "s11:missing:other",
+          "s20:missing:other"
+        ],
+        "text": "Can you define the correct orientation, force for 'snug' tightening, and the specific clearance threshold for the nozzle wiper?",
+        "why": "Subjective terms like 'snug' or 'clearance' need concrete definitions for consistency.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 2
+      },
+      {
+        "gap_keys": [
+          "s01:missing:other",
+          "s03:missing:purpose",
+          "s04:missing:tool",
+          "s05:missing:setting",
+          "s06:missing:tool",
+          "s07:missing:tool",
+          "s07:missing:other",
+          "s08:missing:tool",
+          "s08:missing:duration",
+          "s09:missing:tool",
+          "s10:missing:setting",
+          "s11:missing:tool",
+          "s12:missing:other",
+          "s13:missing:purpose",
+          "s16:missing:tool",
+          "s17:missing:quantity",
+          "s18:missing:other",
+          "s19:missing:quantity",
+          "s19:missing:purpose",
+          "s21:missing:other"
+        ],
+        "text": "Could you clarify these secondary details: storage location, tool types, screw quantities, and the purpose of specific cleaning motions?",
+        "why": "These details improve the overall quality and clarity of the tutorial.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s01:low_confidence",
+          "s02:low_confidence",
+          "s05:low_confidence",
+          "s06:low_confidence",
+          "s18:low_confidence",
+          "s20:low_confidence"
+        ],
+        "text": "Are these specific procedure steps recorded and described accurately in the draft?",
+        "why": "Confidence is low that these segments of the tutorial accurately reflect the procedure.",
+        "answer_type": "yes_no",
+        "choices": [],
+        "priority": 3
+      }
+    ]
+  }
+}

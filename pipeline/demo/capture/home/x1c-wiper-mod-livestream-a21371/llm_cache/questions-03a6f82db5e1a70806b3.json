@@ -1,0 +1,313 @@
+{
+  "task": "questions",
+  "provider": "gemini:gemini-3.6-flash",
+  "prompt_version": "d1906e7783",
+  "served_by": "gemini-3.6-flash",
+  "system": "You turn gaps found in a draft tutorial into questions for the person who recorded the demonstration\nvideo. They know the procedure well but are busy: ask short, concrete, plain-language questions that\nthey can answer in a few words.\n\nRules:\n- One question per gap, except: when several gaps ask for the same information, ask once and list all\n  their keys in gap_keys. Every gap key must appear in exactly one question; use only the given keys.\n- Refer to steps by their title, not by internal ids.\n- Choose answer_type: yes_no for confirmations, choice when there are a few plausible options (put\n  them in choices), number only when a single number with an obvious unit is asked, free_text otherwise.\n- Never suggest specific numeric values, settings or safety rules in the question or the choices;\n  ask for them. Choices may only offer structural options (e.g. split / merge / correct).\n- priority: 1 = a learner could not do the step correctly or safely without the answer (blocking gaps,\n  SOP conflicts), 2 = important for quality, 3 = nice to have.\n- If a gap was asked before and answered but persists, rephrase it to make clear what is still missing.",
+  "user": "Procedure steps:\n- Clear and remove the glass top cover (5.4-52.7s): Clear all loose objects from the top of the 3D printer and lift the glass cover away.\n- Push the printer toolhead aside (52.7-73.3s): Manually slide the printer toolhead to the back or side of the enclosure while the printer is powered off. This clears the central workspace for upcoming tasks.\n- Examine the 3D-printed drill template (73.3-128.3s): Inspect the 3D-printed template to ensure the guide holes are clear and fit the drill bit correctly.\n- Position template and mark hole locations (128.3-157.1s): Place the drill template into the printer frame and use the drill bit to mark the hole locations.\n- Drill pilot holes into the frame (157.1-193.3s): Use the power drill to create 1/16-inch pilot holes through the template at the previously marked locations on the printer frame, then open them up to 1/8 inch.\n- Enlarge pilot holes to 1/8 inch (193.3-222.1s): Insert a 1/8-inch drill bit into your drill and enlarge the previously created 1/16-inch pilot holes.\n- Deburr the printer part (222.1-302.7s): Use a manual deburring tool to remove excess burrs from the printed part holes to ensure the wiper sits correctly.\n- Vacuum printer debris (302.7-362.6s): Vacuum the printer rails and the bottom of the printer case to remove filament debris.\n- Position backing plate and wiper (362.6-383.9s): Insert the backing plate and wiper assembly into the printer and prepare the center screw for installation.\n- Thread center screw loosely and align plate (383.9-408.4s): Thread the center screw into the backing plate just enough to hold it in place. Align the two outside holes to ensure the plate is level before tightening.\n- Tighten the center screw (408.4-426.9s): Tighten the M3x6 center screw until it is snug. Ensure you do not over-tighten, as this will bend the plate and cause misalignment for the outer screws.\n- Verify Backing Plate Installation (426.9-449.7s): Confirm the backing plate is correctly installed and note the specific screw sizes used for different positions.\n- Test Fit Wiper in Backing Plate (449.7-474.9s): Insert the spare wiper into the backing plate hole to verify it is centered and moves freely.\n- Verify wiper alignment (474.9-485.9s): Test the wiper fit by ensuring it can move slightly in all directions within the hole without binding.\n- Enlarge wiper mounting holes (485.9-504.0s): If the wiper binds, remove it and carefully enlarge the mounting holes to improve the fit.\n- Position and tighten the wiper plate (504.0-522.3s): Position the wiper plate against the top surface and push it to the side to avoid stressing the mounting screws before tightening.\n- Confirm wiper assembly replacement without recalibration (522.3-542.4s): Replace the wiper by removing the mounting screws and reattaching the new wiper plate. This action maintains position accuracy so that no further recalibration is needed.\n- Perform the original X-axis wipe cycle (542.4-560.7s): Demonstrate the side-to-side X-axis sweeping motion originally used in the printer's wipe cycle.\n- Perform a wiper nub scrubbing motion (560.7-581.8s): Manually guide the toolhead to perform a side-to-side scrubbing motion between each of the wiper nubs.\n- Verify nozzle clearance with wiper nubs (581.8-592.5s): Visually inspect the nozzle tip's alignment relative to the wiper nubs. Ensure the nozzle clears the nubs to prevent accidental damage.\n- Understand the Nozzle Wiper Update (592.5-649.9s): Observe the improved nozzle scrubbing movement. The updated wiper routine now performs a three-stage sweep across the nozzle.\n- Calibrate Nozzle Position via G-Code (649.9-808.1s): Use the printer's touchscreen console to home the axes and send G-code commands to verify the nozzle position.\n\nGaps (key | step | kind | blocking | description):\nc:s16:conflict:d01:1 | Position and tighten the wiper plate | sop_conflict | blocking | Use an H2.0 Allen key as specified in the manual instead of a screwdriver to avoid damaging the screw heads. (bambu-x1-replace-nozzle-wiper.md) | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\nc:s16:conflict:d01:2 | Position and tighten the wiper plate | sop_conflict | blocking | The SOP specifies using only 1 screw for the Nozzle Wiper installation, while the video step implies the use of multiple screws. (bambu-x1-replace-nozzle-wiper.md) | asked before, answer was: \"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\"\nc:s17:conflict:d01:1 | Confirm wiper assembly replacement without recalibration | sop_conflict | blocking | The procedure requires using an H2.0 Allen key, but the video step specifies a screwdriver. (bambu-x1-replace-nozzle-wiper.md) | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\nc:s17:conflict:d01:2 | Confirm wiper assembly replacement without recalibration | sop_conflict | blocking | The SOP specifies removing only 1 screw to replace the nozzle wiper, but the video instruction refers to multiple mounting screws. (bambu-x1-replace-nozzle-wiper.md) | asked before, answer was: \"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\"\nc:s22:conflict:d01:1 | Calibrate Nozzle Position via G-Code | sop_conflict | blocking | The safety instructions require the printer to be powered off, which contradicts the use of the touchscreen console in this step. (bambu-x1-replace-nozzle-wiper.md) | asked before, answer was: \"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\"\nc:s22:conflict:d01:2 | Calibrate Nozzle Position via G-Code | sop_conflict | blocking | The manual specifies verifying the installation by checking that the wiper and screws are properly seated, rather than using G-code coordinates on the screen. (bambu-x1-replace-nozzle-wiper.md) | asked before, answer was: \"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\"\ns03:missing:outcome | Examine the 3D-printed drill template | missing_info (outcome) | blocking | How to specifically test the fit of the drill bit inside the guide hole is not explicitly demonstrated.\ns05:missing:safety | Drill pilot holes into the frame | missing_info (safety) | blocking | Recommendations for eye protection while drilling metal or plastic components. | asked before, answer was: \"Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.\"\ns06:missing:safety | Enlarge pilot holes to 1/8 inch | missing_info (safety) | blocking | Safety gear recommendations such as eye protection are missing. | asked before, answer was: \"Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.\"\ns09:missing:other | Position backing plate and wiper | missing_info (other) | blocking | The exact orientation or mating point of the wiper assembly is not clearly shown in the frames.\ns11:missing:other | Tighten the center screw | missing_info (other) | blocking | The torque or force level defining 'snug' is subjective. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns14:missing:outcome | Verify wiper alignment | missing_info (outcome) | blocking | What to do if the part binds or has no room for movement.\ns15:missing:tool | Enlarge wiper mounting holes | missing_info (tool) | blocking | The specific type of tool used to enlarge the hole (e.g., drill, file, reamer) is not clearly identified. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns15:missing:safety | Enlarge wiper mounting holes | missing_info (safety) | blocking | Standard safety precautions for drilling or modifying parts are not mentioned. | asked before, answer was: \"Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.\"\ns16:missing:setting | Position and tighten the wiper plate | missing_info (setting) | blocking | The appropriate tightness or torque specification for the mounting screws is not provided. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns17:missing:tool | Confirm wiper assembly replacement without recalibration | missing_info (tool) | blocking | The specific type or size of screwdriver required for the wiper plate screws is not specified. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns20:missing:other | Verify nozzle clearance with wiper nubs | missing_info (other) | blocking | The exact clearance threshold required for safe operation.\ns20:missing:safety | Verify nozzle clearance with wiper nubs | missing_info (safety) | blocking | Ensure the printer is powered off or in a safe state before performing manual inspection near the nozzle. | asked before, answer was: \"Yes. Power the printer off before reaching inside and move the toolhead by hand only while it is off. Turn it back on only for the G-code position test at the end.\"\ns22:missing:other | Calibrate Nozzle Position via G-Code | missing_info (other) | blocking | The specific sequence of menu taps to reach the console interface on this printer model. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns22:missing:other:2 | Calibrate Nozzle Position via G-Code | missing_info (other) | blocking | The correct Y-axis G-code command and coordinate for the specific printer model. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns01:missing:other | Clear and remove the glass top cover | missing_info (other) | not blocking | A designated safe area to store the removed glass cover.\ns03:missing:purpose | Examine the 3D-printed drill template | missing_info (purpose) | not blocking | The specific dimensions or material type of the template are not provided.\ns04:missing:tool | Position template and mark hole locations | missing_info (tool) | not blocking | The type of drill bit is not explicitly named beyond its use as a marking tool.\ns05:missing:setting | Drill pilot holes into the frame | missing_info (setting) | not blocking | The appropriate drill speed or torque setting for the frame material.\ns06:missing:tool | Enlarge pilot holes to 1/8 inch | missing_info (tool) | not blocking | Specific model or type of power drill is not stated.\ns07:missing:tool | Deburr the printer part | missing_info (tool) | not blocking | Specific brand or type of manual deburring tool is not specified.\ns07:missing:other | Deburr the printer part | missing_info (other) | not blocking | The exact location and orientation of the wiper component are not provided.\ns08:missing:tool | Vacuum printer debris | missing_info (tool) | not blocking | Specific model or type of vacuum is not provided.\ns08:missing:duration | Vacuum printer debris | missing_info (duration) | not blocking | The duration of the vacuuming is not specified.\ns09:missing:tool | Position backing plate and wiper | missing_info (tool) | not blocking | Specific type of tape or applicator for the screw/plate is not defined.\ns10:missing:setting | Thread center screw loosely and align plate | missing_info (setting) | not blocking | specific size of the hex driver needed for the center screw\ns12:missing:other | Verify Backing Plate Installation | missing_info (other) | not blocking | The exact number of outside screws required is not stated, though the narration implies plural. | asked before, answer was: \"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\"\ns13:missing:purpose | Test Fit Wiper in Backing Plate | missing_info (purpose) | not blocking | The exact reason for checking the movement (e.g. to prevent binding or ensure alignment during operation) is not explicitly stated.\ns16:missing:tool | Position and tighten the wiper plate | missing_info (tool) | not blocking | The specific type of screwdriver or tool used to tighten the mounting screws is not stated. | asked before, answer was: \"Use a hex driver that fits the M3 screws from the mod kit. The H2.0 key in the Bambu guide is for the stock wiper screw, which this mod replaces.\"\ns17:missing:quantity | Confirm wiper assembly replacement without recalibration | missing_info (quantity) | not blocking | The exact number of mounting screws to remove and replace is not stated. | asked before, answer was: \"This is the SteinWipe mod, not the stock wiper. One M3x6 center screw holds the backing plate and two M3x8 screws hold the wiper plate. Bambu's one-screw procedure only applies to the stock wiper.\"\ns18:missing:other | Perform the original X-axis wipe cycle | missing_info (other) | not blocking | The video shows the user demonstrating the motion with their hands inside the machine; it is unclear if this is purely illustrative or if a tool is intended to be used.\ns19:missing:quantity | Perform a wiper nub scrubbing motion | missing_info (quantity) | not blocking | The exact number of scrubbing cycles or repetitions required.\ns19:missing:purpose | Perform a wiper nub scrubbing motion | missing_info (purpose) | not blocking | Specific cleaning purpose of the nubs for the 3D printer.\ns21:missing:other | Understand the Nozzle Wiper Update | missing_info (other) | not blocking | The specific firmware version or software update this change refers to is not named.",
+  "images": [],
+  "response": {
+    "questions": [
+      {
+        "gap_keys": [
+          "s01:missing:other"
+        ],
+        "text": "Where should the removed glass top cover be safely stored while working on 'Clear and remove the glass top cover'?",
+        "why": "Helps learners avoid accidentally breaking the glass cover during the procedure.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s03:missing:outcome"
+        ],
+        "text": "How should learners test whether the drill bit fits properly inside the guide holes during 'Examine the 3D-printed drill template'?",
+        "why": "Ensures the guide holes are accurately sized before attempting to mark and drill.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s03:missing:purpose"
+        ],
+        "text": "What material or specifications are recommended for 3D printing the drill template in 'Examine the 3D-printed drill template'?",
+        "why": "Provides clarity on template durability and accuracy.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s04:missing:tool"
+        ],
+        "text": "What specific tool or marker should be used to mark the hole locations through the template in 'Position template and mark hole locations'?",
+        "why": "Ensures accurate alignment marks on the printer frame.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s05:missing:safety",
+          "s06:missing:safety",
+          "s15:missing:safety"
+        ],
+        "text": "What personal protective equipment, such as eye protection, should be worn while drilling and modifying components?",
+        "why": "Prevents injury from flying metal or plastic debris during drilling and hole enlargement.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s05:missing:setting"
+        ],
+        "text": "What drill speed or torque setting should be used when drilling pilot holes into the printer frame?",
+        "why": "Prevents damage to the printer frame or drill bit.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s06:missing:tool"
+        ],
+        "text": "What type of power drill is recommended for 'Enlarge pilot holes to 1/8 inch'?",
+        "why": "Helps learners choose appropriate equipment for modifying metal parts.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s07:missing:tool"
+        ],
+        "text": "What type or brand of manual deburring tool works best for 'Deburr the printer part'?",
+        "why": "Guides learners in selecting an effective tool for clean hole edges.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s07:missing:other"
+        ],
+        "text": "How should the printed part be held and oriented while deburring in 'Deburr the printer part'?",
+        "why": "Ensures smooth deburring without damaging adjacent surfaces.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s08:missing:tool"
+        ],
+        "text": "What type of vacuum attachment is recommended for 'Vacuum printer debris'?",
+        "why": "Prevents damage to delicate printer rails during cleaning.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s08:missing:duration"
+        ],
+        "text": "How long should the rails and case bottom be vacuumed in 'Vacuum printer debris'?",
+        "why": "Ensures all abrasive debris is removed.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s09:missing:other"
+        ],
+        "text": "How should the backing plate and wiper assembly be oriented and fitted together in 'Position backing plate and wiper'?",
+        "why": "Prevents misaligned installation of the backing plate.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s09:missing:tool"
+        ],
+        "text": "Is any tape or holding aid recommended when positioning the backing plate in 'Position backing plate and wiper'?",
+        "why": "Assists learners in holding parts in place in tight spaces.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s10:missing:setting"
+        ],
+        "text": "What size hex driver is needed for the center screw in 'Thread center screw loosely and align plate'?",
+        "why": "Ensures the learner uses the correct driver bit for initial threading.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s11:missing:other",
+          "s16:missing:setting"
+        ],
+        "text": "Following up on tool selection, how much tightness or torque should be applied when securing the center screw and wiper plate screws?",
+        "why": "Prevents over-tightening which warps the mounting plate and causes misalignment.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "c:s16:conflict:d01:1",
+          "c:s17:conflict:d01:1",
+          "s16:missing:tool",
+          "s17:missing:tool"
+        ],
+        "text": "Since this mod replaces stock screws, should the tutorial explicitly instruct learners to use a hex driver instead of the standard manual's key for 'Position and tighten the wiper plate' and 'Confirm wiper assembly replacement without recalibration'?",
+        "why": "Resolves conflict with official documentation tool specifications.",
+        "answer_type": "yes_no",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "c:s16:conflict:d01:2",
+          "c:s17:conflict:d01:2",
+          "s17:missing:quantity",
+          "s12:missing:other"
+        ],
+        "text": "To clarify differences from the single-screw factory wiper, should the step explicitly state that this mod uses three screws across the backing and wiper plates?",
+        "why": "Resolves conflict between factory manual single-screw setup and modification multi-screw setup.",
+        "answer_type": "yes_no",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s13:missing:purpose"
+        ],
+        "text": "What specific operational issue occurs if the wiper fails to move freely during 'Test Fit Wiper in Backing Plate'?",
+        "why": "Helps learners understand why checking free movement is critical before final assembly.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s14:missing:outcome"
+        ],
+        "text": "What action should be taken if the wiper binds or lacks play during 'Verify wiper alignment'?",
+        "why": "Directs the learner on corrective troubleshooting steps before proceeding.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s15:missing:tool"
+        ],
+        "text": "Following up on driver info, what specific tool should be used to enlarge the wiper mounting holes in 'Enlarge wiper mounting holes'?",
+        "why": "Identifies the correct tool needed to relieve binding in mounting holes.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s18:missing:other"
+        ],
+        "text": "Should the sweeping motion in 'Perform the original X-axis wipe cycle' be performed manually by hand or using a tool?",
+        "why": "Clarifies the execution method for demonstrating the sweep path.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s19:missing:quantity"
+        ],
+        "text": "How many scrubbing passes should be performed in 'Perform a wiper nub scrubbing motion'?",
+        "why": "Defines the required repetition count for effective cleaning.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s19:missing:purpose"
+        ],
+        "text": "What is the primary cleaning benefit of the nub scrubbing motion in 'Perform a wiper nub scrubbing motion'?",
+        "why": "Explains why nub scrubbing is required during maintenance.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "s20:missing:other"
+        ],
+        "text": "What distance or visual clearance is required between the nozzle tip and wiper nubs in 'Verify nozzle clearance with wiper nubs'?",
+        "why": "Prevents nozzle collision and equipment damage during printing.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s20:missing:safety"
+        ],
+        "text": "Following up on power rules, should the printer remain powered off while manually inspecting nozzle clearance near the wiper nubs?",
+        "why": "Prevents accidental toolhead movement injuries during visual inspection.",
+        "answer_type": "yes_no",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s21:missing:other"
+        ],
+        "text": "Which printer firmware version includes the three-stage nozzle scrubbing routine described in 'Understand the Nozzle Wiper Update'?",
+        "why": "Informs learners which software version supports the updated wipe cycle.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 3
+      },
+      {
+        "gap_keys": [
+          "c:s22:conflict:d01:1",
+          "c:s22:conflict:d01:2"
+        ],
+        "text": "To address standard manual safety rules, should the tutorial instruct powering the printer on only for the console check in 'Calibrate Nozzle Position via G-Code'?",
+        "why": "Resolves conflict between power-off maintenance rules and console verification requirements.",
+        "answer_type": "yes_no",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s22:missing:other"
+        ],
+        "text": "Following up on tool details, what is the exact touchscreen menu sequence to navigate to the G-code console in 'Calibrate Nozzle Position via G-Code'?",
+        "why": "Allows learners to locate the G-code entry screen on their printer interface.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      },
+      {
+        "gap_keys": [
+          "s22:missing:other:2"
+        ],
+        "text": "Following up on command entry, what specific Y-axis G-code command and coordinates should be sent in 'Calibrate Nozzle Position via G-Code'?",
+        "why": "Provides the necessary command for accurate nozzle position testing.",
+        "answer_type": "free_text",
+        "choices": [],
+        "priority": 1
+      }
+    ]
+  }
+}

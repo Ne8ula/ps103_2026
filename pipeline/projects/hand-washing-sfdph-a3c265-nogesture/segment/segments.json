@@ -1,0 +1,162 @@
+{
+  "segments": [
+    {
+      "id": "s01",
+      "start": 0.0,
+      "end": 7.92,
+      "summary": "[fake LLM] Narrated: \"Welcome to the handwashing video. The most important thing you\"",
+      "rationale": "[fake LLM] starts at start (window edge); merges 1 candidate interval(s)",
+      "confidence": 0.5,
+      "llm_calls": [
+        "segment_steps-f1cb40cebe94622396ff"
+      ]
+    },
+    {
+      "id": "s02",
+      "start": 7.92,
+      "end": 13.4,
+      "summary": "[fake LLM] Narrated: \"Here is how. Step 1. Wash your hands with running\"",
+      "rationale": "[fake LLM] starts at b01 (hands_enter, hands_exit, motion_pause, scene_cut); merges 4 candidate interval(s)",
+      "confidence": 0.74,
+      "llm_calls": [
+        "segment_steps-f1cb40cebe94622396ff"
+      ]
+    },
+    {
+      "id": "s03",
+      "start": 13.4,
+      "end": 18.0,
+      "summary": "[fake LLM] Narrated: \"Step 2. Rub your hands for at least 20 seconds.\"",
+      "rationale": "[fake LLM] starts at b05 (hand_state_change, hands_exit, narration_pause, scene_cut); merges 3 candidate interval(s)",
+      "confidence": 0.8,
+      "llm_calls": [
+        "segment_steps-f1cb40cebe94622396ff"
+      ]
+    },
+    {
+      "id": "s04",
+      "start": 18.0,
+      "end": 21.0,
+      "summary": "[fake LLM] Narrated: \"Remember to wash the back of your hands in between\"",
+      "rationale": "[fake LLM] starts at b08 (hand_state_change, hands_enter); merges 2 candidate interval(s)",
+      "confidence": 0.65,
+      "llm_calls": [
+        "segment_steps-c107d25446f025837fe2"
+      ]
+    },
+    {
+      "id": "s05",
+      "start": 21.0,
+      "end": 25.12,
+      "summary": "[fake LLM] Narrated: \"under your nails, as well as your wrists and thumbs.\"",
+      "rationale": "[fake LLM] starts at b10 (hand_state_change, motion_pause); merges 2 candidate interval(s)",
+      "confidence": 0.45,
+      "llm_calls": [
+        "segment_steps-594454b035f8483355f5"
+      ]
+    },
+    {
+      "id": "s06",
+      "start": 25.12,
+      "end": 30.2,
+      "summary": "[fake LLM] Narrated: \"Step 3. Rinse your hands and dry them with paper\"",
+      "rationale": "[fake LLM] starts at b12 (hand_state_change, hands_exit); merges 4 candidate interval(s)",
+      "confidence": 0.66,
+      "llm_calls": [
+        "segment_steps-4bac3d9cd40a508021f3"
+      ]
+    },
+    {
+      "id": "s07",
+      "start": 30.2,
+      "end": 36.2,
+      "summary": "[fake LLM] Narrated: \"If you have concerns with the cleanliness of your surroundings,\"",
+      "rationale": "[fake LLM] starts at b16 (hand_state_change, hands_enter, hands_exit, scene_cut); merges 5 candidate interval(s)",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-c2026fd2efdca1fc4597"
+      ]
+    },
+    {
+      "id": "s08",
+      "start": 36.2,
+      "end": 41.2,
+      "summary": "[fake LLM] Narrated: \"to help with the door. If you are at home,\"",
+      "rationale": "[fake LLM] starts at b21 (hand_state_change, motion_pause); merges 3 candidate interval(s)",
+      "confidence": 0.78,
+      "llm_calls": [
+        "segment_steps-05cae4fed3f2cb8112b5"
+      ]
+    },
+    {
+      "id": "s09",
+      "start": 41.2,
+      "end": 44.0,
+      "summary": "[fake LLM] Activity from 41.2s to 44.0s",
+      "rationale": "[fake LLM] starts at b24 (hand_state_change, hands_enter, hands_exit); merges 2 candidate interval(s)",
+      "confidence": 0.65,
+      "llm_calls": [
+        "segment_steps-7c3cb1fd7e5ff8e8effd"
+      ]
+    },
+    {
+      "id": "s10",
+      "start": 44.0,
+      "end": 47.72,
+      "summary": "[fake LLM] Narrated: \"If you don't have soap and water available, you can\"",
+      "rationale": "[fake LLM] starts at b26 (hand_state_change, hands_exit, narration_pause, scene_cut); merges 2 candidate interval(s)",
+      "confidence": 0.82,
+      "llm_calls": [
+        "segment_steps-d28d0e4d550d7c53fe2e"
+      ]
+    },
+    {
+      "id": "s11",
+      "start": 47.72,
+      "end": 51.32,
+      "summary": "[fake LLM] Narrated: \"contains at least 60% alcohol to clean your hands.\"",
+      "rationale": "[fake LLM] starts at b28 (hand_state_change, hands_exit, scene_cut); merges 2 candidate interval(s)",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-d28d0e4d550d7c53fe2e"
+      ]
+    },
+    {
+      "id": "s12",
+      "start": 51.32,
+      "end": 53.4,
+      "summary": "[fake LLM] Narrated: \"For more information, please visit sfdph.org.\"",
+      "rationale": "[fake LLM] starts at b30 (hand_state_change, hands_enter, hands_exit); merges 1 candidate interval(s)",
+      "confidence": 0.9,
+      "llm_calls": [
+        "segment_steps-d28d0e4d550d7c53fe2e"
+      ]
+    },
+    {
+      "id": "s13",
+      "start": 53.4,
+      "end": 58.32,
+      "summary": "[fake LLM] Activity from 53.4s to 58.3s",
+      "rationale": "[fake LLM] starts at b31 (hand_state_change, hands_enter, hands_exit, scene_cut); merges 2 candidate interval(s)",
+      "confidence": 0.68,
+      "llm_calls": [
+        "segment_steps-d28d0e4d550d7c53fe2e"
+      ]
+    }
+  ],
+  "notes": [
+    "content range 0.0-58.3s of 58.3s; 33 candidate intervals; 10 window(s); gesture text off",
+    "window 0: [fake LLM] window 0: 12 intervals -> 5 steps",
+    "window 1: [fake LLM] window 1: 12 intervals -> 5 steps",
+    "window 2: [fake LLM] window 2: 12 intervals -> 5 steps",
+    "window 3: [fake LLM] window 3: 12 intervals -> 4 steps",
+    "window 4: [fake LLM] window 4: 12 intervals -> 4 steps",
+    "window 5: [fake LLM] window 5: 12 intervals -> 3 steps",
+    "window 6: [fake LLM] window 6: 12 intervals -> 4 steps",
+    "window 7: [fake LLM] window 7: 12 intervals -> 4 steps",
+    "window 8: [fake LLM] window 8: 12 intervals -> 5 steps",
+    "window 9: [fake LLM] window 9: 11 intervals -> 6 steps"
+  ],
+  "content_start": 0.0,
+  "content_end": 58.32
+}
