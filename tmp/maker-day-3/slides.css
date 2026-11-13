@@ -1,0 +1,232 @@
+
+/* Maker Day 3: experiment slides on the Maker Day 2 system.
+   Each slide has one focal visual. In every chart, blue is BenchMate, grey is the comparison,
+   an open outline is a reference, and lime marks a threshold or a highlight. */
+:root {--context:#B4B8C5;}
+.md3 .head {padding:0 42px;}
+.md3 .head-right {font-size:15px;}
+.md3 .foot {position:absolute;left:0;right:0;bottom:0;height:38px;padding:0 42px;font-size:12px;background:rgba(252,253,255,.8);}
+.md3-intro {height:164px;padding:30px 42px 0;}
+.md3-intro h1 {font:700 58px/1.15 var(--heading);letter-spacing:-2.5px;margin:0 0 9px;text-wrap:initial;}
+.md3-intro p {font:400 23px/1.5 var(--body);letter-spacing:-.7px;color:var(--secondary);margin:0;}
+.md3-label {font:400 16px/1.4 var(--technical);color:var(--blue);margin:0 0 16px;}
+.md3-status {display:inline-block;font:400 14px/1 var(--technical);letter-spacing:0;background:var(--lime);color:var(--blue);padding:6px 8px;margin-right:14px;vertical-align:3px;}
+.md3-note {font:400 13px/1.5 var(--body);color:var(--secondary);margin:12px 42px 0;}
+.md3-takeaway {margin:20px 42px 0;border-left:8px solid var(--lime);background:var(--cloud);padding:16px 26px;}
+.md3-takeaway h2 {font:400 14px/1.4 var(--technical);color:var(--blue);margin:0 0 8px;}
+.md3-takeaway p {font:500 25px/1.3 var(--heading);letter-spacing:-.6px;margin:0;}
+.md3-figure {margin:0;}
+.md3-figure img {display:block;width:100%;height:auto;border:1px solid var(--rule);}
+.md3-figure figcaption {font:400 13px/1.5 var(--body);color:var(--secondary);margin-top:7px;}
+.md3-quote {margin:14px 0 0;padding-left:18px;border-left:4px solid var(--blue);}
+.md3-quote p {font:500 20px/1.3 var(--heading);letter-spacing:-.4px;margin:0;}
+.md3-quote cite {display:block;font:400 13px/1.5 var(--body);color:var(--secondary);font-style:normal;margin-top:6px;}
+.hero-number {font:700 120px/1 var(--heading);letter-spacing:-6px;color:var(--blue);margin:0;}
+.hero-caption {font:500 26px/1.25 var(--heading);letter-spacing:-.6px;margin:8px 0 0;}
+.plan-tag {display:inline-block;font:400 14px var(--technical);background:var(--lime);color:var(--blue);padding:5px 8px;white-space:nowrap;}
+
+/* Unit blocks: one square per counted item. */
+.units {display:inline-flex;gap:4px;vertical-align:middle;}
+.units i {width:22px;height:22px;background:var(--blue);}
+.units i.context {background:var(--context);}
+.units i.open {background:transparent;box-shadow:inset 0 0 0 2px var(--ink);}
+.units i.half {background:linear-gradient(90deg,var(--blue) 50%,transparent 50%);box-shadow:inset 0 0 0 2px var(--blue);}
+.units + .units {margin-left:10px;}
+
+/* Horizontal bars: name, bar drawn to scale, value at the bar's end. */
+.hbar {display:grid;grid-template-columns:var(--name,200px) 1fr;align-items:center;min-height:52px;}
+.hbar + .hbar {margin-top:16px;}
+.hbar-name {font:500 24px/1.2 var(--heading);letter-spacing:-.5px;}
+.hbar-plot {display:flex;align-items:center;}
+.hbar-plot i {display:block;height:44px;background:var(--context);}
+.hbar-plot i.range {background:repeating-linear-gradient(135deg,var(--context) 0 3px,transparent 3px 8px);box-shadow:inset 0 0 0 1px var(--context);}
+.hbar-plot i.zero {width:2px;}
+.hbar.is-benchmate .hbar-plot i {background:var(--blue);}
+.hbar-plot b {font:700 40px/1 var(--heading);letter-spacing:-1.4px;margin-left:16px;white-space:nowrap;}
+.hbar.is-benchmate .hbar-plot b {color:var(--blue);}
+.hbar-plot small {font:400 15px/1.3 var(--body);letter-spacing:-.3px;color:var(--secondary);margin-left:12px;}
+
+/* Customer & wedge: three steps left to right; the wedge itself is the filled one. */
+.wedge-path {display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:0 42px;height:372px;}
+.wedge-step {position:relative;min-width:0;border-top:2px solid var(--blue);padding:22px 24px 0;background:rgba(255,255,255,.4);}
+.wedge-step + .wedge-step::before {content:'→';position:absolute;left:-19px;top:25px;font:400 16px var(--body);color:var(--blue);}
+.wedge-stage {display:flex;align-items:center;gap:12px;font:400 14px var(--technical);color:var(--blue);margin:0;}
+.wedge-step h2 {font:700 40px/1.1 var(--heading);letter-spacing:-1.4px;margin:26px 0 14px;}
+.wedge-who {font:500 24px/1.3 var(--heading);letter-spacing:-.5px;margin:0 0 10px;}
+.wedge-why {font:400 17px/1.45 var(--body);letter-spacing:-.3px;color:var(--secondary);margin:0;}
+.wedge-status {position:absolute;left:24px;right:24px;bottom:18px;font:400 13px/1.4 var(--technical);color:var(--blue);border-top:1px solid var(--rule);padding-top:12px;margin:0;}
+.wedge-step.is-now {background:var(--blue);color:white;}
+.wedge-step.is-now .wedge-stage, .wedge-step.is-now .wedge-status {color:var(--lime);}
+.wedge-step.is-now .wedge-why {color:rgba(255,255,255,.85);}
+.wedge-step.is-now .wedge-status {border-color:rgba(255,255,255,.3);}
+
+/* Tallest tales: the risk matrix is the picture, the top five are the legend. */
+.tales {display:grid;grid-template-columns:560px minmax(0,1fr);gap:56px;margin:0 42px;height:520px;}
+.tales-matrix {margin:0;}
+.tales-matrix svg {display:block;width:560px;height:500px;overflow:visible;}
+.matrix-axis {font:400 15px var(--body);fill:var(--secondary);}
+.matrix-title {font:400 13px var(--technical);fill:var(--blue);}
+.matrix-risk {font:400 12px var(--technical);fill:var(--secondary);}
+.matrix-id {font:700 15px var(--heading);fill:var(--blue);}
+.tales-list ol {list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);}
+.tales-list li {display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:18px;align-items:center;padding:13px 0;border-bottom:1px solid var(--rule);}
+.tales-score {margin:0;display:flex;flex-direction:column;}
+.tales-score strong {font:700 44px/1 var(--heading);letter-spacing:-1.5px;color:var(--blue);}
+.tales-score span {font:400 14px/1.4 var(--body);color:var(--secondary);margin-top:4px;}
+.tales-list h3 {font:500 25px/1.2 var(--heading);letter-spacing:-.6px;margin:0 0 5px;}
+.tales-list h3 span {color:var(--blue);}
+.tales-list li p:last-child {font:400 16px/1.4 var(--body);letter-spacing:-.3px;color:var(--secondary);margin:0;}
+
+/* Three experiments: question on top, the pass line as the anchor at the bottom. */
+.experiments .logic-conditions {height:440px;}
+.experiments .logic-condition {display:flex;flex-direction:column;}
+.experiments .logic-condition-label {margin-bottom:0;}
+.exp-top {display:flex;align-items:center;justify-content:space-between;height:66px;margin-bottom:14px;color:var(--blue);}
+.experiments .logic-condition h2 {font-size:28px;line-height:1.2;min-height:68px;margin-bottom:16px;}
+.exp-facts {margin:0;}
+.exp-facts div {display:grid;grid-template-columns:112px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--rule);}
+.exp-facts dt {font:400 13px/1.8 var(--technical);color:var(--blue);}
+.exp-facts dd {margin:0;font:400 17px/1.4 var(--body);letter-spacing:-.4px;}
+.exp-pass {margin:auto 0 0;background:var(--lime);padding:13px 16px 14px;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;}
+.exp-pass span {grid-column:1 / 3;font:400 12px/1.4 var(--technical);color:var(--blue);margin-bottom:4px;}
+.exp-pass strong {font:700 44px/1 var(--heading);letter-spacing:-1.6px;color:var(--blue);white-space:nowrap;}
+.exp-pass em {font:400 15px/1.35 var(--body);letter-spacing:-.3px;font-style:normal;}
+
+/* Path: four steps left to right; each is a finish date, a cost bar (12px per hour) and its one constraint. */
+.path-steps {display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:0 42px;height:372px;}
+.path-step {position:relative;min-width:0;border-top:2px solid var(--blue);padding:22px 16px 0;background:rgba(255,255,255,.4);}
+.path-step + .path-step::before {content:'→';position:absolute;left:-19px;top:25px;font:400 16px var(--body);color:var(--blue);}
+.path-number {display:inline-block;font:400 18px var(--technical);background:var(--lime);color:var(--blue);padding:6px 8px;}
+.path-step h2 {font:500 28px/1.2 var(--heading);letter-spacing:-.7px;color:var(--blue);margin:18px 0 0;}
+.path-date {font:700 72px/1 var(--heading);letter-spacing:-3px;margin:30px 0 28px;}
+.path-date span {display:block;font:400 12px/1.4 var(--technical);letter-spacing:0;color:var(--secondary);margin-bottom:8px;}
+.path-cost {display:flex;align-items:center;gap:10px;}
+.path-cost i {display:block;height:14px;background:var(--blue);}
+.path-cost i.range {background:repeating-linear-gradient(135deg,var(--blue) 0 3px,transparent 3px 7px);box-shadow:inset 0 0 0 1px var(--blue);margin-left:-10px;}
+.path-cost b {font:500 24px/1 var(--heading);letter-spacing:-.4px;white-space:nowrap;}
+.path-needs {font:400 16px/1.45 var(--body);letter-spacing:-.3px;color:var(--secondary);margin:16px 0 0;}
+
+/* Experiment 1: the miss is the hero, what holds sits beside it. */
+.e1 {display:grid;grid-template-columns:640px minmax(0,1fr);gap:56px;margin:0 42px;height:372px;}
+.e1-figure {display:flex;align-items:baseline;gap:18px;margin:0;}
+.e1-figure strong {font:700 112px/1 var(--heading);letter-spacing:-5px;color:var(--blue);}
+.e1-figure strong.reference {color:var(--ink);}
+.e1-figure span {font:400 24px var(--body);color:var(--secondary);}
+.e1-rows {margin-top:20px;}
+.e1-rows div {display:grid;grid-template-columns:118px 1fr;align-items:center;height:30px;font:400 15px var(--body);color:var(--secondary);}
+.e1-rows .units i {width:18px;height:18px;}
+.e1-f1 {margin-top:20px;padding-top:16px;border-top:1px solid var(--rule);display:grid;grid-template-columns:118px 1fr;align-items:center;font:400 15px/1.4 var(--body);color:var(--secondary);}
+.e1-track {position:relative;height:10px;width:480px;background:var(--cloud);box-shadow:inset 0 0 0 1px var(--rule);}
+.e1-track i {position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--blue);}
+.e1-track b {position:absolute;left:80%;top:-8px;bottom:-8px;width:3px;background:var(--ink);}
+.e1-track span {position:absolute;top:-30px;font:400 13px var(--body);white-space:nowrap;}
+.e1-track span.value {left:0;font:700 22px/1 var(--heading);color:var(--blue);top:-34px;}
+.e1-track span.target {left:80%;transform:translateX(-50%);}
+.e1-holds {border-left:1px solid var(--rule);padding-left:44px;}
+.e1-grid {display:grid;grid-template-columns:190px 1fr 1fr;align-items:center;row-gap:0;}
+.e1-grid > * {height:58px;display:flex;align-items:center;border-bottom:1px solid var(--rule);}
+.e1-grid .col {height:34px;font:400 13px var(--body);color:var(--secondary);}
+.e1-grid .name {font:500 23px var(--heading);letter-spacing:-.5px;}
+.e1-grid b {font:500 22px var(--heading);letter-spacing:-.4px;margin-left:12px;}
+.e1-also {font:400 16px/1.5 var(--body);letter-spacing:-.3px;color:var(--secondary);margin:20px 0 0;}
+
+/* Experiment 2: one headline number, the cautions behind it, what went to the expert. */
+.e2 {display:grid;grid-template-columns:470px minmax(0,1fr) 440px;gap:44px;margin:0 42px;height:372px;}
+.e2-cautions {margin-top:26px;}
+.e2-cautions h3 {font:400 12px/1.4 var(--technical);color:var(--secondary);margin:0 0 10px;}
+.e2-row {display:grid;grid-template-columns:148px 1fr;align-items:center;height:34px;font:500 19px var(--heading);letter-spacing:-.4px;}
+.e2-row b {font:500 20px var(--heading);margin-left:10px;}
+.e2-legend {display:flex;gap:16px;font:400 13px/1 var(--body);color:var(--secondary);margin:12px 0 0;}
+.e2-legend .units i {width:12px;height:12px;}
+.e2-legend span {display:inline-flex;align-items:center;gap:6px;}
+.e2-expert {border-left:1px solid var(--rule);padding-left:40px;}
+.e2-counters {margin:0;}
+.e2-counters div {display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--rule);}
+.e2-counters dd {font:700 46px/1 var(--heading);letter-spacing:-1.8px;color:var(--blue);margin:0;white-space:nowrap;}
+.e2-counters dt {order:1;font:400 16px/1.4 var(--body);letter-spacing:-.3px;}
+.e2-counters .units {display:flex;margin-top:8px;}
+.e2-counters .units i {width:16px;height:16px;}
+
+/* Experiment 3: bars drawn to scale, with the saving as the single callout. */
+.e3a {display:grid;grid-template-columns:minmax(0,1fr) 480px;gap:48px;margin:0 42px;height:420px;}
+.e3a-foot {font:400 16px/1.5 var(--body);letter-spacing:-.3px;color:var(--secondary);margin:18px 0 30px;}
+.chips {list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.chips li {display:flex;align-items:center;gap:10px;padding:13px 14px;border:1px solid var(--rule);background:rgba(255,255,255,.6);font:500 18px/1.2 var(--heading);letter-spacing:-.3px;white-space:nowrap;}
+.chips li::before {content:'';flex:none;width:9px;height:9px;background:var(--blue);}
+.e3b {display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:56px;margin:0 42px;height:440px;}
+.e3b-row {display:grid;grid-template-columns:220px minmax(0,1fr);gap:26px;align-items:center;}
+.e3b-row + .e3b-row {margin-top:30px;}
+.e3b-row img {display:block;width:220px;height:165px;object-fit:cover;border:1px solid var(--rule);}
+.e3b-row h3 {font:400 14px/1.4 var(--technical);color:var(--secondary);margin:0 0 8px;}
+.e3b-row .hbar {display:block;min-height:0;}
+.e3b-row .hbar-plot i {height:56px;}
+.e3b-row .hbar-plot b {font-size:64px;letter-spacing:-3px;}
+.e3b-row blockquote {margin:12px 0 0;font:500 20px/1.35 var(--heading);letter-spacing:-.4px;}
+.e3b-hero {background:var(--blue);color:white;padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:center;height:404px;margin-top:36px;}
+.e3b-hero h2 {font:400 15px var(--technical);color:var(--lime);margin:0 0 20px;}
+.e3b-hero .hero-number {color:white;font-size:150px;letter-spacing:-8px;}
+.e3b-hero .hero-caption {font-size:28px;margin-top:14px;}
+.e3b-threshold {font:400 15px/1.5 var(--technical);color:var(--lime);margin:26px 0 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.3);}
+.e3c {display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:48px;margin:0 42px;height:420px;}
+.e3c .hbar {--name:230px;}
+.e3c-callout {display:flex;align-items:center;gap:24px;margin:36px 0 0;}
+.e3c-callout strong {font:700 64px/1 var(--heading);letter-spacing:-2.6px;color:var(--blue);background:var(--lime);padding:12px 16px;white-space:nowrap;}
+.e3c-callout span {font:500 26px/1.3 var(--heading);letter-spacing:-.6px;}
+.e3c-callout small {display:block;font:400 15px/1.5 var(--body);letter-spacing:-.3px;color:var(--secondary);margin-top:4px;}
+.e3c-quality {border-left:1px solid var(--rule);padding-left:40px;}
+.e3c-quality img {display:block;width:100%;height:270px;object-fit:cover;border:1px solid var(--rule);}
+.e3c-quality p {font:500 26px/1.3 var(--heading);letter-spacing:-.6px;margin:18px 0 0;}
+
+/* What changed: one figure per experiment, one line to build next. */
+.learnings .logic-conditions {height:420px;}
+.learnings .exp-top {margin-bottom:8px;}
+.learn-figure {font:700 84px/1 var(--heading);letter-spacing:-4px;color:var(--blue);margin:0;}
+.learn-figure small {font:400 26px var(--body);letter-spacing:-.5px;color:var(--secondary);margin:0 10px;}
+.learn-caption {font:400 16px/1.4 var(--body);letter-spacing:-.3px;color:var(--secondary);margin:6px 0 20px;}
+.learnings .logic-condition h2 {min-height:0;margin-bottom:0;font-size:28px;}
+.learn-next {margin:auto 0 0;background:var(--lime);padding:13px 16px 15px;}
+.learn-next span {display:block;font:400 12px/1.4 var(--technical);color:var(--blue);margin-bottom:6px;}
+.learn-next p {font:500 21px/1.3 var(--heading);letter-spacing:-.4px;margin:0;}
+
+/* Fixes after the first render. */
+.experiments .logic-condition > .exp-pass {margin:auto 0 0;max-width:none;}
+.e1-grid {grid-template-columns:232px 1fr 1fr;}
+.e1-grid .name {font-size:21px;white-space:nowrap;}
+.e1-f1 {margin-top:22px;padding-top:50px;}
+.e2-counters .units {display:inline-flex;margin-top:8px;}
+.e2-counters .units + .units {margin-left:4px;}
+.e3a {height:470px;}
+.e3a .hbar + .hbar, .e3c .hbar + .hbar {margin-top:24px;}
+.e3a .hbar-plot i, .e3c .hbar-plot i {height:58px;}
+.e3a .hbar-plot b, .e3c .hbar-plot b {font-size:48px;letter-spacing:-1.8px;}
+.e3a-foot {margin:24px 0 36px;}
+.chips li {padding:16px 14px;}
+.e3c {height:470px;}
+.e3c-callout {margin-top:44px;}
+.learn-next {min-height:106px;}
+.experiments .logic-condition > p.exp-pass:last-child {margin:auto 0 0;max-width:none;}
+
+/* Experiment slides: title and status on one line, then what is tested, how, the behavior and the pass line. */
+.md3-intro.has-spec {height:108px;display:flex;align-items:center;gap:22px;}
+.md3-intro.has-spec h1 {margin:0;}
+.md3-intro.has-spec .md3-status {margin:6px 0 0;}
+.exp-spec {display:grid;grid-template-columns:repeat(4,1fr);margin:0 42px 20px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.exp-spec div {padding:10px 16px 11px 0;min-width:0;}
+.exp-spec div + div {padding-left:16px;border-left:1px solid var(--rule);}
+.exp-spec .pass {background:var(--lime);}
+.exp-spec dt {font:400 12px/1.4 var(--technical);color:var(--blue);margin-bottom:3px;}
+.exp-spec dd {font:500 17px/1.35 var(--heading);letter-spacing:-.3px;margin:0;}
+.exp-facts dd b {display:block;font:500 19px/1.3 var(--heading);letter-spacing:-.3px;margin-bottom:2px;}
+.nb {white-space:nowrap;}
+
+/* Slides 2 and 4 pared back: a name, the type, the behavior, the pass line. */
+.wedge-path {height:300px;}
+.wedge-step h2 {font-size:44px;}
+.wedge-who {font-size:28px;}
+#slide-experiments .logic-conditions {height:500px;}
+#slide-experiments .logic-condition h2 {font-size:40px;letter-spacing:-1.2px;min-height:0;margin-bottom:28px;}
+#slide-experiments .exp-facts div {padding:18px 0;align-items:baseline;}
+#slide-experiments .exp-facts dd {font:500 22px/1.3 var(--heading);letter-spacing:-.4px;}
+#slide-experiments .exp-pass {padding:18px 20px 20px;}
+#slide-experiments .exp-pass strong {font-size:60px;letter-spacing:-2.4px;}
+#slide-experiments .exp-pass em {font-size:18px;}

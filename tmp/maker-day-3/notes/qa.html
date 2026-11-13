@@ -1,0 +1,78 @@
+<header><p class="kicker">BenchMate · Team 103 · Maker Day 3</p><h1>Q&amp;A Prep</h1>
+<p class="lede">Fifteen minutes is room for roughly 12 to 15 questions. Below are the 29 most likely, each with an answer you can give in under 40 seconds.</p></header>
+
+<p class="key"><span class="fill">Lime</span> = we could not find this in the deck, the plan or the cards. Agree the answer as a team before the session.</p>
+
+<section class="notes"><h2>How To Answer</h2>
+<ul>
+<li><b>Answer first, one number, stop.</b> One sentence that answers, one figure that backs it, then let them ask the follow-up.</li>
+<li><b>Concede the limit before they find it.</b> “Yes, that is one learner per condition” lands better than a defense. Then say what the next run fixes.</li>
+<li><b>One voice per area.</b> Decide now who takes the plan (Q1–5), experiment design (Q6–11), results (Q12–19), path (Q20–22), product (Q23–24) and the critics’ feedback (Q25–29).</li>
+<li><b>If you do not know.</b> “We have not measured that yet. It is hypothesis number X in the register, and here is the test we planned for it.”</li>
+</ul></section>
+
+<section><h2>Numbers To Know Cold</h2>
+<table class="facts">
+<tr><th>Register</th><td>29 hypotheses. Doubt and importance each 1–3. Four score 9 (#9, #13, #27, #28); five score 6, including #7. Scarce resource: combined team-person hours.</td></tr>
+<tr><th>Thresholds</th><td>Exp 1: ≥80% steps recovered in order, ≥80% key hand poses, 0 critical omissions. Exp 2: ≥3 of 4 novices choose to follow at both decision points. Exp 3: ≥30% time saved, ≥80% competency pass, 0 safety omissions.</td></tr>
+<tr><th>Cost</th><td>Extraction 11 h + safety check 8 h = 19 h. Latency 4 h. Trust test ~6 h. MakerLAB pilot 12–16 h.</td></tr>
+<tr><th>Exp 1</th><td>Two videos. Facts 6/6 and 7/7, gap topics 2/2 and 2/2 (keyword checks). Uncut video: 22 steps generated vs 7 reference, boundary F1 0.00 at ±5 s. Human-edited video: 4 of 6 steps, F1 0.75 at ±2 s.</td></tr>
+<tr><th>Exp 2</th><td>Two runs. Warnings in the video all kept: 4 of 4 (X1C) and 3 of 3 (soldering). Added: 4 and 6. Sent to the expert: 6 SOP conflicts, 3 key steps. SOP steps covered: 5 of 6 fully. One wrong caution (“pins” for “iron”).</td></tr>
+<tr><th>Exp 3</th><td>Expert: 4:33 to record + ~28 min active (2 min × 14 steps) = ~33 min, plus ~20 min unattended compute; manual edit 40–60 min. Learner: 19:00 with YouTube (the video itself is 6:45) vs 5:14 with BenchMate = 72% less. For 20 learners: 20 × 4:33 = 1 h 31 min in person vs ~33 min once = 58 min saved, about 64%. Break-even at the eighth learner.</td></tr>
+</table></section>
+
+<section><h2>The De-Risking Plan</h2>
+<div class="qa"><h3>1. How did you score doubt and importance?</h3><p>Each on a one-to-three scale. Doubt is how little evidence we have; importance is how badly the venture breaks if the hypothesis is false. We listed 29, tagged each as demand, supply or value, scored every row, and multiplied. Four came out at nine and five at six.</p></div>
+<div class="qa"><h3>2. Four hypotheses tie at nine. Why test #9 and #28 but not #13 or #27?</h3><p>Both are in the plan; neither could run first. #27, response time, is the cheapest per point of risk at four hours, but it needs a stable API and model, and our pipeline is still changing. It runs next: 30 timed requests on a phone, pass at 95th percentile under three seconds. #13, sharing proprietary SOPs, needs five enterprise leads who can authorize it. Our wedge at MakerLAB works with public and authorized manuals, so it does not block us yet.</p></div>
+<div class="qa"><h3>3. Why does a risk-six hypothesis, #7, go first?</h3><p>Because of a constraint, not its score. The learner pilot needs a tutorial that extraction produces, and the trust test needs content an expert has checked. If extraction fails, the experiments on the nines have nothing to test.</p></div>
+<div class="qa"><h3>4. What is your scarce resource, and how did you count cost?</h3><p>Combined team-person hours. Each estimate includes recruiting, setup, building, running the test and reading the results. They are estimates, not logged actuals.</p></div>
+<div class="qa"><h3>5. Are these demand, supply or value risks?</h3><p>A mix, on purpose. #9 is value, #13 and #28 are demand, #27 and #7 are supply. Our three experiments cover one of each.</p></div>
+</section>
+
+<section><h2>Experiment Design</h2>
+<div class="qa"><h3>6. Experiment 1 measures a model, not a customer. Is that a behavior?</h3><p>It is a supply-side hypothesis, so what we measure is the system’s output against expert labels. The customer behaviors are in the other two: whether a novice chooses to continue with the AI’s guidance, and whether a trainee completes the task correctly, timed.</p></div>
+<div class="qa"><h3>7. Were the thresholds really set before you ran?</h3><p>Yes for all three: they are in the register and on the experiment cards. One thing to be upfront about: for Experiment 1 we added a boundary F1 of 0.8 and expert-rated fact coverage after the early run, so the next test scores what we can actually measure. Those two are criteria for the next run, not something we passed or failed.</p></div>
+<div class="qa"><h3>8. What you showed for Experiment 2 is a safety check, not a trust test.</h3><p>Correct. The trust test needs expert-checked content first, so we ran the safety check on two real pipeline runs. The trust test itself is a short test website: eight novices see an assembly step and then a troubleshooting scenario for a 3D printer, and at each point they choose whether to follow the AI and continue. We count who continues at both points.</p></div>
+<div class="qa"><h3>9. There is no control group in Experiment 2.</h3><p>It is a single condition measured against a preset bar of three in four, not a comparison. We also log source checks, visits to the original manual, requests for human review and exits, so if people stop we can tell distrust of AI from doubt about one answer.</p></div>
+<div class="qa"><h3>10. Your card describes an instructor-led 3D-printing pilot with eight trainees. You ran soldering against YouTube with two people. Why?</h3><p>This was a first run ahead of the full pilot: one task, one learner per condition, and YouTube as the conventional material. It gave us real timings on both the expert and learner side. The full pilot, four against four with an instructor-led control and the same rubric and observer, still has to run. That is why the slide says further participants required.</p></div>
+<div class="qa"><h3>11. Who were your participants, and how did you recruit and assign them?</h3><p><span class="fill">[Fill in: who the two learners were, how you reached them, how each was assigned to YouTube or BenchMate. Expect the follow-up “were they classmates?”]</span> For the full pilot the card says: novice MakerLAB users who need onboarding, recruited through lab staff or open sign-up, assigned at random.</p></div>
+</section>
+
+<section><h2>Results So Far</h2>
+<div class="qa"><h3>12. With one learner per condition, how can you claim 72 percent?</h3><p>We do not claim a pass. Nineteen minutes against five-fourteen is two people, and the difference between any two people could explain part of it. Our own card says even eight trainees is too few for significance. What this run tells us is that the pilot is worth its 12 to 16 hours.</p></div>
+<div class="qa"><h3>13. Is YouTube a fair comparison?</h3><p>It is what a novice does today when no instructor is free. The video was under seven minutes; the learner needed nineteen because key details came at the end and they rewatched it. The full pilot adds the stronger control: instructor-led training.</p></div>
+<div class="qa"><h3>14. How did you get 64 percent expert time saved?</h3><p>Twenty learners times four minutes thirty-three in person is an hour and thirty-one minutes. With BenchMate the expert spends about 33 minutes once: recording, plus about two minutes on each of 14 steps. The baseline is generous, since it assumes a guided novice moves at the expert’s pace. On those numbers BenchMate pays back at the eighth learner. It counts active expert time only; the twenty minutes of computation run unattended.</p></div>
+<div class="qa"><h3>15. “No discernible change in quality.” Judged how?</h3><p><span class="fill">[Fill in: who compared the finished boards, and how.]</span> There was no scoring rubric in this run. The pilot uses a practical-assessment rubric with an 80 percent pass threshold and the same observer for both groups.</p></div>
+<div class="qa"><h3>16. A step timing score of zero. Is the technology broken?</h3><p>Step timing on uncut video is; the content is not. The system produced 22 steps against seven in the reference, and none of its boundaries fell within five seconds of a reference boundary. On the human-edited video it scored 0.75. Those two numbers use different videos and tolerances, so we do not compare them directly. Fixing segmentation is the next thing we build.</p></div>
+<div class="qa"><h3>17. “Every fact found.” How do you know the facts are right?</h3><p>We do not yet. Those are keyword checks: the expected fact appears in the output. They are not an expert judging correctness, and hand poses are unverified. Expert grading is part of the next test, scored per video so an average cannot hide a failure.</p></div>
+<div class="qa"><h3>18. “100 percent of warnings kept.” Out of how many?</h3><p>Four in the printer video and three in the soldering video, across two runs. On top of those the tutorial added four and six cautions. It is a small base, which is why hypothesis #6 has its own expert-graded benchmark: 25 queries, 100 percent of mandatory warnings preserved, zero invented citations.</p></div>
+<div class="qa"><h3>19. One caution was wrong. What if the expert misses the next one?</h3><p>One generated soldering caution said “pins” where it should have said “iron”. That is exactly why nothing is published without expert review, and why the tool sends uncertain items to the expert instead of guessing: six SOP conflicts and three key steps in these runs. We never claim the tool certifies safety.</p></div>
+</section>
+
+<section><h2>The Path</h2>
+<div class="qa"><h3>20. When will each unfinished experiment be complete?</h3><p>All within the next week. The extraction re-test on four uncut videos finishes November 17. The latency benchmark and the eight-novice trust test both finish November 18. The MakerLAB pilot finishes November 19, and it is the only date that depends on lab approval; the first three hold either way.</p></div>
+<div class="qa"><h3>21. What if MakerLAB does not give you access?</h3><p>The first three steps need no lab, so they proceed. For the pilot we ask the lab coordinator for a written decision on protocol, equipment and two slots; a verbal welcome is not enough. If it is a no, we secure another approved site before recruiting anyone.</p></div>
+<div class="qa"><h3>22. What result would make you change direction?</h3><p>Each card names it. If extraction stays under 80 percent, we find whether the errors come from segmentation, visual recognition, pose estimation or text generation. If learners do not follow the guidance, we separate distrust of AI from a need for human confirmation, fix the main obstacle and re-run. If time savings vanish, we split setup and review overhead from teaching time and work out the cohort size where it breaks even.</p></div>
+</section>
+
+<section><h2>Product</h2>
+<div class="qa"><h3>23. What did you change on the canvas or in the product?</h3><p>In the product: step segmentation moved to the top of the build list, and expert review stays as a required step before a tutorial reaches a learner. On the canvas: technical colleges now follow MakerLAB as the next customer, and the buyer is narrowed to manufacturers’ training teams.</p></div>
+<div class="qa"><h3>24. What does BenchMate give a learner that a good YouTube video does not?</h3><p>Three things our learners named. It is made for the exact task, so there is no searching for the right video. It replays one step at a time by timestamp. And it repeats safety cautions at each step: one learner noticed the video never said the tool was hot, and BenchMate did.</p></div>
+</section>
+
+<section><h2>From The Critics’ Feedback</h2>
+<div class="qa"><h3>25. YouTube is an easy benchmark. What do manufacturers actually use, and how hard would BenchMate be to adopt there?</h3><p>We have not had that conversation with a manufacturer yet. YouTube was a benchmark we could check while we built confidence in the product. Next we interview a manufacturer about its current training workflow, what adoption would take, how many videos it would need, and who supplies and approves the expert recordings. Our MakerLAB pilot also compares against instructor-led training, not only YouTube.</p></div>
+<div class="qa"><h3>26. Why technical colleges?</h3><p>They are an easier place to earn trust and collect early data before we approach enterprise buyers, even though they are not the main source of revenue. MakerLAB is a small-scale start; a college is the first test at a larger institution. Our planned first contact is Colleen Dempsey.</p></div>
+<div class="qa"><h3>27. In five years, will manufacturers train people or buy robots?</h3><p>We are building for a hybrid period, with people and robots both on the floor. Manufacturers struggle to hire for hands-on roles today, so the demand for cheaper, more modern training exists now. We build for that and leave room to evolve. We have not explored teaching robots from the videos.</p></div>
+<div class="qa"><h3>28. Could a manufacturer use this for customer support, or to train installers?</h3><p>Possibly, and we heard both ideas. Two cautions. Our product depends on an expert’s recording and human review for safety-sensitive tasks, which fits repeated training better than a one-off home repair. And a manufacturer may not want to publish instructions detailed enough to undercut its own service network. So we start with employee training.</p></div>
+<div class="qa"><h3>29. How will you price it?</h3><p>Our core plan is an annual subscription for organizations. We heard that a flat license may not fit a large customer making videos for thousands of products, so usage-based or per-video pricing is something we will evaluate. The manufacturer interview is where we learn video volume, which decides that.</p></div>
+</section>
+
+<section class="notes"><h2>Settle These Before You Walk In</h2>
+<ul>
+<li><b>Finish dates</b> (Q20): Nov 17, 18, 18 and 19 are on the Path slide. Check the team can hold them; the experiment cards still say Nov 9–13.</li>
+<li><b>Participants</b> in the Experiment 3 run: who, how recruited, how assigned (Q11), and who judged board quality (Q15).</li>
+<li><b>Run order.</b> The spreadsheet’s final sequence is #7, #8, #9, #27, #28, #6, #13. The Path slide shows #7 with #6, then #27, #28, the pilot. Know which is current, in case a grader has the sheet open.</li>
+<li><b>Cost figures.</b> The spreadsheet lists the trust test at 8 h and the learner pilot at 24 h for 12 novices; the cards and slides say ~6 h and 12–16 h for 8 trainees.</li>
+<li><b>Card status.</b> Card 1 still says “Planned” and Card 2’s status is blank, while the slides say “Underway”. Card 3’s register row says “to confirm”.</li>
+</ul></section>
